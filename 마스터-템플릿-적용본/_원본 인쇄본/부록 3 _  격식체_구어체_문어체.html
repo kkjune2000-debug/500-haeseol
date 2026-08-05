@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Korean 1 - Formal, Informal, Literary Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #555; margin: 0; padding: 20px; }
+        .eng { font-family: 'Lato', sans-serif; }
+
+        .page-container {
+            width: 210mm;
+            height: 297mm;
+            background-color: white;
+            margin: 0 auto;
+            padding: 15mm 18mm 12mm 18mm;
+            box-sizing: border-box;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .section-header {
+            border-bottom: 3px solid #f59e0b;
+            padding-bottom: 10px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .main-title { font-size: 1.15rem; font-weight: 900; color: #1e293b; line-height: 1.2; white-space: nowrap; }
+        .main-title .eng { font-weight: 700; font-size: 0.95rem; }
+        .chapter-badge {
+            background: #f1f5f9;
+            color: #64748b;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            table-layout: fixed;
+            border: 2px solid #334155;
+            flex-grow: 1;
+        }
+
+        /* Top grouped headers (현재, 과거, 미래) */
+        .group-header th {
+            padding: 4px 2px;
+            font-size: 0.82rem;
+            font-weight: 900;
+            color: #1e293b;
+            border: 1px solid #cbd5e1;
+            border-top: 2px solid #334155;
+        }
+        .group-header .gh-present { background-color: #dbeafe; }
+        .group-header .gh-past { background-color: #d1fae5; }
+        .group-header .gh-future { background-color: #fef3c7; }
+        .group-header .gh-verb { background-color: #f1f5f9; border-bottom: 1px solid #64748b; }
+
+        /* Sub headers (격식체, 구어체, 문어체) */
+        .sub-header th {
+            padding: 3px 2px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+            border-bottom: 1px solid #64748b;
+            border-top: 1px solid #cbd5e1;
+        }
+        .sub-header .sh-present { background-color: #eff6ff; }
+        .sub-header .sh-past { background-color: #ecfdf5; }
+        .sub-header .sh-future { background-color: #fffbeb; }
+        .sub-header .sh-verb { background-color: #f1f5f9; }
+
+        /* Body cells */
+        td {
+            border: 1px solid #e2e8f0;
+            padding: 3px 2px;
+            font-size: 0.68rem;
+            font-weight: 500;
+            color: #334155;
+            vertical-align: middle;
+            word-break: keep-all;
+            overflow: hidden;
+        }
+
+        /* Verb column (leftmost) */
+        td:nth-child(1) {
+            background-color: #f8f9fa !important;
+            font-weight: 900;
+            font-size: 0.75rem;
+            color: #0f172a;
+            border-right: 2px solid #94a3b8;
+        }
+
+        /* 현재 columns (blue pastel) */
+        td:nth-child(2) { background-color: #f0f6ff; }
+        td:nth-child(3) { background-color: #f0f6ff; }
+        td:nth-child(4) { background-color: #f0f6ff; }
+
+        /* 과거 columns (green pastel) */
+        td:nth-child(5) { background-color: #f0fdf6; }
+        td:nth-child(6) { background-color: #f0fdf6; }
+        td:nth-child(7) { background-color: #f0fdf6; }
+
+        /* 미래 columns (amber pastel) */
+        td:nth-child(8) { background-color: #fffdf0; }
+        td:nth-child(9) { background-color: #fffdf0; }
+        td:nth-child(10) { background-color: #fffdf0; }
+
+        /* Tense group border separators (slightly darker than regular) */
+        /* 현재 left border (격식체 left) */
+        td:nth-child(2), .sub-header th:nth-child(1), .group-header th:nth-child(2) {
+            border-left: 1px solid #94a3b8;
+        }
+        /* 현재 문어체 right / 과거 격식체 left */
+        td:nth-child(4), .sub-header th:nth-child(3) {
+            border-right: 1px solid #94a3b8;
+        }
+        td:nth-child(5), .sub-header th:nth-child(4), .group-header th:nth-child(5) {
+            border-left: 1px solid #94a3b8;
+        }
+        /* 과거 문어체 right / 미래 격식체 left */
+        td:nth-child(7), .sub-header th:nth-child(6) {
+            border-right: 1px solid #94a3b8;
+        }
+        td:nth-child(8), .sub-header th:nth-child(7), .group-header th:nth-child(8) {
+            border-left: 1px solid #94a3b8;
+        }
+        /* Group header cells: first of each tense group left, last right */
+        .group-header th:nth-child(4) { border-right: 1px solid #94a3b8; }
+        .group-header th:nth-child(7) { border-right: 1px solid #94a3b8; }
+
+        /* Zebra striping (very subtle, on top of column colors) */
+        tbody tr:nth-child(even) td:nth-child(1) { background-color: #f0f1f3 !important; }
+        tbody tr:nth-child(even) td:nth-child(2),
+        tbody tr:nth-child(even) td:nth-child(3),
+        tbody tr:nth-child(even) td:nth-child(4) { background-color: #e8f0fd !important; }
+        tbody tr:nth-child(even) td:nth-child(5),
+        tbody tr:nth-child(even) td:nth-child(6),
+        tbody tr:nth-child(even) td:nth-child(7) { background-color: #e8faf0 !important; }
+        tbody tr:nth-child(even) td:nth-child(8),
+        tbody tr:nth-child(even) td:nth-child(9),
+        tbody tr:nth-child(even) td:nth-child(10) { background-color: #fdf8e8 !important; }
+
+        /* Footer */
+        .page-footer {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 6px;
+            margin-top: 4mm;
+            display: flex;
+            justify-content: space-between;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .page-container {
+                width: 210mm; height: 297mm;
+                margin: 0; box-shadow: none; border: none;
+            }
+            td, th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            td { border-color: #94a3b8 !important; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+
+    <div class="section-header">
+        <div>
+            <h1 class="main-title"><span class="eng">2. formal style</span> 격식체, <span class="eng">informal style</span> 구어체, <span class="eng">literary style</span> 문어체</h1>
+        </div>
+        <span class="chapter-badge eng">VII. Appendix</span>
+    </div>
+
+    <table>
+        <colgroup>
+            <col style="width: 9%;">
+            <col style="width: 9.5%;">
+            <col style="width: 9.5%;">
+            <col style="width: 8%;">
+            <col style="width: 11%;">
+            <col style="width: 10%;">
+            <col style="width: 8%;">
+            <col style="width: 11.5%;">
+            <col style="width: 11.5%;">
+            <col style="width: 11.5%;">
+        </colgroup>
+        <thead>
+            <tr class="group-header">
+                <th class="gh-verb" rowspan="2"></th>
+                <th class="gh-present"></th>
+                <th class="gh-present">현재</th>
+                <th class="gh-present"></th>
+                <th class="gh-past"></th>
+                <th class="gh-past">과거</th>
+                <th class="gh-past"></th>
+                <th class="gh-future"></th>
+                <th class="gh-future">미래</th>
+                <th class="gh-future"></th>
+            </tr>
+            <tr class="sub-header">
+                <th class="sh-present">격식체</th>
+                <th class="sh-present">구어체</th>
+                <th class="sh-present">문어체</th>
+                <th class="sh-past">격식체</th>
+                <th class="sh-past">구어체</th>
+                <th class="sh-past">문어체</th>
+                <th class="sh-future">격식체</th>
+                <th class="sh-future">구어체</th>
+                <th class="sh-future">문어체</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>가다</td><td>갑니다</td><td>가요</td><td>간다</td><td>갔습니다</td><td>갔어요</td><td>갔다</td><td>갈 것입니다</td><td>갈 거예요</td><td>갈 것이다</td></tr>
+            <tr><td>만나다</td><td>만납니다</td><td>만나요</td><td>만난다</td><td>만났습니다</td><td>만났어요</td><td>만났다</td><td>만날 것입니다</td><td>만날 거예요</td><td>만날 것이다</td></tr>
+            <tr><td>먹다</td><td>먹습니다</td><td>먹어요</td><td>먹는다</td><td>먹었습니다</td><td>먹었어요</td><td>먹었다</td><td>먹을 것입니다</td><td>먹을 거예요</td><td>먹을 것이다</td></tr>
+            <tr><td>있다</td><td>있습니다</td><td>있어요</td><td>있다</td><td>있었습니다</td><td>있었어요</td><td>있었다</td><td>있을 것입니다</td><td>있을 거예요</td><td>있을 것이다</td></tr>
+            <tr><td>없다</td><td>없습니다</td><td>없어요</td><td>없다</td><td>없었습니다</td><td>없었어요</td><td>없었다</td><td>없을 것입니다</td><td>없을 거예요</td><td>없을 것이다</td></tr>
+            <tr><td>알다</td><td>압니다</td><td>알아요</td><td>안다</td><td>알았습니다</td><td>알았어요</td><td>알았다</td><td>알 것입니다</td><td>알 거예요</td><td>알 것이다</td></tr>
+            <tr><td>만들다</td><td>만듭니다</td><td>만들어요</td><td>만든다</td><td>만들었습니다</td><td>만들었어요</td><td>만들었다</td><td>만들 것입니다</td><td>만들 거예요</td><td>만들 것이다</td></tr>
+            <tr><td>오다</td><td>옵니다</td><td>와요</td><td>온다</td><td>왔습니다</td><td>왔어요</td><td>왔다</td><td>올 것입니다</td><td>올 거예요</td><td>올 것이다</td></tr>
+            <tr><td>배우다</td><td>배웁니다</td><td>배워요</td><td>배운다</td><td>배웠습니다</td><td>배웠어요</td><td>배웠다</td><td>배울 것입니다</td><td>배울 거예요</td><td>배울 것이다</td></tr>
+            <tr><td>마시다</td><td>마십니다</td><td>마셔요</td><td>마신다</td><td>마셨습니다</td><td>마셨어요</td><td>마셨다</td><td>마실 것입니다</td><td>마실 거예요</td><td>마실 것이다</td></tr>
+            <tr><td>그리다</td><td>그립니다</td><td>그려요</td><td>그린다</td><td>그렸습니다</td><td>그렸어요</td><td>그렸다</td><td>그릴 것입니다</td><td>그릴 거예요</td><td>그릴 것이다</td></tr>
+            <tr><td>내다</td><td>냅니다</td><td>내요</td><td>낸다</td><td>냈습니다</td><td>냈어요</td><td>냈다</td><td>낼 것입니다</td><td>낼 거예요</td><td>낼 것이다</td></tr>
+            <tr><td>하다</td><td>합니다</td><td>해요</td><td>한다</td><td>했습니다</td><td>했어요</td><td>했다</td><td>할 것입니다</td><td>할 거예요</td><td>할 것이다</td></tr>
+            <tr><td>사랑하다</td><td>사랑합니다</td><td>사랑해요</td><td>사랑한다</td><td>사랑했습니다</td><td>사랑했어요</td><td>사랑했다</td><td>사랑할 것입니다</td><td>사랑할 거예요</td><td>사랑할 것이다</td></tr>
+            <tr><td>이다</td><td>입니다</td><td>이에요<br>/예요</td><td>이다</td><td>이었습니다<br>/였습니다</td><td>이었어요<br>/였어요</td><td>이었다<br>/였다</td><td>일 것입니다</td><td>일 거예요</td><td>일 것이다</td></tr>
+            <tr><td>크다</td><td>큽니다</td><td>커요</td><td>크다</td><td>컸습니다</td><td>컸어요</td><td>컸다</td><td>클 것입니다</td><td>클 거예요</td><td>클 것이다</td></tr>
+            <tr><td>다르다</td><td>다릅니다</td><td>달라요</td><td>다르다</td><td>달랐습니다</td><td>달랐어요</td><td>달랐다</td><td>다를 것입니다</td><td>다를 거예요</td><td>다를 것이다</td></tr>
+            <tr><td>쉽다</td><td>쉽습니다</td><td>쉬워요</td><td>쉽다</td><td>쉬웠습니다</td><td>쉬웠어요</td><td>쉬웠다</td><td>쉬울 것입니다</td><td>쉬울 거예요</td><td>쉬울 것이다</td></tr>
+            <tr><td>좋다</td><td>좋습니다</td><td>좋아요</td><td>좋다</td><td>좋았습니다</td><td>좋았어요</td><td>좋았다</td><td>좋을 것입니다</td><td>좋을 거예요</td><td>좋을 것이다</td></tr>
+            <tr><td>듣다</td><td>듣습니다</td><td>들어요</td><td>듣는다</td><td>들었습니다</td><td>들었어요</td><td>들었다</td><td>들을 것입니다</td><td>들을 거예요</td><td>들을 것이다</td></tr>
+            <tr><td>믿다</td><td>믿습니다</td><td>믿어요</td><td>믿는다</td><td>믿었습니다</td><td>믿었어요</td><td>믿었다</td><td>믿을 것입니다</td><td>믿을 거예요</td><td>믿을 것이다</td></tr>
+        </tbody>
+    </table>
+
+    <div class="page-footer">
+        <span>118</span>
+        <span>Amazing Korean 1</span>
+    </div>
+
+</div>
+
+</body>
+</html>

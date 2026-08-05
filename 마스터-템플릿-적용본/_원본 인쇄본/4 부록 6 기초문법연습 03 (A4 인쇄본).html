@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Korean 1 - Basic Grammar Practice 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #555; margin: 0; padding: 20px; }
+        .eng { font-family: 'Lato', sans-serif; }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            background: white;
+            margin: 0 auto;
+            padding: 12mm 18mm 25mm 18mm;
+            box-sizing: border-box;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            table-layout: fixed;
+            border: 2px solid #334155;
+        }
+        table + table { margin-top: 8px; }
+
+        tr { height: 11.5mm; }
+
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 6px 4px;
+            vertical-align: middle;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        thead th {
+            font-weight: 900;
+            font-size: 0.9rem;
+            border-bottom: 2px solid #334155;
+            padding: 8px 4px;
+        }
+
+        /* Column colors via classes (handles rowspan correctly) */
+        .c-meaning { background-color: #f8f9fa !important; font-weight: 700; font-size: 0.72rem; color: #475569; border-right: 1px solid #94a3b8; }
+        .c-eomi { background-color: #fffbeb !important; }
+        .c-gada { background-color: #eff6ff !important; }
+        .c-meok { background-color: #f0fdf4 !important; }
+        .c-hada { background-color: #fdf2f8 !important; }
+        .c-joh { background-color: #faf5ff !important; }
+
+        /* Header colors (deeper) */
+        thead th.c-meaning, .sub-head td.c-meaning { background-color: #edf0f2 !important; color: #334155 !important; }
+        thead th.c-eomi, .sub-head td.c-eomi { background-color: #fef3c7 !important; color: #92400e !important; }
+        thead th.c-gada, .sub-head td.c-gada { background-color: #dbeafe !important; color: #1e40af !important; }
+        thead th.c-meok, .sub-head td.c-meok { background-color: #dcfce7 !important; color: #166534 !important; }
+        thead th.c-hada, .sub-head td.c-hada { background-color: #fce7f3 !important; color: #9d174d !important; }
+        thead th.c-joh, .sub-head td.c-joh { background-color: #f3e8ff !important; color: #6b21a8 !important; }
+
+        .sec-top td { border-top: 1.5px solid #94a3b8; }
+        .na { color: #94a3b8; font-weight: 400; }
+
+        /* Sub-header row (second table) */
+        .sub-head td {
+            font-weight: 900 !important;
+            font-size: 0.88rem !important;
+            border-bottom: 2px solid #334155;
+            padding: 8px 4px;
+            color: #1e293b !important;
+        }
+        .meaning-en { font-family: 'Lato', sans-serif; font-size: 0.72rem; font-weight: 700; color: #334155; }
+        .meaning-kr { font-size: 0.65rem; font-weight: 500; color: #64748b; display: block; margin-top: 1px; }
+
+        /* Spacer to push tables apart and fill page */
+        .table-wrap { display: flex; flex-direction: column; }
+        
+        
+
+        .page-footer {
+            position: absolute;
+            bottom: 10mm;
+            left: 18mm;
+            right: 18mm;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 5px;
+            display: flex;
+            justify-content: space-between;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .page { width: 210mm; height: 297mm; margin: 0; box-shadow: none; }
+            th, td { -webkit-print-color-adjust: exact; print-color-adjust: exact; border-color: #9ca3af !important; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <div class="table-wrap">
+
+    <!-- Table 1: Upper section -->
+    <table>
+        <colgroup>
+            <col style="width: 14%;"><col style="width: 14%;"><col style="width: 18%;"><col style="width: 18%;"><col style="width: 18%;"><col style="width: 18%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="c-meaning"><span class="meaning-en">meaning</span></th>
+                <th class="c-eomi">어미</th><th class="c-gada">가다</th><th class="c-meok">먹다</th><th class="c-hada">하다</th><th class="c-joh">좋다</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="sec-top">
+                <td class="c-meaning"><span class="meaning-en">an action for others</span><span class="meaning-kr">다른 사람을 위한 행동</span></td>
+                <td class="c-eomi">아/어 주었다</td><td class="c-gada">가 주었습니다</td><td class="c-meok">먹어 주었습니다</td><td class="c-hada">해 주었습니다</td><td class="c-joh na">*</td>
+            </tr>
+            <tr class="sec-top">
+                <td class="c-meaning" rowspan="2"><span class="meaning-en">change</span><span class="meaning-kr">변화</span></td>
+                <td class="c-eomi">아/어지다</td><td class="c-gada na">*</td><td class="c-meok na">*</td><td class="c-hada na">*</td><td class="c-joh">좋아졌습니다</td>
+            </tr>
+            <tr>
+                <td class="c-eomi">게 되다</td><td class="c-gada">가게 되었습니다</td><td class="c-meok">먹게 되었습니다</td><td class="c-hada">하게 되었습니다</td><td class="c-joh na">*</td>
+            </tr>
+            <tr class="sec-top">
+                <td class="c-meaning"><span class="meaning-en">empathy</span><span class="meaning-kr">공감</span></td>
+                <td class="c-eomi">겠습니다</td><td class="c-gada na">*</td><td class="c-meok na">*</td><td class="c-hada na">*</td><td class="c-joh">좋겠습니다</td>
+            </tr>
+            <tr class="sec-top">
+                <td class="c-meaning"><span class="meaning-en">Will, guess, promise</span><span class="meaning-kr">의지, 약속, 추측</span></td>
+                <td class="c-eomi">겠습니다</td><td class="c-gada">가겠습니다</td><td class="c-meok">먹겠습니다</td><td class="c-hada">하겠습니다</td><td class="c-joh na">*</td>
+            </tr>
+            <tr class="sec-top">
+                <td class="c-meaning"><span class="meaning-en">admire</span><span class="meaning-kr">감탄</span></td>
+                <td class="c-eomi">네요</td><td class="c-gada na">*</td><td class="c-meok na">*</td><td class="c-hada na">*</td><td class="c-joh">좋네요</td>
+            </tr>
+            <tr class="sec-top">
+                <td class="c-meaning"><span class="meaning-en">confirm, empathize, agree</span><span class="meaning-kr">확인, 공감, 동의</span></td>
+                <td class="c-eomi">지요/죠?</td><td class="c-gada">가죠?</td><td class="c-meok">먹죠?</td><td class="c-hada">하죠?</td><td class="c-joh">좋죠?</td>
+            </tr>
+            <tr class="sec-top">
+                <td class="c-meaning"><span class="meaning-en">soft command</span><span class="meaning-kr">부드러운 명령</span></td>
+                <td class="c-eomi">(으)세요</td><td class="c-gada">가세요</td><td class="c-meok">먹으세요</td><td class="c-hada">하세요</td><td class="c-joh na">*</td>
+            </tr>
+            <tr class="sec-top">
+                <td class="c-meaning"><span class="meaning-en">polite questions</span><span class="meaning-kr">예의바른 질문</span></td>
+                <td class="c-eomi">(으)세요?</td><td class="c-gada">가세요?</td><td class="c-meok">먹으세요?<br>(드세요)</td><td class="c-hada">하세요?</td><td class="c-joh">좋으세요?</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Table 2: Lower section (time-related) -->
+    <table>
+        <colgroup>
+            <col style="width: 14%;"><col style="width: 14%;"><col style="width: 18%;"><col style="width: 18%;"><col style="width: 18%;"><col style="width: 18%;">
+        </colgroup>
+        <tbody>
+            <tr class="sub-head">
+                <td class="c-meaning">meaning</td>
+                <td class="c-eomi">어미</td><td class="c-gada">가다</td><td class="c-meok">먹다</td><td class="c-hada">하다</td><td class="c-joh">좋다</td>
+            </tr>
+            <tr class="sec-top">
+                <td class="c-meaning"><span class="meaning-en">when, while, during</span></td>
+                <td class="c-eomi">ㄹ/을 때</td><td class="c-gada">갈 때</td><td class="c-meok">먹을 때</td><td class="c-hada">할 때</td><td class="c-joh">좋을 때</td>
+            </tr>
+            <tr class="sec-top">
+                <td class="c-meaning"><span class="meaning-en">duration</span><span class="meaning-kr">기간</span></td>
+                <td class="c-eomi">는 동안</td><td class="c-gada">가는 동안</td><td class="c-meok">먹는 동안</td><td class="c-hada">하는 동안</td><td class="c-joh na">*</td>
+            </tr>
+            <tr class="sec-top">
+                <td class="c-meaning"><span class="meaning-en">before</span><span class="meaning-kr">전</span></td>
+                <td class="c-eomi">기 전에</td><td class="c-gada">가기 전에</td><td class="c-meok">먹기 전에</td><td class="c-hada">하기 전에</td><td class="c-joh na">*</td>
+            </tr>
+            <tr class="sec-top">
+                <td class="c-meaning"><span class="meaning-en">after</span><span class="meaning-kr">후</span></td>
+                <td class="c-eomi">ㄴ/은 후에</td><td class="c-gada">간 후에</td><td class="c-meok">먹은 후에</td><td class="c-hada">한 후에</td><td class="c-joh na">*</td>
+            </tr>
+            <tr class="sec-top">
+                <td class="c-meaning" rowspan="3"><span class="meaning-en">sequential actions</span><span class="meaning-kr">시간 순서 동작</span></td>
+                <td class="c-eomi">고</td><td class="c-gada">가고</td><td class="c-meok">먹고</td><td class="c-hada">하고</td><td class="c-joh na">*</td>
+            </tr>
+            <tr>
+                <td class="c-eomi">고 나서</td><td class="c-gada">가고 나서</td><td class="c-meok">먹고 나서</td><td class="c-hada">하고 나서</td><td class="c-joh na">*</td>
+            </tr>
+            <tr>
+                <td class="c-eomi">고 난 후에</td><td class="c-gada">가고 난 후에</td><td class="c-meok">먹고 난 후에</td><td class="c-hada">하고 난 후에</td><td class="c-joh na">*</td>
+            </tr>
+            <tr class="sec-top">
+                <td class="c-meaning"><span class="meaning-en">simultaneous action</span><span class="meaning-kr">동시 동작</span></td>
+                <td class="c-eomi">(으)면서</td><td class="c-gada">가면서</td><td class="c-meok">먹으면서</td><td class="c-hada">하면서</td><td class="c-joh na">*</td>
+            </tr>
+            <tr class="sec-top">
+                <td class="c-meaning"><span class="meaning-en">as soon as</span></td>
+                <td class="c-eomi">자마자</td><td class="c-gada">가자마자</td><td class="c-meok">먹자마자</td><td class="c-hada">하자마자</td><td class="c-joh na">*</td>
+            </tr>
+        </tbody>
+    </table>
+
+    </div>
+
+    <div class="page-footer">
+        <span>122</span>
+        <span>Amazing Korean 1</span>
+    </div>
+
+</div>
+
+</body>
+</html>

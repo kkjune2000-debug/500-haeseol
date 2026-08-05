@@ -1,0 +1,54 @@
+- [Session 2026-05-31 progress](project_session_20260531.md) — 전 파일 카드표+파스텔헤더, 51~60/307~313/277~283/284~291 작업. 인수인계: `_작업_인수인계.md`, 메모리 사본: `_claude_메모리_백업\`.
+- [Session 2026-06-04 progress](project_session_20260604.md) — 문장구조 4·5·6·7과(31~40·41~50·51~60·79~86) 문법정리 재구성: 부사어 2단분리, 교재 뼈대 gstep, 의문사 종합표 디자인, 접속어 크로스탭 표 신설.
+- [Session 2026-06-05 progress](project_session_20260605.md) — 서술어 단원 87~189 광범위 편집(이다·현재진행·능력·청유·부정·희망·소망·계획·결정·허락금지의무면제·부탁). 활용표 통일 스타일 정립, 기본형 패턴화, 예문 정렬, 중복 삭제·번호정리.
+- [Session 2026-06-06 progress](project_session_20260606.md) — 불규칙 6단원(ㅅ·으·르·ㅂ·ㄷ·ㄹ) 3단계 흐름 디자인, ㅂ 미래형·돕다 주의, 르 "르앞모음" 용어, 간접화법(462~473) 전면 재디자인(3단계 레시피·왜배워야하나 3카드·격식체), 관형어(474~488) 영어비교 제거·시제표 색 업그레이드·동사형용사 구분.
+- [Adverbial = optional element](feedback_adverbial_optional_element.md) — 부사어는 별개 기본 문형이 아니라 모든 문형에 더하는 선택 성분. 2단 분리(필수 골격 ↓ [부사어] 끼운 버전)로 표현. 31~40·51~60.
+- [Textbook backbone](reference_textbook_backbone.md) — 교재 큰 뼈대: 서술어 계열(보라, 문장 끝)/부사어 계열(초록, 주어 다음) 두 갈래 + 관형어, 완성형 관형어+주어+관형어+부사어+관형어+목적어+서술어. (51~60 gstep4)
+- [Korean table wrap](feedback_korean_table_wrap.md) — 표 칸 한국어가 글자 중간에서 잘리지 않게 word-break:keep-all + nowrap 유닛(.cx-nb)으로 묶음 전체가 다음 줄로.
+- [Handoff download button](feedback_handoff_download_button.md) — 인수인계 시작 멘트 만들 때마다 다운로드 버튼 HTML(`_인수인계_시작멘트.html`)도 함께 생성/갱신.
+- [Conjugation table style](feedback_conjugation_table_style.md) — 활용/만드는 법 표: 보라 헤더 카드 + 원형 양성(ㅏ)/음성(ㅓ)/하다 모음 배지, 받침 No/With, 패턴박스 옅은 노랑(#fffdf0). 169~180·181~189, 모음조화·받침 문법 재사용.
+- [Canonical project folder](project_canonical_folder.md) — Edits go to `D:\OneDrive\놀라운 한국어 500 해설집\`, NOT to `d:\놀라운 한국어 500 해설집\` (orphan) or its 임시\ subfolder (통합본 builds).
+- [Korean-English pairing rule](feedback_korean_english_pairing.md) — Korean explanations must always have English on the next line; exception: 문장 해설 tables.
+- [Formal style for examples](feedback_formal_style_examples.md) — All 예문 must use 격식체 (-ㅂ니다/습니다); exception: ~세요 forms. Rename "예시" → "예문".
+- [Batchim table labels](feedback_batchim_table_labels.md) — In 받침 columns: bold colored O (green, 있음) / X (red, 없음) symbol on top, 없음/있음 Korean label below, none/yes English in small em.
+- [Batchim conditional pattern](feedback_batchim_conditional_pattern.md) — In gstep-pattern boxes showing endings that change by 받침, use colored `<strong style="color:#dc2626;">No 받침</strong>` (red) and `<strong style="color:#16a34a;">With 받침</strong>` (green) format. Replace 받침 X / 받침 O notation.
+- [gstep 1 explanation format](feedback_gstep1_explanation_format.md) — Per-line Korean→English pairs + 예: block under gstep 1 pattern box. Do NOT use synthetic A/B rule templates.
+- [Combined adverbial role](feedback_combined_adverbial_role.md) — Group multiple adverbials as 부사어(시간+장소) etc. in table headers, not separate items.
+- [Multi-adverbial header merge](feedback_multi_adverbial_header_merge.md) — 어순 헤더에서 부사어 2개 이상이면 부사어(A + B)로 합침(예 부사어(원인 + 장소)); Role 셀은 개별 라벨 유지. Applied 314, 319.
+- [Adverb vs Adverbial](feedback_adverb_vs_adverbial.md) — Pure word-class adverbs (다시·잠깐만·빨리·정말·항상·맛있게·예쁘게 등) get Role `Adverb / 부사`. Noun+particle constructions (어제·집에서·도서관에) stay `Adverbial / 부사어`.
+- [Predicate modality labels](feedback_predicate_modality_labels.md) — Modality suffixes on Predicate are conditional: `(Negation)/(부정)` only on actual negative sentences, `(Suggestion)/(청유)` on ~ㄹ까요?/~ㅂ시다. Positive declaratives get plain `Predicate / 서술어`. Extension: (Hope), (Ability), (Decision), (Permission), (Change), (Guess), etc.
+- [Clause vs adverbial criterion](feedback_clause_vs_adverbial.md) — 부사절(X) only when the connective clause has an internal SUBJECT (이/가); object-only or bare connective → 부사어(X). Subject is the test, not object. Applied 277~369.
+- [Range adverbial labels](feedback_range_adverbial_labels.md) — 부터=부사어(시작점), 까지=부사어(끝점), 부터~까지/에서~까지=부사어(범위). +도구/시간 보조, 열심히=부사. Applied to 300~306.
+- [Korean order role canonicalization](feedback_korean_order_role_canon.md) — Universal rule: all `exp-table` headers and Role cells use 부사어(장소)/부사어(시간)/서술어(동사) format. Bare 장소/시간/동사 are non-canonical and must be converted.
+- [Lesson grammar summary master template](feedback_lesson_grammar_summary_style.md) — 4-5 gstep structure (pattern → conjugation → usage → comparison → word order) for 부사어 lessons. Applied to Lessons 1-5, 13-19.
+- [Table cell alignment](feedback_table_cell_alignment.md) — All `<td>` cells in yellow explain-note tables must use `text-align:center`, including sentence-bearing 예문 columns.
+- [Explanation row order](feedback_explanation_row_order.md) — In per-sentence explanation tables, arrange rows in English (textbook) sentence order, not Korean order. 원문 = the English sentence.
+- [ㄷ/ㅂ irregular phonetic framing](feedback_irregular_phonetic_framing.md) — Always explain ㄷ/ㅂ 불규칙 as "딱딱한 자음이 부드러운 모음을 만나 부드러운 발음으로 바뀐다"; hard/soft contrast in both KO and EN.
+- [English line-wrap rule](feedback_english_line_wrap.md) — When an English phrase would wrap mid-phrase in a narrow cell/box, put it on its own line below the Korean, not inline.
+- [gstep-pattern English required](feedback_gstep_pattern_english.md) — Every `.gstep-pattern` box must include the English translation in `<small>` after the Korean; Korean-only patterns are never acceptable.
+- [gstep-pattern English labels](feedback_gstep_pattern_english_labels.md) — Inside `.gstep-pattern` boxes, grammar-role labels (명사→Noun, 동사 어간→Verb stem, 주어→Subject, 서술어→Predicate, etc.) must be English. Particles/endings and accent-wrapped Korean vocabulary stay Korean.
+- [gstep-pattern structure order](feedback_gstep_pattern_structure_order.md) — In gstep H3 section titles AND gstep-pattern boxes, English on top, Korean below in `<small>`. General explanation prose stays Korean-first.
+- [Writing Test celebration](feedback_writing_test_celebration.md) — Remove the single-wt-header (정답/듣기 buttons) from every WRITING TEST block; on correct input show a 5-second yellow badge + sparkles + bold pastel text. Show Answer box stays.
+- [Sentence Matching card center](feedback_em_item_center.md) — `.em-item` cards must use `text-align:center` + `justify-content:center` with `.em-text` at `font-size:1.06rem`; never left-aligned, never the old 0.93rem.
+- [Three sections unified font](feedback_three_sections_unified_font.md) — 따라 읽기 / Look & Speak / Sentence Matching all use 1.06rem + font-weight 700 + default font-family (no Lato override). Reference: em-text.
+- [Grammar Overview subtitle deletion](feedback_grammar_overview_subtitle.md) — The `<p class="subtitle">'~XYZ' — description</p>` line that follows `<h2>Grammar Overview · 문법 정리</h2>` is always redundant; delete it. Subtitles for other sections (Practice, Read Along) stay.
+- [No group-title dividers](feedback_no_group_title_dividers.md) — Delete all `<div class="group-title">── ... ──</div>` decorative section dividers. lesson h2/h3/gstep structure already organizes content; these are visual noise.
+- [No vocab repeat in explanation](feedback_no_vocab_in_explanation.md) — In per-sentence 4-col explanation tables, the Explanation column must NOT mention any vocab-box word at all (strip the word entirely, replace with role label/grammar info). Conjugation step-arrow chains and grammar boxes are exempt.
+- [Irregular conjugation step arrows](feedback_irregular_step_arrows.md) — In per-sentence explanation cells, ㅂ/ㄷ/르/ㅅ/ㅡ/ㄹ 불규칙 derivations use step-arrow format: `사전형 → 어간 + 어미 → 변환된 어간 + 어미 → 최종 (불규칙 라벨)`.
+- [gstep card-table style + category colors](feedback_gstep_card_table_style.md) — All gstep `.gstep-table` unified to rounded card (radius 14px, saturated gradient header + white text) via CSS class edit. COLOR follows 4-category system: 문장구조(파랑)/서술어(보라)/부사어(초록)/기타(앰버) — never hardcode one color. Applied to all 67 files 2026-05-31. pill/chip 의미색은 인라인·조건 컬럼만.
+- [Existential predicate label](feedback_existential_predicate_label.md) — 있다/없다 predicates (있습니다/없습니다 etc.) are labeled plain 서술어/Predicate, NOT 서술어(형용사). Strip (형용사) from both Role cell AND 어순 header; real adjectives keep it. Applied 325~331, 384~387, 401~407.
+- [Irregular derivation chain](feedback_irregular_derivation_chain.md) — 불규칙 활용 해설·gstep 표는 "어간 + 었/았습니다 → 변환 어간 + 었/았습니다 → 최종" 통일 체인, gstep1엔 "만드는 과정" 표. 규칙/예외는 2단계. Applied 436~461.
+- [Unpack summary explanations](feedback_unpack_summary_explanations.md) — gstep 요약식(대시 나열) 설명은 개념+예문+영어로 풀어쓰기. 단 아래 표를 그대로 반복하는 요약·이미 명확한 단일 개념은 풀지 않음. Applied 366~413.
+- [Jamo change color](feedback_jamo_change_color.md) — 불규칙에서 바뀌는 핵심 자모(ㅂ→오/우, ㄷ→ㄹ)를 짙은 파란색(#1e40af, 어두운 배경엔 #2563eb)으로 강조. 규칙 라인만, 바뀐 자모만. Applied 449~459, 445~448.
+- [으 불규칙 설명 방식](feedback_eu_irregular_explanation.md) — ㅡ 불규칙은 2단계 재모음조화 체인으로: 어간+었(ㅡ→었, ㅡ탈락) → ㅡ뺀 어간+았/었(새 끝모음으로 재결정) → 최종. ㅡ탈락=모음끼리 이중모음 안 되면 탈락. 모음조화 용어 대신 '어간 끝 모음' 과정 언어.
+- [불규칙 3단계 흐름 디자인](feedback_irregular_3step_flow_style.md) — 불규칙 gstep1 인트로 = 3단계 논리 흐름 카드(①조건→②변화→③결과, ↓연결, ③ 금색 강조). ㅅ·으·르·ㅂ·ㄷ·ㄹ 적용(2026-06-06). 대비 2열 카드는 ㅅ(지어○/져✗)·ㄹ(탈락/유지)만, 나머지는 분기/규칙대비가 별도 gstep·표에 있어 생략.
+- [영어 비교 금지](feedback_no_english_comparison.md) — 문법 설명에서 "영어의 ~처럼/~에 해당/~와 반대" 비교 제거(다른 언어 번역 예정), 한국어 예시로 자체완결. 영어 병기줄은 단순 번역으로만 유지. 관형어부터 적용.
+- [왜 배워야 하나 3카드 스타일](feedback_why_learn_3card_style.md) — "왜 배워야 하나?" 박스 = 아이콘 3카드 그리드 + 금색 마무리 띠(15과 간접화법·16과 관형어·17과 존댓말). explain-note 텍스트 나열 대체.
+- [존댓말 쉬운 용어](feedback_honorific_easy_terms.md) — 주체존대→주어 높임, 객체존대→목적어 높임(쉬운 말). 489~500 통일. 조사 받침 주의(높임은/높임이).
+- [시제 시리즈](project_tense_series.md) — 현재·과거·미래 시제 독립 문서(67레슨과 별개 템플릿, 파란 테마). 분할 완료: 각 시제 A받침없음/B하다/C받침있음/D ㄹ받침(+미래 불규칙) + 시험 3종(현재/과거/종합). 원본 3파일 2026-06-12 삭제 → 기준 파일=현재형 A. CSS 이식도 현재형 A 기준.
+- [조사 시리즈](project_particle_series.md) — 조사_문법설명_v1을 9분할(0+A~G) 후 B-템플릿(분기 흐름카드·직접 만들기·플래시) 전 파일 적용 + 전체 시험(퀴즈 4종) 완료. 분기 3유형: 받침/의미(에게·에)/무변화.
+- [말하기 PPT](project_speaking_ppt.md) — 500문장 PPTX(문장당 2슬라이드: 영어+이모지 → 영어+한국어). v3 시제품 완성(마스터 자리표시자·카드 디자인·60/76pt). PowerShell COM 파이프라인, 생성 전 PPT 창 닫기. 다음 = 전체 생산.
+- [파일명 체계](reference_file_naming.md) — 마스터-템플릿-적용본 전체를 `1 시제 / 2 조사 / 3 ###~### 본문 / 4 부록` 접두사로 일괄 변경(2026-06-16). 셸=`3 123~141 서술어 문법 부정.html`.
+- [숫자표 색·스타일 팔레트](reference_number_table_palette.md) — 부록1 숫자 표 3색 규칙(분홍=수/기호, 연두=한국어 읽기, 회색=영어 뜻) + hex. 문서: `마스터-템플릿-적용본\_숫자표_색·스타일_문서.md`.
+- [부록 시리즈](project_appendix_series.md) — 부록 8과를 인터랙티브 레슨으로 신규 제작. 셸 기준=123~141 부정(=2과 재사용). 1·2·3·**기초문법연습 1~4(부록4~7) 완성**, 8 남음. 부록3 연습=문체별 3구획. 기초문법연습 템플릿 문서=`_기초문법연습_템플릿_문서.md`(힌트 ? 가림·영어삭제 등 정본).
+- [첫 행 예시 패턴](feedback_first_row_sample.md) — ? 가리기 표의 첫 행(가로표는 첫 열)은 정답 공개 예시(.q-sample/노란 테두리)로, 나머지만 "?". 부록 1·2·3·4 적용.

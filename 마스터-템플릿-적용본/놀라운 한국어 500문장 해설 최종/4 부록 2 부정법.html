@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Korean 1 - Negative Construction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #555; margin: 0; padding: 20px; }
+        .eng { font-family: 'Lato', sans-serif; }
+        
+        .page-container {
+            width: 210mm;
+            min-height: 297mm;
+            background-color: white;
+            margin: 0 auto;
+            padding: 20mm 18mm 25mm 18mm; 
+            box-sizing: border-box;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Header - Green theme (Unit 2) */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 3px solid #10b981;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+        .main-title { font-size: 1.6rem; font-weight: 900; color: #1e293b; }
+        .sub-title { font-size: 0.9rem; color: #64748b; margin-top: 3px; font-weight: 600; }
+        .chapter-badge { 
+            background: #ecfdf5; 
+            color: #059669; 
+            padding: 5px 12px; 
+            border-radius: 20px; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            text-align: center;
+            font-size: 0.8rem; 
+            border: 3px solid #059669;
+            border-radius: 0;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            border-top: none;
+            border-left: none;
+            padding: 6px 2px;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+        /* Restore top border for first row */
+        thead tr:first-child th { border-top: none; }
+        /* Remove right border on last column (table border handles it) */
+        th:last-child, td:last-child { border-right: none; }
+        /* Remove bottom border on last row */
+        tbody tr:last-child td { border-bottom: none; }
+
+        /* Main header */
+        .bg-head-main { background-color: #ecfdf5; color: #065f46; font-weight: 800; font-size: 1rem; } 
+
+        /* Sub headers: Declarative/Interrogative vs Imperative/Propositive */
+        .bg-head-decl { background-color: #f0fdf4; color: #166534; font-weight: 700; }
+        .bg-head-imp { background-color: #f0fdf4; color: #166534; font-weight: 700; }
+
+        /* 안 (Don't) - Warm amber */
+        .bg-an { background-color: #fffbeb; color: #92400e; font-weight: 700; }
+        .bg-an-light { background-color: #fefce8; }
+
+        /* 못 (Can't) - Cool blue */
+        .bg-mot { background-color: #eff6ff; color: #1e40af; font-weight: 700; }
+        .bg-mot-light { background-color: #f0f9ff; }
+
+        /* 말다 (Don't do) - Soft rose */
+        .bg-malda { background-color: #fff1f2; color: #be123c; font-weight: 700; }
+        .bg-malda-light { background-color: #fef2f2; }
+
+        /* Category Column */
+        .col-cat {
+            background-color: #ecfdf5;
+            font-weight: 800;
+            color: #059669;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            width: 4%;
+        }
+
+        .col-cat-adj {
+            background-color: #ecfdf5;
+            font-weight: 800;
+            color: #059669;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            width: 4%;
+        }
+
+        /* Base Form Column */
+        .col-base {
+            width: 8%;
+            font-weight: 800;
+            color: #1e293b;
+            background-color: #f8fafc;
+        }
+
+        .col-conj { width: 14.6%; }
+
+        /* Uniform row height for ALL rows */
+        tr { height: 12mm; }
+        th, td { height: 12mm; }
+
+        /* Strikethrough */
+        .wrong {
+            text-decoration: line-through;
+            text-decoration-color: #ef4444;
+            text-decoration-thickness: 1.5px;
+            color: #94a3b8;
+        }
+
+        /* Zebra - subtle green */
+        tbody tr:nth-child(even) {
+            background-color: #f0fdf4; 
+        }
+
+        /* Empty cells: no background */
+        td:empty {
+            background-color: white !important;
+        }
+
+        /* Column background tinting for conjugation areas */
+        thead th.border-an { border-bottom: 3px solid #f59e0b; }
+        thead th.border-mot { border-bottom: 3px solid #3b82f6; }
+        thead th.border-malda { border-bottom: 3px solid #e11d48; }
+
+        /* Footer */
+        .page-footer {
+            position: absolute;
+            bottom: 10mm;
+            left: 18mm;
+            right: 18mm;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 8px;
+            display: flex;
+            justify-content: space-between;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .page-container { width: 100%; margin: 0; padding: 20mm 18mm 25mm 18mm; box-shadow: none; border: none; }
+            
+            .bg-head-main { background-color: #ecfdf5 !important; -webkit-print-color-adjust: exact; }
+            .bg-head-decl { background-color: #f0fdf4 !important; -webkit-print-color-adjust: exact; }
+            .bg-head-imp { background-color: #f0fdf4 !important; -webkit-print-color-adjust: exact; }
+            .bg-an { background-color: #fffbeb !important; -webkit-print-color-adjust: exact; }
+            .bg-mot { background-color: #eff6ff !important; -webkit-print-color-adjust: exact; }
+            .bg-malda { background-color: #fff1f2 !important; -webkit-print-color-adjust: exact; }
+            .col-cat { background-color: #ecfdf5 !important; -webkit-print-color-adjust: exact; }
+            .col-cat-adj { background-color: #ecfdf5 !important; -webkit-print-color-adjust: exact; }
+            .col-base { background-color: #f8fafc !important; -webkit-print-color-adjust: exact; }
+            tbody tr:nth-child(even) { background-color: #f0fdf4 !important; -webkit-print-color-adjust: exact; }
+            td:empty { background-color: white !important; -webkit-print-color-adjust: exact; }
+            
+            table { border: 3px solid #059669 !important; }
+            th, td { border-color: #cbd5e1 !important; }
+            .page-footer { border-top: 1px solid #e2e8f0 !important; -webkit-print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+        <!-- Header -->
+        <div class="section-header">
+            <div>
+                <span class="chapter-badge">2</span>
+                <h1 class="main-title" style="display:inline; margin-left:8px;">Negative Construction</h1>
+                <p class="sub-title eng">부정법 (안, 못, 말다)</p>
+            </div>
+            <span class="chapter-badge eng" style="background:#f1f5f9; color:#64748b;">VII. Appendix</span>
+        </div>
+
+        <!-- Table -->
+        <table>
+            <colgroup>
+                <col class="col-cat">
+                <col class="col-base">
+                <col class="col-conj">
+                <col class="col-conj">
+                <col class="col-conj">
+                <col class="col-conj">
+                <col class="col-conj">
+                <col class="col-conj">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th rowspan="3" colspan="2" class="bg-head-main">negative<br>부정법</th>
+                    <th colspan="4" class="bg-head-decl">서술문, 의문문 (Declarative, Interrogative)</th>
+                    <th colspan="2" class="bg-head-imp">명령문, 청유문 (Imp, Prop)</th>
+                </tr>
+                <tr>
+                    <th colspan="2" class="bg-an border-an">안 (Don't)</th>
+                    <th colspan="2" class="bg-mot border-mot">못 (Can't)</th>
+                    <th colspan="2" class="bg-malda border-malda">말다 (~지 말다)</th>
+                </tr>
+                <tr>
+                    <th class="bg-an">안</th>
+                    <th class="bg-an">~지 않다</th>
+                    <th class="bg-mot">못</th>
+                    <th class="bg-mot">~지 못하다</th>
+                    <th class="bg-malda">~지 마세요</th>
+                    <th class="bg-malda">~지 맙시다</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Verbs -->
+                <tr>
+                    <td rowspan="6" class="col-cat">동사</td>
+                    <td class="col-base">먹다</td>
+                    <td>안 먹다</td>
+                    <td>먹지 않다</td>
+                    <td>못 먹다</td>
+                    <td>먹지 못하다</td>
+                    <td>먹지 마세요</td>
+                    <td>먹지 맙시다</td>
+                </tr>
+                <tr>
+                    <td class="col-base">가다</td>
+                    <td>안 가다</td>
+                    <td>가지 않다</td>
+                    <td>못 가다</td>
+                    <td>가지 못하다</td>
+                    <td>가지 마세요</td>
+                    <td>가지 맙시다</td>
+                </tr>
+                <tr>
+                    <td class="col-base">하다</td>
+                    <td>안 하다</td>
+                    <td>하지 않다</td>
+                    <td>못 하다</td>
+                    <td>하지 못하다</td>
+                    <td>하지 마세요</td>
+                    <td>하지 맙시다</td>
+                </tr>
+                <tr>
+                    <td class="col-base">공부하다</td>
+                    <td class="wrong">안 공부하다</td>
+                    <td>공부하지 않다</td>
+                    <td class="wrong">못 공부하다</td>
+                    <td>공부하지 못하다</td>
+                    <td>공부하지 마세요</td>
+                    <td>공부하지 맙시다</td>
+                </tr>
+                <tr>
+                    <td class="col-base">사랑하다</td>
+                    <td class="wrong">안 사랑하다</td>
+                    <td>사랑하지 않다</td>
+                    <td class="wrong">못 사랑하다</td>
+                    <td>사랑하지 못하다</td>
+                    <td>사랑하지 마세요</td>
+                    <td>사랑하지 맙시다</td>
+                </tr>
+                <tr>
+                    <td class="col-base">이다</td>
+                    <td colspan="2" style="font-weight:700; color:#059669;">~이/가 아니다</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <!-- Adjectives -->
+                <tr>
+                    <td rowspan="3" class="col-cat-adj">형용사</td>
+                    <td class="col-base">높다</td>
+                    <td>안 높다</td>
+                    <td>높지 않다</td>
+                    <td class="wrong">못 높다</td>
+                    <td>높지 못하다</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="col-base">예쁘다</td>
+                    <td>안 예쁘다</td>
+                    <td>예쁘지 않다</td>
+                    <td class="wrong">못 예쁘다</td>
+                    <td>예쁘지 못하다</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="col-base">똑똑하다</td>
+                    <td>안 똑똑하다</td>
+                    <td>똑똑하지 않다</td>
+                    <td class="wrong">못 똑똑하다</td>
+                    <td>똑똑하지 못하다</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Footer -->
+        <div class="page-footer">
+            <span>118</span>
+            <span>Amazing Korean 1</span>
+        </div>
+    </div>
+
+<style>
+.q-cell .q-text{display:none;}
+.q-cell:not(.revealed){text-align:center !important;}
+.q-cell.revealed .q-text{display:inline;cursor:pointer;}
+.q-cell.revealed .q-ans{display:none;}
+.q-ans{background:#fff;border:1px solid #cbd5e1;color:#16a34a;padding:1px 9px;border-radius:8px;cursor:pointer;font-size:0.92rem;font-weight:800;font-family:inherit;line-height:1.4;text-decoration:none;}
+.q-ans:hover{background:#f0fdf4;border-color:#86efac;}
+.ans-bar{margin:14px 0 10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.ans-btn{background:#fff;border:1px solid #cbd5e1;color:#475569;padding:5px 12px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.82rem;font-family:inherit;}
+.ans-btn:hover{background:#f1f5f9;}
+.ans-hint{font-size:0.8rem;color:#94a3b8;}.page-container tbody tr:first-child td{background:#fff7ed !important;}.page-container tbody tr:first-child .col-base{position:relative;}.page-container tbody tr:first-child .col-base::after{content:"예시";display:block;font-size:0.56rem;font-weight:800;color:#f59e0b;}
+@media print{.q-cell .q-text{display:inline !important;}.q-ans,.ans-bar{display:none !important;}}
+</style>
+<script>
+(function(){
+  var tbl = document.querySelector('.page-container table');
+  if(!tbl) return;
+  tbl.querySelectorAll('tbody td').forEach(function(cell){
+    if(cell.classList.contains('col-cat')||cell.classList.contains('col-cat-adj')||cell.classList.contains('col-base')) return;
+    if(cell.textContent.trim()==='') return; if(cell.parentNode===tbl.tBodies[0].rows[0]) return;
+    cell.innerHTML='<span class="q-text" onclick="qHide(this)">'+cell.innerHTML+'</span><button class="q-ans" onclick="qReveal(this)">?</button>';
+    cell.classList.add('q-cell');
+  });
+  var bar=document.createElement('div');
+  bar.className='ans-bar';
+  bar.innerHTML='<button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기 (Show all)</button><button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기 (Hide again)</button><span class="ans-hint">각 칸의 ?를 눌러 정답 확인, 정답을 다시 누르면 가려집니다 · Tap ? to reveal, tap again to hide</span>';
+  tbl.parentNode.insertBefore(bar, tbl);
+})();
+function qReveal(b){ var c=b.closest('.q-cell'); if(c) c.classList.add('revealed'); }
+function qHide(t){ var c=t.closest('.q-cell'); if(c) c.classList.remove('revealed'); }
+function qAll(btn,show){ var tbl=btn.closest('.ans-bar').nextElementSibling; while(tbl && tbl.tagName!=='TABLE') tbl=tbl.nextElementSibling; if(!tbl) return; tbl.querySelectorAll('.q-cell').forEach(function(c){ if(show) c.classList.add('revealed'); else c.classList.remove('revealed'); }); }
+</script>
+</body>
+</html>

@@ -1,0 +1,630 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Amazing Korean 1 — 미래형 C 받침있음 (Future Tense)</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet"><style>:root{--theme-primary:#3b82f6;--theme-dark:#1e40af;--theme-light-bg:#eff6ff;}*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Noto Sans KR',sans-serif;background:#f1f5f9;color:#1e293b;line-height:1.8;padding:20px;}.container{max-width:800px;margin:0 auto;background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.08);padding:48px 40px;}h1{font-size:2rem;font-weight:900;border-bottom:4px solid var(--theme-primary);padding-bottom:12px;margin-bottom:4px;}h1.section-break{margin-top:48px;}h1+.subtitle{color:#64748b;font-size:1rem;margin-bottom:40px;}h2{font-size:1.5rem;font-weight:800;color:var(--theme-dark);margin-top:48px;margin-bottom:4px;padding-top:24px;border-top:2px solid #e2e8f0;}h2:first-of-type{border-top:none;margin-top:0;padding-top:0;}h2+.subtitle{color:#64748b;font-size:0.95rem;margin-bottom:20px;}h3{font-size:1.2rem;font-weight:700;color:var(--theme-dark);margin-top:36px;margin-bottom:12px;padding:10px 14px;background:var(--theme-light-bg);border-left:4px solid var(--theme-primary);border-radius:4px;}h4{font-size:1.05rem;font-weight:700;color:var(--theme-dark);margin-top:28px;margin-bottom:12px;padding:8px 12px;background:var(--theme-light-bg);border-left:4px solid var(--theme-primary);border-radius:4px;}h4.rule-h{margin-top:52px;margin-bottom:22px;padding:18px 24px;font-size:1.35rem;font-weight:900;color:#fff;background:linear-gradient(135deg,#3d5a85 0%,#2b3f5c 100%);border-left:8px solid #1e2a3f;border-radius:10px;letter-spacing:0.3px;box-shadow:0 5px 14px rgba(30,41,59,0.22);position:relative;}h4.rule-h::before{content:"";position:absolute;right:-1px;top:-1px;bottom:-1px;width:90px;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.08) 100%);border-top-right-radius:10px;border-bottom-right-radius:10px;pointer-events:none;}pre{background:#1e293b;color:#e2e8f0;padding:16px 20px;border-radius:8px;margin:12px 0 16px 0;overflow-x:auto;font-family:'Courier New',monospace;font-size:0.9rem;line-height:1.6;}table{width:100%;border-collapse:collapse;margin:12px 0 20px 0;font-size:0.88rem;table-layout:fixed;}thead th{background:var(--theme-light-bg);color:var(--theme-dark);font-weight:700;padding:10px 12px;border-bottom:2px solid var(--theme-primary);text-align:center;word-break:keep-all;}tbody td{padding:8px 12px;border-bottom:1px solid #e2e8f0;text-align:center;word-break:keep-all;}tbody tr:nth-child(even){background:#f8fafc;}.ko{margin-bottom:2px;}.en{color:#64748b;font-size:0.92rem;margin-bottom:16px;}.vocab-box{background:var(--theme-light-bg);border-radius:10px;padding:14px 18px;margin:12px 0 16px 0;border-left:4px solid var(--theme-primary);}.vocab-box .vocab-title{font-size:0.8rem;font-weight:700;color:var(--theme-dark);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;}.try-box{background:var(--theme-light-bg);border-radius:10px;padding:14px 18px;margin:12px 0 8px 0;border-left:4px solid var(--theme-primary);}.try-box .try-title{font-size:0.8rem;font-weight:700;color:var(--theme-dark);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;}.answer-box{margin:0 0 24px 0;}.answer-toggle{background:var(--theme-dark);color:white;border:none;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:0.85rem;font-weight:700;margin-top:8px;}.answer-toggle:hover{opacity:0.9;}.answer-content{display:none;margin-top:10px;padding:12px 16px;background:var(--theme-light-bg);border-radius:8px;border-left:4px solid var(--theme-primary);}.answer-content .ans-kr{font-size:1.15rem;font-weight:900;color:var(--theme-dark);}.note-box{background:#fef3c7;border-left:4px solid #f59e0b;padding:12px 16px;border-radius:4px;margin:12px 0 16px 0;font-size:0.92rem;}.quiz-box{background:#f0fdf4;border:2px solid #86efac;border-radius:12px;padding:20px 24px;margin:24px 0;}.quiz-box h4{background:#dcfce7;border-left-color:#22c55e;color:#166534;margin-top:0;}.quiz-box .answer-toggle{background:#166534;}.quiz-box .answer-toggle:hover{background:#15803d;}.quiz-box .answers{display:none;margin-top:12px;padding-top:12px;border-top:1px dashed #86efac;}blockquote{background:#f8fafc;border-left:3px solid #cbd5e1;padding:12px 16px;margin:12px 0 16px 0;border-radius:4px;font-size:0.95rem;line-height:2;}hr{border:none;border-top:1px solid #e2e8f0;margin:32px 0;}.footer{text-align:center;color:#94a3b8;font-size:0.85rem;margin-top:48px;padding-top:20px;border-top:2px solid #e2e8f0;}.speak-btn{background:none;border:none;cursor:pointer;font-size:1.3rem;vertical-align:middle;margin-left:8px;padding:2px 6px;border-radius:6px;transition:background 0.2s;}.speak-btn:hover{background:#e0e7ff;}.caution{background:#fef3c7;border-left:4px solid #f59e0b;padding:12px 16px;border-radius:4px;margin:12px 0 16px 0;font-size:0.92rem;}.exception{background:#fef2f2;border-left:4px solid #ef4444;padding:12px 16px;border-radius:4px;margin:12px 0 16px 0;font-size:0.92rem;}.diagram-box{display:flex;gap:40px;justify-content:center;margin:16px 0 20px 0;}.char-box{background:#f8fafc;border:2px solid #cbd5e1;border-radius:8px;padding:16px 24px;text-align:center;min-width:120px;}.char-box .label{font-size:0.8rem;color:#64748b;margin-bottom:8px;}.char-box .parts span{display:block;font-size:1.1rem;font-weight:700;line-height:1.6;}.char-box .parts .batchim{color:#dc2626;}.char-box .result{font-size:1.5rem;font-weight:900;margin-top:8px;color:#1e293b;}@media print{body{background:none;padding:0;}.container{box-shadow:none;padding:20px;}.quiz-box .answers{display:block!important;}.quiz-box .answer-toggle,.answer-toggle{display:none;}.answer-content{display:block!important;}}
+.mc-q{margin:14px 0;padding:12px 16px;background:#fff;border-radius:8px;border:1px solid #d1d5db;}
+.mc-q .mc-sentence{font-size:1.05rem;font-weight:700;margin-bottom:10px;}
+.mc-q .mc-sentence .mc-blank{color:#dc2626;font-weight:900;}
+.mc-opts{display:flex;gap:10px;flex-wrap:wrap;}
+.mc-opt-wrap{display:flex;flex-direction:column;align-items:center;gap:4px;}
+.mc-btn{padding:8px 16px;border:2px solid #d1d5db;border-radius:8px;background:#fff;font-size:0.95rem;font-weight:700;cursor:pointer;transition:all 0.2s;min-width:100px;}
+.mc-btn:hover{background:#f0fdf4;border-color:#86efac;}
+.mc-btn.correct{background:#dcfce7;border-color:#22c55e;color:#166534;}
+.mc-btn.wrong{background:#fef2f2;border-color:#ef4444;color:#dc2626;opacity:0.6;}
+.mc-btn:disabled{cursor:default;}
+.mc-btn:disabled:hover{background:inherit;}
+.mc-fb{font-size:1.2rem;font-weight:900;min-height:1.4em;}
+.mc-score{text-align:center;font-size:1.1rem;font-weight:900;color:#166534;margin-top:16px;padding:12px;background:#dcfce7;border-radius:8px;display:none;}
+.main-title{font-size:3rem;font-weight:900;border-bottom:5px solid var(--theme-primary);padding-bottom:14px;margin-bottom:10px;color:var(--theme-primary);letter-spacing:-0.5px;}
+@media (max-width:720px){.main-title{font-size:2.2rem;}}</style></head><body><div class="container">
+<!-- ===== 미래형 Ⓒ 받침있음 (lean) ===== -->
+<h1 class="main-title">시제 3 · 미래형 — Ⓒ 받침 있음</h1>
+<p class="subtitle">Tense 3 · Future Tense — Ⓒ Has 받침 (을 것입니다)</p>
+<style>
+.pr80{margin:16px 0 10px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;box-shadow:0 1px 6px rgba(100,116,139,0.06);}
+.pr80-bar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:12px 16px;background:#eff6ff;border-bottom:1px solid #bfdbfe;}
+.pr80-score{font-weight:800;color:#1e3a8a;}
+.pr80-score b{color:#2563eb;font-size:1.15rem;}
+.pr80-btns{display:flex;gap:8px;flex-wrap:wrap;}
+.pr80-btn{background:#fff;border:1px solid #bfdbfe;color:#1e40af;padding:7px 14px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.85rem;font-family:inherit;}
+.pr80-btn:hover{background:#dbeafe;}
+.pr80-btn.primary{background:#2563eb;color:#fff;border-color:#2563eb;}
+.pr80 table{width:100%;border-collapse:collapse;table-layout:auto;}
+.pr80 input.pri{min-width:120px;}
+.pr80 .ans-btn,.pr80 .pre-btn{padding:6px 9px;font-size:0.8rem;}
+.pr80 tbody td{padding:8px 10px;border-bottom:1px solid #f1f5f9;vertical-align:middle;}
+.pr80 .prn{text-align:center;color:#94a3b8;font-weight:700;width:6%;font-size:0.85rem;}
+.pr80 .prb{width:22%;text-align:left;}
+.pr80 thead th{background:#f8fafc;color:#475569;font-weight:700;padding:9px 8px;font-size:0.78rem;border-bottom:1px solid #e2e8f0;text-align:center;}
+.pr80 input.pri.prex{background:#eff6ff;border-color:#bfdbfe;color:#1e40af;font-weight:800;}
+.pr80 .preg{display:inline-block;margin-left:6px;font-size:0.66rem;font-weight:800;color:#92400e;background:#fef7d6;border:1px solid #e5d49a;padding:1px 6px;border-radius:8px;}
+.pr80 .prb b{font-size:1.05rem;color:#1e293b;}
+.pr80 .prb small{display:block;color:#94a3b8;margin-left:0;font-size:0.8rem;line-height:1.35;margin-top:1px;}
+.pr80 input.pri{width:100%;padding:9px 12px;font-size:1.02rem;font-weight:700;color:#1e293b;border:1.5px solid #cbd5e1;border-radius:8px;text-align:center;box-sizing:border-box;font-family:'Noto Sans KR',sans-serif;}
+.pr80 input.pri:focus{outline:none;border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,0.12);}
+.pr80 input.pri.correct{background:#ecfdf5;border-color:#6ee7b7;color:#047857;}
+.pr80 input.pri.wrong{background:#fef2f2;border-color:#fca5a5;color:#b91c1c;}
+.pr80 .pre-btn{background:#fffbeb;border:1px solid #fde68a;color:#92400e;padding:7px 10px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.82rem;white-space:nowrap;font-family:inherit;}
+.pr80 .pre-btn:hover{background:#fef3c7;}
+.pr80 .ans-btn{background:#ecfdf5;border:1px solid #6ee7b7;color:#047857;padding:7px 10px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.82rem;white-space:nowrap;font-family:inherit;margin-right:5px;}
+.pr80 .ans-btn:hover{background:#d1fae5;}
+.pr80 .pre-row td{background:#fffdf5;border-bottom:1px solid #fde68a;}
+.pr80 .pre{font-size:0.92rem;color:#78350f;line-height:1.7;}
+.pr80 .pre .pr-cat{display:inline-block;font-size:0.72rem;font-weight:800;color:#fff;background:#3b82f6;border-radius:6px;padding:1px 8px;margin-right:8px;}
+.pr80 .pre b{color:#1d4ed8;}
+.pr80 .pre .pr-d{display:inline-block;margin-left:8px;color:#475569;font-weight:700;}
+.pr80 .pre .pr-en{color:#64748b;font-style:italic;font-weight:500;font-size:0.84rem;}
+.pr80 .pre .pr-en .pr-en-w{color:#94a3b8;font-style:normal;}
+@media(max-width:560px){.pr80 .prb{width:42%;}.pr80 .prb small{display:block;margin-left:0;}}
+</style>
+<style>
+.conj-rule{border:1px solid;border-radius:14px;padding:18px;margin:14px 0 18px 0;}
+.conj-rule.r-a{background:linear-gradient(135deg,#f7faff 0%,#eef3fa 100%);border-color:#c4d2e2;}
+.conj-rule.r-b{background:linear-gradient(135deg,#f5faf6 0%,#ecf5ef 100%);border-color:#bcd3c2;}
+.conj-rule.r-c{background:linear-gradient(135deg,#fdf6f6 0%,#fbeeee 100%);border-color:#e0bfbf;}
+.conj-rule .cr-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 14px;background:#fff;border:1px solid;border-radius:10px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,0.04);}
+.conj-rule.r-a .cr-head{border-color:#dbe5f1;}
+.conj-rule.r-b .cr-head{border-color:#d4e3d7;}
+.conj-rule.r-c .cr-head{border-color:#ecd6d6;}
+.conj-rule .cr-badge{color:#fff;font-weight:800;padding:6px 14px;border-radius:20px;font-size:1rem;white-space:nowrap;letter-spacing:0.3px;flex-shrink:0;}
+.conj-rule.r-a .cr-badge{background:#3d5a85;}
+.conj-rule.r-b .cr-badge{background:#3f6149;}
+.conj-rule.r-c .cr-badge{background:#874949;}
+.conj-rule .cr-title{display:flex;flex-direction:column;gap:2px;flex:1;min-width:180px;}
+.conj-rule .cr-title .cr-ko{font-size:0.88rem;font-weight:700;color:#555;line-height:1.5;}
+.conj-rule .cr-title .cr-en{font-size:0.8rem;color:#888;font-style:italic;font-family:'Lato',sans-serif;line-height:1.45;}
+.conj-rule .cr-rows{display:flex;flex-direction:column;gap:8px;}
+.conj-rule .cr-row{display:grid;align-items:center;gap:8px;background:#fff;border:1px solid;border-radius:8px;padding:10px 12px;transition:transform 0.18s ease,box-shadow 0.18s ease;}
+.conj-rule.r-a .cr-row{border-color:#dbe5f1;}
+.conj-rule.r-b .cr-row{border-color:#d4e3d7;}
+.conj-rule.r-c .cr-row{border-color:#ecd6d6;}
+.conj-rule .cr-row:hover{transform:translateX(2px);box-shadow:0 3px 8px rgba(70,90,120,0.08);}
+.conj-rule.r-a .cr-row,.conj-rule.r-b .cr-row{grid-template-columns:1fr 22px 1.4fr 22px 1.4fr;}
+.conj-rule.r-c .cr-row{grid-template-columns:1fr 22px 0.7fr 22px 0.7fr 22px 1.5fr;}
+.conj-rule .cr-base{display:flex;flex-direction:column;align-items:center;gap:4px;}
+.conj-rule .cr-base .cb-word{font-size:0.96rem;font-weight:700;color:#444;line-height:1;display:inline-flex;align-items:center;justify-content:center;background:#fff;border:1.5px solid;border-radius:7px;padding:5px 10px;min-width:88px;white-space:nowrap;}
+.conj-rule.r-a .cb-word{border-color:#c4d2e2;}
+.conj-rule.r-b .cb-word{border-color:#bcd3c2;}
+.conj-rule.r-c .cb-word{border-color:#e0bfbf;}
+.conj-rule .cr-base .cb-stem,.conj-rule .cr-base .cb-da{padding:0;margin:0;background:none;color:inherit;text-decoration:none;border-radius:0;}
+.conj-rule .cr-base .cb-en{font-size:0.76rem;color:#888;font-weight:500;font-style:normal;}
+.conj-rule .cr-arrow{text-align:center;font-weight:800;font-size:1.05rem;}
+.conj-rule.r-a .cr-arrow{color:#3d5a85;}
+.conj-rule.r-b .cr-arrow{color:#3f6149;}
+.conj-rule.r-c .cr-arrow{color:#874949;}
+.conj-rule .cr-step{display:flex;justify-content:center;align-items:center;gap:6px;}
+.conj-rule .cr-step .cs-plus{font-weight:800;font-size:0.95rem;color:#3d5a85;}
+.conj-rule .cr-step .cs-chip{font-size:0.96rem;font-weight:700;padding:5px 10px;border-radius:7px;letter-spacing:-0.3px;line-height:1;display:inline-flex;align-items:center;border:1.5px solid;}
+.conj-rule.r-a .cr-step .cs-chip{background:#eef2f8;color:#3d5a85;border-color:#c4d2e2;}
+.conj-rule.r-b .cr-step .cs-chip{background:#eef7f0;color:#3f6149;border-color:#bcd3c2;}
+.conj-rule.r-c .cr-step .cs-chip{background:#fbeeee;color:#874949;border-color:#e0bfbf;}
+.conj-rule .cr-step.is-drop .cs-chip{background:#fff7e6;color:#8a6a26;border:1.5px dashed #e0c889;}
+.conj-rule .cr-result{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;}
+.conj-rule .cr-result .res{font-size:0.96rem;font-weight:700;padding:5px 10px;border-radius:7px;line-height:1;min-width:148px;text-align:center;box-sizing:border-box;white-space:nowrap;}
+.conj-rule .cr-result .res .res-tag{display:none;}
+.conj-rule.r-a .cr-result .res.statement{background:#3d5a85;color:#fff;}
+.conj-rule.r-a .cr-result .res.question{background:#fff;color:#3d5a85;border:1.5px solid #3d5a85;}
+.conj-rule.r-b .cr-result .res.statement{background:#3f6149;color:#fff;}
+.conj-rule.r-b .cr-result .res.question{background:#fff;color:#3f6149;border:1.5px solid #3f6149;}
+.conj-rule.r-c .cr-result .res.statement{background:#874949;color:#fff;}
+.conj-rule.r-c .cr-result .res.question{background:#fff;color:#874949;border:1.5px solid #874949;}
+.conj-rule .cr-coltitles{display:grid;align-items:center;gap:8px;padding:0 12px 8px 12px;font-size:0.72rem;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;font-family:'Lato',sans-serif;}
+.conj-rule.r-a .cr-coltitles{color:#3d5a85;}
+.conj-rule.r-b .cr-coltitles{color:#3f6149;}
+.conj-rule.r-c .cr-coltitles{color:#874949;}
+.conj-rule.r-a .cr-coltitles,.conj-rule.r-b .cr-coltitles{grid-template-columns:1fr 22px 1.4fr 22px 1.4fr;}
+.conj-rule.r-c .cr-coltitles{grid-template-columns:1fr 22px 0.7fr 22px 0.7fr 22px 1.5fr;}
+.conj-rule .cr-coltitles > div{text-align:center;}
+@media (max-width:720px){
+  .conj-rule{padding:14px 12px;}
+  .conj-rule .cr-head{padding:9px 10px;gap:8px;}
+  .conj-rule .cr-badge{font-size:0.85rem;padding:5px 11px;}
+  .conj-rule.r-a .cr-row,.conj-rule.r-b .cr-row{grid-template-columns:0.9fr 14px 1.3fr 14px 1.25fr;gap:5px;padding:9px 8px;}
+  .conj-rule.r-c .cr-row{grid-template-columns:0.9fr 14px 0.6fr 14px 0.6fr 14px 1.25fr;gap:4px;padding:9px 6px;}
+  .conj-rule.r-a .cr-coltitles,.conj-rule.r-b .cr-coltitles{grid-template-columns:0.9fr 14px 1.3fr 14px 1.25fr;gap:5px;font-size:0.58rem;padding:0 8px 8px 8px;}
+  .conj-rule.r-c .cr-coltitles{grid-template-columns:0.9fr 14px 0.6fr 14px 0.6fr 14px 1.25fr;gap:4px;font-size:0.56rem;padding:0 6px 8px 6px;}
+  .conj-rule .cr-arrow{font-size:0.9rem;}
+  .conj-rule .cr-base .cb-word{font-size:0.9rem;padding:5px 8px;min-width:80px;}
+  .conj-rule .cr-base .cb-en{font-size:0.66rem;}
+  .conj-rule .cr-step .cs-chip{font-size:0.86rem;padding:4px 7px;}
+  .conj-rule .cr-result .res{font-size:0.92rem;padding:5px 9px;min-width:124px;}
+}
+@media (max-width:460px){
+  .conj-rule .cr-coltitles{display:none;}
+  .conj-rule.r-a .cr-row,.conj-rule.r-b .cr-row,.conj-rule.r-c .cr-row{grid-template-columns:1fr;gap:6px;text-align:center;padding:12px;}
+  .conj-rule .cr-arrow{transform:rotate(90deg);font-size:1.05rem;}
+}
+.rule-summary{margin:14px 0 18px 0;background:linear-gradient(135deg,#f7f9fc 0%,#f1f5fa 100%);border:1px solid #e0e8f2;border-radius:12px;padding:14px 16px;}
+.rule-summary .rs-head{display:grid;grid-template-columns:1fr 1.1fr 2.05fr;gap:10px;padding:4px 14px 10px 14px;font-size:0.78rem;font-weight:800;color:#94a3b8;letter-spacing:0.5px;font-family:'Noto Sans KR',sans-serif;border-bottom:1px dashed #d8e0eb;margin-bottom:8px;}
+.rule-summary .rs-head > div{display:flex;flex-direction:column;gap:1px;}
+.rule-summary .rs-head small{font-size:0.62rem;font-weight:700;color:#a8b3c2;letter-spacing:0.5px;text-transform:uppercase;font-family:'Lato',sans-serif;}
+.rule-summary .rs-rows{display:flex;flex-direction:column;gap:6px;}
+.rule-summary .rs-row{display:grid;grid-template-columns:1fr 1.1fr 2.05fr;gap:10px;align-items:center;background:#fff;border:1px solid #e6ebf3;border-radius:10px;padding:10px 14px;transition:transform 0.15s ease,box-shadow 0.15s ease;}
+.rule-summary .rs-row:hover{transform:translateX(2px);box-shadow:0 2px 6px rgba(70,90,120,0.06);}
+.rule-summary .rs-row.r-a{border-left:4px solid #b8c8dd;}
+.rule-summary .rs-row.r-b{border-left:4px solid #c6d8c9;}
+.rule-summary .rs-row.r-c{border-left:4px solid #e3c8c8;}
+.rule-summary .rs-cell{display:flex;align-items:center;}
+.rule-summary .rs-end{gap:10px;}
+.rule-summary .rs-badge{font-size:0.85rem;font-weight:800;padding:4px 8px;border-radius:7px;font-family:'Lato',sans-serif;flex-shrink:0;line-height:1;}
+.rule-summary .rs-row.r-a .rs-badge{background:#dbe5f1;color:#3d5a85;}
+.rule-summary .rs-row.r-b .rs-badge{background:#d4e3d7;color:#3f6149;}
+.rule-summary .rs-row.r-c .rs-badge{background:#ecd6d6;color:#874949;}
+.rule-summary .rs-end-text{display:flex;flex-direction:column;gap:1px;line-height:1.2;}
+.rule-summary .rs-end-text strong{font-size:0.95rem;color:#334155;}
+.rule-summary .rs-sub{font-size:0.7rem;color:#94a3b8;font-family:'Lato',sans-serif;font-weight:600;letter-spacing:0.2px;}
+.rule-summary .rs-rule{gap:8px;flex-wrap:nowrap;align-items:center;justify-content:center;}
+.rule-summary .rs-rule .rs-op{color:#64748b;font-weight:800;font-size:0.95rem;}
+.rule-summary .rs-rule .rs-plus{color:#64748b;font-weight:800;font-size:0.9rem;margin:0 1px;}
+.rule-summary .rs-ends{display:flex;flex-direction:column;gap:5px;}
+.rule-summary .rs-endrow{display:flex;align-items:center;gap:6px;}
+.rule-summary .rs-tag{font-size:0.62rem;font-weight:800;color:#94a3b8;font-family:'Lato',sans-serif;letter-spacing:0.2px;}
+.rule-summary .rs-droptag{font-size:0.6rem;font-weight:800;color:#8a6a26;background:#fef3e2;border:1px solid #f0dfa6;padding:1px 5px;border-radius:6px;line-height:1;white-space:nowrap;}
+.rule-summary .rs-rule .rs-ending{font-size:0.88rem;font-weight:800;padding:4px 9px;border-radius:5px;line-height:1;background:#eef2f8;color:#3d5a85;min-width:54px;text-align:center;white-space:nowrap;}
+.rule-summary .rs-row.r-b .rs-rule .rs-ending{background:#eef7f0;color:#3f6149;}
+.rule-summary .rs-rule .rs-ending.drop{background:#fef3e2;color:#8a6a26;text-decoration:line-through;text-decoration-color:#c9a55c;}
+.rule-summary .rs-ex{gap:6px;flex-wrap:nowrap;align-items:center;}
+.rule-summary .rs-ex-pair{display:flex;flex-direction:column;gap:5px;align-items:flex-start;}
+.rule-summary .rs-ex-stack{flex-direction:column;align-items:flex-start;gap:6px;}
+.rule-summary .rs-ex-main{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.rule-summary .rs-stem{font-size:0.95rem;font-weight:800;padding:4px 9px;border-radius:5px;color:#475569;background:#f1f5f9;line-height:1;}
+.rule-summary .rs-arrow{color:#cbd5e1;font-weight:700;font-size:0.95rem;}
+.rule-summary .rs-result{font-size:0.92rem;font-weight:800;padding:4px 9px;border-radius:5px;line-height:1;}
+.rule-summary .rs-row.r-a .rs-result.statement,.rule-summary .rs-row.r-c .rs-result.statement{background:#3d5a85;color:#fff;}
+.rule-summary .rs-row.r-a .rs-result.question,.rule-summary .rs-row.r-c .rs-result.question{background:#fff;color:#3d5a85;border:1.5px solid #3d5a85;}
+.rule-summary .rs-row.r-b .rs-result.statement{background:#3f6149;color:#fff;}
+.rule-summary .rs-row.r-b .rs-result.question{background:#fff;color:#3f6149;border:1.5px solid #3f6149;}
+.rule-summary .rs-base{font-size:0.92rem;font-weight:800;color:#334155;line-height:1;white-space:nowrap;}
+.rule-summary .rs-colon{color:#94a3b8;font-weight:800;margin:0 1px;}
+.rule-summary .rs-op2{color:#64748b;font-weight:800;font-size:0.88rem;}
+.rule-summary .rs-end2{font-size:0.84rem;font-weight:800;padding:3px 7px;border-radius:5px;line-height:1;background:#eef2f8;color:#3d5a85;}
+.rule-summary .rs-row.r-b .rs-end2{background:#eef7f0;color:#3f6149;}
+.rule-summary .rs-end2.drop{background:#fef3e2;color:#8a6a26;text-decoration:line-through;text-decoration-color:#c9a55c;}
+@media (max-width:680px){
+  .rule-summary .rs-head{display:none;}
+  .rule-summary .rs-row{grid-template-columns:1fr;gap:8px;}
+  .rule-summary .rs-cell{justify-content:flex-start;flex-wrap:wrap;}
+}
+.conj-rule.r-a .cr-row,.conj-rule.r-b .cr-row{grid-template-columns:0.85fr 22px 1.45fr 22px 1.55fr;}
+.conj-rule.r-a .cr-coltitles,.conj-rule.r-b .cr-coltitles{grid-template-columns:0.85fr 22px 1.45fr 22px 1.55fr;}
+.rule-summary .rs-head{grid-template-columns:0.9fr 1.35fr 1.8fr;}
+.rule-summary .rs-row{grid-template-columns:0.9fr 1.35fr 1.8fr;}
+.rule-summary .rs-ex .rs-base{min-width:4.3em;text-align:right;}
+.rule-summary .rs-ex-pair{align-items:stretch;}
+.rule-summary .rs-ex-pair .rs-result{text-align:center;}
+.rule-summary .rs-tag{white-space:nowrap;}
+.rule-summary .rs-ending{white-space:nowrap;}
+.conj-rule .cr-step .cs-plus{color:#3f6149;}
+</style>
+<div class="conj-rule r-b">
+  <div class="cr-head">
+    <span class="cr-badge">🅲 받침 있음 → 을 것입니다</span>
+    <div class="cr-title">
+      <span class="cr-ko">어간에 '을 것입니다(평서) · 을 것입니까(의문)'를 붙입니다</span>
+      <span class="cr-en">Has 받침 — add 을 것입니다 (statement) / 을 것입니까 (question) right after the stem.</span>
+    </div>
+  </div>
+  <div class="cr-coltitles"><div>기본형 · Base</div><div></div><div>어간 + 을 것입니다 · Stem + 을 것입니다</div><div></div><div>결과 · Result</div></div>
+  <div class="cr-rows">
+    <div class="cr-row">
+      <div class="cr-base"><span class="cb-word"><span class="cb-stem">먹</span><span class="cb-da">다</span></span><span class="cb-en">to eat</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-step"><span class="cs-chip">먹</span><span class="cs-plus">+</span><span class="cs-chip">을 것입니다</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-result"><span class="res statement">먹을 것입니다</span><span class="res question">먹을 것입니까?</span></div>
+    </div>
+    <div class="cr-row">
+      <div class="cr-base"><span class="cb-word"><span class="cb-stem">읽</span><span class="cb-da">다</span></span><span class="cb-en">to read</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-step"><span class="cs-chip">읽</span><span class="cs-plus">+</span><span class="cs-chip">을 것입니다</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-result"><span class="res statement">읽을 것입니다</span><span class="res question">읽을 것입니까?</span></div>
+    </div>
+    <div class="cr-row">
+      <div class="cr-base"><span class="cb-word"><span class="cb-stem">찾</span><span class="cb-da">다</span></span><span class="cb-en">to find</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-step"><span class="cs-chip">찾</span><span class="cs-plus">+</span><span class="cs-chip">을 것입니다</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-result"><span class="res statement">찾을 것입니다</span><span class="res question">찾을 것입니까?</span></div>
+    </div>
+    <div class="cr-row">
+      <div class="cr-base"><span class="cb-word"><span class="cb-stem">닫</span><span class="cb-da">다</span></span><span class="cb-en">to close</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-step"><span class="cs-chip">닫</span><span class="cs-plus">+</span><span class="cs-chip">을 것입니다</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-result"><span class="res statement">닫을 것입니다</span><span class="res question">닫을 것입니까?</span></div>
+    </div>
+  </div>
+</div>
+<h3>요약 · Summary</h3>
+<p class="ko">어간(stem)의 마지막 글자를 확인하세요!</p>
+<p class="en">Check the last letter of the 어간 (stem)!</p>
+
+<div class="rule-summary">
+  <div class="rs-head">
+    <div>어간 끝<small>Stem ending</small></div>
+    <div>규칙<small>Rule</small></div>
+    <div>예시<small>Example</small></div>
+  </div>
+  <div class="rs-rows">
+    <div class="rs-row r-a">
+      <div class="rs-cell rs-end">
+        <span class="rs-badge">🅰</span>
+        <div class="rs-end-text"><strong>받침 없음</strong><span class="rs-sub">No 받침</span></div>
+      </div>
+      <div class="rs-cell rs-rule"><span class="rs-op">+</span><div class="rs-ends"><span class="rs-endrow"><span class="rs-ending">ㄹ 것입니다</span><span class="rs-tag">평서</span></span><span class="rs-endrow"><span class="rs-ending">ㄹ 것입니까</span><span class="rs-tag">의문</span></span></div></div>
+      <div class="rs-cell rs-ex">
+        <span class="rs-base">가다</span>
+        <span class="rs-arrow">➜</span>
+        <span class="rs-ex-pair"><span class="rs-result statement">갈 것입니다</span><span class="rs-result question">갈 것입니까?</span></span>
+      </div>
+    </div>
+    <div class="rs-row r-b">
+      <div class="rs-cell rs-end">
+        <span class="rs-badge">🅱</span>
+        <div class="rs-end-text"><strong>~하다</strong><span class="rs-sub">하다-verb</span></div>
+      </div>
+      <div class="rs-cell rs-rule"><span class="rs-op">→</span><div class="rs-ends"><span class="rs-endrow"><span class="rs-ending">~할 것입니다</span><span class="rs-tag">평서</span></span><span class="rs-endrow"><span class="rs-ending">~할 것입니까</span><span class="rs-tag">의문</span></span></div></div>
+      <div class="rs-cell rs-ex">
+        <span class="rs-base">공부하다</span>
+        <span class="rs-arrow">➜</span>
+        <span class="rs-ex-pair"><span class="rs-result statement">공부할 것입니다</span><span class="rs-result question">공부할 것입니까?</span></span>
+      </div>
+    </div>
+    <div class="rs-row r-b">
+      <div class="rs-cell rs-end">
+        <span class="rs-badge">🅲</span>
+        <div class="rs-end-text"><strong>받침 있음</strong><span class="rs-sub">Has 받침</span></div>
+      </div>
+      <div class="rs-cell rs-rule"><span class="rs-op">+</span><div class="rs-ends"><span class="rs-endrow"><span class="rs-ending">을 것입니다</span><span class="rs-tag">평서</span></span><span class="rs-endrow"><span class="rs-ending">을 것입니까</span><span class="rs-tag">의문</span></span></div></div>
+      <div class="rs-cell rs-ex">
+        <span class="rs-base">먹다</span>
+        <span class="rs-arrow">➜</span>
+        <span class="rs-ex-pair"><span class="rs-result statement">먹을 것입니다</span><span class="rs-result question">먹을 것입니까?</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+<style>.pr80-h{margin:30px 0 2px;font-size:1.04rem;font-weight:800;color:#3d5a85;}</style>
+<hr>
+<h3 class="pr80-h">✍️ 미래형 직접 만들기 · Make the future form</h3>
+<div class="pr80">
+  <div class="pr80-bar">
+    <div class="pr80-score">맞은 개수 · Correct: <b id="pr80C">0</b> <span style="color:#94a3b8;">/ 46</span></div>
+    <div class="pr80-btns">
+      <button class="pr80-btn" onclick="pr80Reset()">🔄 초기화 (Reset)</button>
+      <button class="pr80-btn primary" onclick="pr80RevealAll()">💡 전체 정답</button>
+    </div>
+  </div>
+  <table><thead><tr><th style="width:6%">#</th><th style="text-align:left;">기본형 · Base</th><th>평서형 · Statement</th><th>의문형 · Question</th><th style="width:18%"></th></tr></thead><tbody id="pr80Body"></tbody></table>
+</div>
+
+<script>
+(function(){
+  var V='V',C='C',L='L',H='H',BI='BI';
+  var data=[
+    ["먹다","eat","먹을 것입니다",C],["읽다","read","읽을 것입니다",C],["찾다","find","찾을 것입니다",C],["받다","receive","받을 것입니다",C],["닫다","close","닫을 것입니다",C],
+    ["믿다","believe","믿을 것입니다",C],["입다","wear","입을 것입니다",C],["앉다","sit","앉을 것입니다",C],["웃다","laugh","웃을 것입니다",C],["씻다","wash","씻을 것입니다",C],
+    ["좋다","be good","좋을 것입니다",C],["같다","be same","같을 것입니다",C],["작다","be small","작을 것입니다",C],["많다","be many","많을 것입니다",C],["적다","be few","적을 것입니다",C],
+    ["늦다","be late","늦을 것입니다",C],["있다","exist, have","있을 것입니다",C],["없다","not exist","없을 것입니다",C],["좁다","be narrow","좁을 것입니다",C],["넓다","be wide","넓을 것입니다",C],
+    ["높다","be high","높을 것입니다",C],["낮다","be low","낮을 것입니다",C],["깊다","be deep","깊을 것입니다",C]
+  ];
+  window.TWORDS=data.map(function(w){return [w[0],w[1],w[2],w[2].replace(/다$/,'까?')];});
+  function pr80Exp(w){
+    var base=w[0], en=w[1], stem=base.slice(0,-1), ans=w[2], cat=w[3], label, rule, deriv, ren;
+    if(cat===H){label='하다 · 하다-verb';rule='<b>하다</b> 동사입니다 → \'‑하다\'를 <b>\'‑할 것입니다\'</b>로 바꿉니다.';deriv=base+' → <b>'+ans+'</b>';ren='A <b>하다</b>-verb → ‑하다 becomes <b>‑할 것입니다</b>.';}
+    else if(cat===L){label='ㄹ 받침 · ㄹ final';rule='어간이 받침 <b>ㄹ</b>로 끝납니다 → <b>그대로</b> \'것입니다\'를 붙입니다.';deriv=base+' → <b>'+ans+'</b>';ren='Stem ends in <b>ㄹ</b> → keep it, then add 것입니다.';}
+    else if(cat===BI){label='ㅂ 불규칙 · ㅂ-irregular';rule='받침 <b>ㅂ</b>이 <b>\'우\'</b>로 바뀌고 \'ㄹ 것입니다\'가 붙습니다.';deriv=base+' → <b>'+ans+'</b>';ren='<b>ㅂ</b> changes to 우, then ‑ㄹ 것입니다.';}
+    else if(cat===V){label='받침 없음 · No 받침';rule='어간에 받침이 <b>없습니다</b> → 어간 + <b>\'ㄹ 것입니다\'</b>.';deriv='\''+stem+'\' + ㄹ 것입니다 → <b>'+ans+'</b>';ren='No final consonant (받침) → stem + <b>ㄹ 것입니다</b>.';}
+    else{label='받침 있음 · Has 받침';rule='어간에 받침이 <b>있습니다</b> → 어간 + <b>\'을 것입니다\'</b>.';deriv='\''+stem+'\' + 을 것입니다 → <b>'+ans+'</b>';ren='Has a final consonant (받침) → stem + <b>을 것입니다</b>.';}
+    return '<span class="pr-cat">'+label+'</span>'+rule+'<span class="pr-d">'+deriv+'</span><br><small class="pr-en">'+ren+' &nbsp;<span class="pr-en-w">'+base+' = to '+en+'</span></small>';
+  }
+  function pr80Q(ans){return ans.split('/').map(function(a){return a.replace(/다$/,'까?');}).join('/');}
+  var html='';
+  data.forEach(function(w,i){
+    var q=pr80Q(w[2]), ex=(i===0);
+    var s1=ex?' value="'+w[2].split('/')[0]+'" readonly':'';
+    var s2=ex?' value="'+q.split('/')[0]+'" readonly':'';
+    var ec=ex?' prex':'';
+    html+='<tr id="pr80r'+i+'">'+
+      '<td class="prn">'+(i+1)+'</td>'+
+      '<td class="prb"><b>'+w[0]+'</b><small>('+w[1]+')</small></td>'+
+      '<td><input class="pri'+ec+'" type="text" data-ans="'+w[2]+'" data-i="'+i+'" oninput="pr80Check(this)"'+s1+'></td>'+
+      '<td><input class="pri'+ec+'" type="text" data-ans="'+q+'" data-i="'+i+'" oninput="pr80Check(this)"'+s2+'></td>'+
+      '<td style="text-align:center;width:18%;white-space:nowrap;"><button class="ans-btn" onclick="pr80One('+i+')">✓ 정답</button><button class="pre-btn" onclick="pr80Toggle('+i+')">💡 설명</button></td>'+
+    '</tr>'+
+    '<tr class="pre-row" id="pr80e'+i+'" style="display:none;"><td colspan="5"><div class="pre">'+pr80Exp(w)+'</div></td></tr>';
+  });
+  document.getElementById('pr80Body').innerHTML=html;
+})();
+function pr80Norm(s){return (s||'').replace(/\s+/g,'').replace(/[?？.]/g,'');}
+function pr80Check(inp){
+  var ans=pr80Norm(inp.dataset.ans), val=pr80Norm(inp.value);
+  inp.classList.remove('correct','wrong');
+  if(val.length===0){}
+  else if(val===ans){inp.classList.add('correct');}
+  else if(!ans.startsWith(val)){inp.classList.add('wrong');}
+  pr80Tally();
+}
+function pr80Tally(){var c=document.querySelectorAll('#pr80Body .pri.correct').length;document.getElementById('pr80C').textContent=c;}
+function pr80One(i){document.querySelectorAll('#pr80r'+i+' .pri').forEach(function(inp){inp.value=inp.dataset.ans.split('/')[0];inp.classList.remove('wrong');inp.classList.add('correct');});pr80Tally();}
+function pr80Toggle(i){var e=document.getElementById('pr80e'+i);e.style.display=(e.style.display==='none'||!e.style.display)?'table-row':'none';}
+function pr80Reset(){document.querySelectorAll('#pr80Body .pri').forEach(function(inp){inp.value='';inp.classList.remove('correct','wrong');});document.querySelectorAll('#pr80Body .pre-row').forEach(function(r){r.style.display='none';});pr80Tally();}
+function pr80RevealAll(){document.querySelectorAll('#pr80Body .pri').forEach(function(inp){inp.value=inp.dataset.ans;inp.classList.remove('wrong');inp.classList.add('correct');});pr80Tally();}
+</script>
+<!-- Flashcards: 현재형 서술/의문형 -->
+<style>
+.fc-section{margin:28px 0 24px 0;}
+.fc-intro{background:#eff6ff;border-left:4px solid #3b82f6;padding:10px 14px;border-radius:6px;margin-bottom:14px;font-size:0.92rem;}
+.fc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
+.fc-card{perspective:1000px;cursor:pointer;height:210px;}
+.fc-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.6s;}
+.fc-card.flipped .fc-inner{transform:rotateY(180deg);}
+.fc-front,.fc-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;padding:18px 16px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;box-shadow:0 4px 12px rgba(30,64,175,0.12);}
+.fc-front{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);color:#1e3a8a;border:1px solid #bae6fd;}
+.fc-back{background:#fff;color:#1e293b;border:2px solid #bae6fd;transform:rotateY(180deg);}
+.fc-num{position:absolute;top:10px;left:14px;font-size:0.72rem;font-weight:700;letter-spacing:1px;}
+.fc-front .fc-num{color:#7dd3fc;}
+.fc-back .fc-num{color:#94a3b8;}
+.fc-flip-hint{position:absolute;bottom:10px;right:14px;font-size:0.7rem;}
+.fc-front .fc-flip-hint{color:#7dd3fc;}
+.fc-back .fc-flip-hint{color:#94a3b8;}
+.fc-korean{font-size:2.2rem;font-weight:900;line-height:1.1;margin-bottom:6px;color:#0c4a6e;}
+.fc-english{font-size:0.85rem;opacity:0.85;font-style:italic;font-family:'Lato',sans-serif;color:#0369a1;}
+.fc-back-label{display:inline-block;padding:3px 10px;border-radius:999px;font-size:0.7rem;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
+.fc-row-wrap{width:100%;}
+.fc-row-wrap.statement .fc-back-label{background:#dcfce7;color:#166534;}
+.fc-row-wrap.question .fc-back-label{background:#fef3c7;color:#92400e;}
+.fc-form-text{font-size:1.35rem;font-weight:900;color:#1e3a8a;}
+.fc-form-row{display:flex;align-items:center;gap:6px;justify-content:center;margin-top:2px;}
+.fc-divider{width:60%;height:1px;background:#e2e8f0;margin:8px auto;}
+.fc-tts{background:#eff6ff;border:none;cursor:pointer;font-size:0.95rem;padding:4px 8px;border-radius:6px;transition:background 0.2s;color:#1e40af;}
+.fc-tts:hover{background:#dbeafe;}
+
+@media print{
+  .fc-grid{grid-template-columns:repeat(2,1fr);}
+  .fc-card{height:auto;min-height:auto;}
+  .fc-inner{transform-style:flat;transition:none;}
+  .fc-front,.fc-back{position:relative;backface-visibility:visible;-webkit-backface-visibility:visible;transform:none !important;page-break-inside:avoid;}
+  .fc-back{margin-top:6px;border:1px solid #3b82f6;}
+  .fc-front{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .fc-flip-hint,.fc-tts{display:none;}
+}
+</style>
+
+<div class="fc-section">
+<h3 style="margin-top:32px;">퀴즈 1 · 플래시 카드 (Flashcards)</h3>
+
+<div class="fc-grid" id="fc80Grid"></div>
+</div>
+
+<script>
+(function(){
+  var fc80 = window.TWORDS;
+  const grid = document.getElementById('fc80Grid');
+  function fcR(b){if(b.slice(-2)==='하다')return 'H';var s=b.slice(0,-1),c=s.charCodeAt(s.length-1)-0xAC00;if(c<0)return 'C';var j=c%28;return j===0?'V':(j===8?'L':'C');}
+  fc80.forEach(function(w, i){
+    const n = String(i+1).padStart(2,'0');
+    const card = document.createElement('div');
+    card.className = 'fc-card';
+    card.addEventListener('click', function(){ this.classList.toggle('flipped'); });
+    card.innerHTML =
+      '<div class="fc-inner">' +
+        '<div class="fc-front">' +
+          '<span class="fc-num">'+n+'</span>' +
+          '<div class="fc-korean">'+w[0]+'</div>' +
+          '<div class="fc-english">to '+w[1]+'</div>' +
+          '<span class="fc-flip-hint">↻ 클릭</span>' +
+        '</div>' +
+        '<div class="fc-back">' +
+          '<span class="fc-num">'+n+'</span>' +
+          '<div class="fc-row-wrap statement">' +
+            '<span class="fc-back-label">평서형 · Statement</span>' +
+            '<div class="fc-form-row"><span class="fc-form-text">'+w[2]+'</span>' +
+            '<button class="fc-tts" onclick="event.stopPropagation();speakKorean(\''+w[2]+'\')">🔊</button></div>' +
+          '</div>' +
+          '<div class="fc-divider"></div>' +
+          '<div class="fc-row-wrap question">' +
+            '<span class="fc-back-label">의문형 · Question</span>' +
+            '<div class="fc-form-row"><span class="fc-form-text">'+w[3]+'</span>' +
+            '<button class="fc-tts" onclick="event.stopPropagation();speakKorean(\''+w[3]+'\')">🔊</button></div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    grid.appendChild(card);
+  });
+})();
+</script>
+
+
+<!-- ===== 미래형 연습 (80단어 숙제) ===== -->
+<h3>퀴즈 2 · 쓰기 (Typing)</h3>
+
+<style>
+.pt-container{margin:16px 0 8px 0;background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;box-shadow:0 1px 6px rgba(100,116,139,0.06);}
+.pt-toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:12px 16px;background:#f5f7fb;border-bottom:1px solid #d6dfec;}
+.pt-score{font-size:0.95rem;font-weight:700;color:#475569;}
+.pt-score .pt-correct{color:#4b7358;font-size:1.1rem;}
+.pt-score .pt-total{color:#94a3b8;}
+.pt-btns{display:flex;gap:8px;flex-wrap:wrap;}
+.pt-btn{background:#fff;border:1px solid #d6dfec;color:#475569;padding:7px 14px;border-radius:8px;cursor:pointer;font-size:0.85rem;font-weight:700;transition:all 0.15s;font-family:inherit;}
+.pt-btn:hover{background:#f5f7fb;border-color:#b8c8dd;}
+.pt-btn.primary{background:#546a87;color:#fff;border-color:#546a87;}
+.pt-btn.primary:hover{background:#475569;border-color:#475569;}
+.pt-btn.grade{background:#4b7358;color:#fff;border-color:#4b7358;}
+.pt-btn.grade:hover{background:#3f6149;border-color:#3f6149;}
+.pt-input.empty-wrong{background:#fbeeee;border-color:#ebcece;}
+.pt-score .pt-pct{font-size:0.85rem;color:#94a3b8;margin-left:6px;font-weight:600;}
+.pt-score.is-graded .pt-correct{font-size:1.25rem;}
+.pt-table{width:100%;border-collapse:collapse;font-size:0.92rem;}
+.pt-table thead th{background:#fafbfc;color:#475569;font-weight:700;padding:10px 8px;text-align:center;font-size:0.82rem;border-bottom:1px solid #e2e8f0;}
+.pt-table tbody td{padding:6px 6px;border-bottom:1px solid #f1f5f9;vertical-align:middle;}
+.pt-table tbody tr:nth-child(even){background:#fafbfc;}
+.pt-table .pt-no{text-align:center;color:#94a3b8;font-weight:700;font-size:0.85rem;width:6%;}
+.pt-table .pt-base{padding-left:12px;width:30%;text-align:left;}
+.pt-table .pt-base .pt-k{font-weight:900;color:#334155;font-size:1rem;}
+.pt-table .pt-base .pt-e{display:block;color:#94a3b8;font-size:0.8rem;margin-left:0;line-height:1.35;margin-top:1px;}
+.pt-input{width:100%;padding:8px 10px;font-size:0.95rem;font-weight:700;color:#334155;border:1px solid #d6dfec;border-radius:6px;background:#fff;font-family:'Noto Sans KR',sans-serif;transition:all 0.15s;box-sizing:border-box;}
+.pt-input:focus{outline:none;border-color:#7c97c0;box-shadow:0 0 0 3px rgba(124,151,192,0.12);}
+.pt-input.correct{background:#eef7f0;border-color:#cce3d3;color:#4b7358;}
+.pt-input.wrong{background:#fbeeee;border-color:#ebcece;color:#9b5757;}
+.pt-input.revealed{background:#f5f7fb;border-color:#d6dfec;color:#546a87;font-style:italic;}
+@media print{.pt-btns{display:none;}.pt-input{border-color:#cbd5e1;background:#fff !important;color:#334155 !important;}}
+/* 쓰기 퀴즈 카드화 (그룹별 4열 — 종합 #pptTable 제외) */
+.pt-table:not(#pptTable) thead,.pt-table:not(#pptTable) colgroup{display:none;}
+.pt-table:not(#pptTable) tbody{display:flex;flex-direction:column;gap:12px;padding:12px;}
+.pt-table:not(#pptTable) tbody tr{display:grid;grid-template-columns:auto 1fr;grid-template-areas:'num base' 'st st' 'qu qu';gap:6px 12px;background:#f8fbff !important;border:1px solid #dbeafe;border-radius:12px;padding:12px 16px;}
+.pt-table:not(#pptTable) tbody td{border:none !important;padding:0;background:none !important;text-align:left;vertical-align:top;}
+.pt-table:not(#pptTable) td.pt-no{grid-area:num;align-self:center;font-weight:900;color:#3b82f6;font-size:1.05rem;width:auto;}
+.pt-table:not(#pptTable) td.pt-base{grid-area:base;align-self:center;text-align:left;width:auto;padding-left:0;}
+.pt-table:not(#pptTable) td.pt-base .pt-k{font-size:1.1rem;}
+.pt-table:not(#pptTable) td:nth-child(3){grid-area:st;}
+.pt-table:not(#pptTable) td:nth-child(4){grid-area:qu;}
+.pt-table:not(#pptTable) td:nth-child(3)::before{content:'미래형 평서형 · Future';display:block;font-size:0.72rem;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:0.4px;margin-bottom:4px;}
+.pt-table:not(#pptTable) td:nth-child(4)::before{content:'미래형 의문형 · Future Q';display:block;font-size:0.72rem;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:0.4px;margin-bottom:4px;}
+.pt-table:not(#pptTable) td .pt-input{min-height:46px;font-size:1.05rem;text-align:center;}
+.pt-input.correct{animation:wqPop 0.5s cubic-bezier(0.34,1.56,0.64,1);}
+@keyframes wqPop{0%{transform:scale(1);}40%{transform:scale(1.04);box-shadow:0 6px 22px rgba(59,130,246,0.40);}100%{transform:scale(1);}}
+.wq-badge{position:absolute;top:-10px;right:6px;background:linear-gradient(135deg,#bae6fd,#7dd3fc 60%,#38bdf8);color:#0c4a6e;font-weight:900;font-size:0.78rem;padding:3px 10px;border-radius:999px;box-shadow:0 4px 12px rgba(56,189,248,0.45);z-index:10;pointer-events:none;white-space:nowrap;animation:wqBadge 5s ease forwards;}
+.wq-badge small{font-weight:700;font-size:0.7rem;opacity:0.8;margin-left:4px;}
+@keyframes wqBadge{0%{transform:translateY(8px) scale(0.7);opacity:0;}8%{transform:translateY(-2px) scale(1.06);opacity:1;}14%{transform:translateY(0) scale(1);opacity:1;}90%{opacity:1;}100%{opacity:0;transform:translateY(-6px);}}
+.quiz-box{display:none !important;}
+@media(min-width:560px){.pt-table:not(#pptTable) tbody tr{grid-template-columns:auto 1fr 1fr;grid-template-areas:'num base base' 'num st qu';align-items:center;}}
+</style>
+
+<style>
+.pt-eg-cell{padding:4px 6px;}
+.pt-eg{display:flex;align-items:center;justify-content:center;min-height:46px;width:100%;box-sizing:border-box;padding:8px 10px;font-weight:800;color:#1e40af;background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;font-size:1.05rem;text-align:center;font-family:'Noto Sans KR',sans-serif;}
+.pt-eg-tag{display:inline-block;margin-left:8px;font-size:0.68rem;font-weight:800;color:#92400e;background:#fef7d6;border:1px solid #e5d49a;padding:1px 8px;border-radius:8px;vertical-align:middle;}
+</style>
+<div class="pt-container">
+  <div class="pt-toolbar">
+    <div class="pt-score" id="ptScoreBox">✓ 점수 · Score: <span class="pt-correct" id="ptCorrect">0</span> <span class="pt-total">/ 46</span><span class="pt-pct" id="ptPct"></span></div>
+    <div class="pt-btns">
+      <button class="pt-btn" onclick="ptReset()">🔄 초기화 (Reset)</button>
+      <button class="pt-btn grade" onclick="ptGrade()">✅ 점수</button>
+      <button class="pt-btn primary" onclick="ptReveal()">💡 정답</button>
+    </div>
+  </div>
+  <table class="pt-table" id="ptTable">
+    <colgroup>
+      <col style="width:4%">
+      <col style="width:22%">
+      <col style="width:37%">
+      <col style="width:37%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th style="text-align:left;padding-left:12px;">기본형 (Base form)</th>
+        <th>미래형 평서형 (Future)</th>
+        <th>미래형 의문형 (Question)</th>
+      </tr>
+    </thead>
+    <tbody id="ptBody"></tbody>
+  </table>
+</div>
+
+<script>
+(function(){
+  var ptWords = window.TWORDS;
+  const body = document.getElementById('ptBody');
+  let html = '';
+  function ptR(b){if(b.slice(-2)==='하다')return 'H';var s=b.slice(0,-1),c=s.charCodeAt(s.length-1)-0xAC00;if(c<0)return 'C';var j=c%28;return j===0?'V':(j===8?'L':'C');}
+  var ptList = ptWords;
+  ptList.forEach(function(w, i){
+    html += '<tr>' +
+      '<td class="pt-no">'+(i+1)+'</td>' +
+      '<td class="pt-base"><span class="pt-k">'+w[0]+'</span><span class="pt-e">('+w[1]+')</span></td>' +
+      '<td><input class="pt-input" type="text" data-ans="'+w[2]+'" oninput="ptCheck(this)" placeholder="..."></td>' +
+      '<td><input class="pt-input" type="text" data-ans="'+w[3]+'" oninput="ptCheck(this)" placeholder="..."></td>' +
+    '</tr>';
+  });
+  body.innerHTML = html;
+  var ptT=document.querySelector('.pt-total');if(ptT)ptT.textContent='/ '+document.querySelectorAll('#ptTable .pt-input').length;
+})();
+
+function ptNormalize(s){ return (s||'').replace(/\s+/g,'').replace(/[?？]/g,''); }
+function ptCheck(inp){
+  const ans = ptNormalize(inp.dataset.ans);
+  const val = ptNormalize(inp.value);
+  inp.classList.remove('correct','wrong','revealed');
+  if (val.length===0){
+    // neutral
+  } else if (val === ans) {
+    inp.classList.add('correct');
+  } else if (!ans.startsWith(val)) {
+    inp.classList.add('wrong');
+  }
+  ptScore();
+}
+function ptScore(){
+  const inputs = document.querySelectorAll('#ptTable .pt-input');
+  let c=0;
+  inputs.forEach(function(inp){ if(inp.classList.contains('correct')) c++; });
+  document.getElementById('ptCorrect').textContent = c;
+  document.getElementById('ptPct').textContent = '';
+  document.getElementById('ptScoreBox').classList.remove('is-graded');
+}
+function ptReset(){
+  document.querySelectorAll('#ptTable .pt-input').forEach(function(inp){
+    inp.value = '';
+    inp.classList.remove('correct','wrong','revealed');
+  });
+  ptScore();
+}
+function ptReveal(){
+  document.querySelectorAll('#ptTable .pt-input').forEach(function(inp){
+    inp.value = inp.dataset.ans;
+    inp.classList.remove('correct','wrong');
+    inp.classList.add('revealed');
+  });
+  document.getElementById('ptCorrect').textContent = '–';
+  document.getElementById('ptPct').textContent = '';
+  document.getElementById('ptScoreBox').classList.remove('is-graded');
+}
+function ptGrade(){
+  const inputs = document.querySelectorAll('#ptTable .pt-input');
+  let c=0, total=inputs.length;
+  inputs.forEach(function(inp){
+    inp.classList.remove('correct','wrong','revealed');
+    const ans = ptNormalize(inp.dataset.ans);
+    const val = ptNormalize(inp.value);
+    if (val === ans && val.length>0){ inp.classList.add('correct'); c++; }
+    else { inp.classList.add('wrong'); }
+  });
+  document.getElementById('ptCorrect').textContent = c;
+  const pct = total ? Math.round(c*100/total) : 0;
+  document.getElementById('ptPct').textContent = '· ' + pct + '%';
+  document.getElementById('ptScoreBox').classList.add('is-graded');
+  const firstWrong = document.querySelector('#ptTable .pt-input.wrong');
+  if (firstWrong) firstWrong.scrollIntoView({behavior:'smooth',block:'center'});
+}
+</script>
+
+<div class="footer">
+    <p>Amazing Korean 1 — Grammar Basics: Tense (격식체 시제)</p>
+</div>
+
+</div><script>function speakKorean(text){if(!('speechSynthesis' in window))return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='ko-KR';u.rate=0.85;u.pitch=1.1;const preferred=['Yuna','SunHi','Heami','Google 한국의'];const voices=window.speechSynthesis.getVoices();const koVoices=voices.filter(v=>v.lang.startsWith('ko'));let picked=null;for(const name of preferred){picked=koVoices.find(v=>v.name.includes(name));if(picked)break;}if(!picked&&koVoices.length>0)picked=koVoices[0];if(picked)u.voice=picked;window.speechSynthesis.speak(u);}if('speechSynthesis' in window){window.speechSynthesis.onvoiceschanged=function(){};window.speechSynthesis.getVoices();}</script><script>
+(function(){
+  function wqNorm(s){return (s||'').replace(/\s+/g,'').replace(/[?？]/g,'');}
+  document.addEventListener('input', function(e){
+    var inp=e.target;
+    if(!inp || !inp.classList || !inp.classList.contains('pt-input')) return;
+    var ans=wqNorm(inp.getAttribute('data-ans')||'');
+    var val=wqNorm(inp.value);
+    var cell=inp.closest('td') || inp.parentElement;
+    if(!cell) return;
+    var ex=cell.querySelector('.wq-badge');
+    if(val.length && val===ans){
+      if(!ex){
+        cell.style.position='relative';
+        var b=document.createElement('span');
+        b.className='wq-badge';
+        b.innerHTML='정답! <small>Correct</small>';
+        cell.appendChild(b);
+        setTimeout(function(){ if(b && b.parentNode) b.parentNode.removeChild(b); },5000);
+      }
+    } else if(ex){ ex.parentNode.removeChild(ex); }
+  }, true);
+})();
+</script>
+</body></html>

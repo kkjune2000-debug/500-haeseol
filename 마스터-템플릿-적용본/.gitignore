@@ -1,0 +1,25 @@
+# Personal work logs
+_작업_로그_*.md
+_작업_로그_*.txt
+
+# Temporary scratch files
+_tmp_*
+
+# Personal guide notes
+_가이드_*.md
+
+# Integrated / all-in-one builds (auto-generated, do not edit)
+임시/
+
+# Scripts (not part of the study material)
+*.py
+
+# OS / editor artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Claude / agent artifacts
+.claude/

@@ -1,0 +1,601 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Amazing Korean 1 - 조사 E 나 이나</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet"><style>
+/* ============================================================
+   AMAZING KOREAN 1 — HTML 해설집 마스터 템플릿 v1.0
+   ------------------------------------------------------------
+   사용법:
+   1) <title> 태그의 {주제}를 실제 주제로 교체
+   2) :root에서 --theme-* 변수 3개를 해당 Structure 색으로 교체
+   3) <body> 안의 콘텐츠를 작성 (각 컴포넌트 예시는 주석 참조)
+   ------------------------------------------------------------
+   7색 테마표 (Primary / Dark / Light BG):
+     조사  Particles      #f59e0b / #92400e / #fffbeb
+     시제  Tense          #3b82f6 / #1e40af / #eff6ff
+     발음  Pronunciation  #a855f7 / #6b21a8 / #faf5ff
+     받침  Batchim        #14b8a6 / #115e59 / #f0fdfa
+     연음  Liaison        #6366f1 / #3730a3 / #eef2ff
+     경음  Tense conson.  #f43f5e / #9f1239 / #fff1f2
+     모음  Vowels         #f97316 / #9a3412 / #fff7ed
+   ============================================================ */
+
+:root {
+  /* === 조사 테마 (amber) === */
+  --theme-primary:   #f59e0b;
+  --theme-dark:      #92400e;
+  --theme-light-bg:  #fffbeb;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family:'Noto Sans KR', sans-serif;
+  background:#f1f5f9;
+  color:#1e293b;
+  line-height:1.8;
+  padding:20px;
+}
+
+.container {
+  max-width:800px;
+  margin:0 auto;
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 4px 24px rgba(0,0,0,0.08);
+  padding:48px 40px;
+}
+
+/* ===== 헤딩 ===== */
+h1 {
+  font-size:2rem; font-weight:900;
+  border-bottom:4px solid var(--theme-primary);
+  padding-bottom:12px; margin-bottom:4px;
+}
+h1.section-break { margin-top:48px; }
+h1+.subtitle { color:#64748b; font-size:1rem; margin-bottom:40px; }
+
+h2 {
+  font-size:1.5rem; font-weight:800; color:var(--theme-dark);
+  margin-top:48px; margin-bottom:4px;
+  padding-top:24px; border-top:2px solid #e2e8f0;
+}
+h2:first-of-type { border-top:none; margin-top:0; padding-top:0; }
+h2+.subtitle { color:#64748b; font-size:0.95rem; margin-bottom:20px; }
+
+h3 {
+  font-size:1.2rem; font-weight:700; color:var(--theme-dark);
+  margin-top:36px; margin-bottom:12px;
+  padding:10px 14px;
+  background:var(--theme-light-bg);
+  border-left:4px solid var(--theme-primary);
+  border-radius:4px;
+}
+h4 {
+  font-size:1.05rem; font-weight:700; color:var(--theme-dark);
+  margin-top:28px; margin-bottom:12px;
+  padding:8px 12px;
+  background:var(--theme-light-bg);
+  border-left:4px solid var(--theme-primary);
+  border-radius:4px;
+}
+
+/* ===== 본문 단락 ===== */
+.ko { margin-bottom:2px; }
+.en { color:#64748b; font-size:0.92rem; margin-bottom:16px; }
+
+/* ===== 표 ===== */
+table {
+  width:100%; border-collapse:collapse;
+  margin:12px 0 20px 0; font-size:0.88rem;
+}
+thead th {
+  background:var(--theme-light-bg);
+  color:var(--theme-dark); font-weight:700;
+  padding:10px 12px;
+  border-bottom:2px solid var(--theme-primary);
+  text-align:left;
+}
+tbody td { padding:8px 12px; border-bottom:1px solid #e2e8f0; }
+tbody tr:nth-child(even) { background:#f8fafc; }
+
+/* ===== 표 전역 정렬 (v1.0 추가) ===== */
+table { table-layout:fixed; }
+thead th { text-align:center; word-break:keep-all; }
+tbody td { text-align:center; word-break:keep-all; }
+
+
+/* ===== 박스 (테마 가변) ===== */
+.vocab-box, .try-box {
+  background:var(--theme-light-bg);
+  border-radius:10px;
+  padding:14px 18px;
+  margin:12px 0 16px 0;
+  border-left:4px solid var(--theme-primary);
+}
+.vocab-box .vocab-title, .try-box .try-title {
+  font-size:0.8rem; font-weight:700;
+  color:var(--theme-dark);
+  margin-bottom:6px;
+  text-transform:uppercase; letter-spacing:1px;
+}
+
+.answer-box { margin:0 0 24px 0; }
+.answer-toggle {
+  background:var(--theme-dark); color:white; border:none;
+  padding:8px 20px; border-radius:6px;
+  cursor:pointer; font-size:0.85rem; font-weight:700;
+  margin-top:8px;
+}
+.answer-toggle:hover { opacity:0.9; }
+.answer-content {
+  display:none;
+  margin-top:10px; padding:12px 16px;
+  background:var(--theme-light-bg);
+  border-radius:8px;
+  border-left:4px solid var(--theme-primary);
+}
+.answer-content .ans-kr {
+  font-size:1.15rem; font-weight:900;
+  color:var(--theme-dark);
+}
+
+/* ===== 박스 (의미 고정 — 테마와 무관) ===== */
+.note-box {
+  background:#fef3c7; border-left:4px solid #f59e0b;
+  padding:12px 16px; border-radius:4px;
+  margin:12px 0 16px 0; font-size:0.92rem;
+}
+.caution {
+  background:#fef3c7; border-left:4px solid #f59e0b;
+  padding:12px 16px; border-radius:4px;
+  margin:12px 0 16px 0; font-size:0.92rem;
+}
+.exception {
+  background:#fef2f2; border-left:4px solid #ef4444;
+  padding:12px 16px; border-radius:4px;
+  margin:12px 0 16px 0; font-size:0.92rem;
+}
+.example-box {
+  background:#eff6ff; border-left:4px solid #3b82f6;
+  padding:14px 20px; margin:12px 0 16px 0;
+  border-radius:6px;
+  font-size:1.05rem; font-weight:700;
+  color:#1e293b; line-height:1.8;
+}
+
+blockquote {
+  background:#f8fafc; border-left:3px solid #cbd5e1;
+  padding:12px 16px; margin:12px 0 16px 0;
+  border-radius:4px;
+  font-size:0.95rem; line-height:2;
+}
+
+/* ===== 다이어그램 (음절 분해 등) ===== */
+.diagram-box {
+  display:flex; gap:40px;
+  justify-content:center;
+  margin:16px 0 20px 0;
+}
+.char-box {
+  background:#f8fafc;
+  border:2px solid #cbd5e1;
+  border-radius:8px;
+  padding:16px 24px;
+  text-align:center;
+  min-width:120px;
+}
+.char-box .label {
+  font-size:0.8rem; color:#64748b; margin-bottom:8px;
+}
+.char-box .parts span {
+  display:block; font-size:1.1rem; font-weight:700; line-height:1.6;
+}
+.char-box .parts .batchim { color:#dc2626; }
+.char-box .result {
+  font-size:1.5rem; font-weight:900;
+  margin-top:8px; color:#1e293b;
+}
+
+/* ===== TTS 버튼 ===== */
+.speak-btn {
+  background:none; border:none; cursor:pointer;
+  font-size:1.3rem; vertical-align:middle;
+  margin-left:8px; padding:2px 6px;
+  border-radius:6px; transition:background 0.2s;
+}
+.speak-btn:hover { background:#e0e7ff; }
+
+/* ===== 객관식 퀴즈 (mc-*) — 종합 퀴즈 박스 안에 배치 ===== */
+.quiz-box {
+  background:#f0fdf4;
+  border:2px solid #86efac;
+  border-radius:12px;
+  padding:20px 24px;
+  margin:24px 0;
+}
+.quiz-box h4 {
+  background:#dcfce7; border-left-color:#22c55e;
+  color:#166534; margin-top:0;
+}
+.quiz-box .answer-toggle { background:#166534; }
+.quiz-box .answer-toggle:hover { background:#15803d; }
+.quiz-box .answers {
+  display:none;
+  margin-top:12px; padding-top:12px;
+  border-top:1px dashed #86efac;
+}
+.mc-q {
+  margin:14px 0; padding:12px 16px;
+  background:#fff;
+  border-radius:8px;
+  border:1px solid #d1d5db;
+}
+.mc-sentence { font-size:1.05rem; font-weight:700; margin-bottom:10px; }
+.mc-blank { color:#dc2626; font-weight:900; }
+.mc-opts { display:flex; gap:10px; flex-wrap:wrap; }
+.mc-opt-wrap {
+  display:flex; flex-direction:column;
+  align-items:center; gap:4px;
+}
+.mc-btn {
+  padding:8px 16px;
+  border:2px solid #d1d5db;
+  border-radius:8px;
+  background:#fff;
+  font-size:0.95rem; font-weight:700;
+  cursor:pointer; transition:all 0.2s;
+  min-width:100px;
+}
+.mc-fb {
+  font-size:1.2rem; font-weight:900;
+  min-height:1.4em;
+}
+.mc-score {
+  text-align:center;
+  font-size:1.1rem; font-weight:900;
+  color:#166534;
+  margin-top:16px; padding:12px;
+  background:#dcfce7; border-radius:8px;
+  display:none;
+}
+
+/* ===== 조사 강조 (.particle 클래스) ===== */
+.particle {
+  color:#0F172A; font-weight:900;
+  font-size:0.98em; letter-spacing:0.02em;
+}
+
+/* ===== 기타 ===== */
+hr { border:none; border-top:1px solid #e2e8f0; margin:32px 0; }
+.footer {
+  text-align:center; color:#94a3b8;
+  font-size:0.85rem;
+  margin-top:48px; padding-top:20px;
+  border-top:2px solid #e2e8f0;
+}
+
+/* ===== 인쇄 ===== */
+@media print {
+  body { background:none; padding:0; }
+  .container { box-shadow:none; padding:20px; }
+  .quiz-box .answers { display:block !important; }
+  .quiz-box .answer-toggle, .answer-toggle { display:none; }
+  .answer-content { display:block !important; }
+}
+</style></head><body><div class="container">
+<style>.main-title{font-size:3rem;font-weight:900;border-bottom:5px solid #3b82f6;padding-bottom:14px;margin-bottom:10px;color:#3b82f6;letter-spacing:-0.5px;}@media (max-width:720px){.main-title{font-size:2.2rem;}}</style>
+<!-- ===== 조사 Ⓔ 나/이나 (선택) ===== -->
+<h1 class="main-title">조사 Ⓔ · 나/이나 — 선택</h1>
+<p class="subtitle eng">Particle Ⓔ — Or / Choice (나/이나)</p>
+<p class="subtitle eng">Or (choosing between options)</p>
+
+<p class="ko">'나/이나'는 여러 개 중에서 하나를 고를 때 사용합니다. 영어의 "or"와 같습니다.</p>
+<p class="en">'나/이나' is used when choosing one from several options. It is the same as "or" in English.</p>
+
+
+
+<style>
+.conj-rule{border:1px solid;border-radius:14px;padding:18px;margin:14px 0 18px 0;}
+.conj-rule.r-a{background:linear-gradient(135deg,#f7faff 0%,#eef3fa 100%);border-color:#c4d2e2;}
+.conj-rule.r-b{background:linear-gradient(135deg,#f5faf6 0%,#ecf5ef 100%);border-color:#bcd3c2;}
+.conj-rule.r-c{background:linear-gradient(135deg,#fdf6f6 0%,#fbeeee 100%);border-color:#e0bfbf;}
+.conj-rule .cr-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 14px;background:#fff;border:1px solid;border-radius:10px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,0.04);}
+.conj-rule.r-a .cr-head{border-color:#dbe5f1;}
+.conj-rule.r-b .cr-head{border-color:#d4e3d7;}
+.conj-rule.r-c .cr-head{border-color:#ecd6d6;}
+.conj-rule .cr-badge{color:#fff;font-weight:800;padding:6px 14px;border-radius:20px;font-size:1rem;white-space:nowrap;letter-spacing:0.3px;flex-shrink:0;}
+.conj-rule.r-a .cr-badge{background:#3d5a85;}
+.conj-rule.r-b .cr-badge{background:#3f6149;}
+.conj-rule.r-c .cr-badge{background:#874949;}
+.conj-rule .cr-title{display:flex;flex-direction:column;gap:2px;flex:1;min-width:180px;}
+.conj-rule .cr-title .cr-ko{font-size:0.88rem;font-weight:700;color:#555;line-height:1.5;}
+.conj-rule .cr-title .cr-en{font-size:0.8rem;color:#888;font-style:italic;font-family:'Lato',sans-serif;line-height:1.45;}
+.conj-rule .cr-rows{display:flex;flex-direction:column;gap:8px;}
+.conj-rule .cr-row{display:grid;align-items:center;gap:8px;background:#fff;border:1px solid;border-radius:8px;padding:10px 12px;transition:transform 0.18s ease,box-shadow 0.18s ease;}
+.conj-rule.r-a .cr-row{border-color:#dbe5f1;}
+.conj-rule.r-b .cr-row{border-color:#d4e3d7;}
+.conj-rule.r-c .cr-row{border-color:#ecd6d6;}
+.conj-rule .cr-row:hover{transform:translateX(2px);box-shadow:0 3px 8px rgba(70,90,120,0.08);}
+.conj-rule.r-a .cr-row,.conj-rule.r-b .cr-row{grid-template-columns:1fr 22px 1.4fr 22px 1.4fr;}
+.conj-rule.r-c .cr-row{grid-template-columns:1fr 22px 0.7fr 22px 0.7fr 22px 1.5fr;}
+.conj-rule .cr-base{display:flex;flex-direction:column;align-items:center;gap:4px;}
+.conj-rule .cr-base .cb-word{font-size:0.96rem;font-weight:700;color:#444;line-height:1;display:inline-flex;align-items:center;justify-content:center;background:#fff;border:1.5px solid;border-radius:7px;padding:5px 10px;min-width:88px;white-space:nowrap;}
+.conj-rule.r-a .cb-word{border-color:#c4d2e2;}
+.conj-rule.r-b .cb-word{border-color:#bcd3c2;}
+.conj-rule.r-c .cb-word{border-color:#e0bfbf;}
+.conj-rule .cr-base .cb-stem,.conj-rule .cr-base .cb-da{padding:0;margin:0;background:none;color:inherit;text-decoration:none;border-radius:0;}
+.conj-rule .cr-base .cb-en{font-size:0.76rem;color:#888;font-weight:500;font-style:normal;}
+.conj-rule .cr-arrow{text-align:center;font-weight:800;font-size:1.05rem;}
+.conj-rule.r-a .cr-arrow{color:#3d5a85;}
+.conj-rule.r-b .cr-arrow{color:#3f6149;}
+.conj-rule.r-c .cr-arrow{color:#874949;}
+.conj-rule .cr-step{display:flex;justify-content:center;align-items:center;gap:6px;}
+.conj-rule .cr-step .cs-plus{font-weight:800;font-size:0.95rem;color:#3d5a85;}
+.conj-rule .cr-step .cs-chip{font-size:0.96rem;font-weight:700;padding:5px 10px;border-radius:7px;letter-spacing:-0.3px;line-height:1;display:inline-flex;align-items:center;border:1.5px solid;}
+.conj-rule.r-a .cr-step .cs-chip{background:#eef2f8;color:#3d5a85;border-color:#c4d2e2;}
+.conj-rule.r-b .cr-step .cs-chip{background:#eef7f0;color:#3f6149;border-color:#bcd3c2;}
+.conj-rule.r-c .cr-step .cs-chip{background:#fbeeee;color:#874949;border-color:#e0bfbf;}
+.conj-rule .cr-step.is-drop .cs-chip{background:#fff7e6;color:#8a6a26;border:1.5px dashed #e0c889;}
+.conj-rule .cr-result{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;}
+.conj-rule .cr-result .res{font-size:0.96rem;font-weight:700;padding:5px 10px;border-radius:7px;line-height:1;min-width:148px;text-align:center;box-sizing:border-box;white-space:nowrap;}
+.conj-rule .cr-result .res .res-tag{display:none;}
+.conj-rule.r-a .cr-result .res.statement{background:#3d5a85;color:#fff;}
+.conj-rule.r-a .cr-result .res.question{background:#fff;color:#3d5a85;border:1.5px solid #3d5a85;}
+.conj-rule.r-b .cr-result .res.statement{background:#3f6149;color:#fff;}
+.conj-rule.r-b .cr-result .res.question{background:#fff;color:#3f6149;border:1.5px solid #3f6149;}
+.conj-rule.r-c .cr-result .res.statement{background:#874949;color:#fff;}
+.conj-rule.r-c .cr-result .res.question{background:#fff;color:#874949;border:1.5px solid #874949;}
+.conj-rule .cr-coltitles{display:grid;align-items:center;gap:8px;padding:0 12px 8px 12px;font-size:0.72rem;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;font-family:'Lato',sans-serif;}
+.conj-rule.r-a .cr-coltitles{color:#3d5a85;}
+.conj-rule.r-b .cr-coltitles{color:#3f6149;}
+.conj-rule.r-c .cr-coltitles{color:#874949;}
+.conj-rule.r-a .cr-coltitles,.conj-rule.r-b .cr-coltitles{grid-template-columns:1fr 22px 1.4fr 22px 1.4fr;}
+.conj-rule.r-c .cr-coltitles{grid-template-columns:1fr 22px 0.7fr 22px 0.7fr 22px 1.5fr;}
+.conj-rule .cr-coltitles > div{text-align:center;}
+@media (max-width:720px){
+  .conj-rule{padding:14px 12px;}
+  .conj-rule .cr-head{padding:9px 10px;gap:8px;}
+  .conj-rule .cr-badge{font-size:0.85rem;padding:5px 11px;}
+  .conj-rule.r-a .cr-row,.conj-rule.r-b .cr-row{grid-template-columns:0.9fr 14px 1.3fr 14px 1.25fr;gap:5px;padding:9px 8px;}
+  .conj-rule.r-c .cr-row{grid-template-columns:0.9fr 14px 0.6fr 14px 0.6fr 14px 1.25fr;gap:4px;padding:9px 6px;}
+  .conj-rule.r-a .cr-coltitles,.conj-rule.r-b .cr-coltitles{grid-template-columns:0.9fr 14px 1.3fr 14px 1.25fr;gap:5px;font-size:0.58rem;padding:0 8px 8px 8px;}
+  .conj-rule.r-c .cr-coltitles{grid-template-columns:0.9fr 14px 0.6fr 14px 0.6fr 14px 1.25fr;gap:4px;font-size:0.56rem;padding:0 6px 8px 6px;}
+  .conj-rule .cr-arrow{font-size:0.9rem;}
+  .conj-rule .cr-base .cb-word{font-size:0.9rem;padding:5px 8px;min-width:80px;}
+  .conj-rule .cr-base .cb-en{font-size:0.66rem;}
+  .conj-rule .cr-step .cs-chip{font-size:0.86rem;padding:4px 7px;}
+  .conj-rule .cr-result .res{font-size:0.92rem;padding:5px 9px;min-width:124px;}
+}
+@media (max-width:460px){
+  .conj-rule .cr-coltitles{display:none;}
+  .conj-rule.r-a .cr-row,.conj-rule.r-b .cr-row,.conj-rule.r-c .cr-row{grid-template-columns:1fr;gap:6px;text-align:center;padding:12px;}
+  .conj-rule .cr-arrow{transform:rotate(90deg);font-size:1.05rem;}
+}
+.pb-badge{display:inline-flex;align-items:center;padding:4px 9px;border-radius:7px;font-weight:800;font-size:0.82rem;white-space:nowrap;}
+.pb-badge.pb-x{background:#fee2e2;color:#dc2626;}
+.pb-badge.pb-o{background:#dcfce7;color:#16a34a;}
+.pb-badge.pb-p{background:#dbeafe;color:#1e40af;}
+.pb-badge.pb-t{background:#fef3c7;color:#92400e;}
+</style>
+<div class="conj-rule r-a">
+  <div class="cr-head">
+    <span class="cr-badge">나/이나 고르는 법</span>
+    <div class="cr-title">
+      <span class="cr-ko">받침이 <strong style="color:#dc2626;">없으면 '나'</strong>, 받침이 <strong style="color:#16a34a;">있으면 '이나'</strong>를 붙입니다</span>
+      <span class="cr-en">No 받침 → 나 · Has 받침 → 이나</span>
+    </div>
+  </div>
+  <div class="cr-coltitles"><div>단어 · Word</div><div></div><div>받침 + 조사 · Batchim + Particle</div><div></div><div>결과 · Result</div></div>
+  <div class="cr-rows">
+    <div class="cr-row">
+      <div class="cr-base"><span class="cb-word"><span class="cb-stem">커피</span></span><span class="cb-en">coffee</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-step"><span class="pb-badge pb-x">받침 X</span><span class="cs-plus">+</span><span class="cs-chip">나</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-result"><span class="res statement">커피나</span></div>
+    </div>
+    <div class="cr-row">
+      <div class="cr-base"><span class="cb-word"><span class="cb-stem">영화</span></span><span class="cb-en">movie</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-step"><span class="pb-badge pb-x">받침 X</span><span class="cs-plus">+</span><span class="cs-chip">나</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-result"><span class="res statement">영화나</span></div>
+    </div>
+    <div class="cr-row">
+      <div class="cr-base"><span class="cb-word"><span class="cb-stem">빵</span></span><span class="cb-en">bread</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-step"><span class="pb-badge pb-o">받침 O</span><span class="cs-plus">+</span><span class="cs-chip">이나</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-result"><span class="res statement">빵이나</span></div>
+    </div>
+    <div class="cr-row">
+      <div class="cr-base"><span class="cb-word"><span class="cb-stem">책</span></span><span class="cb-en">book</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-step"><span class="pb-badge pb-o">받침 O</span><span class="cs-plus">+</span><span class="cs-chip">이나</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-result"><span class="res statement">책이나</span></div>
+    </div>
+  </div>
+</div>
+
+<table>
+<thead><tr><th>받침 X → 나</th><th>받침 O → 이나</th></tr></thead>
+<tbody>
+<tr><td>커피<strong>나</strong> 주스 (coffee or juice)</td><td>빵<strong>이나</strong> 밥 (bread or rice)</td></tr>
+<tr><td>사과<strong>나</strong> 배 (apple or pear)</td><td>책<strong>이나</strong> 잡지 (book or magazine)</td></tr>
+<tr><td>영화<strong>나</strong> 드라마 (movie or drama)</td><td>물<strong>이나</strong> 주스 (water or juice)</td></tr>
+<tr><td>버스<strong>나</strong> 지하철 (bus or subway)</td><td>학생<strong>이나</strong> 선생님 (student or teacher)</td></tr>
+<tr><td>우유<strong>나</strong> 물 (milk or water)</td><td>옷<strong>이나</strong> 가방 (clothes or bag)</td></tr>
+<tr><td>여자<strong>나</strong> 남자 (woman or man)</td><td>김밥<strong>이나</strong> 라면 (gimbap or ramyeon)</td></tr>
+<tr><td>바나나<strong>나</strong> 사과 (banana or apple)</td><td>산<strong>이나</strong> 바다 (mountain or sea)</td></tr>
+<tr><td>고기<strong>나</strong> 생선 (meat or fish)</td><td>꽃<strong>이나</strong> 나무 (flower or tree)</td></tr>
+</tbody></table>
+
+
+
+
+<hr>
+
+<!-- 6) 에 (시간) -->
+<style>
+.pr80{margin:16px 0 10px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;box-shadow:0 1px 6px rgba(100,116,139,0.06);}
+.pr80-bar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:12px 16px;background:#eff6ff;border-bottom:1px solid #bfdbfe;}
+.pr80-score{font-weight:800;color:#1e3a8a;}
+.pr80-score b{color:#2563eb;font-size:1.15rem;}
+.pr80-btns{display:flex;gap:8px;flex-wrap:wrap;}
+.pr80-btn{background:#fff;border:1px solid #bfdbfe;color:#1e40af;padding:7px 14px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.85rem;font-family:inherit;}
+.pr80-btn:hover{background:#dbeafe;}
+.pr80-btn.primary{background:#2563eb;color:#fff;border-color:#2563eb;}
+.pr80 table{width:100%;border-collapse:collapse;table-layout:auto;}
+.pr80 input.pri{min-width:120px;}
+.pr80 .ans-btn,.pr80 .pre-btn{padding:6px 9px;font-size:0.8rem;}
+.pr80 tbody td{padding:8px 10px;border-bottom:1px solid #f1f5f9;vertical-align:middle;}
+.pr80 .prn{text-align:center;color:#94a3b8;font-weight:700;width:6%;font-size:0.85rem;}
+.pr80 .prb{width:22%;text-align:left;}
+.pr80 thead th{background:#f8fafc;color:#475569;font-weight:700;padding:9px 8px;font-size:0.78rem;border-bottom:1px solid #e2e8f0;text-align:center;}
+.pr80 input.pri.prex{background:#eff6ff;border-color:#bfdbfe;color:#1e40af;font-weight:800;}
+.pr80 .preg{display:inline-block;margin-left:6px;font-size:0.66rem;font-weight:800;color:#92400e;background:#fef7d6;border:1px solid #e5d49a;padding:1px 6px;border-radius:8px;}
+.pr80 .prb b{font-size:1.05rem;color:#1e293b;}
+.pr80 .prb small{display:block;color:#94a3b8;margin-left:0;font-size:0.8rem;line-height:1.35;margin-top:1px;}
+.pr80 input.pri{width:100%;padding:9px 12px;font-size:1.02rem;font-weight:700;color:#1e293b;border:1.5px solid #cbd5e1;border-radius:8px;text-align:center;box-sizing:border-box;font-family:'Noto Sans KR',sans-serif;}
+.pr80 input.pri:focus{outline:none;border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,0.12);}
+.pr80 input.pri.correct{background:#ecfdf5;border-color:#6ee7b7;color:#047857;}
+.pr80 input.pri.wrong{background:#fef2f2;border-color:#fca5a5;color:#b91c1c;}
+.pr80 .pre-btn{background:#fffbeb;border:1px solid #fde68a;color:#92400e;padding:7px 10px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.82rem;white-space:nowrap;font-family:inherit;}
+.pr80 .pre-btn:hover{background:#fef3c7;}
+.pr80 .ans-btn{background:#ecfdf5;border:1px solid #6ee7b7;color:#047857;padding:7px 10px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.82rem;white-space:nowrap;font-family:inherit;margin-right:5px;}
+.pr80 .ans-btn:hover{background:#d1fae5;}
+.pr80 .pre-row td{background:#fffdf5;border-bottom:1px solid #fde68a;}
+.pr80 .pre{font-size:0.92rem;color:#78350f;line-height:1.7;}
+.pr80 .pre .pr-cat{display:inline-block;font-size:0.72rem;font-weight:800;color:#fff;background:#3b82f6;border-radius:6px;padding:1px 8px;margin-right:8px;}
+.pr80 .pre b{color:#1d4ed8;}
+.pr80 .pre .pr-d{display:inline-block;margin-left:8px;color:#475569;font-weight:700;}
+.pr80 .pre .pr-en{color:#64748b;font-style:italic;font-weight:500;font-size:0.84rem;}
+.pr80 .pre .pr-en .pr-en-w{color:#94a3b8;font-style:normal;}
+@media(max-width:560px){.pr80 .prb{width:42%;}.pr80 .prb small{display:block;margin-left:0;}}
+.pr80-h{margin:30px 0 2px;font-size:1.04rem;font-weight:800;color:#3d5a85;}
+.pr80 .pre .pr-cat{background:#dc2626;}
+.pr80 .pre .pr-cat.pr-cat-o{background:#16a34a;}
+</style>
+<style>
+.fc-section{margin:28px 0 24px 0;}
+.fc-intro{background:#eff6ff;border-left:4px solid #3b82f6;padding:10px 14px;border-radius:6px;margin-bottom:14px;font-size:0.92rem;}
+.fc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
+.fc-card{perspective:1000px;cursor:pointer;height:210px;}
+.fc-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.6s;}
+.fc-card.flipped .fc-inner{transform:rotateY(180deg);}
+.fc-front,.fc-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;padding:18px 16px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;box-shadow:0 4px 12px rgba(30,64,175,0.12);}
+.fc-front{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);color:#1e3a8a;border:1px solid #bae6fd;}
+.fc-back{background:#fff;color:#1e293b;border:2px solid #bae6fd;transform:rotateY(180deg);}
+.fc-num{position:absolute;top:10px;left:14px;font-size:0.72rem;font-weight:700;letter-spacing:1px;}
+.fc-front .fc-num{color:#7dd3fc;}
+.fc-back .fc-num{color:#94a3b8;}
+.fc-flip-hint{position:absolute;bottom:10px;right:14px;font-size:0.7rem;}
+.fc-front .fc-flip-hint{color:#7dd3fc;}
+.fc-back .fc-flip-hint{color:#94a3b8;}
+.fc-korean{font-size:2.2rem;font-weight:900;line-height:1.1;margin-bottom:6px;color:#0c4a6e;}
+.fc-english{font-size:0.85rem;opacity:0.85;font-style:italic;font-family:'Lato',sans-serif;color:#0369a1;}
+.fc-back-label{display:inline-block;padding:3px 10px;border-radius:999px;font-size:0.7rem;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
+.fc-row-wrap{width:100%;}
+.fc-row-wrap.statement .fc-back-label{background:#dcfce7;color:#166534;}
+.fc-row-wrap.question .fc-back-label{background:#fef3c7;color:#92400e;}
+.fc-form-text{font-size:1.35rem;font-weight:900;color:#1e3a8a;}
+.fc-form-row{display:flex;align-items:center;gap:6px;justify-content:center;margin-top:2px;}
+.fc-divider{width:60%;height:1px;background:#e2e8f0;margin:8px auto;}
+.fc-tts{background:#eff6ff;border:none;cursor:pointer;font-size:0.95rem;padding:4px 8px;border-radius:6px;transition:background 0.2s;color:#1e40af;}
+.fc-tts:hover{background:#dbeafe;}
+
+@media print{
+  .fc-grid{grid-template-columns:repeat(2,1fr);}
+  .fc-card{height:auto;min-height:auto;}
+  .fc-inner{transform-style:flat;transition:none;}
+  .fc-front,.fc-back{position:relative;backface-visibility:visible;-webkit-backface-visibility:visible;transform:none !important;page-break-inside:avoid;}
+  .fc-back{margin-top:6px;border:1px solid #3b82f6;}
+  .fc-front{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .fc-flip-hint,.fc-tts{display:none;}
+}
+</style>
+<h3 class="pr80-h">✍️ 나/이나 직접 만들기 · Make it with 나/이나</h3>
+<p class="ko">단어 뒤에 알맞은 조사(나/이나)를 붙여 통째로 써 보세요. 헷갈리면 <strong>💡 설명</strong>을 누르세요.</p>
+<p class="en">Type the word together with the correct particle (나 or 이나). Press 💡 for the rule.</p>
+<div class="pr80">
+  <div class="pr80-bar">
+    <div class="pr80-score">맞은 개수 · Correct: <b id="prJC">0</b> <span style="color:#94a3b8;">/ 12</span></div>
+    <div class="pr80-btns">
+      <button class="pr80-btn" onclick="prJReset()">🔄 초기화 (Reset)</button>
+      <button class="pr80-btn primary" onclick="prJRevealAll()">💡 전체 정답</button>
+    </div>
+  </div>
+  <table><thead><tr><th style="width:6%">#</th><th style="text-align:left;">단어 · Word</th><th>단어 + 나/이나</th><th style="width:18%"></th></tr></thead><tbody id="prJBody"></tbody></table>
+</div>
+<script>
+(function(){
+  var data=[
+    ["커피","coffee","커피나"],["빵","bread","빵이나"],["사과","apple","사과나"],["책","book","책이나"],
+    ["영화","movie","영화나"],["밥","rice","밥이나"],["우유","milk","우유나"],["물","water","물이나"],
+    ["버스","bus","버스나"],["선생님","teacher","선생님이나"],["드라마","drama","드라마나"],["꽃","flower","꽃이나"]
+  ];
+  window.JWORDS=data;
+  function batchim(w){var c=w.charCodeAt(w.length-1)-0xAC00;return (c%28)!==0;}
+  window.JBATCHIM=batchim;
+  function exp(w){
+    var has=batchim(w[0]);
+    var label=has?'받침 O':'받침 X';
+    var rule=has?"받침이 <b>있습니다</b> → '<b>이나</b>'를 붙입니다.":"받침이 <b>없습니다</b> → '<b>나</b>'를 붙입니다.";
+    var ren=has?"Has a final consonant (받침) → add <b>이나</b>.":"No final consonant (받침) → add <b>나</b>.";
+    return '<span class="pr-cat'+(has?' pr-cat-o':'')+'">'+label+'</span>'+rule+'<span class="pr-d">'+w[0]+' → <b>'+w[2]+'</b></span><br><small class="pr-en">'+ren+' &nbsp;<span class="pr-en-w">'+w[0]+' = '+w[1]+'</span></small>';
+  }
+  var html='';
+  data.forEach(function(w,i){
+    html+='<tr><td class="prn">'+(i+1)+'</td><td class="prb"><b>'+w[0]+'</b><small>('+w[1]+')</small></td><td><input class="pri" type="text" data-ans="'+w[2]+'" oninput="prJCheck(this)" placeholder="..."></td><td style="text-align:center;white-space:nowrap;"><button class="ans-btn" onclick="prJOne(this)">✓ 정답</button><button class="pre-btn" onclick="prJToggle(this)">💡 설명</button></td></tr><tr class="pre-row" style="display:none;"><td colspan="4"><div class="pre">'+exp(w)+'</div></td></tr>';
+  });
+  document.getElementById('prJBody').innerHTML=html;
+})();
+function prJNorm(s){return (s||'').replace(/\s+/g,'');}
+function prJCheck(inp){var ans=prJNorm(inp.dataset.ans),val=prJNorm(inp.value);inp.classList.remove('correct','wrong');if(val.length===0){}else if(val===ans){inp.classList.add('correct');}else if(ans.indexOf(val)!==0){inp.classList.add('wrong');}prJTally();}
+function prJTally(){document.getElementById('prJC').textContent=document.querySelectorAll('#prJBody .pri.correct').length;}
+function prJOne(btn){var tr=btn.closest('tr');tr.querySelectorAll('.pri').forEach(function(inp){inp.value=inp.dataset.ans;inp.classList.remove('wrong');inp.classList.add('correct');});prJTally();}
+function prJToggle(btn){var e=btn.closest('tr').nextElementSibling;e.style.display=(e.style.display==='none'||!e.style.display)?'table-row':'none';}
+function prJReset(){document.querySelectorAll('#prJBody .pri').forEach(function(inp){inp.value='';inp.classList.remove('correct','wrong');});document.querySelectorAll('#prJBody .pre-row').forEach(function(r){r.style.display='none';});prJTally();}
+function prJRevealAll(){document.querySelectorAll('#prJBody .pri').forEach(function(inp){inp.value=inp.dataset.ans;inp.classList.remove('wrong');inp.classList.add('correct');});prJTally();}
+</script>
+
+<div class="fc-section">
+<h3 style="margin-top:32px;">퀴즈 1 · 플래시 카드 (Flashcards)</h3>
+
+<div class="fc-grid" id="fcGridJ"></div>
+</div>
+
+<script>
+(function(){
+  var fc = window.JWORDS;
+  var grid = document.getElementById('fcGridJ');
+  fc.forEach(function(w, i){
+    var n = String(i+1).padStart(2,'0');
+    var has = window.JBATCHIM(w[0]);
+    var card = document.createElement('div');
+    card.className = 'fc-card';
+    card.addEventListener('click', function(){ this.classList.toggle('flipped'); });
+    card.innerHTML =
+      '<div class="fc-inner">' +
+        '<div class="fc-front">' +
+          '<span class="fc-num">'+n+'</span>' +
+          '<div class="fc-korean">'+w[0]+'</div>' +
+          '<div class="fc-english">'+w[1]+'</div>' +
+          '<span class="fc-flip-hint">↻ 클릭</span>' +
+        '</div>' +
+        '<div class="fc-back">' +
+          '<span class="fc-num">'+n+'</span>' +
+          '<span class="pb-badge '+(has?'pb-o':'pb-x')+'">'+(has?'받침 O → 이나':'받침 X → 나')+'</span>' +
+          '<div class="fc-form-row" style="margin-top:12px;"><span class="fc-form-text">'+w[2]+'</span>' +
+          '<button class="fc-tts" onclick="event.stopPropagation();speakKorean(\''+w[2]+'\')">🔊</button></div>' +
+        '</div>' +
+      '</div>';
+    grid.appendChild(card);
+  });
+})();
+</script>
+
+<div class="footer">
+    <p>Amazing Korean 1 — Grammar Basics: Particles (조사)</p>
+</div>
+
+</div><script>function speakKorean(text){if(!('speechSynthesis' in window))return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='ko-KR';u.rate=0.85;u.pitch=1.1;const preferred=['Yuna','SunHi','Heami','Google 한국의'];const voices=window.speechSynthesis.getVoices();const koVoices=voices.filter(v=>v.lang.startsWith('ko'));let picked=null;for(const name of preferred){picked=koVoices.find(v=>v.name.includes(name));if(picked)break;}if(!picked&&koVoices.length>0)picked=koVoices[0];if(picked)u.voice=picked;window.speechSynthesis.speak(u);}if('speechSynthesis' in window){window.speechSynthesis.onvoiceschanged=function(){};window.speechSynthesis.getVoices();}</script></body></html>

@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Korean 1 - 서술어 문법 1: A = B</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans KR', sans-serif; background: #f1f5f9; color: #1e293b; line-height: 1.8; padding: 20px; }
+        .eng { font-family: 'Lato', 'Noto Sans KR', sans-serif; }
+        .container { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 48px 40px; }
+        h1 { font-size: 2rem; font-weight: 900; color: #1e293b; border-bottom: 4px solid #3b82f6; padding-bottom: 12px; margin-bottom: 4px; }
+        h1 .h1-line2 { display: block; }
+        h1 + .subtitle { color: #64748b; font-size: 1rem; margin-bottom: 40px; }
+        /* Title block — category-themed gradient (overrides legacy h1 layout when used) */
+        .title-block { margin: 0 0 44px 0; padding: 28px 32px 24px; border-radius: 16px; background: linear-gradient(135deg, var(--title-bg-start, #faf5ff) 0%, #ffffff 70%); box-shadow: 0 2px 14px rgba(15,23,42,0.06); position: relative; overflow: hidden; }
+        .title-block::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--title-gradient); opacity: 0.95; }
+        .title-en { display: flex; flex-direction: column; gap: 6px; }
+        .title-en .title-main { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 2.4rem; font-weight: 900; line-height: 1.18; letter-spacing: -0.02em; margin: 0; padding: 0; border: none; background: var(--title-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+        .title-en .title-sub { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--title-sub-color, #475569); line-height: 1.4; margin: 0; }
+        .title-divider { height: 3px; background: var(--title-gradient); border-radius: 999px; margin: 18px 0 16px; opacity: 0.85; }
+        .title-ko { display: flex; flex-direction: column; gap: 4px; }
+        .title-ko .title-ko-main { font-size: 1.02rem; font-weight: 800; color: var(--title-ko-main-color, #1e293b); margin: 0; letter-spacing: -0.01em; }
+        .title-ko .title-ko-sub { font-size: 0.9rem; color: #64748b; line-height: 1.65; margin: 0; }
+        /* Category palettes — apply class to .title-block */
+        .title-block.sentence  { --title-gradient: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%); --title-bg-start: #eff6ff; --title-sub-color: #1e40af; --title-ko-main-color: #1e3a8a; }
+        .title-block.predicate { --title-gradient: linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #8b5cf6 100%); --title-bg-start: #faf5ff; --title-sub-color: #5b21b6; --title-ko-main-color: #4c1d95; }
+        .title-block.adverbial { --title-gradient: linear-gradient(135deg, #064e3b 0%, #047857 50%, #10b981 100%); --title-bg-start: #ecfdf5; --title-sub-color: #047857; --title-ko-main-color: #064e3b; }
+        .title-block.other     { --title-gradient: linear-gradient(135deg, #7c2d12 0%, #b45309 50%, #f59e0b 100%); --title-bg-start: #fffbeb; --title-sub-color: #b45309; --title-ko-main-color: #78350f; }
+        @media (max-width: 600px) {
+            .title-block { padding: 22px 22px 18px; }
+            .title-en .title-main { font-size: 1.85rem; }
+            .title-en .title-sub { font-size: 1.05rem; }
+        }
+        @media print {
+            .title-block { background: none !important; box-shadow: none !important; padding: 8px 0 16px !important; border-bottom: 3px solid var(--title-ko-main-color, #1e293b); border-radius: 0; }
+            .title-block::before { display: none; }
+            .title-en .title-main { color: var(--title-ko-main-color, #1e293b) !important; -webkit-text-fill-color: var(--title-ko-main-color, #1e293b) !important; background: none !important; }
+            .title-divider { background: var(--title-ko-main-color, #1e293b) !important; opacity: 1; }
+        }
+        h2 { font-size: 1.5rem; font-weight: 800; color: #1e40af; margin-top: 48px; margin-bottom: 4px; padding-top: 24px; border-top: 2px solid #e2e8f0; }
+        h2:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+        h2 + .subtitle { color: #64748b; font-size: 0.95rem; margin-bottom: 20px; }
+        h3 { font-size: 1.2rem; font-weight: 700; color: #1e40af; margin-top: 36px; margin-bottom: 12px; padding: 10px 14px; background: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 4px; }
+        .en { margin-bottom: 2px; }
+        .ko { color: #64748b; font-size: 0.92rem; margin-bottom: 16px; }
+        blockquote { background: #f8fafc; border-left: 3px solid #cbd5e1; padding: 12px 16px; margin: 12px 0 16px 0; border-radius: 4px; font-size: 0.95rem; line-height: 2; }
+        pre { background: #1e293b; color: #e2e8f0; padding: 16px 20px; border-radius: 8px; margin: 12px 0 16px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.9rem; line-height: 1.6; }
+        table { width: 100%; border-collapse: collapse; margin: 12px 0 20px 0; font-size: 0.92rem; }
+        thead th { background: #eff6ff; color: #1e40af; font-weight: 700; padding: 10px 12px; border-bottom: 2px solid #3b82f6; text-align: left; }
+        tbody td { padding: 8px 12px; border-bottom: 1px solid #e2e8f0; }
+        tbody tr:nth-child(even) { background: #f8fafc; }
+        .vocab-box { background: #eff6ff; border-radius: 10px; padding: 14px 18px; margin: 12px 0 16px 0; border-left: 4px solid #3b82f6; }
+        .vocab-box .vocab-title { font-size: 0.8rem; font-weight: 700; color: #1e40af; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
+        .answer-box { margin: 0 0 24px 0; }
+        .answer-toggle { background: #e0f2fe; color: #075985; border: 1px solid #bae6fd; padding: 8px 20px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 700; margin-top: 8px; transition:background 0.2s; }
+        .answer-toggle:hover { background: #bae6fd; }
+        .answer-content { display: none; margin-top: 10px; padding: 12px 16px; background: #eff6ff; border-radius: 8px; border-left: 4px solid #3b82f6; }
+        .answer-content .ans-kr { font-size: 1.15rem; font-weight: 900; color: #1e40af; }
+        .note-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 4px; margin: 12px 0 16px 0; font-size: 0.92rem; }
+        hr { border: none; border-top: 1px solid #e2e8f0; margin: 32px 0; }
+        .footer { text-align: center; color: #94a3b8; font-size: 0.85rem; margin-top: 48px; padding-top: 20px; border-top: 2px solid #e2e8f0; }
+        @media print { body { background: none; padding: 0; } .container { box-shadow: none; padding: 20px; } .answer-content { display: block !important; } .answer-toggle { display: none; } }
+        .speak-btn { background: none; border: none; cursor: pointer; font-size: 1.3rem; vertical-align: middle; margin-left: 8px; padding: 2px 6px; border-radius: 6px; transition: background 0.2s; }
+        .speak-btn:hover { background: #e0e7ff; }
+        /* Sentence list */
+        .sentence-list { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 0 0 24px; }
+        .sentence-item { display: grid; grid-template-columns: 44px 1fr auto; gap: 16px; align-items: center; padding: 12px 18px; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; }
+        .sentence-item:hover { border-color: #3b82f6; box-shadow: 0 4px 14px rgba(59,130,246,0.10); }
+        .sentence-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.25rem; font-weight: 900; color: #3b82f6; text-align: center; letter-spacing: -0.02em; }
+        .sentence-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+        .sentence-en { font-size: 1.06rem; color: #64748b; font-weight: 700; }
+        .sentence-kr { font-size: 1.06rem; font-weight: 700; color: #1e293b; line-height: 1.4; }
+        .sentence-listen { background: #eff6ff; border: none; cursor: pointer; width: 40px; height: 40px; border-radius: 50%; font-size: 1.05rem; transition: background 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: center; padding: 0; }
+        .sentence-listen:hover { background: #3b82f6; transform: scale(1.08); }
+        @media (max-width: 600px) { .sentence-list { grid-template-columns: 1fr; } }
+        /* Flashcards */
+        .flashcard-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 20px 0 24px; }
+        .flashcard { perspective: 1200px; height: 140px; cursor: pointer; }
+        .flashcard-inner { position: relative; width: 100%; height: 100%; transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1); transform-style: preserve-3d; }
+        .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+        .flashcard-front, .flashcard-back { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 22px; text-align: center; box-shadow: 0 4px 16px rgba(30,41,59,0.08); }
+        .flashcard-front { background: #fff; border: 2px solid #bfdbfe; color: #1e293b; }
+        .flashcard-back { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 60%, #60a5fa 100%); color: #fff; transform: rotateY(180deg); }
+        .flashcard-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.2em; margin-bottom: 12px; opacity: 0.65; }
+        .flashcard-front .flashcard-text { font-size: 1.06rem; font-weight: 700; line-height: 1.4; }
+        .flashcard-back .flashcard-text { font-size: 1.06rem; font-weight: 700; line-height: 1.4; }
+        .flashcard-hint { position: absolute; bottom: 10px; right: 14px; font-size: 0.68rem; color: #94a3b8; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+        .flashcard-listen { position: absolute; bottom: 10px; right: 10px; background: rgba(255,255,255,0.22); border: none; cursor: pointer; width: 36px; height: 36px; border-radius: 50%; font-size: 1rem; transition: background 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: center; padding: 0; color: #fff; }
+        .flashcard-listen:hover { background: rgba(255,255,255,0.4); transform: scale(1.1); }
+        @media (max-width: 600px) { .flashcard-grid { grid-template-columns: 1fr; } }
+        /* Writing Test (comprehensive) */
+        .writing-practice { display: flex; flex-direction: column; gap: 14px; margin: 16px 0 24px; }
+        .writing-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }
+        .writing-item:focus-within { border-color: #3b82f6; box-shadow: 0 2px 12px rgba(59,130,246,0.10); }
+        .writing-header { display: flex; align-items: baseline; gap: 12px; }
+        .writing-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.05rem; font-weight: 900; color: #3b82f6; min-width: 28px; letter-spacing: -0.02em; }
+        .writing-en { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.05rem; font-weight: 600; color: #1e293b; }
+        .writing-input { width: 100%; min-height: 46px; padding: 10px 14px; font-family: 'Noto Sans KR', sans-serif; font-size: 1rem; color: #1e293b; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; resize: vertical; transition: border-color 0.2s, background 0.2s; box-sizing: border-box; }
+        .writing-input:focus { outline: none; border-color: #3b82f6; background: #fff; }
+        @media print { .writing-input { background: #fff; min-height: 60px; } }
+        .wt-toolbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; padding:12px 16px; background:#ebf2fe; border:1px solid #a6c6fa; border-radius:10px; margin:14px 0 18px 0; }
+        .wt-score { font-size:0.95rem; font-weight:700; color:#475569; }
+        .wt-score .wt-correct { color:#26549f; font-size:1.1rem; }
+        .wt-score .wt-total { color:#94a3b8; }
+        .wt-score .wt-pct { margin-left:8px; color:#26549f; font-weight:800; }
+        .wt-score.is-graded { color:#1e293b; }
+        .wt-btns { display:flex; gap:8px; flex-wrap:wrap; }
+        .wt-btn { background:#fff; color:#475569; border:1px solid #cbd5e1; padding:8px 14px; border-radius:8px; cursor:pointer; font-size:0.85rem; font-weight:700; transition:all 0.15s; font-family:inherit; }
+        .wt-btn:hover { background:#f1f5f9; border-color:#3b82f6; }
+        .wt-btn.grade { background:#16a34a; color:#fff; border-color:#16a34a; }
+        .wt-btn.grade:hover { background:#15803d; border-color:#15803d; }
+        .wt-btn.primary { background:#26549f; color:#fff; border-color:#26549f; }
+        .wt-btn.primary:hover { background:#204787; border-color:#204787; }
+        .writing-input.correct { border-color:#fde047 !important; background:#fefce8 !important; color:#854d0e; font-weight:800; }
+        .writing-input.wrong { border-color:#fecaca !important; background:#fef2f2 !important; color:#991b1b; }
+        .writing-input.celebrating { animation: wtCorrectPop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        @keyframes wtCorrectPop {
+            0% { transform: scale(1); box-shadow: 0 0 0 rgba(250,204,21,0); }
+            40% { transform: scale(1.025); box-shadow: 0 6px 22px rgba(250,204,21,0.45); }
+            100% { transform: scale(1); box-shadow: 0 0 0 rgba(250,204,21,0); }
+        }
+        .wt-celebrate-badge {
+            position: absolute;
+            top: -16px; right: 16px;
+            background: linear-gradient(135deg, #fde047 0%, #facc15 60%, #f59e0b 100%);
+            color: #78350f;
+            font-weight: 900;
+            font-size: 0.95rem;
+            padding: 6px 16px;
+            border-radius: 999px;
+            box-shadow: 0 6px 18px rgba(250,204,21,0.5), 0 2px 6px rgba(120,53,15,0.15);
+            z-index: 10;
+            pointer-events: none;
+            white-space: nowrap;
+            animation: wtBadgePop 5s ease forwards;
+        }
+        .wt-celebrate-badge small { font-weight: 700; font-size: 0.78rem; opacity: 0.85; margin-left: 6px; }
+        @keyframes wtBadgePop {
+            0% { transform: translateY(10px) scale(0.65); opacity: 0; }
+            7% { transform: translateY(-6px) scale(1.08); opacity: 1; }
+            13% { transform: translateY(0) scale(1); opacity: 1; }
+            92% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-12px) scale(0.92); opacity: 0; }
+        }
+        .wt-sparkle {
+            position: absolute;
+            top: 50%;
+            font-size: 1.15rem;
+            pointer-events: none;
+            z-index: 9;
+            animation: wtSparkleFly 4.5s ease-out forwards;
+        }
+        @keyframes wtSparkleFly {
+            0% { transform: translateY(0) scale(0.4) rotate(0deg); opacity: 0; }
+            6% { opacity: 1; transform: translateY(-14px) scale(1) rotate(40deg); }
+            80% { opacity: 1; transform: translateY(-58px) scale(0.85) rotate(200deg); }
+            100% { transform: translateY(-78px) scale(0.3) rotate(280deg); opacity: 0; }
+        }
+        .writing-input.revealed { border-color:#3b82f6 !important; background:#ebf2fe !important; color:#26549f; font-weight:700; }
+        /* vocab toggle */
+        .vocab-toggle { background:#d1fae5; color:#065f46; border:1px solid #a7f3d0; padding:8px 18px; border-radius:6px; cursor:pointer; font-size:0.85rem; font-weight:700; margin:12px 0 0 0; transition:background 0.2s; }
+        .vocab-toggle:hover { background:#a7f3d0; }
+        .vocab-toggle + .vocab-box { display:none; margin-top:10px; }
+        .vocab-toggle + .vocab-box.shown { display:block; }
+        /* single-wt (개별 Writing Test) */
+        .single-wt { background:#f0fdf4; border-radius:10px; padding:14px 18px; margin:12px 0 20px 0; border-left:4px solid #22c55e; }
+        .single-wt-header { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:8px; flex-wrap:wrap; }
+        .single-wt-label { font-size:0.78rem; font-weight:800; color:#166534; text-transform:uppercase; letter-spacing:0.12em; }
+        .single-wt-buttons { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+        .single-wt-speak { background:#fff; color:#166534; border:1px solid #86efac; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:0.95rem; transition:background 0.2s, transform 0.2s; }
+        .single-wt-speak:hover { background:#f0fdf4; transform:scale(1.08); }
+        .single-wt-reveal { background:#16a34a; color:#fff; border:none; padding:6px 14px; border-radius:6px; cursor:pointer; font-size:0.8rem; font-weight:700; transition:background 0.2s; }
+        .single-wt-reveal:hover { background:#15803d; }
+        .single-wt textarea.writing-input { background:#fff; min-height:42px; }
+        /* explain-box */
+        .explain-box { margin: -4px 0 18px 0; }
+        .explain-toggle { background:#ede9fe; color:#5b21b6; border:1px solid #ddd6fe; padding:8px 18px; border-radius:6px; cursor:pointer; font-size:0.85rem; font-weight:700; transition:background 0.2s; }
+        .explain-toggle:hover { background:#ddd6fe; }
+        .explain-content { display:none; margin-top:10px; padding:14px 18px; background:#faf5ff; border-radius:8px; border-left:4px solid #7c3aed; font-size:0.95rem; line-height:1.7; color:#1e293b; }
+        .explain-content.shown { display:block; }
+        .explain-content p { margin: 4px 0; }
+        .explain-content strong { color:#6d28d9; }
+        .explain-content code { background:transparent; padding:0; font-family:inherit; color:#000; font-size:inherit; font-weight:700; }
+        code { background:transparent; padding:0; font-family:inherit; color:#000; font-size:inherit; font-weight:700; }
+        .explain-tip { margin-top: 10px !important; padding-top: 8px; border-top: 1px dashed #c4b5fd; color: #6d28d9; }
+        .explain-note { margin-top: 10px; padding: 10px 14px; background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 6px; font-size: 0.92rem; line-height: 1.65; color: #78350f; }
+        .explain-note strong { color: #92400e; }
+        @media print { .vocab-toggle + .vocab-box { display:block !important; } .vocab-toggle { display:none; } .explain-content { display:block !important; } .explain-toggle { display:none; } }
+        /* exp-table (3-column) */
+        .exp-table { width: 100%; border-collapse: collapse; margin: 6px 0 12px 0; font-size: 0.93rem; table-layout: fixed; }
+        .exp-table thead th { background: #f5f3ff; color: #6d28d9; font-weight: 800; padding: 8px 10px; border-bottom: 2px solid #c4b5fd; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; }
+        .exp-table tbody td:last-child { text-align: center; }
+        .exp-table tbody td { padding: 12px 10px; border-bottom: 1px solid #ede9fe; vertical-align: middle; line-height: 1.6; word-break: keep-all; overflow-wrap: anywhere; }
+        .exp-table tbody tr:last-child td { border-bottom: none; }
+        .exp-table tbody tr:nth-child(even) td { background: #faf5ff; }
+        .exp-table .exp-en { color: #000; font-weight: 800; width: 20%; word-break: keep-all; overflow-wrap: normal; hyphens: none; text-align: center; }
+        .exp-table .exp-role { font-weight: 700; color: #6d28d9; width: 20%; padding-right: 18px; word-break: keep-all; overflow-wrap: normal; text-align: center; }
+        .exp-table .exp-form { font-weight: 700; color: #1e293b; width: 20%; padding-left: 22px; text-align: center; }
+        /* ===== Grammar Overview — Refined gstep system (v9.76, predicate palette) ===== */
+        .gstep { display: grid; grid-template-columns: 60px 1fr; gap: 20px; padding: 24px 28px 22px; margin: 18px 0; background: linear-gradient(135deg, #faf5ff 0%, #ffffff 65%); border: 1px solid #e9d5ff; border-radius: 18px; box-shadow: 0 2px 6px rgba(15,23,42,0.04); position: relative; overflow: hidden; transition: box-shadow 0.2s ease, transform 0.15s ease; }
+        .gstep::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #4c1d95 0%, #6d28d9 50%, #8b5cf6 100%); opacity: 0.9; }
+        .gstep:hover { box-shadow: 0 6px 18px rgba(76,29,149,0.10); transform: translateY(-1px); }
+        .gstep-num { flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #8b5cf6 100%); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; box-shadow: 0 6px 14px rgba(76,29,149,0.30), inset 0 -3px 6px rgba(0,0,0,0.12); }
+        .gstep-body { min-width: 0; }
+        .gstep-body p { margin: 0 0 6px 0; }
+        .gstep-body p:last-child { margin-bottom: 0; }
+        .gstep-body p.en { color: #1e293b; font-size: 1.02rem; line-height: 1.65; font-family: 'Lato', 'Noto Sans KR', sans-serif; }
+        .gstep-body p.en strong { color: #4c1d95; font-weight: 800; }
+        .gstep-body p.ko { color: #475569; font-size: 0.94rem; line-height: 1.65; margin-bottom: 12px; font-weight: 500; }
+        .gstep-body p.ko strong { color: #5b21b6; font-weight: 700; }
+        .gstep-pattern { background: linear-gradient(135deg, #ede9fe 0%, #faf5ff 100%); color: #4c1d95; border: 1px solid #ddd6fe; border-left: 4px solid #6d28d9; padding: 14px 18px; border-radius: 10px; margin: 14px 0 10px 0; font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.08rem; font-weight: 800; line-height: 1.55; box-shadow: 0 2px 6px rgba(76,29,149,0.05); }
+        .gstep-pattern small { display: block; color: #7c3aed; font-weight: 500; font-size: 0.8rem; margin-top: 7px; letter-spacing: 0.02em; opacity: 0.92; }
+        .gstep-pattern .accent { color: #6d28d9; font-weight: 800; font-family: inherit; }
+        .gstep blockquote { background: #fff; border: 1px solid #e9d5ff; border-left: 3px solid #8b5cf6; border-radius: 8px; padding: 12px 16px; margin: 12px 0 10px 0; line-height: 1.85; font-size: 0.93rem; color: #1e293b; font-style: normal; }
+        .gstep blockquote strong { color: #6d28d9; font-weight: 800; }
+        .gstep-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 14px 0 10px 0; font-size: 0.93rem; background: #fff; border: 1px solid #ddd6fe; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(124,58,237,0.14); }
+        .gstep-table thead th { background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); color: #5b21b6; font-weight: 800; padding: 13px 12px; text-align: center; font-size: 0.9rem; letter-spacing: 0.01em; }
+        .gstep-table tbody td { padding: 10px 14px; border-bottom: 1px solid #faf5ff; background: #fff; line-height: 1.55; text-align: center; }
+        .gstep-table tbody tr:last-child td { border-bottom: none; }
+        .gstep-table tbody tr:nth-child(even) td { background: #faf5ff; }
+        .gstep-table tbody td .accent { color: #6d28d9; font-weight: 700; font-family: inherit; }
+        .gstep-table tbody td strong { color: #5b21b6; font-weight: 800; }
+        .gstep .explain-note { background: linear-gradient(135deg, #fef9c3 0%, #fefce8 70%); border-left: 4px solid #f59e0b; padding: 12px 18px; border-radius: 10px; margin-top: 14px; font-size: 0.92rem; line-height: 1.7; color: #713f12; box-shadow: 0 1px 3px rgba(245,158,11,0.06); }
+        .gstep .explain-note strong { color: #92400e; font-weight: 800; }
+        @media (max-width: 600px) {
+            .gstep { grid-template-columns: 1fr; gap: 14px; padding: 20px 22px 18px; }
+            .gstep::before { width: 3px; }
+            .gstep-num { width: 48px; height: 48px; font-size: 1.2rem; }
+        }
+        @media print {
+            .gstep { background: #fff; box-shadow: none; border: 1px solid #cbd5e1; page-break-inside: avoid; transform: none; }
+            .gstep:hover { transform: none; box-shadow: none; }
+            .gstep-num { box-shadow: none; }
+            .gstep-pattern, .gstep blockquote, .gstep-table, .gstep .explain-note { box-shadow: none; }
+        }
+            /* Read Along — 은은한 파스텔 (50-level) per item */
+        .sentence-list .sentence-item:nth-child(1) { background: #fdf2f8; }
+        .sentence-list .sentence-item:nth-child(2) { background: #fff1f2; }
+        .sentence-list .sentence-item:nth-child(3) { background: #fff7ed; }
+        .sentence-list .sentence-item:nth-child(4) { background: #fffbeb; }
+        .sentence-list .sentence-item:nth-child(5) { background: #fefce8; }
+        .sentence-list .sentence-item:nth-child(6) { background: #f7fee7; }
+        .sentence-list .sentence-item:nth-child(7) { background: #ecfdf5; }
+        .sentence-list .sentence-item:nth-child(8) { background: #f0fdfa; }
+        .sentence-list .sentence-item:nth-child(9) { background: #f0f9ff; }
+        .sentence-list .sentence-item:nth-child(10) { background: #f5f3ff; }
+        /* Writing Test — 은은한 파스텔 (50-level) per item */
+        .writing-practice .writing-item:nth-child(1) { background: #fdf2f8; }
+        .writing-practice .writing-item:nth-child(2) { background: #fff1f2; }
+        .writing-practice .writing-item:nth-child(3) { background: #fff7ed; }
+        .writing-practice .writing-item:nth-child(4) { background: #fffbeb; }
+        .writing-practice .writing-item:nth-child(5) { background: #fefce8; }
+        .writing-practice .writing-item:nth-child(6) { background: #f7fee7; }
+        .writing-practice .writing-item:nth-child(7) { background: #ecfdf5; }
+        .writing-practice .writing-item:nth-child(8) { background: #f0fdfa; }
+        .writing-practice .writing-item:nth-child(9) { background: #f0f9ff; }
+        .writing-practice .writing-item:nth-child(10) { background: #f5f3ff; }
+        /* Look & Speak — front 50-level + back 100→200 gradient */
+        .flashcard-grid.look-speak .flashcard:nth-child(1) .flashcard-front { background:#fdf2f8; border-color:#fce7f3; }
+        .flashcard-grid.look-speak .flashcard:nth-child(1) .flashcard-back  { background:linear-gradient(135deg,#fce7f3 0%,#fbcfe8 100%); color:#831843; }
+        .flashcard-grid.look-speak .flashcard:nth-child(2) .flashcard-front { background:#fff1f2; border-color:#ffe4e6; }
+        .flashcard-grid.look-speak .flashcard:nth-child(2) .flashcard-back  { background:linear-gradient(135deg,#ffe4e6 0%,#fecdd3 100%); color:#881337; }
+        .flashcard-grid.look-speak .flashcard:nth-child(3) .flashcard-front { background:#fff7ed; border-color:#ffedd5; }
+        .flashcard-grid.look-speak .flashcard:nth-child(3) .flashcard-back  { background:linear-gradient(135deg,#ffedd5 0%,#fed7aa 100%); color:#7c2d12; }
+        .flashcard-grid.look-speak .flashcard:nth-child(4) .flashcard-front { background:#fffbeb; border-color:#fef3c7; }
+        .flashcard-grid.look-speak .flashcard:nth-child(4) .flashcard-back  { background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%); color:#78350f; }
+        .flashcard-grid.look-speak .flashcard:nth-child(5) .flashcard-front { background:#fefce8; border-color:#fef9c3; }
+        .flashcard-grid.look-speak .flashcard:nth-child(5) .flashcard-back  { background:linear-gradient(135deg,#fef9c3 0%,#fef08a 100%); color:#713f12; }
+        .flashcard-grid.look-speak .flashcard:nth-child(6) .flashcard-front { background:#f7fee7; border-color:#ecfccb; }
+        .flashcard-grid.look-speak .flashcard:nth-child(6) .flashcard-back  { background:linear-gradient(135deg,#ecfccb 0%,#d9f99d 100%); color:#365314; }
+        .flashcard-grid.look-speak .flashcard:nth-child(7) .flashcard-front { background:#ecfdf5; border-color:#d1fae5; }
+        .flashcard-grid.look-speak .flashcard:nth-child(7) .flashcard-back  { background:linear-gradient(135deg,#d1fae5 0%,#a7f3d0 100%); color:#064e3b; }
+        .flashcard-grid.look-speak .flashcard:nth-child(8) .flashcard-front { background:#f0fdfa; border-color:#ccfbf1; }
+        .flashcard-grid.look-speak .flashcard:nth-child(8) .flashcard-back  { background:linear-gradient(135deg,#ccfbf1 0%,#99f6e4 100%); color:#134e4a; }
+        .flashcard-grid.look-speak .flashcard:nth-child(9) .flashcard-front { background:#f0f9ff; border-color:#e0f2fe; }
+        .flashcard-grid.look-speak .flashcard:nth-child(9) .flashcard-back  { background:linear-gradient(135deg,#e0f2fe 0%,#bae6fd 100%); color:#0c4a6e; }
+        .flashcard-grid.look-speak .flashcard:nth-child(10) .flashcard-front { background:#f5f3ff; border-color:#ede9fe; }
+        .flashcard-grid.look-speak .flashcard:nth-child(10) .flashcard-back  { background:linear-gradient(135deg,#ede9fe 0%,#ddd6fe 100%); color:#4c1d95; }
+        .flashcard-grid.look-speak .flashcard-back .flashcard-listen { background:rgba(255,255,255,0.6); color:inherit; }
+        .flashcard-grid.look-speak .flashcard-back .flashcard-listen:hover { background:rgba(255,255,255,0.9); color:inherit; }
+        /* Force black text on Look & Speak (override per-card) */
+        .flashcard-grid.look-speak .flashcard:nth-child(n) .flashcard-front,
+        .flashcard-grid.look-speak .flashcard:nth-child(n) .flashcard-back { color: #334155; }
+        /* English ↔ Korean Sentence Matching Game (em-) */
+        .em-game { margin-top: 16px; padding: 18px; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; }
+        .em-game-title { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1rem; font-weight: 800; color: #1e40af; margin: 0 0 8px 0; padding: 8px 14px; background: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 6px; }
+        .em-game-desc { color: #64748b; font-size: 0.92rem; margin: 0 0 14px 0; }
+        .em-toolbar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+        .em-stat { display: inline-flex; align-items: baseline; gap: 6px; padding: 6px 12px; background: #f1f5f9; border-radius: 8px; }
+        .em-stat-label { font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; }
+        .em-stat-num { font-size: 1.05rem; font-weight: 900; color: #1e40af; }
+        .em-reset { margin-left: auto; background: #1e40af; color: #fff; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 700; transition: background 0.2s; font-family: inherit; }
+        .em-reset:hover { background: #1e3a8a; }
+        .em-progress { height: 8px; background: #e2e8f0; border-radius: 999px; overflow: hidden; margin-bottom: 12px; }
+        .em-progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, #3b82f6, #60a5fa); border-radius: 999px; transition: width 0.35s ease; }
+        .em-message { padding: 10px 14px; background: #eff6ff; border-left: 3px solid #3b82f6; border-radius: 6px; font-size: 0.92rem; color: #1e293b; margin-bottom: 14px; min-height: 1.5em; }
+        .em-message.complete { background: #f0fdf4; border-left-color: #22c55e; color: #166534; font-weight: 800; }
+        .em-columns { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto repeat(var(--em-rows, 8), 84px); gap: 8px 14px; }
+        .em-col-header { font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; padding-left: 6px; }
+        #emEnglishList, #mmEnglishList, #hmEnglishList, #dmEnglishList { grid-column: 1; }
+        #emKoreanList, #mmKoreanList, #hmKoreanList, #dmKoreanList { grid-column: 2; }
+        #dmEnglishList, #emEnglishList, #hmEnglishList, #mmEnglishList { grid-column: 1; }
+        #dmKoreanList, #emKoreanList, #hmKoreanList, #mmKoreanList { grid-column: 2; }
+        .em-list { grid-row: 2 / -1; display: grid; grid-template-rows: subgrid; gap: 0; }
+        .em-slot { display: flex; align-items: stretch; min-height: 60px; }
+        .em-slot > .em-item { width: 100%; }
+        .em-item { width: 100%; min-height: 60px; border: 2px solid var(--em-border, #e2e8f0); border-left: 5px solid var(--em-border, #e2e8f0); border-radius: 12px; background: var(--em-bg, #f8fafc); cursor: pointer; padding: 10px 14px; display: flex; align-items: center; justify-content: center; gap: 10px; text-align: center; transition: transform 0.15s, filter 0.15s, box-shadow 0.15s, opacity 0.3s; font-family: inherit; color: #334155; }
+        .em-item:hover { filter: brightness(0.95); transform: translateY(-2px); }
+        .em-item.selected { transform: scale(1.02); box-shadow: 0 0 0 3px #3b82f6, 0 6px 16px rgba(59,130,246,0.25); }
+        .em-item.wrong { background: #fef2f2 !important; border-color: #ef4444 !important; border-left-color: #ef4444 !important; animation: emShake 0.45s ease; }
+        .em-item.removing { opacity: 0; transform: scale(0.5); pointer-events: none; }
+        .em-num { width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,0.7); font-size: 0.78rem; font-weight: 900; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; color: #1e40af; }
+        .em-text { font-size: 1.06rem; font-weight: 700; line-height: 1.4; color: #334155; word-break: keep-all; text-align: center; }
+        @keyframes emShake { 0%,100% {transform:translateX(0);} 20%{transform:translateX(-6px);} 40%{transform:translateX(6px);} 60%{transform:translateX(-4px);} 80%{transform:translateX(4px);} }
+        @media (max-width: 600px) {
+            .em-columns { grid-template-columns: 1fr; grid-template-rows: none; }
+            #emEnglishList, #emKoreanList, #mmEnglishList, #mmKoreanList, #hmEnglishList, #hmKoreanList, #dmEnglishList, #dmKoreanList { grid-row: auto; grid-column: 1; display: flex; flex-direction: column; gap: 8px; }
+        }
+        /* BONUS section vocabulary cards (shared by 전공/취미) */
+        .bonus-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 14px 0 24px 0; }
+        @media (max-width: 600px) { .bonus-grid { grid-template-columns: 1fr; } }
+        .bonus-card { padding: 14px 16px; border-radius: 12px; border: 2px solid var(--bc-border, #e2e8f0); border-left-width: 5px; background: var(--bc-bg, #f8fafc); box-shadow: 0 2px 6px rgba(0,0,0,0.04); }
+        .bonus-card .bonus-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .bonus-card .bonus-ko { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.25rem; font-weight: 800; color: #1e293b; }
+        .bonus-card .bonus-en { font-size: 0.92rem; color: #64748b; font-weight: 500; }
+        .bonus-card .speak-btn { margin-left: auto; }
+        /* Soft 변형: 전공 어휘처럼 한국어 톤다운이 필요한 그리드 */
+        .bonus-grid-soft .bonus-ko { font-weight: 600; color: #475569; }
+        /* Game completion celebration overlay */
+        .celebrate-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.55); display: none; align-items: center; justify-content: center; z-index: 1000; backdrop-filter: blur(6px); animation: celebrateFadeIn 0.3s ease; }
+        .celebrate-overlay.active { display: flex; }
+        .celebrate-card { background: linear-gradient(135deg, #fef9c3 0%, #fed7aa 100%); border-radius: 24px; padding: 36px 44px 28px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.35); max-width: 380px; min-width: 280px; animation: celebratePopIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+        .celebrate-emoji { font-size: 4.5rem; display: block; margin-bottom: 12px; animation: celebrateBounce 1s ease infinite; }
+        .celebrate-title { font-size: 1.85rem; font-weight: 900; color: #92400e; margin: 0 0 8px 0; line-height: 1.2; }
+        .celebrate-subtitle { font-size: 1rem; color: #78350f; margin: 0 0 20px 0; line-height: 1.4; }
+        .celebrate-stats { display: flex; gap: 28px; justify-content: center; margin-bottom: 22px; }
+        .celebrate-stat { display: flex; flex-direction: column; align-items: center; }
+        .celebrate-stat strong { display: block; font-size: 1.85rem; font-weight: 900; color: #92400e; line-height: 1; }
+        .celebrate-stat span { font-size: 0.78rem; font-weight: 700; color: #78350f; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+        .celebrate-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .celebrate-btn { background: #f59e0b; color: #fff; border: none; padding: 10px 22px; border-radius: 10px; font-size: 0.95rem; font-weight: 800; cursor: pointer; transition: background 0.2s, transform 0.15s; font-family: inherit; }
+        .celebrate-btn:hover { background: #d97706; transform: translateY(-1px); }
+        .celebrate-btn.secondary { background: #fff; color: #92400e; border: 2px solid #fde68a; padding: 8px 20px; }
+        .celebrate-btn.secondary:hover { background: #fef3c7; }
+        .confetti { position: fixed; top: -12px; width: 10px; height: 14px; pointer-events: none; z-index: 1001; animation: confettiFall linear forwards; }
+        @keyframes celebrateFadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes celebratePopIn { 0% { transform: scale(0.5); opacity: 0; } 60% { transform: scale(1.05); opacity: 1; } 100% { transform: scale(1); } }
+        @keyframes celebrateBounce { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-14px) rotate(3deg); } }
+        @keyframes confettiFall { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(720deg); opacity: 0; } }
+        /* v9.93 Korean word-break — keep CJK syllables together */
+        .gstep-table td, .gstep-table th { word-break: keep-all; overflow-wrap: break-word; }
+        .exp-table td, .exp-table th { word-break: keep-all; overflow-wrap: break-word; }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="title-block predicate">
+    <div class="title-en">
+        <h1 class="title-main">Predicate Grammar 1</h1>
+        <p class="title-sub">A = B</p>
+    </div>
+    <div class="title-divider"></div>
+    <div class="title-ko">
+        <p class="title-ko-main">서술어 문법 1</p>
+        <p class="title-ko-sub">A = B</p>
+    </div>
+</header>
+
+<h2>Grammar Overview · 문법 정리</h2>
+
+<div class="gstep">
+    <div class="gstep-num">1</div>
+    <div class="gstep-body">
+        <div class="gstep-pattern"><strong>Noun</strong>1 + <span class="accent">은/는</span> + <strong>Noun</strong>2 + <span class="accent">이다</span></div>
+        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-top:12px; font-size:0.92rem; line-height:1.8;">
+            <strong>A = B</strong>를 한국어로 표현하면 <strong>A는 B이다</strong>입니다.<br>
+            <small><em><strong>A = B</strong> in Korean is expressed as <strong>A는 B이다</strong> (A is B).</em></small>
+        </div>
+    </div>
+</div>
+
+<div class="gstep">
+    <div class="gstep-num">2</div>
+    <div class="gstep-body">
+        <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">'이다' is a special verb<br><small style="font-weight:600;">'이다'는 특별한 동사</small></h3>
+        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
+            <strong>'이다'</strong>는 특별한 동사입니다. 동사이지만 <strong>명사에 붙여서</strong> 씁니다 (띄어쓰기 없이).<br>
+            <small><em><strong>'이다' is a SPECIAL verb.</strong> It is a verb, but it attaches DIRECTLY to a noun (no space).</em></small>
+            <div style="margin-top:12px; padding:8px 12px; background:#fff; border-left:3px solid #fbbf24; border-radius:6px; font-size:0.9rem;">
+                <strong>예:</strong> 사람 → <strong>사람이다</strong> &nbsp;|&nbsp; 의사 → <strong>의사이다</strong>
+            </div>
+        </div>
+        <div class="explain-note">
+            <strong>⚠️ 받침 없는 명사:</strong> 명사 마지막 글자에 <strong>받침</strong>이 없으면 '<strong>이</strong>'를 생략할 수 있습니다. → <strong>의사다</strong>도 가능합니다 (의사이다 = 의사다).<br>
+            <small><em>Nouns without 받침: If the last syllable ends in a vowel (no 받침), '이' can be dropped. → <strong>의사다</strong> is acceptable.</em></small>
+        </div>
+    </div>
+</div>
+
+<div class="gstep">
+    <div class="gstep-num">3</div>
+    <div class="gstep-body">
+        <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">'이다' tenses<br><small style="font-weight:600;">'이다'의 시제</small></h3>
+        <div class="explain-note">
+            <strong>📝 격식체 현재·과거·미래 (Formal Present, Past, Future)</strong>
+            <table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
+                <thead>
+                    <tr style="background:linear-gradient(135deg,#7c3aed,#a855f7); color:#fff;">
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #a855f7;">시제<br><small>Tense</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #a855f7;">구조<br><small>Structure</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #a855f7;">결과<br><small>Result</small></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #ede9fe;"><strong>현재</strong><br><small><em>Present</em></small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #ede9fe;">이다 → 이 + <strong>ㅂ니다</strong></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #ede9fe; color:#6d28d9;"><strong>입니다</strong></td></tr>
+                    <tr style="background:#faf7ff;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #ede9fe;"><strong>과거</strong><br><small><em>Past</em></small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #ede9fe;">이다 → 이 + <strong>었습니다</strong></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #ede9fe; color:#6d28d9;"><strong>이었습니다 = 였습니다</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; color:#6d28d9;"><strong>미래</strong><br><small><em>Future</em></small></td><td style="padding:8px 10px; text-align:center;">이다 → 이 + <strong>ㄹ 것입니다</strong></td><td style="padding:8px 10px; text-align:center; color:#6d28d9;"><strong>일 것입니다</strong></td></tr>
+                </tbody>
+            </table>
+            <div style="margin-top:10px; padding:8px 12px; background:#fffbeb; border-left:3px solid #fbbf24; border-radius:6px; font-size:0.9rem;">
+                <strong>예:</strong>
+                <span style="display:inline-block; vertical-align:top; text-align:center; margin:4px 12px;">대학생<strong>입니다</strong><br><small>(am a student)</small></span>
+                <span style="display:inline-block; vertical-align:top; text-align:center; margin:4px 12px;">대학생<strong>이었습니다</strong><br><small>(was a student)</small></span>
+                <span style="display:inline-block; vertical-align:top; text-align:center; margin:4px 12px;">대학생<strong>일 것입니다</strong><br><small>(will be a student)</small></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="gstep">
+    <div class="gstep-num">4</div>
+    <div class="gstep-body">
+        <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">'제' = my</h3>
+        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
+            새 단어: <strong>'제' = my</strong> (겸양형). <strong>'저의'</strong>의 줄임말입니다.<br>
+            <small><em>New word: <strong>'제' = my</strong> (humble). It is the shortened form of <strong>'저의'</strong>.</em></small>
+        </div>
+        <div class="gstep-pattern"><strong>저</strong> = I &nbsp;→&nbsp; <span class="accent">제 = my</span> (= <strong>저의</strong>)<small><strong>제 전공</strong> (my major) · <strong>제 고향</strong> (my hometown) · <strong>제 취미</strong> (my hobby) · <strong>제 노트북</strong> (my laptop)</small></div>
+    </div>
+</div>
+
+<div class="gstep">
+    <div class="gstep-num">5</div>
+    <div class="gstep-body">
+        <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">Possessive particle '의'<br><small style="font-weight:600;">소유격 조사 '의'</small></h3>
+        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
+            조사 <strong>'의'</strong>는 <strong>소유·소속·관계</strong>를 나타냅니다. 영어 <strong>'of'</strong> 또는 <strong>'-'s</strong>에 해당합니다. <strong>[명사 A] + 의 + [명사 B]</strong> = "A의 B" (A에 속한 B).<br>
+            <small><em>The particle <strong>'의'</strong> marks <strong>possession, belonging, or relationship</strong>. It corresponds to English <strong>'of'</strong> or <strong>'-'s</strong>. Pattern: <strong>[Noun A] + 의 + [Noun B]</strong> = "B of A" / "A's B".</em></small>
+        </div>
+        <div class="gstep-pattern"><strong>Noun A</strong> + <span class="accent">의</span> + <strong>Noun B</strong> = A's B / B of A<small>명사 A + <span style="color:#6d28d9;font-weight:800;">의</span> + 명사 B = A의 B (A에 속한 B)</small></div>
+        <div class="explain-note">
+            <strong>📝 활용 예 (Usage examples)</strong>
+            <table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
+                <thead>
+                    <tr style="background:linear-gradient(135deg,#7c3aed,#a855f7); color:#fff;">
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #a855f7; width:60%;">한국어<br><small>Korean (with 의)</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #a855f7;">영어<br><small>English</small></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #ede9fe; word-break:keep-all; white-space:nowrap;"><strong>저</strong> + <strong style="color:#6d28d9;">의</strong> + <strong>책</strong> = <strong style="color:#6d28d9;">저의 책</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #ede9fe;">my book<br><small><em>(book of mine)</em></small></td></tr>
+                    <tr style="background:#faf7ff;"><td style="padding:10px; text-align:center; border-bottom:1px solid #ede9fe; word-break:keep-all; white-space:nowrap;"><strong>친구</strong> + <strong style="color:#6d28d9;">의</strong> + <strong>이름</strong> = <strong style="color:#6d28d9;">친구의 이름</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #ede9fe;">friend's name<br><small><em>(name of a friend)</em></small></td></tr>
+                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #ede9fe; word-break:keep-all; white-space:nowrap;"><strong>한국</strong> + <strong style="color:#6d28d9;">의</strong> + <strong>수도</strong> = <strong style="color:#6d28d9;">한국의 수도</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #ede9fe;">capital of Korea<br><small><em>(Korea's capital)</em></small></td></tr>
+                    <tr style="background:#faf7ff;"><td style="padding:10px; text-align:center; word-break:keep-all; white-space:nowrap;"><strong>학교</strong> + <strong style="color:#6d28d9;">의</strong> + <strong>이름</strong> = <strong style="color:#6d28d9;">학교의 이름</strong></td><td style="padding:10px; text-align:center;">school's name<br><small><em>(name of the school)</em></small></td></tr>
+                </tbody>
+            </table>
+            <div style="margin-top:10px; padding:8px 10px; background:#fef3c7; border-left:3px solid #f59e0b; border-radius:4px; font-size:0.88rem;">
+                <strong>📝 핵심 — 일상 회화에서 '의' 생략:</strong> 일상에서는 보통 <strong>'의'</strong>를 생략하고 두 명사를 바로 붙입니다. <strong>저의 책</strong> → <strong style="color:#92400e;">저 책</strong> (×) / <strong style="color:#16a34a;">제 책</strong> (✓), <strong>친구의 이름</strong> → <strong style="color:#16a34a;">친구 이름</strong>, <strong>학교의 이름</strong> → <strong style="color:#16a34a;">학교 이름</strong>. <strong>저</strong>는 <strong>제</strong>로 축약(<strong>'저의' = '제'</strong>).<br>
+                <small><em><strong>Key — '의' is usually omitted in everyday speech:</strong> Native speakers drop <strong>'의'</strong> and place two nouns side by side. <strong>저의 책</strong> contracts to <strong>제 책</strong>; <strong>친구의 이름</strong> becomes <strong>친구 이름</strong>; <strong>학교의 이름</strong> becomes <strong>학교 이름</strong>. <strong>저 + 의</strong> uniquely contracts to <strong>제</strong>.</em></small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<h2>Practice: Make Korean sentences!</h2>
+<p class="subtitle">연습: 한국어 문장을 만들어 보세요!</p>
+
+<h3>87) I am Kim Kyoungjin.</h3>
+
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<div class="vocab-box">
+    <div class="vocab-title">Vocabulary</div>
+    I = 저 &nbsp;|&nbsp; Kim Kyoungjin = 김경진 (Korean name)
+</div>
+
+<div class="single-wt">
+    <textarea class="writing-input" data-ans="저는 김경진입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+</div>
+
+<div class="answer-box">
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <div class="answer-content">
+        <div class="ans-kr">저는 김경진입니다. <button class="speak-btn" onclick="speakKorean('저는 김경진입니다.')" title="Listen">🔊</button></div>
+    </div>
+</div>
+
+<div class="explain-box">
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <div class="explain-content">
+        <table class="exp-table">
+            <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup>
+            <thead>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Predicate<br>한국어 어순: 주어 + 서술어</th></tr>
+                <tr><th style="width:20%">English<br>영어</th><th style="width:20%">Role<br>역할</th><th style="width:20%">Korean<br>한국어</th><th style="width:40%">Explanation<br>해설</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="exp-en"><strong>I</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>저는</strong></td><td><strong>저</strong> + <strong>는</strong></td></tr>
+                <tr><td class="exp-en"><strong>am Kim Kyoungjin</strong></td><td class="exp-role">Predicate<br><small>서술어</small></td><td class="exp-form"><strong>김경진입니다</strong></td><td><strong>김경진</strong> + <strong>입니다</strong></td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<h3>88) I am a university student.</h3>
+
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<div class="vocab-box">
+    <div class="vocab-title">Vocabulary</div>
+    university = 대학 &nbsp;|&nbsp; student = 학생 &nbsp;|&nbsp; university student = 대학생
+</div>
+
+<div class="single-wt">
+    <textarea class="writing-input" data-ans="저는 대학생입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+</div>
+
+<div class="answer-box">
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <div class="answer-content">
+        <div class="ans-kr">저는 대학생입니다. <button class="speak-btn" onclick="speakKorean('저는 대학생입니다.')" title="Listen">🔊</button></div>
+    </div>
+</div>
+
+<div class="explain-box">
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <div class="explain-content">
+        <table class="exp-table">
+            <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup>
+            <thead>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Predicate<br>한국어 어순: 주어 + 서술어</th></tr>
+                <tr><th style="width:20%">English<br>영어</th><th style="width:20%">Role<br>역할</th><th style="width:20%">Korean<br>한국어</th><th style="width:40%">Explanation<br>해설</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="exp-en"><strong>I</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>저는</strong></td><td><strong>저</strong> + <strong>는</strong></td></tr>
+                <tr><td class="exp-en"><strong>am a university student</strong></td><td class="exp-role">Predicate<br><small>서술어</small></td><td class="exp-form"><strong>대학생입니다</strong></td><td><strong>대학생</strong> + <strong>입니다</strong></td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<h3>89) My major is computer science.</h3>
+
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<div class="vocab-box">
+    <div class="vocab-title">Vocabulary</div>
+    my = 제 &nbsp;|&nbsp; major = 전공 &nbsp;|&nbsp; computer science = 컴퓨터공학
+</div>
+
+<div class="single-wt">
+    <textarea class="writing-input" data-ans="제 전공은 컴퓨터공학입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+</div>
+
+<div class="answer-box">
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <div class="answer-content">
+        <div class="ans-kr">제 전공은 컴퓨터공학입니다. <button class="speak-btn" onclick="speakKorean('제 전공은 컴퓨터공학입니다.')" title="Listen">🔊</button></div>
+    </div>
+</div>
+
+<div class="explain-box">
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <div class="explain-content">
+        <table class="exp-table">
+            <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup>
+            <thead>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Predicate<br>한국어 어순: 주어 + 서술어</th></tr>
+                <tr><th style="width:20%">English<br>영어</th><th style="width:20%">Role<br>역할</th><th style="width:20%">Korean<br>한국어</th><th style="width:40%">Explanation<br>해설</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="exp-en"><strong>My major</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>제 전공은</strong></td><td><strong>제 전공</strong> + <strong>은</strong></td></tr>
+                <tr><td class="exp-en"><strong>is computer science</strong></td><td class="exp-role">Predicate<br><small>서술어</small></td><td class="exp-form"><strong>컴퓨터공학입니다</strong></td><td><strong>컴퓨터공학</strong> + <strong>입니다</strong></td></tr>
+            </tbody>
+        </table>
+        <div style="margin-top:14px;background:linear-gradient(135deg,#eef2ff 0%,#e0e7ff 100%);border:1px solid #c7d2fe;border-left:4px solid #4f46e5;border-radius:10px;padding:14px 18px;box-shadow:0 1px 3px rgba(79,70,229,0.05);">
+            <div style="font-weight:800;color:#3730a3;margin-bottom:10px;font-size:0.95rem;">📝 소유격 조사 '의' · The possessive particle '의'</div>
+            <p style="margin:0 0 10px;color:#374151;font-size:0.92rem;line-height:1.55;">명사 뒤에 <strong style="color:#4f46e5;">'의'</strong>를 붙이면 소유·소속을 나타냅니다 (영어 of, 's). 조사 <strong style="color:#4f46e5;">'의'</strong>는 보통 <strong>[에]</strong>로 발음합니다.<br><small>Attach <strong style="color:#4f46e5;">'의'</strong> to a noun to show possession (English of / 's). The particle is usually pronounced <strong>[에]</strong>.</small></p>
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px 12px;">
+                <div style="background:#fff;border:1px solid #c7d2fe;border-radius:8px;padding:6px 10px;"><strong style="color:#3730a3;">저의 → 제</strong> <span style="color:#6b7280;font-size:0.85rem;">— my (humble)</span></div>
+                <div style="background:#fff;border:1px solid #c7d2fe;border-radius:8px;padding:6px 10px;"><strong style="color:#3730a3;">나의 → 내</strong> <span style="color:#6b7280;font-size:0.85rem;">— my (casual)</span></div>
+                <div style="background:#fff;border:1px solid #c7d2fe;border-radius:8px;padding:6px 10px;"><strong style="color:#3730a3;">너의 → 네</strong> <span style="color:#6b7280;font-size:0.85rem;">— your (casual)</span></div>
+                <div style="background:#fff;border:1px solid #c7d2fe;border-radius:8px;padding:6px 10px;"><strong style="color:#3730a3;">친구의</strong> <span style="color:#6b7280;font-size:0.85rem;">— friend's</span></div>
+                <div style="background:#fff;border:1px solid #c7d2fe;border-radius:8px;padding:6px 10px;"><strong style="color:#3730a3;">한국의</strong> <span style="color:#6b7280;font-size:0.85rem;">— Korea's / of Korea</span></div>
+                <div style="background:#fff;border:1px solid #c7d2fe;border-radius:8px;padding:6px 10px;"><strong style="color:#3730a3;">선생님의</strong> <span style="color:#6b7280;font-size:0.85rem;">— teacher's</span></div>
+            </div>
+            <p style="margin:10px 0 0;color:#4338ca;font-size:0.88rem;line-height:1.55;">💡 <strong>제 전공</strong>은 <strong>저의 전공</strong>의 줄임말입니다. 회화에서는 <strong style="color:#4f46e5;">'의'</strong>를 자주 생략합니다 (예: <strong>한국 음식</strong> = <strong>한국의 음식</strong>).<br><small><strong>제 전공</strong> is the contracted form of <strong>저의 전공</strong>. In speech <strong style="color:#4f46e5;">'의'</strong> is often dropped (e.g. 한국 음식 = 한국의 음식).</small></p>
+        </div>
+    </div>
+</div>
+
+<h3>90) My hometown is Seoul.</h3>
+
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<div class="vocab-box">
+    <div class="vocab-title">Vocabulary</div>
+    hometown = 고향 &nbsp;|&nbsp; Seoul = 서울
+</div>
+
+<div class="single-wt">
+    <textarea class="writing-input" data-ans="제 고향은 서울입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+</div>
+
+<div class="answer-box">
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <div class="answer-content">
+        <div class="ans-kr">제 고향은 서울입니다. <button class="speak-btn" onclick="speakKorean('제 고향은 서울입니다.')" title="Listen">🔊</button></div>
+    </div>
+</div>
+
+<div class="explain-box">
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <div class="explain-content">
+        <table class="exp-table">
+            <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup>
+            <thead>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Predicate<br>한국어 어순: 주어 + 서술어</th></tr>
+                <tr><th style="width:20%">English<br>영어</th><th style="width:20%">Role<br>역할</th><th style="width:20%">Korean<br>한국어</th><th style="width:40%">Explanation<br>해설</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="exp-en"><strong>My hometown</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>제 고향은</strong></td><td><strong>제 고향</strong> + <strong>은</strong></td></tr>
+                <tr><td class="exp-en"><strong>is Seoul</strong></td><td class="exp-role">Predicate<br><small>서술어</small></td><td class="exp-form"><strong>서울입니다</strong></td><td><strong>서울</strong> + <strong>입니다</strong></td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<h3>91) My hobby is traveling.</h3>
+
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<div class="vocab-box">
+    <div class="vocab-title">Vocabulary</div>
+    hobby = 취미 &nbsp;|&nbsp; traveling = 여행
+</div>
+
+<div class="single-wt">
+    <textarea class="writing-input" data-ans="제 취미는 여행입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+</div>
+
+<div class="answer-box">
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <div class="answer-content">
+        <div class="ans-kr">제 취미는 여행입니다. <button class="speak-btn" onclick="speakKorean('제 취미는 여행입니다.')" title="Listen">🔊</button></div>
+    </div>
+</div>
+
+<div class="explain-box">
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <div class="explain-content">
+        <table class="exp-table">
+            <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup>
+            <thead>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Predicate<br>한국어 어순: 주어 + 서술어</th></tr>
+                <tr><th style="width:20%">English<br>영어</th><th style="width:20%">Role<br>역할</th><th style="width:20%">Korean<br>한국어</th><th style="width:40%">Explanation<br>해설</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="exp-en"><strong>My hobby</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>제 취미는</strong></td><td><strong>제 취미</strong> + <strong>는</strong></td></tr>
+                <tr><td class="exp-en"><strong>is traveling</strong></td><td class="exp-role">Predicate<br><small>서술어</small></td><td class="exp-form"><strong>여행입니다</strong></td><td><strong>여행</strong> + <strong>입니다</strong></td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<h3>92) Today is Saturday.</h3>
+
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<div class="vocab-box">
+    <div class="vocab-title">Vocabulary</div>
+    today = 오늘 &nbsp;|&nbsp; Saturday = 토요일
+</div>
+
+<div class="single-wt">
+    <textarea class="writing-input" data-ans="오늘은 토요일입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+</div>
+
+<div class="answer-box">
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <div class="answer-content">
+        <div class="ans-kr">오늘은 토요일입니다. <button class="speak-btn" onclick="speakKorean('오늘은 토요일입니다.')" title="Listen">🔊</button></div>
+    </div>
+</div>
+
+<div class="explain-box">
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <div class="explain-content">
+        <table class="exp-table">
+            <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup>
+            <thead>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Predicate<br>한국어 어순: 주어 + 서술어</th></tr>
+                <tr><th style="width:20%">English<br>영어</th><th style="width:20%">Role<br>역할</th><th style="width:20%">Korean<br>한국어</th><th style="width:40%">Explanation<br>해설</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="exp-en"><strong>Today</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>오늘은</strong></td><td><strong>오늘</strong> + <strong>은</strong></td></tr>
+                <tr><td class="exp-en"><strong>is Saturday</strong></td><td class="exp-role">Predicate<br><small>서술어</small></td><td class="exp-form"><strong>토요일입니다</strong></td><td><strong>토요일</strong> + <strong>입니다</strong></td></tr>
+            </tbody>
+        </table>
+        <div style="margin-top:14px;background:linear-gradient(135deg,#f0fdfa 0%,#ecfeff 100%);border:1px solid #a7f3d0;border-left:4px solid #14b8a6;border-radius:10px;padding:14px 18px;box-shadow:0 1px 3px rgba(20,184,166,0.05);">
+            <div style="font-weight:800;color:#0f766e;margin-bottom:10px;font-size:0.95rem;">📅 요일 · Days of the week</div>
+            <table style="width:100%;border-collapse:separate;border-spacing:0;font-size:0.9rem;margin:0;background:#fff;border:1px solid #99f6e4;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(20,184,166,0.10);">
+                <thead>
+                    <tr style="background:#ccfbf1;color:#0f766e;">
+                        <th style="padding:10px 10px;text-align:center;font-weight:800;border-bottom:1px solid #99f6e4;">요일<br><small style="font-weight:600;opacity:0.85;">Day</small></th>
+                        <th style="padding:10px 10px;text-align:center;font-weight:800;border-bottom:1px solid #99f6e4;">영어<br><small style="font-weight:600;opacity:0.85;">English</small></th>
+                        <th style="padding:10px 10px;text-align:center;font-weight:800;border-bottom:1px solid #99f6e4;">한자<br><small style="font-weight:600;opacity:0.85;">Hanja</small></th>
+                        <th style="padding:10px 10px;text-align:center;font-weight:800;border-bottom:1px solid #99f6e4;">의미<br><small style="font-weight:600;opacity:0.85;">Meaning</small></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><strong style="color:#0f766e;">월요일</strong></td><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;color:#334155;">Monday</td><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><span style="font-size:1.34rem;font-weight:800;color:#4f46e5;">月</span></td><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><strong style="color:#4f46e5;">달</strong><br><small style="color:#94a3b8;">moon</small></td></tr>
+                    <tr><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><strong style="color:#0f766e;">화요일</strong></td><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;color:#334155;">Tuesday</td><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><span style="font-size:1.34rem;font-weight:800;color:#dc2626;">火</span></td><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><strong style="color:#dc2626;">불</strong><br><small style="color:#94a3b8;">fire</small></td></tr>
+                    <tr><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><strong style="color:#0f766e;">수요일</strong></td><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;color:#334155;">Wednesday</td><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><span style="font-size:1.34rem;font-weight:800;color:#2563eb;">水</span></td><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><strong style="color:#2563eb;">물</strong><br><small style="color:#94a3b8;">water</small></td></tr>
+                    <tr><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><strong style="color:#0f766e;">목요일</strong></td><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;color:#334155;">Thursday</td><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><span style="font-size:1.34rem;font-weight:800;color:#16a34a;">木</span></td><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><strong style="color:#16a34a;">나무</strong><br><small style="color:#94a3b8;">wood</small></td></tr>
+                    <tr><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><strong style="color:#0f766e;">금요일</strong></td><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;color:#334155;">Friday</td><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><span style="font-size:1.34rem;font-weight:800;color:#d97706;">金</span></td><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><strong style="color:#d97706;">쇠</strong><br><small style="color:#94a3b8;">metal</small></td></tr>
+                    <tr style="background:#e6fffa;"><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><strong style="color:#0f766e;">토요일</strong></td><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><strong style="color:#334155;">Saturday</strong></td><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><span style="font-size:1.34rem;font-weight:800;color:#92400e;">土</span></td><td style="padding:9px 10px;text-align:center;border-bottom:1px solid #e6fbf5;"><strong style="color:#92400e;">흙</strong><br><small style="color:#94a3b8;">earth</small></td></tr>
+                    <tr><td style="padding:9px 10px;text-align:center;"><strong style="color:#0f766e;">일요일</strong></td><td style="padding:9px 10px;text-align:center;color:#334155;">Sunday</td><td style="padding:9px 10px;text-align:center;"><span style="font-size:1.34rem;font-weight:800;color:#ea580c;">日</span></td><td style="padding:9px 10px;text-align:center;"><strong style="color:#ea580c;">해</strong><br><small style="color:#94a3b8;">sun</small></td></tr>
+                </tbody>
+            </table>
+            <p style="margin:10px 0 0;color:#374151;font-size:0.9rem;line-height:1.55;">모든 요일은 <strong style="color:#0d9488;">요일</strong>로 끝납니다. <strong>오늘은 토요일입니다.</strong><br><small>Every day name ends in <strong style="color:#0d9488;">요일</strong>. "Today is Saturday."</small></p>
+        </div>
+    </div>
+</div>
+
+<h3>93) Tomorrow is Sunday.</h3>
+
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<div class="vocab-box">
+    <div class="vocab-title">Vocabulary</div>
+    tomorrow = 내일 &nbsp;|&nbsp; Sunday = 일요일
+</div>
+
+<div class="single-wt">
+    <textarea class="writing-input" data-ans="내일은 일요일입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+</div>
+
+<div class="answer-box">
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <div class="answer-content">
+        <div class="ans-kr">내일은 일요일입니다. <button class="speak-btn" onclick="speakKorean('내일은 일요일입니다.')" title="Listen">🔊</button></div>
+    </div>
+</div>
+
+<div class="explain-box">
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <div class="explain-content">
+        <table class="exp-table">
+            <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup>
+            <thead>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Predicate<br>한국어 어순: 주어 + 서술어</th></tr>
+                <tr><th style="width:20%">English<br>영어</th><th style="width:20%">Role<br>역할</th><th style="width:20%">Korean<br>한국어</th><th style="width:40%">Explanation<br>해설</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="exp-en"><strong>Tomorrow</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>내일은</strong></td><td><strong>내일</strong> + <strong>은</strong></td></tr>
+                <tr><td class="exp-en"><strong>is Sunday</strong></td><td class="exp-role">Predicate<br><small>서술어</small></td><td class="exp-form"><strong>일요일입니다</strong></td><td><strong>일요일</strong> + <strong>입니다</strong></td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<h3>94) This is my laptop.</h3>
+
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<div class="vocab-box">
+    <div class="vocab-title">Vocabulary</div>
+    this = 이것 &nbsp;|&nbsp; my = 제 &nbsp;|&nbsp; laptop = 노트북
+</div>
+
+<div class="single-wt">
+    <textarea class="writing-input" data-ans="이것은 제 노트북입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+</div>
+
+<div class="answer-box">
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <div class="answer-content">
+        <div class="ans-kr">이것은 제 노트북입니다. <button class="speak-btn" onclick="speakKorean('이것은 제 노트북입니다.')" title="Listen">🔊</button></div>
+    </div>
+</div>
+
+<div class="explain-box">
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <div class="explain-content">
+        <table class="exp-table">
+            <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup>
+            <thead>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Predicate<br>한국어 어순: 주어 + 서술어</th></tr>
+                <tr><th style="width:20%">English<br>영어</th><th style="width:20%">Role<br>역할</th><th style="width:20%">Korean<br>한국어</th><th style="width:40%">Explanation<br>해설</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="exp-en"><strong>This</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>이것은</strong></td><td><strong>이것</strong> + <strong>은</strong></td></tr>
+                <tr><td class="exp-en"><strong>is my laptop</strong></td><td class="exp-role">Predicate<br><small>서술어</small></td><td class="exp-form"><strong>제 노트북입니다</strong></td><td><strong>제 노트북</strong> + <strong>입니다</strong></td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<h3>95) Here is Seoul Station.</h3>
+
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<div class="vocab-box">
+    <div class="vocab-title">Vocabulary</div>
+    here = 여기 &nbsp;|&nbsp; Seoul Station = 서울역
+</div>
+
+<div class="single-wt">
+    <textarea class="writing-input" data-ans="여기는 서울역입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+</div>
+
+<div class="answer-box">
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <div class="answer-content">
+        <div class="ans-kr">여기는 서울역입니다. <button class="speak-btn" onclick="speakKorean('여기는 서울역입니다.')" title="Listen">🔊</button></div>
+    </div>
+</div>
+
+<div class="explain-box">
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <div class="explain-content">
+        <table class="exp-table">
+            <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup>
+            <thead>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Predicate<br>한국어 어순: 주어 + 서술어</th></tr>
+                <tr><th style="width:20%">English<br>영어</th><th style="width:20%">Role<br>역할</th><th style="width:20%">Korean<br>한국어</th><th style="width:40%">Explanation<br>해설</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="exp-en"><strong>Here</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>여기는</strong></td><td><strong>여기</strong> + <strong>는</strong></td></tr>
+                <tr><td class="exp-en"><strong>is Seoul Station</strong></td><td class="exp-role">Predicate<br><small>서술어</small></td><td class="exp-form"><strong>서울역입니다</strong></td><td><strong>서울역</strong> + <strong>입니다</strong></td></tr>
+            </tbody>
+        </table>
+        <div style="margin-top:14px;background:linear-gradient(135deg,#eef2ff 0%,#e0e7ff 100%);border:1px solid #c7d2fe;border-left:4px solid #4f46e5;border-radius:10px;padding:14px 18px;box-shadow:0 1px 3px rgba(79,70,229,0.05);">
+            <div style="font-weight:800;color:#3730a3;margin-bottom:10px;font-size:0.95rem;">📝 이것 · 저것 · 그것 · 여기 · 저기 · 거기 — 거리로 가리키기 · Pointing by distance</div>
+            <p style="margin:0 0 10px;color:#374151;font-size:0.92rem;line-height:1.55;">한국어는 거리에 따라 셋으로 가리킵니다 — <strong style="color:#4f46e5;">이</strong>(나에게 가까움), <strong style="color:#4f46e5;">그</strong>(너에게 가까움·이미 말한 것), <strong style="color:#4f46e5;">저</strong>(둘 다에게서 멈).<br><small>Korean points in three ways by distance — <strong style="color:#4f46e5;">이</strong> (near me), <strong style="color:#4f46e5;">그</strong> (near you / already mentioned), <strong style="color:#4f46e5;">저</strong> (far from both).</small></p>
+            <table style="width:100%;border-collapse:collapse;font-size:0.9rem;margin:0;">
+                <thead>
+                    <tr style="background:#e0e7ff;color:#3730a3;">
+                        <th style="padding:7px 10px;border:1px solid #c7d2fe;text-align:center;">거리<br><small>Distance</small></th>
+                        <th style="padding:7px 10px;border:1px solid #c7d2fe;text-align:center;">사물 (~것)<br><small>Thing</small></th>
+                        <th style="padding:7px 10px;border:1px solid #c7d2fe;text-align:center;">장소<br><small>Place</small></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td style="padding:6px 10px;border:1px solid #ddd6fe;text-align:center;background:#fff;"><strong style="color:#4f46e5;">이</strong><br><small>near me</small></td><td style="padding:6px 10px;border:1px solid #ddd6fe;text-align:center;background:#fff;"><strong style="color:#3730a3;">이것</strong><br><small>(this)</small></td><td style="padding:6px 10px;border:1px solid #ddd6fe;text-align:center;background:#fff;"><strong style="color:#3730a3;">여기</strong><br><small>(here)</small></td></tr>
+                    <tr><td style="padding:6px 10px;border:1px solid #ddd6fe;text-align:center;background:#fff;"><strong style="color:#4f46e5;">그</strong><br><small>near you</small></td><td style="padding:6px 10px;border:1px solid #ddd6fe;text-align:center;background:#fff;"><strong style="color:#3730a3;">그것</strong><br><small>(that)</small></td><td style="padding:6px 10px;border:1px solid #ddd6fe;text-align:center;background:#fff;"><strong style="color:#3730a3;">거기</strong><br><small>(there)</small></td></tr>
+                    <tr><td style="padding:6px 10px;border:1px solid #ddd6fe;text-align:center;background:#fff;"><strong style="color:#4f46e5;">저</strong><br><small>far</small></td><td style="padding:6px 10px;border:1px solid #ddd6fe;text-align:center;background:#fff;"><strong style="color:#3730a3;">저것</strong><br><small>(that over there)</small></td><td style="padding:6px 10px;border:1px solid #ddd6fe;text-align:center;background:#fff;"><strong style="color:#3730a3;">저기</strong><br><small>(over there)</small></td></tr>
+                </tbody>
+            </table>
+            <p style="margin:10px 0 0;color:#4338ca;font-size:0.88rem;line-height:1.55;">💡 <strong>이·그·저 + 것</strong> = 사물, 장소는 <strong>여기·거기·저기</strong>. 이 문장은 <strong>여기</strong>(here)를 씁니다.<br><small><strong>이/그/저 + 것</strong> makes things; places are <strong>여기/거기/저기</strong>. This sentence uses <strong>여기</strong><br><small>(here)</small>.</small></p>
+        </div>
+    </div>
+</div>
+
+<h3>96) That is Namsan Mountain.</h3>
+
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<div class="vocab-box">
+    <div class="vocab-title">Vocabulary</div>
+    that (over there) = 저기 &nbsp;|&nbsp; Namsan Mountain = 남산
+</div>
+
+<div class="single-wt">
+    <textarea class="writing-input" data-ans="저기는 남산입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+</div>
+
+<div class="answer-box">
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <div class="answer-content">
+        <div class="ans-kr">저기는 남산입니다. <button class="speak-btn" onclick="speakKorean('저기는 남산입니다.')" title="Listen">🔊</button></div>
+    </div>
+</div>
+
+<div class="explain-box">
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <div class="explain-content">
+        <table class="exp-table">
+            <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup>
+            <thead>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Predicate<br>한국어 어순: 주어 + 서술어</th></tr>
+                <tr><th style="width:20%">English<br>영어</th><th style="width:20%">Role<br>역할</th><th style="width:20%">Korean<br>한국어</th><th style="width:40%">Explanation<br>해설</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="exp-en"><strong>That</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>저기는</strong></td><td><strong>저기</strong> + <strong>는</strong></td></tr>
+                <tr><td class="exp-en"><strong>is Namsan Mountain</strong></td><td class="exp-role">Predicate<br><small>서술어</small></td><td class="exp-form"><strong>남산입니다</strong></td><td><strong>남산</strong> + <strong>입니다</strong></td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<hr>
+
+<h2>1. Read Along</h2>
+<p class="subtitle">따라 읽기</p>
+
+<div class="sentence-list">
+    <div class="sentence-item" onclick="speakKorean('저는 김경진입니다.')"><div class="sentence-num">87</div>
+        <div class="sentence-text">
+            <div class="sentence-en">I am Kim Kyoungjin.</div>
+            <div class="sentence-kr">저는 김경진입니다.</div>
+        </div>
+        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('저는 김경진입니다.')" title="Listen">🔊</button>
+    </div>
+    <div class="sentence-item" onclick="speakKorean('저는 대학생입니다.')"><div class="sentence-num">88</div>
+        <div class="sentence-text">
+            <div class="sentence-en">I am a university student.</div>
+            <div class="sentence-kr">저는 대학생입니다.</div>
+        </div>
+        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('저는 대학생입니다.')" title="Listen">🔊</button>
+    </div>
+    <div class="sentence-item" onclick="speakKorean('제 전공은 컴퓨터공학입니다.')"><div class="sentence-num">89</div>
+        <div class="sentence-text">
+            <div class="sentence-en">My major is computer science.</div>
+            <div class="sentence-kr">제 전공은 컴퓨터공학입니다.</div>
+        </div>
+        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('제 전공은 컴퓨터공학입니다.')" title="Listen">🔊</button>
+    </div>
+    <div class="sentence-item" onclick="speakKorean('제 고향은 서울입니다.')"><div class="sentence-num">90</div>
+        <div class="sentence-text">
+            <div class="sentence-en">My hometown is Seoul.</div>
+            <div class="sentence-kr">제 고향은 서울입니다.</div>
+        </div>
+        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('제 고향은 서울입니다.')" title="Listen">🔊</button>
+    </div>
+    <div class="sentence-item" onclick="speakKorean('제 취미는 여행입니다.')"><div class="sentence-num">91</div>
+        <div class="sentence-text">
+            <div class="sentence-en">My hobby is traveling.</div>
+            <div class="sentence-kr">제 취미는 여행입니다.</div>
+        </div>
+        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('제 취미는 여행입니다.')" title="Listen">🔊</button>
+    </div>
+    <div class="sentence-item" onclick="speakKorean('오늘은 토요일입니다.')"><div class="sentence-num">92</div>
+        <div class="sentence-text">
+            <div class="sentence-en">Today is Saturday.</div>
+            <div class="sentence-kr">오늘은 토요일입니다.</div>
+        </div>
+        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('오늘은 토요일입니다.')" title="Listen">🔊</button>
+    </div>
+    <div class="sentence-item" onclick="speakKorean('내일은 일요일입니다.')"><div class="sentence-num">93</div>
+        <div class="sentence-text">
+            <div class="sentence-en">Tomorrow is Sunday.</div>
+            <div class="sentence-kr">내일은 일요일입니다.</div>
+        </div>
+        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('내일은 일요일입니다.')" title="Listen">🔊</button>
+    </div>
+    <div class="sentence-item" onclick="speakKorean('이것은 제 노트북입니다.')"><div class="sentence-num">94</div>
+        <div class="sentence-text">
+            <div class="sentence-en">This is my laptop.</div>
+            <div class="sentence-kr">이것은 제 노트북입니다.</div>
+        </div>
+        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('이것은 제 노트북입니다.')" title="Listen">🔊</button>
+    </div>
+    <div class="sentence-item" onclick="speakKorean('여기는 서울역입니다.')"><div class="sentence-num">95</div>
+        <div class="sentence-text">
+            <div class="sentence-en">Here is Seoul Station.</div>
+            <div class="sentence-kr">여기는 서울역입니다.</div>
+        </div>
+        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('여기는 서울역입니다.')" title="Listen">🔊</button>
+    </div>
+    <div class="sentence-item" onclick="speakKorean('저기는 남산입니다.')"><div class="sentence-num">96</div>
+        <div class="sentence-text">
+            <div class="sentence-en">That is Namsan Mountain.</div>
+            <div class="sentence-kr">저기는 남산입니다.</div>
+        </div>
+        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('저기는 남산입니다.')" title="Listen">🔊</button>
+    </div>
+</div>
+
+<hr>
+
+<h2>2. Look &amp; Speak</h2>
+<p class="subtitle">카드를 보고 한국어로 말하기</p>
+
+<div class="flashcard-grid look-speak">
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <div class="flashcard-num">87 · EN</div>
+                <div class="flashcard-text">I am Kim Kyoungjin.</div>
+                <div class="flashcard-hint">Tap to flip</div>
+            </div>
+            <div class="flashcard-back">
+                <div class="flashcard-num">87 · KR</div>
+                <div class="flashcard-text">저는 김경진입니다.</div>
+                <button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('저는 김경진입니다.')" title="Listen">🔊</button>
+            </div>
+        </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <div class="flashcard-num">88 · EN</div>
+                <div class="flashcard-text">I am a university student.</div>
+                <div class="flashcard-hint">Tap to flip</div>
+            </div>
+            <div class="flashcard-back">
+                <div class="flashcard-num">88 · KR</div>
+                <div class="flashcard-text">저는 대학생입니다.</div>
+                <button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('저는 대학생입니다.')" title="Listen">🔊</button>
+            </div>
+        </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <div class="flashcard-num">89 · EN</div>
+                <div class="flashcard-text">My major is computer science.</div>
+                <div class="flashcard-hint">Tap to flip</div>
+            </div>
+            <div class="flashcard-back">
+                <div class="flashcard-num">89 · KR</div>
+                <div class="flashcard-text">제 전공은 컴퓨터공학입니다.</div>
+                <button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('제 전공은 컴퓨터공학입니다.')" title="Listen">🔊</button>
+            </div>
+        </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <div class="flashcard-num">90 · EN</div>
+                <div class="flashcard-text">My hometown is Seoul.</div>
+                <div class="flashcard-hint">Tap to flip</div>
+            </div>
+            <div class="flashcard-back">
+                <div class="flashcard-num">90 · KR</div>
+                <div class="flashcard-text">제 고향은 서울입니다.</div>
+                <button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('제 고향은 서울입니다.')" title="Listen">🔊</button>
+            </div>
+        </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <div class="flashcard-num">91 · EN</div>
+                <div class="flashcard-text">My hobby is traveling.</div>
+                <div class="flashcard-hint">Tap to flip</div>
+            </div>
+            <div class="flashcard-back">
+                <div class="flashcard-num">91 · KR</div>
+                <div class="flashcard-text">제 취미는 여행입니다.</div>
+                <button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('제 취미는 여행입니다.')" title="Listen">🔊</button>
+            </div>
+        </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <div class="flashcard-num">92 · EN</div>
+                <div class="flashcard-text">Today is Saturday.</div>
+                <div class="flashcard-hint">Tap to flip</div>
+            </div>
+            <div class="flashcard-back">
+                <div class="flashcard-num">92 · KR</div>
+                <div class="flashcard-text">오늘은 토요일입니다.</div>
+                <button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('오늘은 토요일입니다.')" title="Listen">🔊</button>
+            </div>
+        </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <div class="flashcard-num">93 · EN</div>
+                <div class="flashcard-text">Tomorrow is Sunday.</div>
+                <div class="flashcard-hint">Tap to flip</div>
+            </div>
+            <div class="flashcard-back">
+                <div class="flashcard-num">93 · KR</div>
+                <div class="flashcard-text">내일은 일요일입니다.</div>
+                <button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('내일은 일요일입니다.')" title="Listen">🔊</button>
+            </div>
+        </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <div class="flashcard-num">94 · EN</div>
+                <div class="flashcard-text">This is my laptop.</div>
+                <div class="flashcard-hint">Tap to flip</div>
+            </div>
+            <div class="flashcard-back">
+                <div class="flashcard-num">94 · KR</div>
+                <div class="flashcard-text">이것은 제 노트북입니다.</div>
+                <button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('이것은 제 노트북입니다.')" title="Listen">🔊</button>
+            </div>
+        </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <div class="flashcard-num">95 · EN</div>
+                <div class="flashcard-text">Here is Seoul Station.</div>
+                <div class="flashcard-hint">Tap to flip</div>
+            </div>
+            <div class="flashcard-back">
+                <div class="flashcard-num">95 · KR</div>
+                <div class="flashcard-text">여기는 서울역입니다.</div>
+                <button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('여기는 서울역입니다.')" title="Listen">🔊</button>
+            </div>
+        </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <div class="flashcard-num">96 · EN</div>
+                <div class="flashcard-text">That is Namsan Mountain.</div>
+                <div class="flashcard-hint">Tap to flip</div>
+            </div>
+            <div class="flashcard-back">
+                <div class="flashcard-num">96 · KR</div>
+                <div class="flashcard-text">저기는 남산입니다.</div>
+                <button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('저기는 남산입니다.')" title="Listen">🔊</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<h2>3. Sentence Matching</h2>
+<p class="subtitle">왼쪽 영어 문장과 오른쪽 한국어 문장을 짝 맞추기</p>
+
+<div class="em-game">
+    <div class="em-game-title">🔗 Sentence Matching · 영어-한국어 문장 맞추기</div>
+    <p class="em-game-desc">왼쪽 영어 문장을 클릭하고, 그 뜻에 맞는 오른쪽 한국어 문장을 클릭하세요. 짝이 맞으면 두 문장이 사라집니다. <span style="color:#94a3b8;">Click an English sentence, then its Korean match — both disappear when matched.</span></p>
+    <div class="em-toolbar">
+        <span class="em-stat"><span class="em-stat-label">정답</span><span id="emCorrect" class="em-stat-num">0/10</span></span>
+        <span class="em-stat"><span class="em-stat-label">오답</span><span id="emWrong" class="em-stat-num">0</span></span>
+        <button class="em-reset" onclick="emReset()">🔄 다시 시작</button>
+    </div>
+    <div class="em-progress"><div id="emProgress" class="em-progress-bar"></div></div>
+    <div id="emMessage" class="em-message"></div>
+    <div class="em-columns" style="--em-rows: 10;">
+        <div class="em-col-header">English · 영어</div>
+        <div class="em-col-header">한국어 · Korean</div>
+        <div id="emEnglishList" class="em-list"></div>
+        <div id="emKoreanList" class="em-list"></div>
+    </div>
+</div>
+
+<hr>
+
+<h2>BONUS 1 — 전공 어휘 · Majors</h2>
+<p class="subtitle"><strong>제 전공은 ___입니다</strong> 패턴에 쓰이는 8가지 전공</p>
+
+<h3>📚 전공 어휘 카드 · Major Vocabulary</h3>
+
+<div class="bonus-grid bonus-grid-soft">
+    <div class="bonus-card" style="--bc-bg:#eef2ff; --bc-border:#c7d2fe;">
+        <div class="bonus-head">
+            <span class="bonus-ko">한국어 교육</span>
+            <span class="bonus-en">— Korean Education</span>
+            <button class="speak-btn" onclick="speakKorean('한국어 교육')" title="Listen">🔊</button>
+        </div>
+    </div>
+    <div class="bonus-card" style="--bc-bg:#f5f3ff; --bc-border:#ddd6fe;">
+        <div class="bonus-head">
+            <span class="bonus-ko">영어교육</span>
+            <span class="bonus-en">— English Education</span>
+            <button class="speak-btn" onclick="speakKorean('영어교육')" title="Listen">🔊</button>
+        </div>
+    </div>
+    <div class="bonus-card" style="--bc-bg:#fdf4ff; --bc-border:#f5d0fe;">
+        <div class="bonus-head">
+            <span class="bonus-ko">미술</span>
+            <span class="bonus-en">— Fine Arts</span>
+            <button class="speak-btn" onclick="speakKorean('미술')" title="Listen">🔊</button>
+        </div>
+    </div>
+    <div class="bonus-card" style="--bc-bg:#ecfeff; --bc-border:#a5f3fc;">
+        <div class="bonus-head">
+            <span class="bonus-ko">화학공학</span>
+            <span class="bonus-en">— Chemical Engineering</span>
+            <button class="speak-btn" onclick="speakKorean('화학공학')" title="Listen">🔊</button>
+        </div>
+    </div>
+    <div class="bonus-card" style="--bc-bg:#ecfdf5; --bc-border:#a7f3d0;">
+        <div class="bonus-head">
+            <span class="bonus-ko">생명공학</span>
+            <span class="bonus-en">— Biotechnology</span>
+            <button class="speak-btn" onclick="speakKorean('생명공학')" title="Listen">🔊</button>
+        </div>
+    </div>
+    <div class="bonus-card" style="--bc-bg:#fdf2f8; --bc-border:#fbcfe8;">
+        <div class="bonus-head">
+            <span class="bonus-ko">음악</span>
+            <span class="bonus-en">— Music</span>
+            <button class="speak-btn" onclick="speakKorean('음악')" title="Listen">🔊</button>
+        </div>
+    </div>
+    <div class="bonus-card" style="--bc-bg:#f0f9ff; --bc-border:#bae6fd;">
+        <div class="bonus-head">
+            <span class="bonus-ko">경영학</span>
+            <span class="bonus-en">— Business Administration</span>
+            <button class="speak-btn" onclick="speakKorean('경영학')" title="Listen">🔊</button>
+        </div>
+    </div>
+    <div class="bonus-card" style="--bc-bg:#fffbeb; --bc-border:#fde68a;">
+        <div class="bonus-head">
+            <span class="bonus-ko">법학</span>
+            <span class="bonus-en">— Law</span>
+            <button class="speak-btn" onclick="speakKorean('법학')" title="Listen">🔊</button>
+        </div>
+    </div>
+</div>
+
+<h3>🎓 전공 매칭 게임 · Major Matching Game</h3>
+
+<div class="em-game">
+    <div class="em-game-title">🎓 영어-한국어 전공 맞추기</div>
+    <p class="em-game-desc">왼쪽 영어 전공명을 클릭하고, 그 뜻에 맞는 오른쪽 한국어 전공명을 클릭하세요. <span style="color:#94a3b8;">Match each English major with its Korean name.</span></p>
+    <div class="em-toolbar">
+        <span class="em-stat"><span class="em-stat-label">정답</span><span id="mmCorrect" class="em-stat-num">0/8</span></span>
+        <span class="em-stat"><span class="em-stat-label">오답</span><span id="mmWrong" class="em-stat-num">0</span></span>
+        <button class="em-reset" onclick="mmReset()">🔄 다시 시작</button>
+    </div>
+    <div class="em-progress"><div id="mmProgress" class="em-progress-bar"></div></div>
+    <div id="mmMessage" class="em-message">왼쪽 영어 전공 하나와 오른쪽 한국어 전공 하나를 선택하세요.</div>
+    <div class="em-columns" style="--em-rows: 10;">
+        <div class="em-col-header">English · 영어</div>
+        <div class="em-col-header">한국어 · Korean</div>
+        <div id="mmEnglishList" class="em-list"></div>
+        <div id="mmKoreanList" class="em-list"></div>
+    </div>
+</div>
+
+<hr>
+
+<h2>BONUS 2 — 취미 어휘 · Hobbies</h2>
+<p class="subtitle"><strong>제 취미는 ___입니다</strong> 패턴에 쓰이는 8가지 취미</p>
+
+<h3>📚 취미 어휘 카드 · Hobby Vocabulary</h3>
+
+<div class="bonus-grid">
+    <div class="bonus-card" style="--bc-bg:#fff7ed; --bc-border:#fed7aa;">
+        <div class="bonus-head">
+            <span class="bonus-ko">독서</span>
+            <span class="bonus-en">— reading</span>
+            <button class="speak-btn" onclick="speakKorean('독서')" title="Listen">🔊</button>
+        </div>
+    </div>
+    <div class="bonus-card" style="--bc-bg:#eff6ff; --bc-border:#bfdbfe;">
+        <div class="bonus-head">
+            <span class="bonus-ko">영화 감상</span>
+            <span class="bonus-en">— watching movies</span>
+            <button class="speak-btn" onclick="speakKorean('영화 감상')" title="Listen">🔊</button>
+        </div>
+    </div>
+    <div class="bonus-card" style="--bc-bg:#fdf2f8; --bc-border:#fbcfe8;">
+        <div class="bonus-head">
+            <span class="bonus-ko">음악 감상</span>
+            <span class="bonus-en">— listening to music</span>
+            <button class="speak-btn" onclick="speakKorean('음악 감상')" title="Listen">🔊</button>
+        </div>
+    </div>
+    <div class="bonus-card" style="--bc-bg:#f0fdf4; --bc-border:#bbf7d0;">
+        <div class="bonus-head">
+            <span class="bonus-ko">운동</span>
+            <span class="bonus-en">— exercise</span>
+            <button class="speak-btn" onclick="speakKorean('운동')" title="Listen">🔊</button>
+        </div>
+    </div>
+    <div class="bonus-card" style="--bc-bg:#fef2f2; --bc-border:#fecaca;">
+        <div class="bonus-head">
+            <span class="bonus-ko">요리</span>
+            <span class="bonus-en">— cooking</span>
+            <button class="speak-btn" onclick="speakKorean('요리')" title="Listen">🔊</button>
+        </div>
+    </div>
+    <div class="bonus-card" style="--bc-bg:#f0fdfa; --bc-border:#99f6e4;">
+        <div class="bonus-head">
+            <span class="bonus-ko">여행</span>
+            <span class="bonus-en">— travel</span>
+            <button class="speak-btn" onclick="speakKorean('여행')" title="Listen">🔊</button>
+        </div>
+    </div>
+    <div class="bonus-card" style="--bc-bg:#f7fee7; --bc-border:#d9f99d;">
+        <div class="bonus-head">
+            <span class="bonus-ko">등산</span>
+            <span class="bonus-en">— hiking</span>
+            <button class="speak-btn" onclick="speakKorean('등산')" title="Listen">🔊</button>
+        </div>
+    </div>
+    <div class="bonus-card" style="--bc-bg:#faf5ff; --bc-border:#e9d5ff;">
+        <div class="bonus-head">
+            <span class="bonus-ko">게임</span>
+            <span class="bonus-en">— gaming</span>
+            <button class="speak-btn" onclick="speakKorean('게임')" title="Listen">🔊</button>
+        </div>
+    </div>
+</div>
+
+<h3>🎮 취미 매칭 게임 · Hobby Matching Game</h3>
+
+<div class="em-game">
+    <div class="em-game-title">🎮 영어-한국어 취미 맞추기</div>
+    <p class="em-game-desc">왼쪽 영어 취미를 클릭하고, 그 뜻에 맞는 오른쪽 한국어 취미를 클릭하세요. <span style="color:#94a3b8;">Match each English hobby with its Korean name.</span></p>
+    <div class="em-toolbar">
+        <span class="em-stat"><span class="em-stat-label">정답</span><span id="hmCorrect" class="em-stat-num">0/8</span></span>
+        <span class="em-stat"><span class="em-stat-label">오답</span><span id="hmWrong" class="em-stat-num">0</span></span>
+        <button class="em-reset" onclick="hmReset()">🔄 다시 시작</button>
+    </div>
+    <div class="em-progress"><div id="hmProgress" class="em-progress-bar"></div></div>
+    <div id="hmMessage" class="em-message">왼쪽 영어 취미 하나와 오른쪽 한국어 취미 하나를 선택하세요.</div>
+    <div class="em-columns" style="--em-rows: 10;">
+        <div class="em-col-header">English · 영어</div>
+        <div class="em-col-header">한국어 · Korean</div>
+        <div id="hmEnglishList" class="em-list"></div>
+        <div id="hmKoreanList" class="em-list"></div>
+    </div>
+</div>
+
+<hr>
+
+<h2>BONUS 3 — 요일 어휘 · Days of the Week</h2>
+<p class="subtitle"><strong>오늘은 ___입니다</strong> 패턴에 쓰이는 7가지 요일</p>
+
+<h3>📅 요일 매칭 게임 · Day Matching Game</h3>
+
+<div class="em-game">
+    <div class="em-game-title">📅 영어-한국어 요일 맞추기</div>
+    <p class="em-game-desc">왼쪽 영어 요일을 클릭하고, 그 뜻에 맞는 오른쪽 한국어 요일을 클릭하세요. <span style="color:#94a3b8;">Match each English day with its Korean name.</span></p>
+    <div class="em-toolbar">
+        <span class="em-stat"><span class="em-stat-label">정답</span><span id="dmCorrect" class="em-stat-num">0/7</span></span>
+        <span class="em-stat"><span class="em-stat-label">오답</span><span id="dmWrong" class="em-stat-num">0</span></span>
+        <button class="em-reset" onclick="dmReset()">🔄 다시 시작</button>
+    </div>
+    <div class="em-progress"><div id="dmProgress" class="em-progress-bar"></div></div>
+    <div id="dmMessage" class="em-message">왼쪽 영어 요일 하나와 오른쪽 한국어 요일 하나를 선택하세요.</div>
+    <div class="em-columns" style="--em-rows: 7;">
+        <div class="em-col-header">English · 영어</div>
+        <div class="em-col-header">한국어 · Korean</div>
+        <div id="dmEnglishList" class="em-list"></div>
+        <div id="dmKoreanList" class="em-list"></div>
+    </div>
+</div>
+
+<hr>
+
+<h2>4. Writing Test</h2>
+<p class="subtitle">영어를 보고 한국어로 써 보세요</p>
+
+<div class="wt-toolbar">
+  <div class="wt-score" id="wtScoreBox">✓ 점수 · Score: <span class="wt-correct" id="wtCorrect">0</span> <span class="wt-total">/ 10</span><span class="wt-pct" id="wtPct"></span></div>
+  <div class="wt-btns">
+    <button class="wt-btn" onclick="wtReset()">🔄 초기화 (Reset)</button>
+    <button class="wt-btn grade" onclick="wtGrade()">✅ 채점</button>
+    <button class="wt-btn primary" onclick="wtReveal()">💡 정답</button>
+  </div>
+</div>
+<div class="writing-practice">
+    <div class="writing-item">
+        <div class="writing-header"><span class="writing-num">87</span><span class="writing-en">I am Kim Kyoungjin.</span><button class="speak-btn" onclick="speakKorean('저는 김경진입니다.')" title="Listen">🔊</button></div>
+        <textarea class="writing-input" data-ans="저는 김경진입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+    </div>
+    <div class="writing-item">
+        <div class="writing-header"><span class="writing-num">88</span><span class="writing-en">I am a university student.</span><button class="speak-btn" onclick="speakKorean('저는 대학생입니다.')" title="Listen">🔊</button></div>
+        <textarea class="writing-input" data-ans="저는 대학생입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+    </div>
+    <div class="writing-item">
+        <div class="writing-header"><span class="writing-num">89</span><span class="writing-en">My major is computer science.</span><button class="speak-btn" onclick="speakKorean('제 전공은 컴퓨터공학입니다.')" title="Listen">🔊</button></div>
+        <textarea class="writing-input" data-ans="제 전공은 컴퓨터공학입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+    </div>
+    <div class="writing-item">
+        <div class="writing-header"><span class="writing-num">90</span><span class="writing-en">My hometown is Seoul.</span><button class="speak-btn" onclick="speakKorean('제 고향은 서울입니다.')" title="Listen">🔊</button></div>
+        <textarea class="writing-input" data-ans="제 고향은 서울입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+    </div>
+    <div class="writing-item">
+        <div class="writing-header"><span class="writing-num">91</span><span class="writing-en">My hobby is traveling.</span><button class="speak-btn" onclick="speakKorean('제 취미는 여행입니다.')" title="Listen">🔊</button></div>
+        <textarea class="writing-input" data-ans="제 취미는 여행입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+    </div>
+    <div class="writing-item">
+        <div class="writing-header"><span class="writing-num">92</span><span class="writing-en">Today is Saturday.</span><button class="speak-btn" onclick="speakKorean('오늘은 토요일입니다.')" title="Listen">🔊</button></div>
+        <textarea class="writing-input" data-ans="오늘은 토요일입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+    </div>
+    <div class="writing-item">
+        <div class="writing-header"><span class="writing-num">93</span><span class="writing-en">Tomorrow is Sunday.</span><button class="speak-btn" onclick="speakKorean('내일은 일요일입니다.')" title="Listen">🔊</button></div>
+        <textarea class="writing-input" data-ans="내일은 일요일입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+    </div>
+    <div class="writing-item">
+        <div class="writing-header"><span class="writing-num">94</span><span class="writing-en">This is my laptop.</span><button class="speak-btn" onclick="speakKorean('이것은 제 노트북입니다.')" title="Listen">🔊</button></div>
+        <textarea class="writing-input" data-ans="이것은 제 노트북입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+    </div>
+    <div class="writing-item">
+        <div class="writing-header"><span class="writing-num">95</span><span class="writing-en">Here is Seoul Station.</span><button class="speak-btn" onclick="speakKorean('여기는 서울역입니다.')" title="Listen">🔊</button></div>
+        <textarea class="writing-input" data-ans="여기는 서울역입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+    </div>
+    <div class="writing-item">
+        <div class="writing-header"><span class="writing-num">96</span><span class="writing-en">That is Namsan Mountain.</span><button class="speak-btn" onclick="speakKorean('저기는 남산입니다.')" title="Listen">🔊</button></div>
+        <textarea class="writing-input" data-ans="저기는 남산입니다." oninput="wtCheck(this)" placeholder="Write in Korean..."></textarea>
+    </div>
+</div>
+
+<div class="footer"><p>Amazing Korean 1 — Grammar 1: A = B (Noun) 이다 (문법 1: A = B 명사 이다)</p></div>
+</div>
+
+<script>
+function speakKorean(text) {
+    if (!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'ko-KR';
+    u.rate = 0.85;
+    u.pitch = 1.1;
+    const preferred = ['Yuna', 'SunHi', 'Heami', 'Google 한국의'];
+    const voices = window.speechSynthesis.getVoices();
+    const koVoices = voices.filter(v => v.lang.startsWith('ko'));
+    let picked = null;
+    for (const name of preferred) {
+        picked = koVoices.find(v => v.name.includes(name));
+        if (picked) break;
+    }
+    if (!picked && koVoices.length > 0) picked = koVoices[0];
+    if (picked) u.voice = picked;
+    window.speechSynthesis.speak(u);
+}
+if ('speechSynthesis' in window) {
+    window.speechSynthesis.onvoiceschanged = function(){};
+    window.speechSynthesis.getVoices();
+}
+</script>
+
+<script>
+function wtNormalize(s){ return (s||'').replace(/\s+/g,'').replace(/[?？!.。]/g,''); }
+function wtCheck(inp){
+  const ans = wtNormalize(inp.dataset.ans);
+  const val = wtNormalize(inp.value);
+  const wasCorrect = inp.classList.contains('correct');
+  inp.classList.remove('correct','wrong','revealed');
+  if (val.length > 0 && val === ans){
+    inp.classList.add('correct');
+    if (!wasCorrect && inp.dataset.celebrated !== '1') {
+      wtCelebrate(inp);
+      inp.dataset.celebrated = '1';
+    }
+  } else {
+    inp.dataset.celebrated = '';
+  }
+  wtScore();
+}
+function wtCelebrate(inp){
+  const parent = inp.closest('.single-wt') || inp.closest('.writing-item') || inp.parentElement;
+  if (!parent) return;
+  const cs = window.getComputedStyle(parent);
+  if (cs.position === 'static') parent.style.position = 'relative';
+  inp.classList.remove('celebrating');
+  void inp.offsetWidth;
+  inp.classList.add('celebrating');
+  setTimeout(function(){ inp.classList.remove('celebrating'); }, 600);
+  const badge = document.createElement('div');
+  badge.className = 'wt-celebrate-badge';
+  badge.innerHTML = '\u{1F389} 정답!<small>Correct!</small>';
+  parent.appendChild(badge);
+  setTimeout(function(){ if (badge.parentNode) badge.remove(); }, 5050);
+  const emojis = ['✨','⭐','\u{1F31F}','\u{1F4AB}','✨','⭐'];
+  for (let i = 0; i < 6; i++) {
+    const sp = document.createElement('span');
+    sp.className = 'wt-sparkle';
+    sp.textContent = emojis[i];
+    sp.style.left = (12 + Math.random() * 76) + '%';
+    sp.style.animationDelay = (i * 0.1) + 's';
+    parent.appendChild(sp);
+    setTimeout(function(){ if (sp.parentNode) sp.remove(); }, 4700);
+  }
+}
+function swtReveal(btn){
+  const inp = btn.closest('.single-wt').querySelector('.writing-input');
+  inp.value = inp.dataset.ans;
+  inp.classList.remove('correct','wrong');
+  inp.classList.add('revealed');
+}
+function swtSpeak(btn){
+  const inp = btn.closest('.single-wt').querySelector('.writing-input');
+  if (inp && inp.dataset.ans) speakKorean(inp.dataset.ans);
+}
+function wtScore(){
+  const inputs = document.querySelectorAll('.writing-practice .writing-input');
+  let c=0;
+  inputs.forEach(function(inp){ if(inp.classList.contains('correct')) c++; });
+  const correctEl = document.getElementById('wtCorrect');
+  if (correctEl) correctEl.textContent = c;
+  const pctEl = document.getElementById('wtPct');
+  if (pctEl) pctEl.textContent = '';
+  const boxEl = document.getElementById('wtScoreBox');
+  if (boxEl) boxEl.classList.remove('is-graded');
+}
+function wtReset(){
+  document.querySelectorAll('.writing-practice .writing-input').forEach(function(inp){
+    inp.value = '';
+    inp.classList.remove('correct','wrong','revealed');
+  });
+  wtScore();
+}
+function wtReveal(){
+  document.querySelectorAll('.writing-practice .writing-input').forEach(function(inp){
+    inp.value = inp.dataset.ans;
+    inp.classList.remove('correct','wrong');
+    inp.classList.add('revealed');
+  });
+  document.getElementById('wtCorrect').textContent = '–';
+  document.getElementById('wtPct').textContent = '';
+  document.getElementById('wtScoreBox').classList.remove('is-graded');
+}
+function wtGrade(){
+  const inputs = document.querySelectorAll('.writing-practice .writing-input');
+  let c=0, total=inputs.length;
+  inputs.forEach(function(inp){
+    inp.classList.remove('correct','wrong','revealed');
+    const ans = wtNormalize(inp.dataset.ans);
+    const val = wtNormalize(inp.value);
+    if (val === ans && val.length>0){ inp.classList.add('correct'); c++; }
+    else { inp.classList.add('wrong'); }
+  });
+  document.getElementById('wtCorrect').textContent = c;
+  const pct = total ? Math.round(c*100/total) : 0;
+  document.getElementById('wtPct').textContent = '· ' + pct + '%';
+  document.getElementById('wtScoreBox').classList.add('is-graded');
+  if(c === total && c > 0){
+    celebrateShow(c, 0, wtReset, '모든 문장을 정확히 작성했습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All sentences correct!</span>');
+  }
+}
+
+
+// English ↔ Korean Sentence Matching Game
+const emPairs = [
+  { id:1, en:'I am Kim Kyoungjin.', ko:'저는 김경진입니다.' },
+  { id:2, en:'I am a university student.', ko:'저는 대학생입니다.' },
+  { id:3, en:'My major is computer science.', ko:'제 전공은 컴퓨터공학입니다.' },
+  { id:4, en:'My hometown is Seoul.', ko:'제 고향은 서울입니다.' },
+  { id:5, en:'My hobby is traveling.', ko:'제 취미는 여행입니다.' },
+  { id:6, en:'Today is Saturday.', ko:'오늘은 토요일입니다.' },
+  { id:7, en:'Tomorrow is Sunday.', ko:'내일은 일요일입니다.' },
+  { id:8, en:'This is my laptop.', ko:'이것은 제 노트북입니다.' },
+  { id:9, en:'Here is Seoul Station.', ko:'여기는 서울역입니다.' },
+  { id:10, en:'That is Namsan Mountain.', ko:'저기는 남산입니다.' }
+];
+const emPastels = [
+  { bg:'#fdf2f8', border:'#fbcfe8' },{ bg:'#fff1f2', border:'#fecdd3' },
+  { bg:'#fef2f2', border:'#fecaca' },{ bg:'#fff7ed', border:'#fed7aa' },
+  { bg:'#fffbeb', border:'#fde68a' },{ bg:'#fefce8', border:'#fef08a' },
+  { bg:'#f7fee7', border:'#d9f99d' },{ bg:'#f0fdf4', border:'#bbf7d0' },
+  { bg:'#ecfdf5', border:'#a7f3d0' },{ bg:'#f0fdfa', border:'#99f6e4' },
+  { bg:'#ecfeff', border:'#a5f3fc' },{ bg:'#f0f9ff', border:'#bae6fd' },
+  { bg:'#eff6ff', border:'#bfdbfe' },{ bg:'#eef2ff', border:'#c7d2fe' },
+  { bg:'#f5f3ff', border:'#ddd6fe' },{ bg:'#faf5ff', border:'#e9d5ff' },
+  { bg:'#fdf4ff', border:'#f5d0fe' },{ bg:'#fce7f3', border:'#f9a8d4' },
+  { bg:'#dcfce7', border:'#86efac' },{ bg:'#e0f2fe', border:'#7dd3fc' }
+];
+let emEnItems = [], emKoItems = [], emSelEn = null, emSelKo = null, emRemoved = [], emCorrect = 0, emWrong = 0;
+function emShuffle(arr){ const c=[...arr]; for(let i=c.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[c[i],c[j]]=[c[j],c[i]];} return c; }
+function emMakeItems(){
+  emEnItems = emShuffle(emPairs.map(p => ({ pid:p.id, text:p.en })));
+  emKoItems = emShuffle(emPairs.map(p => ({ pid:p.id, text:p.ko })));
+  const palette = emShuffle(emPastels).slice(0, emPairs.length * 2);
+  emEnItems.forEach(function(it, i){ it.pastel = palette[i] || emPastels[i % emPastels.length]; });
+  emKoItems.forEach(function(it, i){ it.pastel = palette[i + emPairs.length] || emPastels[(i + emPairs.length) % emPastels.length]; });
+}
+function emRenderList(listId, items, type, selPid){
+  const list = document.getElementById(listId); if(!list) return;
+  list.innerHTML = '';
+  items.forEach(function(it, idx){
+    const slot = document.createElement('div');
+    slot.className = 'em-slot';
+    if(emRemoved.indexOf(it.pid) === -1){
+      const btn = document.createElement('button');
+      btn.className = 'em-item';
+      btn.dataset.pid = it.pid;
+      btn.dataset.type = type;
+      btn.onclick = function(){ emClick(it, type); };
+      if(selPid === it.pid) btn.classList.add('selected');
+      btn.style.setProperty('--em-bg', it.pastel.bg);
+      btn.style.setProperty('--em-border', it.pastel.border);
+      btn.innerHTML = '<span class="em-text">'+it.text+'</span>';
+      slot.appendChild(btn);
+    }
+    list.appendChild(slot);
+  });
+}
+function emRender(){
+  emRenderList('emEnglishList', emEnItems, 'en', emSelEn ? emSelEn.pid : null);
+  emRenderList('emKoreanList',  emKoItems, 'ko', emSelKo ? emSelKo.pid : null);
+}
+function emUpdate(msg, complete){
+  const m = document.getElementById('emMessage'); if(!m) return;
+  m.innerHTML = msg;
+  m.classList.toggle('complete', !!complete);
+  document.getElementById('emCorrect').textContent = emCorrect+'/'+emPairs.length;
+  document.getElementById('emWrong').textContent = emWrong;
+  document.getElementById('emProgress').style.width = (emCorrect/emPairs.length*100)+'%';
+}
+function emClick(it, type){
+  if(emRemoved.indexOf(it.pid) !== -1) return;
+  if(type === 'en'){
+    if(emSelEn && emSelEn.pid === it.pid){ emSelEn = null; emUpdate('영어 선택을 취소했습니다. 다시 고르세요.'); emRender(); return; }
+    emSelEn = it;
+    emUpdate('영어 선택: <strong>'+it.text+'</strong> → 짝이 되는 한국어 문장을 고르세요.');
+  } else {
+    if(emSelKo && emSelKo.pid === it.pid){ emSelKo = null; emUpdate('한국어 선택을 취소했습니다. 다시 고르세요.'); emRender(); return; }
+    emSelKo = it;
+    emUpdate('한국어 선택: <strong>'+it.text+'</strong> → 짝이 되는 영어 문장을 고르세요.');
+  }
+  emRender();
+  if(emSelEn && emSelKo) emCheck();
+}
+function emCheck(){
+  const ok = emSelEn.pid === emSelKo.pid;
+  const eEl = document.querySelector('[data-type="en"][data-pid="'+emSelEn.pid+'"]');
+  const kEl = document.querySelector('[data-type="ko"][data-pid="'+emSelKo.pid+'"]');
+  if(ok){
+    if(eEl) eEl.classList.add('removing');
+    if(kEl) kEl.classList.add('removing');
+    const eTxt = emSelEn.text, kTxt = emSelKo.text, pid = emSelEn.pid;
+    setTimeout(function(){
+      emRemoved.push(pid); emCorrect++;
+      emSelEn = null; emSelKo = null;
+      if(emCorrect === emPairs.length){ emUpdate('🎉 완료! 모든 문장을 맞췄습니다. <span style="color:#15803d;">All matched!</span>', true);
+        celebrateShow(emCorrect, emWrong, emReset, '모든 문장을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All sentences matched!</span>'); }
+      else { emUpdate('<strong>'+eTxt+' ↔ '+kTxt+'</strong> 정답!'); }
+      emRender();
+    }, 300);
+    return;
+  }
+  emWrong++;
+  if(eEl) eEl.classList.add('wrong');
+  if(kEl) kEl.classList.add('wrong');
+  const eTxt = emSelEn.text, kTxt = emSelKo.text;
+  emSelEn = null; emSelKo = null;
+  emUpdate('<strong>'+eTxt+'</strong> ↔ <strong>'+kTxt+'</strong> — 짝이 아닙니다. 다시 고르세요. <span style="color:#94a3b8;">Not a match.</span>');
+  setTimeout(function(){ emRender(); }, 600);
+}
+function emReset(){
+  emMakeItems();
+  emSelEn = null; emSelKo = null; emRemoved = []; emCorrect = 0; emWrong = 0;
+  emUpdate('');
+  emRender();
+}
+emReset();
+
+// Major Matching Game (mm) — clone of em-game; data-type uses 'mm-en'/'mm-ko' to avoid collision
+const mmPairs = [
+  { id:1, en:'Korean Education', ko:'한국어 교육' },
+  { id:2, en:'English Education', ko:'영어교육' },
+  { id:3, en:'Fine Arts', ko:'미술' },
+  { id:4, en:'Chemical Engineering', ko:'화학공학' },
+  { id:5, en:'Biotechnology', ko:'생명공학' },
+  { id:6, en:'Music', ko:'음악' },
+  { id:7, en:'Business Administration', ko:'경영학' },
+  { id:8, en:'Law', ko:'법학' }
+];
+let mmEnItems = [], mmKoItems = [], mmSelEn = null, mmSelKo = null, mmRemoved = [], mmCorrect = 0, mmWrong = 0;
+function mmMakeItems(){
+  mmEnItems = emShuffle(mmPairs.map(p => ({ pid:p.id, text:p.en })));
+  mmKoItems = emShuffle(mmPairs.map(p => ({ pid:p.id, text:p.ko })));
+  const palette = emShuffle(emPastels).slice(0, mmPairs.length * 2);
+  mmEnItems.forEach(function(it, i){ it.pastel = palette[i] || emPastels[i % emPastels.length]; });
+  mmKoItems.forEach(function(it, i){ it.pastel = palette[i + mmPairs.length] || emPastels[(i + mmPairs.length) % emPastels.length]; });
+}
+function mmRenderList(listId, items, type, selPid){
+  const list = document.getElementById(listId); if(!list) return;
+  list.innerHTML = '';
+  items.forEach(function(it, idx){
+    const slot = document.createElement('div');
+    slot.className = 'em-slot';
+    if(mmRemoved.indexOf(it.pid) === -1){
+      const btn = document.createElement('button');
+      btn.className = 'em-item';
+      btn.dataset.pid = it.pid;
+      btn.dataset.type = 'mm-' + type;
+      btn.onclick = function(){ mmClick(it, type); };
+      if(selPid === it.pid) btn.classList.add('selected');
+      btn.style.setProperty('--em-bg', it.pastel.bg);
+      btn.style.setProperty('--em-border', it.pastel.border);
+      btn.innerHTML = '<span class="em-text">'+it.text+'</span>';
+      slot.appendChild(btn);
+    }
+    list.appendChild(slot);
+  });
+}
+function mmRender(){
+  mmRenderList('mmEnglishList', mmEnItems, 'en', mmSelEn ? mmSelEn.pid : null);
+  mmRenderList('mmKoreanList',  mmKoItems, 'ko', mmSelKo ? mmSelKo.pid : null);
+}
+function mmUpdate(msg, complete){
+  const m = document.getElementById('mmMessage'); if(!m) return;
+  m.innerHTML = msg;
+  m.classList.toggle('complete', !!complete);
+  document.getElementById('mmCorrect').textContent = mmCorrect+'/'+mmPairs.length;
+  document.getElementById('mmWrong').textContent = mmWrong;
+  document.getElementById('mmProgress').style.width = (mmCorrect/mmPairs.length*100)+'%';
+}
+function mmClick(it, type){
+  if(mmRemoved.indexOf(it.pid) !== -1) return;
+  if(type === 'en'){
+    if(mmSelEn && mmSelEn.pid === it.pid){ mmSelEn = null; mmUpdate('영어 선택을 취소했습니다. 다시 고르세요.'); mmRender(); return; }
+    mmSelEn = it;
+    mmUpdate('영어 선택: <strong>'+it.text+'</strong> → 짝이 되는 한국어 전공을 고르세요.');
+  } else {
+    if(mmSelKo && mmSelKo.pid === it.pid){ mmSelKo = null; mmUpdate('한국어 선택을 취소했습니다. 다시 고르세요.'); mmRender(); return; }
+    mmSelKo = it;
+    mmUpdate('한국어 선택: <strong>'+it.text+'</strong> → 짝이 되는 영어 전공을 고르세요.');
+  }
+  mmRender();
+  if(mmSelEn && mmSelKo) mmCheck();
+}
+function mmCheck(){
+  const ok = mmSelEn.pid === mmSelKo.pid;
+  const eEl = document.querySelector('[data-type="mm-en"][data-pid="'+mmSelEn.pid+'"]');
+  const kEl = document.querySelector('[data-type="mm-ko"][data-pid="'+mmSelKo.pid+'"]');
+  if(ok){
+    if(eEl) eEl.classList.add('removing');
+    if(kEl) kEl.classList.add('removing');
+    const eTxt = mmSelEn.text, kTxt = mmSelKo.text, pid = mmSelEn.pid;
+    setTimeout(function(){
+      mmRemoved.push(pid); mmCorrect++;
+      mmSelEn = null; mmSelKo = null;
+      if(mmCorrect === mmPairs.length){ mmUpdate('🎉 완료! 모든 전공을 맞췄습니다. <span style="color:#15803d;">All matched!</span>', true);
+        celebrateShow(mmCorrect, mmWrong, mmReset, '모든 전공을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All majors matched!</span>'); }
+      else { mmUpdate('<strong>'+eTxt+' ↔ '+kTxt+'</strong> 정답!'); }
+      mmRender();
+    }, 300);
+    return;
+  }
+  mmWrong++;
+  if(eEl) eEl.classList.add('wrong');
+  if(kEl) kEl.classList.add('wrong');
+  const eTxt = mmSelEn.text, kTxt = mmSelKo.text;
+  mmSelEn = null; mmSelKo = null;
+  mmUpdate('<strong>'+eTxt+'</strong> ↔ <strong>'+kTxt+'</strong> — 짝이 아닙니다. 다시 고르세요. <span style="color:#94a3b8;">Not a match.</span>');
+  setTimeout(function(){ mmRender(); }, 600);
+}
+function mmReset(){
+  mmMakeItems();
+  mmSelEn = null; mmSelKo = null; mmRemoved = []; mmCorrect = 0; mmWrong = 0;
+  mmUpdate('왼쪽 영어 전공 하나와 오른쪽 한국어 전공 하나를 선택하세요.');
+  mmRender();
+}
+mmReset();
+
+// Hobby Matching Game (hm) — clone of em-game; data-type uses 'hm-en'/'hm-ko' to avoid collision
+const hmPairs = [
+  { id:1, en:'reading', ko:'독서' },
+  { id:2, en:'watching movies', ko:'영화 감상' },
+  { id:3, en:'listening to music', ko:'음악 감상' },
+  { id:4, en:'exercise', ko:'운동' },
+  { id:5, en:'cooking', ko:'요리' },
+  { id:6, en:'travel', ko:'여행' },
+  { id:7, en:'hiking', ko:'등산' },
+  { id:8, en:'gaming', ko:'게임' }
+];
+let hmEnItems = [], hmKoItems = [], hmSelEn = null, hmSelKo = null, hmRemoved = [], hmCorrect = 0, hmWrong = 0;
+function hmMakeItems(){
+  hmEnItems = emShuffle(hmPairs.map(p => ({ pid:p.id, text:p.en })));
+  hmKoItems = emShuffle(hmPairs.map(p => ({ pid:p.id, text:p.ko })));
+  const palette = emShuffle(emPastels).slice(0, hmPairs.length * 2);
+  hmEnItems.forEach(function(it, i){ it.pastel = palette[i] || emPastels[i % emPastels.length]; });
+  hmKoItems.forEach(function(it, i){ it.pastel = palette[i + hmPairs.length] || emPastels[(i + hmPairs.length) % emPastels.length]; });
+}
+function hmRenderList(listId, items, type, selPid){
+  const list = document.getElementById(listId); if(!list) return;
+  list.innerHTML = '';
+  items.forEach(function(it, idx){
+    const slot = document.createElement('div');
+    slot.className = 'em-slot';
+    if(hmRemoved.indexOf(it.pid) === -1){
+      const btn = document.createElement('button');
+      btn.className = 'em-item';
+      btn.dataset.pid = it.pid;
+      btn.dataset.type = 'hm-' + type;
+      btn.onclick = function(){ hmClick(it, type); };
+      if(selPid === it.pid) btn.classList.add('selected');
+      btn.style.setProperty('--em-bg', it.pastel.bg);
+      btn.style.setProperty('--em-border', it.pastel.border);
+      btn.innerHTML = '<span class="em-text">'+it.text+'</span>';
+      slot.appendChild(btn);
+    }
+    list.appendChild(slot);
+  });
+}
+function hmRender(){
+  hmRenderList('hmEnglishList', hmEnItems, 'en', hmSelEn ? hmSelEn.pid : null);
+  hmRenderList('hmKoreanList',  hmKoItems, 'ko', hmSelKo ? hmSelKo.pid : null);
+}
+function hmUpdate(msg, complete){
+  const m = document.getElementById('hmMessage'); if(!m) return;
+  m.innerHTML = msg;
+  m.classList.toggle('complete', !!complete);
+  document.getElementById('hmCorrect').textContent = hmCorrect+'/'+hmPairs.length;
+  document.getElementById('hmWrong').textContent = hmWrong;
+  document.getElementById('hmProgress').style.width = (hmCorrect/hmPairs.length*100)+'%';
+}
+function hmClick(it, type){
+  if(hmRemoved.indexOf(it.pid) !== -1) return;
+  if(type === 'en'){
+    if(hmSelEn && hmSelEn.pid === it.pid){ hmSelEn = null; hmUpdate('영어 선택을 취소했습니다. 다시 고르세요.'); hmRender(); return; }
+    hmSelEn = it;
+    hmUpdate('영어 선택: <strong>'+it.text+'</strong> → 짝이 되는 한국어 취미를 고르세요.');
+  } else {
+    if(hmSelKo && hmSelKo.pid === it.pid){ hmSelKo = null; hmUpdate('한국어 선택을 취소했습니다. 다시 고르세요.'); hmRender(); return; }
+    hmSelKo = it;
+    hmUpdate('한국어 선택: <strong>'+it.text+'</strong> → 짝이 되는 영어 취미를 고르세요.');
+  }
+  hmRender();
+  if(hmSelEn && hmSelKo) hmCheck();
+}
+function hmCheck(){
+  const ok = hmSelEn.pid === hmSelKo.pid;
+  const eEl = document.querySelector('[data-type="hm-en"][data-pid="'+hmSelEn.pid+'"]');
+  const kEl = document.querySelector('[data-type="hm-ko"][data-pid="'+hmSelKo.pid+'"]');
+  if(ok){
+    if(eEl) eEl.classList.add('removing');
+    if(kEl) kEl.classList.add('removing');
+    const eTxt = hmSelEn.text, kTxt = hmSelKo.text, pid = hmSelEn.pid;
+    setTimeout(function(){
+      hmRemoved.push(pid); hmCorrect++;
+      hmSelEn = null; hmSelKo = null;
+      if(hmCorrect === hmPairs.length){ hmUpdate('🎉 완료! 모든 취미를 맞췄습니다. <span style="color:#15803d;">All matched!</span>', true);
+        celebrateShow(hmCorrect, hmWrong, hmReset, '모든 취미를 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All hobbies matched!</span>'); }
+      else { hmUpdate('<strong>'+eTxt+' ↔ '+kTxt+'</strong> 정답!'); }
+      hmRender();
+    }, 300);
+    return;
+  }
+  hmWrong++;
+  if(eEl) eEl.classList.add('wrong');
+  if(kEl) kEl.classList.add('wrong');
+  const eTxt = hmSelEn.text, kTxt = hmSelKo.text;
+  hmSelEn = null; hmSelKo = null;
+  hmUpdate('<strong>'+eTxt+'</strong> ↔ <strong>'+kTxt+'</strong> — 짝이 아닙니다. 다시 고르세요. <span style="color:#94a3b8;">Not a match.</span>');
+  setTimeout(function(){ hmRender(); }, 600);
+}
+function hmReset(){
+  hmMakeItems();
+  hmSelEn = null; hmSelKo = null; hmRemoved = []; hmCorrect = 0; hmWrong = 0;
+  hmUpdate('왼쪽 영어 취미 하나와 오른쪽 한국어 취미 하나를 선택하세요.');
+  hmRender();
+}
+hmReset();
+
+// Day Matching Game (dm) — clone of em-game; data-type uses 'dm-en'/'dm-ko' to avoid collision
+const dmPairs = [
+  { id:1, en:'Monday', ko:'월요일' },
+  { id:2, en:'Tuesday', ko:'화요일' },
+  { id:3, en:'Wednesday', ko:'수요일' },
+  { id:4, en:'Thursday', ko:'목요일' },
+  { id:5, en:'Friday', ko:'금요일' },
+  { id:6, en:'Saturday', ko:'토요일' },
+  { id:7, en:'Sunday', ko:'일요일' }
+];
+let dmEnItems = [], dmKoItems = [], dmSelEn = null, dmSelKo = null, dmRemoved = [], dmCorrect = 0, dmWrong = 0;
+function dmMakeItems(){
+  dmEnItems = emShuffle(dmPairs.map(p => ({ pid:p.id, text:p.en })));
+  dmKoItems = emShuffle(dmPairs.map(p => ({ pid:p.id, text:p.ko })));
+  const palette = emShuffle(emPastels).slice(0, dmPairs.length * 2);
+  dmEnItems.forEach(function(it, i){ it.pastel = palette[i] || emPastels[i % emPastels.length]; });
+  dmKoItems.forEach(function(it, i){ it.pastel = palette[i + dmPairs.length] || emPastels[(i + dmPairs.length) % emPastels.length]; });
+}
+function dmRenderList(listId, items, type, selPid){
+  const list = document.getElementById(listId); if(!list) return;
+  list.innerHTML = '';
+  items.forEach(function(it, idx){
+    const slot = document.createElement('div');
+    slot.className = 'em-slot';
+    if(dmRemoved.indexOf(it.pid) === -1){
+      const btn = document.createElement('button');
+      btn.className = 'em-item';
+      btn.dataset.pid = it.pid;
+      btn.dataset.type = 'dm-' + type;
+      btn.onclick = function(){ dmClick(it, type); };
+      if(selPid === it.pid) btn.classList.add('selected');
+      btn.style.setProperty('--em-bg', it.pastel.bg);
+      btn.style.setProperty('--em-border', it.pastel.border);
+      btn.innerHTML = '<span class="em-text">'+it.text+'</span>';
+      slot.appendChild(btn);
+    }
+    list.appendChild(slot);
+  });
+}
+function dmRender(){
+  dmRenderList('dmEnglishList', dmEnItems, 'en', dmSelEn ? dmSelEn.pid : null);
+  dmRenderList('dmKoreanList',  dmKoItems, 'ko', dmSelKo ? dmSelKo.pid : null);
+}
+function dmUpdate(msg, complete){
+  const m = document.getElementById('dmMessage'); if(!m) return;
+  m.innerHTML = msg;
+  m.classList.toggle('complete', !!complete);
+  document.getElementById('dmCorrect').textContent = dmCorrect+'/'+dmPairs.length;
+  document.getElementById('dmWrong').textContent = dmWrong;
+  document.getElementById('dmProgress').style.width = (dmCorrect/dmPairs.length*100)+'%';
+}
+function dmClick(it, type){
+  if(dmRemoved.indexOf(it.pid) !== -1) return;
+  if(type === 'en'){
+    if(dmSelEn && dmSelEn.pid === it.pid){ dmSelEn = null; dmUpdate('영어 선택을 취소했습니다. 다시 고르세요.'); dmRender(); return; }
+    dmSelEn = it;
+    dmUpdate('영어 선택: <strong>'+it.text+'</strong> → 짝이 되는 한국어 요일을 고르세요.');
+  } else {
+    if(dmSelKo && dmSelKo.pid === it.pid){ dmSelKo = null; dmUpdate('한국어 선택을 취소했습니다. 다시 고르세요.'); dmRender(); return; }
+    dmSelKo = it;
+    dmUpdate('한국어 선택: <strong>'+it.text+'</strong> → 짝이 되는 영어 요일을 고르세요.');
+  }
+  dmRender();
+  if(dmSelEn && dmSelKo) dmCheck();
+}
+function dmCheck(){
+  const ok = dmSelEn.pid === dmSelKo.pid;
+  const eEl = document.querySelector('[data-type="dm-en"][data-pid="'+dmSelEn.pid+'"]');
+  const kEl = document.querySelector('[data-type="dm-ko"][data-pid="'+dmSelKo.pid+'"]');
+  if(ok){
+    if(eEl) eEl.classList.add('removing');
+    if(kEl) kEl.classList.add('removing');
+    const eTxt = dmSelEn.text, kTxt = dmSelKo.text, pid = dmSelEn.pid;
+    setTimeout(function(){
+      dmRemoved.push(pid); dmCorrect++;
+      dmSelEn = null; dmSelKo = null;
+      if(dmCorrect === dmPairs.length){ dmUpdate('🎉 완료! 모든 요일을 맞췄습니다. <span style="color:#15803d;">All matched!</span>', true);
+        celebrateShow(dmCorrect, dmWrong, dmReset, '모든 요일을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All days matched!</span>'); }
+      else { dmUpdate('<strong>'+eTxt+' ↔ '+kTxt+'</strong> 정답!'); }
+      dmRender();
+    }, 300);
+    return;
+  }
+  dmWrong++;
+  if(eEl) eEl.classList.add('wrong');
+  if(kEl) kEl.classList.add('wrong');
+  const eTxt = dmSelEn.text, kTxt = dmSelKo.text;
+  dmSelEn = null; dmSelKo = null;
+  dmUpdate('<strong>'+eTxt+'</strong> ↔ <strong>'+kTxt+'</strong> — 짝이 아닙니다. 다시 고르세요. <span style="color:#94a3b8;">Not a match.</span>');
+  setTimeout(function(){ dmRender(); }, 600);
+}
+function dmReset(){
+  dmMakeItems();
+  dmSelEn = null; dmSelKo = null; dmRemoved = []; dmCorrect = 0; dmWrong = 0;
+  dmUpdate('왼쪽 영어 요일 하나와 오른쪽 한국어 요일 하나를 선택하세요.');
+  dmRender();
+}
+dmReset();
+
+// Game completion celebration
+function celebrateLaunchConfetti(){
+  const colors = ['#ef4444','#f59e0b','#eab308','#22c55e','#10b981','#06b6d4','#3b82f6','#8b5cf6','#ec4899','#f97316'];
+  for(let i = 0; i < 90; i++){
+    const c = document.createElement('div');
+    c.className = 'confetti';
+    c.style.left = (Math.random() * 100) + 'vw';
+    c.style.background = colors[Math.floor(Math.random() * colors.length)];
+    c.style.animationDelay = (Math.random() * 0.6) + 's';
+    c.style.animationDuration = (2.4 + Math.random() * 1.8) + 's';
+    c.style.transform = 'rotate(' + Math.floor(Math.random() * 360) + 'deg)';
+    document.body.appendChild(c);
+    setTimeout(function(){ c.remove(); }, 4500);
+  }
+}
+function celebrateShow(correct, wrong, restartFn, subtitleHTML){
+  document.getElementById('celebrateCorrect').textContent = correct;
+  document.getElementById('celebrateWrong').textContent = wrong;
+  if(subtitleHTML) document.getElementById('celebrateSubtitle').innerHTML = subtitleHTML;
+  document.getElementById('celebrateOverlay').classList.add('active');
+  window._celebrateRestart = restartFn;
+  celebrateLaunchConfetti();
+}
+function celebrateClose(){
+  const o = document.getElementById('celebrateOverlay');
+  if(o) o.classList.remove('active');
+}
+function celebrateRestart(){
+  celebrateClose();
+  if(window._celebrateRestart) window._celebrateRestart();
+}
+</script>
+
+<div id="celebrateOverlay" class="celebrate-overlay" onclick="celebrateClose()">
+    <div class="celebrate-card" onclick="event.stopPropagation()">
+        <span class="celebrate-emoji">🎉</span>
+        <h3 class="celebrate-title" id="celebrateTitle">완료!</h3>
+        <p class="celebrate-subtitle" id="celebrateSubtitle">모든 짝을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All matched!</span></p>
+        <div class="celebrate-stats">
+            <div class="celebrate-stat"><strong id="celebrateCorrect">0</strong><span>정답 · Correct</span></div>
+            <div class="celebrate-stat"><strong id="celebrateWrong">0</strong><span>오답 · Wrong</span></div>
+        </div>
+        <div class="celebrate-actions">
+            <button class="celebrate-btn" onclick="celebrateRestart()">🔄 다시 시작</button>
+            <button class="celebrate-btn secondary" onclick="celebrateClose()">닫기</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

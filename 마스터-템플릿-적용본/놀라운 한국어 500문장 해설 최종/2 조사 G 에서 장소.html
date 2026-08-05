@@ -1,0 +1,551 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Amazing Korean 1 - 조사 G 에서 장소</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet"><style>
+/* ============================================================
+   AMAZING KOREAN 1 — HTML 해설집 마스터 템플릿 v1.0
+   ------------------------------------------------------------
+   사용법:
+   1) <title> 태그의 {주제}를 실제 주제로 교체
+   2) :root에서 --theme-* 변수 3개를 해당 Structure 색으로 교체
+   3) <body> 안의 콘텐츠를 작성 (각 컴포넌트 예시는 주석 참조)
+   ------------------------------------------------------------
+   7색 테마표 (Primary / Dark / Light BG):
+     조사  Particles      #f59e0b / #92400e / #fffbeb
+     시제  Tense          #3b82f6 / #1e40af / #eff6ff
+     발음  Pronunciation  #a855f7 / #6b21a8 / #faf5ff
+     받침  Batchim        #14b8a6 / #115e59 / #f0fdfa
+     연음  Liaison        #6366f1 / #3730a3 / #eef2ff
+     경음  Tense conson.  #f43f5e / #9f1239 / #fff1f2
+     모음  Vowels         #f97316 / #9a3412 / #fff7ed
+   ============================================================ */
+
+:root {
+  /* === 조사 테마 (amber) === */
+  --theme-primary:   #f59e0b;
+  --theme-dark:      #92400e;
+  --theme-light-bg:  #fffbeb;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family:'Noto Sans KR', sans-serif;
+  background:#f1f5f9;
+  color:#1e293b;
+  line-height:1.8;
+  padding:20px;
+}
+
+.container {
+  max-width:800px;
+  margin:0 auto;
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 4px 24px rgba(0,0,0,0.08);
+  padding:48px 40px;
+}
+
+/* ===== 헤딩 ===== */
+h1 {
+  font-size:2rem; font-weight:900;
+  border-bottom:4px solid var(--theme-primary);
+  padding-bottom:12px; margin-bottom:4px;
+}
+h1.section-break { margin-top:48px; }
+h1+.subtitle { color:#64748b; font-size:1rem; margin-bottom:40px; }
+
+h2 {
+  font-size:1.5rem; font-weight:800; color:var(--theme-dark);
+  margin-top:48px; margin-bottom:4px;
+  padding-top:24px; border-top:2px solid #e2e8f0;
+}
+h2:first-of-type { border-top:none; margin-top:0; padding-top:0; }
+h2+.subtitle { color:#64748b; font-size:0.95rem; margin-bottom:20px; }
+
+h3 {
+  font-size:1.2rem; font-weight:700; color:var(--theme-dark);
+  margin-top:36px; margin-bottom:12px;
+  padding:10px 14px;
+  background:var(--theme-light-bg);
+  border-left:4px solid var(--theme-primary);
+  border-radius:4px;
+}
+h4 {
+  font-size:1.05rem; font-weight:700; color:var(--theme-dark);
+  margin-top:28px; margin-bottom:12px;
+  padding:8px 12px;
+  background:var(--theme-light-bg);
+  border-left:4px solid var(--theme-primary);
+  border-radius:4px;
+}
+
+/* ===== 본문 단락 ===== */
+.ko { margin-bottom:2px; }
+.en { color:#64748b; font-size:0.92rem; margin-bottom:16px; }
+
+/* ===== 표 ===== */
+table {
+  width:100%; border-collapse:collapse;
+  margin:12px 0 20px 0; font-size:0.88rem;
+}
+thead th {
+  background:var(--theme-light-bg);
+  color:var(--theme-dark); font-weight:700;
+  padding:10px 12px;
+  border-bottom:2px solid var(--theme-primary);
+  text-align:left;
+}
+tbody td { padding:8px 12px; border-bottom:1px solid #e2e8f0; }
+tbody tr:nth-child(even) { background:#f8fafc; }
+
+/* ===== 표 전역 정렬 (v1.0 추가) ===== */
+table { table-layout:fixed; }
+thead th { text-align:center; word-break:keep-all; }
+tbody td { text-align:center; word-break:keep-all; }
+
+
+/* ===== 박스 (테마 가변) ===== */
+.vocab-box, .try-box {
+  background:var(--theme-light-bg);
+  border-radius:10px;
+  padding:14px 18px;
+  margin:12px 0 16px 0;
+  border-left:4px solid var(--theme-primary);
+}
+.vocab-box .vocab-title, .try-box .try-title {
+  font-size:0.8rem; font-weight:700;
+  color:var(--theme-dark);
+  margin-bottom:6px;
+  text-transform:uppercase; letter-spacing:1px;
+}
+
+.answer-box { margin:0 0 24px 0; }
+.answer-toggle {
+  background:var(--theme-dark); color:white; border:none;
+  padding:8px 20px; border-radius:6px;
+  cursor:pointer; font-size:0.85rem; font-weight:700;
+  margin-top:8px;
+}
+.answer-toggle:hover { opacity:0.9; }
+.answer-content {
+  display:none;
+  margin-top:10px; padding:12px 16px;
+  background:var(--theme-light-bg);
+  border-radius:8px;
+  border-left:4px solid var(--theme-primary);
+}
+.answer-content .ans-kr {
+  font-size:1.15rem; font-weight:900;
+  color:var(--theme-dark);
+}
+
+/* ===== 박스 (의미 고정 — 테마와 무관) ===== */
+.note-box {
+  background:#fef3c7; border-left:4px solid #f59e0b;
+  padding:12px 16px; border-radius:4px;
+  margin:12px 0 16px 0; font-size:0.92rem;
+}
+.caution {
+  background:#fef3c7; border-left:4px solid #f59e0b;
+  padding:12px 16px; border-radius:4px;
+  margin:12px 0 16px 0; font-size:0.92rem;
+}
+.exception {
+  background:#fef2f2; border-left:4px solid #ef4444;
+  padding:12px 16px; border-radius:4px;
+  margin:12px 0 16px 0; font-size:0.92rem;
+}
+.example-box {
+  background:#eff6ff; border-left:4px solid #3b82f6;
+  padding:14px 20px; margin:12px 0 16px 0;
+  border-radius:6px;
+  font-size:1.05rem; font-weight:700;
+  color:#1e293b; line-height:1.8;
+}
+
+blockquote {
+  background:#f8fafc; border-left:3px solid #cbd5e1;
+  padding:12px 16px; margin:12px 0 16px 0;
+  border-radius:4px;
+  font-size:0.95rem; line-height:2;
+}
+
+/* ===== 다이어그램 (음절 분해 등) ===== */
+.diagram-box {
+  display:flex; gap:40px;
+  justify-content:center;
+  margin:16px 0 20px 0;
+}
+.char-box {
+  background:#f8fafc;
+  border:2px solid #cbd5e1;
+  border-radius:8px;
+  padding:16px 24px;
+  text-align:center;
+  min-width:120px;
+}
+.char-box .label {
+  font-size:0.8rem; color:#64748b; margin-bottom:8px;
+}
+.char-box .parts span {
+  display:block; font-size:1.1rem; font-weight:700; line-height:1.6;
+}
+.char-box .parts .batchim { color:#dc2626; }
+.char-box .result {
+  font-size:1.5rem; font-weight:900;
+  margin-top:8px; color:#1e293b;
+}
+
+/* ===== TTS 버튼 ===== */
+.speak-btn {
+  background:none; border:none; cursor:pointer;
+  font-size:1.3rem; vertical-align:middle;
+  margin-left:8px; padding:2px 6px;
+  border-radius:6px; transition:background 0.2s;
+}
+.speak-btn:hover { background:#e0e7ff; }
+
+/* ===== 객관식 퀴즈 (mc-*) — 종합 퀴즈 박스 안에 배치 ===== */
+.quiz-box {
+  background:#f0fdf4;
+  border:2px solid #86efac;
+  border-radius:12px;
+  padding:20px 24px;
+  margin:24px 0;
+}
+.quiz-box h4 {
+  background:#dcfce7; border-left-color:#22c55e;
+  color:#166534; margin-top:0;
+}
+.quiz-box .answer-toggle { background:#166534; }
+.quiz-box .answer-toggle:hover { background:#15803d; }
+.quiz-box .answers {
+  display:none;
+  margin-top:12px; padding-top:12px;
+  border-top:1px dashed #86efac;
+}
+.mc-q {
+  margin:14px 0; padding:12px 16px;
+  background:#fff;
+  border-radius:8px;
+  border:1px solid #d1d5db;
+}
+.mc-sentence { font-size:1.05rem; font-weight:700; margin-bottom:10px; }
+.mc-blank { color:#dc2626; font-weight:900; }
+.mc-opts { display:flex; gap:10px; flex-wrap:wrap; }
+.mc-opt-wrap {
+  display:flex; flex-direction:column;
+  align-items:center; gap:4px;
+}
+.mc-btn {
+  padding:8px 16px;
+  border:2px solid #d1d5db;
+  border-radius:8px;
+  background:#fff;
+  font-size:0.95rem; font-weight:700;
+  cursor:pointer; transition:all 0.2s;
+  min-width:100px;
+}
+.mc-fb {
+  font-size:1.2rem; font-weight:900;
+  min-height:1.4em;
+}
+.mc-score {
+  text-align:center;
+  font-size:1.1rem; font-weight:900;
+  color:#166534;
+  margin-top:16px; padding:12px;
+  background:#dcfce7; border-radius:8px;
+  display:none;
+}
+
+/* ===== 조사 강조 (.particle 클래스) ===== */
+.particle {
+  color:#0F172A; font-weight:900;
+  font-size:0.98em; letter-spacing:0.02em;
+}
+
+/* ===== 기타 ===== */
+hr { border:none; border-top:1px solid #e2e8f0; margin:32px 0; }
+.footer {
+  text-align:center; color:#94a3b8;
+  font-size:0.85rem;
+  margin-top:48px; padding-top:20px;
+  border-top:2px solid #e2e8f0;
+}
+
+/* ===== 인쇄 ===== */
+@media print {
+  body { background:none; padding:0; }
+  .container { box-shadow:none; padding:20px; }
+  .quiz-box .answers { display:block !important; }
+  .quiz-box .answer-toggle, .answer-toggle { display:none; }
+  .answer-content { display:block !important; }
+}
+</style></head><body><div class="container">
+<style>.main-title{font-size:3rem;font-weight:900;border-bottom:5px solid #3b82f6;padding-bottom:14px;margin-bottom:10px;color:#3b82f6;letter-spacing:-0.5px;}@media (max-width:720px){.main-title{font-size:2.2rem;}}</style>
+<!-- ===== 조사 Ⓖ 에서 (장소) ===== -->
+<h1 class="main-title">조사 Ⓖ · 에서 — 장소</h1>
+<p class="subtitle eng">Particle Ⓖ — Place Marker (에서)</p>
+<p class="subtitle eng">At / In (Place of Action)</p>
+
+<p class="ko">'에서'는 장소 앞에 붙어서 '어디에서?'를 알려 줍니다.</p>
+<p class="en">'에서' is attached to a place word to tell you "where?"</p>
+
+<p class="ko">'어떤 장소에서 행동을 한다'는 뜻입니다.</p>
+<p class="en">It means "doing an action at/in a certain place."</p>
+
+<p class="ko">영어의 "at / in"과 같습니다.</p>
+<p class="en">It is the same as "at / in" in English.</p>
+
+<blockquote>I study at school. → 학교에서 공부합니다.<br>I read in the library. → 도서관에서 읽습니다.</blockquote>
+
+<style>
+.conj-rule{border:1px solid;border-radius:14px;padding:18px;margin:14px 0 18px 0;}
+.conj-rule.r-a{background:linear-gradient(135deg,#f7faff 0%,#eef3fa 100%);border-color:#c4d2e2;}
+.conj-rule.r-b{background:linear-gradient(135deg,#f5faf6 0%,#ecf5ef 100%);border-color:#bcd3c2;}
+.conj-rule.r-c{background:linear-gradient(135deg,#fdf6f6 0%,#fbeeee 100%);border-color:#e0bfbf;}
+.conj-rule .cr-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 14px;background:#fff;border:1px solid;border-radius:10px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,0.04);}
+.conj-rule.r-a .cr-head{border-color:#dbe5f1;}
+.conj-rule.r-b .cr-head{border-color:#d4e3d7;}
+.conj-rule.r-c .cr-head{border-color:#ecd6d6;}
+.conj-rule .cr-badge{color:#fff;font-weight:800;padding:6px 14px;border-radius:20px;font-size:1rem;white-space:nowrap;letter-spacing:0.3px;flex-shrink:0;}
+.conj-rule.r-a .cr-badge{background:#3d5a85;}
+.conj-rule.r-b .cr-badge{background:#3f6149;}
+.conj-rule.r-c .cr-badge{background:#874949;}
+.conj-rule .cr-title{display:flex;flex-direction:column;gap:2px;flex:1;min-width:180px;}
+.conj-rule .cr-title .cr-ko{font-size:0.88rem;font-weight:700;color:#555;line-height:1.5;}
+.conj-rule .cr-title .cr-en{font-size:0.8rem;color:#888;font-style:italic;font-family:'Lato',sans-serif;line-height:1.45;}
+.conj-rule .cr-rows{display:flex;flex-direction:column;gap:8px;}
+.conj-rule .cr-row{display:grid;align-items:center;gap:8px;background:#fff;border:1px solid;border-radius:8px;padding:10px 12px;transition:transform 0.18s ease,box-shadow 0.18s ease;}
+.conj-rule.r-a .cr-row{border-color:#dbe5f1;}
+.conj-rule.r-b .cr-row{border-color:#d4e3d7;}
+.conj-rule.r-c .cr-row{border-color:#ecd6d6;}
+.conj-rule .cr-row:hover{transform:translateX(2px);box-shadow:0 3px 8px rgba(70,90,120,0.08);}
+.conj-rule.r-a .cr-row,.conj-rule.r-b .cr-row{grid-template-columns:1fr 22px 1.4fr 22px 1.4fr;}
+.conj-rule.r-c .cr-row{grid-template-columns:1fr 22px 0.7fr 22px 0.7fr 22px 1.5fr;}
+.conj-rule .cr-base{display:flex;flex-direction:column;align-items:center;gap:4px;}
+.conj-rule .cr-base .cb-word{font-size:0.96rem;font-weight:700;color:#444;line-height:1;display:inline-flex;align-items:center;justify-content:center;background:#fff;border:1.5px solid;border-radius:7px;padding:5px 10px;min-width:88px;white-space:nowrap;}
+.conj-rule.r-a .cb-word{border-color:#c4d2e2;}
+.conj-rule.r-b .cb-word{border-color:#bcd3c2;}
+.conj-rule.r-c .cb-word{border-color:#e0bfbf;}
+.conj-rule .cr-base .cb-stem,.conj-rule .cr-base .cb-da{padding:0;margin:0;background:none;color:inherit;text-decoration:none;border-radius:0;}
+.conj-rule .cr-base .cb-en{font-size:0.76rem;color:#888;font-weight:500;font-style:normal;}
+.conj-rule .cr-arrow{text-align:center;font-weight:800;font-size:1.05rem;}
+.conj-rule.r-a .cr-arrow{color:#3d5a85;}
+.conj-rule.r-b .cr-arrow{color:#3f6149;}
+.conj-rule.r-c .cr-arrow{color:#874949;}
+.conj-rule .cr-step{display:flex;justify-content:center;align-items:center;gap:6px;}
+.conj-rule .cr-step .cs-plus{font-weight:800;font-size:0.95rem;color:#3d5a85;}
+.conj-rule .cr-step .cs-chip{font-size:0.96rem;font-weight:700;padding:5px 10px;border-radius:7px;letter-spacing:-0.3px;line-height:1;display:inline-flex;align-items:center;border:1.5px solid;}
+.conj-rule.r-a .cr-step .cs-chip{background:#eef2f8;color:#3d5a85;border-color:#c4d2e2;}
+.conj-rule.r-b .cr-step .cs-chip{background:#eef7f0;color:#3f6149;border-color:#bcd3c2;}
+.conj-rule.r-c .cr-step .cs-chip{background:#fbeeee;color:#874949;border-color:#e0bfbf;}
+.conj-rule .cr-step.is-drop .cs-chip{background:#fff7e6;color:#8a6a26;border:1.5px dashed #e0c889;}
+.conj-rule .cr-result{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;}
+.conj-rule .cr-result .res{font-size:0.96rem;font-weight:700;padding:5px 10px;border-radius:7px;line-height:1;min-width:148px;text-align:center;box-sizing:border-box;white-space:nowrap;}
+.conj-rule .cr-result .res .res-tag{display:none;}
+.conj-rule.r-a .cr-result .res.statement{background:#3d5a85;color:#fff;}
+.conj-rule.r-a .cr-result .res.question{background:#fff;color:#3d5a85;border:1.5px solid #3d5a85;}
+.conj-rule.r-b .cr-result .res.statement{background:#3f6149;color:#fff;}
+.conj-rule.r-b .cr-result .res.question{background:#fff;color:#3f6149;border:1.5px solid #3f6149;}
+.conj-rule.r-c .cr-result .res.statement{background:#874949;color:#fff;}
+.conj-rule.r-c .cr-result .res.question{background:#fff;color:#874949;border:1.5px solid #874949;}
+.conj-rule .cr-coltitles{display:grid;align-items:center;gap:8px;padding:0 12px 8px 12px;font-size:0.72rem;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;font-family:'Lato',sans-serif;}
+.conj-rule.r-a .cr-coltitles{color:#3d5a85;}
+.conj-rule.r-b .cr-coltitles{color:#3f6149;}
+.conj-rule.r-c .cr-coltitles{color:#874949;}
+.conj-rule.r-a .cr-coltitles,.conj-rule.r-b .cr-coltitles{grid-template-columns:1fr 22px 1.4fr 22px 1.4fr;}
+.conj-rule.r-c .cr-coltitles{grid-template-columns:1fr 22px 0.7fr 22px 0.7fr 22px 1.5fr;}
+.conj-rule .cr-coltitles > div{text-align:center;}
+@media (max-width:720px){
+  .conj-rule{padding:14px 12px;}
+  .conj-rule .cr-head{padding:9px 10px;gap:8px;}
+  .conj-rule .cr-badge{font-size:0.85rem;padding:5px 11px;}
+  .conj-rule.r-a .cr-row,.conj-rule.r-b .cr-row{grid-template-columns:0.9fr 14px 1.3fr 14px 1.25fr;gap:5px;padding:9px 8px;}
+  .conj-rule.r-c .cr-row{grid-template-columns:0.9fr 14px 0.6fr 14px 0.6fr 14px 1.25fr;gap:4px;padding:9px 6px;}
+  .conj-rule.r-a .cr-coltitles,.conj-rule.r-b .cr-coltitles{grid-template-columns:0.9fr 14px 1.3fr 14px 1.25fr;gap:5px;font-size:0.58rem;padding:0 8px 8px 8px;}
+  .conj-rule.r-c .cr-coltitles{grid-template-columns:0.9fr 14px 0.6fr 14px 0.6fr 14px 1.25fr;gap:4px;font-size:0.56rem;padding:0 6px 8px 6px;}
+  .conj-rule .cr-arrow{font-size:0.9rem;}
+  .conj-rule .cr-base .cb-word{font-size:0.9rem;padding:5px 8px;min-width:80px;}
+  .conj-rule .cr-base .cb-en{font-size:0.66rem;}
+  .conj-rule .cr-step .cs-chip{font-size:0.86rem;padding:4px 7px;}
+  .conj-rule .cr-result .res{font-size:0.92rem;padding:5px 9px;min-width:124px;}
+}
+@media (max-width:460px){
+  .conj-rule .cr-coltitles{display:none;}
+  .conj-rule.r-a .cr-row,.conj-rule.r-b .cr-row,.conj-rule.r-c .cr-row{grid-template-columns:1fr;gap:6px;text-align:center;padding:12px;}
+  .conj-rule .cr-arrow{transform:rotate(90deg);font-size:1.05rem;}
+}
+.pb-badge{display:inline-flex;align-items:center;padding:4px 9px;border-radius:7px;font-weight:800;font-size:0.82rem;white-space:nowrap;}
+.pb-badge.pb-x{background:#fee2e2;color:#dc2626;}
+.pb-badge.pb-o{background:#dcfce7;color:#16a34a;}
+.pb-badge.pb-p{background:#dbeafe;color:#1e40af;}
+.pb-badge.pb-t{background:#fef3c7;color:#92400e;}
+</style>
+<div class="conj-rule r-a">
+  <div class="cr-head">
+    <span class="cr-badge">장소 + 에서</span>
+    <div class="cr-title">
+      <span class="cr-ko">행동하는 장소 뒤에는 받침과 관계없이 <strong>항상 '에서'</strong>를 붙입니다</span>
+      <span class="cr-en">Places of action always take 에서 — the form never changes.</span>
+    </div>
+  </div>
+  <div class="cr-coltitles"><div>장소 단어 · Place word</div><div></div><div>+ 에서</div><div></div><div>결과 · Result</div></div>
+  <div class="cr-rows">
+    <div class="cr-row">
+      <div class="cr-base"><span class="cb-word"><span class="cb-stem">학교</span></span><span class="cb-en">school</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-step"><span class="cs-plus">+</span><span class="cs-chip">에서</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-result"><span class="res statement">학교에서</span></div>
+    </div>
+    <div class="cr-row">
+      <div class="cr-base"><span class="cb-word"><span class="cb-stem">도서관</span></span><span class="cb-en">library</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-step"><span class="cs-plus">+</span><span class="cs-chip">에서</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-result"><span class="res statement">도서관에서</span></div>
+    </div>
+    <div class="cr-row">
+      <div class="cr-base"><span class="cb-word"><span class="cb-stem">집</span></span><span class="cb-en">house</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-step"><span class="cs-plus">+</span><span class="cs-chip">에서</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-result"><span class="res statement">집에서</span></div>
+    </div>
+    <div class="cr-row">
+      <div class="cr-base"><span class="cb-word"><span class="cb-stem">공원</span></span><span class="cb-en">park</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-step"><span class="cs-plus">+</span><span class="cs-chip">에서</span></div>
+      <div class="cr-arrow">➜</div>
+      <div class="cr-result"><span class="res statement">공원에서</span></div>
+    </div>
+  </div>
+</div>
+
+<p class="ko">'에서'도 받침과 관계없이 항상 같은 모양입니다!</p>
+<p class="en">'에서' also always has the same form regardless of 받침!</p>
+
+<div class="caution">
+<p class="ko">⚠️ <strong>주의:</strong> 서술어가 <strong>'가다, 다니다, 있다, 없다'</strong> 등이 오면 <strong>'장소 + <span class="particle">에</span>'</strong>를 사용합니다.</p>
+<p class="en">⚠️ <strong>Caution:</strong> When the predicate is <strong>'가다 (to go), 다니다 (to attend), 있다 (to be/exist), 없다 (to not be/exist)'</strong> etc., use <strong>'place + <span class="particle">에</span>'</strong>.</p>
+</div>
+
+<div class="quiz-box">
+<h4>Practice: 에 vs 에서 객관식 (Multiple Choice)</h4>
+<p class="ko">문장을 읽고 알맞은 조사를 고르세요. '에' 또는 '에서'?</p>
+<p class="en">Read the sentence and choose the correct particle: '에' or '에서'?</p>
+
+<div class="note-box">
+<p class="ko"><strong>힌트:</strong> 시간 → 에 / 도착·위치 (가다, 다니다, 있다) → 에 / 행동 (공부하다, 먹다, 마시다, 쉬다 등) → 에서 / ※ '살다'는 둘 다 가능 (한국에 삽니다 = 한국에서 삽니다)</p>
+<p class="en"><strong>Hint:</strong> Time → 에 / Arrival·Location (go, be, live) → 에 / Action (study, eat, drink, rest, etc.) → 에서</p>
+</div>
+
+<div id="mcQuizG">
+<div class="mc-q" data-answers="에서"><div class="mc-sentence">1) 학교<span class="mc-blank">___</span> 공부합니다. (I study.)</div><div class="mc-opts"><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에')">에</button><div class="mc-fb"></div></div><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에서')">에서</button><div class="mc-fb"></div></div></div></div>
+<div class="mc-q" data-answers="에"><div class="mc-sentence">2) 저녁<span class="mc-blank">___</span> 밥을 먹습니다. (I eat dinner.)</div><div class="mc-opts"><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에')">에</button><div class="mc-fb"></div></div><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에서')">에서</button><div class="mc-fb"></div></div></div></div>
+<div class="mc-q" data-answers="에"><div class="mc-sentence">3) 학교<span class="mc-blank">___</span> 갑니다. (I go.)</div><div class="mc-opts"><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에')">에</button><div class="mc-fb"></div></div><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에서')">에서</button><div class="mc-fb"></div></div></div></div>
+<div class="mc-q" data-answers="에"><div class="mc-sentence">4) 밤<span class="mc-blank">___</span> 잠을 잡니다. (I sleep.)</div><div class="mc-opts"><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에')">에</button><div class="mc-fb"></div></div><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에서')">에서</button><div class="mc-fb"></div></div></div></div>
+<div class="mc-q" data-answers="에서"><div class="mc-sentence">5) 집<span class="mc-blank">___</span> 쉽니다. (I rest.)</div><div class="mc-opts"><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에')">에</button><div class="mc-fb"></div></div><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에서')">에서</button><div class="mc-fb"></div></div></div></div>
+<div class="mc-q" data-answers="에"><div class="mc-sentence">6) 일요일<span class="mc-blank">___</span> 쉽니다. (I rest on Sunday.)</div><div class="mc-opts"><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에')">에</button><div class="mc-fb"></div></div><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에서')">에서</button><div class="mc-fb"></div></div></div></div>
+<div class="mc-q" data-answers="에"><div class="mc-sentence">7) 집<span class="mc-blank">___</span> 있습니다. (I am home.)</div><div class="mc-opts"><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에')">에</button><div class="mc-fb"></div></div><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에서')">에서</button><div class="mc-fb"></div></div></div></div>
+<div class="mc-q" data-answers="에"><div class="mc-sentence">8) 아침<span class="mc-blank">___</span> 일어납니다. (I wake up.)</div><div class="mc-opts"><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에')">에</button><div class="mc-fb"></div></div><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에서')">에서</button><div class="mc-fb"></div></div></div></div>
+<div class="mc-q" data-answers="에서"><div class="mc-sentence">9) 도서관<span class="mc-blank">___</span> 책을 읽습니다. (I read a book.)</div><div class="mc-opts"><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에')">에</button><div class="mc-fb"></div></div><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에서')">에서</button><div class="mc-fb"></div></div></div></div>
+<div class="mc-q" data-answers="에"><div class="mc-sentence">10) 한 시<span class="mc-blank">___</span> 만납니다. (I meet at 1 o'clock.)</div><div class="mc-opts"><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에')">에</button><div class="mc-fb"></div></div><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에서')">에서</button><div class="mc-fb"></div></div></div></div>
+<div class="mc-q" data-answers="에서"><div class="mc-sentence">11) 커피숍<span class="mc-blank">___</span> 커피를 마십니다. (I drink coffee.)</div><div class="mc-opts"><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에')">에</button><div class="mc-fb"></div></div><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에서')">에서</button><div class="mc-fb"></div></div></div></div>
+<div class="mc-q" data-answers="에"><div class="mc-sentence">12) 주말<span class="mc-blank">___</span> 여행합니다. (I travel.)</div><div class="mc-opts"><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에')">에</button><div class="mc-fb"></div></div><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에서')">에서</button><div class="mc-fb"></div></div></div></div>
+<div class="mc-q" data-answers="에서"><div class="mc-sentence">13) 공원<span class="mc-blank">___</span> 운동합니다. (I exercise.)</div><div class="mc-opts"><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에')">에</button><div class="mc-fb"></div></div><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에서')">에서</button><div class="mc-fb"></div></div></div></div>
+<div class="mc-q" data-answers="에"><div class="mc-sentence">14) 내년<span class="mc-blank">___</span> 한국에 갑니다. (I go to Korea next year.)</div><div class="mc-opts"><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에')">에</button><div class="mc-fb"></div></div><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에서')">에서</button><div class="mc-fb"></div></div></div></div>
+<div class="mc-q" data-answers="에"><div class="mc-sentence">15) 회사<span class="mc-blank">___</span> 다닙니다. (I go to work.)</div><div class="mc-opts"><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에')">에</button><div class="mc-fb"></div></div><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에서')">에서</button><div class="mc-fb"></div></div></div></div>
+</div>
+<div id="mcScoreG" class="mc-score"></div>
+<script>
+var mcGT=15,mcGD=0,mcGC=0;
+function mcG(btn,val){var q=btn.closest('.mc-q');if(q.classList.contains('correct-done'))return;var ans=q.dataset.answers.split(',');var fb=btn.parentElement.querySelector('.mc-fb');if(ans.indexOf(val)!==-1){q.classList.add('correct-done');btn.classList.add('correct');fb.textContent='O';fb.style.color='#166534';q.querySelectorAll('.mc-btn').forEach(function(b){b.disabled=true;});mcGC++;mcGD++;if(mcGD===mcGT){var s=document.getElementById('mcScoreG');s.style.display='block';s.textContent=mcGC+' / '+mcGT+(mcGC===mcGT?' 🎉':mcGC>=11?' 👏':' 💪');}}else{btn.classList.add('wrong');btn.disabled=true;fb.textContent='X';fb.style.color='#dc2626';}}
+</script>
+</div>
+
+<hr>
+
+<!-- 전체 요약 -->
+<style>
+.fc-section{margin:28px 0 24px 0;}
+.fc-intro{background:#eff6ff;border-left:4px solid #3b82f6;padding:10px 14px;border-radius:6px;margin-bottom:14px;font-size:0.92rem;}
+.fc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
+.fc-card{perspective:1000px;cursor:pointer;height:210px;}
+.fc-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.6s;}
+.fc-card.flipped .fc-inner{transform:rotateY(180deg);}
+.fc-front,.fc-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;padding:18px 16px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;box-shadow:0 4px 12px rgba(30,64,175,0.12);}
+.fc-front{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);color:#1e3a8a;border:1px solid #bae6fd;}
+.fc-back{background:#fff;color:#1e293b;border:2px solid #bae6fd;transform:rotateY(180deg);}
+.fc-num{position:absolute;top:10px;left:14px;font-size:0.72rem;font-weight:700;letter-spacing:1px;}
+.fc-front .fc-num{color:#7dd3fc;}
+.fc-back .fc-num{color:#94a3b8;}
+.fc-flip-hint{position:absolute;bottom:10px;right:14px;font-size:0.7rem;}
+.fc-front .fc-flip-hint{color:#7dd3fc;}
+.fc-back .fc-flip-hint{color:#94a3b8;}
+.fc-korean{font-size:2.2rem;font-weight:900;line-height:1.1;margin-bottom:6px;color:#0c4a6e;}
+.fc-english{font-size:0.85rem;opacity:0.85;font-style:italic;font-family:'Lato',sans-serif;color:#0369a1;}
+.fc-back-label{display:inline-block;padding:3px 10px;border-radius:999px;font-size:0.7rem;font-weight:700;letter-spacing:0.5px;margin-bottom:4px;}
+.fc-row-wrap{width:100%;}
+.fc-row-wrap.statement .fc-back-label{background:#dcfce7;color:#166534;}
+.fc-row-wrap.question .fc-back-label{background:#fef3c7;color:#92400e;}
+.fc-form-text{font-size:1.35rem;font-weight:900;color:#1e3a8a;}
+.fc-form-row{display:flex;align-items:center;gap:6px;justify-content:center;margin-top:2px;}
+.fc-divider{width:60%;height:1px;background:#e2e8f0;margin:8px auto;}
+.fc-tts{background:#eff6ff;border:none;cursor:pointer;font-size:0.95rem;padding:4px 8px;border-radius:6px;transition:background 0.2s;color:#1e40af;}
+.fc-tts:hover{background:#dbeafe;}
+
+@media print{
+  .fc-grid{grid-template-columns:repeat(2,1fr);}
+  .fc-card{height:auto;min-height:auto;}
+  .fc-inner{transform-style:flat;transition:none;}
+  .fc-front,.fc-back{position:relative;backface-visibility:visible;-webkit-backface-visibility:visible;transform:none !important;page-break-inside:avoid;}
+  .fc-back{margin-top:6px;border:1px solid #3b82f6;}
+  .fc-front{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .fc-flip-hint,.fc-tts{display:none;}
+}
+</style>
+<div class="fc-section">
+<h3 style="margin-top:32px;">퀴즈 2 · 플래시 카드 (Flashcards)</h3>
+
+<div class="fc-grid" id="fcGridJ"></div>
+</div>
+
+<script>
+(function(){
+  var data=[
+    ["학교","school","학교에서"],["대학교","university","대학교에서"],["교실","classroom","교실에서"],["도서관","library","도서관에서"],
+    ["집","house","집에서"],["방","room","방에서"],["커피숍","coffee shop","커피숍에서"],["공원","park","공원에서"],
+    ["시장","market","시장에서"],["공항","airport","공항에서"]
+  ];
+  var grid = document.getElementById('fcGridJ');
+  data.forEach(function(w, i){
+    var n = String(i+1).padStart(2,'0');
+    var card = document.createElement('div');
+    card.className = 'fc-card';
+    card.addEventListener('click', function(){ this.classList.toggle('flipped'); });
+    card.innerHTML =
+      '<div class="fc-inner">' +
+        '<div class="fc-front">' +
+          '<span class="fc-num">'+n+'</span>' +
+          '<div class="fc-korean">'+w[0]+'</div>' +
+          '<div class="fc-english">'+w[1]+'</div>' +
+          '<span class="fc-flip-hint">↻ 클릭</span>' +
+        '</div>' +
+        '<div class="fc-back">' +
+          '<span class="fc-num">'+n+'</span>' +
+          '<span class="pb-badge pb-p">장소 + 에서</span>' +
+          '<div class="fc-form-row" style="margin-top:12px;"><span class="fc-form-text">'+w[2]+'</span>' +
+          '<button class="fc-tts" onclick="event.stopPropagation();speakKorean(\''+w[2]+'\')">🔊</button></div>' +
+        '</div>' +
+      '</div>';
+    grid.appendChild(card);
+  });
+})();
+</script>
+
+<div class="footer">
+    <p>Amazing Korean 1 — Grammar Basics: Particles (조사)</p>
+</div>
+
+</div><script>function speakKorean(text){if(!('speechSynthesis' in window))return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='ko-KR';u.rate=0.85;u.pitch=1.1;const preferred=['Yuna','SunHi','Heami','Google 한국의'];const voices=window.speechSynthesis.getVoices();const koVoices=voices.filter(v=>v.lang.startsWith('ko'));let picked=null;for(const name of preferred){picked=koVoices.find(v=>v.name.includes(name));if(picked)break;}if(!picked&&koVoices.length>0)picked=koVoices[0];if(picked)u.voice=picked;window.speechSynthesis.speak(u);}if('speechSynthesis' in window){window.speechSynthesis.onvoiceschanged=function(){};window.speechSynthesis.getVoices();}</script></body></html>

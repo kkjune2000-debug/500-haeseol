@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Korean 1 - Number 숫자</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #555; margin: 0; padding: 20px; }
+        .eng { font-family: 'Lato', sans-serif; }
+
+        .page-container {
+            width: 210mm;
+            height: 297mm;
+            background-color: white;
+            margin: 0 auto;
+            padding: 10mm 18mm 8mm 18mm;
+            box-sizing: border-box;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Title */
+        .page-title {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: #1e293b;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 8px;
+        }
+        .page-title .eng { font-weight: 800; }
+
+        /* All tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            table-layout: fixed;
+            margin-bottom: 6px;
+        }
+        td {
+            border: 1px solid #d1d5db;
+            padding: 4px 2px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #1e293b;
+            vertical-align: middle;
+        }
+        /* Number row (arabic) */
+        .num { color: #374151; font-weight: 600; }
+        .num td { font-size: 0.72rem; }
+        /* Korean reading row */
+        .kr { color: #1e293b; font-weight: 700; }
+        /* Native Korean (bold, light blue tint) */
+        .native { color: #1e40af; font-weight: 700; }
+        .native td { background-color: #eef2ff; }
+
+        /* Section color themes (pastel) */
+        /* Section 1: Basic 1~12, 19~100 - Blue */
+        .s1-num td { background-color: #eff6ff; }
+        .s1-kr td { background-color: #dbeafe; }
+
+        /* Section 2: 101~1234 - Green */
+        .s2-num td { background-color: #f0fdf4; }
+        .s2-kr td { background-color: #dcfce7; }
+
+        /* Section 3: 만 단위 9876~783,908 - Amber */
+        .s3-num td { background-color: #fffbeb; }
+        .s3-kr td { background-color: #fef3c7; }
+
+        /* Section 4: 백만~일조 - Rose */
+        .s4-num td { background-color: #fff1f2; }
+        .s4-kr td { background-color: #ffe4e6; }
+
+        /* Section 5: 연습 큰 숫자 - Purple */
+        .s5-num td { background-color: #faf5ff; }
+        .s5-kr td { background-color: #f3e8ff; }
+
+        /* Section 6: 수학/분수/온도 - Teal */
+        .s6-num td { background-color: #f0fdfa; }
+        .s6-kr td { background-color: #ccfbf1; }
+
+        /* Section 7: 시간/날짜 - Sky */
+        .s7-num td { background-color: #f0f9ff; }
+        .s7-kr td { background-color: #e0f2fe; }
+
+        /* Section gap */
+        .gap { height: 7px; }
+
+        /* Footer */
+        .page-footer {
+            position: absolute;
+            bottom: 8mm;
+            left: 18mm;
+            right: 18mm;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 6px;
+            display: flex;
+            justify-content: space-between;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Table content area - push bottom to leave room for footer */
+        .content-area {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 18mm;
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .page-container { width: 210mm; height: 297mm; margin: 0; box-shadow: none; }
+            td { -webkit-print-color-adjust: exact; print-color-adjust: exact; border-color: #9ca3af !important; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+
+    <div class="page-title"><span class="eng">1. number</span> 숫자</div>
+
+    <div class="content-area">
+
+    <!-- 1~12 (Sino-Korean) -->
+    <table>
+        <tr class="num s1-num"><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+        <tr class="kr s1-kr"><td>일</td><td>이</td><td>삼</td><td>사</td><td>오</td><td>육</td><td>칠</td><td>팔</td><td>구</td><td>십</td><td>십일</td><td>십이</td></tr>
+    </table>
+
+    <!-- 하나~열둘 (Native Korean) -->
+    <table>
+        <tr class="native"><td>하나</td><td>둘</td><td>셋</td><td>넷</td><td>다섯</td><td>여섯</td><td>일곱</td><td>여덟</td><td>아홉</td><td>열</td><td>열하나</td><td>열둘</td></tr>
+    </table>
+
+    <!-- 19~100 -->
+    <table>
+        <tr class="num s1-num"><td>19</td><td>20</td><td>30</td><td>40</td><td>50</td><td>60</td><td>70</td><td>80</td><td>90</td><td>91</td><td>98</td><td>100</td></tr>
+        <tr class="kr s1-kr"><td>십구</td><td>이십</td><td>삼십</td><td>사십</td><td>오십</td><td>육십</td><td>칠십</td><td>팔십</td><td>구십</td><td>구십일</td><td>구십팔</td><td rowspan="2" style="background-color:#dbeafe;">백</td></tr>
+        <tr class="native"><td>열아홉</td><td>스물</td><td>서른</td><td>마흔</td><td>쉰</td><td>예순</td><td>일흔</td><td>여든</td><td>아흔</td><td>아흔하나</td><td>아흔여덟</td></tr>
+    </table>
+
+    <div class="gap"></div>
+
+    <!-- 101~289 -->
+    <table>
+        <colgroup><col style="width:16.6%"><col style="width:16.6%"><col style="width:16.6%"><col style="width:16.6%"><col style="width:16.6%"><col style="width:16.6%"></colgroup>
+        <tr class="num s2-num"><td>101</td><td>120</td><td>156</td><td>201</td><td>234</td><td>289</td></tr>
+        <tr class="kr s2-kr"><td>백일</td><td>백이십</td><td>백오십육</td><td>이백일</td><td>이백삼십사</td><td>이백팔십구</td></tr>
+    </table>
+
+    <!-- 345~1234 -->
+    <table>
+        <colgroup><col style="width:16.6%"><col style="width:16.6%"><col style="width:16.6%"><col style="width:16.6%"><col style="width:16.6%"><col style="width:16.6%"></colgroup>
+        <tr class="num s2-num"><td>345</td><td>567</td><td>973</td><td>1000</td><td>1010</td><td>1234</td></tr>
+        <tr class="kr s2-kr"><td>삼백사십오</td><td>오백육십칠</td><td>구백칠십삼</td><td>천</td><td>천십</td><td>천이백삼십사</td></tr>
+    </table>
+
+    <div class="gap"></div>
+
+    <!-- 9876~95726 -->
+    <table>
+        <colgroup><col style="width:25%"><col style="width:25%"><col style="width:25%"><col style="width:25%"></colgroup>
+        <tr class="num s3-num"><td>9876</td><td>10,000</td><td>12,345</td><td>95,726</td></tr>
+        <tr class="kr s3-kr"><td>구천팔백칠십육</td><td>만</td><td>만 이천삼백사십오</td><td>구만 오천칠백이십육</td></tr>
+    </table>
+
+    <!-- 100,000~783,908 -->
+    <table>
+        <colgroup><col style="width:25%"><col style="width:25%"><col style="width:25%"><col style="width:25%"></colgroup>
+        <tr class="num s3-num"><td>100,000</td><td>101,010</td><td>200,675</td><td>783,908</td></tr>
+        <tr class="kr s3-kr"><td>십만</td><td>십만 천십</td><td>이십만 육백칠십오</td><td>칠십팔만 삼천구백팔</td></tr>
+    </table>
+
+    <div class="gap"></div>
+
+    <!-- 1,000,000 ~ 일조 -->
+    <table>
+        <colgroup><col span="7" style="width:14.28%"></colgroup>
+        <tr class="num s4-num"><td>1,000,000</td><td>10,000,000</td><td>100,000,000</td><td>1,000,000,000</td><td>10,000,000,000</td><td>100,000,000,000</td><td>1,000,000,000,000</td></tr>
+        <tr class="kr s4-kr"><td>백만</td><td>천만</td><td>일억</td><td>십억</td><td>백억</td><td>천억</td><td>일조</td></tr>
+    </table>
+
+    <div class="gap"></div>
+
+    <!-- Practice: 123,456 ~ 143,786,012 -->
+    <table>
+        <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"></colgroup>
+        <tr class="num s5-num"><td>123,456</td><td>9,876,543</td><td>12,345,678</td><td>4,386,824,017</td><td>143,786,012</td></tr>
+        <tr class="kr s5-kr"><td>십이만 삼천사백오십육</td><td>구백팔십칠만<br>육천오백사십삼</td><td>천이백삼십사만<br>오천육백칠십팔</td><td>사십삼억 팔천육백팔십이만<br>사천십칠</td><td>일억 사천삼백칠십팔만<br>육천십이</td></tr>
+    </table>
+
+    <!-- Large numbers practice -->
+    <table>
+        <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"></colgroup>
+        <tr class="num s5-num"><td>91,234,567,890,123</td><td>365,901,872,786</td><td>86,390,621,067</td><td>12,034,903</td><td>234,567,891,012</td></tr>
+        <tr class="kr s5-kr"><td>구십일조 이천삼백사십오억<br>육천칠백팔십구만 백이십삼</td><td>삼천육백오십구억<br>백팔십칠만 이천칠백팔십육</td><td>팔백육십삼억 구천육십이만<br>천육십칠</td><td>천이백삼만 사천구백삼</td><td>이천삼백사십오억<br>육천칠백팔십구만 천십이</td></tr>
+    </table>
+
+    <div class="gap"></div>
+
+    <!-- Math operations -->
+    <table>
+        <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"></colgroup>
+        <tr class="num s6-num"><td>1 + 2 = 3</td><td>6 - 4 = 2</td><td>6 × 7 = 42</td><td>12 ÷ 4 = 3</td><td>0.123</td></tr>
+        <tr class="kr s6-kr"><td>일 더하기 이는 삼</td><td>육 빼기 사는 이</td><td>육 곱하기 칠은 사십이</td><td>십이 나누기 사는 삼</td><td>영점 일이삼</td></tr>
+    </table>
+
+    <!-- Fractions, %, temp, distance -->
+    <table>
+        <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"></colgroup>
+        <tr class="num s6-num"><td>3/4</td><td>100%</td><td>+ 10℃</td><td>- 15℃</td><td>100,210㎢</td></tr>
+        <tr class="kr s6-kr"><td>사분의 삼</td><td>백 퍼센트</td><td>영상 십도</td><td>영하 십오도</td><td>십만 이백십 제곱킬로미터</td></tr>
+    </table>
+
+    <div class="gap"></div>
+
+    <!-- Time and date -->
+    <table>
+        <colgroup><col style="width:16.6%"><col style="width:16.6%"><col style="width:16.6%"><col style="width:50.2%"></colgroup>
+        <tr class="num s7-num"><td>12:30</td><td>10:25 AM</td><td>3:00 PM.</td><td>Friday, April 5, 2026 11:35 AM</td></tr>
+        <tr class="kr s7-kr"><td>열두 시 삼십 분</td><td>오전 열 시 이십오 분</td><td>오후 세 시</td><td>이천이십육년 사월 오일 금요일 오전 열한 시 삼십오 분</td></tr>
+    </table>
+
+    </div><!-- end content-area -->
+
+    <!-- Footer -->
+    <div class="page-footer">
+        <span>117</span>
+        <span>Amazing Korean 1</span>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기초 문법 총정리 · Korean Grammar Master Map</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Noto Sans KR',sans-serif;background:#e2e8f0;color:#111827;padding:12px;word-break:keep-all;line-height:1.45;}
+  .eng{font-family:'Lato','Noto Sans KR',sans-serif;}
+
+  .sheet{max-width:1380px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(15,23,42,.16);padding:12px 12px 14px;display:flex;flex-direction:column;}
+
+  /* title */
+  .title{display:flex;align-items:baseline;justify-content:center;gap:10px;border-bottom:3px solid #ec4899;padding-bottom:6px;margin-bottom:8px;flex-wrap:wrap;text-align:center;}
+  .title h1{font-size:1.22rem;font-weight:900;color:#0f172a;letter-spacing:-.02em;}
+  .title .te{font-family:'Lato',sans-serif;font-weight:800;color:#db2777;font-size:.92rem;}
+  .title .ts{font-size:.74rem;font-weight:600;color:#64748b;}
+  .title .ts b{color:#0f172a;}
+
+  /* master grid: left area + 서술어 (far right) */
+  .master{display:grid;grid-template-columns:3.45fr 1.15fr;gap:6px;align-items:stretch;min-height:calc(100vh - 92px);}
+  .left-area{display:flex;flex-direction:column;gap:6px;min-height:0;}
+  .top-3col{display:grid;grid-template-columns:1.12fr 1.42fr 1.25fr;gap:6px;align-items:stretch;}
+  .col{display:flex;flex-direction:column;gap:6px;min-height:0;}
+  .col-stretch{display:flex;flex-direction:column;gap:6px;min-height:0;}
+  .col-stretch .s{flex:1 1 0;}
+  .col .s{flex:1 1 auto;}
+  .divider{height:5px;border-radius:3px;flex-shrink:0;background:linear-gradient(90deg,#3b82f6,#10b981,#f59e0b,#ec4899,#8b5cf6);}
+  .bottom-section{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:6px;flex:1 1 auto;}
+
+  /* column header */
+  .ch{text-align:center;font-weight:900;font-size:.92rem;padding:6px 4px;border-radius:8px;line-height:1.15;color:#fff;flex-shrink:0;}
+  .ch .ce{font-family:'Lato',sans-serif;font-size:.62rem;font-weight:700;opacity:.82;letter-spacing:.03em;}
+  .ch-blue{background:linear-gradient(135deg,#2563eb,#3b82f6);}
+  .ch-green{background:linear-gradient(135deg,#059669,#10b981);}
+  .ch-amber{background:linear-gradient(135deg,#d97706,#f59e0b);}
+  .ch-rose{background:linear-gradient(135deg,#be185d,#db2777);}
+
+  /* cell — centered; content-sized in the 3 left columns, flex-filled in 서술어 */
+  .s{display:flex;flex-direction:column;justify-content:center;text-align:center;
+     font-size:.82rem;padding:7px 9px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;min-height:0;}
+  .s b{display:block;font-weight:800;font-size:.78rem;margin-bottom:4px;letter-spacing:-.01em;}
+
+  .tint-blue{background:#eff6ff;border-color:#bfdbfe;} .tint-blue b{color:#1d4ed8;}
+  .b-blue2{background:#dbeafe;border-color:#93c5fd;} .b-blue2 b{color:#1e40af;}
+  .tint-green{background:#ecfdf5;border-color:#a7f3d0;} .tint-green b{color:#047857;}
+  .b-green2{background:#d1fae5;border-color:#6ee7b7;} .b-green2 b{color:#065f46;}
+  .tint-amber{background:#fffbeb;border-color:#fde68a;} .tint-amber b{color:#b45309;}
+  .b-amber2{background:#fef3c7;border-color:#fcd34d;} .b-amber2 b{color:#92400e;}
+  .tint-rose{background:#fff1f2;border-color:#fecdd3;} .tint-rose b{color:#be123c;}
+  .b-rose2{background:#fce7f3;border-color:#f9a8d4;} .b-rose2 b{color:#9d174d;}
+  .tint-violet{background:#f5f3ff;border-color:#ddd6fe;} .tint-violet b{color:#6d28d9;}
+
+  /* split cell (two sub-items) */
+  .s2{flex-direction:row;padding:0;overflow:hidden;}
+  .s2>div{flex:1 1 0;display:flex;flex-direction:column;justify-content:center;text-align:center;padding:7px 8px;}
+  .s2>div+div{border-left:1px solid rgba(0,0,0,.10);}
+
+  @media (max-width:900px){
+    .master{grid-template-columns:1fr;min-height:0;}
+    .top-3col{grid-template-columns:1fr;}
+    .col-stretch .s{flex:0 0 auto;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="title">
+    <h1>기초 문법 총정리</h1><span class="te">Korean Grammar Master Map</span>
+    
+  </div>
+
+  <div class="master">
+
+    <!-- ===== LEFT AREA ===== -->
+    <div class="left-area">
+
+      <div class="top-3col">
+
+        <!-- 주어 (+ 부사어 일부로 빈칸 채움) -->
+        <div class="col">
+          <div class="ch ch-blue">주어 <span class="ce">subject</span></div>
+          <div class="s tint-blue">
+            <b>누가 · 무엇이 (Who / What)</b>
+            저는, 제가<br>당신은, 당신이<br>그는, 그녀는<br>그들은, 이것은<br>저것은, 그것은<br>수미가, 의사가 · 선생님이
+          </div>
+          <div class="s b-blue2"><b>★ 도 (also)</b>저도 · 수미도 · 이것도</div>
+          <div class="s b-green2 s2">
+            <div><b>★ 조건 (If)</b>공부하면<br>만나면</div>
+            <div><b>★ 양보 (Even if)</b>운동해도<br>먹어도</div>
+          </div>
+          <div class="s tint-green s2">
+            <div><b>★ 동작의 전환 (Shift)</b>걷다가 만났습니다<br>보다가 울었습니다</div>
+            <div><b>★ 목적 (Purpose)</b>배우러 갑니다<br>가려고 배웁니다<br>위해서</div>
+          </div>
+          <div class="s b-green2"><b>★ 배경 · 상황 (Background)</b>오는데, 고픈데<br>싶은데, 했는데</div>
+        </div>
+
+        <!-- 부사어 -->
+        <div class="col">
+          <div class="ch ch-green">부사어 <span class="ce">adverbial</span></div>
+          <div class="s tint-green s2">
+            <div><b>★ 시간 (Time)</b>언제<br>방학 때에<br>운동할 때에<br>운동 후에 / 운동한 후에<br>운동하고 나서<br>운동 전에<br>운동하는 동안<br>방학 동안<br>요리하면서<br>도착하자마자<br>월요일부터 토요일까지</div>
+            <div><b>★ 장소 · 방향 (Place / Direction)</b>어디에, 어디에서<br>여기에, 여기에서<br>저기에, 저기에서<br>한국에, 한국에서<br>학교에, 학교에서</div>
+          </div>
+          <div class="s b-green2"><b>★ 이유 · 원인 (Cause)</b>왜<br>아파서, 오니까<br>때문에, 덕분에, 탓에</div>
+          <div class="s tint-green s2">
+            <div><b>★ 순서 (Sequence)</b>밥을 먹고 갑니다<br>일어나서 씻습니다</div>
+            <div><b>★ ~로 / 으로 (with / by)</b>가위로 (도구)<br>학교로 (방향)<br>감기로 (원인)<br>나무로 (재료)</div>
+          </div>
+        </div>
+
+        <!-- 목적어 (+ 서술어 일부로 빈칸 채움) -->
+        <div class="col">
+          <div class="ch ch-amber">목적어 <span class="ce">object</span></div>
+          <div class="s tint-amber"><b>★ 직접목적어 (을/를 · Direct object)</b>누구를, 무엇을<br>저를, 당신을, 그를<br>그녀를, 그들을<br>이것을, 저것을<br>무슨 음식을 좋아해요?<br>어떤 남자를 좋아해요?</div>
+          <div class="s b-amber2"><b>★ 간접목적어 (에게/에 · Indirect object)</b>누구에게<br>저에게, 당신에게<br>그에게, 그녀에게<br>그들에게<br>꽃에, 나무에 · 회사에, 학교에</div>
+          <div class="s tint-rose"><b>★ 도움 (Favor)</b>불러 주었습니다</div>
+          <div class="s b-rose2"><b>★ 변화 (Change)</b>좋아졌습니다 · 가게 되었습니다</div>
+          <div class="s tint-rose"><b>★ 추측 (Guess)</b>올 것 같습니다 · 오는 것 같습니다</div>
+          <div class="s b-rose2"><b>★ 공감 (Empathy)</b>좋겠습니다 · 아프겠습니다</div>
+          <div class="s tint-rose"><b>★ 필수조건 (Requirement)</b>잘하려면 ~해야 합니다 / 됩니다</div>
+        </div>
+
+      </div><!-- /top-3col -->
+
+      <div class="divider"></div>
+
+      <!-- 기타: 수식 · 연결 · 변환 -->
+      <div class="bottom-section">
+        <div class="s tint-violet"><b>★ 관형어 (Modifier)</b>내가 읽은 책 (과거)<br>내가 읽는 책 (현재)<br>내가 읽을 책 (미래)<br>머리가 긴 여자 · 성격이 좋은 남자</div>
+        <div class="s tint-violet"><b>★ 간접화법 (Indirect Speech)</b>평서문: ~다고 했다<br>명령문: ~라고 했다<br>의문문: ~냐고 물었다<br>청유문: ~자고 했다<br>이다: ~이라고 했다<br>직접화법: "…"라고 했다</div>
+        <div class="s tint-violet"><b>★ 종별사 (Classifiers)</b>명, 마리, 장, 권, 병, 컵, 잔<br>대, 척, 그루, 송이, 다발<br>편, 벌, 켤레, 채</div>
+        <div class="s tint-violet"><b>★ 빈도부사 (Frequency)</b>항상, 늘, 언제나, 자주<br>가끔, 거의, 전혀<br>매일, 하루종일, 평생</div>
+        <div class="s tint-violet"><b>★ 비교 / 최상급 (Comparison)</b>같이 / 처럼 / 만큼 착하다<br>보다 (더) 착하다 · 보다 덜 덥다<br>가장 아름답다</div>
+        <div class="s tint-violet"><b>★ 존칭 (Honorifics)</b>가시다, 계시다, 주무시다<br>드시다, 말씀하시다, 편찮으시다<br>성함, 연세, 생신, 드리다, 뵙다</div>
+        <div class="s tint-violet"><b>★ 품사 변환 (Conversion)</b>동사·형용사 → 명사: ~는 것, ~기, ~ㅁ/음<br>형용사 → 부사: 크게, 편하게 / 편히<br>형용사 → 동사: 좋아하다 / 좋아지다</div>
+        <div class="s tint-violet"><b>★ 연결 (and / or / but)</b>and: 와/과 · ~고 · 그리고<br>or: 나/이나 · ~거나 · 또는/혹은<br>but: ~지만 · 하지만/그러나</div>
+        <div class="s tint-violet"><b>★ 부정 (Negation)</b>안 / 못<br>~지 않다<br>~지 못하다<br>~지 마세요<br>~지 맙시다<br>아니다</div>
+      </div>
+
+    </div><!-- /left-area -->
+
+    <!-- ===== 서술어 (far right, full height) ===== -->
+    <div class="col-stretch">
+      <div class="ch ch-rose">서술어 <span class="ce">predicate · 맨 끝</span></div>
+      <div class="s tint-rose"><b>★ 이다 (to be)</b>학생입니다 · 한국 사람입니다</div>
+      <div class="s b-rose2"><b>★ 시제 (Tense)</b>갑니다 · 갔습니다<br>갈 것입니다 · 가고 있습니다</div>
+      <div class="s tint-rose"><b>★ 불규칙 (Irregular)</b>ㄹ, ㅡ, 르, ㅂ, ㄷ, ㅅ</div>
+      <div class="s b-rose2"><b>★ 능력 · 가능 (Ability)</b>갈 수 있습니다 / 없습니다</div>
+      <div class="s tint-rose"><b>★ 부탁 (Request)</b>기다려 주세요<br>기다려 주시겠습니까?</div>
+      <div class="s b-rose2"><b>★ 허락 (Permission)</b>가도 됩니다 / 됩니까?</div>
+      <div class="s tint-rose"><b>★ 금지 (Prohibition)</b>가면 안 됩니다 · 가지 마세요</div>
+      <div class="s b-rose2"><b>★ 의무 (Obligation)</b>가야 합니다 / 됩니다</div>
+      <div class="s tint-rose"><b>★ 면제 (Exemption)</b>안 가도 됩니다</div>
+      <div class="s b-rose2"><b>★ 감탄 (Exclamation)</b>예쁘네요</div>
+      <div class="s tint-rose"><b>★ 희망 (Hope)</b>가고 싶습니다<br>갔으면 좋겠습니다</div>
+      <div class="s b-rose2"><b>★ 경험 (Experience)</b>가 보았습니다<br>간 적이 있습니다</div>
+      <div class="s tint-rose"><b>★ 계획 (Plan)</b>가려고 합니다<br>가기로 했습니다</div>
+      <div class="s b-rose2"><b>★ 상태 (State)</b>모자를 쓰고 있습니다</div>
+    </div>
+
+  </div><!-- /master -->
+
+</div>
+</body>
+</html>

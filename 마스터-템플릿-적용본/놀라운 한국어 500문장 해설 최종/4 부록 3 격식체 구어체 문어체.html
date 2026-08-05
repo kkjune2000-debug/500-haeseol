@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Korean 1 - 부록 3: 격식체·구어체·문어체 (Speech Styles)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans KR', sans-serif; background: #f1f5f9; color: #1e293b; line-height: 1.8; padding: 20px; }
+        .eng { font-family: 'Lato', 'Noto Sans KR', sans-serif; }
+        .container { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 48px 40px; }
+        h1 { font-size: 2rem; font-weight: 900; color: #1e293b; border-bottom: 4px solid #3b82f6; padding-bottom: 12px; margin-bottom: 4px; }
+        h1 .h1-line2 { display: block; }
+        h1 + .subtitle { color: #64748b; font-size: 1rem; margin-bottom: 40px; }
+        /* Title block — category-themed gradient (overrides legacy h1 layout when used) */
+        .title-block { margin: 0 0 44px 0; padding: 28px 32px 24px; border-radius: 16px; background: linear-gradient(135deg, var(--title-bg-start, #faf5ff) 0%, #ffffff 70%); box-shadow: 0 2px 14px rgba(15,23,42,0.06); position: relative; overflow: hidden; }
+        .title-block::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--title-gradient); opacity: 0.95; }
+        .title-en { display: flex; flex-direction: column; gap: 6px; }
+        .title-en .title-main { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 2.4rem; font-weight: 900; line-height: 1.18; letter-spacing: -0.02em; margin: 0; padding: 0; border: none; background: var(--title-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+        .title-en .title-sub { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--title-sub-color, #475569); line-height: 1.4; margin: 0; }
+        .title-divider { height: 3px; background: var(--title-gradient); border-radius: 999px; margin: 18px 0 16px; opacity: 0.85; }
+        .title-ko { display: flex; flex-direction: column; gap: 4px; }
+        .title-ko .title-ko-main { font-size: 1.02rem; font-weight: 800; color: var(--title-ko-main-color, #1e293b); margin: 0; letter-spacing: -0.01em; }
+        .title-ko .title-ko-sub { font-size: 0.9rem; color: #64748b; line-height: 1.65; margin: 0; }
+        /* Category palettes — apply class to .title-block */
+        .title-block.sentence  { --title-gradient: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%); --title-bg-start: #eff6ff; --title-sub-color: #1e40af; --title-ko-main-color: #1e3a8a; }
+        .title-block.predicate { --title-gradient: linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #8b5cf6 100%); --title-bg-start: #faf5ff; --title-sub-color: #5b21b6; --title-ko-main-color: #4c1d95; }
+        .title-block.adverbial { --title-gradient: linear-gradient(135deg, #064e3b 0%, #047857 50%, #10b981 100%); --title-bg-start: #ecfdf5; --title-sub-color: #047857; --title-ko-main-color: #064e3b; }
+        .title-block.other     { --title-gradient: linear-gradient(135deg, #7c2d12 0%, #b45309 50%, #f59e0b 100%); --title-bg-start: #fffbeb; --title-sub-color: #b45309; --title-ko-main-color: #78350f; }
+        @media (max-width: 600px) {
+            .title-block { padding: 22px 22px 18px; }
+            .title-en .title-main { font-size: 1.85rem; }
+            .title-en .title-sub { font-size: 1.05rem; }
+        }
+        @media print {
+            .title-block { background: none !important; box-shadow: none !important; padding: 8px 0 16px !important; border-bottom: 3px solid var(--title-ko-main-color, #1e293b); border-radius: 0; }
+            .title-block::before { display: none; }
+            .title-en .title-main { color: var(--title-ko-main-color, #1e293b) !important; -webkit-text-fill-color: var(--title-ko-main-color, #1e293b) !important; background: none !important; }
+            .title-divider { background: var(--title-ko-main-color, #1e293b) !important; opacity: 1; }
+        }
+        h2 { font-size: 1.5rem; font-weight: 800; color: #1e40af; margin-top: 48px; margin-bottom: 4px; padding-top: 24px; border-top: 2px solid #e2e8f0; }
+        h2:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+        h2 + .subtitle { color: #64748b; font-size: 0.95rem; margin-bottom: 20px; }
+        h3 { font-size: 1.2rem; font-weight: 700; color: #1e40af; margin-top: 36px; margin-bottom: 12px; padding: 10px 14px; background: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 4px; }
+        .en { margin-bottom: 2px; }
+        .ko { color: #64748b; font-size: 0.92rem; margin-bottom: 16px; }
+        blockquote { background: #f8fafc; border-left: 3px solid #cbd5e1; padding: 12px 16px; margin: 12px 0 16px 0; border-radius: 4px; font-size: 0.95rem; line-height: 2; }
+        pre { background: #1e293b; color: #e2e8f0; padding: 16px 20px; border-radius: 8px; margin: 12px 0 16px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.9rem; line-height: 1.6; }
+        table { width: 100%; border-collapse: collapse; margin: 12px 0 20px 0; font-size: 0.92rem; }
+        thead th { background: #eff6ff; color: #1e40af; font-weight: 700; padding: 10px 12px; border-bottom: 2px solid #3b82f6; text-align: left; }
+        tbody td { padding: 8px 12px; border-bottom: 1px solid #e2e8f0; }
+        tbody tr:nth-child(even) { background: #f8fafc; }
+        .vocab-box { background: #eff6ff; border-radius: 10px; padding: 14px 18px; margin: 12px 0 16px 0; border-left: 4px solid #3b82f6; }
+        .vocab-box .vocab-title { font-size: 0.8rem; font-weight: 700; color: #1e40af; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
+        .answer-box { margin: 0 0 24px 0; }
+        .answer-toggle { background: #e0f2fe; color: #075985; border: 1px solid #bae6fd; padding: 8px 20px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 700; margin-top: 8px; transition:background 0.2s; }
+        .answer-toggle:hover { background: #bae6fd; }
+        .answer-content { display: none; margin-top: 10px; padding: 12px 16px; background: #eff6ff; border-radius: 8px; border-left: 4px solid #3b82f6; }
+        .answer-content .ans-kr { font-size: 1.15rem; font-weight: 900; color: #1e40af; }
+        .note-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 4px; margin: 12px 0 16px 0; font-size: 0.92rem; }
+        hr { border: none; border-top: 1px solid #e2e8f0; margin: 32px 0; }
+        .footer { text-align: center; color: #94a3b8; font-size: 0.85rem; margin-top: 48px; padding-top: 20px; border-top: 2px solid #e2e8f0; }
+        @media print { body { background: none; padding: 0; } .container { box-shadow: none; padding: 20px; } .answer-content { display: block !important; } .answer-toggle { display: none; } }
+        .speak-btn { background: none; border: none; cursor: pointer; font-size: 1.3rem; vertical-align: middle; margin-left: 8px; padding: 2px 6px; border-radius: 6px; transition: background 0.2s; }
+        .speak-btn:hover { background: #e0e7ff; }
+        /* Sentence list */
+        .sentence-list { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 0 0 24px; }
+        .sentence-item { display: grid; grid-template-columns: 44px 1fr auto; gap: 16px; align-items: center; padding: 12px 18px; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; }
+        .sentence-item:hover { border-color: #3b82f6; box-shadow: 0 4px 14px rgba(59,130,246,0.10); }
+        .sentence-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.25rem; font-weight: 900; color: #3b82f6; text-align: center; letter-spacing: -0.02em; }
+        .sentence-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+        .sentence-en { font-size: 1.06rem; color: #64748b; font-weight: 700; }
+        .sentence-kr { font-size: 1.06rem; font-weight: 700; color: #1e293b; line-height: 1.4; }
+        .sentence-listen { background: #eff6ff; border: none; cursor: pointer; width: 40px; height: 40px; border-radius: 50%; font-size: 1.05rem; transition: background 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: center; padding: 0; }
+        .sentence-listen:hover { background: #3b82f6; transform: scale(1.08); }
+        @media (max-width: 600px) { .sentence-list { grid-template-columns: 1fr; } }
+        /* Flashcards */
+        .flashcard-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 20px 0 24px; }
+        .flashcard { perspective: 1200px; height: 140px; cursor: pointer; }
+        .flashcard-inner { position: relative; width: 100%; height: 100%; transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1); transform-style: preserve-3d; }
+        .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+        .flashcard-front, .flashcard-back { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 22px; text-align: center; box-shadow: 0 4px 16px rgba(30,41,59,0.08); }
+        .flashcard-front { background: #fff; border: 2px solid #bfdbfe; color: #1e293b; }
+        .flashcard-back { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 60%, #60a5fa 100%); color: #fff; transform: rotateY(180deg); }
+        .flashcard-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.2em; margin-bottom: 12px; opacity: 0.65; }
+        .flashcard-front .flashcard-text { font-size: 1.06rem; font-weight: 700; line-height: 1.4; }
+        .flashcard-en { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.78rem; font-weight: 600; color: #94a3b8; margin-top: 6px; font-style: italic; }
+        .flashcard-back .flashcard-text { font-size: 1.06rem; font-weight: 700; line-height: 1.4; }
+        .flashcard-hint { position: absolute; bottom: 10px; right: 14px; font-size: 0.68rem; color: #94a3b8; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+        .flashcard-listen { position: absolute; bottom: 10px; right: 10px; background: rgba(255,255,255,0.22); border: none; cursor: pointer; width: 36px; height: 36px; border-radius: 50%; font-size: 1rem; transition: background 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: center; padding: 0; color: #fff; }
+        .flashcard-listen:hover { background: rgba(255,255,255,0.4); transform: scale(1.1); }
+        @media (max-width: 600px) { .flashcard-grid { grid-template-columns: 1fr; } }
+        /* Writing Test (comprehensive) */
+        .writing-practice { display: flex; flex-direction: column; gap: 14px; margin: 16px 0 24px; }
+        .writing-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }
+        .writing-item:focus-within { border-color: #3b82f6; box-shadow: 0 2px 12px rgba(59,130,246,0.10); }
+        .writing-header { display: flex; align-items: baseline; gap: 12px; }
+        .writing-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.05rem; font-weight: 900; color: #3b82f6; min-width: 28px; letter-spacing: -0.02em; }
+        .writing-en { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.05rem; font-weight: 600; color: #1e293b; }
+        .writing-input { width: 100%; min-height: 46px; padding: 10px 14px; font-family: 'Noto Sans KR', sans-serif; font-size: 1rem; color: #1e293b; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; resize: vertical; transition: border-color 0.2s, background 0.2s; box-sizing: border-box; }
+        .writing-input:focus { outline: none; border-color: #3b82f6; background: #fff; }
+        @media print { .writing-input { background: #fff; min-height: 60px; } }
+        .wt-toolbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; padding:12px 16px; background:#ebf2fe; border:1px solid #a6c6fa; border-radius:10px; margin:14px 0 18px 0; }
+        .wt-score { font-size:0.95rem; font-weight:700; color:#475569; }
+        .wt-score .wt-correct { color:#26549f; font-size:1.1rem; }
+        .wt-score .wt-total { color:#94a3b8; }
+        .wt-score .wt-pct { margin-left:8px; color:#26549f; font-weight:800; }
+        .wt-score.is-graded { color:#1e293b; }
+        .wt-btns { display:flex; gap:8px; flex-wrap:wrap; }
+        .wt-btn { background:#fff; color:#475569; border:1px solid #cbd5e1; padding:8px 14px; border-radius:8px; cursor:pointer; font-size:0.85rem; font-weight:700; transition:all 0.15s; font-family:inherit; }
+        .wt-btn:hover { background:#f1f5f9; border-color:#3b82f6; }
+        .wt-btn.grade { background:#16a34a; color:#fff; border-color:#16a34a; }
+        .wt-btn.grade:hover { background:#15803d; border-color:#15803d; }
+        .wt-btn.primary { background:#26549f; color:#fff; border-color:#26549f; }
+        .wt-btn.primary:hover { background:#204787; border-color:#204787; }
+        .writing-input.correct { border-color:#fde047 !important; background:#fefce8 !important; color:#854d0e; font-weight:800; }
+        .writing-input.wrong { border-color:#fecaca !important; background:#fef2f2 !important; color:#991b1b; }
+        .writing-input.celebrating { animation: wtCorrectPop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        @keyframes wtCorrectPop {
+            0% { transform: scale(1); box-shadow: 0 0 0 rgba(250,204,21,0); }
+            40% { transform: scale(1.025); box-shadow: 0 6px 22px rgba(250,204,21,0.45); }
+            100% { transform: scale(1); box-shadow: 0 0 0 rgba(250,204,21,0); }
+        }
+        .wt-celebrate-badge {
+            position: absolute;
+            top: -16px; right: 16px;
+            background: linear-gradient(135deg, #fde047 0%, #facc15 60%, #f59e0b 100%);
+            color: #78350f;
+            font-weight: 900;
+            font-size: 0.95rem;
+            padding: 6px 16px;
+            border-radius: 999px;
+            box-shadow: 0 6px 18px rgba(250,204,21,0.5), 0 2px 6px rgba(120,53,15,0.15);
+            z-index: 10;
+            pointer-events: none;
+            white-space: nowrap;
+            animation: wtBadgePop 5s ease forwards;
+        }
+        .wt-celebrate-badge small { font-weight: 700; font-size: 0.78rem; opacity: 0.85; margin-left: 6px; }
+        @keyframes wtBadgePop {
+            0% { transform: translateY(10px) scale(0.65); opacity: 0; }
+            7% { transform: translateY(-6px) scale(1.08); opacity: 1; }
+            13% { transform: translateY(0) scale(1); opacity: 1; }
+            92% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-12px) scale(0.92); opacity: 0; }
+        }
+        .wt-sparkle {
+            position: absolute;
+            top: 50%;
+            font-size: 1.15rem;
+            pointer-events: none;
+            z-index: 9;
+            animation: wtSparkleFly 4.5s ease-out forwards;
+        }
+        @keyframes wtSparkleFly {
+            0% { transform: translateY(0) scale(0.4) rotate(0deg); opacity: 0; }
+            6% { opacity: 1; transform: translateY(-14px) scale(1) rotate(40deg); }
+            80% { opacity: 1; transform: translateY(-58px) scale(0.85) rotate(200deg); }
+            100% { transform: translateY(-78px) scale(0.3) rotate(280deg); opacity: 0; }
+        }
+        .writing-input.revealed { border-color:#3b82f6 !important; background:#ebf2fe !important; color:#26549f; font-weight:700; }
+        /* vocab toggle */
+        .vocab-toggle { background:#d1fae5; color:#065f46; border:1px solid #a7f3d0; padding:8px 18px; border-radius:6px; cursor:pointer; font-size:0.85rem; font-weight:700; margin:12px 0 0 0; transition:background 0.2s; }
+        .vocab-toggle:hover { background:#a7f3d0; }
+        .vocab-toggle + .vocab-box { display:none; margin-top:10px; }
+        .vocab-toggle + .vocab-box.shown { display:block; }
+        /* single-wt (개별 Writing Test) */
+        .single-wt { background:#f0fdf4; border-radius:10px; padding:14px 18px; margin:12px 0 20px 0; border-left:4px solid #22c55e; }
+        .single-wt-header { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:8px; flex-wrap:wrap; }
+        .single-wt-label { font-size:0.78rem; font-weight:800; color:#166534; text-transform:uppercase; letter-spacing:0.12em; }
+        .single-wt-buttons { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+        .single-wt-speak { background:#fff; color:#166534; border:1px solid #86efac; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:0.95rem; transition:background 0.2s, transform 0.2s; }
+        .single-wt-speak:hover { background:#f0fdf4; transform:scale(1.08); }
+        .single-wt-reveal { background:#16a34a; color:#fff; border:none; padding:6px 14px; border-radius:6px; cursor:pointer; font-size:0.8rem; font-weight:700; transition:background 0.2s; }
+        .single-wt-reveal:hover { background:#15803d; }
+        .single-wt textarea.writing-input { background:#fff; min-height:42px; }
+        /* explain-box */
+        .explain-box { margin: -4px 0 18px 0; }
+        .explain-toggle { background:#ede9fe; color:#5b21b6; border:1px solid #ddd6fe; padding:8px 18px; border-radius:6px; cursor:pointer; font-size:0.85rem; font-weight:700; transition:background 0.2s; }
+        .explain-toggle:hover { background:#ddd6fe; }
+        .explain-content { display:none; margin-top:10px; padding:14px 18px; background:#faf5ff; border-radius:8px; border-left:4px solid #7c3aed; font-size:0.95rem; line-height:1.7; color:#1e293b; }
+        .explain-content.shown { display:block; }
+        .explain-content p { margin: 4px 0; }
+        .explain-content strong { color:#6d28d9; }
+        .explain-content code { background:transparent; padding:0; font-family:inherit; color:#000; font-size:inherit; font-weight:700; }
+        code { background:transparent; padding:0; font-family:inherit; color:#000; font-size:inherit; font-weight:700; }
+        .explain-tip { margin-top: 10px !important; padding-top: 8px; border-top: 1px dashed #c4b5fd; color: #6d28d9; }
+        .explain-note { margin-top: 10px; padding: 10px 14px; background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 6px; font-size: 0.92rem; line-height: 1.65; color: #78350f; }
+        .explain-note strong { color: #92400e; }
+        @media print { .vocab-toggle + .vocab-box { display:block !important; } .vocab-toggle { display:none; } .explain-content { display:block !important; } .explain-toggle { display:none; } }
+        /* exp-table (3-column) */
+        .exp-table { width: 100%; border-collapse: collapse; margin: 6px 0 12px 0; font-size: 0.93rem; table-layout: fixed; }
+        .exp-table thead th { background: #f5f3ff; color: #6d28d9; font-weight: 800; padding: 8px 10px; text-align: center; border-bottom: 2px solid #c4b5fd; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+        .exp-table tbody td:last-child { text-align: center; }
+        .exp-table tbody td { padding: 12px 10px; border-bottom: 1px solid #ede9fe; vertical-align: middle; line-height: 1.6; word-break: keep-all; overflow-wrap: anywhere; }
+        .exp-table tbody tr:last-child td { border-bottom: none; }
+        .exp-table tbody tr:nth-child(even) td { background: #faf5ff; }
+        .exp-table .exp-en { color: #000; font-weight: 800; width: 20%; word-break: keep-all; overflow-wrap: normal; hyphens: none; text-align: center; }
+        .exp-table .exp-role { font-weight: 700; color: #6d28d9; width: 20%; word-break: keep-all; overflow-wrap: normal; text-align: center; }
+        .exp-table .exp-form { font-weight: 700; color: #1e293b; width: 20%; text-align: center; }
+        /* ===== Grammar Overview — Refined gstep system (v9.76, predicate palette) ===== */
+        .gstep { display: grid; grid-template-columns: 60px 1fr; gap: 20px; padding: 24px 28px 22px; margin: 18px 0; background: linear-gradient(135deg, #faf5ff 0%, #ffffff 65%); border: 1px solid #e9d5ff; border-radius: 18px; box-shadow: 0 2px 6px rgba(15,23,42,0.04); position: relative; overflow: hidden; transition: box-shadow 0.2s ease, transform 0.15s ease; }
+        .gstep::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #4c1d95 0%, #6d28d9 50%, #8b5cf6 100%); opacity: 0.9; }
+        .gstep:hover { box-shadow: 0 6px 18px rgba(76,29,149,0.10); transform: translateY(-1px); }
+        .gstep-num { flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #8b5cf6 100%); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; box-shadow: 0 6px 14px rgba(76,29,149,0.30), inset 0 -3px 6px rgba(0,0,0,0.12); }
+        .gstep-body { min-width: 0; }
+        .gstep-body p { margin: 0 0 6px 0; }
+        .gstep-body p:last-child { margin-bottom: 0; }
+        .gstep-body p.en { color: #1e293b; font-size: 1.02rem; line-height: 1.65; font-family: 'Lato', 'Noto Sans KR', sans-serif; }
+        .gstep-body p.en strong { color: #4c1d95; font-weight: 800; }
+        .gstep-body p.ko { color: #475569; font-size: 0.94rem; line-height: 1.65; margin-bottom: 12px; font-weight: 500; }
+        .gstep-body p.ko strong { color: #5b21b6; font-weight: 700; }
+        .gstep-pattern { background: linear-gradient(135deg, #ede9fe 0%, #faf5ff 100%); color: #4c1d95; border: 1px solid #ddd6fe; border-left: 4px solid #6d28d9; padding: 14px 18px; border-radius: 10px; margin: 14px 0 10px 0; font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.08rem; font-weight: 800; line-height: 1.55; box-shadow: 0 2px 6px rgba(76,29,149,0.05); }
+        .gstep-pattern small { display: block; color: #7c3aed; font-weight: 500; font-size: 0.8rem; margin-top: 7px; letter-spacing: 0.02em; opacity: 0.92; }
+        .gstep-pattern .accent { color: #6d28d9; font-weight: 800; font-family: inherit; }
+        .gstep blockquote { background: #fff; border: 1px solid #e9d5ff; border-left: 3px solid #8b5cf6; border-radius: 8px; padding: 12px 16px; margin: 12px 0 10px 0; line-height: 1.85; font-size: 0.93rem; color: #1e293b; font-style: normal; }
+        .gstep blockquote strong { color: #6d28d9; font-weight: 800; }
+        .gstep-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 14px 0 10px 0; font-size: 0.93rem; background: #fff; border: 1px solid #ddd6fe; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(124,58,237,0.14); }
+        .gstep-table thead th { background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); color: #5b21b6; font-weight: 800; padding: 13px 12px; text-align: center; font-size: 0.9rem; letter-spacing: 0.01em; }
+        .gstep-table tbody td { padding: 10px 14px; border-bottom: 1px solid #faf5ff; background: #fff; line-height: 1.55; text-align: center; }
+        .gstep-table tbody tr:last-child td { border-bottom: none; }
+        .gstep-table tbody tr:nth-child(even) td { background: #faf5ff; }
+        .gstep-table tbody td .accent { color: #6d28d9; font-weight: 700; font-family: inherit; }
+        .gstep-table tbody td strong { color: #5b21b6; font-weight: 800; }
+        .gstep .explain-note { background: linear-gradient(135deg, #fef9c3 0%, #fefce8 70%); border-left: 4px solid #f59e0b; padding: 12px 18px; border-radius: 10px; margin-top: 14px; font-size: 0.92rem; line-height: 1.7; color: #713f12; box-shadow: 0 1px 3px rgba(245,158,11,0.06); }
+        .gstep .explain-note strong { color: #92400e; font-weight: 800; }
+        @media (max-width: 600px) {
+            .gstep { grid-template-columns: 1fr; gap: 14px; padding: 20px 22px 18px; }
+            .gstep::before { width: 3px; }
+            .gstep-num { width: 48px; height: 48px; font-size: 1.2rem; }
+        }
+        @media print {
+            .gstep { background: #fff; box-shadow: none; border: 1px solid #cbd5e1; page-break-inside: avoid; transform: none; }
+            .gstep:hover { transform: none; box-shadow: none; }
+            .gstep-num { box-shadow: none; }
+            .gstep-pattern, .gstep blockquote, .gstep-table, .gstep .explain-note { box-shadow: none; }
+        }
+            /* Read Along — 은은한 파스텔 (50-level) per item */
+        .sentence-list .sentence-item:nth-child(1) { background: #fdf2f8; }
+        .sentence-list .sentence-item:nth-child(2) { background: #fff1f2; }
+        .sentence-list .sentence-item:nth-child(3) { background: #fff7ed; }
+        .sentence-list .sentence-item:nth-child(4) { background: #fffbeb; }
+        .sentence-list .sentence-item:nth-child(5) { background: #fefce8; }
+        .sentence-list .sentence-item:nth-child(6) { background: #f7fee7; }
+        .sentence-list .sentence-item:nth-child(7) { background: #ecfdf5; }
+        .sentence-list .sentence-item:nth-child(8) { background: #f0fdfa; }
+        .sentence-list .sentence-item:nth-child(9) { background: #f0f9ff; }
+        .sentence-list .sentence-item:nth-child(10) { background: #f5f3ff; }
+        .sentence-list .sentence-item:nth-child(11) { background: #fdf2f8; }
+        .sentence-list .sentence-item:nth-child(12) { background: #fff1f2; }
+        .sentence-list .sentence-item:nth-child(13) { background: #fff7ed; }
+        .sentence-list .sentence-item:nth-child(14) { background: #fffbeb; }
+        .sentence-list .sentence-item:nth-child(15) { background: #fefce8; }
+        .sentence-list .sentence-item:nth-child(16) { background: #f7fee7; }
+        .sentence-list .sentence-item:nth-child(17) { background: #ecfdf5; }
+        .sentence-list .sentence-item:nth-child(18) { background: #f0fdfa; }
+        .sentence-list .sentence-item:nth-child(19) { background: #f0f9ff; }
+        /* Writing Test — 은은한 파스텔 (50-level) per item */
+        .writing-practice .writing-item:nth-child(1) { background: #fdf2f8; }
+        .writing-practice .writing-item:nth-child(2) { background: #fff1f2; }
+        .writing-practice .writing-item:nth-child(3) { background: #fff7ed; }
+        .writing-practice .writing-item:nth-child(4) { background: #fffbeb; }
+        .writing-practice .writing-item:nth-child(5) { background: #fefce8; }
+        .writing-practice .writing-item:nth-child(6) { background: #f7fee7; }
+        .writing-practice .writing-item:nth-child(7) { background: #ecfdf5; }
+        .writing-practice .writing-item:nth-child(8) { background: #f0fdfa; }
+        .writing-practice .writing-item:nth-child(9) { background: #f0f9ff; }
+        .writing-practice .writing-item:nth-child(10) { background: #f5f3ff; }
+        .writing-practice .writing-item:nth-child(11) { background: #fdf2f8; }
+        .writing-practice .writing-item:nth-child(12) { background: #fff1f2; }
+        .writing-practice .writing-item:nth-child(13) { background: #fff7ed; }
+        .writing-practice .writing-item:nth-child(14) { background: #fffbeb; }
+        .writing-practice .writing-item:nth-child(15) { background: #fefce8; }
+        .writing-practice .writing-item:nth-child(16) { background: #f7fee7; }
+        .writing-practice .writing-item:nth-child(17) { background: #ecfdf5; }
+        .writing-practice .writing-item:nth-child(18) { background: #f0fdfa; }
+        .writing-practice .writing-item:nth-child(19) { background: #f0f9ff; }
+        /* Look & Speak — front 50-level + back 100→200 gradient */
+        .flashcard-grid.look-speak .flashcard:nth-child(1) .flashcard-front { background:#fdf2f8; border-color:#fce7f3; }
+        .flashcard-grid.look-speak .flashcard:nth-child(1) .flashcard-back  { background:linear-gradient(135deg,#fce7f3 0%,#fbcfe8 100%); color:#831843; }
+        .flashcard-grid.look-speak .flashcard:nth-child(2) .flashcard-front { background:#fff1f2; border-color:#ffe4e6; }
+        .flashcard-grid.look-speak .flashcard:nth-child(2) .flashcard-back  { background:linear-gradient(135deg,#ffe4e6 0%,#fecdd3 100%); color:#881337; }
+        .flashcard-grid.look-speak .flashcard:nth-child(3) .flashcard-front { background:#fff7ed; border-color:#ffedd5; }
+        .flashcard-grid.look-speak .flashcard:nth-child(3) .flashcard-back  { background:linear-gradient(135deg,#ffedd5 0%,#fed7aa 100%); color:#7c2d12; }
+        .flashcard-grid.look-speak .flashcard:nth-child(4) .flashcard-front { background:#fffbeb; border-color:#fef3c7; }
+        .flashcard-grid.look-speak .flashcard:nth-child(4) .flashcard-back  { background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%); color:#78350f; }
+        .flashcard-grid.look-speak .flashcard:nth-child(5) .flashcard-front { background:#fefce8; border-color:#fef9c3; }
+        .flashcard-grid.look-speak .flashcard:nth-child(5) .flashcard-back  { background:linear-gradient(135deg,#fef9c3 0%,#fef08a 100%); color:#713f12; }
+        .flashcard-grid.look-speak .flashcard:nth-child(6) .flashcard-front { background:#f7fee7; border-color:#ecfccb; }
+        .flashcard-grid.look-speak .flashcard:nth-child(6) .flashcard-back  { background:linear-gradient(135deg,#ecfccb 0%,#d9f99d 100%); color:#365314; }
+        .flashcard-grid.look-speak .flashcard:nth-child(7) .flashcard-front { background:#ecfdf5; border-color:#d1fae5; }
+        .flashcard-grid.look-speak .flashcard:nth-child(7) .flashcard-back  { background:linear-gradient(135deg,#d1fae5 0%,#a7f3d0 100%); color:#064e3b; }
+        .flashcard-grid.look-speak .flashcard:nth-child(8) .flashcard-front { background:#f0fdfa; border-color:#ccfbf1; }
+        .flashcard-grid.look-speak .flashcard:nth-child(8) .flashcard-back  { background:linear-gradient(135deg,#ccfbf1 0%,#99f6e4 100%); color:#134e4a; }
+        .flashcard-grid.look-speak .flashcard:nth-child(9) .flashcard-front { background:#f0f9ff; border-color:#e0f2fe; }
+        .flashcard-grid.look-speak .flashcard:nth-child(9) .flashcard-back  { background:linear-gradient(135deg,#e0f2fe 0%,#bae6fd 100%); color:#0c4a6e; }
+        .flashcard-grid.look-speak .flashcard:nth-child(10) .flashcard-front { background:#f5f3ff; border-color:#ede9fe; }
+        .flashcard-grid.look-speak .flashcard:nth-child(10) .flashcard-back  { background:linear-gradient(135deg,#ede9fe 0%,#ddd6fe 100%); color:#4c1d95; }
+        .flashcard-grid.look-speak .flashcard:nth-child(11) .flashcard-front { background:#fdf2f8; border-color:#fce7f3; }
+        .flashcard-grid.look-speak .flashcard:nth-child(11) .flashcard-back  { background:linear-gradient(135deg,#fce7f3 0%,#fbcfe8 100%); color:#831843; }
+        .flashcard-grid.look-speak .flashcard:nth-child(12) .flashcard-front { background:#fff1f2; border-color:#ffe4e6; }
+        .flashcard-grid.look-speak .flashcard:nth-child(12) .flashcard-back  { background:linear-gradient(135deg,#ffe4e6 0%,#fecdd3 100%); color:#881337; }
+        .flashcard-grid.look-speak .flashcard:nth-child(13) .flashcard-front { background:#fff7ed; border-color:#ffedd5; }
+        .flashcard-grid.look-speak .flashcard:nth-child(13) .flashcard-back  { background:linear-gradient(135deg,#ffedd5 0%,#fed7aa 100%); color:#7c2d12; }
+        .flashcard-grid.look-speak .flashcard:nth-child(14) .flashcard-front { background:#fffbeb; border-color:#fef3c7; }
+        .flashcard-grid.look-speak .flashcard:nth-child(14) .flashcard-back  { background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%); color:#78350f; }
+        .flashcard-grid.look-speak .flashcard:nth-child(15) .flashcard-front { background:#fefce8; border-color:#fef9c3; }
+        .flashcard-grid.look-speak .flashcard:nth-child(15) .flashcard-back  { background:linear-gradient(135deg,#fef9c3 0%,#fef08a 100%); color:#713f12; }
+        .flashcard-grid.look-speak .flashcard:nth-child(16) .flashcard-front { background:#f7fee7; border-color:#ecfccb; }
+        .flashcard-grid.look-speak .flashcard:nth-child(16) .flashcard-back  { background:linear-gradient(135deg,#ecfccb 0%,#d9f99d 100%); color:#365314; }
+        .flashcard-grid.look-speak .flashcard:nth-child(17) .flashcard-front { background:#ecfdf5; border-color:#d1fae5; }
+        .flashcard-grid.look-speak .flashcard:nth-child(17) .flashcard-back  { background:linear-gradient(135deg,#d1fae5 0%,#a7f3d0 100%); color:#064e3b; }
+        .flashcard-grid.look-speak .flashcard:nth-child(18) .flashcard-front { background:#f0fdfa; border-color:#ccfbf1; }
+        .flashcard-grid.look-speak .flashcard:nth-child(18) .flashcard-back  { background:linear-gradient(135deg,#ccfbf1 0%,#99f6e4 100%); color:#134e4a; }
+        .flashcard-grid.look-speak .flashcard:nth-child(19) .flashcard-front { background:#f0f9ff; border-color:#e0f2fe; }
+        .flashcard-grid.look-speak .flashcard:nth-child(19) .flashcard-back  { background:linear-gradient(135deg,#e0f2fe 0%,#bae6fd 100%); color:#0c4a6e; }
+        .flashcard-grid.look-speak .flashcard-back .flashcard-listen { background:rgba(255,255,255,0.6); color:inherit; }
+        .flashcard-grid.look-speak .flashcard-back .flashcard-listen:hover { background:rgba(255,255,255,0.9); color:inherit; }
+        /* Force black text on Look & Speak (override per-card) */
+        .flashcard-grid.look-speak .flashcard:nth-child(n) .flashcard-front,
+        .flashcard-grid.look-speak .flashcard:nth-child(n) .flashcard-back { color: #334155; }
+        /* English ↔ Korean Sentence Matching Game (em-) */
+        .em-game { margin-top: 16px; padding: 18px; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; }
+        .em-game-title { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1rem; font-weight: 800; color: #1e40af; margin: 0 0 8px 0; padding: 8px 14px; background: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 6px; }
+        .em-game-desc { color: #64748b; font-size: 0.92rem; margin: 0 0 14px 0; }
+        .em-toolbar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+        .em-stat { display: inline-flex; align-items: baseline; gap: 6px; padding: 6px 12px; background: #f1f5f9; border-radius: 8px; }
+        .em-stat-label { font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; }
+        .em-stat-num { font-size: 1.05rem; font-weight: 900; color: #1e40af; }
+        .em-reset { margin-left: auto; background: #1e40af; color: #fff; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 700; transition: background 0.2s; font-family: inherit; }
+        .em-reset:hover { background: #1e3a8a; }
+        .em-progress { height: 8px; background: #e2e8f0; border-radius: 999px; overflow: hidden; margin-bottom: 12px; }
+        .em-progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, #3b82f6, #60a5fa); border-radius: 999px; transition: width 0.35s ease; }
+        .em-message { padding: 10px 14px; background: #eff6ff; border-left: 3px solid #3b82f6; border-radius: 6px; font-size: 0.92rem; color: #1e293b; margin-bottom: 14px; min-height: 1.5em; }
+        .em-message.complete { background: #f0fdf4; border-left-color: #22c55e; color: #166534; font-weight: 800; }
+        .em-columns { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto repeat(var(--em-rows, 8), 84px); gap: 8px 14px; }
+        #emEnglishList { grid-column: 1; }
+        #emKoreanList { grid-column: 2; }
+        .em-col-header { font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; padding-left: 6px; }
+        .em-list { grid-row: 2 / -1; display: grid; grid-template-rows: subgrid; gap: 0; }
+        .em-slot { display: flex; align-items: stretch; min-height: 60px; }
+        .em-slot > .em-item { width: 100%; }
+        .em-item { width: 100%; min-height: 60px; border: 2px solid var(--em-border, #e2e8f0); border-left: 5px solid var(--em-border, #e2e8f0); border-radius: 12px; background: var(--em-bg, #f8fafc); cursor: pointer; padding: 10px 14px; display: flex; align-items: center; justify-content: center; gap: 10px; text-align: center; transition: transform 0.15s, filter 0.15s, box-shadow 0.15s, opacity 0.3s; font-family: inherit; color: #334155; }
+        .em-item:hover { filter: brightness(0.95); transform: translateY(-2px); }
+        .em-item.selected { transform: scale(1.02); box-shadow: 0 0 0 3px #3b82f6, 0 6px 16px rgba(59,130,246,0.25); }
+        .em-item.wrong { background: #fef2f2 !important; border-color: #ef4444 !important; border-left-color: #ef4444 !important; animation: emShake 0.45s ease; }
+        .em-item.removing { opacity: 0; transform: scale(0.5); pointer-events: none; }
+        .em-num { width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,0.7); font-size: 0.78rem; font-weight: 900; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; color: #1e40af; }
+        .em-text { font-size: 1.06rem; font-weight: 700; line-height: 1.4; color: #334155; word-break: keep-all; text-align: center; }
+        @keyframes emShake { 0%,100% {transform:translateX(0);} 20%{transform:translateX(-6px);} 40%{transform:translateX(6px);} 60%{transform:translateX(-4px);} 80%{transform:translateX(4px);} }
+        @media (max-width: 600px) {
+            .em-columns { grid-template-columns: 1fr; grid-template-rows: none; }
+            #emEnglishList, #emKoreanList { grid-row: auto; grid-column: 1; display: flex; flex-direction: column; gap: 8px; }
+        }
+        /* Game completion celebration overlay */
+        .celebrate-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.55); display: none; align-items: center; justify-content: center; z-index: 1000; backdrop-filter: blur(6px); animation: celebrateFadeIn 0.3s ease; }
+        .celebrate-overlay.active { display: flex; }
+        .celebrate-card { background: linear-gradient(135deg, #fef9c3 0%, #fed7aa 100%); border-radius: 24px; padding: 36px 44px 28px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.35); max-width: 380px; min-width: 280px; animation: celebratePopIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); position: relative; }
+        .celebrate-emoji { font-size: 4.5rem; display: block; margin-bottom: 12px; animation: celebrateBounce 1s ease infinite; }
+        .celebrate-title { font-size: 1.85rem; font-weight: 900; color: #92400e; margin: 0 0 8px 0; line-height: 1.2; }
+        .celebrate-subtitle { font-size: 1rem; color: #78350f; margin: 0 0 20px 0; line-height: 1.4; }
+        .celebrate-stats { display: flex; gap: 28px; justify-content: center; margin-bottom: 22px; }
+        .celebrate-stat { display: flex; flex-direction: column; align-items: center; }
+        .celebrate-stat strong { display: block; font-size: 1.85rem; font-weight: 900; color: #92400e; line-height: 1; }
+        .celebrate-stat span { font-size: 0.78rem; font-weight: 700; color: #78350f; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+        .celebrate-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .celebrate-btn { background: #f59e0b; color: #fff; border: none; padding: 10px 22px; border-radius: 10px; font-size: 0.95rem; font-weight: 800; cursor: pointer; transition: background 0.2s, transform 0.15s; font-family: inherit; }
+        .celebrate-btn:hover { background: #d97706; transform: translateY(-1px); }
+        .celebrate-btn.secondary { background: #fff; color: #92400e; border: 2px solid #fde68a; padding: 8px 20px; }
+        .celebrate-btn.secondary:hover { background: #fef3c7; }
+        .confetti { position: fixed; top: -12px; width: 10px; height: 14px; pointer-events: none; z-index: 1001; animation: confettiFall linear forwards; }
+        @keyframes celebrateFadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes celebratePopIn { 0% { transform: scale(0.5); opacity: 0; } 60% { transform: scale(1.05); opacity: 1; } 100% { transform: scale(1); } }
+        @keyframes celebrateBounce { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-14px) rotate(3deg); } }
+        @keyframes confettiFall { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(720deg); opacity: 0; } }
+        /* v9.93 Korean word-break — keep CJK syllables together */
+        .gstep-table td, .gstep-table th { word-break: keep-all; overflow-wrap: break-word; }
+        .exp-table td, .exp-table th { word-break: keep-all; overflow-wrap: break-word; }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="title-block other">
+    <div class="title-en">
+        <h1 class="title-main">Three Speech Styles</h1>
+        <p class="title-sub">Formal · Spoken · Written — 격식체 · 구어체 · 문어체</p>
+    </div>
+    <div class="title-divider"></div>
+    <div class="title-ko">
+        <p class="title-ko-main">격식체 · 구어체 · 문어체</p>
+        <p class="title-ko-sub">같은 뜻, 세 가지 스타일 — 현재 · 과거 · 미래 종합</p>
+    </div>
+</header>
+
+<style>
+    /* ===== Lesson 3 (Speech Styles) — amber theme overrides ===== */
+    .gstep { background: linear-gradient(135deg,#fffbeb 0%,#ffffff 65%); border-color:#fde68a; }
+    .gstep-num { background: linear-gradient(135deg,#7c2d12 0%,#b45309 50%,#f59e0b 100%); box-shadow:0 6px 14px rgba(124,45,18,0.28), inset 0 -3px 6px rgba(0,0,0,0.12); }
+
+    /* ===== Speech-style matrix ===== */
+    .stylem-wrap { overflow-x:auto; margin:10px 0 8px; }
+    .stylem { border-collapse:collapse; font-size:0.74rem; width:100%; min-width:680px; }
+    .stylem th, .stylem td { border:1px solid #cbd5e1; padding:6px 4px; text-align:center; word-break:keep-all; vertical-align:middle; }
+    .stylem .wcol { background:#f1f5f9; color:#0f172a; font-weight:800; font-size:0.8rem; white-space:nowrap; position:sticky; left:0; z-index:1; }
+    .stylem .grp th { font-weight:900; font-size:0.82rem; }
+    .stylem .sub th { font-weight:700; font-size:0.7rem; }
+    .g-pres { background:#dbeafe; color:#1e40af; } .g-past { background:#dcfce7; color:#166534; } .g-fut { background:#fef3c7; color:#92400e; }
+    .stylem tbody td.c-pres { background:#f4f9ff; } .stylem tbody td.c-past { background:#f4fdf8; } .stylem tbody td.c-fut { background:#fffdf4; }
+    .stylem tbody tr:nth-child(even) td.c-pres { background:#eaf3ff; }
+    .stylem tbody tr:nth-child(even) td.c-past { background:#e6fbef; }
+    .stylem tbody tr:nth-child(even) td.c-fut { background:#fdf6e6; }
+    .stylem tbody tr:nth-child(even) td.wcol { background:#e9edf2; }
+
+    /* style-contrast flashcard back */
+    .sc-line { display:block; font-size:0.96rem; line-height:1.75; }
+    .sc-tag { font-weight:900; font-size:0.74rem; margin-right:6px; }
+
+    /* ===== 직접 만들기 / 쓰기 — per-word 3×3 grid (문체 × 시제) ===== */
+    .sg-box { margin:14px 0; }
+    .sg-bar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; padding:12px 16px; background:#fffbeb; border:1px solid #fde68a; border-radius:12px 12px 0 0; }
+    .sg-score { font-weight:800; color:#92400e; } .sg-score b { color:#b45309; font-size:1.15rem; }
+    .sg-pct { margin-left:6px; color:#166534; font-weight:800; }
+    .sg-btns { display:flex; gap:8px; flex-wrap:wrap; }
+    .sg-btn { background:#fff; border:1px solid #fde68a; color:#92400e; padding:7px 14px; border-radius:8px; cursor:pointer; font-weight:700; font-size:0.85rem; font-family:inherit; }
+    .sg-btn:hover { background:#fef3c7; }
+    .sg-btn.primary { background:#b45309; color:#fff; border-color:#b45309; }
+    .sg-btn.grade { background:#16a34a; color:#fff; border-color:#16a34a; }
+    .sg-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:12px; padding:14px; background:#fff; border:1px solid #fde68a; border-top:none; border-radius:0 0 12px 12px; }
+    .sg-card { border:1px solid #fde68a; border-radius:10px; padding:10px 12px; background:#fffdf7; }
+    .sg-head { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+    .sg-word { font-size:1.12rem; font-weight:900; color:#0f172a; }
+    .sg-en { font-size:0.82rem; color:#94a3b8; font-style:italic; }
+    .sg-head .speak-btn { margin-left:auto; }
+    .sg-grid { width:100%; border-collapse:collapse; }
+    .sg-grid th { font-size:0.72rem; font-weight:800; padding:4px 3px; color:#64748b; text-align:center; }
+    .sg-grid th.sg-style { text-align:right; white-space:nowrap; padding-right:8px; width:62px; }
+    .sg-style.g-formal { color:#b45309; } .sg-style.g-polite { color:#1e40af; } .sg-style.g-written { color:#166534; }
+    .sg-grid td { padding:3px; }
+    .sg-input { width:100%; min-width:74px; padding:7px 5px; font-family:'Noto Sans KR',sans-serif; font-size:0.82rem; text-align:center; border:1.5px solid #cbd5e1; border-radius:6px; box-sizing:border-box; outline:none; transition:border-color 0.15s, background 0.15s; }
+    .sg-input:focus { border-color:#f59e0b; box-shadow:0 0 0 2px rgba(245,158,11,0.18); }
+    .sg-input.correct { border-color:#16a34a; background:#f0fdf4; color:#166534; font-weight:700; }
+    .sg-input.wrong { border-color:#dc2626; background:#fef2f2; color:#991b1b; }
+    .sg-input.revealed { border-color:#b45309; background:#fffbeb; color:#92400e; font-weight:700; }
+    .sg-cardfoot { display:flex; justify-content:flex-end; gap:6px; margin-top:6px; }
+    .sg-cardbtn { background:#ecfdf5; border:1px solid #6ee7b7; color:#047857; padding:5px 11px; border-radius:7px; cursor:pointer; font-weight:700; font-size:0.78rem; font-family:inherit; }
+    .sg-cardbtn:hover { background:#d1fae5; }
+    .sg-cardbtn.reset { background:#f8fafc; border-color:#cbd5e1; color:#475569; }
+    .sg-cardbtn.reset:hover { background:#f1f5f9; }
+</style>
+
+<h2>Grammar Overview · 문법 정리</h2>
+
+<div class="gstep">
+    <div class="gstep-num">1</div>
+    <div class="gstep-body">
+        <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#92400e; background:#fffbeb; border-left:4px solid #f59e0b; border-radius:4px;">Same meaning, three styles<br><small style="font-weight:600;">같은 뜻, 세 가지 스타일</small></h3>
+        <div style="padding:10px 14px; background:#fffbeb; border-left:3px solid #f59e0b; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
+            한국어는 같은 내용을 <strong>상황에 따라</strong> 세 가지 스타일로 표현합니다 — <strong>격식체</strong>, <strong>구어체</strong>, <strong>문어체</strong>. 뜻은 같고 어미만 달라집니다.<br>
+            <small><em>Korean expresses the same content in three styles depending on the situation — formal, spoken, and written. The meaning is the same; only the ending changes.</em></small>
+        </div>
+        <table class="gstep-table">
+            <thead><tr><th style="width:22%">스타일 · Style</th><th>어미 · Ending</th><th>쓰는 상황 · When</th><th>예: 가다</th></tr></thead>
+            <tbody>
+                <tr><td><span class="accent">격식체</span><br><small>Formal</small></td><td>-ㅂ니다<br>-습니다</td><td style="text-align:left; line-height:1.55;">공식·격식 상황<br><small><em style="color:#94a3b8;">Formal / official situations</em></small><br><small>발표·뉴스·안내·서비스</small><br><small><em style="color:#94a3b8;">presentations · news · announcements · service</em></small></td><td><strong>갑니다</strong></td></tr>
+                <tr><td><span class="accent">구어체</span><br><small>Spoken</small></td><td>-아요<br>-어요</td><td style="text-align:left; line-height:1.55;">일상 대화 (가장 흔함)<br><small><em style="color:#94a3b8;">Everyday conversation (most common)</em></small><br><small>친구·가족·일상</small><br><small><em style="color:#94a3b8;">friends · family · daily life</em></small></td><td><strong>가요</strong></td></tr>
+                <tr><td><span class="accent">문어체</span><br><small>Written</small></td><td>-ㄴ다<br>-는다<br>다</td><td style="text-align:left; line-height:1.55;">글말<br><small><em style="color:#94a3b8;">Written language</em></small><br><small>책·신문·일기·보고</small><br><small><em style="color:#94a3b8;">books · newspapers · diaries · reports</em></small></td><td><strong>간다</strong></td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="gstep">
+    <div class="gstep-num">2</div>
+    <div class="gstep-body">
+        <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#92400e; background:#fffbeb; border-left:4px solid #f59e0b; border-radius:4px;">How to make 구어체 (Spoken)<br><small style="font-weight:600;">구어체 만드는 법 — 현재 · 과거 · 미래</small></h3>
+        <div style="padding:10px 14px; background:#fffbeb; border-left:3px solid #f59e0b; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
+            구어체는 어간에 <strong>-아요/어요</strong> 계열을 붙입니다. 일상 대화에서 가장 많이 쓰는 스타일입니다.<br>
+            <small><em>The spoken style attaches the -아요/어요 endings to the stem. It is the most common style in everyday conversation.</em></small>
+        </div>
+<style>
+.cmk{width:100%;border-collapse:separate;border-spacing:0 8px;margin:6px 0 4px;}
+.cmk thead th{font-size:0.78rem;font-weight:800;color:#7c2d12;padding:2px 14px 2px;text-align:center;letter-spacing:0.3px;}
+.cmk thead th:first-child{text-align:center;}
+.cmk td{background:#fff;padding:12px 14px;border-top:1px solid #f3e6c8;border-bottom:1px solid #f3e6c8;vertical-align:middle;}
+.cmk td:first-child{border-left:4px solid #e5d3a8;border-radius:12px 0 0 12px;text-align:center;width:16%;white-space:nowrap;}
+.cmk td:nth-child(2){width:42%;text-align:center;}
+.cmk td:last-child{border-right:1px solid #f3e6c8;border-radius:0 12px 12px 0;text-align:center;}
+.cmk tr.r-pres td:first-child{border-left-color:#60a5fa;}
+.cmk tr.r-past td:first-child{border-left-color:#4ade80;}
+.cmk tr.r-fut td:first-child{border-left-color:#fbbf24;}
+.cmk .tb{display:inline-flex;flex-direction:column;align-items:center;gap:0;font-weight:800;padding:5px 13px;border-radius:9px;line-height:1.15;font-size:0.98rem;}
+.cmk .tb small{font-size:0.58rem;font-weight:700;opacity:0.85;font-family:'Lato',sans-serif;letter-spacing:0.6px;}
+.cmk .t-pres{background:#dbeafe;color:#1e40af;}
+.cmk .t-past{background:#dcfce7;color:#166534;}
+.cmk .t-fut{background:#fef3c7;color:#92400e;}
+.cmk .mk{display:flex;flex-direction:column;gap:8px;}
+.cmk .mkrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.cmk .pos{font-size:0.68rem;font-weight:800;color:#475569;background:#f1f5f9;padding:3px 8px;border-radius:6px;white-space:nowrap;min-width:64px;text-align:center;}
+.cmk .stem{color:#94a3b8;font-weight:700;font-size:0.9rem;}
+.cmk .chip{display:inline-block;font-weight:800;padding:4px 12px;border-radius:8px;border:1.6px solid;font-size:0.96rem;line-height:1.4;white-space:nowrap;text-align:center;}
+.cmk .c-pres{color:#1e40af;border-color:#bfdbfe;background:#eff6ff;}
+.cmk .c-past{color:#166534;border-color:#bbf7d0;background:#f0fdf4;}
+.cmk .c-fut{color:#92400e;border-color:#fde68a;background:#fffbeb;}
+.cmk .c-keep{color:#7c3aed;border-color:#ddd6fe;background:#f5f3ff;}
+.cmk .ex{display:flex;flex-direction:column;gap:6px;}
+.cmk .exrow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
+.cmk .pill{font-weight:800;color:#334155;background:#f8fafc;border:1px solid #e5ebf2;border-radius:7px;padding:3px 10px;font-size:0.92rem;white-space:nowrap;}
+.cmk .pill.adj{color:#7c3aed;background:#f5f3ff;border-color:#e9e2ff;}
+@media (max-width:640px){ .cmk td{padding:10px 9px;} .cmk td:nth-child(2),.cmk td:first-child{width:auto;} .cmk .pos{min-width:0;} }
+.cmk .howwrap{display:flex;align-items:center;justify-content:center;gap:8px;}
+.cmk .howwrap .stem{padding-top:0;}
+.cmk .vstack{display:inline-flex;flex-direction:column;gap:6px;align-items:stretch;}
+.cmk .vstack .chip,.cmk .vstack .pill{min-width:78px;text-align:center;padding-top:5px;padding-bottom:5px;font-size:0.93rem;line-height:1.3;box-sizing:border-box;}
+.cmk .vstack .cl{display:flex;align-items:center;gap:7px;}
+.cmk .vstack .cl .pos{min-width:70px;}.cmk .bat{font-size:0.66rem;font-weight:800;padding:3px 7px;border-radius:6px;white-space:nowrap;min-width:76px;text-align:center;box-sizing:border-box;}.cmk .bat-no{color:#dc2626;background:#fef2f2;}.cmk .bat-yes{color:#16a34a;background:#f0fdf4;}.cmk .bat-yang{color:#b45309;background:#fef3c7;}.cmk .bat-eum{color:#1e40af;background:#dbeafe;}.cmk .bat-hada{color:#475569;background:#eef2f6;}.cmk .mkgrp{display:inline-flex;flex-direction:column;gap:6px;align-items:flex-start;}.cmk .posgrp{display:flex;align-items:center;gap:8px;}.cmk .pos-2l{line-height:1.2;}
+</style>
+        <table class="cmk">
+            <thead><tr><th>시제 · Tense</th><th>만드는 법 · How</th><th>예 (가다 · 먹다 · 하다)</th></tr></thead>
+            <tbody>
+                <tr class="r-pres"><td><span class="tb t-pres">현재<small>PRESENT</small></span></td>
+                    <td><div class="vstack"><span class="cl"><span class="bat bat-yang">ㅏ, ㅗ</span><span class="chip c-pres">아요</span></span><span class="cl"><span class="bat bat-eum">나머지 모음</span><span class="chip c-pres">어요</span></span><span class="cl"><span class="bat bat-hada">하다</span><span class="chip c-pres">해요</span></span></div></td>
+                    <td><div class="vstack"><span class="pill">가요</span><span class="pill">먹어요</span><span class="pill">해요</span></div></td></tr>
+                <tr class="r-past"><td><span class="tb t-past">과거<small>PAST</small></span></td>
+                    <td><div class="vstack"><span class="cl"><span class="bat bat-yang">ㅏ, ㅗ</span><span class="chip c-past">았어요</span></span><span class="cl"><span class="bat bat-eum">나머지 모음</span><span class="chip c-past">었어요</span></span><span class="cl"><span class="bat bat-hada">하다</span><span class="chip c-past">했어요</span></span></div></td>
+                    <td><div class="vstack"><span class="pill">갔어요</span><span class="pill">먹었어요</span><span class="pill">했어요</span></div></td></tr>
+                <tr class="r-fut"><td><span class="tb t-fut">미래<small>FUTURE</small></span></td>
+                    <td><div class="vstack"><span class="cl"><span class="bat bat-no">받침 없음</span><span class="chip c-fut">ㄹ 거예요</span></span><span class="cl"><span class="bat bat-yes">받침 있음</span><span class="chip c-fut">을 거예요</span></span><span class="cl"><span class="bat bat-hada">하다</span><span class="chip c-fut">할 거예요</span></span></div></td>
+                    <td><div class="vstack"><span class="pill">갈 거예요</span><span class="pill">먹을 거예요</span><span class="pill">할 거예요</span></div></td></tr>
+            </tbody>
+        </table>
+        <blockquote>
+            현재형은 어간 <strong>끝 모음</strong>에 따라 달라집니다 — 어간 끝 모음이 <strong>ㅏ·ㅗ</strong>이면 <strong>아요</strong>, 그 외에는 <strong>어요</strong>, <strong>하다</strong>는 <strong>해요</strong>가 됩니다. 모음이 이어지면 줄어듭니다 — 가+아요 → <strong>가요</strong>, 오+아요 → <strong>와요</strong>, 마시+어요 → <strong>마셔요</strong>.<br>
+            <small><em>The present depends on the stem's final vowel: stem-final ㅏ/ㅗ → 아요, otherwise → 어요, and 하다 → 해요. Adjacent vowels contract: 가+아요 → 가요, 오+아요 → 와요, 마시+어요 → 마셔요.</em></small>
+        </blockquote>
+    </div>
+</div>
+
+<div class="gstep">
+    <div class="gstep-num">3</div>
+    <div class="gstep-body">
+        <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#92400e; background:#fffbeb; border-left:4px solid #f59e0b; border-radius:4px;">How to make 문어체 (Written)<br><small style="font-weight:600;">문어체 만드는 법 — 현재 · 과거 · 미래</small></h3>
+        <div style="padding:10px 14px; background:#fffbeb; border-left:3px solid #f59e0b; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
+            문어체는 책·신문·일기 같은 <strong>글말</strong>의 기본 형태입니다. <strong>현재형</strong>만 품사에 따라 달라지고, 과거·미래는 모두 같은 모양입니다.<br>
+            <small><em>The written style is the base form of written language (books, newspapers, diaries). Only the present changes by word type; past and future are the same for all.</em></small>
+        </div>
+        <table class="cmk">
+            <thead><tr><th>시제 · Tense</th><th>만드는 법 · How</th><th>예 (가다 · 먹다 · 좋다)</th></tr></thead>
+            <tbody>
+                <tr class="r-pres"><td><span class="tb t-pres">현재<small>PRESENT</small></span></td>
+                    <td><div class="mkgrp"><div class="posgrp"><span class="pos">동사</span><div class="vstack"><span class="cl"><span class="bat bat-no">받침 없음</span><span class="chip c-pres">ㄴ다</span></span><span class="cl"><span class="bat bat-yes">받침 있음</span><span class="chip c-pres">는다</span></span></div></div><div class="posgrp"><span class="pos pos-2l">형용사<br>이다</span><div class="vstack"><span class="cl"><span class="chip c-keep">기본형 그대로</span></span></div></div></div></td>
+                    <td><div class="vstack"><span class="pill">간다</span><span class="pill">먹는다</span><span class="pill adj">좋다</span></div></td></tr>
+                <tr class="r-past"><td><span class="tb t-past">과거<small>PAST</small></span></td>
+                    <td><div class="vstack"><span class="cl"><span class="bat bat-yang">ㅏ, ㅗ</span><span class="chip c-past">았다</span></span><span class="cl"><span class="bat bat-eum">나머지 모음</span><span class="chip c-past">었다</span></span><span class="cl"><span class="bat bat-yang">ㅏ, ㅗ</span><span class="chip c-past">았다</span></span></div></td>
+                    <td><div class="vstack"><span class="pill">갔다</span><span class="pill">먹었다</span><span class="pill">좋았다</span></div></td></tr>
+                <tr class="r-fut"><td><span class="tb t-fut">미래<small>FUTURE</small></span></td>
+                    <td><div class="vstack"><span class="cl"><span class="bat bat-no">받침 없음</span><span class="chip c-fut">ㄹ 것이다</span></span><span class="cl"><span class="bat bat-yes">받침 있음</span><span class="chip c-fut">을 것이다</span></span><span class="cl"><span class="bat bat-yes">받침 있음</span><span class="chip c-fut">을 것이다</span></span></div></td>
+                    <td><div class="vstack"><span class="pill">갈 것이다</span><span class="pill">먹을 것이다</span><span class="pill">좋을 것이다</span></div></td></tr>
+            </tbody>
+        </table>
+        <blockquote>
+            <strong>현재형 주의:</strong> 동사는 받침이 <strong>없으면 -ㄴ다</strong>(가다 → 간다), <strong>있으면 -는다</strong>(먹다 → 먹는다)를 붙입니다. 하지만 <strong>형용사·이다</strong>는 바꾸지 않고 기본형 그대로 씁니다 — 좋다 → <strong>좋다</strong>, 이다 → <strong>이다</strong>.<br>
+            <small><em>Present: verbs take -ㄴ다 (no 받침: 간다) or -는다 (with 받침: 먹는다); adjectives and 이다 keep the dictionary form (좋다 → 좋다, 이다 → 이다).</em></small>
+        </blockquote>
+    </div>
+</div>
+
+<hr>
+
+<h2>1. 한눈에 보기 · The Full Matrix</h2>
+<p class="subtitle">21개 단어 × 현재·과거·미래 × 격식체·구어체·문어체</p>
+
+<div class="stylem-wrap">
+<table class="stylem">
+    <thead>
+        <tr class="grp">
+            <th rowspan="2" class="wcol">단어<br><small>Word</small></th>
+            <th colspan="3" class="g-pres">현재 · Present</th>
+            <th colspan="3" class="g-past">과거 · Past</th>
+            <th colspan="3" class="g-fut">미래 · Future</th>
+        </tr>
+        <tr class="sub">
+            <th class="g-pres">격식체</th><th class="g-pres">구어체</th><th class="g-pres">문어체</th>
+            <th class="g-past">격식체</th><th class="g-past">구어체</th><th class="g-past">문어체</th>
+            <th class="g-fut">격식체</th><th class="g-fut">구어체</th><th class="g-fut">문어체</th>
+        </tr>
+    </thead>
+    <tbody id="matBody"></tbody>
+</table>
+</div>
+
+<hr>
+
+<h2>2. 플래시 카드 · Flashcards</h2>
+<p class="subtitle">단어를 보고 구어체·문어체 형태를 떠올린 뒤 카드를 뒤집어 확인하세요 (격식체와 대조)<br><small style="font-weight:400;color:#94a3b8;">Recall the form, then tap to flip — contrasted with 격식체</small></p>
+
+<h3 class="stylep-h sh-polite">① 구어체 · Spoken<span style="display:block;font-weight:600;font-size:0.88rem;margin-top:4px;line-height:1.5;">-아요<br>-어요</span></h3>
+<div class="flashcard-grid look-speak" id="lsGridPol"></div>
+
+<h3 class="stylep-h sh-written" style="margin-top:18px;">② 문어체 · Written<span style="display:block;font-weight:600;font-size:0.88rem;margin-top:4px;line-height:1.5;">-ㄴ다<br>-는다<br>다</span></h3>
+<div class="flashcard-grid look-speak" id="lsGridWrt"></div>
+
+<hr>
+
+<h2>3. 문체별 연습 · Practice by Style</h2>
+<p class="subtitle">단어를 보고 각 문체의 현재·과거·미래를 떠올린 뒤 [?]로 확인하세요<br><small style="font-weight:400;color:#94a3b8;">Recall each form, then tap ? to check</small></p>
+
+<h3 class="stylep-h sh-formal">① 격식체 · Formal<span style="display:block;font-weight:600;font-size:0.88rem;margin-top:4px;line-height:1.5;">-ㅂ니다<br>-습니다</span></h3>
+<div class="ans-bar"><button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기 (Show all)</button><button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기 (Hide again)</button></div>
+<div class="stylep-wrap"><table class="stylep"><thead><tr><th>단어 · Word</th><th>현재 · Present</th><th>과거 · Past</th><th>미래 · Future</th></tr></thead><tbody id="fmlBody"></tbody></table></div>
+
+<h3 class="stylep-h sh-polite">② 구어체 · Spoken<span style="display:block;font-weight:600;font-size:0.88rem;margin-top:4px;line-height:1.5;">-아요<br>-어요</span></h3>
+<div class="ans-bar"><button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기 (Show all)</button><button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기 (Hide again)</button></div>
+<div class="stylep-wrap"><table class="stylep"><thead><tr><th>단어 · Word</th><th>현재 · Present</th><th>과거 · Past</th><th>미래 · Future</th></tr></thead><tbody id="polBody"></tbody></table></div>
+
+<h3 class="stylep-h sh-written">③ 문어체 · Written<span style="display:block;font-weight:600;font-size:0.88rem;margin-top:4px;line-height:1.5;">-ㄴ다<br>-는다<br>다</span></h3>
+<div class="ans-bar"><button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기 (Show all)</button><button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기 (Hide again)</button></div>
+<div class="stylep-wrap"><table class="stylep"><thead><tr><th>단어 · Word</th><th>현재 · Present</th><th>과거 · Past</th><th>미래 · Future</th></tr></thead><tbody id="wrtBody"></tbody></table></div>
+
+<div class="footer"><p>Amazing Korean 1 — Appendix 3: Formal · Spoken · Written Style (부록 3: 격식체 · 구어체 · 문어체)</p></div>
+</div>
+
+<script>
+/* ===== Shared data: 21-word matrix ===== */
+var STYLE_M = [
+    ["가다","갑니다","가요","간다","갔습니다","갔어요","갔다","갈 것입니다","갈 거예요","갈 것이다"],
+    ["만나다","만납니다","만나요","만난다","만났습니다","만났어요","만났다","만날 것입니다","만날 거예요","만날 것이다"],
+    ["먹다","먹습니다","먹어요","먹는다","먹었습니다","먹었어요","먹었다","먹을 것입니다","먹을 거예요","먹을 것이다"],
+    ["있다","있습니다","있어요","있다","있었습니다","있었어요","있었다","있을 것입니다","있을 거예요","있을 것이다"],
+    ["없다","없습니다","없어요","없다","없었습니다","없었어요","없었다","없을 것입니다","없을 거예요","없을 것이다"],
+    ["알다","압니다","알아요","안다","알았습니다","알았어요","알았다","알 것입니다","알 거예요","알 것이다"],
+    ["만들다","만듭니다","만들어요","만든다","만들었습니다","만들었어요","만들었다","만들 것입니다","만들 거예요","만들 것이다"],
+    ["오다","옵니다","와요","온다","왔습니다","왔어요","왔다","올 것입니다","올 거예요","올 것이다"],
+    ["배우다","배웁니다","배워요","배운다","배웠습니다","배웠어요","배웠다","배울 것입니다","배울 거예요","배울 것이다"],
+    ["마시다","마십니다","마셔요","마신다","마셨습니다","마셨어요","마셨다","마실 것입니다","마실 거예요","마실 것이다"],
+    ["그리다","그립니다","그려요","그린다","그렸습니다","그렸어요","그렸다","그릴 것입니다","그릴 거예요","그릴 것이다"],
+    ["내다","냅니다","내요","낸다","냈습니다","냈어요","냈다","낼 것입니다","낼 거예요","낼 것이다"],
+    ["하다","합니다","해요","한다","했습니다","했어요","했다","할 것입니다","할 거예요","할 것이다"],
+    ["사랑하다","사랑합니다","사랑해요","사랑한다","사랑했습니다","사랑했어요","사랑했다","사랑할 것입니다","사랑할 거예요","사랑할 것이다"],
+    ["이다","입니다","이에요/예요","이다","이었습니다/였습니다","이었어요/였어요","이었다/였다","일 것입니다","일 거예요","일 것이다"],
+    ["크다","큽니다","커요","크다","컸습니다","컸어요","컸다","클 것입니다","클 거예요","클 것이다"],
+    ["다르다","다릅니다","달라요","다르다","달랐습니다","달랐어요","달랐다","다를 것입니다","다를 거예요","다를 것이다"],
+    ["쉽다","쉽습니다","쉬워요","쉽다","쉬웠습니다","쉬웠어요","쉬웠다","쉬울 것입니다","쉬울 거예요","쉬울 것이다"],
+    ["좋다","좋습니다","좋아요","좋다","좋았습니다","좋았어요","좋았다","좋을 것입니다","좋을 거예요","좋을 것이다"],
+    ["듣다","듣습니다","들어요","듣는다","들었습니다","들었어요","들었다","들을 것입니다","들을 거예요","들을 것이다"],
+    ["믿다","믿습니다","믿어요","믿는다","믿었습니다","믿었어요","믿었다","믿을 것입니다","믿을 거예요","믿을 것이다"]
+];
+
+/* ===== Matrix table ===== */
+(function(){
+    var cls = ['c-pres','c-pres','c-pres','c-past','c-past','c-past','c-fut','c-fut','c-fut'];
+    var html = "";
+    STYLE_M.forEach(function(r){
+        var tds = '<td class="wcol">'+r[0]+'</td>';
+        for (var i=1;i<=9;i++){ tds += '<td class="'+cls[i-1]+'">'+r[i]+'</td>'; }
+        html += '<tr>'+tds+'</tr>';
+    });
+    document.getElementById('matBody').innerHTML = html;
+})();
+
+/* ===== Practice words (subset of matrix) + English gloss ===== */
+var SG_EN = { "가다":"go","먹다":"eat","오다":"come","듣다":"listen","다르다":"be different","쉽다":"be easy","하다":"do","이다":"to be" };
+var SG_WORDS = ["가다","먹다","오다","듣다","다르다","쉽다","하다","이다"].map(function(w){
+    for (var i=0;i<STYLE_M.length;i++){ if(STYLE_M[i][0]===w) return STYLE_M[i]; }
+});
+
+/* row layout: [word, 격현,구현,문현, 격과,구과,문과, 격미,구미,문미]
+   grid rows = 문체(격/구/문), cols = 시제(현/과/미) */
+function sgBuildCards(bodyId, withCardReveal){
+    var rows = [
+        {label:"격식체", cls:"g-formal", idx:[1,4,7]},
+        {label:"구어체", cls:"g-polite", idx:[2,5,8]},
+        {label:"문어체", cls:"g-written", idx:[3,6,9]}
+    ];
+    var html = "";
+    SG_WORDS.forEach(function(r){
+        var base = r[0], en = SG_EN[base] || "";
+        html += '<div class="sg-card">'
+            + '<div class="sg-head"><span class="sg-word">'+base+'</span><span class="sg-en">'+en+'</span></div>'
+            + '<table class="sg-grid"><tr><th></th><th>현재</th><th>과거</th><th>미래</th></tr>';
+        rows.forEach(function(row){
+            html += '<tr><th class="sg-style '+row.cls+'">'+row.label+'</th>';
+            row.idx.forEach(function(ci){
+                html += '<td><input class="sg-input" data-ans="'+r[ci]+'" oninput="sgCheck(this)"></td>';
+            });
+            html += '</tr>';
+        });
+        html += '</table>';
+        if (withCardReveal) html += '<div class="sg-cardfoot"><button class="sg-cardbtn reset" onclick="sgResetCard(this)">🔄 초기화</button><button class="sg-cardbtn" onclick="sgRevealCard(this)">✓ 정답</button></div>';
+        html += '</div>';
+    });
+    document.getElementById(bodyId).innerHTML = html;
+}
+/* 문체별 연습 3구획 (? 가리기) — 격식체[1,4,7]/구어체[2,5,8]/문어체[3,6,9] */
+(function(){
+  var STYLES=[['fmlBody',[1,4,7]],['polBody',[2,5,8]],['wrtBody',[3,6,9]]];
+  STYLES.forEach(function(s){
+    var idx=s[1], h='';
+    STYLE_M.forEach(function(r){
+      var smp=(r[0]==='가다'); h+='<tr'+(smp?' class="q-sample"':'')+'><td class="spw">'+r[0]+(smp?'<br><small style="color:#f59e0b;font-weight:800;">예시</small>':'')+'</td>';
+      idx.forEach(function(i){ h+=smp?('<td class="spcell">'+r[i]+'</td>'):('<td class="spcell q-cell"><span class="q-text" onclick="qHide(this)">'+r[i]+'</span><button class="q-ans" onclick="qReveal(this)">?</button></td>'); });
+      h+='</tr>';
+    });
+    var el=document.getElementById(s[0]); if(el) el.innerHTML=h;
+  });
+})();
+
+/* ===== sg engine (shared by 직접 만들기 + 쓰기) ===== */
+function sgNorm(s){ return (s||'').replace(/\s+/g,'').replace(/[?？.]/g,''); }
+function sgAnswers(inp){ return inp.dataset.ans.split('/').map(sgNorm); }
+function sgCheck(inp){
+    var anss = sgAnswers(inp), val = sgNorm(inp.value);
+    inp.classList.remove('correct','wrong','revealed');
+    if (val.length === 0) {}
+    else if (anss.indexOf(val) !== -1) { inp.classList.add('correct'); }
+    else if (!anss.some(function(a){ return a.indexOf(val) === 0; })) { inp.classList.add('wrong'); }
+    sgTally(inp.closest('.sg-box'));
+}
+function sgTally(box){
+    if (!box) return;
+    var c = box.querySelectorAll('.sg-input.correct').length;
+    var s = box.querySelector('.sg-correct'); if (s) s.textContent = c;
+    var p = box.querySelector('.sg-pct'); if (p) p.textContent = '';
+}
+function sgReset(btn){
+    var box = btn.closest('.sg-box');
+    box.querySelectorAll('.sg-input').forEach(function(i){ i.value=''; i.classList.remove('correct','wrong','revealed'); });
+    var p = box.querySelector('.sg-pct'); if (p) p.textContent = '';
+    sgTally(box);
+}
+function sgRevealAll(btn){
+    var box = btn.closest('.sg-box');
+    box.querySelectorAll('.sg-input').forEach(function(i){ i.value=i.dataset.ans; i.classList.remove('wrong','revealed'); i.classList.add('correct'); });
+    sgTally(box);
+}
+function sgRevealShow(btn){
+    var box = btn.closest('.sg-box');
+    box.querySelectorAll('.sg-input').forEach(function(i){ i.value=i.dataset.ans; i.classList.remove('wrong','correct'); i.classList.add('revealed'); });
+    var s = box.querySelector('.sg-correct'); if (s) s.textContent = '–';
+    var p = box.querySelector('.sg-pct'); if (p) p.textContent = '';
+}
+function sgRevealCard(btn){
+    var card = btn.closest('.sg-card');
+    card.querySelectorAll('.sg-input').forEach(function(i){ i.value=i.dataset.ans; i.classList.remove('wrong','revealed'); i.classList.add('correct'); });
+    sgTally(btn.closest('.sg-box'));
+}
+function sgResetCard(btn){
+    var card = btn.closest('.sg-card');
+    card.querySelectorAll('.sg-input').forEach(function(i){ i.value=''; i.classList.remove('correct','wrong','revealed'); });
+    sgTally(btn.closest('.sg-box'));
+}
+function sgGrade(btn){
+    var box = btn.closest('.sg-box');
+    var inputs = box.querySelectorAll('.sg-input'); var c = 0, t = inputs.length;
+    inputs.forEach(function(i){
+        i.classList.remove('correct','wrong','revealed');
+        var anss = sgAnswers(i), val = sgNorm(i.value);
+        if (val.length > 0 && anss.indexOf(val) !== -1) { i.classList.add('correct'); c++; }
+        else { i.classList.add('wrong'); }
+    });
+    var s = box.querySelector('.sg-correct'); if (s) s.textContent = c;
+    var p = box.querySelector('.sg-pct'); if (p) p.textContent = '· ' + (t ? Math.round(c*100/t) : 0) + '%';
+}
+
+/* ===== Flashcards (퀴즈 1): present-tense 3-style contrast ===== */
+(function(){
+    /* 두 덱: 구어체 / 문어체 — 한눈에 보기(STYLE_M) 전체 21단어. 앞면=단어+영어뜻, 뒷면=해당 문체의 현재·과거·미래 */
+    var EN = {"가다":"to go","만나다":"to meet","먹다":"to eat","있다":"to exist / have","없다":"to not exist","알다":"to know","만들다":"to make","오다":"to come","배우다":"to learn","마시다":"to drink","그리다":"to draw","내다":"to pay","하다":"to do","사랑하다":"to love","이다":"to be","크다":"to be big","다르다":"to be different","쉽다":"to be easy","좋다":"to be good","듣다":"to listen","믿다":"to believe"};
+    var TLAB = [["현재","#2563eb"],["과거","#16a34a"],["미래","#d97706"]];
+    function buildDeck(gridId, idxArr){
+        var html = "";
+        STYLE_M.forEach(function(r){
+            var back = "";
+            idxArr.forEach(function(ix, t){
+                back += '<span class="sc-line"><span class="sc-tag" style="color:'+TLAB[t][1]+';">'+TLAB[t][0]+'</span>'+r[ix]+'</span>';
+            });
+            html += '<div class="flashcard" onclick="this.classList.toggle(\'flipped\')"><div class="flashcard-inner">'
+                + '<div class="flashcard-front"><div class="flashcard-text">'+r[0]+'<div class="flashcard-en">'+(EN[r[0]]||'')+'</div></div><div class="flashcard-hint">Tap to flip</div></div>'
+                + '<div class="flashcard-back"><div class="flashcard-text">'+back+'</div></div>'
+                + '</div></div>';
+        });
+        var el = document.getElementById(gridId); if(el) el.innerHTML = html;
+    }
+    buildDeck('lsGridPol', [2,5,8]);
+    buildDeck('lsGridWrt', [3,6,9]);
+})();
+</script>
+<script>
+function speakKorean(text) {
+    if (!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'ko-KR';
+    u.rate = 0.85;
+    u.pitch = 1.1;
+    const preferred = ['Yuna', 'SunHi', 'Heami', 'Google 한국의'];
+    const voices = window.speechSynthesis.getVoices();
+    const koVoices = voices.filter(v => v.lang.startsWith('ko'));
+    let picked = null;
+    for (const name of preferred) {
+        picked = koVoices.find(v => v.name.includes(name));
+        if (picked) break;
+    }
+    if (!picked && koVoices.length > 0) picked = koVoices[0];
+    if (picked) u.voice = picked;
+    window.speechSynthesis.speak(u);
+}
+if ('speechSynthesis' in window) {
+    window.speechSynthesis.onvoiceschanged = function(){};
+    window.speechSynthesis.getVoices();
+}
+</script>
+
+<script>
+function wtNormalize(s){ return (s||'').replace(/\s+/g,'').replace(/[?？!.。]/g,''); }
+function wtCheck(inp){
+  const ans = wtNormalize(inp.dataset.ans);
+  const val = wtNormalize(inp.value);
+  const wasCorrect = inp.classList.contains('correct');
+  inp.classList.remove('correct','wrong','revealed');
+  if (val.length > 0 && val === ans){
+    inp.classList.add('correct');
+    if (!wasCorrect && inp.dataset.celebrated !== '1') {
+      wtCelebrate(inp);
+      inp.dataset.celebrated = '1';
+    }
+  } else {
+    inp.dataset.celebrated = '';
+  }
+  wtScore();
+}
+function wtCelebrate(inp){
+  const parent = inp.closest('.single-wt') || inp.closest('.writing-item') || inp.parentElement;
+  if (!parent) return;
+  const cs = window.getComputedStyle(parent);
+  if (cs.position === 'static') parent.style.position = 'relative';
+  inp.classList.remove('celebrating');
+  void inp.offsetWidth;
+  inp.classList.add('celebrating');
+  setTimeout(function(){ inp.classList.remove('celebrating'); }, 600);
+  const badge = document.createElement('div');
+  badge.className = 'wt-celebrate-badge';
+  badge.innerHTML = '\u{1F389} 정답!<small>Correct!</small>';
+  parent.appendChild(badge);
+  setTimeout(function(){ if (badge.parentNode) badge.remove(); }, 5050);
+  const emojis = ['✨','⭐','\u{1F31F}','\u{1F4AB}','✨','⭐'];
+  for (let i = 0; i < 6; i++) {
+    const sp = document.createElement('span');
+    sp.className = 'wt-sparkle';
+    sp.textContent = emojis[i];
+    sp.style.left = (12 + Math.random() * 76) + '%';
+    sp.style.animationDelay = (i * 0.1) + 's';
+    parent.appendChild(sp);
+    setTimeout(function(){ if (sp.parentNode) sp.remove(); }, 4700);
+  }
+}
+function swtReveal(btn){
+  const inp = btn.closest('.single-wt').querySelector('.writing-input');
+  inp.value = inp.dataset.ans;
+  inp.classList.remove('correct','wrong');
+  inp.classList.add('revealed');
+}
+function swtSpeak(btn){
+  const inp = btn.closest('.single-wt').querySelector('.writing-input');
+  if (inp && inp.dataset.ans) speakKorean(inp.dataset.ans);
+}
+function wtScore(){
+  const inputs = document.querySelectorAll('.writing-practice .writing-input');
+  let c=0;
+  inputs.forEach(function(inp){ if(inp.classList.contains('correct')) c++; });
+  const correctEl = document.getElementById('wtCorrect');
+  if (correctEl) correctEl.textContent = c;
+  const pctEl = document.getElementById('wtPct');
+  if (pctEl) pctEl.textContent = '';
+  const boxEl = document.getElementById('wtScoreBox');
+  if (boxEl) boxEl.classList.remove('is-graded');
+}
+function wtReset(){
+  document.querySelectorAll('.writing-practice .writing-input').forEach(function(inp){
+    inp.value = '';
+    inp.classList.remove('correct','wrong','revealed');
+  });
+  wtScore();
+}
+function wtReveal(){
+  document.querySelectorAll('.writing-practice .writing-input').forEach(function(inp){
+    inp.value = inp.dataset.ans;
+    inp.classList.remove('correct','wrong');
+    inp.classList.add('revealed');
+  });
+  document.getElementById('wtCorrect').textContent = '–';
+  document.getElementById('wtPct').textContent = '';
+  document.getElementById('wtScoreBox').classList.remove('is-graded');
+}
+function wtGrade(){
+  const inputs = document.querySelectorAll('.writing-practice .writing-input');
+  let c=0, total=inputs.length;
+  inputs.forEach(function(inp){
+    inp.classList.remove('correct','wrong','revealed');
+    const ans = wtNormalize(inp.dataset.ans);
+    const val = wtNormalize(inp.value);
+    if (val === ans && val.length>0){ inp.classList.add('correct'); c++; }
+    else { inp.classList.add('wrong'); }
+  });
+  document.getElementById('wtCorrect').textContent = c;
+  const pct = total ? Math.round(c*100/total) : 0;
+  document.getElementById('wtPct').textContent = '· ' + pct + '%';
+  document.getElementById('wtScoreBox').classList.add('is-graded');
+  if(c === total && c > 0){
+    celebrateShow(c, 0, wtReset, '모든 문장을 정확히 작성했습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All sentences correct!</span>');
+  }
+}
+
+
+// English ↔ Korean Sentence Matching Game
+const emPairs = []; /* 3과는 매칭 게임 미사용 (직접 만들기·플래시·쓰기 구조) */
+const emPastels = [
+  { bg:'#fdf2f8', border:'#fbcfe8' },{ bg:'#fff1f2', border:'#fecdd3' },
+  { bg:'#fef2f2', border:'#fecaca' },{ bg:'#fff7ed', border:'#fed7aa' },
+  { bg:'#fffbeb', border:'#fde68a' },{ bg:'#fefce8', border:'#fef08a' },
+  { bg:'#f7fee7', border:'#d9f99d' },{ bg:'#f0fdf4', border:'#bbf7d0' },
+  { bg:'#ecfdf5', border:'#a7f3d0' },{ bg:'#f0fdfa', border:'#99f6e4' },
+  { bg:'#ecfeff', border:'#a5f3fc' },{ bg:'#f0f9ff', border:'#bae6fd' },
+  { bg:'#eff6ff', border:'#bfdbfe' },{ bg:'#eef2ff', border:'#c7d2fe' },
+  { bg:'#f5f3ff', border:'#ddd6fe' },{ bg:'#faf5ff', border:'#e9d5ff' },
+  { bg:'#fdf4ff', border:'#f5d0fe' },{ bg:'#fce7f3', border:'#f9a8d4' },
+  { bg:'#dcfce7', border:'#86efac' },{ bg:'#e0f2fe', border:'#7dd3fc' }
+];
+let emEnItems = [], emKoItems = [], emSelEn = null, emSelKo = null, emRemoved = [], emCorrect = 0, emWrong = 0;
+function emShuffle(arr){ const c=[...arr]; for(let i=c.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[c[i],c[j]]=[c[j],c[i]];} return c; }
+function emMakeItems(){
+  emEnItems = emShuffle(emPairs.map(p => ({ pid:p.id, text:p.en })));
+  emKoItems = emShuffle(emPairs.map(p => ({ pid:p.id, text:p.ko })));
+  const palette = emShuffle(emPastels).slice(0, emPairs.length * 2);
+  emEnItems.forEach(function(it, i){ it.pastel = palette[i] || emPastels[i % emPastels.length]; });
+  emKoItems.forEach(function(it, i){ it.pastel = palette[i + emPairs.length] || emPastels[(i + emPairs.length) % emPastels.length]; });
+}
+function emRenderList(listId, items, type, selPid){
+  const list = document.getElementById(listId); if(!list) return;
+  list.innerHTML = '';
+  items.forEach(function(it, idx){
+    const slot = document.createElement('div');
+    slot.className = 'em-slot';
+    if(emRemoved.indexOf(it.pid) === -1){
+      const btn = document.createElement('button');
+      btn.className = 'em-item';
+      btn.dataset.pid = it.pid;
+      btn.dataset.type = type;
+      btn.onclick = function(){ emClick(it, type); };
+      if(selPid === it.pid) btn.classList.add('selected');
+      btn.style.setProperty('--em-bg', it.pastel.bg);
+      btn.style.setProperty('--em-border', it.pastel.border);
+      btn.innerHTML = '<span class="em-text">'+it.text+'</span>';
+      slot.appendChild(btn);
+    }
+    list.appendChild(slot);
+  });
+}
+function emRender(){
+  emRenderList('emEnglishList', emEnItems, 'en', emSelEn ? emSelEn.pid : null);
+  emRenderList('emKoreanList',  emKoItems, 'ko', emSelKo ? emSelKo.pid : null);
+}
+function emUpdate(msg, complete){
+  const m = document.getElementById('emMessage'); if(!m) return;
+  m.innerHTML = msg;
+  m.classList.toggle('complete', !!complete);
+  document.getElementById('emCorrect').textContent = emCorrect+'/'+emPairs.length;
+  document.getElementById('emWrong').textContent = emWrong;
+  document.getElementById('emProgress').style.width = (emCorrect/emPairs.length*100)+'%';
+}
+function emClick(it, type){
+  if(emRemoved.indexOf(it.pid) !== -1) return;
+  if(type === 'en'){
+    if(emSelEn && emSelEn.pid === it.pid){ emSelEn = null; emUpdate('영어 선택을 취소했습니다. 다시 고르세요.'); emRender(); return; }
+    emSelEn = it;
+    emUpdate('영어 선택: <strong>'+it.text+'</strong> → 짝이 되는 한국어 문장을 고르세요.');
+  } else {
+    if(emSelKo && emSelKo.pid === it.pid){ emSelKo = null; emUpdate('한국어 선택을 취소했습니다. 다시 고르세요.'); emRender(); return; }
+    emSelKo = it;
+    emUpdate('한국어 선택: <strong>'+it.text+'</strong> → 짝이 되는 영어 문장을 고르세요.');
+  }
+  emRender();
+  if(emSelEn && emSelKo) emCheck();
+}
+function emCheck(){
+  const ok = emSelEn.pid === emSelKo.pid;
+  const eEl = document.querySelector('[data-type="en"][data-pid="'+emSelEn.pid+'"]');
+  const kEl = document.querySelector('[data-type="ko"][data-pid="'+emSelKo.pid+'"]');
+  if(ok){
+    if(eEl) eEl.classList.add('removing');
+    if(kEl) kEl.classList.add('removing');
+    const eTxt = emSelEn.text, kTxt = emSelKo.text, pid = emSelEn.pid;
+    setTimeout(function(){
+      emRemoved.push(pid); emCorrect++;
+      emSelEn = null; emSelKo = null;
+      if(emCorrect === emPairs.length){ emUpdate('🎉 완료! 모든 문장을 맞췄습니다. <span style="color:#15803d;">All matched!</span>', true);
+        celebrateShow(emCorrect, emWrong, emReset, '모든 문장을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All sentences matched!</span>'); }
+      else { emUpdate('<strong>'+eTxt+' ↔ '+kTxt+'</strong> 정답!'); }
+      emRender();
+    }, 300);
+    return;
+  }
+  emWrong++;
+  if(eEl) eEl.classList.add('wrong');
+  if(kEl) kEl.classList.add('wrong');
+  const eTxt = emSelEn.text, kTxt = emSelKo.text;
+  emSelEn = null; emSelKo = null;
+  emUpdate('<strong>'+eTxt+'</strong> ↔ <strong>'+kTxt+'</strong> — 짝이 아닙니다. 다시 고르세요. <span style="color:#94a3b8;">Not a match.</span>');
+  setTimeout(function(){ emRender(); }, 600);
+}
+function emReset(){
+  emMakeItems();
+  emSelEn = null; emSelKo = null; emRemoved = []; emCorrect = 0; emWrong = 0;
+  emUpdate('');
+  emRender();
+}
+emReset();
+
+// Game completion celebration
+function celebrateLaunchConfetti(){
+  const colors = ['#ef4444','#f59e0b','#eab308','#22c55e','#10b981','#06b6d4','#3b82f6','#8b5cf6','#ec4899','#f97316'];
+  for(let i = 0; i < 90; i++){
+    const c = document.createElement('div');
+    c.className = 'confetti';
+    c.style.left = (Math.random() * 100) + 'vw';
+    c.style.background = colors[Math.floor(Math.random() * colors.length)];
+    c.style.animationDelay = (Math.random() * 0.6) + 's';
+    c.style.animationDuration = (2.4 + Math.random() * 1.8) + 's';
+    c.style.transform = 'rotate(' + Math.floor(Math.random() * 360) + 'deg)';
+    document.body.appendChild(c);
+    setTimeout(function(){ c.remove(); }, 4500);
+  }
+}
+function celebrateShow(correct, wrong, restartFn, subtitleHTML){
+  document.getElementById('celebrateCorrect').textContent = correct;
+  document.getElementById('celebrateWrong').textContent = wrong;
+  if(subtitleHTML) document.getElementById('celebrateSubtitle').innerHTML = subtitleHTML;
+  document.getElementById('celebrateOverlay').classList.add('active');
+  window._celebrateRestart = restartFn;
+  celebrateLaunchConfetti();
+}
+function celebrateClose(){
+  const o = document.getElementById('celebrateOverlay');
+  if(o) o.classList.remove('active');
+}
+function celebrateRestart(){
+  celebrateClose();
+  if(window._celebrateRestart) window._celebrateRestart();
+}
+</script>
+
+<div id="celebrateOverlay" class="celebrate-overlay" onclick="celebrateClose()">
+    <div class="celebrate-card" onclick="event.stopPropagation()">
+        <span class="celebrate-emoji">🎉</span>
+        <h3 class="celebrate-title" id="celebrateTitle">완료!</h3>
+        <p class="celebrate-subtitle" id="celebrateSubtitle">모든 짝을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All matched!</span></p>
+        <div class="celebrate-stats">
+            <div class="celebrate-stat"><strong id="celebrateCorrect">0</strong><span>정답 · Correct</span></div>
+            <div class="celebrate-stat"><strong id="celebrateWrong">0</strong><span>오답 · Wrong</span></div>
+        </div>
+        <div class="celebrate-actions">
+            <button class="celebrate-btn" onclick="celebrateRestart()">🔄 다시 시작</button>
+            <button class="celebrate-btn secondary" onclick="celebrateClose()">닫기</button>
+        </div>
+    </div>
+</div>
+<style>
+.q-cell .q-text{display:none;}
+.q-cell:not(.revealed){text-align:center !important;}
+.q-cell.revealed .q-text{display:inline;cursor:pointer;}
+.q-cell.revealed .q-ans{display:none;}
+.q-ans{background:#fff;border:1px solid #cbd5e1;color:#16a34a;padding:0 6px;border-radius:7px;cursor:pointer;font-size:0.8rem;font-weight:800;font-family:inherit;line-height:1.5;text-decoration:none;}
+.q-ans:hover{background:#f0fdf4;border-color:#86efac;}
+.ans-bar{margin:10px 0 6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.ans-btn{background:#fff;border:1px solid #cbd5e1;color:#475569;padding:5px 12px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.82rem;font-family:inherit;}
+.ans-btn:hover{background:#f1f5f9;}
+.ans-hint{font-size:0.8rem;color:#94a3b8;}
+.stylep-h{margin:16px 0 4px;padding:8px 14px;font-size:1.05rem;font-weight:800;border-left:4px solid;border-radius:4px;}.sh-formal{color:#92400e;background:#fffbeb;border-left-color:#f59e0b;}.sh-polite{color:#1e40af;background:#eff6ff;border-left-color:#3b82f6;}.sh-written{color:#166534;background:#ecfdf5;border-left-color:#22c55e;}.stylep-wrap{overflow-x:auto;margin:4px 0 12px;}.stylep{width:100%;border-collapse:collapse;font-size:0.92rem;min-width:440px;}.stylep th,.stylep td{border:1px solid #cbd5e1;padding:9px 6px;text-align:center;}.stylep thead th{background:#f1f5f9;color:#334155;font-weight:800;}.stylep .spw{background:#f8fafc;font-weight:800;color:#0f172a;white-space:nowrap;width:26%;}.stylep tr.q-sample td{background:#fffbeb;}.stylep tr.q-sample .spw{background:#fef3c7;color:#b45309;}.stylem tbody tr.mat-sample td{background:#fffbeb !important;}.stylem tbody tr.mat-sample .wcol{background:#fef3c7 !important;color:#b45309 !important;}.stylem tbody tr.mat-sample .wcol::after{content:"예시";display:block;font-size:0.58rem;font-weight:800;color:#f59e0b;}
+@media print{.q-cell .q-text{display:inline !important;}.q-ans,.ans-bar{display:none !important;}}
+</style>
+<script>
+(function(){
+  var body=document.getElementById('matBody'); if(!body) return;
+  var sample=body.querySelector('tr'); if(sample) sample.classList.add('mat-sample');
+  body.querySelectorAll('tr:nth-child(n+2) td.c-pres, tr:nth-child(n+2) td.c-past, tr:nth-child(n+2) td.c-fut').forEach(function(cell){
+    cell.innerHTML='<span class="q-text" onclick="qHide(this)">'+cell.innerHTML+'</span><button class="q-ans" onclick="qReveal(this)">?</button>';
+    cell.classList.add('q-cell');
+  });
+  var wrap=document.querySelector('.stylem-wrap');
+  if(wrap){ var bar=document.createElement('div'); bar.className='ans-bar';
+    bar.innerHTML='<button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기 (Show all)</button><button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기 (Hide again)</button><span class="ans-hint">첫 줄 <b>가다</b>는 예시입니다. 나머지는 ?를 눌러 정답 확인(다시 누르면 가려짐) · First row (가다) is a worked example</span>';
+    wrap.parentNode.insertBefore(bar, wrap);
+  }
+})();
+function qReveal(b){ var c=b.closest('.q-cell'); if(c) c.classList.add('revealed'); }
+function qHide(t){ var c=t.closest('.q-cell'); if(c) c.classList.remove('revealed'); }
+function qAll(btn,show){ var sib=btn.closest('.ans-bar').nextElementSibling; var tbl=(sib && sib.tagName==='TABLE')?sib:(sib?sib.querySelector('table'):null); if(!tbl) return; tbl.querySelectorAll('.q-cell').forEach(function(c){ if(show) c.classList.add('revealed'); else c.classList.remove('revealed'); }); }
+</script>
+</body>
+</html>
