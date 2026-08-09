@@ -14,6 +14,12 @@ _가이드_*.md
 # Scripts (not part of the study material)
 *.py
 
+# 다만 검사·음원 도구와 언어판 빌더는 저장소에 둡니다.
+# 인수인계 §3 이 "무엇을 고치든 반영 뒤 check_all.py" 라고 말하는데
+# 정작 그 스크립트가 위 *.py 에 걸려 판올림이 하나도 남지 않고 있었습니다.
+!_도구/*.py
+!_언어판 시험/*.py
+
 # OS / editor artifacts
 .DS_Store
 Thumbs.db
