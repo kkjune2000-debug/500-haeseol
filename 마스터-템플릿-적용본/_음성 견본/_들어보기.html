@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko" translate="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title translate="yes">음성 견본 비교 (Voice sample comparison)</title>
+<style>
+ body{font-family:'Segoe UI','Malgun Gothic','Noto Sans KR',sans-serif;margin:0;background:#f8fafc;color:#0f172a;line-height:1.6;}
+ .wrap{max-width:920px;margin:0 auto;padding:26px 20px 60px;}
+ h1{font-size:1.5rem;font-weight:900;margin:0 0 4px;}
+ h1 .en{display:block;font-size:.6em;font-weight:700;opacity:.6;}
+ .lead{margin:0 0 20px;color:#475569;}
+ .card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px;margin-bottom:16px;box-shadow:0 1px 3px rgba(15,23,42,.05);}
+ .sent{font-size:1.12rem;font-weight:800;color:#0f172a;margin-bottom:12px;}
+ table{width:100%;border-collapse:collapse;font-size:.92rem;}
+ th,td{padding:9px 10px;border-bottom:1px solid #eef2f7;text-align:left;vertical-align:middle;}
+ th{background:#f1f5f9;font-weight:800;color:#334155;font-size:.86rem;}
+ .now{background:#fff7ed;}
+ .new{background:#f0fdf4;}
+ button{font-family:inherit;font-size:.86rem;font-weight:800;cursor:pointer;border:1px solid #cbd5e1;background:#f8fafc;color:#334155;border-radius:8px;padding:6px 13px;}
+ button:hover{background:#e2e8f0;}
+ .tag{display:inline-block;border-radius:999px;padding:2px 9px;font-size:.74rem;font-weight:800;}
+ .t-now{background:#ffedd5;color:#9a3412;}
+ .t-new{background:#dcfce7;color:#166534;}
+ .note{font-size:.88rem;color:#475569;margin-top:6px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>음성 견본 비교<span class="en" lang="en" translate="yes">Voice sample comparison</span></h1>
+<p class="lead">위 줄은 <b>지금 해설집이 쓰는 브라우저 음성</b>, 아래 줄은 <b>미리 만들어 둔 신경망 음성</b>입니다.
+같은 문장으로 견주어 보십시오.</p>
+
+<div class="card" id="c1"></div>
+<div class="card" id="c2"></div>
+<div class="card" id="c3"></div>
+
+<div class="card">
+  <div class="sent">알아 둘 것</div>
+  <div class="note">
+    · 브라우저 음성은 컴퓨터·브라우저·인터넷에 따라 달라집니다. 이 컴퓨터에는 한국어 음성이 <b>Heami(여성)</b> 하나뿐입니다.<br>
+    · 신경망 음성 MP3 는 <b>어디서나 똑같이</b> 들리고 인터넷 없이도 재생됩니다.<br>
+    · 「느리게」는 초급 학습자용으로 15% 늦춘 것입니다.
+  </div>
+</div>
+
+<script>
+var SENTS=[
+ {id:'s1',ko:'그는 뛰었습니다.'},
+ {id:'s2',ko:'저는 어제 시장에서 과일과 야채와 생선을 샀습니다.'},
+ {id:'s3',ko:'할머니께서 진지를 드시고 계십니다.'}
+];
+var VOICES=[['SunHi','여성 SunHi'],['InJoon','남성 InJoon'],['HyunsuMultilingual','남성 Hyunsu']];
+
+function browserSay(t){
+  if(!('speechSynthesis' in window)) return;
+  var vs=window.speechSynthesis.getVoices().filter(function(v){return /^ko/i.test(v.lang||'');});
+  window.speechSynthesis.cancel();
+  var u=new SpeechSynthesisUtterance(t);
+  if(vs.length) u.voice=vs[0];
+  u.lang='ko-KR'; u.rate=0.92;
+  setTimeout(function(){window.speechSynthesis.speak(u);},60);
+}
+var AU=null;
+function play(src){
+  if(AU){AU.pause();}
+  AU=new Audio(encodeURI(src));
+  AU.play();
+}
+SENTS.forEach(function(s,i){
+  var h='<div class="sent">'+s.ko+'</div><table><thead><tr>'
+    +'<th>방식</th><th>목소리</th><th>보통 속도</th><th>느리게</th></tr></thead><tbody>';
+  h+='<tr class="now"><td><span class="tag t-now">지금</span></td><td>브라우저 음성</td>'
+    +'<td><button onclick="browserSay(\''+s.ko+'\')">🔊 듣기</button></td><td>—</td></tr>';
+  VOICES.forEach(function(v){
+    h+='<tr class="new"><td><span class="tag t-new">새 것</span></td><td>'+v[1]+'</td>'
+      +'<td><button onclick="play(\''+s.id+'_'+v[0]+'_보통.mp3\')">🔊 듣기</button></td>'
+      +'<td><button onclick="play(\''+s.id+'_'+v[0]+'_느리게.mp3\')">🔊 듣기</button></td></tr>';
+  });
+  h+='</tbody></table>';
+  document.getElementById('c'+(i+1)).innerHTML=h;
+});
+</script>
+</div>
+</body>
+</html>

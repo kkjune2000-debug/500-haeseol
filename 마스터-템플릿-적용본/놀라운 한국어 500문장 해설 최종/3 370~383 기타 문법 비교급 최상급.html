@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazing Korean 1 - 기타 문법 1: Comparative / Superlative (비교급 / 최상급)</title>
+    <title translate="yes">Amazing Korean 1 — Other Grammar 1: Comparative / Superlative (비교급 / 최상급)</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -50,6 +50,12 @@
         tbody td { padding: 8px 12px; border-bottom: 1px solid #e2e8f0; }
         tbody tr:nth-child(even) { background: #f8fafc; }
         .vocab-box { background: #fef3c7; border-radius: 10px; padding: 14px 18px; margin: 12px 0 16px 0; border-left: 4px solid #f59e0b; }
+.vocab-box .v-list { display:flex; flex-wrap:wrap; gap:9px 22px; }
+.vocab-box .v-item { line-height:1.3; max-width:100%; overflow-wrap:anywhere; }
+.vocab-box .v-item b { font-weight:700; color:#78350f; font-size:1.02em; }
+.vocab-box .v-item .gloss { color:#92400e; opacity:0.8; }
+.vocab-box .vocab-title .gloss { color:#b45309; font-weight:700; }
+
         .vocab-box .vocab-title { font-size: 0.8rem; font-weight: 700; color: #b45309; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
         .answer-box { margin: 0 0 24px 0; }
         .answer-toggle { background: #e0f2fe; color: #075985; border: 1px solid #bae6fd; padding: 8px 20px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 700; margin-top: 8px; transition:background 0.2s; }
@@ -343,15 +349,33 @@
         /* v9.93 Korean word-break — keep CJK syllables together */
         .gstep-table td, .gstep-table th { word-break: keep-all; overflow-wrap: break-word; }
         .exp-table td, .exp-table th { word-break: keep-all; overflow-wrap: break-word; }
-    </style>
+    .gloss{text-transform:none;display:block;font-weight:600;font-size:0.86em;opacity:0.72;letter-spacing:0;margin-top:1px;}
+button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
+
+
+.spk-tag { font-size:0.62em; font-weight:800; margin-left:1px; vertical-align:0.12em; letter-spacing:0; }
+.spk-m { margin-left:2px; }
+.spk-off { opacity:0.62; }
+.ak-notice { position:fixed; left:50%; bottom:22px; transform:translateX(-50%) translateY(14px);
+    z-index:10000; max-width:min(92vw,460px); background:#1e293b; color:#fff; border-radius:10px;
+    padding:11px 16px; font-size:0.86rem; line-height:1.45; box-shadow:0 6px 20px rgba(15,23,42,0.3);
+    opacity:0; pointer-events:none; transition:opacity 0.2s, transform 0.2s; }
+.ak-notice.on { opacity:1; transform:translateX(-50%) translateY(0); }
+.ak-notice .gloss { color:#cbd5e1; opacity:0.9; }
+@media print { .ak-notice { display:none; } }
+/* spk-after v1 */
+/* 쓰기 테스트 — 정답을 맞히거나 답을 펼치기 전에는 문제 옆 소리 단추를 숨긴다 */
+.writing-item:not(:has(.writing-input.correct)):not(:has(.writing-input.revealed)) .speak-btn{
+    display:none;}
+</style>
 </head>
 <body>
 <div class="container">
 
 <header class="title-block other">
     <div class="title-en">
-        <h1 class="title-main">Other Grammar 1</h1>
-        <p class="title-sub">Comparative / Superlative</p>
+        <h1 class="title-main" lang="en" translate="yes">Other Grammar 1</h1>
+        <p class="title-sub" lang="en" translate="yes">Comparative / Superlative</p>
     </div>
     <div class="title-divider"></div>
     <div class="title-ko">
@@ -360,18 +384,18 @@
     </div>
 </header>
 
-<h2>Grammar Overview · 문법 정리</h2>
+<h2><span lang="en" translate="yes">Grammar Overview ·</span> 문법 정리</h2>
 
 <div class="gstep">
     <div class="gstep-num">1</div>
     <div class="gstep-body">
-        <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#78350f; background:#fffbeb; border-left:4px solid #b45309; border-radius:4px;">Comparative<br><small style="font-weight:600;">비교급 — 두 대상 비교</small></h3>
+        <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#78350f; background:#fffbeb; border-left:4px solid #b45309; border-radius:4px;"><span lang="en" translate="yes">Comparative</span><br><small style="font-weight:600;">비교급 — 두 대상 비교</small></h3>
         <table class="gstep-table">
-            <thead><tr><th style="width:22%">관계<br><small>Relation</small></th><th style="width:34%">패턴<br><small>Pattern</small></th><th>예문<br><small>Example</small></th></tr></thead>
+            <thead><tr><th style="width:22%">관계<br><small lang="en" translate="yes">Relation</small></th><th style="width:34%">패턴<br><small lang="en" translate="yes">Pattern</small></th><th>예문<br><small lang="en" translate="yes">Example</small></th></tr></thead>
             <tbody>
-                <tr><td><span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-size:1.5rem;font-weight:900;line-height:1;">=</span><br><small style="display:block;margin-top:6px;font-weight:700;color:#b45309;">같음 <span style="color:#9ca3af;font-weight:400;">(as … as)</span></small></td><td>명사 + <span class="accent">처럼</span> + 형용사</td><td><strong>이 사과는 수박<span class="accent">처럼</span> 큽니다.</strong><br><small><em>(This apple is as big as a watermelon)</em></small></td></tr>
-                <tr><td><span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-size:1.5rem;font-weight:900;line-height:1;">&gt;</span><br><small style="display:block;margin-top:6px;font-weight:700;color:#b45309;">더 크다 <span style="color:#9ca3af;font-weight:400;">(more than)</span></small></td><td>명사 + <span class="accent">보다 더</span> + 형용사</td><td><strong>이 사과는 수박<span class="accent">보다 더</span> 큽니다.</strong><br><small><em>(This apple is bigger than a watermelon)</em></small></td></tr>
-                <tr><td><span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-size:1.5rem;font-weight:900;line-height:1;">&lt;</span><br><small style="display:block;margin-top:6px;font-weight:700;color:#b45309;">덜 하다 <span style="color:#9ca3af;font-weight:400;">(less than)</span></small></td><td>명사 + <span class="accent">보다 덜</span> + 형용사</td><td><strong>이 사과는 수박<span class="accent">보다 덜</span> 큽니다.</strong><br><small><em>(This apple is less big than a watermelon)</em></small></td></tr>
+                <tr><td><span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-size:1.5rem;font-weight:900;line-height:1;">=</span><br><small style="display:block;margin-top:6px;font-weight:700;color:#b45309;" lang="en" translate="yes"><span lang="ko" translate="no">같음</span> <span style="color:#9ca3af;font-weight:400;">(as … as)</span></small></td><td>명사 + <span class="accent">처럼</span> + 형용사</td><td><strong>이 사과는 수박<span class="accent">처럼</span> 큽니다.</strong><br><small lang="en" translate="yes"><em>(This apple is as big as a watermelon)</em></small></td></tr>
+                <tr><td><span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-size:1.5rem;font-weight:900;line-height:1;"><span lang="en" translate="yes">&gt;</span></span><br><small style="display:block;margin-top:6px;font-weight:700;color:#b45309;" lang="en" translate="yes"><span lang="ko" translate="no">더 크다</span> <span style="color:#9ca3af;font-weight:400;">(more than)</span></small></td><td>명사 + <span class="accent">보다 더</span> + 형용사</td><td><strong>이 사과는 수박<span class="accent">보다 더</span> 큽니다.</strong><br><small lang="en" translate="yes"><em>(This apple is bigger than a watermelon)</em></small></td></tr>
+                <tr><td><span style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-size:1.5rem;font-weight:900;line-height:1;"><span lang="en" translate="yes">&lt;</span></span><br><small style="display:block;margin-top:6px;font-weight:700;color:#b45309;" lang="en" translate="yes"><span lang="ko" translate="no">덜 크다</span> <span style="color:#9ca3af;font-weight:400;">(less than)</span></small></td><td>명사 + <span class="accent">보다 덜</span> + 형용사</td><td><strong>이 사과는 수박<span class="accent">보다 덜</span> 큽니다.</strong><br><small lang="en" translate="yes"><em>(This apple is less big than a watermelon)</em></small></td></tr>
             </tbody>
         </table>
     </div>
@@ -380,12 +404,12 @@
 <div class="gstep">
     <div class="gstep-num">2</div>
     <div class="gstep-body">
-        <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#78350f; background:#fffbeb; border-left:4px solid #b45309; border-radius:4px;">Superlative<br><small style="font-weight:600;">최상급 — 가장 / 제일</small></h3>
+        <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#78350f; background:#fffbeb; border-left:4px solid #b45309; border-radius:4px;"><span lang="en" translate="yes">Superlative</span><br><small style="font-weight:600;">최상급 — 가장 / 제일</small></h3>
         <table class="gstep-table">
-            <thead><tr><th style="width:28%">범위<br><small>Scope</small></th><th style="width:30%">패턴<br><small>Pattern</small></th><th>예문<br><small>Example</small></th></tr></thead>
+            <thead><tr><th style="width:28%">범위<br><small lang="en" translate="yes">Scope</small></th><th style="width:30%">패턴<br><small lang="en" translate="yes">Pattern</small></th><th>예문<br><small lang="en" translate="yes">Example</small></th></tr></thead>
             <tbody>
-                <tr><td><span style="display:inline-block;padding:4px 14px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.92rem;">① 하나뿐</span><br><small style="display:block;margin-top:6px;color:#b45309;font-weight:700;">유일한 명사</small><small style="color:#9ca3af;">(한국·세상·우주)</small></td><td>명사 + <span class="accent">에서</span> 가장 + 형용사</td><td><strong>이 사과는 한국<span class="accent">에서</span> 가장 큽니다.</strong><br><small><em>(the biggest in Korea)</em></small></td></tr>
-                <tr><td><span style="display:inline-block;padding:4px 14px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.92rem;">② 여럿</span><br><small style="display:block;margin-top:6px;color:#b45309;font-weight:700;">복수 명사</small><small style="color:#9ca3af;">(셀 수 있는 그룹)</small></td><td>명사 + <span class="accent">중에서</span> 가장 + 형용사</td><td><strong>이 사과는 사과들 <span class="accent">중에서</span> 가장 큽니다.</strong><br><small><em>(the biggest among the apples)</em></small></td></tr>
+                <tr><td><span style="display:inline-block;padding:4px 14px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.92rem;">① 하나뿐</span><br><small style="display:block;margin-top:6px;color:#b45309;font-weight:700;">유일한 명사</small><small style="color:#9ca3af;">(한국·세상·우주)</small></td><td>명사 + <span class="accent">에서</span> 가장 + 형용사</td><td><strong>이 사과는 한국<span class="accent">에서</span> 가장 큽니다.</strong><br><small lang="en" translate="yes"><em>(the biggest in Korea)</em></small></td></tr>
+                <tr><td><span style="display:inline-block;padding:4px 14px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.92rem;">② 여럿</span><br><small style="display:block;margin-top:6px;color:#b45309;font-weight:700;">복수 명사</small><small style="color:#9ca3af;">(셀 수 있는 그룹)</small></td><td>명사 + <span class="accent">중에서</span> 가장 + 형용사</td><td><strong>이 사과는 사과들 <span class="accent">중에서</span> 가장 큽니다.</strong><br><small lang="en" translate="yes"><em>(the biggest among the apples)</em></small></td></tr>
             </tbody>
         </table>
     </div>
@@ -393,533 +417,585 @@
 
 <hr>
 
-<h2>Practice: Make Korean sentences!</h2>
+<h2><span lang="en" translate="yes">Practice: Make Korean sentences!</span></h2>
 <p class="subtitle">연습: 한국어 문장을 만들어 보세요!</p>
 
-<h3>370) This apple is big.</h3>
+<h3><span lang="en" translate="yes">370) This apple is big.</span></h3>
 
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
 <div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    this = 이 &nbsp;|&nbsp; apple = 사과 &nbsp;|&nbsp; big = 크다
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>이</b><span class="gloss" lang="en" translate="yes">this</span></span>
+        <span class="v-item"><b>사과</b><span class="gloss" lang="en" translate="yes">apple</span></span>
+        <span class="v-item"><b>크다</b><span class="gloss" lang="en" translate="yes">to be big</span></span>
+    </div>
 </div>
 
 <div class="single-wt">
-    <textarea class="writing-input" data-ans="이 사과는 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+    <textarea translate="yes" class="writing-input" data-ans="이 사과는 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
 </div>
 
 <div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
     <div class="answer-content">
-        <div class="ans-kr">이 사과는 큽니다. <button class="speak-btn" onclick="speakKorean('이 사과는 큽니다.')" title="Listen">🔊</button></div>
+        <div class="ans-kr">이 사과는 큽니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('이 사과는 큽니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('이 사과는 큽니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
     </div>
 </div>
 
 <div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
         <table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Predicate (Adjective)<br>한국어 어순: 주어 + 서술어(형용사)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 서술어(형용사)<br><span lang="en" translate="yes">Korean order: Subject + Predicate (Adjective)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
             </thead>
             <tbody>
-                <tr><td class="exp-en"><strong>This apple</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>이 사과는</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>is big</strong></td><td class="exp-role">Predicate (Adjective)<br><small>서술어(형용사)</small></td><td class="exp-form"><strong>큽니다</strong></td><td></td></tr>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>This apple</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>이 사과는</strong></td><td><strong>이사과</strong> + <strong>는</strong></td></tr>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>is big</strong></td><td class="exp-role">서술어(형용사)<br><small><span lang="en" translate="yes">Predicate (Adjective)</span></small></td><td class="exp-form"><strong>큽니다</strong></td><td></td></tr>
             </tbody>
         </table>
         
     </div>
 </div>
 
-<h3>371) This apple is as big as a watermelon.</h3>
+<h3><span lang="en" translate="yes">371) This apple is as big as a watermelon.</span></h3>
 
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
 <div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    as . as = ~처럼 &nbsp;|&nbsp; watermelon = 수박
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>~처럼</b><span class="gloss" lang="en" translate="yes">like, as</span></span>
+        <span class="v-item"><b>수박</b><span class="gloss" lang="en" translate="yes">watermelon</span></span>
+    </div>
 </div>
 
 <div class="single-wt">
-    <textarea class="writing-input" data-ans="이 사과는 수박처럼 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+    <textarea translate="yes" class="writing-input" data-ans="이 사과는 수박처럼 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
 </div>
 
 <div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
     <div class="answer-content">
-        <div class="ans-kr">이 사과는 수박처럼 큽니다. <button class="speak-btn" onclick="speakKorean('이 사과는 수박처럼 큽니다.')" title="Listen">🔊</button></div>
+        <div class="ans-kr">이 사과는 수박처럼 큽니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('이 사과는 수박처럼 큽니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('이 사과는 수박처럼 큽니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
     </div>
 </div>
 
 <div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
         <table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Comparison) + Predicate (Adjective)<br>한국어 어순: 주어 + 부사어(비교) + 서술어(형용사)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(비교) + 서술어(형용사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Comparison) + Predicate (Adjective)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
             </thead>
             <tbody>
-                <tr><td class="exp-en"><strong>This apple</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>이 사과는</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>is as big as a watermelon</strong></td><td class="exp-role">Adverbial (Comparison) + Predicate (Adjective)<br><small>부사어(비교) + 서술어(형용사)</small></td><td class="exp-form"><strong>수박처럼 큽니다</strong></td><td></td></tr>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>This apple</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>이 사과는</strong></td><td><strong>이사과</strong> + <strong>는</strong></td></tr>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>is as big as a watermelon</strong></td><td class="exp-role">부사어(비교) + 서술어(형용사)<br><small><span lang="en" translate="yes">Adverbial (Comparison) + Predicate (Adjective)</span></small></td><td class="exp-form"><strong>수박처럼 큽니다</strong></td><td></td></tr>
             </tbody>
         </table>
         
     </div>
 </div>
 
-<h3>372) This apple is bigger than a watermelon.</h3>
+<h3><span lang="en" translate="yes">372) This apple is bigger than a watermelon.</span></h3>
 
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
 <div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    bigger than = ~보다 더
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>~보다 더</b><span class="gloss" lang="en" translate="yes">bigger than</span></span>
+    </div>
 </div>
 
 <div class="single-wt">
-    <textarea class="writing-input" data-ans="이 사과는 수박보다 더 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+    <textarea translate="yes" class="writing-input" data-ans="이 사과는 수박보다 더 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
 </div>
 
 <div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
     <div class="answer-content">
-        <div class="ans-kr">이 사과는 수박보다 더 큽니다. <button class="speak-btn" onclick="speakKorean('이 사과는 수박보다 더 큽니다.')" title="Listen">🔊</button></div>
+        <div class="ans-kr">이 사과는 수박보다 더 큽니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('이 사과는 수박보다 더 큽니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('이 사과는 수박보다 더 큽니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
     </div>
 </div>
 
 <div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
         <table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Comparison) + Predicate (Adjective)<br>한국어 어순: 주어 + 부사어(비교) + 서술어(형용사)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(비교) + 서술어(형용사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Comparison) + Predicate (Adjective)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
             </thead>
             <tbody>
-                <tr><td class="exp-en"><strong>This apple</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>이 사과는</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>is bigger</strong></td><td class="exp-role">Predicate (Adjective)<br><small>서술어(형용사)</small></td><td class="exp-form"><strong>더 큽니다</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>than a watermelon</strong></td><td class="exp-role">Adverbial (Comparison)<br><small>부사어(비교)</small></td><td class="exp-form"><strong>수박보다</strong></td><td></td></tr>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>This apple</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>이 사과는</strong></td><td><strong>이사과</strong> + <strong>는</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>than a watermelon</strong></td><td class="exp-role">부사어(비교)<br><small><span lang="en" translate="yes">Adverbial (Comparison)</span></small></td><td class="exp-form"><strong>수박보다</strong></td><td></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>is bigger</strong></td><td class="exp-role">서술어(형용사)<br><small><span lang="en" translate="yes">Predicate (Adjective)</span></small></td><td class="exp-form"><strong>더 큽니다</strong></td><td></td></tr>
+        </tbody>
+        </table>
+        
+    </div>
+</div>
+
+<h3><span lang="en" translate="yes">373) This apple is less big than a watermelon.</span></h3>
+
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
+<div class="vocab-box">
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>~보다 덜</b><span class="gloss" lang="en" translate="yes">less … than</span></span>
+    </div>
+</div>
+
+<div class="single-wt">
+    <textarea translate="yes" class="writing-input" data-ans="이 사과는 수박보다 덜 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+</div>
+
+<div class="answer-box">
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
+    <div class="answer-content">
+        <div class="ans-kr">이 사과는 수박보다 덜 큽니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('이 사과는 수박보다 덜 큽니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('이 사과는 수박보다 덜 큽니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
+    </div>
+</div>
+
+<div class="explain-box">
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
+    <div class="explain-content">
+        <table class="exp-table">
+            <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
+            <thead>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(비교) + 서술어(형용사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Comparison) + Predicate (Adjective)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>This apple</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>이 사과는</strong></td><td><strong>이사과</strong> + <strong>는</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>than a watermelon</strong></td><td class="exp-role">부사어(비교)<br><small><span lang="en" translate="yes">Adverbial (Comparison)</span></small></td><td class="exp-form"><strong>수박보다</strong></td><td></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>is less big</strong></td><td class="exp-role">서술어(형용사)<br><small><span lang="en" translate="yes">Predicate (Adjective)</span></small></td><td class="exp-form"><strong>덜 큽니다</strong></td><td></td></tr>
+        </tbody>
+        </table>
+        
+    </div>
+</div>
+
+<h3><span lang="en" translate="yes">374) This apple is the biggest in Korea.</span></h3>
+
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
+<div class="vocab-box">
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>가장 크다</b><span class="gloss" lang="en" translate="yes">to be the biggest</span></span>
+        <span class="v-item"><b>~에서</b><span class="gloss" lang="en" translate="yes">in</span></span>
+        <span class="v-item"><b>한국</b><span class="gloss" lang="en" translate="yes">Korea</span></span>
+    </div>
+</div>
+
+<div class="single-wt">
+    <textarea translate="yes" class="writing-input" data-ans="이 사과는 한국에서 가장 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+</div>
+
+<div class="answer-box">
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
+    <div class="answer-content">
+        <div class="ans-kr">이 사과는 한국에서 가장 큽니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('이 사과는 한국에서 가장 큽니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('이 사과는 한국에서 가장 큽니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
+    </div>
+</div>
+
+<div class="explain-box">
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
+    <div class="explain-content">
+        <table class="exp-table">
+            <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
+            <thead>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(범위) + 서술어(최상급)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Range) + Predicate (Superlative)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>This apple</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>이 사과는</strong></td><td><strong>이사과</strong> + <strong>는</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>in Korea</strong></td><td class="exp-role">부사어(범위)<br><small><span lang="en" translate="yes">Adverbial (Range)</span></small></td><td class="exp-form"><strong>한국에서</strong></td><td><strong>한국</strong> + <strong>에서</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>is the biggest</strong></td><td class="exp-role">서술어(최상급)<br><small><span lang="en" translate="yes">Predicate (Superlative)</span></small></td><td class="exp-form"><strong>가장 큽니다</strong></td><td></td></tr>
+        </tbody>
+        </table>
+        
+    </div>
+</div>
+
+<h3><span lang="en" translate="yes">375) This apple is the biggest among the apples.</span></h3>
+
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
+<div class="vocab-box">
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>가장 크다</b><span class="gloss" lang="en" translate="yes">to be the biggest</span></span>
+        <span class="v-item"><b>~중에서</b><span class="gloss" lang="en" translate="yes">among</span></span>
+        <span class="v-item"><b>사과들</b><span class="gloss" lang="en" translate="yes">apples</span></span>
+    </div>
+</div>
+
+<div class="single-wt">
+    <textarea translate="yes" class="writing-input" data-ans="이 사과는 사과들 중에서 가장 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+</div>
+
+<div class="answer-box">
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
+    <div class="answer-content">
+        <div class="ans-kr">이 사과는 사과들 중에서 가장 큽니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('이 사과는 사과들 중에서 가장 큽니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('이 사과는 사과들 중에서 가장 큽니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
+    </div>
+</div>
+
+<div class="explain-box">
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
+    <div class="explain-content">
+        <table class="exp-table">
+            <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
+            <thead>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(범위) + 서술어(최상급)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Range) + Predicate (Superlative)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>This apple</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>이 사과는</strong></td><td><strong>이사과</strong> + <strong>는</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>among the apples</strong></td><td class="exp-role">부사어(범위)<br><small><span lang="en" translate="yes">Adverbial (Range)</span></small></td><td class="exp-form"><strong>사과들 중에서</strong></td><td></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>is the biggest</strong></td><td class="exp-role">서술어(최상급)<br><small><span lang="en" translate="yes">Predicate (Superlative)</span></small></td><td class="exp-form"><strong>가장 큽니다</strong></td><td></td></tr>
+        </tbody>
+        </table>
+        
+    </div>
+</div>
+
+<h3><span lang="en" translate="yes">376) Sumi sings well.</span></h3>
+
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
+<div class="vocab-box">
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>노래를 하다</b><span class="gloss" lang="en" translate="yes">sing a song</span></span>
+        <span class="v-item"><b>잘</b><span class="gloss" lang="en" translate="yes">well</span></span>
+    </div>
+</div>
+
+<div class="single-wt">
+    <textarea translate="yes" class="writing-input" data-ans="수미는 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+</div>
+
+<div class="answer-box">
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
+    <div class="answer-content">
+        <div class="ans-kr">수미는 노래를 잘합니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('수미는 노래를 잘합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('수미는 노래를 잘합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
+    </div>
+</div>
+
+<div class="explain-box">
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
+    <div class="explain-content">
+        <table class="exp-table">
+            <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
+            <thead>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Object + Predicate (Verb)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>Sumi</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>수미는</strong></td><td><strong>수미</strong> + <strong>는</strong></td></tr>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>sings well</strong></td><td class="exp-role">목적어 + 서술어(동사)<br><small><span lang="en" translate="yes">Object + Predicate (Verb)</span></small></td><td class="exp-form"><strong>노래를 잘합니다</strong></td><td><strong>노래를 잘하다</strong> = <strong><span lang="en" translate="yes">sing well</span></strong> <span lang="en" translate="yes">(idiom)</span></td></tr>
             </tbody>
         </table>
         
     </div>
 </div>
 
-<h3>373) This apple is less big than a watermelon.</h3>
+<h3><span lang="en" translate="yes">377) Sumi sings well like a singer.</span></h3>
 
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
 <div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    less . than = ~보다 덜
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>~처럼</b><span class="gloss" lang="en" translate="yes">like, as</span></span>
+        <span class="v-item"><b>가수</b><span class="gloss" lang="en" translate="yes">singer</span></span>
+    </div>
 </div>
 
 <div class="single-wt">
-    <textarea class="writing-input" data-ans="이 사과는 수박보다 덜 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+    <textarea translate="yes" class="writing-input" data-ans="수미는 가수처럼 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
 </div>
 
 <div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
     <div class="answer-content">
-        <div class="ans-kr">이 사과는 수박보다 덜 큽니다. <button class="speak-btn" onclick="speakKorean('이 사과는 수박보다 덜 큽니다.')" title="Listen">🔊</button></div>
+        <div class="ans-kr">수미는 가수처럼 노래를 잘합니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('수미는 가수처럼 노래를 잘합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('수미는 가수처럼 노래를 잘합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
     </div>
 </div>
 
 <div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
         <table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Comparison) + Predicate (Adjective)<br>한국어 어순: 주어 + 부사어(비교) + 서술어(형용사)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(비교) + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Comparison) + Object + Predicate (Verb)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
             </thead>
             <tbody>
-                <tr><td class="exp-en"><strong>This apple</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>이 사과는</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>is less big</strong></td><td class="exp-role">Predicate (Adjective)<br><small>서술어(형용사)</small></td><td class="exp-form"><strong>덜 큽니다</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>than a watermelon</strong></td><td class="exp-role">Adverbial (Comparison)<br><small>부사어(비교)</small></td><td class="exp-form"><strong>수박보다</strong></td><td></td></tr>
-            </tbody>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>Sumi</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>수미는</strong></td><td><strong>수미</strong> + <strong>는</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>like a singer</strong></td><td class="exp-role">부사어(비교)<br><small><span lang="en" translate="yes">Adverbial (Comparison)</span></small></td><td class="exp-form"><strong>가수처럼</strong></td><td></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>sings well</strong></td><td class="exp-role">목적어 + 서술어(동사)<br><small><span lang="en" translate="yes">Object + Predicate (Verb)</span></small></td><td class="exp-form"><strong>노래를 잘합니다</strong></td><td><strong>노래를 잘하다</strong> = <strong><span lang="en" translate="yes">sing well</span></strong> <span lang="en" translate="yes">(idiom)</span></td></tr>
+        </tbody>
         </table>
         
     </div>
 </div>
 
-<h3>374) This apple is the biggest in Korea.</h3>
+<h3><span lang="en" translate="yes">378) Sumi sings better than a singer.</span></h3>
 
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
 <div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    the biggest = 가장 크다 &nbsp;|&nbsp; in = ~에서 &nbsp;|&nbsp; Korea = 한국
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>~보다 더</b><span class="gloss" lang="en" translate="yes">better than</span></span>
+    </div>
 </div>
 
 <div class="single-wt">
-    <textarea class="writing-input" data-ans="이 사과는 한국에서 가장 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+    <textarea translate="yes" class="writing-input" data-ans="수미는 가수보다 더 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
 </div>
 
 <div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
     <div class="answer-content">
-        <div class="ans-kr">이 사과는 한국에서 가장 큽니다. <button class="speak-btn" onclick="speakKorean('이 사과는 한국에서 가장 큽니다.')" title="Listen">🔊</button></div>
+        <div class="ans-kr">수미는 가수보다 더 노래를 잘합니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('수미는 가수보다 더 노래를 잘합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('수미는 가수보다 더 노래를 잘합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
     </div>
 </div>
 
 <div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
         <table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Range) + Predicate (Superlative)<br>한국어 어순: 주어 + 부사어(범위) + 서술어(최상급)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(비교) + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Comparison) + Object + Predicate (Verb)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
             </thead>
             <tbody>
-                <tr><td class="exp-en"><strong>This apple</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>이 사과는</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>is the biggest</strong></td><td class="exp-role">Predicate (Superlative)<br><small>서술어(최상급)</small></td><td class="exp-form"><strong>가장 큽니다</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>in Korea</strong></td><td class="exp-role">Adverbial (Range)<br><small>부사어(범위)</small></td><td class="exp-form"><strong>한국에서</strong></td><td></td></tr>
-            </tbody>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>Sumi</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>수미는</strong></td><td><strong>수미</strong> + <strong>는</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>than a singer</strong></td><td class="exp-role">부사어(비교)<br><small><span lang="en" translate="yes">Adverbial (Comparison)</span></small></td><td class="exp-form"><strong>가수보다</strong></td><td></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>sings better</strong></td><td class="exp-role">목적어 + 서술어(동사)<br><small><span lang="en" translate="yes">Object + Predicate (Verb)</span></small></td><td class="exp-form"><strong>더 노래를 잘합니다</strong></td><td></td></tr>
+        </tbody>
         </table>
         
     </div>
 </div>
 
-<h3>375) This apple is the biggest among the apples.</h3>
+<h3><span lang="en" translate="yes">379) Sumi sings the best in our class.</span></h3>
 
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
 <div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    the biggest = 가장 크다 &nbsp;|&nbsp; among = ~중에서 &nbsp;|&nbsp; apples = 사과들
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>가장</b><span class="gloss" lang="en" translate="yes">the best</span></span>
+        <span class="v-item"><b>~에서</b><span class="gloss" lang="en" translate="yes">in</span></span>
+        <span class="v-item"><b>우리 반</b><span class="gloss" lang="en" translate="yes">our class</span></span>
+    </div>
 </div>
 
 <div class="single-wt">
-    <textarea class="writing-input" data-ans="이 사과는 사과들 중에서 가장 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+    <textarea translate="yes" class="writing-input" data-ans="수미는 우리 반에서 가장 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
 </div>
 
 <div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
     <div class="answer-content">
-        <div class="ans-kr">이 사과는 사과들 중에서 가장 큽니다. <button class="speak-btn" onclick="speakKorean('이 사과는 사과들 중에서 가장 큽니다.')" title="Listen">🔊</button></div>
+        <div class="ans-kr">수미는 우리 반에서 가장 노래를 잘합니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('수미는 우리 반에서 가장 노래를 잘합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('수미는 우리 반에서 가장 노래를 잘합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
     </div>
 </div>
 
 <div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
         <table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Range) + Predicate (Superlative)<br>한국어 어순: 주어 + 부사어(범위) + 서술어(최상급)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(범위) + 목적어 + 서술어(최상급)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Range) + Object + Predicate (Superlative)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
             </thead>
             <tbody>
-                <tr><td class="exp-en"><strong>This apple</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>이 사과는</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>is the biggest</strong></td><td class="exp-role">Predicate (Superlative)<br><small>서술어(최상급)</small></td><td class="exp-form"><strong>가장 큽니다</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>among the apples</strong></td><td class="exp-role">Adverbial (Range)<br><small>부사어(범위)</small></td><td class="exp-form"><strong>사과들 중에서</strong></td><td></td></tr>
-            </tbody>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>Sumi</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>수미는</strong></td><td><strong>수미</strong> + <strong>는</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>in our class</strong></td><td class="exp-role">부사어(범위)<br><small><span lang="en" translate="yes">Adverbial (Range)</span></small></td><td class="exp-form"><strong>우리 반에서</strong></td><td></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>sings the best</strong></td><td class="exp-role">목적어 + 서술어(최상급)<br><small><span lang="en" translate="yes">Object + Predicate (Superlative)</span></small></td><td class="exp-form"><strong>가장 노래를 잘합니다</strong></td><td></td></tr>
+        </tbody>
         </table>
         
     </div>
 </div>
 
-<h3>376) Sumi sings well.</h3>
+<h3><span lang="en" translate="yes">380) Sumi sings the best among the students.</span></h3>
 
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
 <div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    sing = 노래를 하다 &nbsp;|&nbsp; well = 잘
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>가장</b><span class="gloss" lang="en" translate="yes">the best</span></span>
+        <span class="v-item"><b>~중에서</b><span class="gloss" lang="en" translate="yes">among</span></span>
+        <span class="v-item"><b>학생들</b><span class="gloss" lang="en" translate="yes">students</span></span>
+    </div>
 </div>
 
 <div class="single-wt">
-    <textarea class="writing-input" data-ans="수미는 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+    <textarea translate="yes" class="writing-input" data-ans="수미는 학생들 중에서 가장 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
 </div>
 
 <div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
     <div class="answer-content">
-        <div class="ans-kr">수미는 노래를 잘합니다. <button class="speak-btn" onclick="speakKorean('수미는 노래를 잘합니다.')" title="Listen">🔊</button></div>
+        <div class="ans-kr">수미는 학생들 중에서 가장 노래를 잘합니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('수미는 학생들 중에서 가장 노래를 잘합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('수미는 학생들 중에서 가장 노래를 잘합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
     </div>
 </div>
 
 <div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
         <table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Object + Predicate (Verb)<br>한국어 어순: 주어 + 목적어 + 서술어(동사)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(범위) + 목적어 + 서술어(최상급)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Range) + Object + Predicate (Superlative)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
             </thead>
             <tbody>
-                <tr><td class="exp-en"><strong>Sumi</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>수미는</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>sings well</strong></td><td class="exp-role">Object + Predicate (Verb)<br><small>목적어 + 서술어(동사)</small></td><td class="exp-form"><strong>노래를 잘합니다</strong></td><td><strong>노래를 잘하다</strong> = <strong>sing well</strong> (idiom)</td></tr>
-            </tbody>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>Sumi</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>수미는</strong></td><td><strong>수미</strong> + <strong>는</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>among the students</strong></td><td class="exp-role">부사어(범위)<br><small><span lang="en" translate="yes">Adverbial (Range)</span></small></td><td class="exp-form"><strong>학생들 중에서</strong></td><td></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>sings the best</strong></td><td class="exp-role">목적어 + 서술어(최상급)<br><small><span lang="en" translate="yes">Object + Predicate (Superlative)</span></small></td><td class="exp-form"><strong>가장 노래를 잘합니다</strong></td><td></td></tr>
+        </tbody>
         </table>
         
     </div>
 </div>
 
-<h3>377) Sumi sings well like a singer.</h3>
+<h3><span lang="en" translate="yes">381) Today is colder than yesterday.</span></h3>
 
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
 <div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    like = ~처럼 &nbsp;|&nbsp; singer = 가수
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>오늘</b><span class="gloss" lang="en" translate="yes">today</span></span>
+        <span class="v-item"><b>춥다</b><span class="gloss" lang="en" translate="yes">to be cold</span></span>
+        <span class="v-item"><b>~보다 더</b><span class="gloss" lang="en" translate="yes">than</span></span>
+        <span class="v-item"><b>어제</b><span class="gloss" lang="en" translate="yes">yesterday</span></span>
+    </div>
 </div>
 
 <div class="single-wt">
-    <textarea class="writing-input" data-ans="수미는 가수처럼 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+    <textarea translate="yes" class="writing-input" data-ans="오늘은 어제보다 더 춥습니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
 </div>
 
 <div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
     <div class="answer-content">
-        <div class="ans-kr">수미는 가수처럼 노래를 잘합니다. <button class="speak-btn" onclick="speakKorean('수미는 가수처럼 노래를 잘합니다.')" title="Listen">🔊</button></div>
+        <div class="ans-kr">오늘은 어제보다 더 춥습니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('오늘은 어제보다 더 춥습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('오늘은 어제보다 더 춥습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
     </div>
 </div>
 
 <div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
         <table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Comparison) + Object + Predicate (Verb)<br>한국어 어순: 주어 + 부사어(비교) + 목적어 + 서술어(동사)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(비교) + 서술어(형용사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Comparison) + Predicate (Adjective)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
             </thead>
             <tbody>
-                <tr><td class="exp-en"><strong>Sumi</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>수미는</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>sings well</strong></td><td class="exp-role">Object + Predicate (Verb)<br><small>목적어 + 서술어(동사)</small></td><td class="exp-form"><strong>노래를 잘합니다</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>like a singer</strong></td><td class="exp-role">Adverbial (Comparison)<br><small>부사어(비교)</small></td><td class="exp-form"><strong>가수처럼</strong></td><td></td></tr>
-            </tbody>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>Today</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>오늘은</strong></td><td><strong>오늘</strong> + <strong>은</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>than yesterday</strong></td><td class="exp-role">부사어(비교)<br><small><span lang="en" translate="yes">Adverbial (Comparison)</span></small></td><td class="exp-form"><strong>어제보다</strong></td><td></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>is colder</strong></td><td class="exp-role">서술어(형용사)<br><small><span lang="en" translate="yes">Predicate (Adjective)</span></small></td><td class="exp-form"><strong>더 춥습니다</strong></td><td></td></tr>
+        </tbody>
         </table>
         
     </div>
 </div>
 
-<h3>378) Sumi sings better than a singer.</h3>
+<h3><span lang="en" translate="yes">382) I like fall more than spring.</span></h3>
 
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
 <div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    better than = ~보다 더
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>좋아하다</b><span class="gloss" lang="en" translate="yes">like</span></span>
+        <span class="v-item"><b>가을</b><span class="gloss" lang="en" translate="yes">fall</span></span>
+        <span class="v-item"><b>~보다 더</b><span class="gloss" lang="en" translate="yes">more than</span></span>
+        <span class="v-item"><b>봄</b><span class="gloss" lang="en" translate="yes">spring</span></span>
+    </div>
 </div>
 
 <div class="single-wt">
-    <textarea class="writing-input" data-ans="수미는 가수보다 더 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+    <textarea translate="yes" class="writing-input" data-ans="저는 봄보다 가을을 더 좋아합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
 </div>
 
 <div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
     <div class="answer-content">
-        <div class="ans-kr">수미는 가수보다 더 노래를 잘합니다. <button class="speak-btn" onclick="speakKorean('수미는 가수보다 더 노래를 잘합니다.')" title="Listen">🔊</button></div>
+        <div class="ans-kr">저는 봄보다 가을을 더 좋아합니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('저는 봄보다 가을을 더 좋아합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('저는 봄보다 가을을 더 좋아합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
     </div>
 </div>
 
 <div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
         <table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Comparison) + Object + Predicate (Verb)<br>한국어 어순: 주어 + 부사어(비교) + 목적어 + 서술어(동사)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(비교) + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Comparison) + Object + Predicate (Verb)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
             </thead>
             <tbody>
-                <tr><td class="exp-en"><strong>Sumi</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>수미는</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>sings better</strong></td><td class="exp-role">Object + Predicate (Verb)<br><small>목적어 + 서술어(동사)</small></td><td class="exp-form"><strong>더 노래를 잘합니다</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>than a singer</strong></td><td class="exp-role">Adverbial (Comparison)<br><small>부사어(비교)</small></td><td class="exp-form"><strong>가수보다</strong></td><td></td></tr>
-            </tbody>
+                <tr><td class="exp-en"><strong>I</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>저는</strong></td><td><strong>저</strong> + <strong>는</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>more than spring</strong></td><td class="exp-role">부사어(비교)<br><small><span lang="en" translate="yes">Adverbial (Comparison)</span></small></td><td class="exp-form"><strong>봄보다</strong></td><td></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>fall</strong></td><td class="exp-role">목적어<br><small><span lang="en" translate="yes">Object</span></small></td><td class="exp-form"><strong>가을을</strong></td><td></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>like</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>더 좋아합니다</strong></td><td></td></tr>
+        </tbody>
         </table>
         
     </div>
 </div>
 
-<h3>379) Sumi sings the best in our class.</h3>
+<h3><span lang="en" translate="yes">383) Mother's love is higher than the sky and deeper than the sea.</span></h3>
 
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
 <div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    the best = 가장 &nbsp;|&nbsp; in = ~에서 &nbsp;|&nbsp; our class = 우리 반
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>어머니</b><span class="gloss" lang="en" translate="yes">mother</span></span>
+        <span class="v-item"><b>사랑</b><span class="gloss" lang="en" translate="yes">love</span></span>
+        <span class="v-item"><b>높다</b><span class="gloss" lang="en" translate="yes">to be high</span></span>
+        <span class="v-item"><b>하늘</b><span class="gloss" lang="en" translate="yes">sky</span></span>
+        <span class="v-item"><b>깊다</b><span class="gloss" lang="en" translate="yes">to be deep</span></span>
+        <span class="v-item"><b>바다</b><span class="gloss" lang="en" translate="yes">sea</span></span>
+    </div>
 </div>
 
 <div class="single-wt">
-    <textarea class="writing-input" data-ans="수미는 우리 반에서 가장 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+    <textarea translate="yes" class="writing-input" data-ans="어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
 </div>
 
 <div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
     <div class="answer-content">
-        <div class="ans-kr">수미는 우리 반에서 가장 노래를 잘합니다. <button class="speak-btn" onclick="speakKorean('수미는 우리 반에서 가장 노래를 잘합니다.')" title="Listen">🔊</button></div>
+        <div class="ans-kr">어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
     </div>
 </div>
 
 <div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
         <table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Range) + Object + Predicate (Superlative)<br>한국어 어순: 주어 + 부사어(범위) + 목적어 + 서술어(최상급)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(비교) + 서술어(형용사) + 부사어(비교) + 서술어(형용사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Comparison) + Predicate (Adjective) + Adverbial (Comparison) + Predicate (Adjective)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
             </thead>
             <tbody>
-                <tr><td class="exp-en"><strong>Sumi</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>수미는</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>sings the best</strong></td><td class="exp-role">Object + Predicate (Superlative)<br><small>목적어 + 서술어(최상급)</small></td><td class="exp-form"><strong>가장 노래를 잘합니다</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>in our class</strong></td><td class="exp-role">Adverbial (Range)<br><small>부사어(범위)</small></td><td class="exp-form"><strong>우리 반에서</strong></td><td></td></tr>
-            </tbody>
-        </table>
-        
-    </div>
-</div>
-
-<h3>380) Sumi sings the best among the students.</h3>
-
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
-<div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    the best = 가장 &nbsp;|&nbsp; among = ~중에서 &nbsp;|&nbsp; students = 학생들
-</div>
-
-<div class="single-wt">
-    <textarea class="writing-input" data-ans="수미는 학생들 중에서 가장 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
-</div>
-
-<div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
-    <div class="answer-content">
-        <div class="ans-kr">수미는 학생들 중에서 가장 노래를 잘합니다. <button class="speak-btn" onclick="speakKorean('수미는 학생들 중에서 가장 노래를 잘합니다.')" title="Listen">🔊</button></div>
-    </div>
-</div>
-
-<div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
-    <div class="explain-content">
-        <table class="exp-table">
-            <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
-            <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Range) + Object + Predicate (Superlative)<br>한국어 어순: 주어 + 부사어(범위) + 목적어 + 서술어(최상급)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
-            </thead>
-            <tbody>
-                <tr><td class="exp-en"><strong>Sumi</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>수미는</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>sings the best</strong></td><td class="exp-role">Object + Predicate (Superlative)<br><small>목적어 + 서술어(최상급)</small></td><td class="exp-form"><strong>가장 노래를 잘합니다</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>among the students</strong></td><td class="exp-role">Adverbial (Range)<br><small>부사어(범위)</small></td><td class="exp-form"><strong>학생들 중에서</strong></td><td></td></tr>
-            </tbody>
-        </table>
-        
-    </div>
-</div>
-
-<h3>381) Today is colder than yesterday.</h3>
-
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
-<div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    today = 오늘 &nbsp;|&nbsp; cold = 춥다 &nbsp;|&nbsp; than = ~보다 더 &nbsp;|&nbsp; yesterday = 어제
-</div>
-
-<div class="single-wt">
-    <textarea class="writing-input" data-ans="오늘은 어제보다 더 춥습니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
-</div>
-
-<div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
-    <div class="answer-content">
-        <div class="ans-kr">오늘은 어제보다 더 춥습니다. <button class="speak-btn" onclick="speakKorean('오늘은 어제보다 더 춥습니다.')" title="Listen">🔊</button></div>
-    </div>
-</div>
-
-<div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
-    <div class="explain-content">
-        <table class="exp-table">
-            <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
-            <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Comparison) + Predicate (Adjective)<br>한국어 어순: 주어 + 부사어(비교) + 서술어(형용사)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
-            </thead>
-            <tbody>
-                <tr><td class="exp-en"><strong>Today</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>오늘은</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>is colder</strong></td><td class="exp-role">Predicate (Adjective)<br><small>서술어(형용사)</small></td><td class="exp-form"><strong>더 춥습니다</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>than yesterday</strong></td><td class="exp-role">Adverbial (Comparison)<br><small>부사어(비교)</small></td><td class="exp-form"><strong>어제보다</strong></td><td></td></tr>
-            </tbody>
-        </table>
-        
-    </div>
-</div>
-
-<h3>382) I like fall more than spring.</h3>
-
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
-<div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    like = 좋아하다 &nbsp;|&nbsp; fall = 가을 &nbsp;|&nbsp; more than = ~보다 더 &nbsp;|&nbsp; spring = 봄
-</div>
-
-<div class="single-wt">
-    <textarea class="writing-input" data-ans="저는 봄보다 가을을 더 좋아합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
-</div>
-
-<div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
-    <div class="answer-content">
-        <div class="ans-kr">저는 봄보다 가을을 더 좋아합니다. <button class="speak-btn" onclick="speakKorean('저는 봄보다 가을을 더 좋아합니다.')" title="Listen">🔊</button></div>
-    </div>
-</div>
-
-<div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
-    <div class="explain-content">
-        <table class="exp-table">
-            <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
-            <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Comparison) + Object + Predicate (Verb)<br>한국어 어순: 주어 + 부사어(비교) + 목적어 + 서술어(동사)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
-            </thead>
-            <tbody>
-                <tr><td class="exp-en"><strong>I</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>저는</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>like</strong></td><td class="exp-role">Predicate (Verb)<br><small>서술어(동사)</small></td><td class="exp-form"><strong>더 좋아합니다</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>fall</strong></td><td class="exp-role">Object<br><small>목적어</small></td><td class="exp-form"><strong>가을을</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>more than spring</strong></td><td class="exp-role">Adverbial (Comparison)<br><small>부사어(비교)</small></td><td class="exp-form"><strong>봄보다</strong></td><td></td></tr>
-            </tbody>
-        </table>
-        
-    </div>
-</div>
-
-<h3>383) Mother's love is higher than the sky and deeper than the sea.</h3>
-
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
-<div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    mother = 어머니 &nbsp;|&nbsp; love = 사랑 &nbsp;|&nbsp; high = 높다 &nbsp;|&nbsp; sky = 하늘 &nbsp;|&nbsp; deep = 깊다 &nbsp;|&nbsp; sea = 바다
-</div>
-
-<div class="single-wt">
-    <textarea class="writing-input" data-ans="어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
-</div>
-
-<div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
-    <div class="answer-content">
-        <div class="ans-kr">어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다. <button class="speak-btn" onclick="speakKorean('어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다.')" title="Listen">🔊</button></div>
-    </div>
-</div>
-
-<div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
-    <div class="explain-content">
-        <table class="exp-table">
-            <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
-            <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Comparison) + Predicate (Adjective) + Adverbial (Comparison) + Predicate (Adjective)<br>한국어 어순: 주어 + 부사어(비교) + 서술어(형용사) + 부사어(비교) + 서술어(형용사)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
-            </thead>
-            <tbody>
-                <tr><td class="exp-en"><strong>Mother's love</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>어머니의 사랑은</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>is higher than the sky</strong></td><td class="exp-role">Adverbial (Comparison) + Predicate (Adjective)<br><small>부사어(비교) + 서술어(형용사)</small></td><td class="exp-form"><strong>하늘보다 더 높고</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>and deeper than the sea</strong></td><td class="exp-role">Adverbial (Comparison) + Predicate (Adjective)<br><small>부사어(비교) + 서술어(형용사)</small></td><td class="exp-form"><strong>바다보다 더 깊습니다</strong></td><td></td></tr>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>Mother's love</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>어머니의 사랑은</strong></td><td><strong>어머니의사랑</strong> + <strong>은</strong></td></tr>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>is higher than the sky</strong></td><td class="exp-role">부사어(비교) + 서술어(형용사)<br><small><span lang="en" translate="yes">Adverbial (Comparison) + Predicate (Adjective)</span></small></td><td class="exp-form"><strong>하늘보다 더 높고</strong></td><td></td></tr>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>and deeper than the sea</strong></td><td class="exp-role">부사어(비교) + 서술어(형용사)<br><small><span lang="en" translate="yes">Adverbial (Comparison) + Predicate (Adjective)</span></small></td><td class="exp-form"><strong>바다보다 더 깊습니다</strong></td><td></td></tr>
             </tbody>
         </table>
         
@@ -928,150 +1004,150 @@
 
 <hr>
 
-<h2>1. Read Along</h2>
+<h2><span lang="en" translate="yes">1. Read Along</span></h2>
 <p class="subtitle">따라 읽기</p>
 
 <div class="sentence-list">
     <div class="sentence-item" onclick="speakKorean('이 사과는 큽니다.')"><div class="sentence-num">370</div>
         <div class="sentence-text">
-            <div class="sentence-en">This apple is big.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">This apple is big.</span></div>
             <div class="sentence-kr">이 사과는 큽니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('이 사과는 큽니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('이 사과는 큽니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('이 사과는 큽니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('이 사과는 수박처럼 큽니다.')"><div class="sentence-num">371</div>
         <div class="sentence-text">
-            <div class="sentence-en">This apple is as big as a watermelon.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">This apple is as big as a watermelon.</span></div>
             <div class="sentence-kr">이 사과는 수박처럼 큽니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('이 사과는 수박처럼 큽니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('이 사과는 수박처럼 큽니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('이 사과는 수박처럼 큽니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('이 사과는 수박보다 더 큽니다.')"><div class="sentence-num">372</div>
         <div class="sentence-text">
-            <div class="sentence-en">This apple is bigger than a watermelon.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">This apple is bigger than a watermelon.</span></div>
             <div class="sentence-kr">이 사과는 수박보다 더 큽니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('이 사과는 수박보다 더 큽니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('이 사과는 수박보다 더 큽니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('이 사과는 수박보다 더 큽니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('이 사과는 수박보다 덜 큽니다.')"><div class="sentence-num">373</div>
         <div class="sentence-text">
-            <div class="sentence-en">This apple is less big than a watermelon.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">This apple is less big than a watermelon.</span></div>
             <div class="sentence-kr">이 사과는 수박보다 덜 큽니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('이 사과는 수박보다 덜 큽니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('이 사과는 수박보다 덜 큽니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('이 사과는 수박보다 덜 큽니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('이 사과는 한국에서 가장 큽니다.')"><div class="sentence-num">374</div>
         <div class="sentence-text">
-            <div class="sentence-en">This apple is the biggest in Korea.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">This apple is the biggest in Korea.</span></div>
             <div class="sentence-kr">이 사과는 한국에서 가장 큽니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('이 사과는 한국에서 가장 큽니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('이 사과는 한국에서 가장 큽니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('이 사과는 한국에서 가장 큽니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('이 사과는 사과들 중에서 가장 큽니다.')"><div class="sentence-num">375</div>
         <div class="sentence-text">
-            <div class="sentence-en">This apple is the biggest among the apples.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">This apple is the biggest among the apples.</span></div>
             <div class="sentence-kr">이 사과는 사과들 중에서 가장 큽니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('이 사과는 사과들 중에서 가장 큽니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('이 사과는 사과들 중에서 가장 큽니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('이 사과는 사과들 중에서 가장 큽니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('수미는 노래를 잘합니다.')"><div class="sentence-num">376</div>
         <div class="sentence-text">
-            <div class="sentence-en">Sumi sings well.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">Sumi sings well.</span></div>
             <div class="sentence-kr">수미는 노래를 잘합니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('수미는 노래를 잘합니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('수미는 노래를 잘합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('수미는 노래를 잘합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('수미는 가수처럼 노래를 잘합니다.')"><div class="sentence-num">377</div>
         <div class="sentence-text">
-            <div class="sentence-en">Sumi sings well like a singer.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">Sumi sings well like a singer.</span></div>
             <div class="sentence-kr">수미는 가수처럼 노래를 잘합니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('수미는 가수처럼 노래를 잘합니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('수미는 가수처럼 노래를 잘합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('수미는 가수처럼 노래를 잘합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('수미는 가수보다 더 노래를 잘합니다.')"><div class="sentence-num">378</div>
         <div class="sentence-text">
-            <div class="sentence-en">Sumi sings better than a singer.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">Sumi sings better than a singer.</span></div>
             <div class="sentence-kr">수미는 가수보다 더 노래를 잘합니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('수미는 가수보다 더 노래를 잘합니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('수미는 가수보다 더 노래를 잘합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('수미는 가수보다 더 노래를 잘합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('수미는 우리 반에서 가장 노래를 잘합니다.')"><div class="sentence-num">379</div>
         <div class="sentence-text">
-            <div class="sentence-en">Sumi sings the best in our class.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">Sumi sings the best in our class.</span></div>
             <div class="sentence-kr">수미는 우리 반에서 가장 노래를 잘합니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('수미는 우리 반에서 가장 노래를 잘합니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('수미는 우리 반에서 가장 노래를 잘합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('수미는 우리 반에서 가장 노래를 잘합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('수미는 학생들 중에서 가장 노래를 잘합니다.')"><div class="sentence-num">380</div>
         <div class="sentence-text">
-            <div class="sentence-en">Sumi sings the best among the students.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">Sumi sings the best among the students.</span></div>
             <div class="sentence-kr">수미는 학생들 중에서 가장 노래를 잘합니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('수미는 학생들 중에서 가장 노래를 잘합니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('수미는 학생들 중에서 가장 노래를 잘합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('수미는 학생들 중에서 가장 노래를 잘합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('오늘은 어제보다 더 춥습니다.')"><div class="sentence-num">381</div>
         <div class="sentence-text">
-            <div class="sentence-en">Today is colder than yesterday.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">Today is colder than yesterday.</span></div>
             <div class="sentence-kr">오늘은 어제보다 더 춥습니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('오늘은 어제보다 더 춥습니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('오늘은 어제보다 더 춥습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('오늘은 어제보다 더 춥습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('저는 봄보다 가을을 더 좋아합니다.')"><div class="sentence-num">382</div>
         <div class="sentence-text">
-            <div class="sentence-en">I like fall more than spring.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">I like fall more than spring.</span></div>
             <div class="sentence-kr">저는 봄보다 가을을 더 좋아합니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('저는 봄보다 가을을 더 좋아합니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('저는 봄보다 가을을 더 좋아합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('저는 봄보다 가을을 더 좋아합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다.')"><div class="sentence-num">383</div>
         <div class="sentence-text">
-            <div class="sentence-en">Mother's love is higher than the sky and deeper than the sea.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">Mother's love is higher than the sky and deeper than the sea.</span></div>
             <div class="sentence-kr">어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
 </div>
 
 <hr>
 
-<h2>2. Look &amp; Speak</h2>
+<h2><span lang="en" translate="yes">2. Look &amp; Speak</span></h2>
 <p class="subtitle">카드를 보고 한국어로 말하기</p>
 
 <div class="flashcard-grid look-speak">
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">370 · EN</div><div class="flashcard-text">This apple is big.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">370 · KR</div><div class="flashcard-text">이 사과는 큽니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('이 사과는 큽니다.')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">371 · EN</div><div class="flashcard-text">This apple is as big as a watermelon.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">371 · KR</div><div class="flashcard-text">이 사과는 수박처럼 큽니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('이 사과는 수박처럼 큽니다.')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">372 · EN</div><div class="flashcard-text">This apple is bigger than a watermelon.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">372 · KR</div><div class="flashcard-text">이 사과는 수박보다 더 큽니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('이 사과는 수박보다 더 큽니다.')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">373 · EN</div><div class="flashcard-text">This apple is less big than a watermelon.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">373 · KR</div><div class="flashcard-text">이 사과는 수박보다 덜 큽니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('이 사과는 수박보다 덜 큽니다.')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">374 · EN</div><div class="flashcard-text">This apple is the biggest in Korea.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">374 · KR</div><div class="flashcard-text">이 사과는 한국에서 가장 큽니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('이 사과는 한국에서 가장 큽니다.')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">375 · EN</div><div class="flashcard-text">This apple is the biggest among the apples.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">375 · KR</div><div class="flashcard-text">이 사과는 사과들 중에서 가장 큽니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('이 사과는 사과들 중에서 가장 큽니다.')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">376 · EN</div><div class="flashcard-text">Sumi sings well.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">376 · KR</div><div class="flashcard-text">수미는 노래를 잘합니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('수미는 노래를 잘합니다.')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">377 · EN</div><div class="flashcard-text">Sumi sings well like a singer.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">377 · KR</div><div class="flashcard-text">수미는 가수처럼 노래를 잘합니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('수미는 가수처럼 노래를 잘합니다.')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">378 · EN</div><div class="flashcard-text">Sumi sings better than a singer.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">378 · KR</div><div class="flashcard-text">수미는 가수보다 더 노래를 잘합니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('수미는 가수보다 더 노래를 잘합니다.')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">379 · EN</div><div class="flashcard-text">Sumi sings the best in our class.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">379 · KR</div><div class="flashcard-text">수미는 우리 반에서 가장 노래를 잘합니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('수미는 우리 반에서 가장 노래를 잘합니다.')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">380 · EN</div><div class="flashcard-text">Sumi sings the best among the students.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">380 · KR</div><div class="flashcard-text">수미는 학생들 중에서 가장 노래를 잘합니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('수미는 학생들 중에서 가장 노래를 잘합니다.')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">381 · EN</div><div class="flashcard-text">Today is colder than yesterday.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">381 · KR</div><div class="flashcard-text">오늘은 어제보다 더 춥습니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('오늘은 어제보다 더 춥습니다.')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">382 · EN</div><div class="flashcard-text">I like fall more than spring.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">382 · KR</div><div class="flashcard-text">저는 봄보다 가을을 더 좋아합니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('저는 봄보다 가을을 더 좋아합니다.')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">383 · EN</div><div class="flashcard-text">Mother&#39;s love is higher than the sky and deeper than the sea.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">383 · KR</div><div class="flashcard-text">어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">370 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">This apple is big.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">370 · KR</span></div><div class="flashcard-text">이 사과는 큽니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('이 사과는 큽니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">371 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">This apple is as big as a watermelon.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">371 · KR</span></div><div class="flashcard-text">이 사과는 수박처럼 큽니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('이 사과는 수박처럼 큽니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">372 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">This apple is bigger than a watermelon.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">372 · KR</span></div><div class="flashcard-text">이 사과는 수박보다 더 큽니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('이 사과는 수박보다 더 큽니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">373 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">This apple is less big than a watermelon.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">373 · KR</span></div><div class="flashcard-text">이 사과는 수박보다 덜 큽니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('이 사과는 수박보다 덜 큽니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">374 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">This apple is the biggest in Korea.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">374 · KR</span></div><div class="flashcard-text">이 사과는 한국에서 가장 큽니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('이 사과는 한국에서 가장 큽니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">375 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">This apple is the biggest among the apples.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">375 · KR</span></div><div class="flashcard-text">이 사과는 사과들 중에서 가장 큽니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('이 사과는 사과들 중에서 가장 큽니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">376 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">Sumi sings well.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">376 · KR</span></div><div class="flashcard-text">수미는 노래를 잘합니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('수미는 노래를 잘합니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">377 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">Sumi sings well like a singer.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">377 · KR</span></div><div class="flashcard-text">수미는 가수처럼 노래를 잘합니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('수미는 가수처럼 노래를 잘합니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">378 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">Sumi sings better than a singer.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">378 · KR</span></div><div class="flashcard-text">수미는 가수보다 더 노래를 잘합니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('수미는 가수보다 더 노래를 잘합니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">379 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">Sumi sings the best in our class.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">379 · KR</span></div><div class="flashcard-text">수미는 우리 반에서 가장 노래를 잘합니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('수미는 우리 반에서 가장 노래를 잘합니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">380 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">Sumi sings the best among the students.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">380 · KR</span></div><div class="flashcard-text">수미는 학생들 중에서 가장 노래를 잘합니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('수미는 학생들 중에서 가장 노래를 잘합니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">381 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">Today is colder than yesterday.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">381 · KR</span></div><div class="flashcard-text">오늘은 어제보다 더 춥습니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('오늘은 어제보다 더 춥습니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">382 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">I like fall more than spring.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">382 · KR</span></div><div class="flashcard-text">저는 봄보다 가을을 더 좋아합니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('저는 봄보다 가을을 더 좋아합니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">383 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">Mother&#39;s love is higher than the sky and deeper than the sea.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">383 · KR</span></div><div class="flashcard-text">어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다.')" title="Listen">🔊</button></div></div></div>
 </div>
 
 <hr>
 
-<h2>3. Sentence Matching</h2>
+<h2><span lang="en" translate="yes">3. Sentence Matching</span></h2>
 <p class="subtitle">왼쪽 영어 문장과 오른쪽 한국어 문장을 짝 맞추기</p>
 
 <div class="em-game">
-    <div class="em-game-title">🔗 Sentence Matching · 영어-한국어 문장 맞추기</div>
-    <p class="em-game-desc">왼쪽 영어 문장을 클릭하고, 그 뜻에 맞는 오른쪽 한국어 문장을 클릭하세요. 짝이 맞으면 두 문장이 사라집니다. <span style="color:#94a3b8;">Click an English sentence, then its Korean match — both disappear when matched.</span></p>
+    <div class="em-game-title"><span lang="en" translate="yes">🔗 Sentence Matching ·</span> 영어-한국어 문장 맞추기</div>
+    <p class="em-game-desc">왼쪽 영어 문장을 클릭하고, 그 뜻에 맞는 오른쪽 한국어 문장을 클릭하세요. 짝이 맞으면 두 문장이 사라집니다. <span style="color:#94a3b8;"><span lang="en" translate="yes">Click an English sentence, then its Korean match — both disappear when matched.</span></span></p>
     <div class="em-toolbar">
         <span class="em-stat"><span class="em-stat-label">정답</span><span id="emCorrect" class="em-stat-num">0/14</span></span>
         <span class="em-stat"><span class="em-stat-label">오답</span><span id="emWrong" class="em-stat-num">0</span></span>
-        <button class="em-reset" onclick="emReset()">🔄 다시 시작</button>
+        <button class="em-reset" onclick="emReset()">🔄 다시 시작<span class="gloss" lang="en" translate="yes">Restart</span></button>
     </div>
     <div class="em-progress"><div id="emProgress" class="em-progress-bar"></div></div>
     <div id="emMessage" class="em-message"></div>
     <div class="em-columns" style="--em-rows: 14;">
-        <div class="em-col-header">English · 영어</div>
-        <div class="em-col-header">한국어 · Korean</div>
+        <div class="em-col-header"><span lang="en" translate="yes">English ·</span> 영어</div>
+        <div class="em-col-header">한국어<span class="gloss" lang="en" translate="yes">Korean</span></div>
         <div id="emEnglishList" class="em-list"></div>
         <div id="emKoreanList" class="em-list"></div>
     </div>
@@ -1079,57 +1155,137 @@
 
 <hr>
 
-<h2>4. Writing Test</h2>
+<h2><span lang="en" translate="yes">4. Writing Test</span></h2>
 <p class="subtitle">영어를 보고 한국어로 써 보세요</p>
 
 <div class="wt-toolbar">
-  <div class="wt-score" id="wtScoreBox">✓ 점수 · Score: <span class="wt-correct" id="wtCorrect">0</span> <span class="wt-total">/ 14</span><span class="wt-pct" id="wtPct"></span></div>
+  <div class="wt-score" id="wtScoreBox">✓ 점수 <span lang="en" translate="yes">· Score:</span> <span class="wt-correct" id="wtCorrect">0</span> <span class="wt-total">/ 14</span><span class="wt-pct" id="wtPct"></span></div>
   <div class="wt-btns">
-    <button class="wt-btn" onclick="wtReset()">🔄 초기화 (Reset)</button>
-    <button class="wt-btn grade" onclick="wtGrade()">✅ 채점</button>
-    <button class="wt-btn primary" onclick="wtReveal()">💡 정답</button>
+    <button class="wt-btn" onclick="wtReset()">🔄 초기화<span class="gloss" lang="en" translate="yes">Reset</span></button>
+    <button class="wt-btn grade" onclick="wtGrade()">✅ 채점<span class="gloss" lang="en" translate="yes">Grade</span></button>
+    <button class="wt-btn primary" onclick="wtReveal()">💡 정답<span class="gloss" lang="en" translate="yes">Answer</span></button>
   </div>
 </div>
 <div class="writing-practice">
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">370</span><span class="writing-en">This apple is big.</span><button class="speak-btn" onclick="speakKorean('이 사과는 큽니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="이 사과는 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">371</span><span class="writing-en">This apple is as big as a watermelon.</span><button class="speak-btn" onclick="speakKorean('이 사과는 수박처럼 큽니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="이 사과는 수박처럼 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">372</span><span class="writing-en">This apple is bigger than a watermelon.</span><button class="speak-btn" onclick="speakKorean('이 사과는 수박보다 더 큽니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="이 사과는 수박보다 더 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">373</span><span class="writing-en">This apple is less big than a watermelon.</span><button class="speak-btn" onclick="speakKorean('이 사과는 수박보다 덜 큽니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="이 사과는 수박보다 덜 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">374</span><span class="writing-en">This apple is the biggest in Korea.</span><button class="speak-btn" onclick="speakKorean('이 사과는 한국에서 가장 큽니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="이 사과는 한국에서 가장 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">375</span><span class="writing-en">This apple is the biggest among the apples.</span><button class="speak-btn" onclick="speakKorean('이 사과는 사과들 중에서 가장 큽니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="이 사과는 사과들 중에서 가장 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">376</span><span class="writing-en">Sumi sings well.</span><button class="speak-btn" onclick="speakKorean('수미는 노래를 잘합니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="수미는 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">377</span><span class="writing-en">Sumi sings well like a singer.</span><button class="speak-btn" onclick="speakKorean('수미는 가수처럼 노래를 잘합니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="수미는 가수처럼 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">378</span><span class="writing-en">Sumi sings better than a singer.</span><button class="speak-btn" onclick="speakKorean('수미는 가수보다 더 노래를 잘합니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="수미는 가수보다 더 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">379</span><span class="writing-en">Sumi sings the best in our class.</span><button class="speak-btn" onclick="speakKorean('수미는 우리 반에서 가장 노래를 잘합니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="수미는 우리 반에서 가장 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">380</span><span class="writing-en">Sumi sings the best among the students.</span><button class="speak-btn" onclick="speakKorean('수미는 학생들 중에서 가장 노래를 잘합니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="수미는 학생들 중에서 가장 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">381</span><span class="writing-en">Today is colder than yesterday.</span><button class="speak-btn" onclick="speakKorean('오늘은 어제보다 더 춥습니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="오늘은 어제보다 더 춥습니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">382</span><span class="writing-en">I like fall more than spring.</span><button class="speak-btn" onclick="speakKorean('저는 봄보다 가을을 더 좋아합니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="저는 봄보다 가을을 더 좋아합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">383</span><span class="writing-en">Mother's love is higher than the sky and deeper than the sea.</span><button class="speak-btn" onclick="speakKorean('어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">370</span><span class="writing-en"><span lang="en" translate="yes">This apple is big.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('이 사과는 큽니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('이 사과는 큽니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="이 사과는 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">371</span><span class="writing-en"><span lang="en" translate="yes">This apple is as big as a watermelon.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('이 사과는 수박처럼 큽니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('이 사과는 수박처럼 큽니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="이 사과는 수박처럼 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">372</span><span class="writing-en"><span lang="en" translate="yes">This apple is bigger than a watermelon.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('이 사과는 수박보다 더 큽니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('이 사과는 수박보다 더 큽니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="이 사과는 수박보다 더 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">373</span><span class="writing-en"><span lang="en" translate="yes">This apple is less big than a watermelon.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('이 사과는 수박보다 덜 큽니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('이 사과는 수박보다 덜 큽니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="이 사과는 수박보다 덜 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">374</span><span class="writing-en"><span lang="en" translate="yes">This apple is the biggest in Korea.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('이 사과는 한국에서 가장 큽니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('이 사과는 한국에서 가장 큽니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="이 사과는 한국에서 가장 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">375</span><span class="writing-en"><span lang="en" translate="yes">This apple is the biggest among the apples.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('이 사과는 사과들 중에서 가장 큽니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('이 사과는 사과들 중에서 가장 큽니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="이 사과는 사과들 중에서 가장 큽니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">376</span><span class="writing-en"><span lang="en" translate="yes">Sumi sings well.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('수미는 노래를 잘합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('수미는 노래를 잘합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="수미는 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">377</span><span class="writing-en"><span lang="en" translate="yes">Sumi sings well like a singer.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('수미는 가수처럼 노래를 잘합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('수미는 가수처럼 노래를 잘합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="수미는 가수처럼 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">378</span><span class="writing-en"><span lang="en" translate="yes">Sumi sings better than a singer.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('수미는 가수보다 더 노래를 잘합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('수미는 가수보다 더 노래를 잘합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="수미는 가수보다 더 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">379</span><span class="writing-en"><span lang="en" translate="yes">Sumi sings the best in our class.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('수미는 우리 반에서 가장 노래를 잘합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('수미는 우리 반에서 가장 노래를 잘합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="수미는 우리 반에서 가장 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">380</span><span class="writing-en"><span lang="en" translate="yes">Sumi sings the best among the students.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('수미는 학생들 중에서 가장 노래를 잘합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('수미는 학생들 중에서 가장 노래를 잘합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="수미는 학생들 중에서 가장 노래를 잘합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">381</span><span class="writing-en"><span lang="en" translate="yes">Today is colder than yesterday.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('오늘은 어제보다 더 춥습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('오늘은 어제보다 더 춥습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="오늘은 어제보다 더 춥습니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">382</span><span class="writing-en"><span lang="en" translate="yes">I like fall more than spring.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('저는 봄보다 가을을 더 좋아합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('저는 봄보다 가을을 더 좋아합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="저는 봄보다 가을을 더 좋아합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">383</span><span class="writing-en"><span lang="en" translate="yes">Mother's love is higher than the sky and deeper than the sea.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
 </div>
 
-<div class="footer"><p>Amazing Korean 1 — Other Grammar 1: Comparative / Superlative (기타 문법 1: 비교급 / 최상급)</p></div>
+<div class="footer"><p><span lang="en" translate="yes">Amazing Korean 1 — Other Grammar 1: Comparative / Superlative (</span>기타 문법 1: 비교급 / 최상급)</p></div>
 </div>
 
 <script>
-function speakKorean(text) {
-    if (!('speechSynthesis' in window)) return;
-    window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = 'ko-KR';
-    u.rate = 0.85;
-    u.pitch = 1.1;
-    const preferred = ['Yuna', 'SunHi', 'Heami', 'Google 한국의'];
-    const voices = window.speechSynthesis.getVoices();
-    const koVoices = voices.filter(v => v.lang.startsWith('ko'));
-    let picked = null;
-    for (const name of preferred) {
-        picked = koVoices.find(v => v.name.includes(name));
-        if (picked) break;
-    }
-    if (!picked && koVoices.length > 0) picked = koVoices[0];
-    if (picked) u.voice = picked;
-    window.speechSynthesis.speak(u);
+/* ak-audio v1 */
+/* 미리 구운 MP3 를 먼저 쓴다. 없거나 못 읽으면 브라우저 음성으로 넘어간다.
+   f = SunHi(여성) · m = Hyunsu(남성) — 둘 다 신경망 음성이다. */
+var AK_SND = {"이 사과는 큽니다.": "0373", "이 사과는 수박처럼 큽니다.": "0372", "이 사과는 수박보다 더 큽니다.": "0370", "이 사과는 수박보다 덜 큽니다.": "0371", "이 사과는 한국에서 가장 큽니다.": "0374", "이 사과는 사과들 중에서 가장 큽니다.": "0369", "수미는 노래를 잘합니다.": "0267", "수미는 가수처럼 노래를 잘합니다.": "0265", "수미는 가수보다 더 노래를 잘합니다.": "0264", "수미는 우리 반에서 가장 노래를 잘합니다.": "0275", "수미는 학생들 중에서 가장 노래를 잘합니다.": "0279", "오늘은 어제보다 더 춥습니다.": "0345", "저는 봄보다 가을을 더 좋아합니다.": "0444", "어머니의 사랑은 하늘보다 더 높고 바다보다 더 깊습니다.": "0312"};
+var AK_AU = null;
+function akPlayFile(text, sex){
+  var n = AK_SND[text];
+  if (!n) return false;
+  try {
+    if (window.speechSynthesis) window.speechSynthesis.cancel();  /* 읽던 것 끊기 */
+    if (AK_AU){ AK_AU.pause(); AK_AU.currentTime = 0; }
+    AK_AU = new Audio(encodeURI('_소리/' + (sex === 'm' ? 'm' : 'f') + '/' + n + '.mp3'));
+    AK_AU.onerror = function(){ akSpeakTTS(text, sex); };
+    var p = AK_AU.play();
+    if (p && p.catch) p.catch(function(){ akSpeakTTS(text, sex); });
+    return true;
+  } catch(e){ return false; }
 }
+/* ak-voice v3 */
+/* 한국어 음성 — 자연(Natural) 음성을 먼저 고른다. 여성·남성은 문장 옆 단추로 그때그때 고른다. */
+var AK_SEX = (function(){ try { return localStorage.getItem('akVoiceSex') || 'f'; } catch(e){ return 'f'; } })();
+var AK_M = /(InJoon|In-Joon|BongJin|Bong-Jin|GookMin|Gook-Min|Hyunsu|Hyun-su|Minsik|Jinho|Male|남성|남자)/i;
+var AK_F = /(SunHi|Sun-Hi|Heami|Yuna|JiMin|Ji-Min|SeoHyeon|Seo-Hyeon|SoonBok|Soon-Bok|YuJin|Yu-Jin|Kyuri|Seoyeon|Sora|한국의|Female|여성|여자)/i;
+function akKoVoices(){
+  var vs = (window.speechSynthesis && window.speechSynthesis.getVoices()) || [];
+  return vs.filter(function(v){ return /^ko/i.test(v.lang || ''); });
+}
+function akScore(v){
+  var n = v.name || '', s;
+  if (/natural/i.test(n)) s = 60;
+  else if (/neural|premium|enhanced/i.test(n)) s = 50;
+  else if (/google/i.test(n)) s = 40;
+  else if (!v.localService) s = 30;
+  else s = 10;
+  if (/heami/i.test(n)) s -= 5;
+  return s;
+}
+function akPick(sex){
+  var ko = akKoVoices();
+  if (!ko.length) return null;
+  var want = (sex === 'm') ? AK_M : AK_F;
+  var hit = ko.filter(function(v){ return want.test(v.name || ''); });
+  if (!hit.length){
+    if (sex === 'm') return null;   /* 남성이 없으면 여성으로 몰래 바꾸지 않는다 */
+    hit = ko;
+  }
+  hit = hit.slice().sort(function(a, b){ return akScore(b) - akScore(a); });
+  return hit[0];
+}
+function akNotice(){
+  var d = document.getElementById('akNotice');
+  if (!d) return;
+  d.classList.add('on');
+  clearTimeout(d._t);
+  d._t = setTimeout(function(){ d.classList.remove('on'); }, 4500);
+}
+function speakKorean(text, sex){
+  sex = sex || AK_SEX;
+  AK_SEX = sex;
+  try { localStorage.setItem('akVoiceSex', sex); } catch(e){}
+  if (akPlayFile(text, sex)) return;      /* 구워 둔 음원이 있으면 그것으로 */
+  akSpeakTTS(text, sex);
+}
+function akSpeakTTS(text, sex){
+  if (!('speechSynthesis' in window)) return;
+  sex = sex || AK_SEX;
+  var v = akPick(sex), low = false;
+  if (sex === 'm' && !v){ v = akPick('f'); low = true; akNotice(); }
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(text);
+  u.lang = (v && v.lang) || 'ko-KR';
+  u.rate = low ? 0.90 : 0.92;
+  u.pitch = low ? 0.6 : 1.0;   /* 진짜 남성 음성이 없을 때만 목소리를 낮춘다 */
+  if (v) u.voice = v;
+  /* cancel() 바로 뒤에 speak() 하면 브라우저가 고른 음성을 버리고
+     기본 음성(대개 여성)으로 읽어 버린다. 한 박자 늦춘다. */
+  setTimeout(function(){ window.speechSynthesis.speak(u); }, 60);
+}
+function akVoiceInit(){
+  var ko = akKoVoices();
+  if (!ko.length) return;
+  var m = akPick('m'), f = akPick('f');
+  var bs = document.querySelectorAll('.spk-m');
+  var hasFile = false; for (var kk in AK_SND){ hasFile = true; break; }
+  for (var i = 0; i < bs.length; i++){
+    if (hasFile){ bs[i].classList.remove('spk-off'); bs[i].title = '남성 음성 · Hyunsu (구워 둔 음원)'; }
+    else if (m){ bs[i].classList.remove('spk-off'); bs[i].title = '남성 음성 · ' + m.name; }
+    else { bs[i].classList.add('spk-off'); bs[i].title = '이 브라우저에는 한국어 남성 음성이 없어 목소리를 낮춰 읽습니다. Microsoft Edge 에서 진짜 남성 음성(InJoon)이 나옵니다.'; }
+  }
+  if (f){
+    var fs = document.querySelectorAll('.spk-f');
+    for (var j = 0; j < fs.length; j++) fs[j].title = '여성 음성 · ' + f.name;
+  }
+}
+if (window.speechSynthesis){
+  try { window.speechSynthesis.addEventListener('voiceschanged', akVoiceInit); } catch(e){}
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', akVoiceInit);
+else akVoiceInit();
 if ('speechSynthesis' in window) {
     window.speechSynthesis.onvoiceschanged = function(){};
     window.speechSynthesis.getVoices();
@@ -1392,16 +1548,17 @@ function celebrateRestart(){
     <div class="celebrate-card" onclick="event.stopPropagation()">
         <span class="celebrate-emoji">🎉</span>
         <h3 class="celebrate-title" id="celebrateTitle">완료!</h3>
-        <p class="celebrate-subtitle" id="celebrateSubtitle">모든 짝을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All matched!</span></p>
+        <p class="celebrate-subtitle" id="celebrateSubtitle">모든 짝을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;"><span lang="en" translate="yes">All matched!</span></span></p>
         <div class="celebrate-stats">
-            <div class="celebrate-stat"><strong id="celebrateCorrect">0</strong><span>정답 · Correct</span></div>
-            <div class="celebrate-stat"><strong id="celebrateWrong">0</strong><span>오답 · Wrong</span></div>
+            <div class="celebrate-stat"><strong id="celebrateCorrect">0</strong><span>정답<span class="gloss" lang="en" translate="yes">Correct</span></span></div>
+            <div class="celebrate-stat"><strong id="celebrateWrong">0</strong><span>오답<span class="gloss" lang="en" translate="yes">Wrong</span></span></div>
         </div>
         <div class="celebrate-actions">
-            <button class="celebrate-btn" onclick="celebrateRestart()">🔄 다시 시작</button>
-            <button class="celebrate-btn secondary" onclick="celebrateClose()">닫기</button>
+            <button class="celebrate-btn" onclick="celebrateRestart()">🔄 다시 시작<span class="gloss" lang="en" translate="yes">Restart</span></button>
+            <button class="celebrate-btn secondary" onclick="celebrateClose()">닫기<span class="gloss" lang="en" translate="yes">Close</span></button>
         </div>
     </div>
 </div>
+<div class="ak-notice" id="akNotice">이 브라우저에는 한국어 남성 음성이 없어 <b>목소리를 낮춰</b> 읽습니다. 진짜 남성 음성은 Microsoft Edge 에서 나옵니다.<span class="gloss" lang="en" translate="yes">This browser has no Korean male voice, so the female voice is pitched down. Open the page in Microsoft Edge for a real male voice.</span></div>
 </body>
 </html>

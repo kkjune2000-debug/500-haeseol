@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazing Korean 1 - 부록 7: 기초 문법 연습 4 (Basic Grammar Practice 4)</title>
+    <title translate="yes">Amazing Korean 1 — 부록 7: 기초 문법 연습 4 (Basic Grammar Practice 4)</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -377,6 +377,8 @@
         .gstep-table td, .gstep-table th { word-break: keep-all; overflow-wrap: break-word; }
         .exp-table td, .exp-table th { word-break: keep-all; overflow-wrap: break-word; }
 
+.gloss{text-transform:none;display:block;font-weight:600;font-size:0.86em;opacity:0.72;letter-spacing:0;margin-top:1px;}
+button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 </style>
 </head>
 <body>
@@ -384,8 +386,8 @@
 
 <header class="title-block predicate">
     <div class="title-en">
-        <h1 class="title-main">Basic Grammar Practice 4</h1>
-        <p class="title-sub">Connectives and Conversion · 가다 · 먹다 · 하다 · 좋다</p>
+        <h1 class="title-main" lang="en" translate="yes">Basic Grammar Practice 4</h1>
+        <p class="title-sub" lang="en" translate="yes">Connectives and Conversion · <span lang="ko" translate="no">가다 · 먹다 · 하다 · 좋다</span></p>
     </div>
     <div class="title-divider"></div>
     <div class="title-ko">
@@ -421,8 +423,8 @@
 <table class="cjt">
     <thead>
         <tr>
-            <th style="width:18%">의미<br><small>Meaning</small></th>
-            <th style="width:16%">힌트<br><small>Hint</small></th>
+            <th style="width:18%">의미<br><small lang="en" translate="yes">Meaning</small></th>
+            <th style="width:16%">힌트<br><small lang="en" translate="yes">Hint</small></th>
             <th>가다</th>
             <th>먹다</th>
             <th>하다</th>
@@ -438,7 +440,7 @@
 
 <hr>
 
-<h2>1. Look &amp; Speak</h2>
+<h2><span lang="en" translate="yes">1. Look &amp; Speak</span></h2>
 <p class="subtitle">카드를 보고 한국어로 말하기 — 기준 동사 '가다'의 핵심 활용</p>
 
 <div class="flashcard-grid look-speak" id="lsGrid"></div>
@@ -453,7 +455,7 @@
         html += '<div class="flashcard" onclick="this.classList.toggle(\'flipped\')"><div class="flashcard-inner">'
             + '<div class="flashcard-front"><div class="flashcard-num">'+n+' · EN</div><div class="flashcard-text">'+c[0]+'</div><div class="flashcard-hint">Tap to flip</div></div>'
             + '<div class="flashcard-back"><div class="flashcard-num">'+n+' · KR</div><div class="flashcard-text">'+c[1]+'</div>'
-            + '<button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean(\''+ko+'\')" title="Listen">🔊</button></div>'
+            + '<button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean(\''+ko+'\')" title="Listen">🔊</button></div>'
             + '</div></div>';
     });
     document.getElementById('lsGrid').innerHTML = html;
@@ -462,22 +464,22 @@
 
 <hr>
 
-<h2>2. Sentence Matching</h2>
+<h2><span lang="en" translate="yes">2. Sentence Matching</span></h2>
 <p class="subtitle">왼쪽 영어 표현과 오른쪽 한국어 활용형을 짝 맞추기</p>
 
 <div class="em-game">
-    <div class="em-game-title">🔗 Form Matching · 영어-한국어 활용형 맞추기</div>
-    <p class="em-game-desc">왼쪽 영어 표현을 클릭하고, 그 뜻에 맞는 오른쪽 한국어 활용형을 클릭하세요. 짝이 맞으면 두 카드가 사라집니다. <span style="color:#94a3b8;">Click an English phrase, then its Korean match — both disappear when matched.</span></p>
+    <div class="em-game-title"><span lang="en" translate="yes">🔗 Form Matching ·</span> 영어-한국어 활용형 맞추기</div>
+    <p class="em-game-desc">왼쪽 영어 표현을 클릭하고, 그 뜻에 맞는 오른쪽 한국어 활용형을 클릭하세요. 짝이 맞으면 두 카드가 사라집니다. <span style="color:#94a3b8;"><span lang="en" translate="yes">Click an English phrase, then its Korean match — both disappear when matched.</span></span></p>
     <div class="em-toolbar">
         <span class="em-stat"><span class="em-stat-label">정답</span><span id="emCorrect" class="em-stat-num">0/10</span></span>
         <span class="em-stat"><span class="em-stat-label">오답</span><span id="emWrong" class="em-stat-num">0</span></span>
-        <button class="em-reset" onclick="emReset()">🔄 다시 시작</button>
+        <button class="em-reset" onclick="emReset()">🔄 다시 시작<span class="gloss" lang="en" translate="yes">Restart</span></button>
     </div>
     <div class="em-progress"><div id="emProgress" class="em-progress-bar"></div></div>
     <div id="emMessage" class="em-message"></div>
     <div class="em-columns" style="--em-rows: 10;">
-        <div class="em-col-header">English · 영어</div>
-        <div class="em-col-header">한국어 · Korean</div>
+        <div class="em-col-header"><span lang="en" translate="yes">English ·</span> 영어</div>
+        <div class="em-col-header">한국어<span class="gloss" lang="en" translate="yes">Korean</span></div>
         <div id="emEnglishList" class="em-list"></div>
         <div id="emKoreanList" class="em-list"></div>
     </div>
@@ -486,23 +488,23 @@
 <hr>
 
 <div style="margin: 22px 0 8px 0;">
-    <h2>3. Writing Test</h2>
-    <p class="subtitle">📝 활용표 쓰기 연습 — 빈칸에 직접 써 보고 채점하세요 · Type each form, then grade</p>
+    <h2><span lang="en" translate="yes">3. Writing Test</span></h2>
+    <p class="subtitle" lang="en" translate="yes">📝 <span lang="ko" translate="no">활용표 쓰기 연습</span> — <span lang="ko" translate="no">빈칸에 직접 써 보고 채점하세요</span><span class="gloss" lang="en" translate="yes">Type each form, then grade</span></p>
 
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; padding:8px 12px; background:#f0fdf4; border:1px solid #86efac; border-radius:8px; margin:0 0 10px 0;">
-        <div style="font-size:0.85rem; font-weight:700; color:#166534;" id="negScoreBox">✓ Score: <span id="negCorrect" style="font-size:1rem;">0</span> <span style="color:#94a3b8;">/ 65</span><span id="negPct" style="margin-left:6px; color:#166534; font-weight:800;"></span></div>
+        <div style="font-size:0.85rem; font-weight:700; color:#166534;" id="negScoreBox"><span lang="en" translate="yes">✓ Score:</span> <span id="negCorrect" style="font-size:1rem;">0</span> <span style="color:#94a3b8;">/ 65</span><span id="negPct" style="margin-left:6px; color:#166534; font-weight:800;"></span></div>
         <div style="display:flex; gap:6px; flex-wrap:wrap;">
-            <button onclick="negReset()" style="background:#fff; color:#475569; border:1px solid #cbd5e1; padding:5px 12px; border-radius:6px; cursor:pointer; font-size:0.78rem; font-weight:700; font-family:inherit;">🔄 초기화</button>
-            <button onclick="negGrade()" style="background:#16a34a; color:#fff; border:1px solid #16a34a; padding:5px 12px; border-radius:6px; cursor:pointer; font-size:0.78rem; font-weight:700; font-family:inherit;">✅ 채점</button>
-            <button onclick="negReveal()" style="background:#7c3aed; color:#fff; border:1px solid #7c3aed; padding:5px 12px; border-radius:6px; cursor:pointer; font-size:0.78rem; font-weight:700; font-family:inherit;">💡 정답</button>
+            <button onclick="negReset()" style="background:#fff; color:#475569; border:1px solid #cbd5e1; padding:5px 12px; border-radius:6px; cursor:pointer; font-size:0.78rem; font-weight:700; font-family:inherit;">🔄 초기화<span class="gloss" lang="en" translate="yes">Reset</span></button>
+            <button onclick="negGrade()" style="background:#16a34a; color:#fff; border:1px solid #16a34a; padding:5px 12px; border-radius:6px; cursor:pointer; font-size:0.78rem; font-weight:700; font-family:inherit;">✅ 채점<span class="gloss" lang="en" translate="yes">Grade</span></button>
+            <button onclick="negReveal()" style="background:#7c3aed; color:#fff; border:1px solid #7c3aed; padding:5px 12px; border-radius:6px; cursor:pointer; font-size:0.78rem; font-weight:700; font-family:inherit;">💡 정답<span class="gloss" lang="en" translate="yes">Answer</span></button>
         </div>
     </div>
 
     <table class="cjt neg-test">
         <thead>
             <tr>
-                <th style="width:18%">의미<br><small>Meaning</small></th>
-                <th style="width:16%">힌트<br><small>Hint</small></th>
+                <th style="width:18%">의미<br><small lang="en" translate="yes">Meaning</small></th>
+                <th style="width:16%">힌트<br><small lang="en" translate="yes">Hint</small></th>
                 <th>가다</th>
                 <th>먹다</th>
                 <th>하다</th>
@@ -515,7 +517,7 @@
 
 <script>
 (function(){
-    var DRILL = [["action transition","동작 전환","-다가","가다가","먹다가","하다가","*"],["from (starting)","시작점","-부터","갈 때부터","먹을 때부터","할 때부터","좋을 때부터"],["to (until)","끝점","-까지","갈 때까지","먹을 때까지","할 때까지","좋을 때까지"],["cause (because)","원인","-기 때문에","가기 때문에","먹기 때문에","하기 때문에","좋기 때문에"],["cause (thanks to)","원인","-(으)ㄴ 덕분에","간 덕분에","먹은 덕분에","한 덕분에","좋은 덕분에"],["cause (so)","원인","-아/어서","가서","먹어서","해서","좋아서"],["cause (since)","원인","-(으)니까","가니까","먹으니까","하니까","좋으니까"],["purpose (for the sake of)","목적","-기 위해서","가기 위해서","먹기 위해서","하기 위해서","*"],["purpose (in order to)","목적","-(으)려고","가려고","먹으려고","하려고","*"],["purpose (to go and)","목적","-(으)러","*","먹으러","하러","*"],["assumption, condition","가정·조건","-(으)면","가면","먹으면","하면","좋으면"],["essential condition","필수 조건","-(으)려면","가려면","먹으려면","하려면","좋으려면"],["unexpected outcome","예상 밖 결과","-아/어도","가도","먹어도","해도","좋아도"],["background, context","배경·상황·대조","-는데 / -(으)ㄴ데","가는데","먹는데","하는데","좋은데"],["verb/adj to noun (act)","동사·형용사 → 명사","-는 것 / -(으)ㄴ 것","가는 것","먹는 것","하는 것","좋은 것"],["verb/adj to noun (-기)","동사·형용사 → 명사","-기","가기","먹기","하기","좋기"],["verb/adj to noun (-ㅁ/음)","동사·형용사 → 명사","-ㅁ/음","감","먹음","함","좋음"],["adjective to adverb","형용사 → 부사","-게 / -히 / -이","*","*","*","좋게"],["adjective to verb","형용사 → 동사","-아/어하다","*","*","*","좋아하다"]];
+    var DRILL = [["action transition","동작 전환","-다가","가다가","먹다가","하다가","*"],["from (starting)","시작점","-ㄹ/을 때부터","갈 때부터","먹을 때부터","할 때부터","좋을 때부터"],["to (until)","끝점","-ㄹ/을 때까지","갈 때까지","먹을 때까지","할 때까지","좋을 때까지"],["cause (because)","원인","-기 때문에","가기 때문에","먹기 때문에","하기 때문에","좋기 때문에"],["cause (thanks to)","원인","-(으)ㄴ 덕분에","간 덕분에","먹은 덕분에","한 덕분에","좋은 덕분에"],["cause (so)","원인","-아/어서","가서","먹어서","해서","좋아서"],["cause (since)","원인","-(으)니까","가니까","먹으니까","하니까","좋으니까"],["purpose (for the sake of)","목적","-기 위해서","가기 위해서","먹기 위해서","하기 위해서","*"],["purpose (in order to)","목적","-(으)려고","가려고","먹으려고","하려고","*"],["purpose (to go and)","목적","-(으)러","*","먹으러","하러","*"],["assumption, condition","가정·조건","-(으)면","가면","먹으면","하면","좋으면"],["essential condition","필수 조건","-(으)려면","가려면","먹으려면","하려면","좋으려면"],["unexpected outcome","예상 밖 결과","-아/어도","가도","먹어도","해도","좋아도"],["background, context","배경·상황·대조","-는데 / -(으)ㄴ데","가는데","먹는데","하는데","좋은데"],["verb/adj to noun (act)","동사·형용사 → 명사","-는 것 / -(으)ㄴ 것","가는 것","먹는 것","하는 것","좋은 것"],["verb/adj to noun (-기)","동사·형용사 → 명사","-기","가기","먹기","하기","좋기"],["verb/adj to noun (-ㅁ/음)","동사·형용사 → 명사","-ㅁ/음","감","먹음","함","좋음"],["adjective to adverb","형용사 → 부사","-게 / -히 / -이","*","*","*","좋게"],["adjective to verb","형용사 → 동사","-아/어하다","*","*","*","좋아하다"]];
     var colCls = ["v","v","v","a"]; // 가다 먹다 하다 = verb tint, 좋다 = adjective tint
     var refHtml = "", drillHtml = "";
     DRILL.forEach(function(r){
@@ -587,28 +589,108 @@ function negGrade(){
 }
 </script>
 
-<div class="footer"><p>Amazing Korean 1 — Appendix 7: Basic Grammar Practice 4 (부록 7: 기초 문법 연습 4)</p></div>
+<div class="footer"><p><span lang="en" translate="yes">Amazing Korean 1 — Appendix 7: Basic Grammar Practice 4 (</span>부록 7: 기초 문법 연습 4)</p></div>
 </div>
 <script>
-function speakKorean(text) {
-    if (!('speechSynthesis' in window)) return;
-    window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = 'ko-KR';
-    u.rate = 0.85;
-    u.pitch = 1.1;
-    const preferred = ['Yuna', 'SunHi', 'Heami', 'Google 한국의'];
-    const voices = window.speechSynthesis.getVoices();
-    const koVoices = voices.filter(v => v.lang.startsWith('ko'));
-    let picked = null;
-    for (const name of preferred) {
-        picked = koVoices.find(v => v.name.includes(name));
-        if (picked) break;
-    }
-    if (!picked && koVoices.length > 0) picked = koVoices[0];
-    if (picked) u.voice = picked;
-    window.speechSynthesis.speak(u);
+/* ak-audio v1 */
+/* 미리 구운 MP3 를 먼저 쓴다. 없거나 못 읽으면 브라우저 음성으로 넘어간다.
+   f = SunHi(여성) · m = Hyunsu(남성) — 둘 다 신경망 음성이다. */
+var AK_SND = {"가다가": "0606", "갈 때부터": "0653", "갈 때까지": "0652", "가기 때문에": "0594", "간 덕분에": "0641", "가서": "0628", "가니까": "0604", "가려고": "0609", "가면": "0619", "가려면": "0611", "가도": "0607", "가는 것": "0601", "동작 전환": "0930", "먹다가": "1045", "하다가": "1833", "시작점": "1322", "먹을 때부터": "1084", "할 때부터": "1869", "좋을 때부터": "1692", "끝점": "0813", "먹을 때까지": "1083", "할 때까지": "1868", "좋을 때까지": "1691", "원인": "1525", "먹기 때문에": "1036", "하기 때문에": "1824", "좋기 때문에": "1656", "먹은 덕분에": "1074", "한 덕분에": "1856", "좋은 덕분에": "1684", "먹어서": "1056", "해서": "1883", "좋아서": "1662", "먹으니까": "1064", "하니까": "1831", "좋으니까": "1678", "목적": "1115", "가기 위해서": "0595", "먹기 위해서": "1037", "하기 위해서": "1825", "먹으려고": "1066", "하려고": "1835", "먹으러": "1065", "하러": "1834", "가정·조건": "0634", "먹으면": "1069", "하면": "1838", "좋으면": "1680", "필수 조건": "1813", "먹으려면": "1068", "하려면": "1837", "좋으려면": "1679", "예상 밖 결과": "1480", "먹어도": "1054", "해도": "1881", "좋아도": "1660", "배경·상황·대조": "1174", "가는데": "0603", "먹는데": "1043", "하는데": "1830", "좋은데": "1685", "먹는 것": "1040", "하는 것": "1828", "좋은 것": "1683", "가기": "0593", "먹기": "1035", "하기": "1823", "좋기": "1655", "먹음": "1087", "좋음": "1694", "좋게": "1652", "좋아하다": "1666"};
+var AK_AU = null;
+function akPlayFile(text, sex){
+  var n = AK_SND[text];
+  if (!n) return false;
+  try {
+    if (window.speechSynthesis) window.speechSynthesis.cancel();  /* 읽던 것 끊기 */
+    if (AK_AU){ AK_AU.pause(); AK_AU.currentTime = 0; }
+    AK_AU = new Audio(encodeURI('_소리/' + (sex === 'm' ? 'm' : 'f') + '/' + n + '.mp3'));
+    AK_AU.onerror = function(){ akSpeakTTS(text, sex); };
+    var p = AK_AU.play();
+    if (p && p.catch) p.catch(function(){ akSpeakTTS(text, sex); });
+    return true;
+  } catch(e){ return false; }
 }
+/* ak-voice v3 */
+/* 한국어 음성 — 자연(Natural) 음성을 먼저 고른다. 여성·남성은 문장 옆 단추로 그때그때 고른다. */
+var AK_SEX = (function(){ try { return localStorage.getItem('akVoiceSex') || 'f'; } catch(e){ return 'f'; } })();
+var AK_M = /(InJoon|In-Joon|BongJin|Bong-Jin|GookMin|Gook-Min|Hyunsu|Hyun-su|Minsik|Jinho|Male|남성|남자)/i;
+var AK_F = /(SunHi|Sun-Hi|Heami|Yuna|JiMin|Ji-Min|SeoHyeon|Seo-Hyeon|SoonBok|Soon-Bok|YuJin|Yu-Jin|Kyuri|Seoyeon|Sora|한국의|Female|여성|여자)/i;
+function akKoVoices(){
+  var vs = (window.speechSynthesis && window.speechSynthesis.getVoices()) || [];
+  return vs.filter(function(v){ return /^ko/i.test(v.lang || ''); });
+}
+function akScore(v){
+  var n = v.name || '', s;
+  if (/natural/i.test(n)) s = 60;
+  else if (/neural|premium|enhanced/i.test(n)) s = 50;
+  else if (/google/i.test(n)) s = 40;
+  else if (!v.localService) s = 30;
+  else s = 10;
+  if (/heami/i.test(n)) s -= 5;
+  return s;
+}
+function akPick(sex){
+  var ko = akKoVoices();
+  if (!ko.length) return null;
+  var want = (sex === 'm') ? AK_M : AK_F;
+  var hit = ko.filter(function(v){ return want.test(v.name || ''); });
+  if (!hit.length){
+    if (sex === 'm') return null;   /* 남성이 없으면 여성으로 몰래 바꾸지 않는다 */
+    hit = ko;
+  }
+  hit = hit.slice().sort(function(a, b){ return akScore(b) - akScore(a); });
+  return hit[0];
+}
+function akNotice(){
+  var d = document.getElementById('akNotice');
+  if (!d) return;
+  d.classList.add('on');
+  clearTimeout(d._t);
+  d._t = setTimeout(function(){ d.classList.remove('on'); }, 4500);
+}
+function speakKorean(text, sex){
+  sex = sex || AK_SEX;
+  AK_SEX = sex;
+  try { localStorage.setItem('akVoiceSex', sex); } catch(e){}
+  if (akPlayFile(text, sex)) return;      /* 구워 둔 음원이 있으면 그것으로 */
+  akSpeakTTS(text, sex);
+}
+function akSpeakTTS(text, sex){
+  if (!('speechSynthesis' in window)) return;
+  sex = sex || AK_SEX;
+  var v = akPick(sex), low = false;
+  if (sex === 'm' && !v){ v = akPick('f'); low = true; akNotice(); }
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(text);
+  u.lang = (v && v.lang) || 'ko-KR';
+  u.rate = low ? 0.90 : 0.92;
+  u.pitch = low ? 0.6 : 1.0;   /* 진짜 남성 음성이 없을 때만 목소리를 낮춘다 */
+  if (v) u.voice = v;
+  /* cancel() 바로 뒤에 speak() 하면 브라우저가 고른 음성을 버리고
+     기본 음성(대개 여성)으로 읽어 버린다. 한 박자 늦춘다. */
+  setTimeout(function(){ window.speechSynthesis.speak(u); }, 60);
+}
+function akVoiceInit(){
+  var ko = akKoVoices();
+  if (!ko.length) return;
+  var m = akPick('m'), f = akPick('f');
+  var bs = document.querySelectorAll('.spk-m');
+  var hasFile = false; for (var kk in AK_SND){ hasFile = true; break; }
+  for (var i = 0; i < bs.length; i++){
+    if (hasFile){ bs[i].classList.remove('spk-off'); bs[i].title = '남성 음성 · Hyunsu (구워 둔 음원)'; }
+    else if (m){ bs[i].classList.remove('spk-off'); bs[i].title = '남성 음성 · ' + m.name; }
+    else { bs[i].classList.add('spk-off'); bs[i].title = '이 브라우저에는 한국어 남성 음성이 없어 목소리를 낮춰 읽습니다. Microsoft Edge 에서 진짜 남성 음성(InJoon)이 나옵니다.'; }
+  }
+  if (f){
+    var fs = document.querySelectorAll('.spk-f');
+    for (var j = 0; j < fs.length; j++) fs[j].title = '여성 음성 · ' + f.name;
+  }
+}
+if (window.speechSynthesis){
+  try { window.speechSynthesis.addEventListener('voiceschanged', akVoiceInit); } catch(e){}
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', akVoiceInit);
+else akVoiceInit();
 if ('speechSynthesis' in window) {
     window.speechSynthesis.onvoiceschanged = function(){};
     window.speechSynthesis.getVoices();
@@ -678,41 +760,6 @@ function wtScore(){
   if (pctEl) pctEl.textContent = '';
   const boxEl = document.getElementById('wtScoreBox');
   if (boxEl) boxEl.classList.remove('is-graded');
-}
-function wtReset(){
-  document.querySelectorAll('.writing-practice .writing-input').forEach(function(inp){
-    inp.value = '';
-    inp.classList.remove('correct','wrong','revealed');
-  });
-  wtScore();
-}
-function wtReveal(){
-  document.querySelectorAll('.writing-practice .writing-input').forEach(function(inp){
-    inp.value = inp.dataset.ans;
-    inp.classList.remove('correct','wrong');
-    inp.classList.add('revealed');
-  });
-  document.getElementById('wtCorrect').textContent = '–';
-  document.getElementById('wtPct').textContent = '';
-  document.getElementById('wtScoreBox').classList.remove('is-graded');
-}
-function wtGrade(){
-  const inputs = document.querySelectorAll('.writing-practice .writing-input');
-  let c=0, total=inputs.length;
-  inputs.forEach(function(inp){
-    inp.classList.remove('correct','wrong','revealed');
-    const ans = wtNormalize(inp.dataset.ans);
-    const val = wtNormalize(inp.value);
-    if (val === ans && val.length>0){ inp.classList.add('correct'); c++; }
-    else { inp.classList.add('wrong'); }
-  });
-  document.getElementById('wtCorrect').textContent = c;
-  const pct = total ? Math.round(c*100/total) : 0;
-  document.getElementById('wtPct').textContent = '· ' + pct + '%';
-  document.getElementById('wtScoreBox').classList.add('is-graded');
-  if(c === total && c > 0){
-    celebrateShow(c, 0, wtReset, '모든 문장을 정확히 작성했습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All sentences correct!</span>');
-  }
 }
 
 
@@ -857,14 +904,14 @@ function celebrateRestart(){
     <div class="celebrate-card" onclick="event.stopPropagation()">
         <span class="celebrate-emoji">🎉</span>
         <h3 class="celebrate-title" id="celebrateTitle">완료!</h3>
-        <p class="celebrate-subtitle" id="celebrateSubtitle">모든 짝을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All matched!</span></p>
+        <p class="celebrate-subtitle" id="celebrateSubtitle">모든 짝을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;"><span lang="en" translate="yes">All matched!</span></span></p>
         <div class="celebrate-stats">
-            <div class="celebrate-stat"><strong id="celebrateCorrect">0</strong><span>정답 · Correct</span></div>
-            <div class="celebrate-stat"><strong id="celebrateWrong">0</strong><span>오답 · Wrong</span></div>
+            <div class="celebrate-stat"><strong id="celebrateCorrect">0</strong><span>정답<span class="gloss" lang="en" translate="yes">Correct</span></span></div>
+            <div class="celebrate-stat"><strong id="celebrateWrong">0</strong><span>오답<span class="gloss" lang="en" translate="yes">Wrong</span></span></div>
         </div>
         <div class="celebrate-actions">
-            <button class="celebrate-btn" onclick="celebrateRestart()">🔄 다시 시작</button>
-            <button class="celebrate-btn secondary" onclick="celebrateClose()">닫기</button>
+            <button class="celebrate-btn" onclick="celebrateRestart()">🔄 다시 시작<span class="gloss" lang="en" translate="yes">Restart</span></button>
+            <button class="celebrate-btn secondary" onclick="celebrateClose()">닫기<span class="gloss" lang="en" translate="yes">Close</span></button>
         </div>
     </div>
 </div>
@@ -878,8 +925,20 @@ function celebrateRestart(){
 .ans-bar{margin:8px 0 6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
 .ans-btn{background:#fff;border:1px solid #cbd5e1;color:#475569;padding:5px 12px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.82rem;font-family:inherit;}
 .ans-btn:hover{background:#f1f5f9;}
-.ans-hint{font-size:0.8rem;color:#94a3b8;}#refBody tr:first-child td{background:#fff7ed !important;}
+.ans-hint{font-size:0.8rem;color:#94a3b8;}#refBody tr:first-child td{background:#fff7ed !important;}#refBody tr:first-child td.m::after{content:"예시";display:block;font-size:0.56rem;font-weight:800;color:#f59e0b;}
 @media print{.q-cell .q-text{display:inline !important;}.q-ans,.ans-bar{display:none !important;}}
+
+
+.spk-tag { font-size:0.62em; font-weight:800; margin-left:1px; vertical-align:0.12em; letter-spacing:0; }
+.spk-m { margin-left:2px; }
+.spk-off { opacity:0.62; }
+.ak-notice { position:fixed; left:50%; bottom:22px; transform:translateX(-50%) translateY(14px);
+    z-index:10000; max-width:min(92vw,460px); background:#1e293b; color:#fff; border-radius:10px;
+    padding:11px 16px; font-size:0.86rem; line-height:1.45; box-shadow:0 6px 20px rgba(15,23,42,0.3);
+    opacity:0; pointer-events:none; transition:opacity 0.2s, transform 0.2s; }
+.ak-notice.on { opacity:1; transform:translateX(-50%) translateY(0); }
+.ak-notice .gloss { color:#cbd5e1; opacity:0.9; }
+@media print { .ak-notice { display:none; } }
 </style>
 <script>
 (function(){
@@ -895,12 +954,13 @@ function celebrateRestart(){
   }); }
   var tbl=body.closest('table');
   var bar=document.createElement('div'); bar.className='ans-bar';
-  bar.innerHTML='<button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기 (Show all)</button><button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기 (Hide again)</button><span class="ans-hint">각 칸의 ?를 눌러 정답 확인, 정답을 다시 누르면 가려집니다 · Tap ? to reveal, tap again to hide</span>';
+  bar.innerHTML='<button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기<span class="gloss" lang="en" translate="yes">Show all</span></button><button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기<span class="gloss" lang="en" translate="yes">Hide again</span></button><span class="ans-hint">각 칸의 ?를 눌러 정답 확인, 정답을 다시 누르면 가려집니다<span class="gloss" lang="en" translate="yes">Tap ? to reveal, tap again to hide</span></span>';
   tbl.parentNode.insertBefore(bar, tbl);
 })();
 function qReveal(b){ var c=b.closest('.q-cell'); if(c) c.classList.add('revealed'); }
 function qHide(t){ var c=t.closest('.q-cell'); if(c) c.classList.remove('revealed'); }
 function qAll(btn,show){ var tbl=btn.closest('.ans-bar').nextElementSibling; while(tbl && tbl.tagName!=='TABLE') tbl=tbl.nextElementSibling; if(!tbl) return; tbl.querySelectorAll('.q-cell').forEach(function(c){ if(show) c.classList.add('revealed'); else c.classList.remove('revealed'); }); }
 </script>
+<div class="ak-notice" id="akNotice">이 브라우저에는 한국어 남성 음성이 없어 <b>목소리를 낮춰</b> 읽습니다. 진짜 남성 음성은 Microsoft Edge 에서 나옵니다.<span class="gloss" lang="en" translate="yes">This browser has no Korean male voice, so the female voice is pitched down. Open the page in Microsoft Edge for a real male voice.</span></div>
 </body>
 </html>

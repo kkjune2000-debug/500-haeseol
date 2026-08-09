@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazing Korean 1 - 부록 5: 기초 문법 연습 2 (Basic Grammar Practice 2)</title>
+    <title translate="yes">Amazing Korean 1 — 부록 5: 기초 문법 연습 2 (Basic Grammar Practice 2)</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -377,6 +377,8 @@
         .gstep-table td, .gstep-table th { word-break: keep-all; overflow-wrap: break-word; }
         .exp-table td, .exp-table th { word-break: keep-all; overflow-wrap: break-word; }
 
+.gloss{text-transform:none;display:block;font-weight:600;font-size:0.86em;opacity:0.72;letter-spacing:0;margin-top:1px;}
+button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 </style>
 </head>
 <body>
@@ -384,8 +386,8 @@
 
 <header class="title-block predicate">
     <div class="title-en">
-        <h1 class="title-main">Basic Grammar Practice 2</h1>
-        <p class="title-sub">Modal Expressions · 가다 · 먹다 · 하다 · 좋다</p>
+        <h1 class="title-main" lang="en" translate="yes">Basic Grammar Practice 2</h1>
+        <p class="title-sub" lang="en" translate="yes">Modal Expressions · <span lang="ko" translate="no">가다 · 먹다 · 하다 · 좋다</span></p>
     </div>
     <div class="title-divider"></div>
     <div class="title-ko">
@@ -421,8 +423,8 @@
 <table class="cjt">
     <thead>
         <tr>
-            <th style="width:18%">의미<br><small>Meaning</small></th>
-            <th style="width:16%">힌트<br><small>Hint</small></th>
+            <th style="width:18%">의미<br><small lang="en" translate="yes">Meaning</small></th>
+            <th style="width:16%">힌트<br><small lang="en" translate="yes">Hint</small></th>
             <th>가다</th>
             <th>먹다</th>
             <th>하다</th>
@@ -438,14 +440,14 @@
 
 <hr>
 
-<h2>1. Look &amp; Speak</h2>
+<h2><span lang="en" translate="yes">1. Look &amp; Speak</span></h2>
 <p class="subtitle">카드를 보고 한국어로 말하기 — 기준 동사 '가다'의 핵심 활용</p>
 
 <div class="flashcard-grid look-speak" id="lsGrid"></div>
 
 <script>
 (function(){
-    var LS = [["do not want to go","가고 싶지 않습니다"],["I wish I went","갔으면 좋겠습니다"],["plan to go","가려고 합니다"],["have a plan to go","갈 계획입니다"],["decided to go","가기로 했습니다"],["may go (allowed)","가도 됩니다"],["must not go","가면 안 됩니다"],["must go","가야 합니다"],["do not have to go","안 가도 됩니다"],["please go for me","가 주세요"],["have been there","간 적이 있습니다"],["have tried going","가 본 적이 있습니다"]];
+    var LS = [["do not want to go","가고 싶지 않습니다"],["I wish I could go","갔으면 좋겠습니다"],["plan to go","가려고 합니다"],["have a plan to go","갈 계획입니다"],["decided to go","가기로 했습니다"],["may go (allowed)","가도 됩니다"],["must not go","가면 안 됩니다"],["must go","가야 합니다"],["do not have to go","안 가도 됩니다"],["please go for me","가 주세요"],["have been there","간 적이 있습니다"],["have tried going","가 본 적이 있습니다"]];
     var html = "";
     LS.forEach(function(c, i){
         var n = i + 1;
@@ -453,7 +455,7 @@
         html += '<div class="flashcard" onclick="this.classList.toggle(\'flipped\')"><div class="flashcard-inner">'
             + '<div class="flashcard-front"><div class="flashcard-num">'+n+' · EN</div><div class="flashcard-text">'+c[0]+'</div><div class="flashcard-hint">Tap to flip</div></div>'
             + '<div class="flashcard-back"><div class="flashcard-num">'+n+' · KR</div><div class="flashcard-text">'+c[1]+'</div>'
-            + '<button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean(\''+ko+'\')" title="Listen">🔊</button></div>'
+            + '<button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean(\''+ko+'\')" title="Listen">🔊</button></div>'
             + '</div></div>';
     });
     document.getElementById('lsGrid').innerHTML = html;
@@ -462,22 +464,22 @@
 
 <hr>
 
-<h2>2. Sentence Matching</h2>
+<h2><span lang="en" translate="yes">2. Sentence Matching</span></h2>
 <p class="subtitle">왼쪽 영어 표현과 오른쪽 한국어 활용형을 짝 맞추기</p>
 
 <div class="em-game">
-    <div class="em-game-title">🔗 Form Matching · 영어-한국어 활용형 맞추기</div>
-    <p class="em-game-desc">왼쪽 영어 표현을 클릭하고, 그 뜻에 맞는 오른쪽 한국어 활용형을 클릭하세요. 짝이 맞으면 두 카드가 사라집니다. <span style="color:#94a3b8;">Click an English phrase, then its Korean match — both disappear when matched.</span></p>
+    <div class="em-game-title"><span lang="en" translate="yes">🔗 Form Matching ·</span> 영어-한국어 활용형 맞추기</div>
+    <p class="em-game-desc">왼쪽 영어 표현을 클릭하고, 그 뜻에 맞는 오른쪽 한국어 활용형을 클릭하세요. 짝이 맞으면 두 카드가 사라집니다. <span style="color:#94a3b8;"><span lang="en" translate="yes">Click an English phrase, then its Korean match — both disappear when matched.</span></span></p>
     <div class="em-toolbar">
         <span class="em-stat"><span class="em-stat-label">정답</span><span id="emCorrect" class="em-stat-num">0/10</span></span>
         <span class="em-stat"><span class="em-stat-label">오답</span><span id="emWrong" class="em-stat-num">0</span></span>
-        <button class="em-reset" onclick="emReset()">🔄 다시 시작</button>
+        <button class="em-reset" onclick="emReset()">🔄 다시 시작<span class="gloss" lang="en" translate="yes">Restart</span></button>
     </div>
     <div class="em-progress"><div id="emProgress" class="em-progress-bar"></div></div>
     <div id="emMessage" class="em-message"></div>
     <div class="em-columns" style="--em-rows: 10;">
-        <div class="em-col-header">English · 영어</div>
-        <div class="em-col-header">한국어 · Korean</div>
+        <div class="em-col-header"><span lang="en" translate="yes">English ·</span> 영어</div>
+        <div class="em-col-header">한국어<span class="gloss" lang="en" translate="yes">Korean</span></div>
         <div id="emEnglishList" class="em-list"></div>
         <div id="emKoreanList" class="em-list"></div>
     </div>
@@ -486,23 +488,23 @@
 <hr>
 
 <div style="margin: 22px 0 8px 0;">
-    <h2>3. Writing Test</h2>
-    <p class="subtitle">📝 활용표 쓰기 연습 — 빈칸에 직접 써 보고 채점하세요 · Type each form, then grade</p>
+    <h2><span lang="en" translate="yes">3. Writing Test</span></h2>
+    <p class="subtitle" lang="en" translate="yes">📝 <span lang="ko" translate="no">활용표 쓰기 연습</span> — <span lang="ko" translate="no">빈칸에 직접 써 보고 채점하세요</span><span class="gloss" lang="en" translate="yes">Type each form, then grade</span></p>
 
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; padding:8px 12px; background:#f0fdf4; border:1px solid #86efac; border-radius:8px; margin:0 0 10px 0;">
-        <div style="font-size:0.85rem; font-weight:700; color:#166534;" id="negScoreBox">✓ Score: <span id="negCorrect" style="font-size:1rem;">0</span> <span style="color:#94a3b8;">/ 56</span><span id="negPct" style="margin-left:6px; color:#166534; font-weight:800;"></span></div>
+        <div style="font-size:0.85rem; font-weight:700; color:#166534;" id="negScoreBox"><span lang="en" translate="yes">✓ Score:</span> <span id="negCorrect" style="font-size:1rem;">0</span> <span style="color:#94a3b8;">/ 56</span><span id="negPct" style="margin-left:6px; color:#166534; font-weight:800;"></span></div>
         <div style="display:flex; gap:6px; flex-wrap:wrap;">
-            <button onclick="negReset()" style="background:#fff; color:#475569; border:1px solid #cbd5e1; padding:5px 12px; border-radius:6px; cursor:pointer; font-size:0.78rem; font-weight:700; font-family:inherit;">🔄 초기화</button>
-            <button onclick="negGrade()" style="background:#16a34a; color:#fff; border:1px solid #16a34a; padding:5px 12px; border-radius:6px; cursor:pointer; font-size:0.78rem; font-weight:700; font-family:inherit;">✅ 채점</button>
-            <button onclick="negReveal()" style="background:#7c3aed; color:#fff; border:1px solid #7c3aed; padding:5px 12px; border-radius:6px; cursor:pointer; font-size:0.78rem; font-weight:700; font-family:inherit;">💡 정답</button>
+            <button onclick="negReset()" style="background:#fff; color:#475569; border:1px solid #cbd5e1; padding:5px 12px; border-radius:6px; cursor:pointer; font-size:0.78rem; font-weight:700; font-family:inherit;">🔄 초기화<span class="gloss" lang="en" translate="yes">Reset</span></button>
+            <button onclick="negGrade()" style="background:#16a34a; color:#fff; border:1px solid #16a34a; padding:5px 12px; border-radius:6px; cursor:pointer; font-size:0.78rem; font-weight:700; font-family:inherit;">✅ 채점<span class="gloss" lang="en" translate="yes">Grade</span></button>
+            <button onclick="negReveal()" style="background:#7c3aed; color:#fff; border:1px solid #7c3aed; padding:5px 12px; border-radius:6px; cursor:pointer; font-size:0.78rem; font-weight:700; font-family:inherit;">💡 정답<span class="gloss" lang="en" translate="yes">Answer</span></button>
         </div>
     </div>
 
     <table class="cjt neg-test">
         <thead>
             <tr>
-                <th style="width:18%">의미<br><small>Meaning</small></th>
-                <th style="width:16%">힌트<br><small>Hint</small></th>
+                <th style="width:18%">의미<br><small lang="en" translate="yes">Meaning</small></th>
+                <th style="width:16%">힌트<br><small lang="en" translate="yes">Hint</small></th>
                 <th>가다</th>
                 <th>먹다</th>
                 <th>하다</th>
@@ -515,7 +517,7 @@
 
 <script>
 (function(){
-    var DRILL = [["do not want to","희망","-고 싶지 않다","가고 싶지 않습니다","먹고 싶지 않습니다","하고 싶지 않습니다","*"],["I wish","희망","-았/었으면 좋겠다","갔으면 좋겠습니다","먹었으면 좋겠습니다","했으면 좋겠습니다","좋았으면 좋겠습니다"],["plan (intend)","계획","-(으)려고 하다","가려고 합니다","먹으려고 합니다","하려고 합니다","*"],["decision","결정·결심·약속","-기로 했다","가기로 했습니다","먹기로 했습니다","하기로 했습니다","*"],["permission","허락","-아/어도 되다","가도 됩니다","먹어도 됩니다","해도 됩니다","좋아도 됩니다"],["prohibition","금지","-(으)면 안 되다","가면 안 됩니다","먹으면 안 됩니다","하면 안 됩니다","좋으면 안 됩니다"],["prohibition (command)","금지","-지 마세요","가지 마세요","먹지 마세요","하지 마세요","*"],["obligation","의무","-아/어야 하다/되다","가야 합니다","먹어야 합니다","해야 합니다","좋아야 합니다"],["exemption","면제","안 -아/어도 되다","안 가도 됩니다","안 먹어도 됩니다","안 해도 됩니다","안 좋아도 됩니다"],["favor, request","부탁·요구","-아/어 주세요","가 주세요","먹어 주세요","해 주세요","*"],["favor (polite Q)","부탁·요구","-아/어 주시겠습니까?","가 주시겠습니까?","먹어 주시겠습니까?","해 주시겠습니까?","*"],["experience (tried)","경험","-아/어 보았다","가 보았습니다","먹어 보았습니다","해 보았습니다","*"],["experience (couldnt try)","경험","-아/어 보지 못했다","가 보지 못했습니다","먹어 보지 못했습니다","해 보지 못했습니다","*"],["experience (have done)","경험","-(으)ㄴ 적이 있다","간 적이 있습니다","먹은 적이 있습니다","한 적이 있습니다","*"],["experience (never done)","경험","-(으)ㄴ 적이 없다","간 적이 없습니다","먹은 적이 없습니다","한 적이 없습니다","*"],["experience (have tried)","경험","-아/어 본 적이 있다","가 본 적이 있습니다","먹어 본 적이 있습니다","해 본 적이 있습니다","*"],["experience (never tried)","경험","-아/어 본 적이 없다","가 본 적이 없습니다","먹어 본 적이 없습니다","해 본 적이 없습니다","*"]];
+    var DRILL = [["do not want to","희망","-고 싶지 않다","가고 싶지 않습니다","먹고 싶지 않습니다","하고 싶지 않습니다","*"],["I wish","희망","-았/었으면 좋겠다","갔으면 좋겠습니다","먹었으면 좋겠습니다","했으면 좋겠습니다","좋았으면 좋겠습니다"],["plan (intend)","계획","-(으)려고 하다","가려고 합니다","먹으려고 합니다","하려고 합니다","*"],["decision","결정·결심·약속","-기로 했다","가기로 했습니다","먹기로 했습니다","하기로 했습니다","*"],["permission","허락","-아/어도 되다","가도 됩니다","먹어도 됩니다","해도 됩니다","좋아도 됩니다"],["prohibition","금지","-(으)면 안 되다","가면 안 됩니다","먹으면 안 됩니다","하면 안 됩니다","좋으면 안 됩니다"],["prohibition (command)","금지","-지 마세요","가지 마세요","먹지 마세요","하지 마세요","*"],["obligation","의무","-아/어야 하다","가야 합니다","먹어야 합니다","해야 합니다","좋아야 합니다"],["exemption","면제","안 -아/어도 되다","안 가도 됩니다","안 먹어도 됩니다","안 해도 됩니다","안 좋아도 됩니다"],["favor, request","부탁·요구","-아/어 주세요","가 주세요","먹어 주세요","해 주세요","*"],["favor (polite Q)","부탁·요구","-아/어 주시겠습니까?","가 주시겠습니까?","먹어 주시겠습니까?","해 주시겠습니까?","*"],["experience (tried)","경험","-아/어 보았다","가 보았습니다","먹어 보았습니다","해 보았습니다","*"],["experience (couldn't try)","경험","-아/어 보지 못했다","가 보지 못했습니다","먹어 보지 못했습니다","해 보지 못했습니다","*"],["experience (have done)","경험","-(으)ㄴ 적이 있다","간 적이 있습니다","먹은 적이 있습니다","한 적이 있습니다","*"],["experience (never done)","경험","-(으)ㄴ 적이 없다","간 적이 없습니다","먹은 적이 없습니다","한 적이 없습니다","*"],["experience (have tried)","경험","-아/어 본 적이 있다","가 본 적이 있습니다","먹어 본 적이 있습니다","해 본 적이 있습니다","*"],["experience (never tried)","경험","-아/어 본 적이 없다","가 본 적이 없습니다","먹어 본 적이 없습니다","해 본 적이 없습니다","*"]];
     var colCls = ["v","v","v","a"]; // 가다 먹다 하다 = verb tint, 좋다 = adjective tint
     var refHtml = "", drillHtml = "";
     DRILL.forEach(function(r){
@@ -587,28 +589,108 @@ function negGrade(){
 }
 </script>
 
-<div class="footer"><p>Amazing Korean 1 — Appendix 5: Basic Grammar Practice 2 (부록 5: 기초 문법 연습 2)</p></div>
+<div class="footer"><p><span lang="en" translate="yes">Amazing Korean 1 — Appendix 5: Basic Grammar Practice 2 (</span>부록 5: 기초 문법 연습 2)</p></div>
 </div>
 <script>
-function speakKorean(text) {
-    if (!('speechSynthesis' in window)) return;
-    window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = 'ko-KR';
-    u.rate = 0.85;
-    u.pitch = 1.1;
-    const preferred = ['Yuna', 'SunHi', 'Heami', 'Google 한국의'];
-    const voices = window.speechSynthesis.getVoices();
-    const koVoices = voices.filter(v => v.lang.startsWith('ko'));
-    let picked = null;
-    for (const name of preferred) {
-        picked = koVoices.find(v => v.name.includes(name));
-        if (picked) break;
-    }
-    if (!picked && koVoices.length > 0) picked = koVoices[0];
-    if (picked) u.voice = picked;
-    window.speechSynthesis.speak(u);
+/* ak-audio v1 */
+/* 미리 구운 MP3 를 먼저 쓴다. 없거나 못 읽으면 브라우저 음성으로 넘어간다.
+   f = SunHi(여성) · m = Hyunsu(남성) — 둘 다 신경망 음성이다. */
+var AK_SND = {"가고 싶지 않습니다": "0591", "갔으면 좋겠습니다": "0670", "가려고 합니다": "0610", "갈 계획입니다": "0650", "가기로 했습니다": "0597", "가도 됩니다": "0608", "가면 안 됩니다": "0620", "가야 합니다": "0631", "안 가도 됩니다": "1386", "가 주세요": "0581", "간 적이 있습니다": "0643", "가 본 적이 있습니다": "0580", "희망": "1915", "먹고 싶지 않습니다": "1033", "하고 싶지 않습니다": "1821", "먹었으면 좋겠습니다": "1063", "했으면 좋겠습니다": "1890", "좋았으면 좋겠습니다": "1677", "계획": "0707", "먹으려고 합니다": "1067", "하려고 합니다": "1836", "결정·결심·약속": "0698", "먹기로 했습니다": "1039", "하기로 했습니다": "1827", "허락": "1901", "먹어도 됩니다": "1055", "해도 됩니다": "1882", "좋아도 됩니다": "1661", "금지": "0767", "먹으면 안 됩니다": "1070", "하면 안 됩니다": "1839", "좋으면 안 됩니다": "1681", "가지 마세요": "0636", "먹지 마세요": "1091", "하지 마세요": "1845", "의무": "1532", "먹어야 합니다": "1057", "해야 합니다": "1884", "좋아야 합니다": "1663", "면제": "1101", "안 먹어도 됩니다": "1389", "안 해도 됩니다": "1393", "안 좋아도 됩니다": "1391", "부탁·요구": "1218", "먹어 주세요": "1051", "해 주세요": "1878", "가 주시겠습니까?": "0582", "먹어 주시겠습니까?": "1052", "해 주시겠습니까?": "1879", "경험": "0706", "가 보았습니다": "0577", "먹어 보았습니다": "1047", "해 보았습니다": "1874", "가 보지 못했습니다": "0578", "먹어 보지 못했습니다": "1048", "해 보지 못했습니다": "1875", "먹은 적이 있습니다": "1076", "한 적이 있습니다": "1860", "간 적이 없습니다": "0642", "먹은 적이 없습니다": "1075", "한 적이 없습니다": "1859", "먹어 본 적이 있습니다": "1050", "해 본 적이 있습니다": "1877", "가 본 적이 없습니다": "0579", "먹어 본 적이 없습니다": "1049", "해 본 적이 없습니다": "1876"};
+var AK_AU = null;
+function akPlayFile(text, sex){
+  var n = AK_SND[text];
+  if (!n) return false;
+  try {
+    if (window.speechSynthesis) window.speechSynthesis.cancel();  /* 읽던 것 끊기 */
+    if (AK_AU){ AK_AU.pause(); AK_AU.currentTime = 0; }
+    AK_AU = new Audio(encodeURI('_소리/' + (sex === 'm' ? 'm' : 'f') + '/' + n + '.mp3'));
+    AK_AU.onerror = function(){ akSpeakTTS(text, sex); };
+    var p = AK_AU.play();
+    if (p && p.catch) p.catch(function(){ akSpeakTTS(text, sex); });
+    return true;
+  } catch(e){ return false; }
 }
+/* ak-voice v3 */
+/* 한국어 음성 — 자연(Natural) 음성을 먼저 고른다. 여성·남성은 문장 옆 단추로 그때그때 고른다. */
+var AK_SEX = (function(){ try { return localStorage.getItem('akVoiceSex') || 'f'; } catch(e){ return 'f'; } })();
+var AK_M = /(InJoon|In-Joon|BongJin|Bong-Jin|GookMin|Gook-Min|Hyunsu|Hyun-su|Minsik|Jinho|Male|남성|남자)/i;
+var AK_F = /(SunHi|Sun-Hi|Heami|Yuna|JiMin|Ji-Min|SeoHyeon|Seo-Hyeon|SoonBok|Soon-Bok|YuJin|Yu-Jin|Kyuri|Seoyeon|Sora|한국의|Female|여성|여자)/i;
+function akKoVoices(){
+  var vs = (window.speechSynthesis && window.speechSynthesis.getVoices()) || [];
+  return vs.filter(function(v){ return /^ko/i.test(v.lang || ''); });
+}
+function akScore(v){
+  var n = v.name || '', s;
+  if (/natural/i.test(n)) s = 60;
+  else if (/neural|premium|enhanced/i.test(n)) s = 50;
+  else if (/google/i.test(n)) s = 40;
+  else if (!v.localService) s = 30;
+  else s = 10;
+  if (/heami/i.test(n)) s -= 5;
+  return s;
+}
+function akPick(sex){
+  var ko = akKoVoices();
+  if (!ko.length) return null;
+  var want = (sex === 'm') ? AK_M : AK_F;
+  var hit = ko.filter(function(v){ return want.test(v.name || ''); });
+  if (!hit.length){
+    if (sex === 'm') return null;   /* 남성이 없으면 여성으로 몰래 바꾸지 않는다 */
+    hit = ko;
+  }
+  hit = hit.slice().sort(function(a, b){ return akScore(b) - akScore(a); });
+  return hit[0];
+}
+function akNotice(){
+  var d = document.getElementById('akNotice');
+  if (!d) return;
+  d.classList.add('on');
+  clearTimeout(d._t);
+  d._t = setTimeout(function(){ d.classList.remove('on'); }, 4500);
+}
+function speakKorean(text, sex){
+  sex = sex || AK_SEX;
+  AK_SEX = sex;
+  try { localStorage.setItem('akVoiceSex', sex); } catch(e){}
+  if (akPlayFile(text, sex)) return;      /* 구워 둔 음원이 있으면 그것으로 */
+  akSpeakTTS(text, sex);
+}
+function akSpeakTTS(text, sex){
+  if (!('speechSynthesis' in window)) return;
+  sex = sex || AK_SEX;
+  var v = akPick(sex), low = false;
+  if (sex === 'm' && !v){ v = akPick('f'); low = true; akNotice(); }
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(text);
+  u.lang = (v && v.lang) || 'ko-KR';
+  u.rate = low ? 0.90 : 0.92;
+  u.pitch = low ? 0.6 : 1.0;   /* 진짜 남성 음성이 없을 때만 목소리를 낮춘다 */
+  if (v) u.voice = v;
+  /* cancel() 바로 뒤에 speak() 하면 브라우저가 고른 음성을 버리고
+     기본 음성(대개 여성)으로 읽어 버린다. 한 박자 늦춘다. */
+  setTimeout(function(){ window.speechSynthesis.speak(u); }, 60);
+}
+function akVoiceInit(){
+  var ko = akKoVoices();
+  if (!ko.length) return;
+  var m = akPick('m'), f = akPick('f');
+  var bs = document.querySelectorAll('.spk-m');
+  var hasFile = false; for (var kk in AK_SND){ hasFile = true; break; }
+  for (var i = 0; i < bs.length; i++){
+    if (hasFile){ bs[i].classList.remove('spk-off'); bs[i].title = '남성 음성 · Hyunsu (구워 둔 음원)'; }
+    else if (m){ bs[i].classList.remove('spk-off'); bs[i].title = '남성 음성 · ' + m.name; }
+    else { bs[i].classList.add('spk-off'); bs[i].title = '이 브라우저에는 한국어 남성 음성이 없어 목소리를 낮춰 읽습니다. Microsoft Edge 에서 진짜 남성 음성(InJoon)이 나옵니다.'; }
+  }
+  if (f){
+    var fs = document.querySelectorAll('.spk-f');
+    for (var j = 0; j < fs.length; j++) fs[j].title = '여성 음성 · ' + f.name;
+  }
+}
+if (window.speechSynthesis){
+  try { window.speechSynthesis.addEventListener('voiceschanged', akVoiceInit); } catch(e){}
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', akVoiceInit);
+else akVoiceInit();
 if ('speechSynthesis' in window) {
     window.speechSynthesis.onvoiceschanged = function(){};
     window.speechSynthesis.getVoices();
@@ -679,45 +761,10 @@ function wtScore(){
   const boxEl = document.getElementById('wtScoreBox');
   if (boxEl) boxEl.classList.remove('is-graded');
 }
-function wtReset(){
-  document.querySelectorAll('.writing-practice .writing-input').forEach(function(inp){
-    inp.value = '';
-    inp.classList.remove('correct','wrong','revealed');
-  });
-  wtScore();
-}
-function wtReveal(){
-  document.querySelectorAll('.writing-practice .writing-input').forEach(function(inp){
-    inp.value = inp.dataset.ans;
-    inp.classList.remove('correct','wrong');
-    inp.classList.add('revealed');
-  });
-  document.getElementById('wtCorrect').textContent = '–';
-  document.getElementById('wtPct').textContent = '';
-  document.getElementById('wtScoreBox').classList.remove('is-graded');
-}
-function wtGrade(){
-  const inputs = document.querySelectorAll('.writing-practice .writing-input');
-  let c=0, total=inputs.length;
-  inputs.forEach(function(inp){
-    inp.classList.remove('correct','wrong','revealed');
-    const ans = wtNormalize(inp.dataset.ans);
-    const val = wtNormalize(inp.value);
-    if (val === ans && val.length>0){ inp.classList.add('correct'); c++; }
-    else { inp.classList.add('wrong'); }
-  });
-  document.getElementById('wtCorrect').textContent = c;
-  const pct = total ? Math.round(c*100/total) : 0;
-  document.getElementById('wtPct').textContent = '· ' + pct + '%';
-  document.getElementById('wtScoreBox').classList.add('is-graded');
-  if(c === total && c > 0){
-    celebrateShow(c, 0, wtReset, '모든 문장을 정확히 작성했습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All sentences correct!</span>');
-  }
-}
 
 
 // English ↔ Korean Sentence Matching Game
-const emPairs = [{ id:1, en:"do not want to go", ko:"가고 싶지 않습니다" },{ id:2, en:"I wish I went", ko:"갔으면 좋겠습니다" },{ id:3, en:"plan to go", ko:"가려고 합니다" },{ id:4, en:"have a plan to go", ko:"갈 계획입니다" },{ id:5, en:"decided to go", ko:"가기로 했습니다" },{ id:6, en:"may go (allowed)", ko:"가도 됩니다" },{ id:7, en:"must not go", ko:"가면 안 됩니다" },{ id:8, en:"must go", ko:"가야 합니다" },{ id:9, en:"please go for me", ko:"가 주세요" },{ id:10, en:"have been there", ko:"간 적이 있습니다" }];
+const emPairs = [{ id:1, en:"do not want to go", ko:"가고 싶지 않습니다" },{ id:2, en:"I wish I could go", ko:"갔으면 좋겠습니다" },{ id:3, en:"plan to go", ko:"가려고 합니다" },{ id:4, en:"have a plan to go", ko:"갈 계획입니다" },{ id:5, en:"decided to go", ko:"가기로 했습니다" },{ id:6, en:"may go (allowed)", ko:"가도 됩니다" },{ id:7, en:"must not go", ko:"가면 안 됩니다" },{ id:8, en:"must go", ko:"가야 합니다" },{ id:9, en:"please go for me", ko:"가 주세요" },{ id:10, en:"have been there", ko:"간 적이 있습니다" }];
 const emPastels = [
   { bg:'#fdf2f8', border:'#fbcfe8' },{ bg:'#fff1f2', border:'#fecdd3' },
   { bg:'#fef2f2', border:'#fecaca' },{ bg:'#fff7ed', border:'#fed7aa' },
@@ -857,14 +904,14 @@ function celebrateRestart(){
     <div class="celebrate-card" onclick="event.stopPropagation()">
         <span class="celebrate-emoji">🎉</span>
         <h3 class="celebrate-title" id="celebrateTitle">완료!</h3>
-        <p class="celebrate-subtitle" id="celebrateSubtitle">모든 짝을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All matched!</span></p>
+        <p class="celebrate-subtitle" id="celebrateSubtitle">모든 짝을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;"><span lang="en" translate="yes">All matched!</span></span></p>
         <div class="celebrate-stats">
-            <div class="celebrate-stat"><strong id="celebrateCorrect">0</strong><span>정답 · Correct</span></div>
-            <div class="celebrate-stat"><strong id="celebrateWrong">0</strong><span>오답 · Wrong</span></div>
+            <div class="celebrate-stat"><strong id="celebrateCorrect">0</strong><span>정답<span class="gloss" lang="en" translate="yes">Correct</span></span></div>
+            <div class="celebrate-stat"><strong id="celebrateWrong">0</strong><span>오답<span class="gloss" lang="en" translate="yes">Wrong</span></span></div>
         </div>
         <div class="celebrate-actions">
-            <button class="celebrate-btn" onclick="celebrateRestart()">🔄 다시 시작</button>
-            <button class="celebrate-btn secondary" onclick="celebrateClose()">닫기</button>
+            <button class="celebrate-btn" onclick="celebrateRestart()">🔄 다시 시작<span class="gloss" lang="en" translate="yes">Restart</span></button>
+            <button class="celebrate-btn secondary" onclick="celebrateClose()">닫기<span class="gloss" lang="en" translate="yes">Close</span></button>
         </div>
     </div>
 </div>
@@ -878,8 +925,20 @@ function celebrateRestart(){
 .ans-bar{margin:8px 0 6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
 .ans-btn{background:#fff;border:1px solid #cbd5e1;color:#475569;padding:5px 12px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.82rem;font-family:inherit;}
 .ans-btn:hover{background:#f1f5f9;}
-.ans-hint{font-size:0.8rem;color:#94a3b8;}#refBody tr:first-child td{background:#fff7ed !important;}
+.ans-hint{font-size:0.8rem;color:#94a3b8;}#refBody tr:first-child td{background:#fff7ed !important;}#refBody tr:first-child td.m::after{content:"예시";display:block;font-size:0.56rem;font-weight:800;color:#f59e0b;}
 @media print{.q-cell .q-text{display:inline !important;}.q-ans,.ans-bar{display:none !important;}}
+
+
+.spk-tag { font-size:0.62em; font-weight:800; margin-left:1px; vertical-align:0.12em; letter-spacing:0; }
+.spk-m { margin-left:2px; }
+.spk-off { opacity:0.62; }
+.ak-notice { position:fixed; left:50%; bottom:22px; transform:translateX(-50%) translateY(14px);
+    z-index:10000; max-width:min(92vw,460px); background:#1e293b; color:#fff; border-radius:10px;
+    padding:11px 16px; font-size:0.86rem; line-height:1.45; box-shadow:0 6px 20px rgba(15,23,42,0.3);
+    opacity:0; pointer-events:none; transition:opacity 0.2s, transform 0.2s; }
+.ak-notice.on { opacity:1; transform:translateX(-50%) translateY(0); }
+.ak-notice .gloss { color:#cbd5e1; opacity:0.9; }
+@media print { .ak-notice { display:none; } }
 </style>
 <script>
 (function(){
@@ -895,12 +954,13 @@ function celebrateRestart(){
   }); }
   var tbl=body.closest('table');
   var bar=document.createElement('div'); bar.className='ans-bar';
-  bar.innerHTML='<button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기 (Show all)</button><button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기 (Hide again)</button><span class="ans-hint">각 칸의 ?를 눌러 정답 확인, 정답을 다시 누르면 가려집니다 · Tap ? to reveal, tap again to hide</span>';
+  bar.innerHTML='<button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기<span class="gloss" lang="en" translate="yes">Show all</span></button><button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기<span class="gloss" lang="en" translate="yes">Hide again</span></button><span class="ans-hint">각 칸의 ?를 눌러 정답 확인, 정답을 다시 누르면 가려집니다<span class="gloss" lang="en" translate="yes">Tap ? to reveal, tap again to hide</span></span>';
   tbl.parentNode.insertBefore(bar, tbl);
 })();
 function qReveal(b){ var c=b.closest('.q-cell'); if(c) c.classList.add('revealed'); }
 function qHide(t){ var c=t.closest('.q-cell'); if(c) c.classList.remove('revealed'); }
 function qAll(btn,show){ var tbl=btn.closest('.ans-bar').nextElementSibling; while(tbl && tbl.tagName!=='TABLE') tbl=tbl.nextElementSibling; if(!tbl) return; tbl.querySelectorAll('.q-cell').forEach(function(c){ if(show) c.classList.add('revealed'); else c.classList.remove('revealed'); }); }
 </script>
+<div class="ak-notice" id="akNotice">이 브라우저에는 한국어 남성 음성이 없어 <b>목소리를 낮춰</b> 읽습니다. 진짜 남성 음성은 Microsoft Edge 에서 나옵니다.<span class="gloss" lang="en" translate="yes">This browser has no Korean male voice, so the female voice is pitched down. Open the page in Microsoft Edge for a real male voice.</span></div>
 </body>
 </html>

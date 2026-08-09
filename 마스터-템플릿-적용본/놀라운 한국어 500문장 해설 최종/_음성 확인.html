@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko" translate="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title translate="yes">Amazing Korean 1 — 음성 확인 (Voice Check)</title>
+<style>
+  body { font-family:'Segoe UI','Malgun Gothic','Noto Sans KR',sans-serif; margin:0;
+         background:#f8fafc; color:#0f172a; line-height:1.6; }
+  .wrap { max-width:860px; margin:0 auto; padding:28px 20px 60px; }
+  h1 { font-size:1.5rem; font-weight:900; margin:0 0 4px; color:#1e293b; }
+  h1 .en { display:block; font-size:0.62em; font-weight:700; opacity:0.6; }
+  .lead { margin:0 0 22px; color:#475569; }
+  .lead .en { display:block; font-size:0.88em; opacity:0.72; }
+  .box { background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:16px 18px;
+         margin-bottom:16px; box-shadow:0 1px 3px rgba(15,23,42,0.05); }
+  .box h2 { font-size:1.02rem; font-weight:800; margin:0 0 10px; color:#1e3a8a; }
+  .box h2 .en { display:block; font-size:0.72em; font-weight:700; opacity:0.62; }
+  table { width:100%; border-collapse:collapse; font-size:0.9rem; }
+  th, td { padding:8px 10px; border-bottom:1px solid #eef2f7; text-align:left; vertical-align:middle; }
+  th { background:#f1f5f9; font-weight:800; color:#334155; }
+  .tag { display:inline-block; border-radius:999px; padding:2px 9px; font-size:0.76rem; font-weight:800; }
+  .t-f { background:#fce7f3; color:#9d174d; }
+  .t-m { background:#dbeafe; color:#1e40af; }
+  .t-x { background:#f1f5f9; color:#64748b; }
+  .t-nat { background:#dcfce7; color:#166534; }
+  button { font-family:inherit; font-size:0.86rem; font-weight:800; cursor:pointer;
+           border:1px solid #cbd5e1; background:#f8fafc; color:#334155;
+           border-radius:8px; padding:6px 12px; }
+  button:hover { background:#e2e8f0; }
+  .none { color:#b91c1c; font-weight:800; }
+  .ok { color:#15803d; font-weight:800; }
+  ol { margin:8px 0 0; padding-left:20px; }
+  li { margin-bottom:6px; }
+  code { background:#f1f5f9; border-radius:4px; padding:1px 6px; font-size:0.88em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>음성 확인<span class="en" lang="en" translate="yes">Voice check</span></h1>
+<p class="lead">지금 쓰고 계신 브라우저에 어떤 한국어 음성이 있는지 보여 줍니다. 남성 음성이 없으면 아래 안내를 따르십시오.
+  <span class="en" lang="en" translate="yes">This page lists the Korean voices your current browser can use. If there is no male voice, follow the steps below.</span></p>
+
+<div class="box">
+  <h2>결론<span class="en" lang="en" translate="yes">Summary</span></h2>
+  <div id="summary">…</div>
+</div>
+
+<div class="box">
+  <h2>이 브라우저의 한국어 음성<span class="en" lang="en" translate="yes">Korean voices in this browser</span></h2>
+  <table>
+    <thead><tr>
+      <th>이름<span class="en" lang="en" translate="yes">Name</span></th>
+      <th>추정<span class="en" lang="en" translate="yes">Guess</span></th>
+      <th>종류<span class="en" lang="en" translate="yes">Kind</span></th>
+      <th>듣기<span class="en" lang="en" translate="yes">Listen</span></th>
+    </tr></thead>
+    <tbody id="rows"><tr><td colspan="4">읽는 중…</td></tr></tbody>
+  </table>
+</div>
+
+<div class="box">
+  <h2>남성 음성이 없을 때<span class="en" lang="en" translate="yes">If there is no male voice</span></h2>
+  <ol>
+    <li><b>가장 빠른 길 — Microsoft Edge 로 열기.</b> 이 파일을 마우스 오른쪽 단추로 누르고 「연결 프로그램 → Microsoft Edge」를 고르십시오.
+        Edge 는 인터넷에 연결되어 있으면 <code>Microsoft InJoon Online (Natural)</code> 남성 음성을 씁니다.
+        <span class="en" lang="en" translate="yes">Fastest: open this file in Microsoft Edge. When online, Edge offers the natural male voice InJoon.</span></li>
+    <li><b>인터넷 없이 쓰려면 — 윈도우에 음성 추가.</b>
+        설정 → 시간 및 언어 → 음성 → <b>음성 관리</b> → <b>음성 추가</b> → 한국어를 고르십시오.
+        내레이터의 <b>자연스러운 음성 추가</b>에서도 한국어 음성을 받을 수 있습니다. 받은 뒤에는 모든 브라우저에서 나옵니다.
+        <span class="en" lang="en" translate="yes">To work offline, add Korean voices in Windows Settings → Time &amp; language → Speech → Manage voices, or add natural voices under Narrator.</span></li>
+    <li><b>그래도 없으면.</b> 해설집의 「남」 단추는 여성 음성을 낮춰 읽습니다. 진짜 남성 음성이 아니라는 안내가 함께 뜹니다.
+        <span class="en" lang="en" translate="yes">Otherwise the <span lang="ko" translate="no">남</span> button in the workbook reads with the female voice pitched down, and says so.</span></li>
+  </ol>
+</div>
+
+<script>
+var AK_M = /(InJoon|In-Joon|BongJin|Bong-Jin|GookMin|Gook-Min|Hyunsu|Hyun-su|Minsik|Jinho|Male|남성|남자)/i;
+var AK_F = /(SunHi|Sun-Hi|Heami|Yuna|JiMin|Ji-Min|SeoHyeon|Seo-Hyeon|SoonBok|Soon-Bok|YuJin|Yu-Jin|Kyuri|Seoyeon|Sora|한국의|Female|여성|여자)/i;
+
+function say(name, text){
+  var vs = window.speechSynthesis.getVoices();
+  var v = null;
+  for (var i = 0; i < vs.length; i++) if (vs[i].name === name) { v = vs[i]; break; }
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(text || '안녕하세요. 저는 한국어를 공부합니다.');
+  if (v) { u.voice = v; u.lang = v.lang; }
+  u.rate = 0.92;
+  setTimeout(function(){ window.speechSynthesis.speak(u); }, 60);
+}
+
+function draw(){
+  var vs = (window.speechSynthesis && window.speechSynthesis.getVoices()) || [];
+  var ko = vs.filter(function(v){ return /^ko/i.test(v.lang || ''); });
+  var rows = document.getElementById('rows');
+  var sum = document.getElementById('summary');
+  if (!ko.length){
+    rows.innerHTML = '<tr><td colspan="4" class="none">한국어 음성이 하나도 없습니다.</td></tr>';
+    sum.innerHTML = '<span class="none">한국어 음성이 없습니다.</span> 아래 2번을 따라 윈도우에 한국어 음성을 추가하십시오.';
+    return;
+  }
+  var html = '', male = null, female = null;
+  ko.forEach(function(v){
+    var sex = AK_M.test(v.name) ? 'm' : (AK_F.test(v.name) ? 'f' : '?');
+    if (sex === 'm' && !male) male = v;
+    if (sex === 'f' && !female) female = v;
+    var kind = /natural/i.test(v.name) ? '<span class="tag t-nat">자연 음성</span>'
+             : (v.localService ? '<span class="tag t-x">로컬</span>' : '<span class="tag t-x">온라인</span>');
+    var lab = sex === 'm' ? '<span class="tag t-m">남성</span>'
+            : sex === 'f' ? '<span class="tag t-f">여성</span>'
+            : '<span class="tag t-x">모름</span>';
+    html += '<tr><td>' + v.name + '<br><small style="opacity:.6">' + v.lang + '</small></td>'
+          + '<td>' + lab + '</td><td>' + kind + '</td>'
+          + '<td><button type="button" onclick="say(' + JSON.stringify(v.name).replace(/"/g, '&quot;') + ')">🔊 듣기</button></td></tr>';
+  });
+  rows.innerHTML = html;
+  sum.innerHTML =
+    '한국어 음성 <b>' + ko.length + '개</b>를 찾았습니다.<br>' +
+    '여성: ' + (female ? '<span class="ok">' + female.name + '</span>' : '<span class="none">없음</span>') + '<br>' +
+    '남성: ' + (male ? '<span class="ok">' + male.name + '</span>' : '<span class="none">없음 — 아래 안내를 보십시오</span>');
+}
+
+if (window.speechSynthesis){
+  try { window.speechSynthesis.addEventListener('voiceschanged', draw); } catch(e){}
+  draw();
+  setTimeout(draw, 400);
+  setTimeout(draw, 1500);
+} else {
+  document.getElementById('summary').innerHTML = '<span class="none">이 브라우저는 음성 읽기를 지원하지 않습니다.</span>';
+}
+</script>
+
+</div>
+</body>
+</html>

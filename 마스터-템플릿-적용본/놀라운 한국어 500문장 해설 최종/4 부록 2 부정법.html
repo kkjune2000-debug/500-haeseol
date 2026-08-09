@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazing Korean 1 - Negative Construction</title>
+    <title translate="yes">Amazing Korean 1 — 부록 2: 부정법 (Negative Construction)</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Noto Sans KR', sans-serif; background-color: #555; margin: 0; padding: 20px; }
@@ -180,7 +180,9 @@
             th, td { border-color: #cbd5e1 !important; }
             .page-footer { border-top: 1px solid #e2e8f0 !important; -webkit-print-color-adjust: exact; }
         }
-    </style>
+    .gloss{text-transform:none;display:block;font-weight:600;font-size:0.86em;opacity:0.72;letter-spacing:0;margin-top:1px;}
+button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
+</style>
 </head>
 <body>
 
@@ -189,10 +191,10 @@
         <div class="section-header">
             <div>
                 <span class="chapter-badge">2</span>
-                <h1 class="main-title" style="display:inline; margin-left:8px;">Negative Construction</h1>
+                <h1 class="main-title" style="display:inline; margin-left:8px;"><span lang="en" translate="yes">Negative Construction</span></h1>
                 <p class="sub-title eng">부정법 (안, 못, 말다)</p>
             </div>
-            <span class="chapter-badge eng" style="background:#f1f5f9; color:#64748b;">VII. Appendix</span>
+            <span class="chapter-badge eng" style="background:#f1f5f9; color:#64748b;"><span lang="en" translate="yes">VII. Appendix</span></span>
         </div>
 
         <!-- Table -->
@@ -209,13 +211,13 @@
             </colgroup>
             <thead>
                 <tr>
-                    <th rowspan="3" colspan="2" class="bg-head-main">negative<br>부정법</th>
-                    <th colspan="4" class="bg-head-decl">서술문, 의문문 (Declarative, Interrogative)</th>
-                    <th colspan="2" class="bg-head-imp">명령문, 청유문 (Imp, Prop)</th>
+                    <th rowspan="3" colspan="2" class="bg-head-main"><span lang="en" translate="yes">negative</span><br>부정법</th>
+                    <th colspan="4" class="bg-head-decl">서술문, 의문문 <span lang="en" translate="yes">(Declarative, Interrogative)</span></th>
+                    <th colspan="2" class="bg-head-imp">명령문, 청유문 <span lang="en" translate="yes">(Imp, Prop)</span></th>
                 </tr>
                 <tr>
-                    <th colspan="2" class="bg-an border-an">안 (Don't)</th>
-                    <th colspan="2" class="bg-mot border-mot">못 (Can't)</th>
+                    <th colspan="2" class="bg-an border-an">안 <span lang="en" translate="yes">(Don't)</span></th>
+                    <th colspan="2" class="bg-mot border-mot">못 <span lang="en" translate="yes">(Can't)</span></th>
                     <th colspan="2" class="bg-malda border-malda">말다 (~지 말다)</th>
                 </tr>
                 <tr>
@@ -316,6 +318,11 @@
             </tbody>
         </table>
 
+        <p style="margin:8px 0 0; font-size:0.82rem; color:#64748b; line-height:1.6;">
+            ※ '명사+하다' 동사는 짧은 부정을 쓸 수 있습니다. 다만 명사와 '하다' 사이에 '안/못'을 넣습니다: <strong style="color:#0f766e;">공부(를) 안 하다 · 공부(를) 못 하다 · 사랑(을) 안 하다 · 사랑(을) 못 하다</strong><br>
+            <small style="color:#94a3b8;" lang="en" translate="yes"><em>Noun+<span lang="ko" translate="no">하다</span> verbs do allow short negation — put <span lang="ko" translate="no">안/못</span> between the noun and <span lang="ko" translate="no">하다</span>: <span lang="ko" translate="no">공부 안 하다</span> (not <span lang="ko" translate="no">안 공부하다</span>), <span lang="ko" translate="no">공부 못 하다</span> (not <span lang="ko" translate="no">못 공부하다</span>).</em></small>
+        </p>
+
         <!-- Footer -->
         <div class="page-footer">
             <span>118</span>
@@ -348,7 +355,7 @@
   });
   var bar=document.createElement('div');
   bar.className='ans-bar';
-  bar.innerHTML='<button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기 (Show all)</button><button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기 (Hide again)</button><span class="ans-hint">각 칸의 ?를 눌러 정답 확인, 정답을 다시 누르면 가려집니다 · Tap ? to reveal, tap again to hide</span>';
+  bar.innerHTML='<button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기<span class="gloss" lang="en" translate="yes">Show all</span></button><button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기<span class="gloss" lang="en" translate="yes">Hide again</span></button><span class="ans-hint">각 칸의 ?를 눌러 정답 확인, 정답을 다시 누르면 가려집니다<span class="gloss" lang="en" translate="yes">Tap ? to reveal, tap again to hide</span></span>';
   tbl.parentNode.insertBefore(bar, tbl);
 })();
 function qReveal(b){ var c=b.closest('.q-cell'); if(c) c.classList.add('revealed'); }

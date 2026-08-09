@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazing Korean 1 - Adverbial Grammar 16: In order to (~(으)려고)</title>
+    <title translate="yes">Amazing Korean 1 — Adverbial Grammar 16: In order to (~(으)려고)</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -50,6 +50,12 @@
         tbody td { padding: 8px 12px; border-bottom: 1px solid #e2e8f0; }
         tbody tr:nth-child(even) { background: #f8fafc; }
         .vocab-box { background: #ecfdf5; border-radius: 10px; padding: 14px 18px; margin: 12px 0 16px 0; border-left: 4px solid #10b981; }
+.vocab-box .v-list { display:flex; flex-wrap:wrap; gap:9px 22px; }
+.vocab-box .v-item { line-height:1.3; max-width:100%; overflow-wrap:anywhere; }
+.vocab-box .v-item b { font-weight:700; color:#78350f; font-size:1.02em; }
+.vocab-box .v-item .gloss { color:#92400e; opacity:0.8; }
+.vocab-box .vocab-title .gloss { color:#b45309; font-weight:700; }
+
         .vocab-box .vocab-title { font-size: 0.8rem; font-weight: 700; color: #047857; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
         .answer-box { margin: 0 0 24px 0; }
         .answer-toggle { background: #e0f2fe; color: #075985; border: 1px solid #bae6fd; padding: 8px 20px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 700; margin-top: 8px; transition:background 0.2s; }
@@ -319,15 +325,33 @@
         /* v9.93 Korean word-break — keep CJK syllables together */
         .gstep-table td, .gstep-table th { word-break: keep-all; overflow-wrap: break-word; }
         .exp-table td, .exp-table th { word-break: keep-all; overflow-wrap: break-word; }
-    </style>
+    .gloss{text-transform:none;display:block;font-weight:600;font-size:0.86em;opacity:0.72;letter-spacing:0;margin-top:1px;}
+button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
+
+
+.spk-tag { font-size:0.62em; font-weight:800; margin-left:1px; vertical-align:0.12em; letter-spacing:0; }
+.spk-m { margin-left:2px; }
+.spk-off { opacity:0.62; }
+.ak-notice { position:fixed; left:50%; bottom:22px; transform:translateX(-50%) translateY(14px);
+    z-index:10000; max-width:min(92vw,460px); background:#1e293b; color:#fff; border-radius:10px;
+    padding:11px 16px; font-size:0.86rem; line-height:1.45; box-shadow:0 6px 20px rgba(15,23,42,0.3);
+    opacity:0; pointer-events:none; transition:opacity 0.2s, transform 0.2s; }
+.ak-notice.on { opacity:1; transform:translateX(-50%) translateY(0); }
+.ak-notice .gloss { color:#cbd5e1; opacity:0.9; }
+@media print { .ak-notice { display:none; } }
+/* spk-after v1 */
+/* 쓰기 테스트 — 정답을 맞히거나 답을 펼치기 전에는 문제 옆 소리 단추를 숨긴다 */
+.writing-item:not(:has(.writing-input.correct)):not(:has(.writing-input.revealed)) .speak-btn{
+    display:none;}
+</style>
 </head>
 <body>
 <div class="container">
 
 <header class="title-block adverbial">
     <div class="title-en">
-        <h1 class="title-main">Adverbial Grammar 16</h1>
-        <p class="title-sub">In order to (verb intent)</p>
+        <h1 class="title-main" lang="en" translate="yes">Adverbial Grammar 16</h1>
+        <p class="title-sub" lang="en" translate="yes">In order to (verb intent)</p>
     </div>
     <div class="title-divider"></div>
     <div class="title-ko">
@@ -336,65 +360,65 @@
     </div>
 </header>
 
-<h2>Grammar Overview · 문법 정리</h2>
+<h2><span lang="en" translate="yes">Grammar Overview ·</span> 문법 정리</h2>
 
 <div class="gstep">
     <div class="gstep-num">1</div>
     <div class="gstep-body">
-        <div class="gstep-pattern">Verb + <span class="accent">려고 / 으려고</span><small><strong style="color:#dc2626;">No 받침</strong> → <strong>려고</strong> (<strong>만나다</strong> → <strong>만나려고</strong>) &nbsp;|&nbsp; <strong style="color:#16a34a;">With 받침</strong> → <strong>으려고</strong> (<strong>먹다</strong> → <strong>먹으려고</strong>)</small></div>
+        <div class="gstep-pattern"><span lang="en" translate="yes">Verb +</span> <span class="accent">려고 / 으려고</span><small lang="en" translate="yes"><strong style="color:#dc2626;">No final consonant</strong> → <strong><span lang="ko" translate="no">려고</span></strong> (<strong><span lang="ko" translate="no">만나다</span></strong> → <strong><span lang="ko" translate="no">만나려고</span></strong>) &nbsp;|&nbsp; <strong style="color:#16a34a;">With <span lang="ko" translate="no">받침</span></strong> → <strong><span lang="ko" translate="no">으려고</span></strong> (<strong><span lang="ko" translate="no">먹다</span></strong> → <strong><span lang="ko" translate="no">먹으려고</span></strong>)</small></div>
     </div>
 </div>
 
 <div class="gstep">
     <div class="gstep-num">2</div>
     <div class="gstep-body">
-        <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">동사(Verb) + ~(으)려고</h3>
+        <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">동사 + ~(으)려고</h3>
         <div class="explain-note">
-            <strong>📝 동사 + ~(으)려고 (Verb + ~(으)려고)</strong>
+            <strong>📝 동사 + ~(으)려고</strong>
             <div style="overflow:hidden;border-radius:14px;box-shadow:0 4px 16px rgba(6,78,59,0.14);border:1px solid #a7f3d0;margin-top:12px;">
             <table style="width:100%;border-collapse:collapse;font-size:0.92rem;background:#fff;">
                 <thead>
                     <tr style="background:linear-gradient(135deg,#047857,#10b981);color:#fff;">
-                        <th style="padding:13px 10px;text-align:center;font-weight:800;">동사<br><small style="font-weight:600;opacity:0.9;">Verb</small></th>
-                        <th style="padding:13px 10px;text-align:center;font-weight:800;">받침<br><small style="font-weight:600;opacity:0.9;">Final 받침</small></th>
-                        <th style="padding:13px 10px;text-align:center;font-weight:800;">+ (으)려고<br><small style="font-weight:600;opacity:0.9;">Connector</small></th>
-                        <th style="padding:13px 10px;text-align:center;font-weight:800;">결과<br><small style="font-weight:600;opacity:0.9;">Full form</small></th>
+                        <th style="padding:13px 10px;text-align:center;font-weight:800;">동사<br><small style="font-weight:600;opacity:0.9;" lang="en" translate="yes">Verb</small></th>
+                        <th style="padding:13px 10px;text-align:center;font-weight:800;">받침<br><small style="font-weight:600;opacity:0.9;" lang="en" translate="yes">Final <span lang="ko" translate="no">받침</span></small></th>
+                        <th style="padding:13px 10px;text-align:center;font-weight:800;">+ (으)려고<br><small style="font-weight:600;opacity:0.9;" lang="en" translate="yes">Connector</small></th>
+                        <th style="padding:13px 10px;text-align:center;font-weight:800;">결과<br><small style="font-weight:600;opacity:0.9;" lang="en" translate="yes">Full form</small></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr style="background:#fff;">
-                        <td style="padding:13px 10px;text-align:center;"><strong style="font-size:1.05rem;color:#064e3b;">가다</strong><br><small style="color:#9ca3af;">go</small></td>
-                        <td style="padding:13px 10px;text-align:center;"><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;">없음 X</span><br><small style="color:#9ca3af;"><em>none</em></small></td>
+                        <td style="padding:13px 10px;text-align:center;"><strong style="font-size:1.05rem;color:#064e3b;">가다</strong><br><small style="color:#9ca3af;" lang="en" translate="yes">go</small></td>
+                        <td style="padding:13px 10px;text-align:center;"><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;">없음 X</span><br><small style="color:#9ca3af;" lang="en" translate="yes"><em>none</em></small></td>
                         <td style="padding:13px 10px;text-align:center;"><span style="color:#6b7280;">가</span> + <span style="display:inline-block;padding:1px 8px;border-radius:6px;background:#fef3c7;color:#d97706;font-weight:800;">려고</span> <span style="color:#10b981;">→</span> <strong style="color:#064e3b;">가려고</strong></td>
                         <td style="padding:13px 10px;text-align:center;"><strong style="color:#064e3b;">가려고</strong></td>
                     </tr>
                     <tr style="background:#ecfdf5;">
-                        <td style="padding:13px 10px;text-align:center;"><strong style="font-size:1.05rem;color:#064e3b;">만나다</strong><br><small style="color:#9ca3af;">meet</small></td>
-                        <td style="padding:13px 10px;text-align:center;"><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;">없음 X</span><br><small style="color:#9ca3af;"><em>none</em></small></td>
+                        <td style="padding:13px 10px;text-align:center;"><strong style="font-size:1.05rem;color:#064e3b;">만나다</strong><br><small style="color:#9ca3af;" lang="en" translate="yes">meet</small></td>
+                        <td style="padding:13px 10px;text-align:center;"><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;">없음 X</span><br><small style="color:#9ca3af;" lang="en" translate="yes"><em>none</em></small></td>
                         <td style="padding:13px 10px;text-align:center;"><span style="color:#6b7280;">만나</span> + <span style="display:inline-block;padding:1px 8px;border-radius:6px;background:#fef3c7;color:#d97706;font-weight:800;">려고</span> <span style="color:#10b981;">→</span> <strong style="color:#064e3b;">만나려고</strong></td>
                         <td style="padding:13px 10px;text-align:center;"><strong style="color:#064e3b;">만나려고</strong></td>
                     </tr>
                     <tr style="background:#fff;">
-                        <td style="padding:13px 10px;text-align:center;"><strong style="font-size:1.05rem;color:#064e3b;">빼다</strong><br><small style="color:#9ca3af;">lose (weight)</small></td>
-                        <td style="padding:13px 10px;text-align:center;"><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;">없음 X</span><br><small style="color:#9ca3af;"><em>none</em></small></td>
+                        <td style="padding:13px 10px;text-align:center;"><strong style="font-size:1.05rem;color:#064e3b;">빼다</strong><br><small style="color:#9ca3af;" lang="en" translate="yes">lose (weight)</small></td>
+                        <td style="padding:13px 10px;text-align:center;"><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;">없음 X</span><br><small style="color:#9ca3af;" lang="en" translate="yes"><em>none</em></small></td>
                         <td style="padding:13px 10px;text-align:center;"><span style="color:#6b7280;">빼</span> + <span style="display:inline-block;padding:1px 8px;border-radius:6px;background:#fef3c7;color:#d97706;font-weight:800;">려고</span> <span style="color:#10b981;">→</span> <strong style="color:#064e3b;">빼려고</strong></td>
                         <td style="padding:13px 10px;text-align:center;"><strong style="color:#064e3b;">빼려고</strong></td>
                     </tr>
                     <tr style="background:#fff;border-top:2px solid #a7f3d0;">
-                        <td style="padding:13px 10px;text-align:center;"><strong style="font-size:1.05rem;color:#064e3b;">먹다</strong><br><small style="color:#9ca3af;">eat</small></td>
-                        <td style="padding:13px 10px;text-align:center;"><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#dcfce7;color:#16a34a;font-weight:800;">있음 O</span><br><small style="color:#9ca3af;"><em>yes</em></small></td>
+                        <td style="padding:13px 10px;text-align:center;"><strong style="font-size:1.05rem;color:#064e3b;">먹다</strong><br><small style="color:#9ca3af;" lang="en" translate="yes">eat</small></td>
+                        <td style="padding:13px 10px;text-align:center;"><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#dcfce7;color:#16a34a;font-weight:800;">있음 O</span><br><small style="color:#9ca3af;" lang="en" translate="yes"><em>yes</em></small></td>
                         <td style="padding:13px 10px;text-align:center;"><span style="color:#6b7280;">먹</span> + <span style="display:inline-block;padding:1px 8px;border-radius:6px;background:#d1fae5;color:#047857;font-weight:800;">으려고</span> <span style="color:#10b981;">→</span> <strong style="color:#064e3b;">먹으려고</strong></td>
                         <td style="padding:13px 10px;text-align:center;"><strong style="color:#064e3b;">먹으려고</strong></td>
                     </tr>
                     <tr style="background:#ecfdf5;">
-                        <td style="padding:13px 10px;text-align:center;"><strong style="font-size:1.05rem;color:#064e3b;">읽다</strong><br><small style="color:#9ca3af;">read</small></td>
-                        <td style="padding:13px 10px;text-align:center;"><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#dcfce7;color:#16a34a;font-weight:800;">있음 O</span><br><small style="color:#9ca3af;"><em>yes</em></small></td>
+                        <td style="padding:13px 10px;text-align:center;"><strong style="font-size:1.05rem;color:#064e3b;">읽다</strong><br><small style="color:#9ca3af;" lang="en" translate="yes">read</small></td>
+                        <td style="padding:13px 10px;text-align:center;"><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#dcfce7;color:#16a34a;font-weight:800;">있음 O</span><br><small style="color:#9ca3af;" lang="en" translate="yes"><em>yes</em></small></td>
                         <td style="padding:13px 10px;text-align:center;"><span style="color:#6b7280;">읽</span> + <span style="display:inline-block;padding:1px 8px;border-radius:6px;background:#d1fae5;color:#047857;font-weight:800;">으려고</span> <span style="color:#10b981;">→</span> <strong style="color:#064e3b;">읽으려고</strong></td>
                         <td style="padding:13px 10px;text-align:center;"><strong style="color:#064e3b;">읽으려고</strong></td>
                     </tr>
                     <tr style="background:#fff;">
-                        <td style="padding:13px 10px;text-align:center;"><strong style="font-size:1.05rem;color:#064e3b;">받다</strong><br><small style="color:#9ca3af;">receive</small></td>
-                        <td style="padding:13px 10px;text-align:center;"><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#dcfce7;color:#16a34a;font-weight:800;">있음 O</span><br><small style="color:#9ca3af;"><em>yes</em></small></td>
+                        <td style="padding:13px 10px;text-align:center;"><strong style="font-size:1.05rem;color:#064e3b;">받다</strong><br><small style="color:#9ca3af;" lang="en" translate="yes">receive</small></td>
+                        <td style="padding:13px 10px;text-align:center;"><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#dcfce7;color:#16a34a;font-weight:800;">있음 O</span><br><small style="color:#9ca3af;" lang="en" translate="yes"><em>yes</em></small></td>
                         <td style="padding:13px 10px;text-align:center;"><span style="color:#6b7280;">받</span> + <span style="display:inline-block;padding:1px 8px;border-radius:6px;background:#d1fae5;color:#047857;font-weight:800;">으려고</span> <span style="color:#10b981;">→</span> <strong style="color:#064e3b;">받으려고</strong></td>
                         <td style="padding:13px 10px;text-align:center;"><strong style="color:#064e3b;">받으려고</strong></td>
                     </tr>
@@ -408,23 +432,23 @@
 <div class="gstep">
     <div class="gstep-num">3</div>
     <div class="gstep-body">
-        <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">부정형 — 동사(Verb) + ~지 않으려고</h3>
+        <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">부정형 — 동사 + ~지 않으려고</h3>
         <div class="explain-note">
-            <strong>📝 부정 의도 (Negative purpose: in order NOT to do X)</strong>
+            <strong>📝 부정 의도 <span lang="en" translate="yes">(Negative purpose: in order NOT to do X)</span></strong>
             <table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:linear-gradient(135deg,#047857,#10b981); color:#fff;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">동사<br><small>Verb</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">어간 + 지 않으려고<br><small>Stem + 지 않으려고</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">결과<br><small>Full form</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">동사<br><small lang="en" translate="yes">Verb</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">어간 + 지 않으려고<br><small>어간 + 지 않으려고</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">결과<br><small lang="en" translate="yes">Full form</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>자다</strong><br><small>sleep</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">자 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047857;"><strong>자지 않으려고</strong></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>늦다</strong><br><small>be late</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">늦 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047857;"><strong>늦지 않으려고</strong></td></tr>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>걸리다</strong><br><small>catch (illness)</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">걸리 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047857;"><strong>걸리지 않으려고</strong></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>잊다</strong><br><small>forget</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">잊 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047857;"><strong>잊지 않으려고</strong></td></tr>
-                    <tr><td style="padding:8px 10px; text-align:center;"><strong>먹다</strong><br><small>eat</small></td><td style="padding:8px 10px; text-align:center;">먹 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; color:#047857;"><strong>먹지 않으려고</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>자다</strong><br><small lang="en" translate="yes">sleep</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">자 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047857;"><strong>자지 않으려고</strong></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>늦다</strong><br><small lang="en" translate="yes">be late</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">늦 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047857;"><strong>늦지 않으려고</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>걸리다</strong><br><small lang="en" translate="yes">catch (illness)</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">걸리 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047857;"><strong>걸리지 않으려고</strong></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>잊다</strong><br><small lang="en" translate="yes">forget</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">잊 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047857;"><strong>잊지 않으려고</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center;"><strong>먹다</strong><br><small lang="en" translate="yes">eat</small></td><td style="padding:8px 10px; text-align:center;">먹 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; color:#047857;"><strong>먹지 않으려고</strong></td></tr>
                 </tbody>
             </table>
         </div>
@@ -434,428 +458,472 @@
 <div class="gstep">
     <div class="gstep-num">4</div>
     <div class="gstep-body">
-        <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">Answering 왜 — two ways<br><small style="font-weight:600;">왜 질문에 대한 두 가지 대답</small></h3>
+        <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;"><span lang="en" translate="yes">Answering</span> 왜 <span lang="en" translate="yes">— two ways</span><br><small style="font-weight:600;">왜 질문에 대한 두 가지 대답</small></h3>
         <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             <strong>왜</strong>로 질문했을 때 대답은 1) <strong>목적</strong>(~(으)려고 / 위해서), 2) <strong>원인</strong>(~아/어서 / 때문에) 두 가지로 할 수 있습니다.<br>
-            <small><em>A 왜 question can be answered with either <strong>purpose</strong> (~(으)려고 / 위해서) or <strong>cause</strong> (~아/어서 / 때문에). Same question, two valid answer types.</em></small>
+            <small lang="en" translate="yes"><em>A <span lang="ko" translate="no">왜</span> question can be answered with either <strong>purpose</strong> (~(<span lang="ko" translate="no">으</span>)<span lang="ko" translate="no">려고 / 위해서</span>) or <strong>cause</strong> (~<span lang="ko" translate="no">아/어서 / 때문에</span>). Same question, two valid answer types.</em></small>
         </div>
-        <blockquote><strong>Q. 당신은 왜 한국어를 공부합니까?</strong><br><small><em>Why do you study Korean?</em></small><br><br>1) <strong>목적</strong>: <strong>저는 한국에 유학을 가려고 한국어를 공부합니다</strong>.<br><small><em>I study Korean to go study abroad in Korea.</em></small><br><br>2) <strong>원인</strong>: <strong>저는 한국어가 좋아서 한국어를 공부합니다</strong>.<br><small><em>I study Korean because I like Korean.</em></small></blockquote>
+        <blockquote><strong>Q. 당신은 왜 한국어를 공부합니까?</strong><br><small lang="en" translate="yes"><em>Why do you study Korean?</em></small><br><br>1) <strong>목적</strong>: <strong>저는 한국에 유학을 가려고 한국어를 공부합니다</strong>.<br><small lang="en" translate="yes"><em>I study Korean to go study abroad in Korea.</em></small><br><br>2) <strong>원인</strong>: <strong>저는 한국어가 좋아서 한국어를 공부합니다</strong>.<br><small lang="en" translate="yes"><em>I study Korean because I like Korean.</em></small></blockquote>
     </div>
 </div>
 
 <hr>
 
-<h2>Practice: Make Korean sentences!</h2>
+<h2><span lang="en" translate="yes">Practice: Make Korean sentences!</span></h2>
 <p class="subtitle">연습: 한국어 문장을 만들어 보세요!</p>
 
-<h3>338) Why do you study Korean?</h3>
+<h3><span lang="en" translate="yes">338) Why do you study Korean?</span></h3>
 
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
 <div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    you = 당신 &nbsp;|&nbsp; why = 왜 &nbsp;|&nbsp; Korean = 한국어 &nbsp;|&nbsp; study = 공부하다
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>당신</b><span class="gloss" lang="en" translate="yes">you</span></span>
+        <span class="v-item"><b>왜</b><span class="gloss" lang="en" translate="yes">why</span></span>
+        <span class="v-item"><b>한국어</b><span class="gloss" lang="en" translate="yes">Korean (language)</span></span>
+        <span class="v-item"><b>공부하다</b><span class="gloss" lang="en" translate="yes">study</span></span>
+    </div>
 </div>
 
 <div class="single-wt">
-    <textarea class="writing-input" data-ans="당신은 왜 한국어를 공부합니까?" oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+    <textarea translate="yes" class="writing-input" data-ans="당신은 왜 한국어를 공부합니까?" oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
 </div>
 
 <div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
     <div class="answer-content">
-        <div class="ans-kr">당신은 왜 한국어를 공부합니까? <button class="speak-btn" onclick="speakKorean('당신은 왜 한국어를 공부합니까?')" title="Listen">🔊</button></div>
+        <div class="ans-kr">당신은 왜 한국어를 공부합니까? <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('당신은 왜 한국어를 공부합니까?','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('당신은 왜 한국어를 공부합니까?','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
     </div>
 </div>
 
 <div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
         <table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Reason) + Object + Predicate (Verb)<br>한국어 어순: 주어 + 부사어(이유) + 목적어 + 서술어(동사)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(이유) + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Reason) + Object + Predicate (Verb)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
             </thead>
             <tbody>
-                <tr><td class="exp-en"><strong>Why</strong></td><td class="exp-role">Adverbial (Reason)<br><small>부사어(이유)</small></td><td class="exp-form"><strong>왜</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>do you</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>당신은</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>study Korean?</strong></td><td class="exp-role">Object + Predicate (Verb)<br><small>목적어 + 서술어(동사)</small></td><td class="exp-form"><strong>한국어를 공부합니까?</strong></td><td></td></tr>
-            </tbody>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>do you</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>당신은</strong></td><td><strong>당신</strong> + <strong>은</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>Why</strong></td><td class="exp-role">부사어(이유)<br><small><span lang="en" translate="yes">Adverbial (Reason)</span></small></td><td class="exp-form"><strong>왜</strong></td><td></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>study Korean?</strong></td><td class="exp-role">목적어 + 서술어(동사)<br><small><span lang="en" translate="yes">Object + Predicate (Verb)</span></small></td><td class="exp-form"><strong>한국어를 공부합니까?</strong></td><td></td></tr>
+        </tbody>
         </table>
         
     </div>
 </div>
 
-<h3>339) I study Korean to get a job at a Korean company.</h3>
+<h3><span lang="en" translate="yes">339) I study Korean to get a job at a Korean company.</span></h3>
 
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
 <div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    I = 저 &nbsp;|&nbsp; Korean company = 한국 회사 &nbsp;|&nbsp; get a job = 취직하다 &nbsp;|&nbsp; in order to = ~(으)려고
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>저</b><span class="gloss" lang="en" translate="yes">I (humble)</span></span>
+        <span class="v-item"><b>한국 회사</b><span class="gloss" lang="en" translate="yes">Korean company</span></span>
+        <span class="v-item"><b>취직하다</b><span class="gloss" lang="en" translate="yes">get a job</span></span>
+        <span class="v-item"><b>~(으)려고</b><span class="gloss" lang="en" translate="yes">in order to</span></span>
+    </div>
 </div>
 
 <div class="single-wt">
-    <textarea class="writing-input" data-ans="저는 한국 회사에 취직하려고 한국어를 공부합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+    <textarea translate="yes" class="writing-input" data-ans="저는 한국 회사에 취직하려고 한국어를 공부합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
 </div>
 
 <div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
     <div class="answer-content">
-        <div class="ans-kr">저는 한국 회사에 취직하려고 한국어를 공부합니다. <button class="speak-btn" onclick="speakKorean('저는 한국 회사에 취직하려고 한국어를 공부합니다.')" title="Listen">🔊</button></div>
+        <div class="ans-kr">저는 한국 회사에 취직하려고 한국어를 공부합니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('저는 한국 회사에 취직하려고 한국어를 공부합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('저는 한국 회사에 취직하려고 한국어를 공부합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
     </div>
 </div>
 
 <div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
         <table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Purpose) + Object + Predicate (Verb)<br>한국어 어순: 주어 + 부사어(목적) + 목적어 + 서술어(동사)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(목적) + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Purpose) + Object + Predicate (Verb)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
             </thead>
             <tbody>
-                <tr><td class="exp-en"><strong>I</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>저는</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>study</strong></td><td class="exp-role">Predicate (Verb)<br><small>서술어(동사)</small></td><td class="exp-form"><strong>공부합니다</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>Korean</strong></td><td class="exp-role">Object<br><small>목적어</small></td><td class="exp-form"><strong>한국어를</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>to get a job at a Korean company</strong></td><td class="exp-role">Adverbial (Purpose)<br><small>부사어(목적)</small></td><td class="exp-form"><strong>한국 회사에 취직하려고</strong></td><td><strong>취직하다</strong> → <strong>취직하</strong> + <strong>려고</strong> → <strong>취직하려고</strong></td></tr>
-            </tbody>
+                <tr><td class="exp-en"><strong>I</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>저는</strong></td><td><strong>저</strong> + <strong>는</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>to get a job at a Korean company</strong></td><td class="exp-role">부사어(목적)<br><small><span lang="en" translate="yes">Adverbial (Purpose)</span></small></td><td class="exp-form"><strong>한국 회사에 취직하려고</strong></td><td><strong>취직하다</strong> → <strong>취직하</strong> + <strong>려고</strong> → <strong>취직하려고</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>Korean</strong></td><td class="exp-role">목적어<br><small><span lang="en" translate="yes">Object</span></small></td><td class="exp-form"><strong>한국어를</strong></td><td><strong>한국어</strong> + <strong>를</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>study</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>공부합니다</strong></td><td><strong>공부하다</strong> → <strong>공부하</strong> + <strong>ㅂ니다</strong> → <strong>공부합니다</strong></td></tr>
+        </tbody>
         </table>
         
     </div>
 </div>
 
-<h3>340) Why do you go to the hospital?</h3>
+<h3><span lang="en" translate="yes">340) Why do you go to the hospital?</span></h3>
 
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
 <div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    you = 당신 &nbsp;|&nbsp; why = 왜 &nbsp;|&nbsp; hospital = 병원 &nbsp;|&nbsp; go = 가다
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>당신</b><span class="gloss" lang="en" translate="yes">you</span></span>
+        <span class="v-item"><b>왜</b><span class="gloss" lang="en" translate="yes">why</span></span>
+        <span class="v-item"><b>병원</b><span class="gloss" lang="en" translate="yes">hospital</span></span>
+        <span class="v-item"><b>가다</b><span class="gloss" lang="en" translate="yes">go</span></span>
+    </div>
 </div>
 
 <div class="single-wt">
-    <textarea class="writing-input" data-ans="당신은 왜 병원에 갑니까?" oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+    <textarea translate="yes" class="writing-input" data-ans="당신은 왜 병원에 갑니까?" oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
 </div>
 
 <div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
     <div class="answer-content">
-        <div class="ans-kr">당신은 왜 병원에 갑니까? <button class="speak-btn" onclick="speakKorean('당신은 왜 병원에 갑니까?')" title="Listen">🔊</button></div>
+        <div class="ans-kr">당신은 왜 병원에 갑니까? <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('당신은 왜 병원에 갑니까?','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('당신은 왜 병원에 갑니까?','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
     </div>
 </div>
 
 <div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
         <table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Reason + Place) + Predicate (Verb)<br>한국어 어순: 주어 + 부사어(이유 + 장소) + 서술어(동사)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(이유 + 장소) + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Reason + Place) + Predicate (Verb)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
             </thead>
             <tbody>
-                <tr><td class="exp-en"><strong>Why</strong></td><td class="exp-role">Adverbial (Reason)<br><small>부사어(이유)</small></td><td class="exp-form"><strong>왜</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>do you</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>당신은</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>go to the hospital?</strong></td><td class="exp-role">Adverbial (Place) + Predicate (Verb)<br><small>부사어(장소) + 서술어(동사)</small></td><td class="exp-form"><strong>병원에 갑니까?</strong></td><td></td></tr>
-            </tbody>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>do you</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>당신은</strong></td><td><strong>당신</strong> + <strong>은</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>Why</strong></td><td class="exp-role">부사어(이유)<br><small><span lang="en" translate="yes">Adverbial (Reason)</span></small></td><td class="exp-form"><strong>왜</strong></td><td></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>go to the hospital?</strong></td><td class="exp-role">부사어(장소) + 서술어(동사)<br><small><span lang="en" translate="yes">Adverbial (Place) + Predicate (Verb)</span></small></td><td class="exp-form"><strong>병원에 갑니까?</strong></td><td></td></tr>
+        </tbody>
         </table>
         
     </div>
 </div>
 
-<h3>341) I go to the hospital to get a health check-up.</h3>
+<h3><span lang="en" translate="yes">341) I go to the hospital to get a health check-up.</span></h3>
 
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
 <div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    health check-up = 건강 검진 &nbsp;|&nbsp; receive = 받다 &nbsp;|&nbsp; in order to = ~(으)려고 &nbsp;|&nbsp; hospital = 병원
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>건강 검진</b><span class="gloss" lang="en" translate="yes">health check-up</span></span>
+        <span class="v-item"><b>받다</b><span class="gloss" lang="en" translate="yes">receive</span></span>
+        <span class="v-item"><b>~(으)려고</b><span class="gloss" lang="en" translate="yes">in order to</span></span>
+        <span class="v-item"><b>병원</b><span class="gloss" lang="en" translate="yes">hospital</span></span>
+    </div>
 </div>
 
 <div class="single-wt">
-    <textarea class="writing-input" data-ans="저는 건강 검진을 받으려고 병원에 갑니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+    <textarea translate="yes" class="writing-input" data-ans="저는 건강 검진을 받으려고 병원에 갑니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
 </div>
 
 <div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
     <div class="answer-content">
-        <div class="ans-kr">저는 건강 검진을 받으려고 병원에 갑니다. <button class="speak-btn" onclick="speakKorean('저는 건강 검진을 받으려고 병원에 갑니다.')" title="Listen">🔊</button></div>
+        <div class="ans-kr">저는 건강 검진을 받으려고 병원에 갑니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('저는 건강 검진을 받으려고 병원에 갑니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('저는 건강 검진을 받으려고 병원에 갑니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
     </div>
 </div>
 
 <div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
         <table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Purpose + Place) + Predicate (Verb)<br>한국어 어순: 주어 + 부사어(목적 + 장소) + 서술어(동사)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(목적 + 장소) + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Purpose + Place) + Predicate (Verb)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
             </thead>
             <tbody>
-                <tr><td class="exp-en"><strong>I</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>저는</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>go</strong></td><td class="exp-role">Predicate (Verb)<br><small>서술어(동사)</small></td><td class="exp-form"><strong>갑니다</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>to the hospital</strong></td><td class="exp-role">Adverbial (Place)<br><small>부사어(장소)</small></td><td class="exp-form"><strong>병원에</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>to get a health check-up</strong></td><td class="exp-role">Adverbial (Purpose)<br><small>부사어(목적)</small></td><td class="exp-form"><strong>건강 검진을 받으려고</strong></td><td><strong>받다</strong> → <strong>받</strong> + <strong>으려고</strong> → <strong>받으려고</strong></td></tr>
-            </tbody>
+                <tr><td class="exp-en"><strong>I</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>저는</strong></td><td><strong>저</strong> + <strong>는</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>to get a health check-up</strong></td><td class="exp-role">부사어(목적)<br><small><span lang="en" translate="yes">Adverbial (Purpose)</span></small></td><td class="exp-form"><strong>건강 검진을 받으려고</strong></td><td><strong>받다</strong> → <strong>받</strong> + <strong>으려고</strong> → <strong>받으려고</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>to the hospital</strong></td><td class="exp-role">부사어(장소)<br><small><span lang="en" translate="yes">Adverbial (Place)</span></small></td><td class="exp-form"><strong>병원에</strong></td><td><strong>병원</strong> + <strong>에</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>go</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>갑니다</strong></td><td><strong>가다</strong> → <strong>가</strong> + <strong>ㅂ니다</strong> → <strong>갑니다</strong></td></tr>
+        </tbody>
         </table>
         
     </div>
 </div>
 
-<h3>342) He bought a gift to give to his wife.</h3>
+<h3><span lang="en" translate="yes">342) He bought a gift to give to his wife.</span></h3>
 
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
 <div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    wife = 아내 &nbsp;|&nbsp; to (recipient) = ~에게 &nbsp;|&nbsp; give = 주다 &nbsp;|&nbsp; gift = 선물 &nbsp;|&nbsp; buy = 사다
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>아내</b><span class="gloss" lang="en" translate="yes">wife</span></span>
+        <span class="v-item"><b>~에게</b><span class="gloss" lang="en" translate="yes">to (a person)</span></span>
+        <span class="v-item"><b>주다</b><span class="gloss" lang="en" translate="yes">give</span></span>
+        <span class="v-item"><b>선물</b><span class="gloss" lang="en" translate="yes">gift</span></span>
+        <span class="v-item"><b>사다</b><span class="gloss" lang="en" translate="yes">buy</span></span>
+    </div>
 </div>
 
 <div class="single-wt">
-    <textarea class="writing-input" data-ans="그는 아내에게 주려고 선물을 샀습니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+    <textarea translate="yes" class="writing-input" data-ans="그는 아내에게 주려고 선물을 샀습니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
 </div>
 
 <div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
     <div class="answer-content">
-        <div class="ans-kr">그는 아내에게 주려고 선물을 샀습니다. <button class="speak-btn" onclick="speakKorean('그는 아내에게 주려고 선물을 샀습니다.')" title="Listen">🔊</button></div>
+        <div class="ans-kr">그는 아내에게 주려고 선물을 샀습니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('그는 아내에게 주려고 선물을 샀습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('그는 아내에게 주려고 선물을 샀습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
     </div>
 </div>
 
 <div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
         <table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Purpose) + Object + Predicate (Verb)<br>한국어 어순: 주어 + 부사어(목적) + 목적어 + 서술어(동사)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(목적) + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Purpose) + Object + Predicate (Verb)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
             </thead>
             <tbody>
-                <tr><td class="exp-en"><strong>He</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>그는</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>bought</strong></td><td class="exp-role">Predicate (Verb)<br><small>서술어(동사)</small></td><td class="exp-form"><strong>샀습니다</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>a gift</strong></td><td class="exp-role">Object<br><small>목적어</small></td><td class="exp-form"><strong>선물을</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>to give to his wife</strong></td><td class="exp-role">Adverbial (Purpose)<br><small>부사어(목적)</small></td><td class="exp-form"><strong>아내에게 주려고</strong></td><td><strong>주다</strong> → <strong>주</strong> + <strong>려고</strong> → <strong>주려고</strong></td></tr>
-            </tbody>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>He</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>그는</strong></td><td><strong>그</strong> + <strong>는</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>to give to his wife</strong></td><td class="exp-role">부사어(목적)<br><small><span lang="en" translate="yes">Adverbial (Purpose)</span></small></td><td class="exp-form"><strong>아내에게 주려고</strong></td><td><strong>주다</strong> → <strong>주</strong> + <strong>려고</strong> → <strong>주려고</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>a gift</strong></td><td class="exp-role">목적어<br><small><span lang="en" translate="yes">Object</span></small></td><td class="exp-form"><strong>선물을</strong></td><td><strong>선물</strong> + <strong>을</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>bought</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>샀습니다</strong></td><td><strong>사다</strong> → <strong>사</strong> + <strong>았습니다</strong> → <strong>샀습니다</strong></td></tr>
+        </tbody>
         </table>
         
     </div>
 </div>
 
-<h3>343) He went to a coffee shop to meet his friend.</h3>
+<h3><span lang="en" translate="yes">343) He went to a coffee shop to meet his friend.</span></h3>
 
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
 <div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    friend = 친구 &nbsp;|&nbsp; meet = 만나다 &nbsp;|&nbsp; coffee shop = 커피숍 &nbsp;|&nbsp; go = 가다
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>친구</b><span class="gloss" lang="en" translate="yes">friend</span></span>
+        <span class="v-item"><b>만나다</b><span class="gloss" lang="en" translate="yes">meet</span></span>
+        <span class="v-item"><b>커피숍</b><span class="gloss" lang="en" translate="yes">coffee shop</span></span>
+        <span class="v-item"><b>가다</b><span class="gloss" lang="en" translate="yes">go</span></span>
+    </div>
 </div>
 
 <div class="single-wt">
-    <textarea class="writing-input" data-ans="그는 친구를 만나려고 커피숍에 갔습니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+    <textarea translate="yes" class="writing-input" data-ans="그는 친구를 만나려고 커피숍에 갔습니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
 </div>
 
 <div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
     <div class="answer-content">
-        <div class="ans-kr">그는 친구를 만나려고 커피숍에 갔습니다. <button class="speak-btn" onclick="speakKorean('그는 친구를 만나려고 커피숍에 갔습니다.')" title="Listen">🔊</button></div>
+        <div class="ans-kr">그는 친구를 만나려고 커피숍에 갔습니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('그는 친구를 만나려고 커피숍에 갔습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('그는 친구를 만나려고 커피숍에 갔습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
     </div>
 </div>
 
 <div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
         <table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Purpose + Place) + Predicate (Verb)<br>한국어 어순: 주어 + 부사어(목적 + 장소) + 서술어(동사)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(목적 + 장소) + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Purpose + Place) + Predicate (Verb)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
             </thead>
             <tbody>
-                <tr><td class="exp-en"><strong>He</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>그는</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>went</strong></td><td class="exp-role">Predicate (Verb)<br><small>서술어(동사)</small></td><td class="exp-form"><strong>갔습니다</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>to a coffee shop</strong></td><td class="exp-role">Adverbial (Place)<br><small>부사어(장소)</small></td><td class="exp-form"><strong>커피숍에</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>to meet his friend</strong></td><td class="exp-role">Adverbial (Purpose)<br><small>부사어(목적)</small></td><td class="exp-form"><strong>친구를 만나려고</strong></td><td><strong>만나다</strong> → <strong>만나</strong> + <strong>려고</strong> → <strong>만나려고</strong></td></tr>
-            </tbody>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>He</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>그는</strong></td><td><strong>그</strong> + <strong>는</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>to meet his friend</strong></td><td class="exp-role">부사어(목적)<br><small><span lang="en" translate="yes">Adverbial (Purpose)</span></small></td><td class="exp-form"><strong>친구를 만나려고</strong></td><td><strong>만나다</strong> → <strong>만나</strong> + <strong>려고</strong> → <strong>만나려고</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>to a coffee shop</strong></td><td class="exp-role">부사어(장소)<br><small><span lang="en" translate="yes">Adverbial (Place)</span></small></td><td class="exp-form"><strong>커피숍에</strong></td><td></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>went</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>갔습니다</strong></td><td><strong>가다</strong> → <strong>가</strong> + <strong>았습니다</strong> → <strong>갔습니다</strong></td></tr>
+        </tbody>
         </table>
         
     </div>
 </div>
 
-<h3>344) She exercises every day to lose weight.</h3>
+<h3><span lang="en" translate="yes">344) She exercises every day to lose weight.</span></h3>
 
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
 <div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    she = 그녀 &nbsp;|&nbsp; weight = 살 &nbsp;|&nbsp; lose = 빼다 &nbsp;|&nbsp; every day = 매일 &nbsp;|&nbsp; exercise = 운동하다
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>그녀</b><span class="gloss" lang="en" translate="yes">she</span></span>
+        <span class="v-item"><b>살</b><span class="gloss" lang="en" translate="yes">weight</span></span>
+        <span class="v-item"><b>빼다</b><span class="gloss" lang="en" translate="yes">lose, take off</span></span>
+        <span class="v-item"><b>매일</b><span class="gloss" lang="en" translate="yes">every day</span></span>
+        <span class="v-item"><b>운동하다</b><span class="gloss" lang="en" translate="yes">exercise</span></span>
+    </div>
 </div>
 
 <div class="single-wt">
-    <textarea class="writing-input" data-ans="그녀는 살을 빼려고 매일 운동합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+    <textarea translate="yes" class="writing-input" data-ans="그녀는 살을 빼려고 매일 운동합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
 </div>
 
 <div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
     <div class="answer-content">
-        <div class="ans-kr">그녀는 살을 빼려고 매일 운동합니다. <button class="speak-btn" onclick="speakKorean('그녀는 살을 빼려고 매일 운동합니다.')" title="Listen">🔊</button></div>
+        <div class="ans-kr">그녀는 살을 빼려고 매일 운동합니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('그녀는 살을 빼려고 매일 운동합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('그녀는 살을 빼려고 매일 운동합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
     </div>
 </div>
 
 <div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
         <table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Purpose + Time) + Predicate (Verb)<br>한국어 어순: 주어 + 부사어(목적 + 시간) + 서술어(동사)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(목적 + 시간) + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Purpose + Time) + Predicate (Verb)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
             </thead>
             <tbody>
-                <tr><td class="exp-en"><strong>She</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>그녀는</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>exercises</strong></td><td class="exp-role">Predicate (Verb)<br><small>서술어(동사)</small></td><td class="exp-form"><strong>운동합니다</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>every day</strong></td><td class="exp-role">Adverbial (Time)<br><small>부사어(시간)</small></td><td class="exp-form"><strong>매일</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>to lose weight</strong></td><td class="exp-role">Adverbial (Purpose)<br><small>부사어(목적)</small></td><td class="exp-form"><strong>살을 빼려고</strong></td><td><strong>빼다</strong> → <strong>빼</strong> + <strong>려고</strong> → <strong>빼려고</strong></td></tr>
-            </tbody>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>She</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>그녀는</strong></td><td><strong>그녀</strong> + <strong>는</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>to lose weight</strong></td><td class="exp-role">부사어(목적)<br><small><span lang="en" translate="yes">Adverbial (Purpose)</span></small></td><td class="exp-form"><strong>살을 빼려고</strong></td><td><strong>빼다</strong> → <strong>빼</strong> + <strong>려고</strong> → <strong>빼려고</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>every day</strong></td><td class="exp-role">부사어(시간)<br><small><span lang="en" translate="yes">Adverbial (Time)</span></small></td><td class="exp-form"><strong>매일</strong></td><td></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>exercises</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>운동합니다</strong></td><td></td></tr>
+        </tbody>
         </table>
         
     </div>
 </div>
 
-<h3>345) She always wears a mask not to catch a cold.</h3>
+<h3><span lang="en" translate="yes">345) She always wears a mask not to catch a cold.</span></h3>
 
-<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 Vocabulary</button>
+<button class="vocab-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📚 어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></button>
 <div class="vocab-box">
-    <div class="vocab-title">Vocabulary</div>
-    cold = 감기 &nbsp;|&nbsp; catch (illness) = 걸리다 &nbsp;|&nbsp; not to = ~지 않으려고 &nbsp;|&nbsp; always = 항상 &nbsp;|&nbsp; mask = 마스크 &nbsp;|&nbsp; wear = 쓰다
+    <div class="vocab-title">어휘<span class="gloss" lang="en" translate="yes">Vocabulary</span></div>
+    <div class="v-list">
+        <span class="v-item"><b>감기</b><span class="gloss" lang="en" translate="yes">cold</span></span>
+        <span class="v-item"><b>걸리다</b><span class="gloss" lang="en" translate="yes">catch (an illness)</span></span>
+        <span class="v-item"><b>~지 않으려고</b><span class="gloss" lang="en" translate="yes">not to</span></span>
+        <span class="v-item"><b>항상</b><span class="gloss" lang="en" translate="yes">always</span></span>
+        <span class="v-item"><b>마스크</b><span class="gloss" lang="en" translate="yes">mask</span></span>
+        <span class="v-item"><b>쓰다</b><span class="gloss" lang="en" translate="yes">wear (on the head)</span></span>
+    </div>
 </div>
 
 <div class="single-wt">
-    <textarea class="writing-input" data-ans="그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
+    <textarea translate="yes" class="writing-input" data-ans="그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea>
 </div>
 
 <div class="answer-box">
-    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">Show Answer</button>
+    <button class="answer-toggle" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">정답 보기<span class="gloss" lang="en" translate="yes">Show Answer</span></button>
     <div class="answer-content">
-        <div class="ans-kr">그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다. <button class="speak-btn" onclick="speakKorean('그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다.')" title="Listen">🔊</button></div>
+        <div class="ans-kr">그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다. <button translate="yes" class="speak-btn spk-f" onclick="speakKorean('그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div>
     </div>
 </div>
 
 <div class="explain-box">
-    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 Explanation</button>
+    <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
         <table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
-                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">Korean order: Subject + Adverbial (Purpose) + Object + Predicate (Verb)<br>한국어 어순: 주어 + 부사어(목적) + 목적어 + 서술어(동사)</th></tr>
-                <tr><th>English<br>영어</th><th>Role<br>역할</th><th>Korean<br>한국어</th><th>Explanation<br>해설</th></tr>
+                <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(목적) + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Purpose) + Object + Predicate (Verb)</span></th></tr>
+                <tr><!-- data-reauthor="lang-anchor" — 이 열은 「독자의 언어」를 담습니다. 다른 언어판에서는 번역하지 말고 그 언어 이름으로 바꾸십시오(일본어판이면 「일본어」). --><th data-reauthor="lang-anchor">영어<br><span lang="en" translate="yes">English</span></th><th>역할<br><span lang="en" translate="yes">Role</span></th><th>한국어<br><span lang="en" translate="yes">Korean</span></th><th>해설<br><span lang="en" translate="yes">Explanation</span></th></tr>
             </thead>
             <tbody>
-                <tr><td class="exp-en"><strong>She</strong></td><td class="exp-role">Subject<br><small>주어</small></td><td class="exp-form"><strong>그녀는</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>always</strong></td><td class="exp-role">Adverb<br><small>부사</small></td><td class="exp-form"><strong>항상</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>wears a mask</strong></td><td class="exp-role">Object + Predicate (Verb)<br><small>목적어 + 서술어(동사)</small></td><td class="exp-form"><strong>마스크를 씁니다</strong></td><td></td></tr>
-                <tr><td class="exp-en"><strong>not to catch a cold</strong></td><td class="exp-role">Adverbial (Purpose)<br><small>부사어(목적)</small></td><td class="exp-form"><strong>감기에 걸리지 않으려고</strong></td><td><strong>걸리다</strong> + <strong>~지 않다</strong><br><small>(negative)</small> + <strong>으려고</strong> → <strong>걸리지 않으려고</strong></td></tr>
-            </tbody>
+                <tr><td class="exp-en" lang="en" translate="yes"><strong>She</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>그녀는</strong></td><td><strong>그녀</strong> + <strong>는</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>not to catch a cold</strong></td><td class="exp-role">부사어(목적)<br><small><span lang="en" translate="yes">Adverbial (Purpose)</span></small></td><td class="exp-form"><strong>감기에 걸리지 않으려고</strong></td><td><strong>걸리다</strong> + <strong>~지 않다</strong><br><small lang="en" translate="yes">(negative)</small> + <strong>으려고</strong> → <strong>걸리지 않으려고</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>always</strong></td><td class="exp-role">부사<br><small><span lang="en" translate="yes">Adverb</span></small></td><td class="exp-form"><strong>항상</strong></td><td></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>wears a mask</strong></td><td class="exp-role">목적어 + 서술어(동사)<br><small><span lang="en" translate="yes">Object + Predicate (Verb)</span></small></td><td class="exp-form"><strong>마스크를 씁니다</strong></td><td></td></tr>
+        </tbody>
         </table>
-        <div class="explain-note"><strong>📝 부정 의도 ~지 않으려고:</strong> verb + ~지 않다 (not to do) + ~으려고 → <strong>in order not to.</strong> 같은 패턴: 자지 않으려고 (not to sleep), 늦지 않으려고 (not to be late).</div>
+        <div class="explain-note"><strong>📝 부정 의도 ~지 않으려고:</strong> <span lang="en" translate="yes">verb + ~</span>지 않다 <span lang="en" translate="yes">(not to do) + ~</span>으려고 → <strong><span lang="en" translate="yes">in order not to.</span></strong> 같은 패턴: 자지 않으려고 <span lang="en" translate="yes">(not to sleep),</span> 늦지 않으려고 <span lang="en" translate="yes">(not to be late).</span></div>
     </div>
 </div>
 
 <hr>
 
-<h2>1. Read Along</h2>
+<h2><span lang="en" translate="yes">1. Read Along</span></h2>
 <p class="subtitle">따라 읽기</p>
 
 <div class="sentence-list">
     <div class="sentence-item" onclick="speakKorean('당신은 왜 한국어를 공부합니까?')"><div class="sentence-num">338</div>
         <div class="sentence-text">
-            <div class="sentence-en">Why do you study Korean?</div>
+            <div class="sentence-en"><span lang="en" translate="yes">Why do you study Korean?</span></div>
             <div class="sentence-kr">당신은 왜 한국어를 공부합니까?</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('당신은 왜 한국어를 공부합니까?')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('당신은 왜 한국어를 공부합니까?','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('당신은 왜 한국어를 공부합니까?','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('저는 한국 회사에 취직하려고 한국어를 공부합니다.')"><div class="sentence-num">339</div>
         <div class="sentence-text">
-            <div class="sentence-en">I study Korean to get a job at a Korean company.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">I study Korean to get a job at a Korean company.</span></div>
             <div class="sentence-kr">저는 한국 회사에 취직하려고 한국어를 공부합니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('저는 한국 회사에 취직하려고 한국어를 공부합니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('저는 한국 회사에 취직하려고 한국어를 공부합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('저는 한국 회사에 취직하려고 한국어를 공부합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('당신은 왜 병원에 갑니까?')"><div class="sentence-num">340</div>
         <div class="sentence-text">
-            <div class="sentence-en">Why do you go to the hospital?</div>
+            <div class="sentence-en"><span lang="en" translate="yes">Why do you go to the hospital?</span></div>
             <div class="sentence-kr">당신은 왜 병원에 갑니까?</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('당신은 왜 병원에 갑니까?')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('당신은 왜 병원에 갑니까?','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('당신은 왜 병원에 갑니까?','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('저는 건강 검진을 받으려고 병원에 갑니다.')"><div class="sentence-num">341</div>
         <div class="sentence-text">
-            <div class="sentence-en">I go to the hospital to get a health check-up.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">I go to the hospital to get a health check-up.</span></div>
             <div class="sentence-kr">저는 건강 검진을 받으려고 병원에 갑니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('저는 건강 검진을 받으려고 병원에 갑니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('저는 건강 검진을 받으려고 병원에 갑니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('저는 건강 검진을 받으려고 병원에 갑니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('그는 아내에게 주려고 선물을 샀습니다.')"><div class="sentence-num">342</div>
         <div class="sentence-text">
-            <div class="sentence-en">He bought a gift to give to his wife.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">He bought a gift to give to his wife.</span></div>
             <div class="sentence-kr">그는 아내에게 주려고 선물을 샀습니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('그는 아내에게 주려고 선물을 샀습니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('그는 아내에게 주려고 선물을 샀습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('그는 아내에게 주려고 선물을 샀습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('그는 친구를 만나려고 커피숍에 갔습니다.')"><div class="sentence-num">343</div>
         <div class="sentence-text">
-            <div class="sentence-en">He went to a coffee shop to meet his friend.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">He went to a coffee shop to meet his friend.</span></div>
             <div class="sentence-kr">그는 친구를 만나려고 커피숍에 갔습니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('그는 친구를 만나려고 커피숍에 갔습니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('그는 친구를 만나려고 커피숍에 갔습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('그는 친구를 만나려고 커피숍에 갔습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('그녀는 살을 빼려고 매일 운동합니다.')"><div class="sentence-num">344</div>
         <div class="sentence-text">
-            <div class="sentence-en">She exercises every day to lose weight.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">She exercises every day to lose weight.</span></div>
             <div class="sentence-kr">그녀는 살을 빼려고 매일 운동합니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('그녀는 살을 빼려고 매일 운동합니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('그녀는 살을 빼려고 매일 운동합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('그녀는 살을 빼려고 매일 운동합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
     <div class="sentence-item" onclick="speakKorean('그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다.')"><div class="sentence-num">345</div>
         <div class="sentence-text">
-            <div class="sentence-en">She always wears a mask not to catch a cold.</div>
+            <div class="sentence-en"><span lang="en" translate="yes">She always wears a mask not to catch a cold.</span></div>
             <div class="sentence-kr">그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다.</div>
         </div>
-        <button class="sentence-listen" onclick="event.stopPropagation(); speakKorean('그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다.')" title="Listen">🔊</button>
+        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
     </div>
 </div>
 
 <hr>
 
-<h2>2. Look &amp; Speak</h2>
+<h2><span lang="en" translate="yes">2. Look &amp; Speak</span></h2>
 <p class="subtitle">카드를 보고 한국어로 말하기</p>
 
 <div class="flashcard-grid look-speak">
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">338 · EN</div><div class="flashcard-text">Why do you study Korean?</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">338 · KR</div><div class="flashcard-text">당신은 왜 한국어를 공부합니까?</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('당신은 왜 한국어를 공부합니까?')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">339 · EN</div><div class="flashcard-text">I study Korean to get a job at a Korean company.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">339 · KR</div><div class="flashcard-text">저는 한국 회사에 취직하려고 한국어를 공부합니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('저는 한국 회사에 취직하려고 한국어를 공부합니다.')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">340 · EN</div><div class="flashcard-text">Why do you go to the hospital?</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">340 · KR</div><div class="flashcard-text">당신은 왜 병원에 갑니까?</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('당신은 왜 병원에 갑니까?')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">341 · EN</div><div class="flashcard-text">I go to the hospital to get a health check-up.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">341 · KR</div><div class="flashcard-text">저는 건강 검진을 받으려고 병원에 갑니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('저는 건강 검진을 받으려고 병원에 갑니다.')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">342 · EN</div><div class="flashcard-text">He bought a gift to give to his wife.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">342 · KR</div><div class="flashcard-text">그는 아내에게 주려고 선물을 샀습니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('그는 아내에게 주려고 선물을 샀습니다.')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">343 · EN</div><div class="flashcard-text">He went to a coffee shop to meet his friend.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">343 · KR</div><div class="flashcard-text">그는 친구를 만나려고 커피숍에 갔습니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('그는 친구를 만나려고 커피숍에 갔습니다.')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">344 · EN</div><div class="flashcard-text">She exercises every day to lose weight.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">344 · KR</div><div class="flashcard-text">그녀는 살을 빼려고 매일 운동합니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('그녀는 살을 빼려고 매일 운동합니다.')" title="Listen">🔊</button></div></div></div>
-    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num">345 · EN</div><div class="flashcard-text">She always wears a mask not to catch a cold.</div><div class="flashcard-hint">Tap to flip</div></div><div class="flashcard-back"><div class="flashcard-num">345 · KR</div><div class="flashcard-text">그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다.</div><button class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">338 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">Why do you study Korean?</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">338 · KR</span></div><div class="flashcard-text">당신은 왜 한국어를 공부합니까?</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('당신은 왜 한국어를 공부합니까?')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">339 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">I study Korean to get a job at a Korean company.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">339 · KR</span></div><div class="flashcard-text">저는 한국 회사에 취직하려고 한국어를 공부합니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('저는 한국 회사에 취직하려고 한국어를 공부합니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">340 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">Why do you go to the hospital?</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">340 · KR</span></div><div class="flashcard-text">당신은 왜 병원에 갑니까?</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('당신은 왜 병원에 갑니까?')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">341 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">I go to the hospital to get a health check-up.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">341 · KR</span></div><div class="flashcard-text">저는 건강 검진을 받으려고 병원에 갑니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('저는 건강 검진을 받으려고 병원에 갑니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">342 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">He bought a gift to give to his wife.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">342 · KR</span></div><div class="flashcard-text">그는 아내에게 주려고 선물을 샀습니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('그는 아내에게 주려고 선물을 샀습니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">343 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">He went to a coffee shop to meet his friend.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">343 · KR</span></div><div class="flashcard-text">그는 친구를 만나려고 커피숍에 갔습니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('그는 친구를 만나려고 커피숍에 갔습니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">344 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">She exercises every day to lose weight.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">344 · KR</span></div><div class="flashcard-text">그녀는 살을 빼려고 매일 운동합니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('그녀는 살을 빼려고 매일 운동합니다.')" title="Listen">🔊</button></div></div></div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">345 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">She always wears a mask not to catch a cold.</span></div><div class="flashcard-hint"><span lang="en" translate="yes">Tap to flip</span></div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">345 · KR</span></div><div class="flashcard-text">그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다.')" title="Listen">🔊</button></div></div></div>
 </div>
 
 <hr>
 
-<h2>3. Sentence Matching</h2>
+<h2><span lang="en" translate="yes">3. Sentence Matching</span></h2>
 <p class="subtitle">왼쪽 영어 문장과 오른쪽 한국어 문장을 짝 맞추기</p>
 
 <div class="em-game">
-    <div class="em-game-title">🔗 Sentence Matching · 영어-한국어 문장 맞추기</div>
-    <p class="em-game-desc">왼쪽 영어 문장을 클릭하고, 그 뜻에 맞는 오른쪽 한국어 문장을 클릭하세요. 짝이 맞으면 두 문장이 사라집니다. <span style="color:#94a3b8;">Click an English sentence, then its Korean match — both disappear when matched.</span></p>
+    <div class="em-game-title"><span lang="en" translate="yes">🔗 Sentence Matching ·</span> 영어-한국어 문장 맞추기</div>
+    <p class="em-game-desc">왼쪽 영어 문장을 클릭하고, 그 뜻에 맞는 오른쪽 한국어 문장을 클릭하세요. 짝이 맞으면 두 문장이 사라집니다. <span style="color:#94a3b8;"><span lang="en" translate="yes">Click an English sentence, then its Korean match — both disappear when matched.</span></span></p>
     <div class="em-toolbar">
         <span class="em-stat"><span class="em-stat-label">정답</span><span id="emCorrect" class="em-stat-num">0/8</span></span>
         <span class="em-stat"><span class="em-stat-label">오답</span><span id="emWrong" class="em-stat-num">0</span></span>
-        <button class="em-reset" onclick="emReset()">🔄 다시 시작</button>
+        <button class="em-reset" onclick="emReset()">🔄 다시 시작<span class="gloss" lang="en" translate="yes">Restart</span></button>
     </div>
     <div class="em-progress"><div id="emProgress" class="em-progress-bar"></div></div>
     <div id="emMessage" class="em-message"></div>
     <div class="em-columns" style="--em-rows: 8;">
-        <div class="em-col-header">English · 영어</div>
-        <div class="em-col-header">한국어 · Korean</div>
+        <div class="em-col-header"><span lang="en" translate="yes">English ·</span> 영어</div>
+        <div class="em-col-header">한국어<span class="gloss" lang="en" translate="yes">Korean</span></div>
         <div id="emEnglishList" class="em-list"></div>
         <div id="emKoreanList" class="em-list"></div>
     </div>
@@ -863,51 +931,131 @@
 
 <hr>
 
-<h2>4. Writing Test</h2>
+<h2><span lang="en" translate="yes">4. Writing Test</span></h2>
 <p class="subtitle">영어를 보고 한국어로 써 보세요</p>
 
 <div class="wt-toolbar">
-  <div class="wt-score" id="wtScoreBox">✓ 점수 · Score: <span class="wt-correct" id="wtCorrect">0</span> <span class="wt-total">/ 8</span><span class="wt-pct" id="wtPct"></span></div>
+  <div class="wt-score" id="wtScoreBox">✓ 점수 <span lang="en" translate="yes">· Score:</span> <span class="wt-correct" id="wtCorrect">0</span> <span class="wt-total">/ 8</span><span class="wt-pct" id="wtPct"></span></div>
   <div class="wt-btns">
-    <button class="wt-btn" onclick="wtReset()">🔄 초기화 (Reset)</button>
-    <button class="wt-btn grade" onclick="wtGrade()">✅ 채점</button>
-    <button class="wt-btn primary" onclick="wtReveal()">💡 정답</button>
+    <button class="wt-btn" onclick="wtReset()">🔄 초기화<span class="gloss" lang="en" translate="yes">Reset</span></button>
+    <button class="wt-btn grade" onclick="wtGrade()">✅ 채점<span class="gloss" lang="en" translate="yes">Grade</span></button>
+    <button class="wt-btn primary" onclick="wtReveal()">💡 정답<span class="gloss" lang="en" translate="yes">Answer</span></button>
   </div>
 </div>
 <div class="writing-practice">
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">338</span><span class="writing-en">Why do you study Korean?</span><button class="speak-btn" onclick="speakKorean('당신은 왜 한국어를 공부합니까?')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="당신은 왜 한국어를 공부합니까?" oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">339</span><span class="writing-en">I study Korean to get a job at a Korean company.</span><button class="speak-btn" onclick="speakKorean('저는 한국 회사에 취직하려고 한국어를 공부합니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="저는 한국 회사에 취직하려고 한국어를 공부합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">340</span><span class="writing-en">Why do you go to the hospital?</span><button class="speak-btn" onclick="speakKorean('당신은 왜 병원에 갑니까?')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="당신은 왜 병원에 갑니까?" oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">341</span><span class="writing-en">I go to the hospital to get a health check-up.</span><button class="speak-btn" onclick="speakKorean('저는 건강 검진을 받으려고 병원에 갑니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="저는 건강 검진을 받으려고 병원에 갑니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">342</span><span class="writing-en">He bought a gift to give to his wife.</span><button class="speak-btn" onclick="speakKorean('그는 아내에게 주려고 선물을 샀습니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="그는 아내에게 주려고 선물을 샀습니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">343</span><span class="writing-en">He went to a coffee shop to meet his friend.</span><button class="speak-btn" onclick="speakKorean('그는 친구를 만나려고 커피숍에 갔습니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="그는 친구를 만나려고 커피숍에 갔습니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">344</span><span class="writing-en">She exercises every day to lose weight.</span><button class="speak-btn" onclick="speakKorean('그녀는 살을 빼려고 매일 운동합니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="그녀는 살을 빼려고 매일 운동합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
-    <div class="writing-item"><div class="writing-header"><span class="writing-num">345</span><span class="writing-en">She always wears a mask not to catch a cold.</span><button class="speak-btn" onclick="speakKorean('그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다.')" title="Listen">🔊</button></div><textarea class="writing-input" data-ans="그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">338</span><span class="writing-en"><span lang="en" translate="yes">Why do you study Korean?</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('당신은 왜 한국어를 공부합니까?','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('당신은 왜 한국어를 공부합니까?','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="당신은 왜 한국어를 공부합니까?" oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">339</span><span class="writing-en"><span lang="en" translate="yes">I study Korean to get a job at a Korean company.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('저는 한국 회사에 취직하려고 한국어를 공부합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('저는 한국 회사에 취직하려고 한국어를 공부합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="저는 한국 회사에 취직하려고 한국어를 공부합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">340</span><span class="writing-en"><span lang="en" translate="yes">Why do you go to the hospital?</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('당신은 왜 병원에 갑니까?','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('당신은 왜 병원에 갑니까?','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="당신은 왜 병원에 갑니까?" oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">341</span><span class="writing-en"><span lang="en" translate="yes">I go to the hospital to get a health check-up.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('저는 건강 검진을 받으려고 병원에 갑니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('저는 건강 검진을 받으려고 병원에 갑니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="저는 건강 검진을 받으려고 병원에 갑니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">342</span><span class="writing-en"><span lang="en" translate="yes">He bought a gift to give to his wife.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('그는 아내에게 주려고 선물을 샀습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('그는 아내에게 주려고 선물을 샀습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="그는 아내에게 주려고 선물을 샀습니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">343</span><span class="writing-en"><span lang="en" translate="yes">He went to a coffee shop to meet his friend.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('그는 친구를 만나려고 커피숍에 갔습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('그는 친구를 만나려고 커피숍에 갔습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="그는 친구를 만나려고 커피숍에 갔습니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">344</span><span class="writing-en"><span lang="en" translate="yes">She exercises every day to lose weight.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('그녀는 살을 빼려고 매일 운동합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('그녀는 살을 빼려고 매일 운동합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="그녀는 살을 빼려고 매일 운동합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
+    <div class="writing-item"><div class="writing-header"><span class="writing-num">345</span><span class="writing-en"><span lang="en" translate="yes">She always wears a mask not to catch a cold.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
 </div>
 
-<div class="footer"><p>Amazing Korean 1 — Adverbial Grammar 16: In order to '~(으)려고' (부사어 문법 16: 목적)</p></div>
+<div class="footer"><p><span lang="en" translate="yes">Amazing Korean 1 — Adverbial Grammar 16: In order to '~(</span>으)려고' (부사어 문법 16: 목적)</p></div>
 </div>
 
 <script>
-function speakKorean(text) {
-    if (!('speechSynthesis' in window)) return;
-    window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = 'ko-KR';
-    u.rate = 0.85;
-    u.pitch = 1.1;
-    const preferred = ['Yuna', 'SunHi', 'Heami', 'Google 한국의'];
-    const voices = window.speechSynthesis.getVoices();
-    const koVoices = voices.filter(v => v.lang.startsWith('ko'));
-    let picked = null;
-    for (const name of preferred) {
-        picked = koVoices.find(v => v.name.includes(name));
-        if (picked) break;
-    }
-    if (!picked && koVoices.length > 0) picked = koVoices[0];
-    if (picked) u.voice = picked;
-    window.speechSynthesis.speak(u);
+/* ak-audio v1 */
+/* 미리 구운 MP3 를 먼저 쓴다. 없거나 못 읽으면 브라우저 음성으로 넘어간다.
+   f = SunHi(여성) · m = Hyunsu(남성) — 둘 다 신경망 음성이다. */
+var AK_SND = {"당신은 왜 한국어를 공부합니까?": "0198", "저는 한국 회사에 취직하려고 한국어를 공부합니다.": "0511", "당신은 왜 병원에 갑니까?": "0197", "저는 건강 검진을 받으려고 병원에 갑니다.": "0408", "그는 아내에게 주려고 선물을 샀습니다.": "0081", "그는 친구를 만나려고 커피숍에 갔습니다.": "0116", "그녀는 살을 빼려고 매일 운동합니다.": "0028", "그녀는 감기에 걸리지 않으려고 항상 마스크를 씁니다.": "0021"};
+var AK_AU = null;
+function akPlayFile(text, sex){
+  var n = AK_SND[text];
+  if (!n) return false;
+  try {
+    if (window.speechSynthesis) window.speechSynthesis.cancel();  /* 읽던 것 끊기 */
+    if (AK_AU){ AK_AU.pause(); AK_AU.currentTime = 0; }
+    AK_AU = new Audio(encodeURI('_소리/' + (sex === 'm' ? 'm' : 'f') + '/' + n + '.mp3'));
+    AK_AU.onerror = function(){ akSpeakTTS(text, sex); };
+    var p = AK_AU.play();
+    if (p && p.catch) p.catch(function(){ akSpeakTTS(text, sex); });
+    return true;
+  } catch(e){ return false; }
 }
+/* ak-voice v3 */
+/* 한국어 음성 — 자연(Natural) 음성을 먼저 고른다. 여성·남성은 문장 옆 단추로 그때그때 고른다. */
+var AK_SEX = (function(){ try { return localStorage.getItem('akVoiceSex') || 'f'; } catch(e){ return 'f'; } })();
+var AK_M = /(InJoon|In-Joon|BongJin|Bong-Jin|GookMin|Gook-Min|Hyunsu|Hyun-su|Minsik|Jinho|Male|남성|남자)/i;
+var AK_F = /(SunHi|Sun-Hi|Heami|Yuna|JiMin|Ji-Min|SeoHyeon|Seo-Hyeon|SoonBok|Soon-Bok|YuJin|Yu-Jin|Kyuri|Seoyeon|Sora|한국의|Female|여성|여자)/i;
+function akKoVoices(){
+  var vs = (window.speechSynthesis && window.speechSynthesis.getVoices()) || [];
+  return vs.filter(function(v){ return /^ko/i.test(v.lang || ''); });
+}
+function akScore(v){
+  var n = v.name || '', s;
+  if (/natural/i.test(n)) s = 60;
+  else if (/neural|premium|enhanced/i.test(n)) s = 50;
+  else if (/google/i.test(n)) s = 40;
+  else if (!v.localService) s = 30;
+  else s = 10;
+  if (/heami/i.test(n)) s -= 5;
+  return s;
+}
+function akPick(sex){
+  var ko = akKoVoices();
+  if (!ko.length) return null;
+  var want = (sex === 'm') ? AK_M : AK_F;
+  var hit = ko.filter(function(v){ return want.test(v.name || ''); });
+  if (!hit.length){
+    if (sex === 'm') return null;   /* 남성이 없으면 여성으로 몰래 바꾸지 않는다 */
+    hit = ko;
+  }
+  hit = hit.slice().sort(function(a, b){ return akScore(b) - akScore(a); });
+  return hit[0];
+}
+function akNotice(){
+  var d = document.getElementById('akNotice');
+  if (!d) return;
+  d.classList.add('on');
+  clearTimeout(d._t);
+  d._t = setTimeout(function(){ d.classList.remove('on'); }, 4500);
+}
+function speakKorean(text, sex){
+  sex = sex || AK_SEX;
+  AK_SEX = sex;
+  try { localStorage.setItem('akVoiceSex', sex); } catch(e){}
+  if (akPlayFile(text, sex)) return;      /* 구워 둔 음원이 있으면 그것으로 */
+  akSpeakTTS(text, sex);
+}
+function akSpeakTTS(text, sex){
+  if (!('speechSynthesis' in window)) return;
+  sex = sex || AK_SEX;
+  var v = akPick(sex), low = false;
+  if (sex === 'm' && !v){ v = akPick('f'); low = true; akNotice(); }
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(text);
+  u.lang = (v && v.lang) || 'ko-KR';
+  u.rate = low ? 0.90 : 0.92;
+  u.pitch = low ? 0.6 : 1.0;   /* 진짜 남성 음성이 없을 때만 목소리를 낮춘다 */
+  if (v) u.voice = v;
+  /* cancel() 바로 뒤에 speak() 하면 브라우저가 고른 음성을 버리고
+     기본 음성(대개 여성)으로 읽어 버린다. 한 박자 늦춘다. */
+  setTimeout(function(){ window.speechSynthesis.speak(u); }, 60);
+}
+function akVoiceInit(){
+  var ko = akKoVoices();
+  if (!ko.length) return;
+  var m = akPick('m'), f = akPick('f');
+  var bs = document.querySelectorAll('.spk-m');
+  var hasFile = false; for (var kk in AK_SND){ hasFile = true; break; }
+  for (var i = 0; i < bs.length; i++){
+    if (hasFile){ bs[i].classList.remove('spk-off'); bs[i].title = '남성 음성 · Hyunsu (구워 둔 음원)'; }
+    else if (m){ bs[i].classList.remove('spk-off'); bs[i].title = '남성 음성 · ' + m.name; }
+    else { bs[i].classList.add('spk-off'); bs[i].title = '이 브라우저에는 한국어 남성 음성이 없어 목소리를 낮춰 읽습니다. Microsoft Edge 에서 진짜 남성 음성(InJoon)이 나옵니다.'; }
+  }
+  if (f){
+    var fs = document.querySelectorAll('.spk-f');
+    for (var j = 0; j < fs.length; j++) fs[j].title = '여성 음성 · ' + f.name;
+  }
+}
+if (window.speechSynthesis){
+  try { window.speechSynthesis.addEventListener('voiceschanged', akVoiceInit); } catch(e){}
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', akVoiceInit);
+else akVoiceInit();
 if ('speechSynthesis' in window) {
     window.speechSynthesis.onvoiceschanged = function(){};
     window.speechSynthesis.getVoices();
@@ -915,7 +1063,7 @@ if ('speechSynthesis' in window) {
 </script>
 
 <script>
-function wtNormalize(s){ return (s||'').replace(/\s+/g,'').replace(/[?？!.。]/g,''); }
+function wtNormalize(s){ return (s||'').replace(/\s+/g,'').replace(/[?？!.。,]/g,''); }
 function wtCheck(inp){
   const ans = wtNormalize(inp.dataset.ans);
   const val = wtNormalize(inp.value);
@@ -1164,16 +1312,17 @@ function celebrateRestart(){
     <div class="celebrate-card" onclick="event.stopPropagation()">
         <span class="celebrate-emoji">🎉</span>
         <h3 class="celebrate-title" id="celebrateTitle">완료!</h3>
-        <p class="celebrate-subtitle" id="celebrateSubtitle">모든 짝을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All matched!</span></p>
+        <p class="celebrate-subtitle" id="celebrateSubtitle">모든 짝을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;"><span lang="en" translate="yes">All matched!</span></span></p>
         <div class="celebrate-stats">
-            <div class="celebrate-stat"><strong id="celebrateCorrect">0</strong><span>정답 · Correct</span></div>
-            <div class="celebrate-stat"><strong id="celebrateWrong">0</strong><span>오답 · Wrong</span></div>
+            <div class="celebrate-stat"><strong id="celebrateCorrect">0</strong><span>정답<span class="gloss" lang="en" translate="yes">Correct</span></span></div>
+            <div class="celebrate-stat"><strong id="celebrateWrong">0</strong><span>오답<span class="gloss" lang="en" translate="yes">Wrong</span></span></div>
         </div>
         <div class="celebrate-actions">
-            <button class="celebrate-btn" onclick="celebrateRestart()">🔄 다시 시작</button>
-            <button class="celebrate-btn secondary" onclick="celebrateClose()">닫기</button>
+            <button class="celebrate-btn" onclick="celebrateRestart()">🔄 다시 시작<span class="gloss" lang="en" translate="yes">Restart</span></button>
+            <button class="celebrate-btn secondary" onclick="celebrateClose()">닫기<span class="gloss" lang="en" translate="yes">Close</span></button>
         </div>
     </div>
 </div>
+<div class="ak-notice" id="akNotice">이 브라우저에는 한국어 남성 음성이 없어 <b>목소리를 낮춰</b> 읽습니다. 진짜 남성 음성은 Microsoft Edge 에서 나옵니다.<span class="gloss" lang="en" translate="yes">This browser has no Korean male voice, so the female voice is pitched down. Open the page in Microsoft Edge for a real male voice.</span></div>
 </body>
 </html>
