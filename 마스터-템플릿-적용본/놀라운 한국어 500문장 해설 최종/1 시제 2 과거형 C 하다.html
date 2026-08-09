@@ -16,6 +16,7 @@
 @media (max-width:720px){.main-title{font-size:2.2rem;}}.gloss{text-transform:none;display:block;font-weight:600;font-size:0.86em;opacity:0.72;letter-spacing:0;margin-top:1px;}
 .rule-summary .rs-tag .gloss{font-size:0.58rem;font-weight:600;opacity:0.85;white-space:normal;}.rule-summary .rs-base .gloss{font-size:0.66rem;font-weight:600;}
 button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
+input[data-ans].correct{cursor:pointer;}
 </style></head><body>
 <script>
 /* jm-voice v1 */
@@ -646,4 +647,15 @@ else akVoiceInit();if('speechSynthesis' in window){window.speechSynthesis.onvoic
 })();
 </script>
 <div class="ak-notice" id="akNotice">이 브라우저에는 한국어 남성 음성이 없어 <b>목소리를 낮춰</b> 읽습니다. 진짜 남성 음성은 Microsoft Edge 에서 나옵니다.<span class="gloss" lang="en" translate="yes">This browser has no Korean male voice, so the female voice is pitched down. Open the page in Microsoft Edge for a real male voice.</span></div>
+<script>
+/* jm-box v1 */
+/* 정답 칸(초록)을 눌러도 소리가 난다 — 🔊 단추와 같은 소리를 낸다.
+   맞히기 전에는 아무 일도 하지 않는다(정답 먼저 듣기 방지). */
+document.addEventListener('click', function(ev){
+  var t = ev.target;
+  if (!t || t.tagName !== 'INPUT' || !t.classList || !t.classList.contains('correct')) return;
+  var a = (t.getAttribute('data-ans') || '').split('/')[0];
+  if (a && /[가-힣]/.test(a)) speakKorean(a);
+});
+</script>
 </body></html>
