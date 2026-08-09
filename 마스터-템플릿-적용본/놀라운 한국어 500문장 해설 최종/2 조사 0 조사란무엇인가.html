@@ -385,7 +385,8 @@ blockquote .bq-line + .bq-line{margin-top:9px;}
 .rule-summary .rs-head small{font-size:0.62rem;font-weight:700;color:#a8b3c2;letter-spacing:0.5px;text-transform:uppercase;font-family:'Lato',sans-serif;}
 .rule-summary .rs-rows{display:flex;flex-direction:column;gap:6px;}
 .rule-summary .rs-row{display:grid;grid-template-columns:1fr 1.1fr 2.05fr;gap:10px;align-items:center;background:#fff;border:1px solid #e6ebf3;border-radius:10px;padding:10px 14px;transition:transform 0.15s ease,box-shadow 0.15s ease;}
-.rule-summary .rs-row:hover{transform:translateX(2px);box-shadow:0 2px 6px rgba(70,90,120,0.06);}
+.rule-summary .rs-row .rs-ending,.rule-summary .rs-row .rs-result{transition:transform 0.18s ease,box-shadow 0.18s ease;}
+.rule-summary .rs-row .rs-ending:hover,.rule-summary .rs-row .rs-result:hover{transform:translateY(-2px);box-shadow:0 2px 6px rgba(70,90,120,0.15);}
 .rule-summary .rs-row.r-a{border-left:4px solid #b8c8dd;}
 .rule-summary .rs-row.r-b{border-left:4px solid #c6d8c9;}
 .rule-summary .rs-row.r-c{border-left:4px solid #e3c8c8;}

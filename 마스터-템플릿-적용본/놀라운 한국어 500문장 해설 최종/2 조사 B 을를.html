@@ -360,7 +360,8 @@ document.addEventListener('DOMContentLoaded', function(){
 .conj-rule.r-a .cr-row{border-color:#dbe5f1;}
 .conj-rule.r-b .cr-row{border-color:#d4e3d7;}
 .conj-rule.r-c .cr-row{border-color:#ecd6d6;}
-.conj-rule .cr-row:hover{transform:translateX(2px);box-shadow:0 3px 8px rgba(70,90,120,0.08);}
+.conj-rule .cr-row .cb-word,.conj-rule .cr-row .cs-chip,.conj-rule .cr-row .res{transition:transform 0.18s ease,box-shadow 0.18s ease;}
+.conj-rule .cr-row .cb-word:hover,.conj-rule .cr-row .cs-chip:hover,.conj-rule .cr-row .res:hover{transform:translateY(-2px);box-shadow:0 3px 8px rgba(70,90,120,0.18);}
 .conj-rule.r-a .cr-row,.conj-rule.r-b .cr-row{grid-template-columns:1fr 22px 1.4fr 22px 1.4fr;}
 .conj-rule.r-c .cr-row{grid-template-columns:1fr 22px 0.7fr 22px 0.7fr 22px 1.5fr;}
 .conj-rule .cr-base{display:flex;flex-direction:column;align-items:center;gap:4px;}
