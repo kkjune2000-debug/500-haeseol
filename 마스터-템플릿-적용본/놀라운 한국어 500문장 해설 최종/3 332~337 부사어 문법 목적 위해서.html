@@ -16,25 +16,25 @@
         .title-block { margin: 0 0 44px 0; padding: 28px 32px 24px; border-radius: 16px; background: linear-gradient(135deg, var(--title-bg-start, #ecfdf5) 0%, #ffffff 70%); box-shadow: 0 2px 14px rgba(15,23,42,0.06); position: relative; overflow: hidden; }
         .title-block::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--title-gradient); opacity: 0.95; }
         .title-en { display: flex; flex-direction: column; gap: 6px; }
-        .title-en .title-main { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 2.4rem; font-weight: 900; line-height: 1.18; letter-spacing: -0.02em; margin: 0; padding: 0; border: none; background: var(--title-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
-        .title-en .title-sub { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--title-sub-color, #475569); line-height: 1.4; margin: 0; }
+        .title-ko .title-ko-main { font-family: 'Noto Sans KR', sans-serif; font-size: 2.4rem; font-weight: 900; line-height: 1.18; letter-spacing: -0.02em; margin: 0; padding: 0; border: none; background: var(--title-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+        .title-ko .title-ko-sub { font-size: 1.2rem; font-weight: 700; color: var(--title-sub-color, #475569); line-height: 1.4; margin: 0; }
         .title-divider { height: 3px; background: var(--title-gradient); border-radius: 999px; margin: 18px 0 16px; opacity: 0.85; }
         .title-ko { display: flex; flex-direction: column; gap: 4px; }
-        .title-ko .title-ko-main { font-size: 1.02rem; font-weight: 800; color: var(--title-ko-main-color, #1e293b); margin: 0; letter-spacing: -0.01em; }
-        .title-ko .title-ko-sub { font-size: 0.9rem; color: #64748b; line-height: 1.65; margin: 0; }
+        .title-en .title-main { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.02rem; font-weight: 800; color: var(--title-ko-main-color, #1e293b); margin: 0; padding: 0; border: none; letter-spacing: -0.01em; }
+        .title-en .title-sub { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.9rem; color: #64748b; line-height: 1.65; margin: 0; }
         .title-block.sentence  { --title-gradient: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%); --title-bg-start: #eff6ff; --title-sub-color: #1e40af; --title-ko-main-color: #1e3a8a; }
         .title-block.predicate { --title-gradient: linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #8b5cf6 100%); --title-bg-start: #faf5ff; --title-sub-color: #5b21b6; --title-ko-main-color: #4c1d95; }
         .title-block.adverbial { --title-gradient: linear-gradient(135deg, #064e3b 0%, #047857 50%, #10b981 100%); --title-bg-start: #ecfdf5; --title-sub-color: #047857; --title-ko-main-color: #064e3b; }
         .title-block.other     { --title-gradient: linear-gradient(135deg, #7c2d12 0%, #b45309 50%, #f59e0b 100%); --title-bg-start: #fffbeb; --title-sub-color: #b45309; --title-ko-main-color: #78350f; }
         @media (max-width: 600px) {
             .title-block { padding: 22px 22px 18px; }
-            .title-en .title-main { font-size: 1.85rem; }
-            .title-en .title-sub { font-size: 1.05rem; }
+            .title-ko .title-ko-main { font-size: 1.85rem; }
+            .title-ko .title-ko-sub { font-size: 1.05rem; }
         }
         @media print {
             .title-block { background: none !important; box-shadow: none !important; padding: 8px 0 16px !important; border-bottom: 3px solid var(--title-ko-main-color, #1e293b); border-radius: 0; }
             .title-block::before { display: none; }
-            .title-en .title-main { color: var(--title-ko-main-color, #1e293b) !important; -webkit-text-fill-color: var(--title-ko-main-color, #1e293b) !important; background: none !important; }
+            .title-ko .title-ko-main { color: var(--title-ko-main-color, #1e293b) !important; -webkit-text-fill-color: var(--title-ko-main-color, #1e293b) !important; background: none !important; }
             .title-divider { background: var(--title-ko-main-color, #1e293b) !important; opacity: 1; }
         }
         h2 { font-size: 1.5rem; font-weight: 800; color: #047857; margin-top: 48px; margin-bottom: 4px; padding-top: 24px; border-top: 2px solid #e2e8f0; }
@@ -341,14 +341,14 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="container">
 
 <header class="title-block adverbial">
-    <div class="title-en">
-        <h1 class="title-main" lang="en" translate="yes">Adverbial Grammar 15</h1>
-        <p class="title-sub" lang="en" translate="yes">For / In order to (noun + <span lang="ko" translate="no">을/를 위해서</span> · verb + <span lang="ko" translate="no">기 위해서</span>)</p>
+    <div class="title-ko">
+        <h1 class="title-ko-main">부사어 문법 15: 목적</h1>
+        <p class="title-ko-sub">(명사) + 을/를 + 위해서 · (동사) + 기 + 위해서</p>
     </div>
     <div class="title-divider"></div>
-    <div class="title-ko">
-        <p class="title-ko-main">부사어 문법 15: 목적</p>
-        <p class="title-ko-sub">(명사) + 을/를 + 위해서 · (동사) + 기 + 위해서</p>
+    <div class="title-en">
+        <p class="title-main" lang="en" translate="yes">Adverbial Grammar 15</p>
+        <p class="title-sub" lang="en" translate="yes">For / In order to (noun + <span lang="ko" translate="no">을/를 위해서</span> · verb + <span lang="ko" translate="no">기 위해서</span>)</p>
     </div>
 </header>
 
