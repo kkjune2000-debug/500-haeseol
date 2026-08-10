@@ -70,6 +70,9 @@
         .speak-btn:hover { background: #fef3c7; }
         .sentence-list { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 0 0 24px; }
         .sentence-item { display: grid; grid-template-columns: 44px 1fr auto; gap: 16px; align-items: center; padding: 12px 18px; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; }
+        /* 여성·남성 단추를 한 칸에 묶어 세로로 쌓는다 — 3칸 격자에 자식이 넷이면
+           남 단추가 다음 줄로 밀려난다 */
+        .sentence-item .sentence-spk { display: flex; flex-direction: column; gap: 5px; align-items: center; }
         .sentence-item:hover { border-color: #f59e0b; box-shadow: 0 4px 14px rgba(245,158,11,0.10); }
         .sentence-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.25rem; font-weight: 900; color: #f59e0b; text-align: center; letter-spacing: -0.02em; }
         .sentence-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
@@ -1198,119 +1201,119 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <div class="sentence-en"><span lang="en" translate="yes">There are four students in the classroom.</span></div>
             <div class="sentence-kr">교실에 학생이 네 명 있습니다.</div>
         </div>
-        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('교실에 학생이 네 명 있습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('교실에 학생이 네 명 있습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
+        <span class="sentence-spk"><button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('교실에 학생이 네 명 있습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('교실에 학생이 네 명 있습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></span>
     </div>
     <div class="sentence-item" onclick="speakKorean('냉장고에 사과가 두 개 있습니다.')"><div class="sentence-num">420</div>
         <div class="sentence-text">
             <div class="sentence-en"><span lang="en" translate="yes">There are two apples in the refrigerator.</span></div>
             <div class="sentence-kr">냉장고에 사과가 두 개 있습니다.</div>
         </div>
-        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('냉장고에 사과가 두 개 있습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('냉장고에 사과가 두 개 있습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
+        <span class="sentence-spk"><button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('냉장고에 사과가 두 개 있습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('냉장고에 사과가 두 개 있습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></span>
     </div>
     <div class="sentence-item" onclick="speakKorean('집에 개가 한 마리 있습니다.')"><div class="sentence-num">421</div>
         <div class="sentence-text">
             <div class="sentence-en"><span lang="en" translate="yes">There is one dog in the house.</span></div>
             <div class="sentence-kr">집에 개가 한 마리 있습니다.</div>
         </div>
-        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('집에 개가 한 마리 있습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('집에 개가 한 마리 있습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
+        <span class="sentence-spk"><button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('집에 개가 한 마리 있습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('집에 개가 한 마리 있습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></span>
     </div>
     <div class="sentence-item" onclick="speakKorean('그는 책 두 권을 샀습니다.')"><div class="sentence-num">422</div>
         <div class="sentence-text">
             <div class="sentence-en"><span lang="en" translate="yes">He bought two books.</span></div>
             <div class="sentence-kr">그는 책 두 권을 샀습니다.</div>
         </div>
-        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('그는 책 두 권을 샀습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('그는 책 두 권을 샀습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
+        <span class="sentence-spk"><button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('그는 책 두 권을 샀습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('그는 책 두 권을 샀습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></span>
     </div>
     <div class="sentence-item" onclick="speakKorean('그녀는 영화표 두 장을 예매했습니다.')"><div class="sentence-num">423</div>
         <div class="sentence-text">
             <div class="sentence-en"><span lang="en" translate="yes">She booked two movie tickets.</span></div>
             <div class="sentence-kr">그녀는 영화표 두 장을 예매했습니다.</div>
         </div>
-        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('그녀는 영화표 두 장을 예매했습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('그녀는 영화표 두 장을 예매했습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
+        <span class="sentence-spk"><button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('그녀는 영화표 두 장을 예매했습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('그녀는 영화표 두 장을 예매했습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></span>
     </div>
     <div class="sentence-item" onclick="speakKorean('경진은 콜라를 두 병 마셨습니다.')"><div class="sentence-num">424</div>
         <div class="sentence-text">
             <div class="sentence-en"><span lang="en" translate="yes">Kyoungjin drank two bottles of cola.</span></div>
             <div class="sentence-kr">경진은 콜라를 두 병 마셨습니다.</div>
         </div>
-        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('경진은 콜라를 두 병 마셨습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('경진은 콜라를 두 병 마셨습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
+        <span class="sentence-spk"><button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('경진은 콜라를 두 병 마셨습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('경진은 콜라를 두 병 마셨습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></span>
     </div>
     <div class="sentence-item" onclick="speakKorean('물 한 컵 주세요.')"><div class="sentence-num">425</div>
         <div class="sentence-text">
             <div class="sentence-en"><span lang="en" translate="yes">Please give me one cup of water.</span></div>
             <div class="sentence-kr">물 한 컵 주세요.</div>
         </div>
-        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('물 한 컵 주세요.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('물 한 컵 주세요.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
+        <span class="sentence-spk"><button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('물 한 컵 주세요.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('물 한 컵 주세요.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></span>
     </div>
     <div class="sentence-item" onclick="speakKorean('커피 한 잔 주세요.')"><div class="sentence-num">426</div>
         <div class="sentence-text">
             <div class="sentence-en"><span lang="en" translate="yes">Please give me one cup of coffee.</span></div>
             <div class="sentence-kr">커피 한 잔 주세요.</div>
         </div>
-        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('커피 한 잔 주세요.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('커피 한 잔 주세요.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
+        <span class="sentence-spk"><button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('커피 한 잔 주세요.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('커피 한 잔 주세요.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></span>
     </div>
     <div class="sentence-item" onclick="speakKorean('종이 한 장 주세요.')"><div class="sentence-num">427</div>
         <div class="sentence-text">
             <div class="sentence-en"><span lang="en" translate="yes">Please give me one sheet of paper.</span></div>
             <div class="sentence-kr">종이 한 장 주세요.</div>
         </div>
-        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('종이 한 장 주세요.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('종이 한 장 주세요.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
+        <span class="sentence-spk"><button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('종이 한 장 주세요.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('종이 한 장 주세요.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></span>
     </div>
     <div class="sentence-item" onclick="speakKorean('주차장에 자동차가 다섯 대 있습니다.')"><div class="sentence-num">428</div>
         <div class="sentence-text">
             <div class="sentence-en"><span lang="en" translate="yes">There are five cars in the parking lot.</span></div>
             <div class="sentence-kr">주차장에 자동차가 다섯 대 있습니다.</div>
         </div>
-        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('주차장에 자동차가 다섯 대 있습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('주차장에 자동차가 다섯 대 있습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
+        <span class="sentence-spk"><button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('주차장에 자동차가 다섯 대 있습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('주차장에 자동차가 다섯 대 있습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></span>
     </div>
     <div class="sentence-item" onclick="speakKorean('바다에 배가 한 척 있습니다.')"><div class="sentence-num">429</div>
         <div class="sentence-text">
             <div class="sentence-en"><span lang="en" translate="yes">There is one ship in the sea.</span></div>
             <div class="sentence-kr">바다에 배가 한 척 있습니다.</div>
         </div>
-        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('바다에 배가 한 척 있습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('바다에 배가 한 척 있습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
+        <span class="sentence-spk"><button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('바다에 배가 한 척 있습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('바다에 배가 한 척 있습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></span>
     </div>
     <div class="sentence-item" onclick="speakKorean('정원에 나무가 열 그루 있습니다.')"><div class="sentence-num">430</div>
         <div class="sentence-text">
             <div class="sentence-en"><span lang="en" translate="yes">There are ten trees in the garden.</span></div>
             <div class="sentence-kr">정원에 나무가 열 그루 있습니다.</div>
         </div>
-        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('정원에 나무가 열 그루 있습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('정원에 나무가 열 그루 있습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
+        <span class="sentence-spk"><button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('정원에 나무가 열 그루 있습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('정원에 나무가 열 그루 있습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></span>
     </div>
     <div class="sentence-item" onclick="speakKorean('그는 나에게 꽃 한 송이를 주었습니다.')"><div class="sentence-num">431</div>
         <div class="sentence-text">
             <div class="sentence-en"><span lang="en" translate="yes">He gave me one flower.</span></div>
             <div class="sentence-kr">그는 나에게 꽃 한 송이를 주었습니다.</div>
         </div>
-        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('그는 나에게 꽃 한 송이를 주었습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('그는 나에게 꽃 한 송이를 주었습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
+        <span class="sentence-spk"><button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('그는 나에게 꽃 한 송이를 주었습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('그는 나에게 꽃 한 송이를 주었습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></span>
     </div>
     <div class="sentence-item" onclick="speakKorean('저는 그에게 꽃 한 다발을 주었습니다.')"><div class="sentence-num">432</div>
         <div class="sentence-text">
             <div class="sentence-en"><span lang="en" translate="yes">I gave him a bouquet of flowers.</span></div>
             <div class="sentence-kr">저는 그에게 꽃 한 다발을 주었습니다.</div>
         </div>
-        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('저는 그에게 꽃 한 다발을 주었습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('저는 그에게 꽃 한 다발을 주었습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
+        <span class="sentence-spk"><button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('저는 그에게 꽃 한 다발을 주었습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('저는 그에게 꽃 한 다발을 주었습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></span>
     </div>
     <div class="sentence-item" onclick="speakKorean('저는 이번 주말에 영화를 두 편 보려고 합니다.')"><div class="sentence-num">433</div>
         <div class="sentence-text">
             <div class="sentence-en"><span lang="en" translate="yes">I'm going to watch two movies this weekend.</span></div>
             <div class="sentence-kr">저는 이번 주말에 영화를 두 편 보려고 합니다.</div>
         </div>
-        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('저는 이번 주말에 영화를 두 편 보려고 합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('저는 이번 주말에 영화를 두 편 보려고 합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
+        <span class="sentence-spk"><button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('저는 이번 주말에 영화를 두 편 보려고 합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('저는 이번 주말에 영화를 두 편 보려고 합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></span>
     </div>
     <div class="sentence-item" onclick="speakKorean('집에 구두가 세 켤레 있습니다.')"><div class="sentence-num">434</div>
         <div class="sentence-text">
             <div class="sentence-en"><span lang="en" translate="yes">There are three pairs of shoes at home.</span></div>
             <div class="sentence-kr">집에 구두가 세 켤레 있습니다.</div>
         </div>
-        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('집에 구두가 세 켤레 있습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('집에 구두가 세 켤레 있습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
+        <span class="sentence-spk"><button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('집에 구두가 세 켤레 있습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('집에 구두가 세 켤레 있습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></span>
     </div>
     <div class="sentence-item" onclick="speakKorean('그는 양복 한 벌을 맞추었습니다.')"><div class="sentence-num">435</div>
         <div class="sentence-text">
             <div class="sentence-en"><span lang="en" translate="yes">He had one suit tailored.</span></div>
             <div class="sentence-kr">그는 양복 한 벌을 맞추었습니다.</div>
         </div>
-        <button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('그는 양복 한 벌을 맞추었습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('그는 양복 한 벌을 맞추었습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button>
+        <span class="sentence-spk"><button translate="yes" class="sentence-listen spk-f" onclick="event.stopPropagation(); speakKorean('그는 양복 한 벌을 맞추었습니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="sentence-listen spk-m" onclick="event.stopPropagation(); speakKorean('그는 양복 한 벌을 맞추었습니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></span>
     </div>
 </div>
 
