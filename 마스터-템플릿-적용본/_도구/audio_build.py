@@ -31,9 +31,11 @@ CALL = r"speakKorean\(&#39;([^&]+)&#39;\)"
 FILES = sorted(glob.glob("*.html"))
 
 # 자바스크립트가 조립하는 소리 소비자는 글자 훑기로는 안 보인다 — 렌더해서 본다.
-# 세 갈래: ① 쓰기 칸 input 의 data-ans (jm-box 가 읽음)
+# 네 갈래: ① 쓰기 칸 input 의 data-ans (jm-box 가 읽음)
 #          ② 렌더된 onclick 의 speakKorean('…') · akSpeakSeq(['…',…])
 #          ③ data-forms="…|…" (퀴즈2 전체 듣기)
+#          ④ data-say="…" (객관식 정답 뒤 나타나는 단추 — 단추가 눌러야 생기므로
+#             onclick 스캔으로는 안 보인다)
 DOM_JS = """() => {
     var snd = window.AK_SND || {};
     var need = [], seen = {};
@@ -48,6 +50,9 @@ DOM_JS = """() => {
     });
     document.querySelectorAll('[data-forms]').forEach(function(el){
         (el.getAttribute('data-forms') || '').split('|').forEach(add);
+    });
+    document.querySelectorAll('[data-say]').forEach(function(el){
+        add(el.getAttribute('data-say'));
     });
     document.querySelectorAll('[onclick]').forEach(function(el){
         var oc = el.getAttribute('onclick') || '', m;
