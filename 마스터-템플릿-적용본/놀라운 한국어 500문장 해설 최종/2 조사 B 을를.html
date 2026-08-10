@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function(){
 <p class="ko">말할 때는 <span class="particle">을/를</span>을 빼기도 합니다. 「밥 먹었어요?」가 그렇습니다. 하지만 글을 쓰거나 격식을 차릴 때는 붙여야 합니다.</p>
 <p class="en" lang="en" translate="yes">In everyday speech the particle is often dropped — <span lang="ko" translate="no">밥 먹었어요?</span> — but you should keep it in writing and in formal speech.</p>
 
-<blockquote>무엇을 먹습니까? → 빵 (빵 = 목적어)<br><span style="color:#64748b;font-size:0.88em;"><span lang="en" translate="yes">What do you eat? → bread (bread = object)</span></span><br>무엇을 마십니까? → 커피 (커피 = 목적어)<br><span style="color:#64748b;font-size:0.88em;"><span lang="en" translate="yes">What do you drink? → coffee (coffee = object)</span></span><br>무엇을 공부합니까? → 한국어 (한국어 = 목적어)<br><span style="color:#64748b;font-size:0.88em;"><span lang="en" translate="yes">What do you study? → Korean (Korean = object)</span></span></blockquote>
+<blockquote>빵<span class="particle">을</span> 먹습니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;빵을 먹습니다.&#39;)" title="Listen">🔊</button> → 무엇을 먹습니까? → <b>빵</b> (빵 = 목적어)<br><span style="color:#64748b;font-size:0.88em;"><span lang="en" translate="yes">I eat bread. → What do I eat? → <b>bread</b> (bread = object)</span></span><br>커피<span class="particle">를</span> 마십니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;커피를 마십니다.&#39;)" title="Listen">🔊</button> → 무엇을 마십니까? → <b>커피</b> (커피 = 목적어)<br><span style="color:#64748b;font-size:0.88em;"><span lang="en" translate="yes">I drink coffee. → What do I drink? → <b>coffee</b> (coffee = object)</span></span><br>한국어<span class="particle">를</span> 공부합니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;한국어를 공부합니다.&#39;)" title="Listen">🔊</button> → 무엇을 공부합니까? → <b>한국어</b> (한국어 = 목적어)<br><span style="color:#64748b;font-size:0.88em;"><span lang="en" translate="yes">I study Korean. → What do I study? → <b>Korean</b> (Korean = object)</span></span></blockquote>
 
 
 
@@ -671,7 +671,7 @@ input[readonly] + .jm-spk{display:inline-block;}
 </div><script>/* ak-audio v1 */
 /* 미리 구운 MP3 를 먼저 쓴다. 없거나 못 읽으면 브라우저 음성으로 넘어간다.
    f = SunHi(여성) · m = Hyunsu(남성) — 둘 다 신경망 음성이다. */
-var AK_SND = {"커피": "1776", "커피를": "1780", "영화": "1468", "영화를": "1472", "빵을": "1236", "사랑": "1247", "사랑을": "1250", "책을": "1744", "물을": "1133", "사과": "1239", "사과를": "1243", "음식": "1530", "음식을": "1531", "우유": "1503", "우유를": "1505", "꽃을": "0809", "친구": "1770", "친구를": "1771", "한국어": "1950", "한국어를": "1951", "빵": "1927", "꽃": "1918", "저는 밥을 먹습니다.": "1963"};
+var AK_SND = {"커피": "1776", "커피를": "1780", "영화": "1468", "영화를": "1472", "빵을": "1236", "사랑": "1247", "사랑을": "1250", "책을": "1744", "물을": "1133", "사과": "1239", "사과를": "1243", "음식": "1530", "음식을": "1531", "우유": "1503", "우유를": "1505", "꽃을": "0809", "친구": "1770", "친구를": "1771", "한국어": "1950", "한국어를": "1951", "빵": "1927", "꽃": "1918", "저는 밥을 먹습니다.": "1963", "빵을 먹습니다.": "2029", "커피를 마십니다.": "2030", "한국어를 공부합니다.": "2031"};
 var AK_AU = null;
 function akPlayFile(text, sex){
   var n = AK_SND[text];
