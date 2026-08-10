@@ -132,6 +132,13 @@
 .wqg-prompt{font-size:1.1rem;font-weight:800;color:#1e293b;}
 .wqg-prompt small{font-weight:600;color:#94a3b8;font-size:0.85rem;margin-left:2px;}
 .wqg-head .wqg-tts{margin-left:auto;}
+/* 다섯 칸을 다 맞히면(또는 정답을 보면) 나타나는 전체 듣기 단추 */
+.wqg-all{display:none;gap:6px;margin-left:8px;vertical-align:middle;}
+.wqg-all.on{display:inline-flex;}
+.wqg-allbtn{font-size:0.78rem;font-weight:700;color:#166534;background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:2px 10px;cursor:pointer;font-family:inherit;}
+.wqg-allbtn:hover{background:#dcfce7;}
+.wqg-allbtn .gloss{font-size:0.66em;}
+@media print{.wqg-all{display:none !important;}}
 .wqg-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .wqg-cell{position:relative;display:flex;flex-direction:column;gap:4px;}
 .wqg-label{font-size:0.72rem;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:0.4px;font-family:'Lato','Noto Sans KR',sans-serif;}
@@ -300,9 +307,10 @@
   words.forEach(function(p, i){
     var w=p[0], b=batchim(w);
     var f = b ? [w+'은',w+'이',w+'을',w+'과',w+'이나'] : [w+'는',w+'가',w+'를',w+'와',w+'나'];
-    html += '<div class="wqg-card">' +
+    html += '<div class="wqg-card" data-forms="'+f.join('|')+'">' +
       '<div class="wqg-head"><span class="wqg-num">'+(i+1)+'</span><span class="wqg-prompt"><b>'+w+'</b> <small>('+p[1]+')</small></span>' +
-        '<button translate="yes" class="speak-btn wqg-tts" onclick="speakKorean(\''+w+'\')" title="Listen">🔊</button></div>' +
+        '<button translate="yes" class="speak-btn wqg-tts" onclick="speakKorean(\''+w+'\')" title="Listen">🔊</button>' +
+        '<span class="wqg-all"><button translate="yes" class="wqg-allbtn" onclick="alltSeq(this,\'f\')">🔊 여성<span class="gloss" lang="en" translate="yes">Female</span></button><button translate="yes" class="wqg-allbtn" onclick="alltSeq(this,\'m\')">🔊 남성<span class="gloss" lang="en" translate="yes">Male</span></button></span></div>' +
       '<div class="wqg-grid">' +
         cell('은/는 · Topic', f[0]) +
         cell('이/가 · Subject', f[1]) +
@@ -622,5 +630,38 @@ function mcSpkAdd(btn){
     window[fn] = function(btn, val){ base(btn, val); mcSpkAdd(btn); };
   });
 })();
+</script>
+<script>
+/* allt-spk v1 — 퀴즈2 쓰기: 한 낱말의 다섯 칸 정답이 다 보일 때만 소리 단추를 보인다.
+   맞혀서 초록이 된 것(correct)과 「💡 정답」으로 채워진 것(revealed) 둘 다 해당한다.
+   읽는 것은 카드의 data-forms(다섯 형태). 채점 함수는 건드리지 않는다. */
+function alltSeq(btn, sex){
+  var card = btn.closest('.wqg-card');
+  if (card && card.dataset.forms) akSpeakSeq(card.dataset.forms.split('|'), sex);
+}
+function alltCardBtns(card){
+  if (!card) return;
+  var box = card.querySelector('.wqg-all');
+  if (!box) return;
+  var inputs = card.querySelectorAll('.pt-input');
+  var ok = inputs.length > 0;
+  inputs.forEach(function(x){
+    if (!x.classList.contains('correct') && !x.classList.contains('revealed')) ok = false;
+  });
+  if (box.classList.contains('on') !== ok) box.classList.toggle('on', ok);
+}
+function alltCardBtnsAll(){
+  document.querySelectorAll('.wqg-card').forEach(alltCardBtns);
+}
+document.addEventListener('input', function(ev){
+  var x = ev.target;
+  if (x && x.classList && x.classList.contains('pt-input')) alltCardBtns(x.closest('.wqg-card'));
+});
+document.addEventListener('click', function(ev){
+  var b = ev.target && ev.target.closest ? ev.target.closest('button') : null;
+  if (!b) return;
+  var oc = b.getAttribute('onclick') || '';
+  if (/allt(Grade|Reveal|Reset)\(/.test(oc)) setTimeout(alltCardBtnsAll, 0);
+});
 </script>
 </body></html>
