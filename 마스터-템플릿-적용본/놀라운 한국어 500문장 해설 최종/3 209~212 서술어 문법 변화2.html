@@ -173,14 +173,8 @@
         .wt-rbtns { display: flex; gap: 8px; flex-wrap: wrap; }
         .wt-rbtn { background: #fff; border: 1px solid #cbd5e1; color: #475569; padding: 5px 12px; border-radius: 8px; cursor: pointer; font-size: 0.82rem; font-weight: 700; font-family: inherit; }
         .wt-rbtn:hover { background: #f1f5f9; }
-        .wt-rbtn.hint { border-color: #fde68a; color: #854d0e; background: #fffbeb; }
-        .wt-rbtn.hint:hover { background: #fef3c7; }
         .wt-rbtn:disabled { opacity: 0.5; cursor: default; }
         .wt-rbtn .gloss { font-size: 0.68em; font-weight: 600; }
-        .wt-hintbox { display: none; background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 8px 12px; }
-        .wt-hintbox.on { display: block; }
-        .wt-hstep { font-size: 0.72rem; font-weight: 800; color: #b45309; margin-right: 10px; }
-        .wt-htext { font-size: 1rem; font-weight: 700; color: #78350f; letter-spacing: 0.04em; }
         .wt-diff { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px 12px; }
         .wt-dline { display: flex; gap: 10px; align-items: baseline; line-height: 1.75; }
         .wt-dline b { font-size: 0.72rem; font-weight: 800; color: #94a3b8; min-width: 68px; flex-shrink: 0; }
@@ -883,7 +877,6 @@ function wtRowClear(item){
   if (!item) return;
   var r = item.querySelector('.wt-result'); if (r) r.parentNode.removeChild(r);
   var n = item.querySelector('.wt-note'); if (n) n.parentNode.removeChild(n);
-  item.dataset.hint = '';
 }
 /* 쓰기 시험(.writing-practice)은 채점이 있는 시험이므로 타자 중에는 맞았는지 알려 주지 않는다.
    문장별 연습(.single-wt)은 시험이 아니고 바로 아래 「정답 보기」가 있어 즉시 확인이 도움이 된다 — 그대로 둔다. */
@@ -947,30 +940,9 @@ function wtRowShow(item, inp){
     '<div class="wt-rbtns">'
     + '<button type="button" translate="yes" class="wt-rbtn" onclick="wtAgain(this)">↺ 다시 풀기'
     + '<span class="gloss" lang="en" translate="yes">Try again</span></button>'
-    + '<button type="button" translate="yes" class="wt-rbtn hint" onclick="wtHint(this)">💡 힌트'
-    + '<span class="gloss" lang="en" translate="yes">Hint</span></button>'
-    + '</div><div class="wt-hintbox"></div>'
+    + '</div>'
     + wtDiffHtml(inp.value, inp.dataset.ans);
   item.appendChild(row);
-}
-/* 단계 힌트 — 1) 낱말 수와 첫 글자 2) 첫 낱말 3) 정답 */
-function wtHint(btn){
-  var item = btn.closest('.writing-item');
-  var inp = item.querySelector('.writing-input');
-  var box = item.querySelector('.wt-hintbox');
-  var step = (parseInt(item.dataset.hint || '0', 10) || 0) + 1;
-  if (step > 3) step = 3;
-  item.dataset.hint = String(step);
-  var words = String(inp.dataset.ans).split(/\s+/).filter(Boolean);
-  function skel(w){ var c = Array.from(w); return c[0] + new Array(Math.max(0, c.length - 1) + 1).join('_'); }
-  var txt;
-  if (step === 1){ txt = words.map(skel).join(' ') + '  (' + words.length + '낱말)'; }
-  else if (step === 2){ txt = words.map(function(w, k){ return k === 0 ? w : skel(w); }).join(' '); }
-  else { txt = String(inp.dataset.ans); }
-  box.innerHTML = '<span class="wt-hstep">힌트 ' + step + '/3</span><span class="wt-htext">'
-                + wtEsc(txt) + '</span>';
-  box.classList.add('on');
-  if (step === 3) btn.disabled = true;
 }
 function wtAgain(btn){
   var item = btn.closest('.writing-item');
