@@ -258,18 +258,19 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
         '</div>' +
         '<div class="fc-back">' +
           '<span class="fc-num">'+n+'</span>' +
+          '<button translate="yes" class="fc-tts-all" onclick="event.stopPropagation();akSpeakSeq([\''+w[2]+'\',\''+w[3]+'\',\''+w[4]+'\',\''+w[5]+'\',\''+w[6]+'\',\''+w[7]+'\'])">🔊 전체 듣기<span class="gloss" lang="en" translate="yes">Play all</span></button>' +
           '<div class="fcm">' +
             '<div class="fcm-grp"><span class="fcm-t">현재</span>' +
-              '<div class="fcm-row"><span class="fcm-l">평서</span><span class="fcm-f">'+w[2]+'</span><button class="fc-tts" onclick="event.stopPropagation();speakKorean(\''+w[2]+'\')">🔊</button></div>' +
-              '<div class="fcm-row"><span class="fcm-l">의문</span><span class="fcm-f">'+w[3]+'</span><button class="fc-tts" onclick="event.stopPropagation();speakKorean(\''+w[3]+'\')">🔊</button></div>' +
+              '<div class="fcm-row"><span class="fcm-l">평서</span><span class="fcm-f">'+w[2]+'</span></div>' +
+              '<div class="fcm-row"><span class="fcm-l">의문</span><span class="fcm-f">'+w[3]+'</span></div>' +
             '</div>' +
             '<div class="fcm-grp"><span class="fcm-t">과거</span>' +
-              '<div class="fcm-row"><span class="fcm-l">평서</span><span class="fcm-f">'+w[4]+'</span><button class="fc-tts" onclick="event.stopPropagation();speakKorean(\''+w[4]+'\')">🔊</button></div>' +
-              '<div class="fcm-row"><span class="fcm-l">의문</span><span class="fcm-f">'+w[5]+'</span><button class="fc-tts" onclick="event.stopPropagation();speakKorean(\''+w[5]+'\')">🔊</button></div>' +
+              '<div class="fcm-row"><span class="fcm-l">평서</span><span class="fcm-f">'+w[4]+'</span></div>' +
+              '<div class="fcm-row"><span class="fcm-l">의문</span><span class="fcm-f">'+w[5]+'</span></div>' +
             '</div>' +
             '<div class="fcm-grp"><span class="fcm-t">미래</span>' +
-              '<div class="fcm-row"><span class="fcm-l">평서</span><span class="fcm-f">'+w[6]+'</span><button class="fc-tts" onclick="event.stopPropagation();speakKorean(\''+w[6]+'\')">🔊</button></div>' +
-              '<div class="fcm-row"><span class="fcm-l">의문</span><span class="fcm-f">'+w[7]+'</span><button class="fc-tts" onclick="event.stopPropagation();speakKorean(\''+w[7]+'\')">🔊</button></div>' +
+              '<div class="fcm-row"><span class="fcm-l">평서</span><span class="fcm-f">'+w[6]+'</span></div>' +
+              '<div class="fcm-row"><span class="fcm-l">의문</span><span class="fcm-f">'+w[7]+'</span></div>' +
             '</div>' +
           '</div>' +
         '</div>' +
@@ -457,9 +458,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
   words.forEach(function(w, i){
     const n = i + 1;
     var esc = (w[2]||'').replace(/'/g,"\\'");
-    html += '<div class="wqg-card">' +
+    html += '<div class="wqg-card" data-forms="'+w.slice(2).join('|')+'">' +
       '<div class="wqg-head"><span class="wqg-num">'+n+'</span><span class="wqg-prompt"><b>'+w[0]+'</b> <small>('+w[1]+')</small></span>' +
-        '<button translate="yes" class="speak-btn wqg-tts" onclick="speakKorean(\''+esc+'\')" title="Listen">🔊</button></div>' +
+        '<button translate="yes" class="speak-btn wqg-tts" onclick="speakKorean(\''+esc+'\')" title="Listen">🔊</button>' +
+        '<span class="wqg-all"><button translate="yes" class="wqg-allbtn" onclick="alltSeq(this,\'f\')">🔊 여성<span class="gloss" lang="en" translate="yes">Female</span></button><button translate="yes" class="wqg-allbtn" onclick="alltSeq(this,\'m\')">🔊 남성<span class="gloss" lang="en" translate="yes">Male</span></button></span></div>' +
       '<div class="wqg-grid">' +
         '<div class="wqg-cell"><span class="wqg-label">현재형 평서형<span class="gloss" lang="en" translate="yes">Present</span></span><input translate="yes" class="pt-input" type="text" data-ans="'+w[2]+'" oninput="alltCheck(this)" placeholder="..."></div>' +
         '<div class="wqg-cell"><span class="wqg-label">현재형 의문형<span class="gloss" lang="en" translate="yes">Present Q</span></span><input translate="yes" class="pt-input" type="text" data-ans="'+w[3]+'" oninput="alltCheck(this)" placeholder="..."></div>' +
@@ -631,7 +633,83 @@ if (window.speechSynthesis){
   try { window.speechSynthesis.addEventListener('voiceschanged', akVoiceInit); } catch(e){}
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', akVoiceInit);
-else akVoiceInit();if('speechSynthesis' in window){window.speechSynthesis.onvoiceschanged=function(){};window.speechSynthesis.getVoices();}</script><script>
+else akVoiceInit();if('speechSynthesis' in window){window.speechSynthesis.onvoiceschanged=function(){};window.speechSynthesis.getVoices();}</script>
+<style>
+/* 전체 듣기 단추 — 퀴즈1 카드 뒷면 · 퀴즈2 낱말 완성 시 */
+.fc-tts-all{display:block;margin:2px auto 6px auto;font-size:0.8rem;font-weight:700;color:#1e40af;background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:3px 12px;cursor:pointer;font-family:inherit;}
+.fc-tts-all:hover{background:#dbeafe;}
+.fc-tts-all .gloss{font-size:0.68em;}
+.wqg-all{display:none;gap:6px;margin-left:8px;vertical-align:middle;}
+.wqg-all.on{display:inline-flex;}
+.wqg-allbtn{font-size:0.78rem;font-weight:700;color:#166534;background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:2px 10px;cursor:pointer;font-family:inherit;}
+.wqg-allbtn:hover{background:#dcfce7;}
+.wqg-allbtn .gloss{font-size:0.66em;}
+@media print{.fc-tts-all,.wqg-all{display:none !important;}}
+</style>
+<script>
+/* ak-seq v1 — 여러 형태를 이어서 읽는다. MP3 를 끝나는 대로 이어 붙이고,
+   없는 것은 브라우저 음성으로 넘어간다. 새로 누르면 이전 사슬은 멈춘다. */
+var AK_SEQ_ID = 0;
+function akSpeakSeq(list, sex){
+  sex = sex || AK_SEX;
+  var my = ++AK_SEQ_ID, i = 0;
+  function next(){
+    if (my !== AK_SEQ_ID || i >= list.length) return;
+    var text = list[i++];
+    var n = window.AK_SND ? AK_SND[text] : null;
+    if (n){
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
+      if (window.AK_AU){ AK_AU.pause(); AK_AU.currentTime = 0; }
+      AK_AU = new Audio(encodeURI('_소리/' + (sex === 'm' ? 'm' : 'f') + '/' + n + '.mp3'));
+      AK_AU.onended = next;
+      AK_AU.onerror = function(){ tts(text); };
+      var p = AK_AU.play();
+      if (p && p.catch) p.catch(function(){ tts(text); });
+    } else tts(text);
+  }
+  function tts(text){
+    if (!('speechSynthesis' in window)) return;
+    var v = akPick(sex);
+    window.speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = (v && v.lang) || 'ko-KR';
+    u.rate = 0.92;
+    if (v) u.voice = v;
+    u.onend = next;
+    /* cancel() 직후 speak() 금지 — 60ms 규칙 */
+    setTimeout(function(){ if (my === AK_SEQ_ID) window.speechSynthesis.speak(u); }, 60);
+  }
+  next();
+}
+/* 퀴즈2 — 카드의 여섯 활용형을 고른 목소리로 이어 읽기 */
+function alltSeq(btn, sex){
+  var card = btn.closest('.wqg-card');
+  if (card && card.dataset.forms) akSpeakSeq(card.dataset.forms.split('|'), sex);
+}
+/* 퀴즈2 — 여섯 칸이 전부 초록(correct)일 때만 단추를 보인다 */
+function alltCardBtns(card){
+  if (!card) return;
+  var box = card.querySelector('.wqg-all');
+  if (!box) return;
+  var inputs = card.querySelectorAll('.pt-input');
+  var ok = inputs.length > 0;
+  inputs.forEach(function(x){ if (!x.classList.contains('correct')) ok = false; });
+  if (box.classList.contains('on') !== ok) box.classList.toggle('on', ok);
+}
+function alltCardBtnsAll(){
+  document.querySelectorAll('.wqg-card').forEach(alltCardBtns);
+}
+document.addEventListener('input', function(ev){
+  var x = ev.target;
+  if (x && x.classList && x.classList.contains('pt-input')) alltCardBtns(x.closest('.wqg-card'));
+});
+document.addEventListener('click', function(ev){
+  var b = ev.target && ev.target.closest ? ev.target.closest('button') : null;
+  if (!b) return;
+  var oc = b.getAttribute('onclick') || '';
+  if (/allt(Grade|Reveal|Reset)\(/.test(oc)) setTimeout(alltCardBtnsAll, 0);
+});
+</script><script>
 (function(){
   function wqNorm(s){return (s||'').replace(/\s+/g,'').replace(/[?？]/g,'').replace(/봤/g,'보았').replace(/줬/g,'주었').replace(/됐/g,'되었');}
   document.addEventListener('input', function(e){

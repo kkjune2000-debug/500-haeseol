@@ -13,7 +13,8 @@ import re, glob
 import _paths
 
 out = _paths.enter()
-FNS = ["jmSpk", "speakKorean", "akPlayFile", "akSpeakTTS", "akPick", "akNotice", "jmSetSex"]
+FNS = ["jmSpk", "speakKorean", "akPlayFile", "akSpeakTTS", "akPick", "akNotice", "jmSetSex",
+       "akSpeakSeq", "alltSeq", "alltCardBtns"]
 bad = []
 for f in sorted(glob.glob("*.html")):
     s = open(f, encoding="utf-8").read()
