@@ -148,7 +148,7 @@
 </style>
 <!-- Flashcards: 조사 종합 -->
 <div class="fc-section">
-<h3 style="margin-top:32px;">퀴즈 1 · 플래시 카드 <span lang="en" translate="yes">(Flashcards)</span></h3>
+<h3 style="margin-top:32px;">퀴즈 1 · 플래시 카드<span class="gloss" lang="en" translate="yes">Flashcards</span></h3>
 
 <div class="fc-grid" id="fcGridParticleAll"></div>
 </div>
@@ -196,7 +196,7 @@
 })();
 </script>
 <!-- ===== 조사 종합 쓰기 ===== -->
-<h3>퀴즈 2 · 쓰기 <span lang="en" translate="yes">(Typing)</span></h3>
+<h3>퀴즈 2 · 쓰기<span class="gloss" lang="en" translate="yes">Typing</span></h3>
 
 <div class="pt-container">
   <div class="pt-toolbar">
@@ -371,7 +371,7 @@ function alltGrade(){
   if (firstWrong) firstWrong.scrollIntoView({behavior:'smooth',block:'center'});
 }
 </script>
-<h3>퀴즈 3 · 객관식 — 에 <span lang="en" translate="yes">vs</span> 에서 <span lang="en" translate="yes">(Multiple Choice)</span></h3>
+<h3>퀴즈 3 · 객관식 — 에 <span lang="en" translate="yes">vs</span> 에서<span class="gloss" lang="en" translate="yes">Multiple Choice</span></h3>
 <p class="ko">문장을 읽고 알맞은 조사를 고르세요. <strong>시간·도착·위치 → 에</strong> / <strong>행동하는 장소 → 에서</strong></p>
 <p class="en" lang="en" translate="yes">Read the sentence and choose the correct particle. Time·destination·location → <span lang="ko" translate="no">에</span> / place of action → <span lang="ko" translate="no">에서</span></p>
 
@@ -395,7 +395,7 @@ var mcJTT=12,mcJTD=0,mcJTC=0;
 function mcJT(btn,val){var q=btn.closest('.mc-q');if(q.classList.contains('correct-done'))return;var ans=q.dataset.answers.split(',');var fb=btn.parentElement.querySelector('.mc-fb');if(ans.indexOf(val)!==-1){q.classList.add('correct-done');btn.classList.add('correct');fb.textContent='O';fb.style.color='#166534';q.querySelectorAll('.mc-btn').forEach(function(b){b.disabled=true;});mcJTC++;mcJTD++;if(mcJTD===mcJTT){var s=document.getElementById('mcScoreJT');s.style.display='block';s.textContent='완료 '+mcJTC+' / '+mcJTT+' 🎉';}}else{btn.classList.add('wrong');btn.disabled=true;fb.textContent='X';fb.style.color='#dc2626';}}
 </script>
 
-<h3>퀴즈 4 · 객관식 — 에게 <span lang="en" translate="yes">vs</span> 에 <span lang="en" translate="yes">(Multiple Choice)</span></h3>
+<h3>퀴즈 4 · 객관식 — 에게 <span lang="en" translate="yes">vs</span> 에<span class="gloss" lang="en" translate="yes">Multiple Choice</span></h3>
 <p class="ko">문장을 읽고 알맞은 조사를 고르세요. <strong>사람·동물 → 에게</strong> / <strong>그 밖 전부 → 에</strong> (사물·식물·장소·기관)</p>
 <p class="en" lang="en" translate="yes">Read the sentence and choose the correct particle. Person/animal → <span lang="ko" translate="no">에게</span> / thing/plant → <span lang="ko" translate="no">에</span></p>
 
