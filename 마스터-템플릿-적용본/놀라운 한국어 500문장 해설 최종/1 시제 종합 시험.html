@@ -142,7 +142,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .wqg-num{font-family:'Lato','Noto Sans KR',sans-serif;font-weight:900;color:#3b82f6;font-size:1.05rem;min-width:28px;}
 .wqg-prompt{font-size:1.1rem;font-weight:800;color:#1e293b;}
 .wqg-prompt small{font-weight:600;color:#94a3b8;font-size:0.85rem;margin-left:2px;}
-.wqg-head .wqg-tts{margin-left:auto;}
+.wqg-head .wqg-all{margin-left:auto;}
 .wqg-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .wqg-cell{position:relative;display:flex;flex-direction:column;gap:4px;}
 .wqg-label{font-size:0.72rem;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:0.4px;font-family:'Lato','Noto Sans KR',sans-serif;}
@@ -457,10 +457,8 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
   let html = '';
   words.forEach(function(w, i){
     const n = i + 1;
-    var esc = (w[2]||'').replace(/'/g,"\\'");
     html += '<div class="wqg-card" data-forms="'+w.slice(2).join('|')+'">' +
       '<div class="wqg-head"><span class="wqg-num">'+n+'</span><span class="wqg-prompt"><b>'+w[0]+'</b> <small>('+w[1]+')</small></span>' +
-        '<button translate="yes" class="speak-btn wqg-tts" onclick="speakKorean(\''+esc+'\')" title="Listen">🔊</button>' +
         '<span class="wqg-all"><button translate="yes" class="wqg-allbtn" onclick="alltSeq(this,\'f\')">🔊 여성<span class="gloss" lang="en" translate="yes">Female</span></button><button translate="yes" class="wqg-allbtn" onclick="alltSeq(this,\'m\')">🔊 남성<span class="gloss" lang="en" translate="yes">Male</span></button></span></div>' +
       '<div class="wqg-grid">' +
         '<div class="wqg-cell"><span class="wqg-label">현재형 평서형<span class="gloss" lang="en" translate="yes">Present</span></span><input translate="yes" class="pt-input" type="text" data-ans="'+w[2]+'" oninput="alltCheck(this)" placeholder="..."></div>' +
