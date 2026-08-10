@@ -18,10 +18,12 @@
         .title-en { display: flex; flex-direction: column; gap: 6px; }
         .title-ko .title-ko-main { font-family: 'Noto Sans KR', sans-serif; font-size: 2.4rem; font-weight: 900; line-height: 1.18; letter-spacing: -0.02em; margin: 0; padding: 0; border: none; background: var(--title-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
         .title-ko .title-ko-sub { font-size: 1.2rem; font-weight: 700; color: var(--title-sub-color, #475569); line-height: 1.4; margin: 0; }
+        .title-ko .title-range { align-self: flex-start; display: inline-block; margin: 6px 0 0; padding: 3px 12px; border-radius: 999px; border: 1.5px solid var(--title-sub-color, #475569); color: var(--title-sub-color, #475569); background: #ffffff; font-size: 0.92rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1.5; }
         .title-divider { height: 3px; background: var(--title-gradient); border-radius: 999px; margin: 18px 0 16px; opacity: 0.85; }
         .title-ko { display: flex; flex-direction: column; gap: 4px; }
         .title-en .title-main { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.02rem; font-weight: 800; color: var(--title-ko-main-color, #1e293b); margin: 0; padding: 0; border: none; letter-spacing: -0.01em; }
         .title-en .title-sub { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.9rem; color: #64748b; line-height: 1.65; margin: 0; }
+        .title-en .title-range-en { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.85rem; font-weight: 700; color: #64748b; margin: 0; letter-spacing: 0.01em; }
         .title-block.sentence  { --title-gradient: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%); --title-bg-start: #eff6ff; --title-sub-color: #1e40af; --title-ko-main-color: #1e3a8a; }
         .title-block.predicate { --title-gradient: linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #8b5cf6 100%); --title-bg-start: #faf5ff; --title-sub-color: #5b21b6; --title-ko-main-color: #4c1d95; }
         .title-block.adverbial { --title-gradient: linear-gradient(135deg, #064e3b 0%, #047857 50%, #10b981 100%); --title-bg-start: #ecfdf5; --title-sub-color: #047857; --title-ko-main-color: #064e3b; }
@@ -30,6 +32,7 @@
             .title-block { padding: 22px 22px 18px; }
             .title-ko .title-ko-main { font-size: 1.85rem; }
             .title-ko .title-ko-sub { font-size: 1.05rem; }
+            .title-ko .title-range { font-size: 0.85rem; padding: 2px 10px; }
         }
         @media print {
             .title-block { background: none !important; box-shadow: none !important; padding: 8px 0 16px !important; border-bottom: 3px solid var(--title-ko-main-color, #1e293b); border-radius: 0; }
@@ -367,11 +370,13 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
     <div class="title-ko">
         <h1 class="title-ko-main">기타 문법 6: 방향, 수단, 재료, 원인, 신분, 변화</h1>
         <p class="title-ko-sub">~로/으로</p>
+        <p class="title-range">문장 408~413</p>
     </div>
     <div class="title-divider"></div>
     <div class="title-en">
         <p class="title-main" lang="en" translate="yes">Other Grammar 6</p>
         <p class="title-sub" lang="en" translate="yes">Method / Direction</p>
+        <p class="title-range-en" lang="en" translate="yes">Sentences 408–413</p>
     </div>
 </header>
 
