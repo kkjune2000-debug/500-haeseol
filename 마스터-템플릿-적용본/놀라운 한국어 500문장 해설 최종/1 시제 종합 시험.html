@@ -247,6 +247,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
     const n = String(i+1).padStart(2,'0');
     const card = document.createElement('div');
     card.className = 'fc-card';
+    card.dataset.forms = w.slice(2).join('|');
     card.addEventListener('click', function(){ this.classList.toggle('flipped'); });
     card.innerHTML =
       '<div class="fc-inner">' +
@@ -258,7 +259,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
         '</div>' +
         '<div class="fc-back">' +
           '<span class="fc-num">'+n+'</span>' +
-          '<button translate="yes" class="fc-tts-all" onclick="event.stopPropagation();akSpeakSeq([\''+w[2]+'\',\''+w[3]+'\',\''+w[4]+'\',\''+w[5]+'\',\''+w[6]+'\',\''+w[7]+'\'])">🔊 전체 듣기<span class="gloss" lang="en" translate="yes">Play all</span></button>' +
+          '<div class="fc-ttsrow">' +
+            '<button translate="yes" class="fc-tts-all" onclick="event.stopPropagation();fcSeq(this,&#39;f&#39;)">🔊 여성<span class="gloss" lang="en" translate="yes">Female</span></button>' +
+            '<button translate="yes" class="fc-tts-all" onclick="event.stopPropagation();fcSeq(this,&#39;m&#39;)">🔊 남성<span class="gloss" lang="en" translate="yes">Male</span></button>' +
+          '</div>' +
           '<div class="fcm">' +
             '<div class="fcm-grp"><span class="fcm-t">현재</span>' +
               '<div class="fcm-row"><span class="fcm-l">평서</span><span class="fcm-f">'+w[2]+'</span></div>' +
@@ -634,7 +638,8 @@ if (document.readyState === 'loading') document.addEventListener('DOMContentLoad
 else akVoiceInit();if('speechSynthesis' in window){window.speechSynthesis.onvoiceschanged=function(){};window.speechSynthesis.getVoices();}</script>
 <style>
 /* 전체 듣기 단추 — 퀴즈1 카드 뒷면 · 퀴즈2 낱말 완성 시 */
-.fc-tts-all{display:block;margin:2px auto 6px auto;font-size:0.8rem;font-weight:700;color:#1e40af;background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:3px 12px;cursor:pointer;font-family:inherit;}
+.fc-ttsrow{display:flex;justify-content:center;gap:6px;margin:2px 0 6px 0;}
+.fc-tts-all{font-size:0.78rem;font-weight:700;color:#1e40af;background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:3px 10px;cursor:pointer;font-family:inherit;white-space:nowrap;}
 .fc-tts-all:hover{background:#dbeafe;}
 .fc-tts-all .gloss{font-size:0.68em;}
 .wqg-all{display:none;gap:6px;margin-left:8px;vertical-align:middle;}
@@ -648,6 +653,11 @@ else akVoiceInit();if('speechSynthesis' in window){window.speechSynthesis.onvoic
 /* ak-seq v1 — 여러 형태를 이어서 읽는다. MP3 를 끝나는 대로 이어 붙이고,
    없는 것은 브라우저 음성으로 넘어간다. 새로 누르면 이전 사슬은 멈춘다. */
 var AK_SEQ_ID = 0;
+/* 카드의 data-forms 를 고른 목소리로 이어 읽는다 (퀴즈1 여성·남성 단추) */
+function fcSeq(btn, sex){
+  var card = btn.closest('.fc-card');
+  if (card && card.dataset.forms) akSpeakSeq(card.dataset.forms.split('|'), sex);
+}
 function akSpeakSeq(list, sex){
   sex = sex || AK_SEX;
   var my = ++AK_SEQ_ID, i = 0;
