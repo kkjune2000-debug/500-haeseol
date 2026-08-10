@@ -188,6 +188,12 @@
         .wt-x { color: #b91c1c; text-decoration: underline wavy #f87171; text-underline-offset: 3px; }
         .wt-o { color: #166534; font-weight: 800; text-decoration: underline #86efac; text-underline-offset: 3px; }
         @media print { .wt-result { display: none; } }
+        /* 조사만 다른 답 — 정답으로 세고 차이를 알려 주는 쪽지 */
+        .wt-note { background: #fffbeb; border: 1px solid #fde68a; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 8px 12px; margin-top: 2px; font-size: 0.92rem; color: #78350f; }
+        .wt-note b { color: #b45309; margin-right: 6px; }
+        .wt-nline { margin-top: 3px; font-size: 0.9rem; opacity: 0.92; }
+        .wt-nline .gloss { display: block; color: #92400e; opacity: 0.8; }
+        @media print { .wt-note { display: none; } }
         /* vocab toggle */
         .vocab-toggle { background:#d1fae5; color:#065f46; border:1px solid #a7f3d0; padding:8px 18px; border-radius:6px; cursor:pointer; font-size:0.85rem; font-weight:700; margin:12px 0 0 0; transition:background 0.2s; }
         .vocab-toggle:hover { background:#a7f3d0; }
@@ -1051,7 +1057,13 @@ if ('speechSynthesis' in window) {
 </script>
 
 <script>
-function wtNormalize(s){ return (s||'').replace(/\s+/g,'').replace(/[?？!.。]/g,''); }
+function wtNormalize(s){
+  return (s||'')
+    .replace(/\s+/g,'')
+    .replace(/[?？!.。,，、·;；:：'’‘"“”]/g,'')
+    .replace(/지요/g,'죠')
+    .replace(/봤/g,'보았').replace(/줬/g,'주었').replace(/됐/g,'되었');
+}
 
 function wtCelebrate(inp){
   const parent = inp.closest('.single-wt') || inp.closest('.writing-item') || inp.parentElement;
@@ -1101,6 +1113,7 @@ function wtScoreReset(){
 function wtRowClear(item){
   if (!item) return;
   var r = item.querySelector('.wt-result'); if (r) r.parentNode.removeChild(r);
+  var n = item.querySelector('.wt-note'); if (n) n.parentNode.removeChild(n);
   item.dataset.hint = '';
 }
 /* 쓰기 시험(.writing-practice)은 채점이 있는 시험이므로 타자 중에는 맞았는지 알려 주지 않는다.
@@ -1210,6 +1223,10 @@ function wtGrade(){
     inp.classList.remove('correct','wrong','revealed');
     var ans = wtNormalize(inp.dataset.ans), val = wtNormalize(inp.value);
     if (val.length > 0 && val === ans){ inp.classList.add('correct'); c++; }
+    else if (val.length > 0 && wtParticleSame(inp.value, inp.dataset.ans)){
+      inp.classList.add('correct'); c++;
+      wtNoteShow(it, inp.value, inp.dataset.ans);
+    }
     else { inp.classList.add('wrong'); wtRowShow(it, inp); }
   });
   var ce = document.getElementById('wtCorrect'); if (ce) ce.textContent = c;
@@ -1219,6 +1236,53 @@ function wtGrade(){
   if (c === total && c > 0 && typeof celebrateShow === 'function'){
     celebrateShow(c, 0, wtReset, '모든 문장을 정확히 작성했습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All sentences correct!</span>');
   }
+}
+/* ── 채점 관용 ── 조사만 다른 답은 정답으로 세고 차이를 알려 준다.
+   은↔이 · 는↔가 는 둘 다 주어를 표시한다(조사 Ⓐ). 받침 갈래가 다르면(그녀은) 그대로 오답이다.
+   「같이·많이」처럼 -이로 끝나는 부사는 조사가 아니므로 제외한다. */
+var WT_ADV = ['같이','많이','깊이','높이','길이','넓이','굳이','없이','달리','빨리','멀리'];
+function wtPWords(s){ return String(s||'').trim().split(/\s+/).filter(Boolean); }
+function wtPSplit(w){
+  var clean = String(w).replace(/[?？!.。,，、·;；:：'’‘"“”]/g,'');
+  if (WT_ADV.indexOf(clean) !== -1) return null;
+  var last = clean.slice(-1), stem = clean.slice(0, -1);
+  if (!stem) return null;
+  if (last === '은' || last === '이') return [stem, 'A'];
+  if (last === '는' || last === '가') return [stem, 'B'];
+  return null;
+}
+function wtParticleSame(mine, ans){
+  var a = wtPWords(mine), b = wtPWords(ans);
+  if (a.length !== b.length || !a.length) return false;
+  var swapped = 0;
+  for (var i = 0; i < a.length; i++){
+    if (wtNormalize(a[i]) === wtNormalize(b[i])) continue;
+    var pa = wtPSplit(a[i]), pb = wtPSplit(b[i]);
+    if (!pa || !pb) return false;
+    if (pa[0] !== pb[0] || pa[1] !== pb[1]) return false;
+    swapped++;
+  }
+  return swapped > 0;
+}
+function wtParticlePairs(mine, ans){
+  var a = wtPWords(mine), b = wtPWords(ans), out = [];
+  for (var i = 0; i < Math.min(a.length, b.length); i++){
+    if (wtNormalize(a[i]) !== wtNormalize(b[i])) out.push([a[i], b[i]]);
+  }
+  return out;
+}
+function wtNoteShow(item, mine, ans){
+  var ps = wtParticlePairs(mine, ans);
+  if (!ps.length) return;
+  var txt = ps.map(function(x){ return '「' + wtEsc(x[0]) + '」 ↔ 「' + wtEsc(x[1]) + '」'; }).join(' · ');
+  var el = document.createElement('div');
+  el.className = 'wt-note';
+  el.innerHTML = '<b>조사만 다릅니다</b> ' + txt
+    + '<div class="wt-nline">둘 다 주어를 표시하므로 정답으로 셉니다. '
+    + '은/는은 이야기의 주제를 잡을 때, 이/가는 새로 알릴 때 씁니다.</div>'
+    + '<div class="wt-nline"><span class="gloss" lang="en" translate="yes">'
+    + 'Only the particle differs — both mark the subject, so this counts as correct.</span></div>';
+  item.appendChild(el);
 }
 
 
