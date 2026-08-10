@@ -30,36 +30,49 @@ VOICES = {"f": "ko-KR-SunHiNeural", "m": "ko-KR-HyunsuMultilingualNeural"}
 CALL = r"speakKorean\(&#39;([^&]+)&#39;\)"
 FILES = sorted(glob.glob("*.html"))
 
-# 쓰기 칸(jm-box)은 input 의 data-ans 를 읽어 speakKorean 을 부른다.
-# 그 input 은 자바스크립트가 조립하므로 글자 훑기로는 안 보인다 — 렌더해서 본다.
+# 자바스크립트가 조립하는 소리 소비자는 글자 훑기로는 안 보인다 — 렌더해서 본다.
+# 세 갈래: ① 쓰기 칸 input 의 data-ans (jm-box 가 읽음)
+#          ② 렌더된 onclick 의 speakKorean('…') · akSpeakSeq(['…',…])
+#          ③ data-forms="…|…" (퀴즈2 전체 듣기)
 DOM_JS = """() => {
     var snd = window.AK_SND || {};
     var need = [], seen = {};
+    function add(a){
+        a = (a || '').trim();
+        if (!a || seen[a] || !/[가-힣]/.test(a)) return;
+        seen[a] = 1;
+        if (!(a in snd)) need.push(a);
+    }
     document.querySelectorAll('input[data-ans]').forEach(function(i){
-        (i.getAttribute('data-ans') || '').split('/').forEach(function(a){
-            a = a.trim();
-            if (!a || seen[a] || !/[가-힣]/.test(a)) return;
-            seen[a] = 1;
-            if (!(a in snd)) need.push(a);
-        });
+        (i.getAttribute('data-ans') || '').split('/').forEach(add);
+    });
+    document.querySelectorAll('[data-forms]').forEach(function(el){
+        (el.getAttribute('data-forms') || '').split('|').forEach(add);
+    });
+    document.querySelectorAll('[onclick]').forEach(function(el){
+        var oc = el.getAttribute('onclick') || '', m;
+        var re1 = /speakKorean\\('([^']+)'/g;
+        while ((m = re1.exec(oc))) add(m[1]);
+        var re2 = /akSpeakSeq\\(\\[([^\\]]*)\\]/g;
+        while ((m = re2.exec(oc)))
+            m[1].split(',').forEach(function(s){ add(s.replace(/^\\s*'|'\\s*$/g, '')); });
     });
     return need;
 }"""
 
 
 def dom_wanted():
-    """jm-box 파일들을 실제 브라우저로 렌더해, AK_SND 에 없는 data-ans 를 파일별로 돌려준다.
+    """모든 HTML 을 실제 브라우저로 렌더해, AK_SND 에 없는 소리 소비자를 파일별로 돌려준다.
     playwright 가 없으면 None — 부르는 쪽에서 반드시 경고를 찍을 것(조용한 0 금지)."""
     try:
         from playwright.sync_api import sync_playwright
     except ImportError:
         return None
-    files = [f for f in FILES if "jm-box" in open(f, encoding="utf-8").read()]
     res = {}
     with sync_playwright() as p:
         b = p.chromium.launch(headless=True)
         pg = b.new_page()
-        for f in files:
+        for f in FILES:
             pg.goto(pathlib.Path(os.path.abspath(f)).as_uri())
             pg.wait_for_load_state("load")
             texts = pg.evaluate(DOM_JS)

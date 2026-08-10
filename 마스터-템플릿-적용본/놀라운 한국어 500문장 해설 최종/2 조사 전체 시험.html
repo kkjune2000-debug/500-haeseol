@@ -161,7 +161,7 @@
   ];
   function batchim(w){var c=w.charCodeAt(w.length-1)-0xAC00;return (c%28)!==0;}
   var grid = document.getElementById('fcGridParticleAll');
-  function row(l,f){return '<div class="fcm-row"><span class="fcm-l">'+l+'</span><span class="fcm-f">'+f+'</span><button class="fc-tts" onclick="event.stopPropagation();speakKorean(\''+f+'\')">🔊</button></div>';}
+  function row(l,f){return '<div class="fcm-row"><span class="fcm-l">'+l+'</span><span class="fcm-f">'+f+'</span></div>';}
   data.forEach(function(p, i){
     var w=p[0], b=batchim(w);
     var f = b ? [w+'은',w+'이',w+'을',w+'과',w+'이나'] : [w+'는',w+'가',w+'를',w+'와',w+'나'];
@@ -179,11 +179,9 @@
         '</div>' +
         '<div class="fc-back">' +
           '<span class="fc-num">'+n+'</span>' +
-          '<span class="pb-badge '+(b?'pb-o':'pb-x')+'" style="margin-bottom:6px;">'+(b?'받침 O':'받침 X')+'</span>' +
+          '<button translate="yes" class="fc-tts-all" onclick="event.stopPropagation();akSpeakSeq([\''+f[0]+'\',\''+f[1]+'\',\''+f[2]+'\',\''+f[3]+'\',\''+f[4]+'\'])">🔊 전체 듣기<span class="gloss" lang="en" translate="yes">Play all</span></button>' +
           '<div class="fcm">' +
-            '<div class="fcm-grp"><span class="fcm-t">주어</span>' + row('은/는',f[0]) + row('이/가',f[1]) + '</div>' +
-            '<div class="fcm-grp"><span class="fcm-t">목적어</span>' + row('을/를',f[2]) + '</div>' +
-            '<div class="fcm-grp"><span class="fcm-t">연결·선택</span>' + row('와/과',f[3]) + row('나/이나',f[4]) + '</div>' +
+            row('은/는',f[0]) + row('이/가',f[1]) + row('을/를',f[2]) + row('와/과',f[3]) + row('나/이나',f[4]) +
           '</div>' +
         '</div>' +
       '</div>';
@@ -420,7 +418,7 @@ function mcJR(btn,val){var q=btn.closest('.mc-q');if(q.classList.contains('corre
 </div><script>/* ak-audio v1 */
 /* 미리 구운 MP3 를 먼저 쓴다. 없거나 못 읽으면 브라우저 음성으로 넘어간다.
    f = SunHi(여성) · m = Hyunsu(남성) — 둘 다 신경망 음성이다. */
-var AK_SND = {"사과": "1239", "커피": "1776", "우유": "1503", "영화": "1468", "선생님": "1282", "버스": "1189", "학생": "1852", "친구": "1770", "날씨": "0826", "사랑": "1247", "음식": "1530", "이": "0367", "이나": "1534"};
+var AK_SND = {"사과": "1239", "커피": "1776", "우유": "1503", "영화": "1468", "선생님": "1282", "버스": "1189", "학생": "1852", "친구": "1770", "날씨": "0826", "사랑": "1247", "음식": "1530", "이": "0367", "이나": "1534", "사과는": "1242", "사과가": "1240", "사과를": "1243", "사과와": "1244", "사과나": "1241", "빵은": "1235", "빵이": "1237", "빵을": "1236", "빵과": "1234", "빵이나": "1238", "커피는": "1779", "커피가": "1777", "커피를": "1780", "커피와": "1783", "커피나": "1778", "책은": "2042", "책이": "2043", "책을": "1744", "책과": "1741", "책이나": "1745", "우유는": "2044", "우유가": "2045", "우유를": "1505", "우유와": "1506", "우유나": "1504", "물은": "2046", "물이": "2047", "물을": "1133", "물과": "1130", "물이나": "1136", "영화는": "1471", "영화가": "1469", "영화를": "1472", "영화와": "2048", "영화나": "1470", "선생님은": "1285", "선생님이": "1286", "선생님을": "2049", "선생님과": "1283", "선생님이나": "1287", "버스는": "2050", "버스가": "2051", "버스를": "2052", "버스와": "2053", "버스나": "1190", "학생은": "1854", "학생이": "1855", "학생을": "2054", "학생과": "2055", "학생이나": "2056", "친구는": "2057", "친구가": "2058", "친구를": "1771", "친구와": "2059", "친구나": "2060", "꽃은": "0808", "꽃이": "0810", "꽃을": "0809", "꽃과": "0806", "꽃이나": "0811", "날씨는": "0828", "날씨가": "0827", "날씨를": "2061", "날씨와": "2062", "날씨나": "2063", "사랑은": "1249", "사랑이": "1251", "사랑을": "1250", "사랑과": "1248", "사랑이나": "2064", "한국어는": "2027", "한국어가": "2028", "한국어를": "1951", "한국어와": "2065", "한국어나": "2066", "음식은": "2067", "음식이": "2068", "음식을": "1531", "음식과": "2069", "음식이나": "2070", "빵": "1927", "책": "1945", "물": "2071", "꽃": "1918", "한국어": "1950"};
 var AK_AU = null;
 function akPlayFile(text, sex){
   var n = AK_SND[text];
@@ -515,7 +513,51 @@ if (window.speechSynthesis){
   try { window.speechSynthesis.addEventListener('voiceschanged', akVoiceInit); } catch(e){}
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', akVoiceInit);
-else akVoiceInit();if('speechSynthesis' in window){window.speechSynthesis.onvoiceschanged=function(){};window.speechSynthesis.getVoices();}</script><script>
+else akVoiceInit();if('speechSynthesis' in window){window.speechSynthesis.onvoiceschanged=function(){};window.speechSynthesis.getVoices();}</script>
+<style>
+/* 전체 듣기 단추 — 퀴즈1 카드 뒷면 */
+.fc-tts-all{display:block;margin:2px auto 6px auto;font-size:0.8rem;font-weight:700;color:#1e40af;background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:3px 12px;cursor:pointer;font-family:inherit;}
+.fc-tts-all:hover{background:#dbeafe;}
+.fc-tts-all .gloss{font-size:0.68em;}
+#fcGridParticleAll .fc-card{height:248px;}   /* 전체 듣기 단추 + 5행이 들어가는 높이 (넘침 실측 221) */
+@media print{.fc-tts-all{display:none !important;}}
+</style>
+<script>
+/* ak-seq v1 — 여러 형태를 이어서 읽는다. MP3 를 끝나는 대로 이어 붙이고,
+   없는 것은 브라우저 음성으로 넘어간다. 새로 누르면 이전 사슬은 멈춘다. */
+var AK_SEQ_ID = 0;
+function akSpeakSeq(list, sex){
+  sex = sex || AK_SEX;
+  var my = ++AK_SEQ_ID, i = 0;
+  function next(){
+    if (my !== AK_SEQ_ID || i >= list.length) return;
+    var text = list[i++];
+    var n = window.AK_SND ? AK_SND[text] : null;
+    if (n){
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
+      if (window.AK_AU){ AK_AU.pause(); AK_AU.currentTime = 0; }
+      AK_AU = new Audio(encodeURI('_소리/' + (sex === 'm' ? 'm' : 'f') + '/' + n + '.mp3'));
+      AK_AU.onended = next;
+      AK_AU.onerror = function(){ tts(text); };
+      var p = AK_AU.play();
+      if (p && p.catch) p.catch(function(){ tts(text); });
+    } else tts(text);
+  }
+  function tts(text){
+    if (!('speechSynthesis' in window)) return;
+    var v = akPick(sex);
+    window.speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = (v && v.lang) || 'ko-KR';
+    u.rate = 0.92;
+    if (v) u.voice = v;
+    u.onend = next;
+    /* cancel() 직후 speak() 금지 — 60ms 규칙 */
+    setTimeout(function(){ if (my === AK_SEQ_ID) window.speechSynthesis.speak(u); }, 60);
+  }
+  next();
+}
+</script><script>
 (function(){
   function wqNorm(s){return (s||'').replace(/\s+/g,'').replace(/[?？]/g,'');}
   document.addEventListener('input', function(e){
