@@ -168,6 +168,26 @@
             100% { transform: translateY(-78px) scale(0.3) rotate(280deg); opacity: 0; }
         }
         .writing-input.revealed { border-color:#3b82f6 !important; background:#ebf2fe !important; color:#26549f; font-weight:700; }
+        /* 쓰기 시험 — 채점 뒤 문항마다 나오는 다시 풀기·힌트·틀린 글자 대조 */
+        .wt-result { display: flex; flex-direction: column; gap: 8px; margin-top: 2px; }
+        .wt-rbtns { display: flex; gap: 8px; flex-wrap: wrap; }
+        .wt-rbtn { background: #fff; border: 1px solid #cbd5e1; color: #475569; padding: 5px 12px; border-radius: 8px; cursor: pointer; font-size: 0.82rem; font-weight: 700; font-family: inherit; }
+        .wt-rbtn:hover { background: #f1f5f9; }
+        .wt-rbtn.hint { border-color: #fde68a; color: #854d0e; background: #fffbeb; }
+        .wt-rbtn.hint:hover { background: #fef3c7; }
+        .wt-rbtn:disabled { opacity: 0.5; cursor: default; }
+        .wt-rbtn .gloss { font-size: 0.68em; font-weight: 600; }
+        .wt-hintbox { display: none; background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 8px 12px; }
+        .wt-hintbox.on { display: block; }
+        .wt-hstep { font-size: 0.72rem; font-weight: 800; color: #b45309; margin-right: 10px; }
+        .wt-htext { font-size: 1rem; font-weight: 700; color: #78350f; letter-spacing: 0.04em; }
+        .wt-diff { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px 12px; }
+        .wt-dline { display: flex; gap: 10px; align-items: baseline; line-height: 1.75; }
+        .wt-dline b { font-size: 0.72rem; font-weight: 800; color: #94a3b8; min-width: 68px; flex-shrink: 0; }
+        .wt-dline span { font-size: 1rem; }
+        .wt-x { color: #b91c1c; text-decoration: underline wavy #f87171; text-underline-offset: 3px; }
+        .wt-o { color: #166534; font-weight: 800; text-decoration: underline #86efac; text-underline-offset: 3px; }
+        @media print { .wt-result { display: none; } }
         /* vocab toggle */
         .vocab-toggle { background:#d1fae5; color:#065f46; border:1px solid #a7f3d0; padding:8px 18px; border-radius:6px; cursor:pointer; font-size:0.85rem; font-weight:700; margin:12px 0 0 0; transition:background 0.2s; }
         .vocab-toggle:hover { background:#a7f3d0; }
@@ -1063,7 +1083,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <p class="en" lang="en" translate="yes">Read the English and write it in Korean, then press Grade.</p>
 
 <div class="wt-toolbar">
-  <div class="wt-score" id="wtScoreBox">✓ 점수 <span lang="en" translate="yes">· Score:</span> <span class="wt-correct" id="wtCorrect">0</span> <span class="wt-total">/ 12</span><span class="wt-pct" id="wtPct"></span></div>
+  <div class="wt-score" id="wtScoreBox">✓ 점수 <span lang="en" translate="yes">· Score:</span> <span class="wt-correct" id="wtCorrect">–</span> <span class="wt-total">/ 12</span><span class="wt-pct" id="wtPct"></span></div>
   <div class="wt-btns">
     <button class="wt-btn" onclick="wtReset()">🔄 초기화<span class="gloss" lang="en" translate="yes">Reset</span></button>
     <button class="wt-btn grade" onclick="wtGrade()">✅ 채점<span class="gloss" lang="en" translate="yes">Grade</span></button>
@@ -1196,22 +1216,7 @@ if ('speechSynthesis' in window) {
 
 <script>
 function wtNormalize(s){ return (s||'').replace(/\s+/g,'').replace(/[?？!.。]/g,''); }
-function wtCheck(inp){
-  const ans = wtNormalize(inp.dataset.ans);
-  const val = wtNormalize(inp.value);
-  const wasCorrect = inp.classList.contains('correct');
-  inp.classList.remove('correct','wrong','revealed');
-  if (val.length > 0 && val === ans){
-    inp.classList.add('correct');
-    if (!wasCorrect && inp.dataset.celebrated !== '1') {
-      wtCelebrate(inp);
-      inp.dataset.celebrated = '1';
-    }
-  } else {
-    inp.dataset.celebrated = '';
-  }
-  wtScore();
-}
+
 function wtCelebrate(inp){
   const parent = inp.closest('.single-wt') || inp.closest('.writing-item') || inp.parentElement;
   if (!parent) return;
@@ -1247,49 +1252,135 @@ function swtSpeak(btn){
   const inp = btn.closest('.single-wt').querySelector('.writing-input');
   if (inp && inp.dataset.ans) speakKorean(inp.dataset.ans);
 }
-function wtScore(){
-  const inputs = document.querySelectorAll('.writing-practice .writing-input');
-  let c=0;
-  inputs.forEach(function(inp){ if(inp.classList.contains('correct')) c++; });
-  const correctEl = document.getElementById('wtCorrect');
-  if (correctEl) correctEl.textContent = c;
-  const pctEl = document.getElementById('wtPct');
-  if (pctEl) pctEl.textContent = '';
-  const boxEl = document.getElementById('wtScoreBox');
-  if (boxEl) boxEl.classList.remove('is-graded');
+
+
+
+function wtIsTest(inp){ return !!(inp && inp.closest && inp.closest('.writing-practice')); }
+function wtEsc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function wtScoreReset(){
+  var c = document.getElementById('wtCorrect'); if (c) c.textContent = '–';
+  var p = document.getElementById('wtPct'); if (p) p.textContent = '';
+  var b = document.getElementById('wtScoreBox'); if (b) b.classList.remove('is-graded');
 }
-function wtReset(){
-  document.querySelectorAll('.writing-practice .writing-input').forEach(function(inp){
-    inp.value = '';
+function wtRowClear(item){
+  if (!item) return;
+  var r = item.querySelector('.wt-result'); if (r) r.parentNode.removeChild(r);
+  item.dataset.hint = '';
+}
+/* 쓰기 시험(.writing-practice)은 채점이 있는 시험이므로 타자 중에는 맞았는지 알려 주지 않는다.
+   문장별 연습(.single-wt)은 시험이 아니고 바로 아래 「정답 보기」가 있어 즉시 확인이 도움이 된다 — 그대로 둔다. */
+function wtCheck(inp){
+  if (wtIsTest(inp)){
     inp.classList.remove('correct','wrong','revealed');
+    wtRowClear(inp.closest('.writing-item'));
+    wtScoreReset();
+    return;
+  }
+  var ans = wtNormalize(inp.dataset.ans), val = wtNormalize(inp.value);
+  var was = inp.classList.contains('correct');
+  inp.classList.remove('correct','wrong','revealed');
+  if (val.length > 0 && val === ans){
+    inp.classList.add('correct');
+    if (!was && inp.dataset.celebrated !== '1'){ wtCelebrate(inp); inp.dataset.celebrated = '1'; }
+  } else { inp.dataset.celebrated = ''; }
+}
+function wtScore(){ wtScoreReset(); }
+function wtReset(){
+  document.querySelectorAll('.writing-practice .writing-item').forEach(function(it){ wtRowClear(it); });
+  document.querySelectorAll('.writing-practice .writing-input').forEach(function(inp){
+    inp.value = ''; inp.classList.remove('correct','wrong','revealed');
   });
-  wtScore();
+  wtScoreReset();
 }
 function wtReveal(){
+  document.querySelectorAll('.writing-practice .writing-item').forEach(function(it){ wtRowClear(it); });
   document.querySelectorAll('.writing-practice .writing-input').forEach(function(inp){
-    inp.value = inp.dataset.ans;
-    inp.classList.remove('correct','wrong');
-    inp.classList.add('revealed');
+    inp.value = inp.dataset.ans; inp.classList.remove('correct','wrong'); inp.classList.add('revealed');
   });
-  document.getElementById('wtCorrect').textContent = '–';
-  document.getElementById('wtPct').textContent = '';
-  document.getElementById('wtScoreBox').classList.remove('is-graded');
+  wtScoreReset();
+}
+/* 틀린 글자 짚어 주기 — 최장 공통 부분열로 맞춰 다른 글자만 표시한다 */
+function wtDiffHtml(mine, ans){
+  if (!String(mine).trim()){
+    return '<div class="wt-diff"><div class="wt-dline"><b>안 썼습니다</b>'
+      + '<span class="gloss" lang="en" translate="yes">Not answered</span></div>'
+      + '<div class="wt-dline"><b>정답</b><span>' + wtEsc(ans) + '</span></div></div>';
+  }
+  var a = Array.from(mine), b = Array.from(ans), n = a.length, m = b.length, i, j;
+  var dp = []; for (i = 0; i <= n; i++){ dp.push(new Array(m + 1).fill(0)); }
+  for (i = n - 1; i >= 0; i--) for (j = m - 1; j >= 0; j--)
+    dp[i][j] = (a[i] === b[j]) ? dp[i+1][j+1] + 1 : Math.max(dp[i+1][j], dp[i][j+1]);
+  var mh = '', ah = ''; i = 0; j = 0;
+  while (i < n && j < m){
+    if (a[i] === b[j]){ mh += wtEsc(a[i]); ah += wtEsc(b[j]); i++; j++; }
+    else if (dp[i+1][j] >= dp[i][j+1]){ mh += '<u class="wt-x">' + wtEsc(a[i]) + '</u>'; i++; }
+    else { ah += '<u class="wt-o">' + wtEsc(b[j]) + '</u>'; j++; }
+  }
+  while (i < n){ mh += '<u class="wt-x">' + wtEsc(a[i++]) + '</u>'; }
+  while (j < m){ ah += '<u class="wt-o">' + wtEsc(b[j++]) + '</u>'; }
+  return '<div class="wt-diff">'
+    + '<div class="wt-dline"><b>내가 쓴 것</b><span>' + mh + '</span></div>'
+    + '<div class="wt-dline"><b>정답</b><span>' + ah + '</span></div></div>';
+}
+function wtRowShow(item, inp){
+  var row = document.createElement('div');
+  row.className = 'wt-result';
+  row.innerHTML =
+    '<div class="wt-rbtns">'
+    + '<button type="button" translate="yes" class="wt-rbtn" onclick="wtAgain(this)">↺ 다시 풀기'
+    + '<span class="gloss" lang="en" translate="yes">Try again</span></button>'
+    + '<button type="button" translate="yes" class="wt-rbtn hint" onclick="wtHint(this)">💡 힌트'
+    + '<span class="gloss" lang="en" translate="yes">Hint</span></button>'
+    + '</div><div class="wt-hintbox"></div>'
+    + wtDiffHtml(inp.value, inp.dataset.ans);
+  item.appendChild(row);
+}
+/* 단계 힌트 — 1) 낱말 수와 첫 글자 2) 첫 낱말 3) 정답 */
+function wtHint(btn){
+  var item = btn.closest('.writing-item');
+  var inp = item.querySelector('.writing-input');
+  var box = item.querySelector('.wt-hintbox');
+  var step = (parseInt(item.dataset.hint || '0', 10) || 0) + 1;
+  if (step > 3) step = 3;
+  item.dataset.hint = String(step);
+  var words = String(inp.dataset.ans).split(/\s+/).filter(Boolean);
+  function skel(w){ var c = Array.from(w); return c[0] + new Array(Math.max(0, c.length - 1) + 1).join('_'); }
+  var txt;
+  if (step === 1){ txt = words.map(skel).join(' ') + '  (' + words.length + '낱말)'; }
+  else if (step === 2){ txt = words.map(function(w, k){ return k === 0 ? w : skel(w); }).join(' '); }
+  else { txt = String(inp.dataset.ans); }
+  box.innerHTML = '<span class="wt-hstep">힌트 ' + step + '/3</span><span class="wt-htext">'
+                + wtEsc(txt) + '</span>';
+  box.classList.add('on');
+  if (step === 3) btn.disabled = true;
+}
+function wtAgain(btn){
+  var item = btn.closest('.writing-item');
+  var inp = item.querySelector('.writing-input');
+  inp.value = '';
+  inp.classList.remove('correct','wrong','revealed');
+  wtRowClear(item);
+  wtScoreReset();
+  inp.focus();
 }
 function wtGrade(){
-  const inputs = document.querySelectorAll('.writing-practice .writing-input');
-  let c=0, total=inputs.length;
-  inputs.forEach(function(inp){
+  var items = document.querySelectorAll('.writing-practice .writing-item');
+  var c = 0, total = 0;
+  items.forEach(function(it){
+    var inp = it.querySelector('.writing-input');
+    if (!inp) return;
+    total++;
+    wtRowClear(it);
     inp.classList.remove('correct','wrong','revealed');
-    const ans = wtNormalize(inp.dataset.ans);
-    const val = wtNormalize(inp.value);
-    if (val === ans && val.length>0){ inp.classList.add('correct'); c++; }
-    else { inp.classList.add('wrong'); }
+    var ans = wtNormalize(inp.dataset.ans), val = wtNormalize(inp.value);
+    if (val.length > 0 && val === ans){ inp.classList.add('correct'); c++; }
+    else { inp.classList.add('wrong'); wtRowShow(it, inp); }
   });
-  document.getElementById('wtCorrect').textContent = c;
-  const pct = total ? Math.round(c*100/total) : 0;
-  document.getElementById('wtPct').textContent = '· ' + pct + '%';
-  document.getElementById('wtScoreBox').classList.add('is-graded');
-  if(c === total && c > 0){
+  var ce = document.getElementById('wtCorrect'); if (ce) ce.textContent = c;
+  var pe = document.getElementById('wtPct');
+  if (pe) pe.textContent = '· ' + (total ? Math.round(c * 100 / total) : 0) + '%';
+  var be = document.getElementById('wtScoreBox'); if (be) be.classList.add('is-graded');
+  if (c === total && c > 0 && typeof celebrateShow === 'function'){
     celebrateShow(c, 0, wtReset, '모든 문장을 정확히 작성했습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All sentences correct!</span>');
   }
 }
