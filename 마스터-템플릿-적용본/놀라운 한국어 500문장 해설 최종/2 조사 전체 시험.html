@@ -131,7 +131,7 @@
 .wqg-num{font-family:'Lato','Noto Sans KR',sans-serif;font-weight:900;color:#3b82f6;font-size:1.05rem;min-width:28px;}
 .wqg-prompt{font-size:1.1rem;font-weight:800;color:#1e293b;}
 .wqg-prompt small{font-weight:600;color:#94a3b8;font-size:0.85rem;margin-left:2px;}
-.wqg-head .wqg-tts{margin-left:auto;}
+.wqg-head .wqg-all{margin-left:auto;}
 /* 다섯 칸을 다 맞히면(또는 정답을 보면) 나타나는 전체 듣기 단추 */
 .wqg-all{display:none;gap:6px;margin-left:8px;vertical-align:middle;}
 .wqg-all.on{display:inline-flex;}
@@ -309,7 +309,6 @@
     var f = b ? [w+'은',w+'이',w+'을',w+'과',w+'이나'] : [w+'는',w+'가',w+'를',w+'와',w+'나'];
     html += '<div class="wqg-card" data-forms="'+f.join('|')+'">' +
       '<div class="wqg-head"><span class="wqg-num">'+(i+1)+'</span><span class="wqg-prompt"><b>'+w+'</b> <small>('+p[1]+')</small></span>' +
-        '<button translate="yes" class="speak-btn wqg-tts" onclick="speakKorean(\''+w+'\')" title="Listen">🔊</button>' +
         '<span class="wqg-all"><button translate="yes" class="wqg-allbtn" onclick="alltSeq(this,\'f\')">🔊 여성<span class="gloss" lang="en" translate="yes">Female</span></button><button translate="yes" class="wqg-allbtn" onclick="alltSeq(this,\'m\')">🔊 남성<span class="gloss" lang="en" translate="yes">Male</span></button></span></div>' +
       '<div class="wqg-grid">' +
         cell('은/는 · Topic', f[0]) +
