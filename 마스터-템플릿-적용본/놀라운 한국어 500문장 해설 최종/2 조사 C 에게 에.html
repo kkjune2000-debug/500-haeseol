@@ -413,6 +413,9 @@ document.addEventListener('DOMContentLoaded', function(){
   .conj-rule .cr-arrow{transform:rotate(90deg);font-size:1.05rem;}
 }
 .pb-badge{display:inline-flex;align-items:center;padding:4px 9px;border-radius:7px;font-weight:800;font-size:0.82rem;white-space:nowrap;}
+/* 배지 안 영어 — 한국어 위 · 영어 아래로 쌓는다 */
+.cr-step .pb-badge{flex-direction:column;line-height:1.2;}
+.cr-step .pb-badge .gloss{font-size:0.6rem;font-weight:700;opacity:0.85;margin-top:0;letter-spacing:0;}
 .pb-badge.pb-x{background:#fee2e2;color:#dc2626;}
 .pb-badge.pb-o{background:#dcfce7;color:#16a34a;}
 .pb-badge.pb-p{background:#dbeafe;color:#1e40af;}
@@ -431,35 +434,35 @@ document.addEventListener('DOMContentLoaded', function(){
     <div class="cr-row">
       <div class="cr-base"><span class="cb-word" onclick="speakKorean('선생님')"><span class="cb-stem">선생님</span></span><span class="cb-en"><span lang="en" translate="yes">teacher</span></span></div>
       <div class="cr-arrow">➜</div>
-      <div class="cr-step"><span class="pb-badge pb-p">사람</span><span class="cs-plus">+</span><span class="cs-chip">에게</span></div>
+      <div class="cr-step"><span class="pb-badge pb-p">사람<span class="gloss" lang="en" translate="yes">person</span></span><span class="cs-plus">+</span><span class="cs-chip">에게</span></div>
       <div class="cr-arrow">➜</div>
       <div class="cr-result"><span class="res statement" onclick="speakKorean('선생님에게')">선생님에게</span></div>
     </div>
     <div class="cr-row">
       <div class="cr-base"><span class="cb-word" onclick="speakKorean('고양이')"><span class="cb-stem">고양이</span></span><span class="cb-en"><span lang="en" translate="yes">cat</span></span></div>
       <div class="cr-arrow">➜</div>
-      <div class="cr-step"><span class="pb-badge pb-p">동물</span><span class="cs-plus">+</span><span class="cs-chip">에게</span></div>
+      <div class="cr-step"><span class="pb-badge pb-p">동물<span class="gloss" lang="en" translate="yes">animal</span></span><span class="cs-plus">+</span><span class="cs-chip">에게</span></div>
       <div class="cr-arrow">➜</div>
       <div class="cr-result"><span class="res statement" onclick="speakKorean('고양이에게')">고양이에게</span></div>
     </div>
     <div class="cr-row">
       <div class="cr-base"><span class="cb-word" onclick="speakKorean('나무')"><span class="cb-stem">나무</span></span><span class="cb-en"><span lang="en" translate="yes">tree</span></span></div>
       <div class="cr-arrow">➜</div>
-      <div class="cr-step"><span class="pb-badge pb-t">식물</span><span class="cs-plus">+</span><span class="cs-chip">에</span></div>
+      <div class="cr-step"><span class="pb-badge pb-t">식물<span class="gloss" lang="en" translate="yes">plant</span></span><span class="cs-plus">+</span><span class="cs-chip">에</span></div>
       <div class="cr-arrow">➜</div>
       <div class="cr-result"><span class="res statement" onclick="speakKorean('나무에')">나무에</span></div>
     </div>
     <div class="cr-row">
       <div class="cr-base"><span class="cb-word" onclick="speakKorean('꽃')"><span class="cb-stem">꽃</span></span><span class="cb-en"><span lang="en" translate="yes">flower</span></span></div>
       <div class="cr-arrow">➜</div>
-      <div class="cr-step"><span class="pb-badge pb-t">식물</span><span class="cs-plus">+</span><span class="cs-chip">에</span></div>
+      <div class="cr-step"><span class="pb-badge pb-t">식물<span class="gloss" lang="en" translate="yes">plant</span></span><span class="cs-plus">+</span><span class="cs-chip">에</span></div>
       <div class="cr-arrow">➜</div>
       <div class="cr-result"><span class="res statement" onclick="speakKorean('꽃에')">꽃에</span></div>
     </div>
     <div class="cr-row">
       <div class="cr-base"><span class="cb-word" onclick="speakKorean('회사')"><span class="cb-stem">회사</span></span><span class="cb-en"><span lang="en" translate="yes">company</span></span></div>
       <div class="cr-arrow">➜</div>
-      <div class="cr-step"><span class="pb-badge pb-t">기관</span><span class="cs-plus">+</span><span class="cs-chip">에</span></div>
+      <div class="cr-step"><span class="pb-badge pb-t">기관<span class="gloss" lang="en" translate="yes">organization</span></span><span class="cs-plus">+</span><span class="cs-chip">에</span></div>
       <div class="cr-arrow">➜</div>
       <div class="cr-result"><span class="res statement" onclick="speakKorean('회사에')">회사에</span></div>
     </div>

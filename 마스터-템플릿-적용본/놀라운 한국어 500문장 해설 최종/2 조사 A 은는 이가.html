@@ -503,6 +503,9 @@ document.addEventListener('DOMContentLoaded', function(){
   .conj-rule .cr-arrow{transform:rotate(90deg);font-size:1.05rem;}
 }
 .pb-badge{display:inline-flex;align-items:center;padding:4px 9px;border-radius:7px;font-weight:800;font-size:0.82rem;white-space:nowrap;}
+/* 배지 안 영어 — 한국어 위 · 영어 아래로 쌓는다 */
+.cr-step .pb-badge{flex-direction:column;line-height:1.2;}
+.cr-step .pb-badge .gloss{font-size:0.6rem;font-weight:700;opacity:0.85;margin-top:0;letter-spacing:0;}
 .pb-badge.pb-x{background:#fee2e2;color:#dc2626;}
 .pb-badge.pb-o{background:#dcfce7;color:#16a34a;}
 .pb-badge.pb-p{background:#dbeafe;color:#1e40af;}
@@ -521,28 +524,28 @@ document.addEventListener('DOMContentLoaded', function(){
     <div class="cr-row">
       <div class="cr-base"><span class="cb-word" onclick="speakKorean('저')"><span class="cb-stem">저</span></span><span class="cb-en">I</span></div>
       <div class="cr-arrow">➜</div>
-      <div class="cr-step"><span class="pb-badge pb-x">받침 X</span><span class="cs-plus">+</span><span class="cs-chip">는</span></div>
+      <div class="cr-step"><span class="pb-badge pb-x">받침 X<span class="gloss" lang="en" translate="yes">none</span></span><span class="cs-plus">+</span><span class="cs-chip">는</span></div>
       <div class="cr-arrow">➜</div>
       <div class="cr-result"><span class="res statement" onclick="speakKorean('저는')">저는</span></div>
     </div>
     <div class="cr-row">
       <div class="cr-base"><span class="cb-word" onclick="speakKorean('여기')"><span class="cb-stem">여기</span></span><span class="cb-en"><span lang="en" translate="yes">here</span></span></div>
       <div class="cr-arrow">➜</div>
-      <div class="cr-step"><span class="pb-badge pb-x">받침 X</span><span class="cs-plus">+</span><span class="cs-chip">는</span></div>
+      <div class="cr-step"><span class="pb-badge pb-x">받침 X<span class="gloss" lang="en" translate="yes">none</span></span><span class="cs-plus">+</span><span class="cs-chip">는</span></div>
       <div class="cr-arrow">➜</div>
       <div class="cr-result"><span class="res statement" onclick="speakKorean('여기는')">여기는</span></div>
     </div>
     <div class="cr-row">
       <div class="cr-base"><span class="cb-word" onclick="speakKorean('당신')"><span class="cb-stem">당신</span></span><span class="cb-en"><span lang="en" translate="yes">you</span></span></div>
       <div class="cr-arrow">➜</div>
-      <div class="cr-step"><span class="pb-badge pb-o">받침 O</span><span class="cs-plus">+</span><span class="cs-chip">은</span></div>
+      <div class="cr-step"><span class="pb-badge pb-o">받침 O<span class="gloss" lang="en" translate="yes">yes</span></span><span class="cs-plus">+</span><span class="cs-chip">은</span></div>
       <div class="cr-arrow">➜</div>
       <div class="cr-result"><span class="res statement" onclick="speakKorean('당신은')">당신은</span></div>
     </div>
     <div class="cr-row">
       <div class="cr-base"><span class="cb-word" onclick="speakKorean('이것')"><span class="cb-stem">이것</span></span><span class="cb-en"><span lang="en" translate="yes">this</span></span></div>
       <div class="cr-arrow">➜</div>
-      <div class="cr-step"><span class="pb-badge pb-o">받침 O</span><span class="cs-plus">+</span><span class="cs-chip">은</span></div>
+      <div class="cr-step"><span class="pb-badge pb-o">받침 O<span class="gloss" lang="en" translate="yes">yes</span></span><span class="cs-plus">+</span><span class="cs-chip">은</span></div>
       <div class="cr-arrow">➜</div>
       <div class="cr-result"><span class="res statement" onclick="speakKorean('이것은')">이것은</span></div>
     </div>
@@ -564,28 +567,28 @@ document.addEventListener('DOMContentLoaded', function(){
     <div class="cr-row">
       <div class="cr-base"><span class="cb-word" onclick="speakKorean('커피')"><span class="cb-stem">커피</span></span><span class="cb-en"><span lang="en" translate="yes">coffee</span></span></div>
       <div class="cr-arrow">➜</div>
-      <div class="cr-step"><span class="pb-badge pb-x">받침 X</span><span class="cs-plus">+</span><span class="cs-chip">가</span></div>
+      <div class="cr-step"><span class="pb-badge pb-x">받침 X<span class="gloss" lang="en" translate="yes">none</span></span><span class="cs-plus">+</span><span class="cs-chip">가</span></div>
       <div class="cr-arrow">➜</div>
       <div class="cr-result"><span class="res statement" onclick="speakKorean('커피가')">커피가</span></div>
     </div>
     <div class="cr-row">
       <div class="cr-base"><span class="cb-word" onclick="speakKorean('사과')"><span class="cb-stem">사과</span></span><span class="cb-en"><span lang="en" translate="yes">apple</span></span></div>
       <div class="cr-arrow">➜</div>
-      <div class="cr-step"><span class="pb-badge pb-x">받침 X</span><span class="cs-plus">+</span><span class="cs-chip">가</span></div>
+      <div class="cr-step"><span class="pb-badge pb-x">받침 X<span class="gloss" lang="en" translate="yes">none</span></span><span class="cs-plus">+</span><span class="cs-chip">가</span></div>
       <div class="cr-arrow">➜</div>
       <div class="cr-result"><span class="res statement" onclick="speakKorean('사과가')">사과가</span></div>
     </div>
     <div class="cr-row">
       <div class="cr-base"><span class="cb-word" onclick="speakKorean('꽃')"><span class="cb-stem">꽃</span></span><span class="cb-en"><span lang="en" translate="yes">flower</span></span></div>
       <div class="cr-arrow">➜</div>
-      <div class="cr-step"><span class="pb-badge pb-o">받침 O</span><span class="cs-plus">+</span><span class="cs-chip">이</span></div>
+      <div class="cr-step"><span class="pb-badge pb-o">받침 O<span class="gloss" lang="en" translate="yes">yes</span></span><span class="cs-plus">+</span><span class="cs-chip">이</span></div>
       <div class="cr-arrow">➜</div>
       <div class="cr-result"><span class="res statement" onclick="speakKorean('꽃이')">꽃이</span></div>
     </div>
     <div class="cr-row">
       <div class="cr-base"><span class="cb-word" onclick="speakKorean('행복')"><span class="cb-stem">행복</span></span><span class="cb-en"><span lang="en" translate="yes">happiness</span></span></div>
       <div class="cr-arrow">➜</div>
-      <div class="cr-step"><span class="pb-badge pb-o">받침 O</span><span class="cs-plus">+</span><span class="cs-chip">이</span></div>
+      <div class="cr-step"><span class="pb-badge pb-o">받침 O<span class="gloss" lang="en" translate="yes">yes</span></span><span class="cs-plus">+</span><span class="cs-chip">이</span></div>
       <div class="cr-arrow">➜</div>
       <div class="cr-result"><span class="res statement" onclick="speakKorean('행복이')">행복이</span></div>
     </div>
