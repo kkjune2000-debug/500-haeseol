@@ -570,7 +570,7 @@ var STYLE_M = [
   STYLES.forEach(function(s){
     var idx=s[1], h='';
     STYLE_M.forEach(function(r){
-      var smp=(r[0]==='가다'); h+='<tr'+(smp?' class="q-sample"':'')+'><td class="spw">'+r[0]+(smp?'<br><small style="color:#f59e0b;font-weight:800;">예시</small>':'')+'</td>';
+      var smp=(r[0]==='가다'); h+='<tr'+(smp?' class="q-sample"':'')+'><td class="spw">'+r[0]+(smp?'<br><small style="color:#f59e0b;font-weight:800;">보기</small>':'')+'</td>';
       idx.forEach(function(i){ h+=smp?('<td class="spcell">'+r[i]+'</td>'):('<td class="spcell q-cell"><span class="q-text" onclick="qHide(this)">'+r[i]+'</span><button class="q-ans" onclick="qReveal(this)">?</button></td>'); });
       h+='</tr>';
     });
@@ -768,7 +768,7 @@ function celebrateRestart(){
 .ans-btn{background:#fff;border:1px solid #cbd5e1;color:#475569;padding:5px 12px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.82rem;font-family:inherit;}
 .ans-btn:hover{background:#f1f5f9;}
 .ans-hint{font-size:0.8rem;color:#94a3b8;}
-.stylep-h{margin:16px 0 4px;padding:8px 14px;font-size:1.05rem;font-weight:800;border-left:4px solid;border-radius:4px;}.sh-formal{color:#92400e;background:#fffbeb;border-left-color:#f59e0b;}.sh-polite{color:#1e40af;background:#eff6ff;border-left-color:#3b82f6;}.sh-written{color:#166534;background:#ecfdf5;border-left-color:#22c55e;}.stylep-wrap{overflow-x:auto;margin:4px 0 12px;}.stylep{width:100%;border-collapse:collapse;font-size:0.92rem;min-width:440px;}.stylep th,.stylep td{border:1px solid #cbd5e1;padding:9px 6px;text-align:center;}.stylep thead th{background:#f1f5f9;color:#334155;font-weight:800;}.stylep .spw{background:#f8fafc;font-weight:800;color:#0f172a;white-space:nowrap;width:26%;}.stylep tr.q-sample td{background:#fffbeb;}.stylep tr.q-sample .spw{background:#fef3c7;color:#b45309;}.stylem tbody tr.mat-sample td{background:#fffbeb !important;}.stylem tbody tr.mat-sample .wcol{background:#fef3c7 !important;color:#b45309 !important;}.stylem tbody tr.mat-sample .wcol::after{content:"예시";display:block;font-size:0.58rem;font-weight:800;color:#f59e0b;}
+.stylep-h{margin:16px 0 4px;padding:8px 14px;font-size:1.05rem;font-weight:800;border-left:4px solid;border-radius:4px;}.sh-formal{color:#92400e;background:#fffbeb;border-left-color:#f59e0b;}.sh-polite{color:#1e40af;background:#eff6ff;border-left-color:#3b82f6;}.sh-written{color:#166534;background:#ecfdf5;border-left-color:#22c55e;}.stylep-wrap{overflow-x:auto;margin:4px 0 12px;}.stylep{width:100%;border-collapse:collapse;font-size:0.92rem;min-width:440px;}.stylep th,.stylep td{border:1px solid #cbd5e1;padding:9px 6px;text-align:center;}.stylep thead th{background:#f1f5f9;color:#334155;font-weight:800;}.stylep .spw{background:#f8fafc;font-weight:800;color:#0f172a;white-space:nowrap;width:26%;}.stylep tr.q-sample td{background:#fffbeb;}.stylep tr.q-sample .spw{background:#fef3c7;color:#b45309;}.stylem tbody tr.mat-sample td{background:#fffbeb !important;}.stylem tbody tr.mat-sample .wcol{background:#fef3c7 !important;color:#b45309 !important;}.stylem tbody tr.mat-sample .wcol::after{content:"보기";display:block;font-size:0.58rem;font-weight:800;color:#f59e0b;}
 @media print{.q-cell .q-text{display:inline !important;}.q-ans,.ans-bar{display:none !important;}}
 
 
@@ -793,7 +793,7 @@ function celebrateRestart(){
   });
   var wrap=document.querySelector('.stylem-wrap');
   if(wrap){ var bar=document.createElement('div'); bar.className='ans-bar';
-    bar.innerHTML='<button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기<span class="gloss" lang="en" translate="yes">Show all</span></button><button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기<span class="gloss" lang="en" translate="yes">Hide again</span></button><span class="ans-hint">첫 줄 <b>가다</b>는 예시입니다. 나머지는 ?를 눌러 정답 확인(다시 누르면 가려짐) · First row (가다) is a worked example</span>';
+    bar.innerHTML='<button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기<span class="gloss" lang="en" translate="yes">Show all</span></button><button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기<span class="gloss" lang="en" translate="yes">Hide again</span></button><span class="ans-hint">첫 줄 <b>가다</b>는 보기입니다. 나머지는 ?를 눌러 정답 확인(다시 누르면 가려짐) · First row (가다) is a worked example</span>';
     wrap.parentNode.insertBefore(bar, wrap);
   }
 })();

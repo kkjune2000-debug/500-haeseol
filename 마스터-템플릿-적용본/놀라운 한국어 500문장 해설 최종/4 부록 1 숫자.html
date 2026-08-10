@@ -1035,7 +1035,7 @@ function celebrateRestart(){
     if(!tbl.querySelector('.q-cell')) return;
     var bar=document.createElement('div');
     bar.className='ans-bar';
-    bar.innerHTML='<button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기<span class="gloss" lang="en" translate="yes">Show all</span></button><button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기<span class="gloss" lang="en" translate="yes">Hide again</span></button><span class="ans-hint">노란 테두리 칸은 예시입니다. 나머지 ?를 눌러 확인<span class="gloss" lang="en" translate="yes">Highlighted cells are examples</span></span>';
+    bar.innerHTML='<button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기<span class="gloss" lang="en" translate="yes">Show all</span></button><button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기<span class="gloss" lang="en" translate="yes">Hide again</span></button><span class="ans-hint">노란 테두리 칸은 보기입니다. 나머지 ?를 눌러 확인<span class="gloss" lang="en" translate="yes">Highlighted cells are examples</span></span>';
     tbl.parentNode.insertBefore(bar,tbl);
   });
 })();
