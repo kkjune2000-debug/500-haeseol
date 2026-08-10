@@ -321,9 +321,9 @@ document.addEventListener('DOMContentLoaded', function(){
 <p class="en" lang="en" translate="yes">It goes after <strong>the one who receives</strong> something you give or say. A <strong>person or an animal</strong> takes <span lang="ko" translate="no">에게</span>; <strong>anything else</strong> takes <span lang="ko" translate="no">에</span>.</p>
 
 <blockquote>
-<div class="bq-line">수미<span class="particle">에게</span> 책을 줍니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;수미에게 책을 줍니다.&#39;)" title="Listen">🔊</button><span class="gloss" lang="en" translate="yes">I give Sumi a book.</span></div>
-<div class="bq-line">선생님<span class="particle">에게</span> 말합니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;선생님에게 말합니다.&#39;)" title="Listen">🔊</button><span class="gloss" lang="en" translate="yes">I speak to the teacher.</span></div>
-<div class="bq-line">회사<span class="particle">에</span> 전화합니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;회사에 전화합니다.&#39;)" title="Listen">🔊</button><span class="gloss" lang="en" translate="yes">I call the company. — not a person, so <span lang="ko" translate="no">에</span>.</span></div>
+<div class="bq-line">저는 수미<span class="particle">에게</span> 책을 줍니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;저는 수미에게 책을 줍니다.&#39;)" title="Listen">🔊</button><span class="gloss" lang="en" translate="yes">I give Sumi a book.</span></div>
+<div class="bq-line">저는 선생님<span class="particle">에게</span> 말합니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;저는 선생님에게 말합니다.&#39;)" title="Listen">🔊</button><span class="gloss" lang="en" translate="yes">I speak to the teacher.</span></div>
+<div class="bq-line">저는 회사<span class="particle">에</span> 전화합니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;저는 회사에 전화합니다.&#39;)" title="Listen">🔊</button><span class="gloss" lang="en" translate="yes">I call the company. — not a person, so <span lang="ko" translate="no">에</span>.</span></div>
 </blockquote>
 
 <p class="ko">회사·학교·집도 <span class="particle">에</span>를 씁니다. 「회사<b>에</b> 전화했습니다」에서 전화를 받는 것은 사람이 아니라 회사이기 때문입니다.</p>
@@ -671,7 +671,7 @@ input[readonly] + .jm-spk{display:inline-block;}
 </div><script>/* ak-audio v1 */
 /* 미리 구운 MP3 를 먼저 쓴다. 없거나 못 읽으면 브라우저 음성으로 넘어간다.
    f = SunHi(여성) · m = Hyunsu(남성) — 둘 다 신경망 음성이다. */
-var AK_SND = {"선생님": "1282", "선생님에게": "1284", "사람": "1246", "꽃에": "0807", "식물": "1331", "고양이": "0715", "고양이에게": "0718", "동물": "0928", "나무": "0814", "나무에": "0815", "친구": "1770", "친구에게": "1772", "책상": "1742", "책상에": "1743", "사물": "1264", "학생": "1852", "학생에게": "1853", "벽에": "1191", "강아지": "0671", "강아지에게": "0672", "화분": "1904", "화분에": "1905", "어머니": "1420", "어머니에게": "1421", "수미": "1292", "수미에게": "1293", "회사": "1908", "회사에": "1909", "기관": "0769", "집에": "1729", "장소": "1629", "에게": "1437", "꽃": "1918", "수미에게 책을 줍니다.": "1964", "선생님에게 말합니다.": "1965", "회사에 전화합니다.": "1966"};
+var AK_SND = {"선생님": "1282", "선생님에게": "1284", "사람": "1246", "꽃에": "0807", "식물": "1331", "고양이": "0715", "고양이에게": "0718", "동물": "0928", "나무": "0814", "나무에": "0815", "친구": "1770", "친구에게": "1772", "책상": "1742", "책상에": "1743", "사물": "1264", "학생": "1852", "학생에게": "1853", "벽에": "1191", "강아지": "0671", "강아지에게": "0672", "화분": "1904", "화분에": "1905", "어머니": "1420", "어머니에게": "1421", "수미": "1292", "수미에게": "1293", "회사": "1908", "회사에": "1909", "기관": "0769", "집에": "1729", "장소": "1629", "에게": "1437", "꽃": "1918", "수미에게 책을 줍니다.": "1964", "선생님에게 말합니다.": "1965", "회사에 전화합니다.": "1966", "저는 수미에게 책을 줍니다.": "2032", "저는 선생님에게 말합니다.": "2033", "저는 회사에 전화합니다.": "2034"};
 var AK_AU = null;
 function akPlayFile(text, sex){
   var n = AK_SND[text];

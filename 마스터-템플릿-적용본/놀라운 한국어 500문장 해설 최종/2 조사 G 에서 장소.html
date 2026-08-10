@@ -300,9 +300,9 @@ blockquote .bq-line + .bq-line{margin-top:9px;}
 <p class="en" lang="en" translate="yes">Where you <strong>do</strong> something takes <span lang="ko" translate="no">에서</span>. Where something <strong>is</strong>, or where you are <strong>going</strong>, takes <span lang="ko" translate="no">에</span>.<br><span lang="ko" translate="no">학교<b>에</b> 갑니다</span> is the place you head for; <span lang="ko" translate="no">학교<b>에서</b> 공부합니다</span> is the place you study in.</p>
 
 <blockquote>
-<div class="bq-line">학교<span class="particle">에서</span> 공부합니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;학교에서 공부합니다.&#39;)" title="Listen">🔊</button><span class="gloss" lang="en" translate="yes">I study at school. — the place of the action.</span></div>
-<div class="bq-line">도서관<span class="particle">에서</span> 읽습니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;도서관에서 읽습니다.&#39;)" title="Listen">🔊</button><span class="gloss" lang="en" translate="yes">I read in the library. — the place of the action.</span></div>
-<div class="bq-line">학교<span class="particle">에</span> 갑니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;학교에 갑니다.&#39;)" title="Listen">🔊</button><span class="gloss" lang="en" translate="yes">I go to school. — the destination, so <span lang="ko" translate="no">에</span>.</span></div>
+<div class="bq-line">저는 학교<span class="particle">에서</span> 공부합니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;저는 학교에서 공부합니다.&#39;)" title="Listen">🔊</button><span class="gloss" lang="en" translate="yes">I study at school. — the place of the action.</span></div>
+<div class="bq-line">저는 도서관<span class="particle">에서</span> 책을 읽습니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;저는 도서관에서 책을 읽습니다.&#39;)" title="Listen">🔊</button><span class="gloss" lang="en" translate="yes">I read a book in the library. — the place of the action.</span></div>
+<div class="bq-line">저는 학교<span class="particle">에</span> 갑니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;저는 학교에 갑니다.&#39;)" title="Listen">🔊</button><span class="gloss" lang="en" translate="yes">I go to school. — the destination, so <span lang="ko" translate="no">에</span>.</span></div>
 </blockquote>
 
 <style>
@@ -578,7 +578,7 @@ function mcG(btn,val){var q=btn.closest('.mc-q');if(q.classList.contains('correc
 </div><script>/* ak-audio v1 */
 /* 미리 구운 MP3 를 먼저 쓴다. 없거나 못 읽으면 브라우저 음성으로 넘어간다.
    f = SunHi(여성) · m = Hyunsu(남성) — 둘 다 신경망 음성이다. */
-var AK_SND = {"학교": "1850", "학교에서": "1851", "대학교": "0911", "대학교에서": "0912", "교실": "0743", "교실에서": "0744", "도서관": "0919", "도서관에서": "0920", "집에서": "1730", "방에서": "1173", "커피숍": "1781", "커피숍에서": "1782", "공원": "0738", "공원에서": "0739", "시장": "1329", "시장에서": "1330", "공항": "0740", "공항에서": "0741", "집": "1944", "학교에서 공부합니다.": "1970", "도서관에서 읽습니다.": "1971", "학교에 갑니다.": "1972"};
+var AK_SND = {"학교": "1850", "학교에서": "1851", "대학교": "0911", "대학교에서": "0912", "교실": "0743", "교실에서": "0744", "도서관": "0919", "도서관에서": "0920", "집에서": "1730", "방에서": "1173", "커피숍": "1781", "커피숍에서": "1782", "공원": "0738", "공원에서": "0739", "시장": "1329", "시장에서": "1330", "공항": "0740", "공항에서": "0741", "집": "1944", "학교에서 공부합니다.": "1970", "도서관에서 읽습니다.": "1971", "학교에 갑니다.": "1972", "저는 학교에서 공부합니다.": "2035", "저는 도서관에서 책을 읽습니다.": "2036", "저는 학교에 갑니다.": "2037"};
 var AK_AU = null;
 function akPlayFile(text, sex){
   var n = AK_SND[text];
