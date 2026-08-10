@@ -684,14 +684,17 @@ function alltSeq(btn, sex){
   var card = btn.closest('.wqg-card');
   if (card && card.dataset.forms) akSpeakSeq(card.dataset.forms.split('|'), sex);
 }
-/* 퀴즈2 — 여섯 칸이 전부 초록(correct)일 때만 단추를 보인다 */
+/* 퀴즈2 — 여섯 칸의 정답이 다 보일 때 단추를 보인다.
+   맞혀서 초록이 된 것(correct)과 「💡 정답」으로 채워진 것(revealed) 둘 다 해당한다. */
 function alltCardBtns(card){
   if (!card) return;
   var box = card.querySelector('.wqg-all');
   if (!box) return;
   var inputs = card.querySelectorAll('.pt-input');
   var ok = inputs.length > 0;
-  inputs.forEach(function(x){ if (!x.classList.contains('correct')) ok = false; });
+  inputs.forEach(function(x){
+    if (!x.classList.contains('correct') && !x.classList.contains('revealed')) ok = false;
+  });
   if (box.classList.contains('on') !== ok) box.classList.toggle('on', ok);
 }
 function alltCardBtnsAll(){
