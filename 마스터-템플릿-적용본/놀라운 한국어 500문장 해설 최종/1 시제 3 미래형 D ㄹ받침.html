@@ -90,6 +90,9 @@ document.addEventListener('DOMContentLoaded', function(){
 .conj-rule.r-b .cr-head{border-color:#d4e3d7;}
 .conj-rule.r-c .cr-head{border-color:#ecd6d6;}
 .conj-rule .cr-badge{color:#fff;font-weight:800;padding:6px 14px;border-radius:20px;font-size:1rem;white-space:nowrap;letter-spacing:0.3px;flex-shrink:0;}
+/* 배지 안 영어 — 한국어 위 · 영어 아래 */
+.conj-rule .cr-badge{line-height:1.25;text-align:center;}
+.conj-rule .cr-badge .gloss{font-size:0.62rem;font-weight:700;opacity:0.85;margin-top:1px;letter-spacing:0;}
 .conj-rule.r-a .cr-badge{background:#3d5a85;}
 .conj-rule.r-b .cr-badge{background:#3f6149;}
 .conj-rule.r-c .cr-badge{background:#874949;}
@@ -225,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function(){
 </style>
 <div class="conj-rule r-c">
   <div class="cr-head">
-    <span class="cr-badge">🅳 ㄹ 받침 → 그대로 + 것입니다</span>
+    <span class="cr-badge">🅳 ㄹ 받침 → 그대로 + 것입니다<span class="gloss" lang="en" translate="yes"><span lang="ko" translate="no">ㄹ</span> final — keep it</span></span>
     <div class="cr-title">
       <span class="cr-ko">받침 'ㄹ'을 그대로 두고 '것입니다(평서) · 것입니까(의문)'를 붙입니다</span>
       <span class="cr-en">ㄹ <span lang="en" translate="yes">final — keep the</span> ㄹ <span lang="en" translate="yes">as it is, then add</span> 것입니다 <span lang="en" translate="yes">(statement) /</span> 것입니까 <span lang="en" translate="yes">(question).</span></span>

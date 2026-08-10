@@ -317,6 +317,9 @@ blockquote .bq-line + .bq-line{margin-top:9px;}
 .conj-rule.r-b .cr-head{border-color:#d4e3d7;}
 .conj-rule.r-c .cr-head{border-color:#ecd6d6;}
 .conj-rule .cr-badge{color:#fff;font-weight:800;padding:6px 14px;border-radius:20px;font-size:1rem;white-space:nowrap;letter-spacing:0.3px;flex-shrink:0;}
+/* 배지 안 영어 — 한국어 위 · 영어 아래 */
+.conj-rule .cr-badge{line-height:1.25;text-align:center;}
+.conj-rule .cr-badge .gloss{font-size:0.62rem;font-weight:700;opacity:0.85;margin-top:1px;letter-spacing:0;}
 .conj-rule.r-a .cr-badge{background:#3d5a85;}
 .conj-rule.r-b .cr-badge{background:#3f6149;}
 .conj-rule.r-c .cr-badge{background:#874949;}
@@ -393,7 +396,7 @@ blockquote .bq-line + .bq-line{margin-top:9px;}
 </style>
 <div class="conj-rule r-a">
   <div class="cr-head">
-    <span class="cr-badge">장소 + 에서</span>
+    <span class="cr-badge">장소 + 에서<span class="gloss" lang="en" translate="yes">Place</span></span>
     <div class="cr-title">
       <span class="cr-ko">행동하는 장소 뒤에는 받침과 관계없이 <strong>항상 '에서'</strong>를 붙입니다</span>
       <span class="cr-en"><span lang="en" translate="yes">Places of action always take</span> 에서 <span lang="en" translate="yes">— the form never changes.</span></span>

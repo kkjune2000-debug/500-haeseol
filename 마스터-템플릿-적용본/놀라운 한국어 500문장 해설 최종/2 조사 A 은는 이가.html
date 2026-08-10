@@ -434,6 +434,9 @@ document.addEventListener('DOMContentLoaded', function(){
 .conj-rule.r-b .cr-head{border-color:#d4e3d7;}
 .conj-rule.r-c .cr-head{border-color:#ecd6d6;}
 .conj-rule .cr-badge{color:#fff;font-weight:800;padding:6px 14px;border-radius:20px;font-size:1rem;white-space:nowrap;letter-spacing:0.3px;flex-shrink:0;}
+/* 배지 안 영어 — 한국어 위 · 영어 아래 */
+.conj-rule .cr-badge{line-height:1.25;text-align:center;}
+.conj-rule .cr-badge .gloss{font-size:0.62rem;font-weight:700;opacity:0.85;margin-top:1px;letter-spacing:0;}
 .conj-rule.r-a .cr-badge{background:#3d5a85;}
 .conj-rule.r-b .cr-badge{background:#3f6149;}
 .conj-rule.r-c .cr-badge{background:#874949;}
@@ -513,7 +516,7 @@ document.addEventListener('DOMContentLoaded', function(){
 </style>
 <div class="conj-rule r-a">
   <div class="cr-head">
-    <span class="cr-badge">은/는 고르는 법</span>
+    <span class="cr-badge">은/는 고르는 법<span class="gloss" lang="en" translate="yes">How to choose</span></span>
     <div class="cr-title">
       <span class="cr-ko">받침이 <strong style="color:#dc2626;">없으면 '는'</strong>, 받침이 <strong style="color:#16a34a;">있으면 '은'</strong>을 붙입니다</span>
       <span class="cr-en"><span lang="en" translate="yes">No final consonant →</span> 는 <span lang="en" translate="yes">· Has a final consonant →</span> 은</span>
@@ -556,7 +559,7 @@ document.addEventListener('DOMContentLoaded', function(){
 <h3><span class="particle">이/가</span> 예<span class="gloss" lang="en" translate="yes">Examples</span></h3>
 <div class="conj-rule r-b">
   <div class="cr-head">
-    <span class="cr-badge">이/가 고르는 법</span>
+    <span class="cr-badge">이/가 고르는 법<span class="gloss" lang="en" translate="yes">How to choose</span></span>
     <div class="cr-title">
       <span class="cr-ko">받침이 <strong style="color:#dc2626;">없으면 '가'</strong>, 받침이 <strong style="color:#16a34a;">있으면 '이'</strong>를 붙입니다</span>
       <span class="cr-en"><span lang="en" translate="yes">No final consonant →</span> 가 <span lang="en" translate="yes">· Has a final consonant →</span> 이</span>
