@@ -244,6 +244,12 @@ blockquote {
   cursor:pointer; transition:all 0.2s;
   min-width:100px;
 }
+/* 고른 단추의 색 — 직접 만들기 칸과 같은 신호 (시제 단원과 같은 값) */
+.mc-btn:hover { background:#f0fdf4; border-color:#86efac; }
+.mc-btn.correct { background:#dcfce7; border-color:#22c55e; color:#166534; }
+.mc-btn.wrong { background:#fef2f2; border-color:#ef4444; color:#dc2626; opacity:0.6; }
+.mc-btn:disabled { cursor:default; }
+.mc-btn:disabled:hover { background:inherit; }
 .mc-fb {
   font-size:1.2rem; font-weight:900;
   min-height:1.4em;
