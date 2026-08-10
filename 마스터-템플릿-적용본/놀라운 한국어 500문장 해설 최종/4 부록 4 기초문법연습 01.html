@@ -466,7 +466,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
         var n = i + 1;
         var ko = c[1].replace(/'/g, "\\'");
         html += '<div class="flashcard" onclick="this.classList.toggle(\'flipped\')"><div class="flashcard-inner">'
-            + '<div class="flashcard-front"><div class="flashcard-num">'+n+' · EN</div><div class="flashcard-text">'+c[0]+'</div><div class="flashcard-hint">Tap to flip</div></div>'
+            + '<div class="flashcard-front"><div class="flashcard-num">'+n+' · EN</div><div class="flashcard-text">'+c[0]+'</div><div class="flashcard-hint">↻ 클릭</div></div>'
             + '<div class="flashcard-back"><div class="flashcard-num">'+n+' · KR</div><div class="flashcard-text">'+c[1]+'</div>'
             + '<button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean(\''+ko+'\')" title="Listen">🔊</button></div>'
             + '</div></div>';
