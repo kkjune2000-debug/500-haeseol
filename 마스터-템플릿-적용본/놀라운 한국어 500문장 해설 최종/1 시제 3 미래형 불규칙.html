@@ -16,6 +16,13 @@
 @media (max-width:720px){.main-title{font-size:2.2rem;}}.gloss{text-transform:none;display:block;font-weight:600;font-size:0.86em;opacity:0.72;letter-spacing:0;margin-top:1px;}
 button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 input[data-ans].correct,input[data-ans].prex{cursor:pointer;}
+
+/* 활용표 이어 듣기 (여성·남성). 지금 읽는 낱말에 테두리가 든다. */
+.sl-all{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 2px 0;}
+.sl-all-btn{background:#eff6ff;color:#1e3a8a;border:1px solid #bfdbfe;padding:7px 14px;border-radius:8px;cursor:pointer;font-size:0.8rem;font-weight:700;line-height:1.3;font-family:inherit;transition:background 0.2s;}
+.sl-all-btn:hover{background:#dbeafe;}
+.sl-all-btn.playing{background:#fee2e2;border-color:#fecaca;color:#991b1b;}
+.sl-now{outline:2px solid #10b981;outline-offset:2px;border-radius:6px;}
 </style></head><body>
 <script>
 /* jm-voice v1 */
@@ -213,6 +220,10 @@ document.addEventListener('DOMContentLoaded', function(){
     <div class="ci-result"><span class="chip chip-decl" onclick="speakKorean('실을 것입니다')">실을 것입니다</span><span class="chip chip-ques" onclick="speakKorean('실을 것입니까?')">실을 것입니까?</span></div>
   </div>
 </div>
+<div class="sl-all">
+<button class="sl-all-btn" onclick="tblAll(this,'f')">🔊 여성 이어 듣기<span class="gloss" lang="en" translate="yes">Play all (female)</span></button>
+<button class="sl-all-btn" onclick="tblAll(this,'m')">🔊 남성 이어 듣기<span class="gloss" lang="en" translate="yes">Play all (male)</span></button>
+</div>
 <h4 class="rule-h">🅵 ㅂ 불규칙 (ㅂ <span lang="en" translate="yes">Irregular)</span></h4>
 <p class="ko">받침 'ㅂ'이 모음 앞에서 '우'로 바뀌고, '우 + 을'은 '울'로 줄어듭니다 → ~울 것입니다 / 울 것입니까</p>
 <p class="en" lang="en" translate="yes">'<span lang="ko" translate="no">ㅂ</span>' final consonant turns into '<span lang="ko" translate="no">우</span>' before a vowel; '<span lang="ko" translate="no">우</span> + <span lang="ko" translate="no">을</span>' contracts to '<span lang="ko" translate="no">울</span>' → ~<span lang="ko" translate="no">울 것입니다 / 울 것입니까</span></p>
@@ -254,6 +265,10 @@ document.addEventListener('DOMContentLoaded', function(){
     <div class="ci-result"><span class="chip chip-decl" onclick="speakKorean('도울 것입니다')">도울 것입니다</span><span class="chip chip-ques" onclick="speakKorean('도울 것입니까?')">도울 것입니까?</span></div>
   </div>
 </div>
+<div class="sl-all">
+<button class="sl-all-btn" onclick="tblAll(this,'f')">🔊 여성 이어 듣기<span class="gloss" lang="en" translate="yes">Play all (female)</span></button>
+<button class="sl-all-btn" onclick="tblAll(this,'m')">🔊 남성 이어 듣기<span class="gloss" lang="en" translate="yes">Play all (male)</span></button>
+</div>
 <h4 class="rule-h">🅶 ㅅ 불규칙 (ㅅ <span lang="en" translate="yes">Irregular)</span></h4>
 <p class="ko">받침 'ㅅ'이 모음 앞에서 사라지고, 그 뒤에 '을 것입니다 / 을 것입니까'가 붙습니다.</p>
 <p class="en" lang="en" translate="yes">'<span lang="ko" translate="no">ㅅ</span>' final consonant drops before a vowel; '<span lang="ko" translate="no">을 것입니다 / 을 것입니까</span>' then attaches.</p>
@@ -280,6 +295,10 @@ document.addEventListener('DOMContentLoaded', function(){
     <div class="ci-arrow">➜</div>
     <div class="ci-result"><span class="chip chip-decl" onclick="speakKorean('나을 것입니다')">나을 것입니다</span><span class="chip chip-ques" onclick="speakKorean('나을 것입니까?')">나을 것입니까?</span></div>
   </div>
+</div>
+<div class="sl-all">
+<button class="sl-all-btn" onclick="tblAll(this,'f')">🔊 여성 이어 듣기<span class="gloss" lang="en" translate="yes">Play all (female)</span></button>
+<button class="sl-all-btn" onclick="tblAll(this,'m')">🔊 남성 이어 듣기<span class="gloss" lang="en" translate="yes">Play all (male)</span></button>
 </div>
 <style>.pr80-h{margin:30px 0 2px;font-size:1.04rem;font-weight:800;color:#3d5a85;}</style>
 <hr>
@@ -572,5 +591,88 @@ document.addEventListener('click', function(ev){
   var a = (t.getAttribute('data-ans') || '').split('/')[0];
   if (a && /[가-힣]/.test(a)) speakKorean(a);
 });
+</script>
+<script>
+/* 활용표 이어 듣기 (ak-listen-all v1)
+   · 음원이 있으면 mp3(onended), 없으면 브라우저 음성(onend)으로 잇는다
+   · cancel() 직후 speak() 금지 — 60ms 규칙
+   · 재생 중에 낱말을 누르면 이어 듣기를 멈춘다 (두 소리가 겹치지 않게) */
+var AK_SEQ_ID2 = 0;
+function slStop2(){
+  AK_SEQ_ID2++;
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  if (window.AK_AU){ try { AK_AU.pause(); } catch(e){} }
+  var i, ns = document.querySelectorAll('.sl-now');
+  for (i = 0; i < ns.length; i++) ns[i].classList.remove('sl-now');
+  var bs = document.querySelectorAll('.sl-all-btn.playing');
+  for (i = 0; i < bs.length; i++){
+    bs[i].classList.remove('playing');
+    var lb = bs[i].getAttribute('data-label');
+    if (lb) bs[i].innerHTML = lb;
+  }
+}
+function slTTS2(text, sex, done){
+  if (!('speechSynthesis' in window)){ done(); return; }
+  var v = (typeof akPick === 'function') ? akPick(sex) : null;
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(text);
+  u.lang = (v && v.lang) || 'ko-KR';
+  u.rate = 0.92;
+  if (v) u.voice = v;
+  u.onend = done;
+  setTimeout(function(){ window.speechSynthesis.speak(u); }, 60);
+}
+function slPlay2(text, sex, done){
+  var n = window.AK_SND ? AK_SND[text] : null;
+  if (!n){ slTTS2(text, sex, done); return; }
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  if (!window.AK_AU) AK_AU = new Audio();
+  try { AK_AU.pause(); } catch(e){}
+  AK_AU.onended = done;
+  AK_AU.onerror = function(){ slTTS2(text, sex, done); };
+  AK_AU.src = encodeURI('_소리/' + (sex === 'm' ? 'm' : 'f') + '/' + n + '.mp3');
+  var p = AK_AU.play();
+  if (p && p.catch) p.catch(function(){ slTTS2(text, sex, done); });
+}
+function tblAll(btn, sex){
+  var was = btn.classList.contains('playing');
+  slStop2();
+  if (was) return;                        /* 같은 단추를 다시 누르면 멈춘다 */
+  var box = btn.parentNode.previousElementSibling || btn.parentNode.nextElementSibling;
+  if (!box) return;
+  var nodes = box.querySelectorAll('[onclick]'), items = [], k, oc, mm;
+  for (k = 0; k < nodes.length; k++){
+    oc = nodes[k].getAttribute('onclick') || '';
+    mm = oc.match(/speakKorean\('([^']*)'/);
+    if (mm) items.push([nodes[k], mm[1]]);
+  }
+  if (!items.length) return;
+  if (!btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.innerHTML);
+  btn.classList.add('playing');
+  btn.innerHTML = '\u25a0 \uba48\ucda4<span class="gloss" lang="en" translate="yes">Stop</span>';
+  try { localStorage.setItem('akVoiceSex', sex); } catch(e){}
+  if (typeof AK_SEX !== 'undefined') AK_SEX = sex;
+  var my = ++AK_SEQ_ID2, i = 0;
+  function next(){
+    if (my !== AK_SEQ_ID2) return;
+    for (var k2 = 0; k2 < items.length; k2++) items[k2][0].classList.remove('sl-now');
+    if (i >= items.length){ slStop2(); return; }
+    var it = items[i++];
+    it[0].classList.add('sl-now');
+    slPlay2(it[1], sex, function(){ if (my === AK_SEQ_ID2) next(); });
+  }
+  next();
+}
+document.addEventListener('click', function(e){
+  var t = e.target;
+  while (t && t !== document){
+    if (t.className && String(t.className).indexOf('sl-all-btn') >= 0) return;
+    if (t.getAttribute && /speakKorean\(/.test(t.getAttribute('onclick') || '')){
+      if (document.querySelector('.sl-all-btn.playing')) slStop2();
+      return;
+    }
+    t = t.parentNode;
+  }
+}, true);
 </script>
 </body></html>
