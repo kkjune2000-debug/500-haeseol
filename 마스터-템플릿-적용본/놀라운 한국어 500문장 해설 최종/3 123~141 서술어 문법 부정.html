@@ -418,6 +418,9 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .sl-all-btn:hover{background:#dbeafe;}
 .sl-all-btn.playing{background:#fee2e2;border-color:#fecaca;color:#991b1b;}
 .sentence-list .sentence-item.sl-now{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,0.25);}
+
+/* 안 vs 못 표 — gstep 안쪽 여백(28px)만큼만 넓힌다. 더 넓히면 잘린다. */
+@media(min-width:601px){.neg-wide{margin-left:-28px;margin-right:-28px;padding-left:12px;padding-right:12px;}}
 </style>
 </head>
 <body>
@@ -448,17 +451,17 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <small lang="en" translate="yes"><em>Korean has two ways to negate verbs/adjectives: a <strong>short form</strong> and a <strong>long form</strong>. Both mean the same thing.</em></small>
         </div>
         <table class="gstep-table">
-            <thead><tr><th style="width:24%"><span lang="en" translate="yes">Meaning</span></th><th><span lang="en" translate="yes">Short form</span></th><th><span lang="en" translate="yes">Long form</span></th></tr></thead>
+            <thead><tr><th style="width:24%">뜻<br><small lang="en" translate="yes">Meaning</small></th><th>짧은 부정<br><small lang="en" translate="yes">Short form</small></th><th>긴 부정<br><small lang="en" translate="yes">Long form</small></th></tr></thead>
             <tbody>
-                <tr><td><strong><span lang="en" translate="yes">don't</span></strong><br><small lang="en" translate="yes">(by choice)</small></td><td><span class="accent">안</span> <span lang="en" translate="yes">+ verb/adj</span></td><td><span lang="en" translate="yes">Verb +</span> <span class="accent">~지 않다</span></td></tr>
-                <tr><td><strong><span lang="en" translate="yes">can't</span></strong><br><small lang="en" translate="yes">(by inability)</small></td><td><span class="accent">못</span> <span lang="en" translate="yes">+ verb</span></td><td><span lang="en" translate="yes">Verb +</span> <span class="accent">~지 못하다</span></td></tr>
+                <tr><td><strong>하지 않음</strong> <small>선택</small><br><small lang="en" translate="yes">don't (by choice)</small></td><td><span class="accent">안</span> + 동사·형용사<br><small lang="en" translate="yes"><span lang="ko" translate="no">안</span> + verb/adj</small></td><td>동사 + <span class="accent">~지 않다</span><br><small lang="en" translate="yes">Verb + <span lang="ko" translate="no">~지 않다</span></small></td></tr>
+                <tr><td><strong>하지 못함</strong> <small>능력</small><br><small lang="en" translate="yes">can't (by inability)</small></td><td><span class="accent">못</span> + 동사<br><small lang="en" translate="yes"><span lang="ko" translate="no">못</span> + verb</small></td><td>동사 + <span class="accent">~지 못하다</span><br><small lang="en" translate="yes">Verb + <span lang="ko" translate="no">~지 못하다</span></small></td></tr>
             </tbody>
         </table>
         <blockquote>
             <strong>안 먹습니다</strong> = <strong>먹지 않습니다</strong><br><small lang="en" translate="yes">(don't eat)</small><br>
             <strong>못 먹습니다</strong> = <strong>먹지 못합니다</strong><br><small lang="en" translate="yes">(can't eat)</small>
         </blockquote>
-        <div class="explain-note">
+        <div class="explain-note neg-wide">
             <strong>'안<span lang="en" translate="yes">' vs '</span>못'</strong><br>
             <table style="width:100%;border-collapse:collapse;margin-top:10px;font-size:0.92rem;">
                 <thead>
@@ -471,22 +474,22 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                 <tbody>
                     <tr>
                         <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;font-weight:900;color:#6d28d9;font-size:1.05rem;">안</td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">✅ <strong>안 먹다</strong> <small lang="en" translate="yes">(don't eat)</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">✅ <strong>안 예쁘다</strong> <small lang="en" translate="yes">(not pretty)</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">✅ <strong>안 먹다</strong><br><small lang="en" translate="yes">don't eat</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">✅ <strong>안 예쁘다</strong><br><small lang="en" translate="yes">not pretty</small></td>
                     </tr>
                     <tr>
                         <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;font-weight:900;color:#6d28d9;font-size:1.05rem;">못</td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">✅ <strong>못 먹다</strong> <small lang="en" translate="yes">(can't eat)</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">✅ <strong>못 먹다</strong><br><small lang="en" translate="yes">can't eat</small></td>
                         <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fef2f2;color:#991b1b;">❌ <strong>못 예쁘다</strong></td>
                     </tr>
                     <tr>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;font-weight:900;color:#6d28d9;font-size:1.02rem;">~지 않다<br><small style="font-weight:600;color:#6d28d9;" lang="en" translate="yes">(long form of <span lang="ko" translate="no">안</span>)</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;">✅ <strong>먹지 않다</strong> <small lang="en" translate="yes">(don't eat)</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;">✅ <strong>예쁘지 않다</strong> <small lang="en" translate="yes">(not pretty)</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;font-weight:900;color:#6d28d9;font-size:1.02rem;">~지 않다<br><small style="font-weight:600;color:#6d28d9;" lang="en" translate="yes">long form of <span lang="ko" translate="no">안</span></small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;">✅ <strong>먹지 않다</strong><br><small lang="en" translate="yes">don't eat</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;">✅ <strong>예쁘지 않다</strong><br><small lang="en" translate="yes">not pretty</small></td>
                     </tr>
                     <tr>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;font-weight:900;color:#6d28d9;font-size:1.02rem;">~지 못하다<br><small style="font-weight:600;color:#6d28d9;" lang="en" translate="yes">(long form of <span lang="ko" translate="no">못</span>)</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;">✅ <strong>먹지 못하다</strong> <small lang="en" translate="yes">(can't eat)</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;font-weight:900;color:#6d28d9;font-size:1.02rem;">~지 못하다<br><small style="font-weight:600;color:#6d28d9;" lang="en" translate="yes">long form of <span lang="ko" translate="no">못</span></small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;">✅ <strong>먹지 못하다</strong><br><small lang="en" translate="yes">can't eat</small></td>
                         <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;">✅ <strong>예쁘지 못하다</strong><br><small style="color:#6d28d9;" lang="en" translate="yes"><em>(fails to be pretty: when something doesn't meet the expected standard)</em></small></td>
                     </tr>
                 </tbody>
