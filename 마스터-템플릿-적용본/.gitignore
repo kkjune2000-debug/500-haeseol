@@ -11,6 +11,11 @@ _가이드_*.md
 # Integrated / all-in-one builds (auto-generated, do not edit)
 임시/
 
+# 애니메이션 삽화 (2026-08-13 사용자 결정 — 저장소에 넣지 않습니다)
+# 쪽마다 1.7~2MB PNG 라 98개에 180MB 입니다. 계속 늘어나는 폴더이고
+# 해설집 HTML 이 참조하지도 않습니다.
+애니메이션_삽화_16x9/
+
 # Scripts (not part of the study material)
 *.py
 
