@@ -465,7 +465,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
   body.innerHTML = html;
 })();
 
-function alltNormalize(s){ return (s||'').replace(/\s+/g,'').replace(/[?？]/g,'').replace(/봤/g,'보았').replace(/줬/g,'주었').replace(/됐/g,'되었'); }
+function alltNormalize(s){ return (s||'').replace(/\s+/g,'').replace(/[?？]/g,'').replace(/봤/g,'보았').replace(/줬/g,'주었').replace(/됐/g,'되었').replace(/냈/g,'내었'); }
 function alltCheck(inp){
   const ans = alltNormalize(inp.dataset.ans);
   const val = alltNormalize(inp.value);
@@ -626,7 +626,7 @@ if (window.speechSynthesis){
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', akVoiceInit);
 else akVoiceInit();if('speechSynthesis' in window){window.speechSynthesis.onvoiceschanged=function(){};window.speechSynthesis.getVoices();}</script><script>
 (function(){
-  function wqNorm(s){return (s||'').replace(/\s+/g,'').replace(/[?？]/g,'').replace(/봤/g,'보았').replace(/줬/g,'주었').replace(/됐/g,'되었');}
+  function wqNorm(s){return (s||'').replace(/\s+/g,'').replace(/[?？]/g,'').replace(/봤/g,'보았').replace(/줬/g,'주었').replace(/됐/g,'되었').replace(/냈/g,'내었');}
   document.addEventListener('input', function(e){
     var inp=e.target;
     if(!inp || !inp.classList || !inp.classList.contains('pt-input')) return;

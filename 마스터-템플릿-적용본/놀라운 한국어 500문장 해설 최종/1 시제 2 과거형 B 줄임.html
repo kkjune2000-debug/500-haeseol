@@ -665,7 +665,7 @@ input[readonly] + .jm-spk{display:inline-block;}
     transform:scale(0.97); }
 </style>
 <script>
-function pr80Norm(s){return (s||'').replace(/\s+/g,'').replace(/[?？.]/g,'').replace(/봤/g,'보았').replace(/줬/g,'주었').replace(/됐/g,'되었');}
+function pr80Norm(s){return (s||'').replace(/\s+/g,'').replace(/[?？.]/g,'').replace(/봤/g,'보았').replace(/줬/g,'주었').replace(/됐/g,'되었').replace(/냈/g,'내었');}
 function pr80Check(inp){var raw=inp.dataset.ans.split('/'),val=pr80Norm(inp.value),ok=false,part=false,k;for(k=0;k<raw.length;k++){var a=pr80Norm(raw[k]);if(a===val){ok=true;}if(a.indexOf(val)===0){part=true;}}inp.classList.remove('correct','wrong');if(val.length===0){}else if(ok){inp.classList.add('correct');}else if(!part){inp.classList.add('wrong');}pr80Tally(inp.closest('.pr80'));}
 function pr80Tally(box){if(!box)return;var c=box.querySelectorAll('.pri.correct').length;var s=box.querySelector('.pr80C');if(s)s.textContent=c;}
 function pr80One(btn){var tr=btn.closest('tr');tr.querySelectorAll('.pri').forEach(function(inp){inp.value=inp.dataset.ans.split('/')[0];inp.classList.remove('wrong');inp.classList.add('correct');});pr80Tally(btn.closest('.pr80'));}
