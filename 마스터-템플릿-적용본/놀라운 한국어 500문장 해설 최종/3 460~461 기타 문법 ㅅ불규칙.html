@@ -352,6 +352,14 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .sl-all-btn:hover{background:#dbeafe;}
 .sl-all-btn.playing{background:#fee2e2;border-color:#fecaca;color:#991b1b;}
 .sentence-list .sentence-item.sl-now{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,0.25);}
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 </style>
 </head>
 <body>
@@ -403,7 +411,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
         </div>
         <p style="margin:0;text-align:center;font-size:0.84rem;color:#9ca3af;line-height:1.6;">받침 ㅅ 동사 중 <strong>일부만</strong> 불규칙입니다 — <strong>웃다·씻다</strong> 등은 규칙이라 ㅅ이 그대로 있습니다.<br><small lang="en" translate="yes"><em>Only <strong>some</strong> <span lang="ko" translate="no">ㅅ</span>-final verbs are irregular; regular ones like <span lang="ko" translate="no">웃다·씻다</span> keep their <span lang="ko" translate="no">ㅅ</span>.</em></small></p>
         <div style="font-size:0.85rem;font-weight:700;color:#92400e;margin:16px 0 6px;">만드는 과정 <small style="font-weight:500;color:#b45309;" lang="en" translate="yes">how it forms → past</small></div>
-        <table class="gstep-table"><thead><tr><th style="width:24%">구분<br><small lang="en" translate="yes">Type</small></th><th style="width:18%">기본형<br><small lang="en" translate="yes">Verb</small></th><th>만드는 과정<br><small lang="en" translate="yes">Derivation → past</small></th></tr></thead><tbody><tr><td><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;font-size:0.82rem;">ㅅ 탈락</span></td><td><strong>짓다</strong> <span lang="en" translate="yes">build/cook</span></td><td>짓 + 었습니다 → 지 + 었습니다 → <strong>지<span class="accent">었</span>습니다</strong></td></tr><tr><td><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;font-size:0.82rem;">ㅅ 탈락</span></td><td><strong>낫다</strong> <span lang="en" translate="yes">recover</span></td><td>낫 + 았습니다 → 나 + 았습니다 → <strong>나<span class="accent">았</span>습니다</strong></td></tr><tr><td><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;font-size:0.82rem;">ㅅ 탈락</span></td><td><strong>긋다</strong> <span lang="en" translate="yes">draw a line</span></td><td>긋 + 었습니다 → 그 + 었습니다 → <strong>그<span class="accent">었</span>습니다</strong></td></tr><tr><td><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;font-size:0.82rem;">ㅅ 탈락</span></td><td><strong>붓다</strong> <span lang="en" translate="yes">pour</span></td><td>붓 + 었습니다 → 부 + 었습니다 → <strong>부<span class="accent">었</span>습니다</strong></td></tr></tbody></table>
+        <div class="tbl-scroll"><table class="gstep-table"><thead><tr><th style="width:24%">구분<br><small lang="en" translate="yes">Type</small></th><th style="width:18%">기본형<br><small lang="en" translate="yes">Verb</small></th><th>만드는 과정<br><small lang="en" translate="yes">Derivation → past</small></th></tr></thead><tbody><tr><td><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;font-size:0.82rem;">ㅅ 탈락</span></td><td><strong>짓다</strong> <span lang="en" translate="yes">build/cook</span></td><td>짓 + 었습니다 → 지 + 었습니다 → <strong>지<span class="accent">었</span>습니다</strong></td></tr><tr><td><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;font-size:0.82rem;">ㅅ 탈락</span></td><td><strong>낫다</strong> <span lang="en" translate="yes">recover</span></td><td>낫 + 았습니다 → 나 + 았습니다 → <strong>나<span class="accent">았</span>습니다</strong></td></tr><tr><td><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;font-size:0.82rem;">ㅅ 탈락</span></td><td><strong>긋다</strong> <span lang="en" translate="yes">draw a line</span></td><td>긋 + 었습니다 → 그 + 었습니다 → <strong>그<span class="accent">었</span>습니다</strong></td></tr><tr><td><span style="display:inline-block;padding:3px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;font-size:0.82rem;">ㅅ 탈락</span></td><td><strong>붓다</strong> <span lang="en" translate="yes">pour</span></td><td>붓 + 었습니다 → 부 + 었습니다 → <strong>부<span class="accent">었</span>습니다</strong></td></tr></tbody></table></div>
     </div>
 </div>
 
@@ -444,7 +452,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Object + Predicate (Verb)</span></th></tr>
@@ -455,7 +463,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>rice</strong></td><td class="exp-role">목적어<br><small><span lang="en" translate="yes">Object</span></small></td><td class="exp-form"><strong>밥을</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>cooked</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>지었습니다</strong></td><td><strong>짓다</strong> → <strong>지</strong> + <strong>었</strong> → <strong>지었</strong> → <strong>지었습니다</strong> (<strong>ㅅ</strong> <span lang="en" translate="yes">drops irregular)</span></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -486,7 +494,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 주어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Subject + Predicate (Verb)</span></th></tr>
@@ -497,7 +505,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>from his illness</strong></td><td class="exp-role">서술절 주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>병이</strong></td><td><strong>병이 낫다</strong> <span lang="en" translate="yes">is a</span> <strong>서술절</strong><br><small lang="en" translate="yes">(predicate clause)</small> <span lang="en" translate="yes">— functions as predicate of outer Subject</span> <strong>그는</strong>. <strong>병이</strong> = <strong>서술절의 주어</strong> <span lang="en" translate="yes">(inner subject).</span> <strong>이중주어 구문</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>has fully recovered</strong></td><td class="exp-role">부사 + 서술어(동사)<br><small><span lang="en" translate="yes">Adverb + Predicate (Verb)</span></small></td><td class="exp-form"><strong>다 나았습니다</strong></td><td><strong>낫다</strong> → <strong>나</strong> + <strong>았</strong> → <strong>나았</strong> → <strong>나았습니다</strong> (<strong>ㅅ</strong> <span lang="en" translate="yes">drops).</span> <strong>다</strong> <span lang="en" translate="yes">= Adverb (fully / all)</span></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>

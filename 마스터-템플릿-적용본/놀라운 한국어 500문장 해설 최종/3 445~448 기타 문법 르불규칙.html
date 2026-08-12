@@ -360,6 +360,14 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .sl-all-btn:hover{background:#dbeafe;}
 .sl-all-btn.playing{background:#fee2e2;border-color:#fecaca;color:#991b1b;}
 .sentence-list .sentence-item.sl-now{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,0.25);}
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 </style>
 </head>
 <body>
@@ -408,7 +416,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             르 앞 모음이 <strong>양성모음(ㅏ, ㅗ)</strong>이면 <strong>ㄹ랐습니다</strong>, <strong>음성모음(나머지 모음)</strong>이면 <strong>ㄹ렀습니다</strong>.<br>
             <small lang="en" translate="yes"><em>If the vowel before <span lang="ko" translate="no">르</span> is a <strong>bright vowel (<span lang="ko" translate="no">ㅏ</span>, <span lang="ko" translate="no">ㅗ</span>)</strong> → <strong><span lang="ko" translate="no">ㄹ랐습니다</span></strong>; if a <strong>dark vowel (others)</strong> → <strong><span lang="ko" translate="no">ㄹ렀습니다</span></strong>.</em></small>
         </div>
-        <table class="gstep-table"><thead><tr><th style="width:26%">르 앞 모음<br><small lang="en" translate="yes">Vowel before <span lang="ko" translate="no">르</span></small></th><th style="width:28%">원형<br><small lang="en" translate="yes">Base form</small></th><th>활용형<br><small lang="en" translate="yes">Conjugated</small></th></tr></thead><tbody><tr><td><span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#fef3c7;color:#d97706;font-size:1.15rem;font-weight:900;line-height:1;">ㅏ</span><br><small style="display:block;margin-top:6px;font-weight:700;color:#b45309;">양성 → <span class="accent">ㄹ라</span></small></td><td><strong>자르다</strong> <span lang="en" translate="yes">cut</span></td><td>자 + <span class="accent">ㄹ랐</span>습니다 → <strong>잘<span class="accent">랐</span>습니다</strong></td></tr><tr><td><span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#fef3c7;color:#d97706;font-size:1.15rem;font-weight:900;line-height:1;">ㅏ</span><br><small style="display:block;margin-top:6px;font-weight:700;color:#b45309;">양성 → <span class="accent">ㄹ라</span></small></td><td><strong>다르다</strong> <span lang="en" translate="yes">different</span></td><td>다 + <span class="accent">ㄹ랐</span>습니다 → <strong>달<span class="accent">랐</span>습니다</strong></td></tr><tr><td><span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#dbeafe;color:#2563eb;font-size:1.15rem;font-weight:900;line-height:1;">ㅓ</span><br><small style="display:block;margin-top:6px;font-weight:700;color:#2563eb;">음성 → ㄹ러</small></td><td><strong>부르다</strong> <span lang="en" translate="yes">call/sing</span></td><td><span style="color:#2563eb;font-weight:700;">부 + ㄹ렀습니다</span> → <strong>불<span style="color:#2563eb;">렀</span>습니다</strong></td></tr><tr><td><span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#fef3c7;color:#d97706;font-size:1.15rem;font-weight:900;line-height:1;">ㅏ</span><br><small style="display:block;margin-top:6px;font-weight:700;color:#b45309;">양성 → <span class="accent">ㄹ라</span></small></td><td><strong>빠르다</strong> <span lang="en" translate="yes">fast</span></td><td>빠 + <span class="accent">ㄹ랐</span>습니다 → <strong>빨<span class="accent">랐</span>습니다</strong></td></tr><tr><td><span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#fef3c7;color:#d97706;font-size:1.15rem;font-weight:900;line-height:1;">ㅗ</span><br><small style="display:block;margin-top:6px;font-weight:700;color:#b45309;">양성 → <span class="accent">ㄹ라</span></small></td><td><strong>고르다</strong> <span lang="en" translate="yes">choose</span></td><td>고 + <span class="accent">ㄹ랐</span>습니다 → <strong>골<span class="accent">랐</span>습니다</strong></td></tr></tbody></table>
+        <div class="tbl-scroll"><table class="gstep-table"><thead><tr><th style="width:26%">르 앞 모음<br><small lang="en" translate="yes">Vowel before <span lang="ko" translate="no">르</span></small></th><th style="width:28%">원형<br><small lang="en" translate="yes">Base form</small></th><th>활용형<br><small lang="en" translate="yes">Conjugated</small></th></tr></thead><tbody><tr><td><span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#fef3c7;color:#d97706;font-size:1.15rem;font-weight:900;line-height:1;">ㅏ</span><br><small style="display:block;margin-top:6px;font-weight:700;color:#b45309;">양성 → <span class="accent">ㄹ라</span></small></td><td><strong>자르다</strong> <span lang="en" translate="yes">cut</span></td><td>자 + <span class="accent">ㄹ랐</span>습니다 → <strong>잘<span class="accent">랐</span>습니다</strong></td></tr><tr><td><span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#fef3c7;color:#d97706;font-size:1.15rem;font-weight:900;line-height:1;">ㅏ</span><br><small style="display:block;margin-top:6px;font-weight:700;color:#b45309;">양성 → <span class="accent">ㄹ라</span></small></td><td><strong>다르다</strong> <span lang="en" translate="yes">different</span></td><td>다 + <span class="accent">ㄹ랐</span>습니다 → <strong>달<span class="accent">랐</span>습니다</strong></td></tr><tr><td><span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#dbeafe;color:#2563eb;font-size:1.15rem;font-weight:900;line-height:1;">ㅓ</span><br><small style="display:block;margin-top:6px;font-weight:700;color:#2563eb;">음성 → ㄹ러</small></td><td><strong>부르다</strong> <span lang="en" translate="yes">call/sing</span></td><td><span style="color:#2563eb;font-weight:700;">부 + ㄹ렀습니다</span> → <strong>불<span style="color:#2563eb;">렀</span>습니다</strong></td></tr><tr><td><span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#fef3c7;color:#d97706;font-size:1.15rem;font-weight:900;line-height:1;">ㅏ</span><br><small style="display:block;margin-top:6px;font-weight:700;color:#b45309;">양성 → <span class="accent">ㄹ라</span></small></td><td><strong>빠르다</strong> <span lang="en" translate="yes">fast</span></td><td>빠 + <span class="accent">ㄹ랐</span>습니다 → <strong>빨<span class="accent">랐</span>습니다</strong></td></tr><tr><td><span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#fef3c7;color:#d97706;font-size:1.15rem;font-weight:900;line-height:1;">ㅗ</span><br><small style="display:block;margin-top:6px;font-weight:700;color:#b45309;">양성 → <span class="accent">ㄹ라</span></small></td><td><strong>고르다</strong> <span lang="en" translate="yes">choose</span></td><td>고 + <span class="accent">ㄹ랐</span>습니다 → <strong>골<span class="accent">랐</span>습니다</strong></td></tr></tbody></table></div>
     </div>
 </div>
 
@@ -442,7 +450,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Object + Predicate (Verb)</span></th></tr>
@@ -453,7 +461,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>the tree</strong></td><td class="exp-role">목적어<br><small><span lang="en" translate="yes">Object</span></small></td><td class="exp-form"><strong>나무를</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>cut</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>잘랐습니다</strong></td><td><strong>자르다</strong>: 자 + ㄹ랐습니다 → <strong>잘랐습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -484,7 +492,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(비교) + 서술어(형용사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Comparison) + Predicate (Adjective)</span></th></tr>
@@ -495,7 +503,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>from ordinary people</strong></td><td class="exp-role">부사어(비교)<br><small><span lang="en" translate="yes">Adverbial (Comparison)</span></small></td><td class="exp-form"><strong>보통 사람과</strong></td><td><strong>~와/과</strong> <span lang="en" translate="yes">= "(different) from" (comparison particle)</span></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>was different</strong></td><td class="exp-role">서술어(형용사)<br><small><span lang="en" translate="yes">Predicate (Adjective)</span></small></td><td class="exp-form"><strong>달랐습니다</strong></td><td><strong>다르다</strong>: 다 + ㄹ랐습니다 → <strong>달랐습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -525,7 +533,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Object + Predicate (Verb)</span></th></tr>
@@ -536,7 +544,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>a song</strong></td><td class="exp-role">목적어<br><small><span lang="en" translate="yes">Object</span></small></td><td class="exp-form"><strong>노래를</strong></td><td><strong>노래</strong> + <strong>를</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>sang</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>불렀습니다</strong></td><td><strong>부르다</strong>: <span style="color:#2563eb;font-weight:700;">부 + ㄹ렀습니다</span> → <strong>불렀습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -566,7 +574,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(비교) + 서술어(형용사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Comparison) + Predicate (Adjective)</span></th></tr>
@@ -577,7 +585,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>than me</strong></td><td class="exp-role">부사어(비교)<br><small><span lang="en" translate="yes">Adverbial (Comparison)</span></small></td><td class="exp-form"><strong>나보다</strong></td><td><strong>~보다</strong> <span lang="en" translate="yes">= comparison particle "than"</span></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>was faster</strong></td><td class="exp-role">서술어(형용사)<br><small><span lang="en" translate="yes">Predicate (Adjective)</span></small></td><td class="exp-form"><strong>빨랐습니다</strong></td><td><strong>빠르다</strong>: 빠 + ㄹ랐습니다 → <strong>빨랐습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>

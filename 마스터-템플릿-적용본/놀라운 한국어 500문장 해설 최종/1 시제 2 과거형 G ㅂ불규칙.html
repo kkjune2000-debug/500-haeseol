@@ -360,7 +360,7 @@ document.addEventListener('DOMContentLoaded', function(){
 </div>
 
 <h3 class="pr80-h">ㅂ 불규칙 직접 만들기<span class="gloss" lang="en" translate="yes">Make the <span lang="ko" translate="no">ㅂ</span> past form</span></h3>
-<div class="pr80"><div class="pr80-bar"><div class="pr80-score">맞은 개수 <span lang="en" translate="yes">· Correct:</span> <b class="pr80C">0</b> <span style="color:#94a3b8;">/ 20</span></div><div class="pr80-btns"><button type="button" class="jm-vsel" data-sex="f" onclick="jmSetSex('f',this)">여성<span class="gloss" lang="en" translate="yes">Female</span></button><button type="button" class="jm-vsel" data-sex="m" onclick="jmSetSex('m',this)">남성<span class="gloss" lang="en" translate="yes">Male</span></button><button class="pr80-btn" onclick="pr80Reset(this)">🔄 초기화<span class="gloss" lang="en" translate="yes">Reset</span></button><button class="pr80-btn primary" onclick="pr80RevealAll(this)">💡 전체 정답<span class="gloss" lang="en" translate="yes">All answers</span></button></div></div><table><thead><tr><th style="width:6%">#</th><th style="text-align:left;">기본형<span class="gloss" lang="en" translate="yes">Base</span></th><th>평서형<span class="gloss" lang="en" translate="yes">Statement</span></th><th>의문형<span class="gloss" lang="en" translate="yes">Question</span></th><th style="width:18%"></th></tr></thead><tbody id="prIR_BI"></tbody></table></div>
+<div class="pr80"><div class="pr80-bar"><div class="pr80-score">맞은 개수 <span lang="en" translate="yes">· Correct:</span> <b class="pr80C">0</b> <span style="color:#94a3b8;">/ 20</span></div><div class="pr80-btns"><button type="button" class="jm-vsel" data-sex="f" onclick="jmSetSex('f',this)">여성<span class="gloss" lang="en" translate="yes">Female</span></button><button type="button" class="jm-vsel" data-sex="m" onclick="jmSetSex('m',this)">남성<span class="gloss" lang="en" translate="yes">Male</span></button><button class="pr80-btn" onclick="pr80Reset(this)">🔄 초기화<span class="gloss" lang="en" translate="yes">Reset</span></button><button class="pr80-btn primary" onclick="pr80RevealAll(this)">💡 전체 정답<span class="gloss" lang="en" translate="yes">All answers</span></button></div></div><div class="tbl-scroll"><table><thead><tr><th style="width:6%">#</th><th style="text-align:left;">기본형<span class="gloss" lang="en" translate="yes">Base</span></th><th>평서형<span class="gloss" lang="en" translate="yes">Statement</span></th><th>의문형<span class="gloss" lang="en" translate="yes">Question</span></th><th style="width:18%"></th></tr></thead><tbody id="prIR_BI"></tbody></table></div></div>
 
 <div class="fc-section">
 <h3 style="margin-top:32px;">퀴즈 1 · 플래시 카드<span class="gloss" lang="en" translate="yes">Flashcards</span></h3>
@@ -493,6 +493,14 @@ input[readonly] + .jm-spk{display:inline-block;}
     outline:2px solid rgba(37,99,235,.45); outline-offset:1px; border-radius:6px; }
 .res:active, .chip-decl:active, .chip-ques:active, .rs-result:active, .cb-word:active {
     transform:scale(0.97); }
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 </style>
 <script>
 function pr80Norm(s){return (s||'').replace(/\s+/g,'').replace(/[?？.]/g,'');}

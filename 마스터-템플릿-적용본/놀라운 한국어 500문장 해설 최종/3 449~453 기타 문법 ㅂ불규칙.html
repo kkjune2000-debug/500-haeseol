@@ -364,6 +364,14 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .sl-all-btn:hover{background:#dbeafe;}
 .sl-all-btn.playing{background:#fee2e2;border-color:#fecaca;color:#991b1b;}
 .sentence-list .sentence-item.sl-now{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,0.25);}
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 </style>
 </head>
 <body>
@@ -400,9 +408,9 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
         </div>
         <div class="gstep-pattern">1) 돕다·곱다 + ~아/어 → <strong><span style="color:#1e40af;">ㅂ</span>이 <span style="color:#1e40af;">오</span></strong> (도<span style="color:#1e40af;">오</span> + 아 → 도와)<br>2) 그 밖의 모음 어미 → <strong><span style="color:#1e40af;">ㅂ</span>이 <span style="color:#1e40af;">우</span></strong><small lang="en" translate="yes"><em><span lang="ko" translate="no">돕다·곱다</span> + ~<span lang="ko" translate="no">아/어</span> → <span lang="ko" translate="no">ㅂ</span> becomes <span lang="ko" translate="no">오</span> (<span lang="ko" translate="no">도오</span> + <span lang="ko" translate="no">아</span> → <span lang="ko" translate="no">도와</span>); before any other vowel ending → <span lang="ko" translate="no">ㅂ</span> becomes <span lang="ko" translate="no">우</span></em></small></div>
         <div style="font-size:0.85rem;font-weight:700;color:#92400e;margin:16px 0 6px;">만드는 과정 <small style="font-weight:500;color:#b45309;" lang="en" translate="yes">how it forms → past</small></div>
-        <table class="gstep-table"><thead><tr><th style="width:22%">변화<br><small lang="en" translate="yes">Change</small></th><th style="width:22%">기본형<br><small lang="en" translate="yes">Verb/Adj</small></th><th>만드는 과정<br><small lang="en" translate="yes">Derivation → past</small></th></tr></thead><tbody><tr><td><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;font-size:0.82rem;">ㅂ→<span class="accent" style="color:#dc2626;">우</span></span></td><td><strong>덥다</strong> <span lang="en" translate="yes">hot</span></td><td>덥 + 었습니다 → 더<span class="accent">우</span> + 었습니다 → <strong>더<span class="accent">웠</span>습니다</strong></td></tr><tr><td><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;font-size:0.82rem;">ㅂ→<span class="accent" style="color:#dc2626;">우</span></span></td><td><strong>춥다</strong> <span lang="en" translate="yes">cold</span></td><td>춥 + 었습니다 → 추<span class="accent">우</span> + 었습니다 → <strong>추<span class="accent">웠</span>습니다</strong></td></tr><tr><td><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.82rem;">ㅂ→<span class="accent">오</span></span></td><td><strong>돕다</strong> <span lang="en" translate="yes">help</span></td><td>돕 + 았습니다 → 도<span class="accent">오</span> + 았습니다 → <strong>도<span class="accent">왔</span>습니다</strong> (앞 모음 ㅗ → 오)</td></tr></tbody></table>
+        <div class="tbl-scroll"><table class="gstep-table"><thead><tr><th style="width:22%">변화<br><small lang="en" translate="yes">Change</small></th><th style="width:22%">기본형<br><small lang="en" translate="yes">Verb/Adj</small></th><th>만드는 과정<br><small lang="en" translate="yes">Derivation → past</small></th></tr></thead><tbody><tr><td><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;font-size:0.82rem;">ㅂ→<span class="accent" style="color:#dc2626;">우</span></span></td><td><strong>덥다</strong> <span lang="en" translate="yes">hot</span></td><td>덥 + 었습니다 → 더<span class="accent">우</span> + 었습니다 → <strong>더<span class="accent">웠</span>습니다</strong></td></tr><tr><td><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;font-size:0.82rem;">ㅂ→<span class="accent" style="color:#dc2626;">우</span></span></td><td><strong>춥다</strong> <span lang="en" translate="yes">cold</span></td><td>춥 + 었습니다 → 추<span class="accent">우</span> + 었습니다 → <strong>추<span class="accent">웠</span>습니다</strong></td></tr><tr><td><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.82rem;">ㅂ→<span class="accent">오</span></span></td><td><strong>돕다</strong> <span lang="en" translate="yes">help</span></td><td>돕 + 았습니다 → 도<span class="accent">오</span> + 았습니다 → <strong>도<span class="accent">왔</span>습니다</strong> (앞 모음 ㅗ → 오)</td></tr></tbody></table></div>
         <div style="font-size:0.85rem;font-weight:700;color:#92400e;margin:16px 0 6px;">미래형도 같은 방식 <small style="font-weight:500;color:#b45309;" lang="en" translate="yes">future form → same <span lang="ko" translate="no">ㅂ</span> change</small></div>
-        <table class="gstep-table"><thead><tr><th style="width:22%">변화<br><small lang="en" translate="yes">Change</small></th><th style="width:22%">기본형<br><small lang="en" translate="yes">Verb/Adj</small></th><th>만드는 과정<br><small lang="en" translate="yes">Derivation → future</small></th></tr></thead><tbody><tr><td><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;font-size:0.82rem;">ㅂ→<span class="accent" style="color:#dc2626;">우</span></span></td><td><strong>덥다</strong> <span lang="en" translate="yes">hot</span></td><td>덥 + 을 것입니다 → 더<span class="accent">우</span> + ㄹ 것입니다 → <strong>더<span class="accent">울</span> 것입니다</strong></td></tr><tr><td><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;font-size:0.82rem;">ㅂ→<span class="accent" style="color:#dc2626;">우</span></span></td><td><strong>춥다</strong> <span lang="en" translate="yes">cold</span></td><td>춥 + 을 것입니다 → 추<span class="accent">우</span> + ㄹ 것입니다 → <strong>추<span class="accent">울</span> 것입니다</strong></td></tr><tr><td><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;font-size:0.82rem;">ㅂ→<span class="accent" style="color:#dc2626;">우</span></span></td><td><strong>돕다</strong> <span lang="en" translate="yes">help</span></td><td>돕 + 을 것입니다 → 도<span class="accent">우</span> + ㄹ 것입니다 → <strong>도<span class="accent">울</span> 것입니다</strong></td></tr></tbody></table>
+        <div class="tbl-scroll"><table class="gstep-table"><thead><tr><th style="width:22%">변화<br><small lang="en" translate="yes">Change</small></th><th style="width:22%">기본형<br><small lang="en" translate="yes">Verb/Adj</small></th><th>만드는 과정<br><small lang="en" translate="yes">Derivation → future</small></th></tr></thead><tbody><tr><td><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;font-size:0.82rem;">ㅂ→<span class="accent" style="color:#dc2626;">우</span></span></td><td><strong>덥다</strong> <span lang="en" translate="yes">hot</span></td><td>덥 + 을 것입니다 → 더<span class="accent">우</span> + ㄹ 것입니다 → <strong>더<span class="accent">울</span> 것입니다</strong></td></tr><tr><td><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;font-size:0.82rem;">ㅂ→<span class="accent" style="color:#dc2626;">우</span></span></td><td><strong>춥다</strong> <span lang="en" translate="yes">cold</span></td><td>춥 + 을 것입니다 → 추<span class="accent">우</span> + ㄹ 것입니다 → <strong>추<span class="accent">울</span> 것입니다</strong></td></tr><tr><td><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:#fee2e2;color:#dc2626;font-weight:800;font-size:0.82rem;">ㅂ→<span class="accent" style="color:#dc2626;">우</span></span></td><td><strong>돕다</strong> <span lang="en" translate="yes">help</span></td><td>돕 + 을 것입니다 → 도<span class="accent">우</span> + ㄹ 것입니다 → <strong>도<span class="accent">울</span> 것입니다</strong></td></tr></tbody></table></div>
         <div style="background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;padding:13px 16px;margin-top:14px;font-size:0.9rem;line-height:1.75;">
             <strong style="color:#b45309;">⚠️ 돕다·곱다 주의: 어미에 따라 달라집니다</strong><br>
             · 과거형 <strong>~아/어</strong> 앞 → <strong style="color:#d97706;">ㅂ→오</strong> → 돕 + 았 → 도<span class="accent">오</span> + 았 → <strong>도<span class="accent">왔</span>습니다</strong><br>
@@ -416,7 +424,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
     <div class="gstep-num">2</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#78350f; background:#fffbeb; border-left:4px solid #b45309; border-radius:4px;">예외: 규칙 ㅂ 동사<br><small style="font-weight: 600;" lang="en" translate="yes">Exceptions: regular <span lang="ko" translate="no">ㅂ</span> verbs</small></h3>
-        <table class="gstep-table"><thead><tr><th style="width:22%">변화<br><small lang="en" translate="yes">Change</small></th><th style="width:22%">기본형<br><small lang="en" translate="yes">Verb/Adj</small></th><th>만드는 과정<br><small lang="en" translate="yes">Derivation → past</small></th></tr></thead><tbody><tr><td><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:#dcfce7;color:#16a34a;font-weight:800;font-size:0.82rem;">✅ ㅂ 유지</span></td><td><strong>입다</strong> <span lang="en" translate="yes">wear</span></td><td>입 + 었습니다 → <strong>입었습니다</strong> <small>(ㅂ 유지)</small></td></tr><tr><td><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:#dcfce7;color:#16a34a;font-weight:800;font-size:0.82rem;">✅ ㅂ 유지</span></td><td><strong>잡다</strong> <span lang="en" translate="yes">catch</span></td><td>잡 + 았습니다 → <strong>잡았습니다</strong> <small>(ㅂ 유지)</small></td></tr><tr><td><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:#dcfce7;color:#16a34a;font-weight:800;font-size:0.82rem;">✅ ㅂ 유지</span></td><td><strong>좁다</strong> <span lang="en" translate="yes">narrow</span></td><td>좁 + 았습니다 → <strong>좁았습니다</strong> <small>(ㅂ 유지)</small></td></tr></tbody></table>    </div>
+        <div class="tbl-scroll"><table class="gstep-table"><thead><tr><th style="width:22%">변화<br><small lang="en" translate="yes">Change</small></th><th style="width:22%">기본형<br><small lang="en" translate="yes">Verb/Adj</small></th><th>만드는 과정<br><small lang="en" translate="yes">Derivation → past</small></th></tr></thead><tbody><tr><td><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:#dcfce7;color:#16a34a;font-weight:800;font-size:0.82rem;">✅ ㅂ 유지</span></td><td><strong>입다</strong> <span lang="en" translate="yes">wear</span></td><td>입 + 었습니다 → <strong>입었습니다</strong> <small>(ㅂ 유지)</small></td></tr><tr><td><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:#dcfce7;color:#16a34a;font-weight:800;font-size:0.82rem;">✅ ㅂ 유지</span></td><td><strong>잡다</strong> <span lang="en" translate="yes">catch</span></td><td>잡 + 았습니다 → <strong>잡았습니다</strong> <small>(ㅂ 유지)</small></td></tr><tr><td><span style="display:inline-block;padding:4px 12px;border-radius:999px;background:#dcfce7;color:#16a34a;font-weight:800;font-size:0.82rem;">✅ ㅂ 유지</span></td><td><strong>좁다</strong> <span lang="en" translate="yes">narrow</span></td><td>좁 + 았습니다 → <strong>좁았습니다</strong> <small>(ㅂ 유지)</small></td></tr></tbody></table></div>    </div>
 </div>
 
 <hr>
@@ -450,7 +458,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 부사어(시간) + 부사 + 서술어(형용사)<br><span lang="en" translate="yes">Korean order: Adverbial (Time) + Adverb + Predicate (Adjective)</span></th></tr>
@@ -460,7 +468,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>yesterday</strong></td><td class="exp-role">부사어(시간)<br><small><span lang="en" translate="yes">Adverbial (Time)</span></small></td><td class="exp-form"><strong>어제는</strong></td><td><strong>어제</strong> + <strong>는</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>It was so hot</strong></td><td class="exp-role">부사 + 서술어(형용사)<br><small><span lang="en" translate="yes">Adverb + Predicate (Adjective)</span></small></td><td class="exp-form"><strong>너무 더웠습니다</strong></td><td>덥 + 었습니다 → 더우 + 었습니다 → <strong>더웠습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -491,7 +499,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 부사어(시간) + 부사 + 서술어(형용사)<br><span lang="en" translate="yes">Korean order: Adverbial (Time) + Adverb + Predicate (Adjective)</span></th></tr>
@@ -501,7 +509,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>yesterday</strong></td><td class="exp-role">부사어(시간)<br><small><span lang="en" translate="yes">Adverbial (Time)</span></small></td><td class="exp-form"><strong>어제는</strong></td><td><strong>어제</strong> + <strong>는</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>It was so cold</strong></td><td class="exp-role">부사 + 서술어(형용사)<br><small><span lang="en" translate="yes">Adverb + Predicate (Adjective)</span></small></td><td class="exp-form"><strong>너무 추웠습니다</strong></td><td>춥 + 었습니다 → 추우 + 었습니다 → <strong>추웠습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -531,7 +539,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Object + Predicate (Verb)</span></th></tr>
@@ -542,7 +550,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>me</strong></td><td class="exp-role">목적어<br><small><span lang="en" translate="yes">Object</span></small></td><td class="exp-form"><strong>저를</strong></td><td><strong>저</strong> + <strong>를</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>helped</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>도왔습니다</strong></td><td>돕 + 았습니다 → 도오 + 았습니다 → <strong>도왔습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -572,7 +580,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Object + Predicate (Verb)</span></th></tr>
@@ -583,7 +591,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>a hanbok</strong></td><td class="exp-role">목적어<br><small><span lang="en" translate="yes">Object</span></small></td><td class="exp-form"><strong>한복을</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>wore</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>입었습니다</strong></td><td>입 + 었습니다 → <strong>입었습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         <div class="explain-note"><strong>⚠️ <strong>입다</strong> <span lang="en" translate="yes">is REGULAR!</span> ㅂ <span lang="en" translate="yes">does NOT change!</span></strong><br><strong>입다</strong><br><small lang="en" translate="yes">(wear)</small> → 입<strong>었</strong>습니다 ✅</div>
     </div>
 </div>
@@ -613,7 +621,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 서술어(형용사)<br><span lang="en" translate="yes">Korean order: Subject + Predicate (Adjective)</span></th></tr>
@@ -623,7 +631,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>The road</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>그 길은</strong></td><td><strong>그길</strong> + <strong>은</strong></td></tr>
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>was narrow</strong></td><td class="exp-role">서술어(형용사)<br><small><span lang="en" translate="yes">Predicate (Adjective)</span></small></td><td class="exp-form"><strong>좁았습니다</strong></td><td>좁 + 았습니다 → <strong>좁았습니다</strong></td></tr>
             </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>

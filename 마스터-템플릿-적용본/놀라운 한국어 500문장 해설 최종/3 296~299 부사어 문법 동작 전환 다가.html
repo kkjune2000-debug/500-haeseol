@@ -368,6 +368,14 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .sl-all-btn:hover{background:#dbeafe;}
 .sl-all-btn.playing{background:#fee2e2;border-color:#fecaca;color:#991b1b;}
 .sentence-list .sentence-item.sl-now{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,0.25);}
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 </style>
 </head>
 <body>
@@ -410,7 +418,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">~다가 만드는 법<br><small style="font-weight:600;"><span lang="en" translate="yes">Formation</span></small></h3>
         <div class="gstep-pattern"><strong>동사</strong> + <span class="accent">다가</span>: 언제나 <strong>다가</strong><small><strong><span lang="en" translate="yes">Verb</span></strong> + <span class="accent">다가</span><span lang="en" translate="yes">: always</span> <strong>다가</strong>!</small></div>
-        <table class="gstep-table">
+        <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:30%"><span lang="en" translate="yes">Dictionary</span><br>사전형</th><th style="width:30%"><span lang="en" translate="yes">Combined</span><br>결합형</th><th style="width:40%"><span lang="en" translate="yes">Meaning</span><br>의미</th></tr></thead>
             <tbody>
                 <tr><td><strong>보다</strong></td><td><strong>보다가</strong></td><td><span lang="en" translate="yes">while watching, ~</span></td></tr>
@@ -418,7 +426,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                 <tr><td><strong>하다</strong></td><td><strong>하다가</strong></td><td><span lang="en" translate="yes">while doing, ~</span></td></tr>
                 <tr><td><strong>자다</strong></td><td><strong>자다가</strong></td><td><span lang="en" translate="yes">while sleeping, ~</span></td></tr>
             </tbody>
-        </table>
+        </table></div>
     </div>
 </div>
 
@@ -430,13 +438,13 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             둘 다 <strong><span lang="en" translate="yes">while</span></strong>이지만 뉘앙스가 다릅니다.<br>
             <small lang="en" translate="yes"><em>Both mean <strong>while</strong>, but the nuance differs.</em></small>
         </div>
-        <table class="gstep-table">
+        <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:20%"><span lang="en" translate="yes">Connector</span></th><th><span lang="en" translate="yes">Nuance</span></th><th><span lang="en" translate="yes">Example</span></th></tr></thead>
             <tbody>
                 <tr><td><strong>~(으)면서</strong></td><td><span lang="en" translate="yes">Two planned/intentional actions at the same time</span></td><td><strong>음악을 들으면서 공부합니다</strong>.<br><small lang="en" translate="yes">intentional simultaneous</small></td></tr>
                 <tr><td><strong>~다가</strong></td><td><span lang="en" translate="yes">Action 1 stops/is interrupted; Action 2 happens (often unexpected)</span></td><td><strong>텔레비전을 보다가 잠이 들었습니다</strong>.<br><small lang="en" translate="yes">interruption!</small></td></tr>
             </tbody>
-        </table>
+        </table></div>
         <div class="note-box"><strong><span lang="en" translate="yes">⚠️ Tense:</span></strong> ~다가 <span lang="en" translate="yes">clause stays in stem form. Past tense lives only on the FINAL verb.</span></div>
     </div>
 </div>
@@ -449,7 +457,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             종속절은 과거 사건이어도 어간 형태 그대로 사용합니다. 시제는 마지막 절에만 표시합니다.<br>
             <small lang="en" translate="yes"><em>The subordinate clause stays in stem form even for past events; tense lives only on the final clause.</em></small>
         </div>
-        <table class="gstep-table">
+        <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:25%"><span lang="en" translate="yes">Connector</span><br>연결어미</th><th style="width:35%"><span lang="en" translate="yes">Meaning</span><br>의미</th><th><span lang="en" translate="yes">Example</span><br>예문</th></tr></thead>
             <tbody>
                 <tr><td><strong>~고</strong></td><td><span lang="en" translate="yes">and (sequential)</span><br><small>그리고: 시간 순서<br><em lang="en" translate="yes">and: time order</em></small></td><td><strong>밥을 먹고 학교에 갔습니다</strong>.<br><small lang="en" translate="yes">Ate and (then) went to school.</small></td></tr>
@@ -460,7 +468,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                 <tr><td><strong>~(으)러</strong></td><td><span lang="en" translate="yes">in order to (go/come)</span><br><small>목적: 이동 동사<br><em lang="en" translate="yes">purpose: verbs of movement</em></small></td><td><strong>책을 사러 서점에 갔습니다</strong>.<br><small lang="en" translate="yes">Went to the bookstore to buy a book.</small></td></tr>
                 <tr><td><strong>~(으)려고</strong></td><td><span lang="en" translate="yes">intending to</span><br><small>의도: 계획</small></td><td><strong>한국어를 배우려고 한국에 왔습니다</strong>.<br><small lang="en" translate="yes">Came to Korea intending to learn Korean.</small></td></tr>
             </tbody>
-        </table>
+        </table></div>
         <div class="note-box"><strong>⚠️ 비교 <span lang="en" translate="yes">(Compare):</span></strong> <strong>~ㄴ/은 후에</strong> · <strong>~았/었을 때</strong> · <strong>~았/었는데</strong> 같은 연결어미는 종속절에 과거 표시 가능. 위 7 종류만 항상 현재형(어간). <strong>~기 전에</strong> · <strong>~기 위해서</strong>는 <strong>~기</strong>가 명사형 어미이므로 별도 분류.<br><small lang="en" translate="yes"><em>By contrast, ~<span lang="ko" translate="no">ㄴ/은 후에</span>, ~<span lang="ko" translate="no">았/었을 때</span>, ~<span lang="ko" translate="no">았/었는데</span> etc. allow past tense in the subordinate clause. Only the 7 above always stay in stem form. ~<span lang="ko" translate="no">기 전에 / ~기 위해서</span> are separate — the ~<span lang="ko" translate="no">기</span> is a nominalizing ending, not a verbal connector.</em></small></div>
     </div>
 </div>
@@ -498,7 +506,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(동작전환) + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Transition) + Predicate (Verb)</span></th></tr>
@@ -509,7 +517,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>while watching TV</strong></td><td class="exp-role">부사어(동작전환)<br><small><span lang="en" translate="yes">Adverbial (Transition)</span></small></td><td class="exp-form"><strong>텔레비전을 보다가</strong></td><td><strong>텔레비전을보다</strong> + <strong>가</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>fell asleep</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>잠이 들었습니다</strong></td><td><strong>잠들다 = 잠이 들다 → 잠이 들었습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
     </div>
 </div>
 
@@ -542,7 +550,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(동작전환) + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Transition) + Object + Predicate (Verb)</span></th></tr>
@@ -554,7 +562,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>a friend</strong></td><td class="exp-role">목적어<br><small><span lang="en" translate="yes">Object</span></small></td><td class="exp-form"><strong>친구를</strong></td><td><strong>친구</strong> + <strong>를</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>met</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>만났습니다</strong></td><td><strong>만나다</strong> → <strong>만나</strong> + <strong>았습니다</strong> → <strong>만났습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
     </div>
 </div>
 
@@ -586,7 +594,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(동작전환) + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Transition) + Object + Predicate (Verb)</span></th></tr>
@@ -598,7 +606,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>a dish</strong></td><td class="exp-role">목적어<br><small><span lang="en" translate="yes">Object</span></small></td><td class="exp-form"><strong>그릇을</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>broke</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>깨뜨렸습니다</strong></td><td></td></tr>
         </tbody>
-        </table>
+        </table></div>
     </div>
 </div>
 
@@ -630,7 +638,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(동작전환) + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Transition) + Object + Predicate (Verb)</span></th></tr>
@@ -641,7 +649,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>while sleeping</strong></td><td class="exp-role">부사어(동작전환)<br><small><span lang="en" translate="yes">Adverbial (Transition)</span></small></td><td class="exp-form"><strong>잠을 자다가</strong></td><td><strong>잠을 자다 → 잠을 자 + 다가 → 잠을 자다가</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>had a nightmare</strong></td><td class="exp-role">목적어 + 서술어(동사)<br><small><span lang="en" translate="yes">Object + Predicate (Verb)</span></small></td><td class="exp-form"><strong>무서운 꿈을 꾸었습니다</strong></td><td></td></tr>
         </tbody>
-        </table>
+        </table></div>
     </div>
 </div>
 

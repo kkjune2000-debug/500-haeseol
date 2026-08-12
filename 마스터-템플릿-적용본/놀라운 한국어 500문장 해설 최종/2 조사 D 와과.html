@@ -475,7 +475,7 @@ document.addEventListener('DOMContentLoaded', function(){
 <p class="ko">⚠️ 다른 조사와 방향이 반대입니다. <span class="particle">은</span>·<span class="particle">이</span>·<span class="particle">을</span>은 받침 뒤에 모음이 오지만, <span class="particle">와/과</span>는 받침 뒤에 자음 '과'가 옵니다. (사람<b>은</b>·사람<b>이</b>·사람<b>을</b> ↔ 사람<b>과</b>)</p>
 <p class="en" lang="en" translate="yes">⚠️ This runs opposite to the other particles. After a <span lang="ko" translate="no">받침</span>, <span lang="ko" translate="no">은·이·을</span> bring a vowel — but <span lang="ko" translate="no">와/과</span> brings the consonant <span lang="ko" translate="no">과</span> (<span lang="ko" translate="no">사람은·사람이·사람을</span> ↔ <span lang="ko" translate="no">사람과</span>).</p>
 
-<table>
+<div class="tbl-scroll"><table>
 <thead><tr><th>받침 X → 와</th><th>받침 O → 과</th></tr></thead>
 <tbody>
 <tr><td>커피<strong>와</strong> 과자<span class="gloss" lang="en" translate="yes">coffee and snack</span></td><td>빵<strong>과</strong> 밥<span class="gloss" lang="en" translate="yes">bread and rice</span></td></tr>
@@ -486,7 +486,7 @@ document.addEventListener('DOMContentLoaded', function(){
 <tr><td>비누<strong>와</strong> 수건<span class="gloss" lang="en" translate="yes">soap and towel</span></td><td>낮<strong>과</strong> 밤<span class="gloss" lang="en" translate="yes">day and night</span></td></tr>
 <tr><td>우유<strong>와</strong> 빵<span class="gloss" lang="en" translate="yes">milk and bread</span></td><td>봄<strong>과</strong> 가을<span class="gloss" lang="en" translate="yes">spring and autumn</span></td></tr>
 <tr><td>사과<strong>와</strong> 배<span class="gloss" lang="en" translate="yes">apple and pear</span></td><td>눈<strong>과</strong> 비<span class="gloss" lang="en" translate="yes">snow and rain</span></td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <hr>
 
@@ -601,6 +601,14 @@ input[readonly] + .jm-spk{display:inline-block;}
     outline:2px solid rgba(37,99,235,.45); outline-offset:1px; border-radius:6px; }
 .res:active, .chip-decl:active, .chip-ques:active, .rs-result:active, .cb-word:active {
     transform:scale(0.97); }
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 </style>
 <h3 class="pr80-h">와/과 직접 만들기<span class="gloss" lang="en" translate="yes">Make it with <span lang="ko" translate="no">와/과</span></span></h3>
 <p class="ko">단어 뒤에 알맞은 조사(와/과)를 붙여 통째로 써 보세요. 헷갈리면 <strong>💡 설명</strong>을 누르세요.</p>
@@ -613,7 +621,7 @@ input[readonly] + .jm-spk{display:inline-block;}
       <button class="pr80-btn primary" onclick="prJRevealAll()">💡 전체 정답<span class="gloss" lang="en" translate="yes">All answers</span></button>
     </div>
   </div>
-  <table><thead><tr><th style="width:6%">#</th><th style="text-align:left;">단어<span class="gloss" lang="en" translate="yes">Word</span></th><th>단어 + 와/과</th><th style="width:18%"></th></tr></thead><tbody id="prJBody"></tbody></table>
+  <div class="tbl-scroll"><table><thead><tr><th style="width:6%">#</th><th style="text-align:left;">단어<span class="gloss" lang="en" translate="yes">Word</span></th><th>단어 + 와/과</th><th style="width:18%"></th></tr></thead><tbody id="prJBody"></tbody></table></div>
 </div>
 <script>
 (function(){

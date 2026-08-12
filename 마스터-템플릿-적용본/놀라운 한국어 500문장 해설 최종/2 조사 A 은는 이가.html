@@ -344,25 +344,25 @@ document.addEventListener('DOMContentLoaded', function(){
 <p class="en" lang="en" translate="yes">Broken into slots, it looks like this.</p>
 
 <div class="example-box">저는 밥을 먹습니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;저는 밥을 먹습니다.&#39;)" title="Listen">🔊</button></div>
-<table>
+<div class="tbl-scroll"><table>
 <thead><tr><th>저는</th><th>밥을</th><th>먹습니다</th></tr></thead>
 <tbody>
 <tr><td>주어<br><span lang="en" translate="yes">(subject)</span><br><strong>I</strong></td><td>목적어<br><span lang="en" translate="yes">(object)</span><br><strong><span lang="en" translate="yes">rice</span></strong></td><td>서술어(동사)<br><span lang="en" translate="yes">(predicate/verb)</span><br><strong><span lang="en" translate="yes">eat</span></strong></td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <div class="example-box">선생님은 학교에 갑니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;선생님은 학교에 갑니다.&#39;)" title="Listen">🔊</button></div>
-<table>
+<div class="tbl-scroll"><table>
 <thead><tr><th>선생님은</th><th>학교에</th><th>갑니다</th></tr></thead>
 <tbody>
 <tr><td>주어<br><span lang="en" translate="yes">(subject)</span><br><strong><span lang="en" translate="yes">The teacher</span></strong></td><td>부사어(장소)<br><span lang="en" translate="yes">(adverbial)</span><br><strong><span lang="en" translate="yes">to school</span></strong></td><td>서술어(동사)<br><span lang="en" translate="yes">(predicate/verb)</span><br><strong><span lang="en" translate="yes">goes</span></strong></td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <div class="example-box">커피는 맛있습니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;커피는 맛있습니다.&#39;)" title="Listen">🔊</button></div>
-<table>
+<div class="tbl-scroll"><table>
 <thead><tr><th>커피는</th><th>맛있습니다</th></tr></thead>
 <tbody>
 <tr><td>주어<br><span lang="en" translate="yes">(subject)</span><br><strong><span lang="en" translate="yes">Coffee</span></strong></td><td>서술어(형용사)<br><span lang="en" translate="yes">(predicate/adjective)</span><br><strong><span lang="en" translate="yes">is delicious</span></strong></td></tr>
-</tbody></table>
+</tbody></table></div>
 
 
 
@@ -429,12 +429,12 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
-<table>
+<div class="tbl-scroll"><table>
 <thead><tr><th>사과 <span lang="en" translate="yes">(apple) —</span> 받침 X</th><th>수박 <span lang="en" translate="yes">(watermelon) —</span> 받침 O</th></tr></thead>
 <tbody>
 <tr><td>사과<strong>는</strong></td><td>수박<strong>은</strong></td></tr>
 <tr><td>사과<strong>가</strong></td><td>수박<strong>이</strong></td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <h3><span class="particle">은/는</span> 예<span class="gloss" lang="en" translate="yes">Examples</span></h3>
 <style>
@@ -736,6 +736,14 @@ input[readonly] + .jm-spk{display:inline-block;}
     outline:2px solid rgba(37,99,235,.45); outline-offset:1px; border-radius:6px; }
 .res:active, .chip-decl:active, .chip-ques:active, .rs-result:active, .cb-word:active {
     transform:scale(0.97); }
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 </style>
 <h3 class="pr80-h">은/는 · 이/가 직접 만들기<span class="gloss" lang="en" translate="yes">Make it yourself</span></h3>
 <p class="ko">단어 뒤에 알맞은 조사를 붙여 통째로 써 보세요. 헷갈리면 <strong>💡 설명</strong>을 누르세요.</p>
@@ -748,7 +756,7 @@ input[readonly] + .jm-spk{display:inline-block;}
       <button class="pr80-btn primary" onclick="prJRevealAll()">💡 전체 정답<span class="gloss" lang="en" translate="yes">All answers</span></button>
     </div>
   </div>
-  <table><thead><tr><th style="width:6%">#</th><th style="text-align:left;">단어<span class="gloss" lang="en" translate="yes">Word</span></th><th>단어 + 은/는</th><th>단어 + 이/가</th><th style="width:16%"></th></tr></thead><tbody id="prJBody"></tbody></table>
+  <div class="tbl-scroll"><table><thead><tr><th style="width:6%">#</th><th style="text-align:left;">단어<span class="gloss" lang="en" translate="yes">Word</span></th><th>단어 + 은/는</th><th>단어 + 이/가</th><th style="width:16%"></th></tr></thead><tbody id="prJBody"></tbody></table></div>
 </div>
 <script>
 (function(){

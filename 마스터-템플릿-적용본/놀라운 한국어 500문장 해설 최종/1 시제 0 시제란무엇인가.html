@@ -576,7 +576,7 @@
   </div>
 </div>
 
-<table class="breakdown-table">
+<div class="tbl-scroll"><table class="breakdown-table">
   <thead>
     <tr><th>기본형<span class="gloss" lang="en" translate="yes">Base Form</span></th><th></th><th>어간<span class="gloss" lang="en" translate="yes">Stem</span></th><th></th><th>다<span class="gloss" lang="en" translate="yes">Ending</span></th></tr>
   </thead>
@@ -603,7 +603,7 @@
       <td><span class="ending-chip">다</span></td>
     </tr>
   </tbody>
-</table>
+</table></div>
 
 <div class="stem-da">
   <div class="sd-section">
@@ -808,6 +808,14 @@
 .ak-notice.on { opacity:1; transform:translateX(-50%) translateY(0); }
 .ak-notice .gloss { color:#cbd5e1; opacity:0.9; }
 @media print { .ak-notice { display:none; } }
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 </style>
 <div class="tense-howto">
   <div class="th-head"><div>시제<span class="gloss" lang="en" translate="yes">Tense</span></div><div>만드는 법<span class="gloss" lang="en" translate="yes">How to make</span></div><div>예문<span class="gloss" lang="en" translate="yes">Example</span></div></div>

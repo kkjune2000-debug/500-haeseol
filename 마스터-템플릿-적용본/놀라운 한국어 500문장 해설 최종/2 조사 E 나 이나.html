@@ -468,7 +468,7 @@ document.addEventListener('DOMContentLoaded', function(){
 </div>
 </div>
 
-<table>
+<div class="tbl-scroll"><table>
 <thead><tr><th>받침 X → 나</th><th>받침 O → 이나</th></tr></thead>
 <tbody>
 <tr><td>커피<strong>나</strong> 주스<span class="gloss" lang="en" translate="yes">coffee or juice</span></td><td>빵<strong>이나</strong> 밥<span class="gloss" lang="en" translate="yes">bread or rice</span></td></tr>
@@ -479,7 +479,7 @@ document.addEventListener('DOMContentLoaded', function(){
 <tr><td>여자<strong>나</strong> 남자<span class="gloss" lang="en" translate="yes">woman or man</span></td><td>김밥<strong>이나</strong> 라면<span class="gloss" lang="en" translate="yes">gimbap or ramyeon</span></td></tr>
 <tr><td>바나나<strong>나</strong> 사과<span class="gloss" lang="en" translate="yes">banana or apple</span></td><td>산<strong>이나</strong> 바다<span class="gloss" lang="en" translate="yes">mountain or sea</span></td></tr>
 <tr><td>고기<strong>나</strong> 생선<span class="gloss" lang="en" translate="yes">meat or fish</span></td><td>꽃<strong>이나</strong> 나무<span class="gloss" lang="en" translate="yes">flower or tree</span></td></tr>
-</tbody></table>
+</tbody></table></div>
 
 
 
@@ -597,6 +597,14 @@ input[readonly] + .jm-spk{display:inline-block;}
     outline:2px solid rgba(37,99,235,.45); outline-offset:1px; border-radius:6px; }
 .res:active, .chip-decl:active, .chip-ques:active, .rs-result:active, .cb-word:active {
     transform:scale(0.97); }
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 </style>
 <h3 class="pr80-h">나/이나 직접 만들기<span class="gloss" lang="en" translate="yes">Make it with <span lang="ko" translate="no">나/이나</span></span></h3>
 <p class="ko">단어 뒤에 알맞은 조사(나/이나)를 붙여 통째로 써 보세요. 헷갈리면 <strong>💡 설명</strong>을 누르세요.</p>
@@ -609,7 +617,7 @@ input[readonly] + .jm-spk{display:inline-block;}
       <button class="pr80-btn primary" onclick="prJRevealAll()">💡 전체 정답<span class="gloss" lang="en" translate="yes">All answers</span></button>
     </div>
   </div>
-  <table><thead><tr><th style="width:6%">#</th><th style="text-align:left;">단어<span class="gloss" lang="en" translate="yes">Word</span></th><th>단어 + 나/이나</th><th style="width:18%"></th></tr></thead><tbody id="prJBody"></tbody></table>
+  <div class="tbl-scroll"><table><thead><tr><th style="width:6%">#</th><th style="text-align:left;">단어<span class="gloss" lang="en" translate="yes">Word</span></th><th>단어 + 나/이나</th><th style="width:18%"></th></tr></thead><tbody id="prJBody"></tbody></table></div>
 </div>
 <script>
 (function(){

@@ -360,6 +360,14 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .sl-all-btn:hover{background:#dbeafe;}
 .sl-all-btn.playing{background:#fee2e2;border-color:#fecaca;color:#991b1b;}
 .sentence-list .sentence-item.sl-now{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,0.25);}
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 </style>
 </head>
 <body>
@@ -406,14 +414,14 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             모두 원인을 나타내지만 화자의 태도가 다릅니다.<br>
             <small lang="en" translate="yes"><em>All mean <strong>because of</strong>, but the speaker's emotion differs.</em></small>
         </div>
-        <table class="gstep-table">
+        <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:20%"><span lang="en" translate="yes">Connector</span></th><th><span lang="en" translate="yes">Result</span></th><th><span lang="en" translate="yes">Speaker's tone</span></th></tr></thead>
             <tbody>
                 <tr><td><strong>때문에</strong></td><td><span lang="en" translate="yes">Neutral (positive or negative)</span></td><td><span lang="en" translate="yes">Just stating the cause</span></td></tr>
                 <tr><td><strong>덕분에</strong></td><td><span lang="en" translate="yes">Positive only</span></td><td><span lang="en" translate="yes">Grateful ·</span> <strong><span lang="en" translate="yes">thanks to</span></strong></td></tr>
                 <tr><td><strong>탓에</strong></td><td><span lang="en" translate="yes">Negative only</span></td><td><span lang="en" translate="yes">Blaming ·</span> <strong><span lang="en" translate="yes">due to (someone's fault)</span></strong></td></tr>
             </tbody>
-        </table>
+        </table></div>
     </div>
 </div>
 
@@ -426,14 +434,14 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <small lang="en" translate="yes"><em>Attaches to verbs after a <strong><span lang="ko" translate="no">받침</span></strong> rule similar to ~<span lang="ko" translate="no">ㄴ/은 후에</span>.</em></small>
         </div>
         <div class="gstep-pattern"><strong style="color:#dc2626;">받침 없음</strong>: 동사 + <span class="accent">ㄴ 덕분에</span> &nbsp;|&nbsp; <strong style="color:#16a34a;">받침 있음</strong>: 동사 + <span class="accent">은 덕분에</span><small><strong style="color:#dc2626;"><span lang="en" translate="yes">No final consonant</span></strong><span lang="en" translate="yes">: Verb +</span> <span class="accent">ㄴ 덕분에</span> &nbsp;|&nbsp; <strong style="color:#16a34a;"><span lang="en" translate="yes">With</span> 받침</strong><span lang="en" translate="yes">: Verb +</span> <span class="accent">은 덕분에</span></small></div>
-        <table class="gstep-table">
+        <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:30%"><span lang="en" translate="yes">Dictionary</span><br>사전형</th><th style="width:30%"><span lang="en" translate="yes">Combined</span><br>결합형</th><th style="width:40%"><span lang="en" translate="yes">Meaning</span><br>의미</th></tr></thead>
             <tbody>
                 <tr><td><strong>도와주다</strong></td><td><strong>도와준 덕분에</strong></td><td><span lang="en" translate="yes">thanks to (someone's) helping</span></td></tr>
                 <tr><td><strong>가르치다</strong></td><td><strong>가르친 덕분에</strong></td><td><span lang="en" translate="yes">thanks to (someone's) teaching</span></td></tr>
                 <tr><td><strong>읽다</strong></td><td><strong>읽은 덕분에</strong></td><td><span lang="en" translate="yes">thanks to (someone's) reading</span></td></tr>
             </tbody>
-        </table>
+        </table></div>
         <blockquote>
             <strong>친구가 도와</strong><strong>준 덕분에</strong> <strong>일을 빨리 끝냈습니다</strong>.<br><small lang="en" translate="yes">(Thanks to my friend's help, I finished early.)</small>
         </blockquote>
@@ -473,7 +481,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(원인 + 대상) + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Cause + Target) + Predicate (Verb)</span></th></tr>
@@ -485,7 +493,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>the TOPIK exam</strong></td><td class="exp-role">부사어(대상)<br><small><span lang="en" translate="yes">Adverbial (Target)</span></small></td><td class="exp-form"><strong>토픽 시험에</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>passed</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>합격했습니다</strong></td><td><strong>합격하다</strong> → <strong>합격했습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
     </div>
 </div>
 
@@ -516,7 +524,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:40%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 부사어(원인) + 주어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Adverbial (Cause) + Subject + Predicate (Verb)</span></th></tr>
@@ -527,7 +535,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>The world</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>세상이</strong></td><td><strong>세상</strong> + <strong>이</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>became convenient</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>편리해졌습니다</strong></td><td><strong>편리하다 → 편리하 + 여지다 → 편리해지다 → 편리해지 + 었습니다 → 편리해졌습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
     </div>
 </div>
 

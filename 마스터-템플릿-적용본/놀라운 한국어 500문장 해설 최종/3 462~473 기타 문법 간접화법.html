@@ -392,6 +392,14 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .sl-all-btn:hover{background:#dbeafe;}
 .sl-all-btn.playing{background:#fee2e2;border-color:#fecaca;color:#991b1b;}
 .sentence-list .sentence-item.sl-now{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,0.25);}
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 </style>
 </head>
 <body>
@@ -469,7 +477,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             </div>
         </div>
         <div style="font-size:0.85rem;font-weight:700;color:#92400e;margin:16px 0 6px;">문장 종류별 간접화법 어미 <small style="font-weight:500;color:#b45309;" lang="en" translate="yes">indirect endings by sentence type</small></div>
-        <table class="gstep-table"><thead><tr><th>문장 종류<br><small lang="en" translate="yes">Type</small></th><th>간접 어미<br><small lang="en" translate="yes">Ending</small></th><th>예: 직접 → 간접<br><small lang="en" translate="yes">Direct → Indirect</small></th></tr></thead><tbody><tr><td><span style="display:inline-block;padding:4px 14px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.9rem;">평서문</span><br><small lang="en" translate="yes">Declarative</small></td><td><span class="accent">~다고</span> 하다</td><td><strong>"비가 옵니다" → 비가 <span class="accent">온다고</span> 합니다</strong><br><small lang="en" translate="yes"><em>(It's raining → He says it's raining)</em></small></td></tr><tr><td><span style="display:inline-block;padding:4px 14px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.9rem;">이다</span><br><small lang="en" translate="yes">Copula (N<span lang="ko" translate="no">이다</span>)</small></td><td><span class="accent">~(이)라고</span> 하다</td><td><strong>"학생입니다" → 학생<span class="accent">이라고</span> 합니다</strong><br><small lang="en" translate="yes"><em>(I'm a student → He says he is a student)</em></small></td></tr><tr><td><span style="display:inline-block;padding:4px 14px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.9rem;">명령문</span><br><small lang="en" translate="yes">Imperative</small></td><td><span class="accent">~(으)라고</span> 하다</td><td><strong>"오세요" → <span class="accent">오라고</span> 합니다</strong><br><small lang="en" translate="yes"><em>(Please come → He tells me to come)</em></small></td></tr><tr><td><span style="display:inline-block;padding:4px 14px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.9rem;">의문문</span><br><small lang="en" translate="yes">Question</small></td><td><span class="accent">~냐고</span> 하다</td><td><strong>"옵니까?" → <span class="accent">오냐고</span> 합니다</strong><br><small lang="en" translate="yes"><em>(Are you coming? → He asks if I'm coming)</em></small></td></tr><tr><td><span style="display:inline-block;padding:4px 14px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.9rem;">청유문</span><br><small lang="en" translate="yes">Propositive</small></td><td><span class="accent">~자고</span> 하다</td><td><strong>"같이 갑시다" → 같이 <span class="accent">가자고</span> 합니다</strong><br><small lang="en" translate="yes"><em>(Let's go together → He suggests going together)</em></small></td></tr></tbody></table>
+        <div class="tbl-scroll"><table class="gstep-table"><thead><tr><th>문장 종류<br><small lang="en" translate="yes">Type</small></th><th>간접 어미<br><small lang="en" translate="yes">Ending</small></th><th>예: 직접 → 간접<br><small lang="en" translate="yes">Direct → Indirect</small></th></tr></thead><tbody><tr><td><span style="display:inline-block;padding:4px 14px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.9rem;">평서문</span><br><small lang="en" translate="yes">Declarative</small></td><td><span class="accent">~다고</span> 하다</td><td><strong>"비가 옵니다" → 비가 <span class="accent">온다고</span> 합니다</strong><br><small lang="en" translate="yes"><em>(It's raining → He says it's raining)</em></small></td></tr><tr><td><span style="display:inline-block;padding:4px 14px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.9rem;">이다</span><br><small lang="en" translate="yes">Copula (N<span lang="ko" translate="no">이다</span>)</small></td><td><span class="accent">~(이)라고</span> 하다</td><td><strong>"학생입니다" → 학생<span class="accent">이라고</span> 합니다</strong><br><small lang="en" translate="yes"><em>(I'm a student → He says he is a student)</em></small></td></tr><tr><td><span style="display:inline-block;padding:4px 14px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.9rem;">명령문</span><br><small lang="en" translate="yes">Imperative</small></td><td><span class="accent">~(으)라고</span> 하다</td><td><strong>"오세요" → <span class="accent">오라고</span> 합니다</strong><br><small lang="en" translate="yes"><em>(Please come → He tells me to come)</em></small></td></tr><tr><td><span style="display:inline-block;padding:4px 14px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.9rem;">의문문</span><br><small lang="en" translate="yes">Question</small></td><td><span class="accent">~냐고</span> 하다</td><td><strong>"옵니까?" → <span class="accent">오냐고</span> 합니다</strong><br><small lang="en" translate="yes"><em>(Are you coming? → He asks if I'm coming)</em></small></td></tr><tr><td><span style="display:inline-block;padding:4px 14px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.9rem;">청유문</span><br><small lang="en" translate="yes">Propositive</small></td><td><span class="accent">~자고</span> 하다</td><td><strong>"같이 갑시다" → 같이 <span class="accent">가자고</span> 합니다</strong><br><small lang="en" translate="yes"><em>(Let's go together → He suggests going together)</em></small></td></tr></tbody></table></div>
     </div>
 </div>
 
@@ -481,7 +489,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             간접화법에서 <strong>저</strong>는 <strong>자신</strong>으로 바뀝니다 — 화자와 제삼자를 구분하기 위해.<br>
             <small lang="en" translate="yes"><em>In indirect speech, <strong><span lang="ko" translate="no">저</span></strong><br><small>(I)</small> becomes <strong><span lang="ko" translate="no">자신</span></strong> (oneself / himself) — to disambiguate the speaker from a third person.</em></small>
         </div>
-        <table class="gstep-table"><thead><tr><th><span lang="en" translate="yes">Direct</span> <span lang="ko" translate="no">(직접)</span></th><th><span lang="en" translate="yes">Indirect</span> <span lang="ko" translate="no">(간접)</span></th></tr></thead><tbody><tr><td><strong>그는</strong> "<strong>저는</strong> <strong>회사원입니다</strong>."<strong>라고 했습니다</strong><br><small lang="en" translate="yes">(He said, "I am an office worker.")</small></td><td><strong>그는</strong> <strong>자신이</strong> <strong>회사원이라고 했습니다</strong><br><small lang="en" translate="yes">(He said that he was an office worker.)</small></td></tr></tbody></table><div class="explain-note"><strong><span lang="en" translate="yes">Why</span> 자신?</strong> <span lang="en" translate="yes">If you say</span> <strong>그</strong> <span lang="en" translate="yes">instead, the listener can't tell if it's the same person or someone else.</span> <strong>자신</strong> = <strong><span lang="en" translate="yes">oneself</span></strong> <span lang="en" translate="yes">— clear self-reference.</span></div>
+        <div class="tbl-scroll"><table class="gstep-table"><thead><tr><th><span lang="en" translate="yes">Direct</span> <span lang="ko" translate="no">(직접)</span></th><th><span lang="en" translate="yes">Indirect</span> <span lang="ko" translate="no">(간접)</span></th></tr></thead><tbody><tr><td><strong>그는</strong> "<strong>저는</strong> <strong>회사원입니다</strong>."<strong>라고 했습니다</strong><br><small lang="en" translate="yes">(He said, "I am an office worker.")</small></td><td><strong>그는</strong> <strong>자신이</strong> <strong>회사원이라고 했습니다</strong><br><small lang="en" translate="yes">(He said that he was an office worker.)</small></td></tr></tbody></table></div><div class="explain-note"><strong><span lang="en" translate="yes">Why</span> 자신?</strong> <span lang="en" translate="yes">If you say</span> <strong>그</strong> <span lang="en" translate="yes">instead, the listener can't tell if it's the same person or someone else.</span> <strong>자신</strong> = <strong><span lang="en" translate="yes">oneself</span></strong> <span lang="en" translate="yes">— clear self-reference.</span></div>
     </div>
 </div>
 
@@ -516,7 +524,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 직접화법 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Direct Speech + Predicate (Verb)</span></th></tr>
@@ -527,7 +535,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>"The weather is too hot."</strong></td><td class="exp-role">직접화법<br><small><span lang="en" translate="yes">Direct Speech</span></small></td><td class="exp-form"><strong>"날씨가 너무 덥습니다."라고</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>said,</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>했습니다</strong></td><td><strong>하다</strong> → <strong>했습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -556,7 +564,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 간접화법 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Indirect Speech + Predicate (Verb)</span></th></tr>
@@ -567,7 +575,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>the weather was too hot</strong></td><td class="exp-role">간접화법<br><small><span lang="en" translate="yes">Indirect Speech</span></small></td><td class="exp-form"><strong>날씨가 너무 덥다고</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>said</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>했습니다</strong></td><td><strong>하다</strong> → <strong>했습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -596,7 +604,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 직접화법 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Direct Speech + Predicate (Verb)</span></th></tr>
@@ -607,7 +615,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>"I am an office worker."</strong></td><td class="exp-role">직접화법<br><small><span lang="en" translate="yes">Direct Speech</span></small></td><td class="exp-form"><strong>"저는 회사원입니다."라고</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>said,</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>했습니다</strong></td><td><strong>하다</strong> → <strong>했습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -636,7 +644,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 간접화법 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Indirect Speech + Predicate (Verb)</span></th></tr>
@@ -647,7 +655,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>that he was an office worker</strong></td><td class="exp-role">간접화법<br><small><span lang="en" translate="yes">Indirect Speech</span></small></td><td class="exp-form"><strong>자신이 회사원이라고</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>said</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>했습니다</strong></td><td><strong>하다</strong> → <strong>했습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
     </div>
 </div>
 
@@ -676,7 +684,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 간접목적어 + 직접화법 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Indirect Object + Direct Speech + Predicate (Verb)</span></th></tr>
@@ -688,7 +696,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>"Please come quickly."</strong></td><td class="exp-role">직접화법<br><small><span lang="en" translate="yes">Direct Speech</span></small></td><td class="exp-form"><strong>"빨리 오세요."라고</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>told</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>했습니다</strong></td><td><strong>하다</strong> → <strong>했습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -717,7 +725,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 간접목적어 + 간접화법 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Indirect Object + Indirect Speech + Predicate (Verb)</span></th></tr>
@@ -729,7 +737,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>to come quickly</strong></td><td class="exp-role">간접화법<br><small><span lang="en" translate="yes">Indirect Speech</span></small></td><td class="exp-form"><strong>빨리 오라고</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>told</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>했습니다</strong></td><td><strong>하다</strong> → <strong>했습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -758,7 +766,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 간접목적어 + 간접화법 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Indirect Object + Indirect Speech + Predicate (Verb)</span></th></tr>
@@ -770,7 +778,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>what time I would come tomorrow</strong></td><td class="exp-role">간접화법<br><small><span lang="en" translate="yes">Indirect Speech</span></small></td><td class="exp-form"><strong>내일 몇 시에 오냐고</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>asked</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>물었습니다</strong></td><td><strong>묻다</strong> → 묻 + 었습니다 → <strong>물었습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -801,7 +809,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 간접목적어 + 간접화법 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Indirect Object + Indirect Speech + Predicate (Verb)</span></th></tr>
@@ -813,7 +821,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>not to drink alcohol</strong></td><td class="exp-role">간접화법<br><small><span lang="en" translate="yes">Indirect Speech</span></small></td><td class="exp-form"><strong>술을 마시지 말라고</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>told</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>했습니다</strong></td><td><strong>하다</strong> → <strong>했습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -842,7 +850,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 간접목적어 + 직접화법 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Indirect Object + Direct Speech + Predicate (Verb)</span></th></tr>
@@ -854,7 +862,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>"Let's get married."</strong></td><td class="exp-role">직접화법<br><small><span lang="en" translate="yes">Direct Speech</span></small></td><td class="exp-form"><strong>"결혼합시다."라고</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>said</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>했습니다</strong></td><td><strong>하다</strong> → <strong>했습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -883,7 +891,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 간접목적어 + 간접화법 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Indirect Object + Indirect Speech + Predicate (Verb)</span></th></tr>
@@ -895,7 +903,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>to marry him</strong></td><td class="exp-role">간접화법<br><small><span lang="en" translate="yes">Indirect Speech</span></small></td><td class="exp-form"><strong>결혼하자고</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>asked</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>했습니다</strong></td><td><strong>하다</strong> → <strong>했습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -924,7 +932,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 간접화법 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Indirect Speech + Predicate (Verb)</span></th></tr>
@@ -935,7 +943,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>that she is busy now</strong></td><td class="exp-role">간접화법<br><small><span lang="en" translate="yes">Indirect Speech</span></small></td><td class="exp-form"><strong>지금 바쁘다고</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>said</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>했습니다</strong></td><td><strong>하다</strong> → <strong>했습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -964,7 +972,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 부사어(시간) + 간접화법 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Adverbial (Time) + Indirect Speech + Predicate (Verb)</span></th></tr>
@@ -975,7 +983,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>it will rain</strong></td><td class="exp-role">간접화법<br><small><span lang="en" translate="yes">Indirect Speech</span></small></td><td class="exp-form"><strong>비가 온다고</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>They say</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>합니다</strong></td><td></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>

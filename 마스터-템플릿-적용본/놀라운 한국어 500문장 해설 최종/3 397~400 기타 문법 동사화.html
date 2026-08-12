@@ -360,6 +360,14 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .sl-all-btn:hover{background:#dbeafe;}
 .sl-all-btn.playing{background:#fee2e2;border-color:#fecaca;color:#991b1b;}
 .sentence-list .sentence-item.sl-now{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,0.25);}
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 </style>
 </head>
 <body>
@@ -387,7 +395,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#78350f; background:#fffbeb; border-left:4px solid #b45309; border-radius:4px;">형용사(감정)를 동사로 만드는 법<br><small style="font-weight:600;"><span lang="en" translate="yes">Make a feeling adjective into a verb</span></small></h3>
         <div class="gstep-pattern"><span lang="ko" translate="no">형용사의 마지막 모음</span> <strong><span lang="ko" translate="no">ㅏ</span></strong>/<strong><span lang="ko" translate="no">ㅗ</span></strong> → <strong><span lang="ko" translate="no">아하다</span></strong> · <span lang="ko" translate="no">그 외</span> → <strong><span lang="ko" translate="no">어하다</span></strong><br><em lang="en" translate="yes">If the adjective's last vowel is <strong><span lang="ko" translate="no">ㅏ</span></strong>/<strong><span lang="ko" translate="no">ㅗ</span></strong> → <strong><span lang="ko" translate="no">아하다</span></strong>; otherwise → <strong><span lang="ko" translate="no">어하다</span></strong></em><small><span lang="en" translate="yes">Adjective +</span> <span class="accent">아/어하다</span></small></div>
         <div style="font-size:0.85rem;font-weight:700;color:#92400e;margin:16px 0 6px;">대표 감정 형용사 → 동사 <small style="font-weight:500;color:#b45309;" lang="en" translate="yes">Common feeling adjectives → verbs</small></div>
-        <table class="gstep-table">
+        <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:34%">형용사<br><small lang="en" translate="yes">Adjective</small></th><th style="width:30%">+ 어미<br><small lang="en" translate="yes">Ending</small></th><th>동사<br><small lang="en" translate="yes">Verb</small></th></tr></thead>
             <tbody>
                 <tr><td><strong>좋다</strong><br><small lang="en" translate="yes"><em>(good)</em></small></td><td>+ <span style="display:inline-block;padding:1px 8px;border-radius:6px;background:#fef3c7;color:#b45309;font-weight:800;">아하다</span> →</td><td><span class="accent">좋아하다</span><br><small lang="en" translate="yes"><em>(to like)</em></small></td></tr>
@@ -399,10 +407,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                 <tr><td><strong>부럽다</strong><br><small lang="en" translate="yes"><em>(enviable)</em></small></td><td>+ <span style="display:inline-block;padding:1px 8px;border-radius:6px;background:#fef3c7;color:#b45309;font-weight:800;">어하다</span> →</td><td><span class="accent">부러워하다</span><br><small lang="en" translate="yes"><em>(to envy)</em></small></td></tr>
                 <tr><td><strong>그립다</strong><br><small lang="en" translate="yes"><em>(missed)</em></small></td><td>+ <span style="display:inline-block;padding:1px 8px;border-radius:6px;background:#fef3c7;color:#b45309;font-weight:800;">어하다</span> →</td><td><span class="accent">그리워하다</span><br><small lang="en" translate="yes"><em>(to miss · long for)</em></small></td></tr>
             </tbody>
-        </table>
+        </table></div>
         <div style="margin-top:12px; background:#fffbeb; border:1px solid #fde68a; border-radius:12px; padding:13px 16px; box-shadow:0 2px 8px rgba(180,83,9,0.08);">
             <div style="font-weight:800; color:#92400e; margin-bottom:10px; font-size:0.95rem;">💡 받침 불규칙 <small style="font-weight:600; color:#b45309;" lang="en" translate="yes">· Irregular stems</small></div>
-            <table style="width:100%; border-collapse:collapse; font-size:0.92rem;">
+            <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; font-size:0.92rem;">
                 <tbody>
                     <tr style="border-bottom:1px solid #fde68a;">
                         <td style="padding:9px 6px; text-align:center; white-space:nowrap; width:22%;"><span style="display:inline-block; background:#fde68a; color:#92400e; font-weight:800; padding:3px 11px; border-radius:8px;">ㅂ 불규칙</span></td>
@@ -415,7 +423,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                         <td style="padding:9px 8px; line-height:1.7;">예쁘다 → 예<strong style="color:#1e40af;">뻐</strong>하다<br>슬프다 → 슬<strong style="color:#1e40af;">퍼</strong>하다</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
             <div style="margin-top:9px; font-size:0.82rem; color:#9ca3af; line-height:1.6;"><em lang="en" translate="yes"><span lang="ko" translate="no">ㅂ</span>-final adjectives change to <strong style="color:#1e40af;"><span lang="ko" translate="no">워</span></strong>; <strong style="color:#1e40af;"><span lang="ko" translate="no">ㅡ</span></strong> drops before <span lang="ko" translate="no">아/어</span>.</em></div>
         </div>
     </div>
@@ -472,7 +480,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Object + Predicate (Verb)</span></th></tr>
@@ -483,7 +491,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>him</strong></td><td class="exp-role">목적어<br><small><span lang="en" translate="yes">Object</span></small></td><td class="exp-form"><strong>그를</strong></td><td><strong>그</strong> + <strong>를</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>like</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>좋아합니다</strong></td><td><strong>좋다</strong> → <strong>좋</strong> + <strong>아하다</strong> → <strong>좋아하다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -513,7 +521,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Object + Predicate (Verb)</span></th></tr>
@@ -524,7 +532,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>me</strong></td><td class="exp-role">목적어<br><small><span lang="en" translate="yes">Object</span></small></td><td class="exp-form"><strong>저를</strong></td><td><strong>저</strong> + <strong>를</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>dislikes</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>싫어합니다</strong></td><td><strong>싫다</strong> → <strong>싫</strong> + <strong>어하다</strong> → <strong>싫어하다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -555,7 +563,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Object + Predicate (Verb)</span></th></tr>
@@ -566,7 +574,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>me</strong></td><td class="exp-role">목적어<br><small><span lang="en" translate="yes">Object</span></small></td><td class="exp-form"><strong>저를</strong></td><td><strong>저</strong> + <strong>를</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>adores</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>예뻐합니다</strong></td><td><strong>예쁘다</strong> → <strong>예쁘</strong> + <strong>어하다</strong> → <strong>예뻐하다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         <div class="explain-note"><strong>⚠️ '예뻐하다' = 예쁘다고 여겨 사랑스럽게 대하다</strong><br><small lang="en" translate="yes"><strong>'<span lang="ko" translate="no">예뻐하다</span>'</strong> = to adore / to think someone is pretty.</small><br><br><strong>예쁘다</strong> <small lang="en" translate="yes">(pretty)</small> → <strong>예뻐하다</strong> <small lang="en" translate="yes">(to adore)</small><br><br>상대방을 귀엽고 예쁘다고 여겨 사랑으로 대할 때 씁니다.<br><small lang="en" translate="yes">Used when treating someone with love because you find them cute or pretty.</small></div>
     </div>
 </div>
@@ -596,7 +604,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Object + Predicate (Verb)</span></th></tr>
@@ -607,7 +615,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>snakes</strong></td><td class="exp-role">목적어<br><small><span lang="en" translate="yes">Object</span></small></td><td class="exp-form"><strong>뱀을</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>is afraid of</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>무서워합니다</strong></td><td><strong>무섭다</strong> → <strong>무섭</strong> + <strong>어하다</strong> → <strong>무서워하다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>

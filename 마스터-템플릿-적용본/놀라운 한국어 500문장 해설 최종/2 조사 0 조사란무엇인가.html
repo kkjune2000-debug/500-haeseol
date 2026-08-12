@@ -340,7 +340,7 @@ blockquote .bq-line + .bq-line{margin-top:9px;}
 <p class="ko">조사는 크게 두 가지 일을 합니다.</p>
 <p class="en" lang="en" translate="yes">Particles do two kinds of work.</p>
 
-<table>
+<div class="tbl-scroll"><table>
 <thead><tr>
 <th>하는 일<span class="gloss" lang="en" translate="yes">What it marks</span></th>
 <th>조사<span class="gloss" lang="en" translate="yes">Particles</span></th>
@@ -353,7 +353,7 @@ blockquote .bq-line + .bq-line{margin-top:9px;}
 <tr><td><strong>낱말과 낱말을 잇기</strong><span class="gloss" lang="en" translate="yes">Joining words together</span></td>
 <td><span class="particle">와/과</span> <span class="particle">나/이나</span></td>
 <td>커피<span class="particle">와</span> 빵, 커피<span class="particle">나</span> 빵</td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <hr>
 
@@ -365,7 +365,7 @@ blockquote .bq-line + .bq-line{margin-top:9px;}
 <div class="bq-line">사과<span class="particle">는</span> 맛있습니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;사과는 맛있습니다.&#39;)" title="Listen">🔊</button> <span style="opacity:.55">✗ 사과은</span><span class="gloss" lang="en" translate="yes">The vowel-ending word takes <span lang="ko" translate="no">는</span>.</span></div>
 </blockquote>
 
-<table>
+<div class="tbl-scroll"><table>
 <thead><tr>
 <th>받침에 따라 바뀜<span class="gloss" lang="en" translate="yes">Changes with <span lang="ko" translate="no">받침</span></span></th>
 <th>언제나 같음<span class="gloss" lang="en" translate="yes">Always the same</span></th>
@@ -375,7 +375,7 @@ blockquote .bq-line + .bq-line{margin-top:9px;}
 <td><span class="particle">은/는</span> <span class="particle">이/가</span> <span class="particle">을/를</span> <span class="particle">와/과</span> <span class="particle">나/이나</span></td>
 <td><span class="particle">에</span> <span class="particle">에서</span> <span class="particle">에게</span></td>
 </tr>
-</tbody></table>
+</tbody></table></div>
 
 <p class="ko">받침이 있는지 없는지는 시제에서 익힌 그대로 보면 됩니다.</p>
 <p class="en" lang="en" translate="yes">Judging the final consonant works exactly as it did in the tense units.</p>
@@ -480,6 +480,14 @@ blockquote .bq-line + .bq-line{margin-top:9px;}
     outline:2px solid rgba(37,99,235,.45); outline-offset:1px; border-radius:6px; }
 .res:active, .chip-decl:active, .chip-ques:active, .rs-result:active, .cb-word:active {
     transform:scale(0.97); }
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 </style>
 <div class="rule-summary">
   <div class="rs-head">

@@ -378,6 +378,14 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .sl-all-btn:hover{background:#dbeafe;}
 .sl-all-btn.playing{background:#fee2e2;border-color:#fecaca;color:#991b1b;}
 .sentence-list .sentence-item.sl-now{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,0.25);}
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 </style>
 </head>
 <body>
@@ -420,14 +428,14 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             같은 <strong>~겠다</strong>가 공감(타인) · 의지(본인) · 예측(날씨·뉴스) 세 용도로 쓰입니다.<br>
             <small lang="en" translate="yes"><em>The same <strong>~<span lang="ko" translate="no">겠다</span></strong> works as empathy (toward others), strong determination (about oneself), or weather/news prediction.</em></small>
         </div>
-        <table class="gstep-table">
+        <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:20%"><span lang="en" translate="yes">Meaning</span><br>의미</th><th style="width:42%"><span lang="en" translate="yes">Use</span><br>용법</th><th><span lang="en" translate="yes">Example</span><br>예</th></tr></thead>
             <tbody>
                 <tr><td><strong><span lang="en" translate="yes">① Empathy</span></strong> (<strong>공감</strong>)</td><td><span lang="en" translate="yes">Guess about another's feeling/situation</span><br><strong>타인의 감정</strong>·<strong>상황 추측</strong></td><td><strong>기분이 좋</strong><span class="accent">겠습니다</span><span class="gloss" lang="en" translate="yes">You must feel good</span></td></tr>
                 <tr><td><strong><span lang="en" translate="yes">② Strong intention</span></strong> (<strong>의지</strong>)</td><td><span lang="en" translate="yes">Speaker's firm resolution</span><br><strong>화자의 강한 의지</strong></td><td><strong>제가 하</strong><span class="accent">겠습니다</span><span class="gloss" lang="en" translate="yes">I will do it</span></td></tr>
                 <tr><td><strong><span lang="en" translate="yes">③ Prediction</span></strong> (<strong>예측</strong>)</td><td><span lang="en" translate="yes">Weather / news forecast</span><br><strong>날씨</strong>·<strong>뉴스 예보</strong></td><td><strong>내일 비가 오</strong><span class="accent">겠습니다</span><span class="gloss" lang="en" translate="yes">It will rain tomorrow</span></td></tr>
             </tbody>
-        </table>
+        </table></div>
     </div>
 </div>
 
@@ -482,7 +490,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 서술어(공감)<br><span lang="en" translate="yes">Korean order: Subject + Predicate(Empathy)</span></th></tr>
@@ -492,7 +500,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>feeling</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>기분이</strong></td><td><strong>기분</strong> + <strong>이</strong></td></tr>
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>must feel good</strong></td><td class="exp-role">서술어(공감)<br><small><span lang="en" translate="yes">Predicate (Empathy)</span></small></td><td class="exp-form"><strong>좋겠습니다</strong></td><td><strong>좋다</strong> → <strong>좋</strong> + <strong>겠습니다</strong> → <strong>좋겠습니다</strong></td></tr>
             </tbody>
-        </table>
+        </table></div>
     </div>
 </div>
 
@@ -522,7 +530,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 서술어(공감)<br><span lang="en" translate="yes">Korean order: Subject + Predicate(Empathy)</span></th></tr>
@@ -532,7 +540,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>heart</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>마음이</strong></td><td><strong>마음</strong> + <strong>이</strong></td></tr>
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>must be hurting</strong></td><td class="exp-role">서술어(공감)<br><small><span lang="en" translate="yes">Predicate (Empathy)</span></small></td><td class="exp-form"><strong>아프겠습니다</strong></td><td><strong>아프다</strong> → <strong>아프</strong> + <strong>겠습니다</strong> → <strong>아프겠습니다</strong></td></tr>
             </tbody>
-        </table>
+        </table></div>
     </div>
 </div>
 
@@ -562,7 +570,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 서술어(공감)<br><span lang="en" translate="yes">Korean order: Subject + Predicate(Empathy)</span></th></tr>
@@ -572,7 +580,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>stomach</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>배가</strong></td><td><strong>배</strong> + <strong>가</strong></td></tr>
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>must be hungry</strong></td><td class="exp-role">서술어(공감)<br><small><span lang="en" translate="yes">Predicate (Empathy)</span></small></td><td class="exp-form"><strong>고프겠습니다</strong></td><td><strong>고프다</strong> → <strong>고프</strong> + <strong>겠습니다</strong> → <strong>고프겠습니다</strong></td></tr>
             </tbody>
-        </table>
+        </table></div>
     </div>
 </div>
 
@@ -600,7 +608,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 서술어(공감)<br><span lang="en" translate="yes">Korean order: Predicate(Empathy)</span></th></tr>
@@ -609,7 +617,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tbody>
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>must be happy</strong></td><td class="exp-role">서술어(공감)<br><small><span lang="en" translate="yes">Predicate (Empathy)</span></small></td><td class="exp-form"><strong>기쁘겠습니다</strong></td><td><strong>기쁘다</strong> → <strong>기쁘</strong> + <strong>겠습니다</strong> → <strong>기쁘겠습니다</strong></td></tr>
             </tbody>
-        </table>
+        </table></div>
         <div class="explain-note">
             <strong>주어 생략:</strong> 한국어에서는 화자·청자가 명확한 일상 대화에서 주어를 자주 생략합니다. 영어 <strong><span lang="en" translate="yes">You</span></strong> → 한국어는 <strong>(당신은) 기쁘겠습니다</strong>에서 <strong>당신은</strong> 생략 자연스러움.<br>
             <small lang="en" translate="yes"><em>Subject omission: Korean often drops the subject in everyday conversation when speaker and listener are clear from context. English "You" → in Korean, dropping <strong><span lang="ko" translate="no">당신은</span></strong> as in "(<span lang="ko" translate="no">당신은</span>) <span lang="ko" translate="no">기쁘겠습니다</span>" feels natural.</em></small>
@@ -643,7 +651,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 서술어(공감)<br><span lang="en" translate="yes">Korean order: Subject + Predicate(Empathy)</span></th></tr>
@@ -653,7 +661,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>worry</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>걱정이</strong></td><td><strong>걱정</strong> + <strong>이</strong></td></tr>
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>must be many</strong></td><td class="exp-role">서술어(공감)<br><small><span lang="en" translate="yes">Predicate (Empathy)</span></small></td><td class="exp-form"><strong>많겠습니다</strong></td><td><strong>많다</strong> → <strong>많</strong> + <strong>겠습니다</strong> → <strong>많겠습니다</strong></td></tr>
             </tbody>
-        </table>
+        </table></div>
     </div>
 </div>
 

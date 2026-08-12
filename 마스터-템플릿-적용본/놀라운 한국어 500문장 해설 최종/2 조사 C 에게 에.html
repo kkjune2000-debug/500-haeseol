@@ -584,7 +584,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <button class="pr80-btn primary" onclick="prJRevealAll()">💡 전체 정답<span class="gloss" lang="en" translate="yes">All answers</span></button>
     </div>
   </div>
-  <table><thead><tr><th style="width:6%">#</th><th style="text-align:left;">단어<span class="gloss" lang="en" translate="yes">Word</span></th><th>단어 + 에게/에</th><th style="width:18%"></th></tr></thead><tbody id="prJBody"></tbody></table>
+  <div class="tbl-scroll"><table><thead><tr><th style="width:6%">#</th><th style="text-align:left;">단어<span class="gloss" lang="en" translate="yes">Word</span></th><th>단어 + 에게/에</th><th style="width:18%"></th></tr></thead><tbody id="prJBody"></tbody></table></div>
 </div>
 <script>
 (function(){
@@ -649,6 +649,14 @@ input[readonly] + .jm-spk{display:inline-block;}
     outline:2px solid rgba(37,99,235,.45); outline-offset:1px; border-radius:6px; }
 .res:active, .chip-decl:active, .chip-ques:active, .rs-result:active, .cb-word:active {
     transform:scale(0.97); }
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 </style>
 
 <div class="fc-section">

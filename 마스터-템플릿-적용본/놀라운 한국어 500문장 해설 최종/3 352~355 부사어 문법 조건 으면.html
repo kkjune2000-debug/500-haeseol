@@ -360,6 +360,14 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .sl-all-btn:hover{background:#dbeafe;}
 .sl-all-btn.playing{background:#fee2e2;border-color:#fecaca;color:#991b1b;}
 .sentence-list .sentence-item.sl-now{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,0.25);}
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 </style>
 </head>
 <body>
@@ -403,7 +411,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">동사 · 형용사 + ~(으)면</h3>
         <div style="overflow:hidden;border-radius:14px;box-shadow:0 4px 16px rgba(6,78,59,0.14);border:1px solid #a7f3d0;margin-top:12px;">
-        <table style="width:100%;border-collapse:collapse;font-size:0.92rem;background:#fff;">
+        <div class="tbl-scroll"><table style="width:100%;border-collapse:collapse;font-size:0.92rem;background:#fff;">
             <thead>
                 <tr style="background:linear-gradient(135deg,#047857,#10b981);color:#fff;">
                     <th style="padding:13px 10px;text-align:center;font-weight:800;">동사·형용사<br><small style="font-weight:600;opacity:0.9;" lang="en" translate="yes">Verb · Adj</small></th>
@@ -450,7 +458,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                     <td style="padding:13px 10px;text-align:center;"><strong style="color:#064e3b;">작으면</strong></td>
                 </tr>
             </tbody>
-        </table>
+        </table></div>
         </div>
     </div>
 </div>
@@ -467,7 +475,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
         </div>
         <div class="explain-note">
             <strong>의미 비교 <span lang="en" translate="yes">(Use comparison)</span></strong>
-            <table style="width:100%; border-collapse:collapse; margin-top:10px; background:#fff; border-radius:6px; overflow:hidden; font-size:0.92rem;">
+            <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:10px; background:#fff; border-radius:6px; overflow:hidden; font-size:0.92rem;">
                 <thead>
                     <tr style="background:linear-gradient(135deg,#047857,#10b981); color:#fff;">
                         <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857; width:24%;">의미<br><small lang="en" translate="yes">Use</small></th>
@@ -478,7 +486,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                     <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047857;"><strong>가정</strong><br><small lang="en" translate="yes"><em>hypothesis</em></small></td><td style="padding:10px; border-bottom:1px solid #d1fae5;">돈을 많이 <strong>벌면</strong> 세계 여행을 하고 싶습니다.<br><small lang="en" translate="yes"><em>If I earn a lot of money, I want to travel the world.</em></small></td></tr>
                     <tr style="background:#ecfdf5;"><td style="padding:10px; text-align:center; color:#047857;"><strong>조건</strong><br><small lang="en" translate="yes"><em>condition</em></small></td><td style="padding:10px;">비밀번호를 <strong>입력하면</strong> 문이 열립니다.<br><small lang="en" translate="yes"><em>If you enter the password, the door opens.</em></small></td></tr>
                 </tbody>
-            </table>
+            </table></div>
         </div>
     </div>
 </div>
@@ -516,7 +524,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(조건) + 목적어 + 서술어(희망)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Condition) + Object + Predicate (Hope)</span></th></tr>
@@ -528,7 +536,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>travel the world</strong></td><td class="exp-role">목적어<br><small><span lang="en" translate="yes">Object</span></small></td><td class="exp-form"><strong>세계 여행을</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>want to</strong></td><td class="exp-role">서술어(희망)<br><small><span lang="en" translate="yes">Predicate (Hope)</span></small></td><td class="exp-form"><strong>하고 싶습니다</strong></td><td></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -560,7 +568,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(조건) + 서술절<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Condition) + Predicate Clause</span></th></tr>
@@ -571,10 +579,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>If I drink coffee</strong></td><td class="exp-role">부사어(조건)<br><small><span lang="en" translate="yes">Adverbial (Condition)</span></small></td><td class="exp-form"><strong>커피를 마시면</strong></td><td><strong>마시다</strong> → <strong>마시</strong> + <strong>면</strong> → <strong>마시면</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>can't sleep</strong></td><td class="exp-role">서술절<br><small><span lang="en" translate="yes">Predicate Clause</span></small></td><td class="exp-form"><strong>잠이 안 옵니다</strong></td><td><strong>잘 수 없습니다 = 잠이 안 옵니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         <div style="margin-top:14px;background:linear-gradient(135deg,#f0f9ff 0%,#e0f2fe 100%);border:1px solid #bae6fd;border-left:4px solid #0284c7;border-radius:10px;padding:14px 18px;box-shadow:0 1px 3px rgba(2,132,199,0.05);">
             <div style="font-weight:800;color:#075985;margin-bottom:10px;font-size:0.95rem;">😴 잠이 오다 / 잠이 들다 — 잠 표현<span class="gloss" lang="en" translate="yes">sleep idioms</span></div>
-            <table style="width:100%;border-collapse:collapse;font-size:0.92rem;background:#fff;border-radius:8px;overflow:hidden;">
+            <div class="tbl-scroll"><table style="width:100%;border-collapse:collapse;font-size:0.92rem;background:#fff;border-radius:8px;overflow:hidden;">
                 <thead>
                     <tr style="background:#e0f2fe;color:#075985;">
                         <th style="padding:8px 12px;text-align:left;border-bottom:1px solid #bae6fd;width:40%;">한국어</th>
@@ -595,7 +603,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                         <td style="padding:8px 12px;color:#475569;"><span lang="en" translate="yes">fall asleep —</span> 잠든 상태가 됨 (≠ <strong>잠이 오다</strong> <span lang="en" translate="yes">feel sleepy)</span></td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
             <div style="margin-top:10px;padding:8px 12px;background:#fff;border:1px dashed #bae6fd;border-radius:6px;font-size:0.88rem;color:#475569;">⚠️ <span lang="en" translate="yes">Negative of</span> <strong>자다</strong> (<strong><span lang="ko" translate="no">안 자다</span></strong>) <span lang="en" translate="yes">= a deliberate refusal to sleep.</span> <strong>잠이 안 오다</strong> <span lang="en" translate="yes">= wanting to sleep but unable to.</span></div>
         </div>
     </div>
@@ -629,7 +637,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 부사어(조건) + 목적어 + 서술어(가능)<br><span lang="en" translate="yes">Korean order: Adverbial (Condition) + Object + Predicate (Ability)</span></th></tr>
@@ -639,7 +647,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>If you are a member</strong></td><td class="exp-role">부사어(조건)<br><small><span lang="en" translate="yes">Adverbial (Condition)</span></small></td><td class="exp-form"><strong>회원이면</strong></td><td></td></tr>
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>you can get a discount</strong></td><td class="exp-role">목적어 + 서술어(가능)<br><small><span lang="en" translate="yes">Object + Predicate (Ability)</span></small></td><td class="exp-form"><strong>할인을 받을 수 있습니다</strong></td><td></td></tr>
             </tbody>
-        </table>
+        </table></div>
     </div>
 </div>
 
@@ -670,7 +678,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 부사어(조건) + 주어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Adverbial (Condition) + Subject + Predicate (Verb)</span></th></tr>
@@ -681,7 +689,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>the door</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>문이</strong></td><td><strong>문</strong> + <strong>이</strong></td></tr>
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>will open</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>열립니다</strong></td><td></td></tr>
             </tbody>
-        </table>
+        </table></div>
         <div style="margin-top:14px;background:linear-gradient(135deg,#eef2ff 0%,#e0e7ff 100%);border:1px solid #c7d2fe;border-left:4px solid #4f46e5;border-radius:10px;padding:14px 18px;box-shadow:0 1px 3px rgba(79,70,229,0.05);">
             <div style="font-weight:800;color:#3730a3;margin-bottom:10px;font-size:0.95rem;">🔢 비밀번호 — 한자 합성어<span class="gloss" lang="en" translate="yes">Sino-Korean compound</span></div>
             <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px 12px;">

@@ -361,6 +361,14 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .sl-all-btn:hover{background:#dbeafe;}
 .sl-all-btn.playing{background:#fee2e2;border-color:#fecaca;color:#991b1b;}
 .sentence-list .sentence-item.sl-now{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,0.25);}
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 </style>
 </head>
 <body>
@@ -483,7 +491,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어절(목적어 + 주어) + 서술어(형용사)<br><span lang="en" translate="yes">Korean order: Subject Clause (Object + Subject) + Predicate (Adjective)</span></th></tr>
@@ -494,7 +502,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>Learning</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>배우는 것은</strong></td><td><strong>배우다</strong> → <strong>배우</strong> + <strong>는 것</strong> → <strong>배우는 것</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>is fun</strong></td><td class="exp-role">서술어(형용사)<br><small><span lang="en" translate="yes">Predicate (Adjective)</span></small></td><td class="exp-form"><strong>재미있습니다</strong></td><td><strong>재미있다</strong> → <strong>재미있</strong> + <strong>습니다</strong> → <strong>재미있습니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -524,7 +532,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Object + Predicate (Verb)</span></th></tr>
@@ -535,7 +543,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>cooking</strong></td><td class="exp-role">목적어<br><small><span lang="en" translate="yes">Object</span></small></td><td class="exp-form"><strong>요리하는 것을</strong></td><td><strong>요리하다</strong> → <strong>요리하</strong> + <strong>는 것</strong> → <strong>요리하는 것</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>likes</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>좋아합니다</strong></td><td><strong>좋아하다</strong> → <strong>좋아하</strong> + <strong>ㅂ니다</strong> → <strong>좋아합니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -570,7 +578,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 부사어(시간) + 주어 + 서술어<br><span lang="en" translate="yes">Korean order: Adverbial (Time) + Subject + Predicate</span></th></tr>
@@ -581,7 +589,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>speaking, listening, reading, and writing tests</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>말하기, 듣기, 읽기, 쓰기 시험이</strong></td><td><strong>말하다</strong> → <strong>말하</strong> + <strong>기</strong> → <strong>말하기</strong><br><strong>듣다</strong> → <strong>듣</strong> + <strong>기</strong> → <strong>듣기</strong><br><strong>읽다</strong> → <strong>읽</strong> + <strong>기</strong> → <strong>읽기</strong><br><strong>쓰다</strong> → <strong>쓰</strong> + <strong>기</strong> → <strong>쓰기</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>we have</strong></td><td class="exp-role">서술어<br><small><span lang="en" translate="yes">Predicate</span></small></td><td class="exp-form"><strong>있습니다</strong></td><td><strong>시험이 있다</strong> = 시험이 존재한다 → 시험 일정이 있다</td></tr>
         </tbody>
-        </table>
+        </table></div>
         <div class="explain-note"><strong>⚠️ '~기'는 과목, 운동 종목, 계획에 씁니다.</strong><br><small lang="en" translate="yes">~<span lang="ko" translate="no">기</span> is used for school subjects, sports, and plans.</small><br><br> <strong>과목</strong> <small lang="en" translate="yes">(school subjects)</small><br> 말하다 → 말하<strong>기</strong> <small lang="en" translate="yes">(speaking)</small> &nbsp;|&nbsp; 듣다 → 듣<strong>기</strong> <small lang="en" translate="yes">(listening)</small><br> 읽다 → 읽<strong>기</strong> <small lang="en" translate="yes">(reading)</small> &nbsp;|&nbsp; 쓰다 → 쓰<strong>기</strong> <small lang="en" translate="yes">(writing)</small><br><br> 이 네 가지는 TOPIK과 한국어 시험에서 평가하는 언어 기능입니다.<br> <small lang="en" translate="yes">These four are the language skills assessed in TOPIK and Korean tests.</small><br><br> <strong>스포츠 종목</strong> <small lang="en" translate="yes">(sports)</small><br> 걷<strong>기</strong> <small lang="en" translate="yes">(walking)</small> &nbsp;|&nbsp; 달리<strong>기</strong> <small lang="en" translate="yes">(running)</small><br> 높이 뛰<strong>기</strong> <small lang="en" translate="yes">(high jump)</small> &nbsp;|&nbsp; 던지<strong>기</strong> <small lang="en" translate="yes">(throwing)</small><br><br> <strong>계획</strong> <small lang="en" translate="yes">(plans)</small><br> 살 빼<strong>기</strong> <small lang="en" translate="yes">(losing weight)</small> &nbsp;|&nbsp; 여행하<strong>기</strong> <small lang="en" translate="yes">(traveling)</small> &nbsp;|&nbsp; 이사하<strong>기</strong> <small lang="en" translate="yes">(moving)</small></div>
     </div>
 </div>
@@ -611,7 +619,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 서술어<br><span lang="en" translate="yes">Korean order: Subject + Predicate</span></th></tr>
@@ -621,7 +629,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>Love</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>사랑은</strong></td><td><strong>사랑</strong> + <strong>은</strong></td></tr>
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>is waiting</strong></td><td class="exp-role">서술어<br><small><span lang="en" translate="yes">Predicate</span></small></td><td class="exp-form"><strong>기다림입니다</strong></td><td><strong>기다리다</strong> → <strong>기다리</strong> + <strong>ㅁ</strong> → <strong>기다림</strong></td></tr>
             </tbody>
-        </table>
+        </table></div>
         <div class="explain-note"><strong>⚠️ '~ㅁ/음'은 요약·성취·추상 명사를 만들 때 씁니다.</strong><br><small lang="en" translate="yes">~<span lang="ko" translate="no">ㅁ/음</span> makes summary, achievement, and abstract nouns.</small><br><br> <strong>받침</strong> X → 어간 + <strong>ㅁ</strong> : 기다리다 → 기다<strong>림</strong> <small lang="en" translate="yes">(waiting)</small><br> <strong>받침</strong> O → 어간 + <strong>음</strong> : 죽다 → 죽<strong>음</strong> <small lang="en" translate="yes">(death)</small><br><br> 기다리다 → 기다<strong>림</strong> <small lang="en" translate="yes">(waiting)</small> &nbsp;|&nbsp; 슬프다 → 슬<strong>픔</strong> <small lang="en" translate="yes">(sadness)</small><br> 아프다 → 아<strong>픔</strong> <small lang="en" translate="yes">(pain)</small> &nbsp;|&nbsp; 즐겁다 → 즐거<strong>움</strong> <small lang="en" translate="yes">(joy)</small></div>
     </div>
 </div>

@@ -364,6 +364,14 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .sl-all-btn:hover{background:#dbeafe;}
 .sl-all-btn.playing{background:#fee2e2;border-color:#fecaca;color:#991b1b;}
 .sentence-list .sentence-item.sl-now{border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,0.25);}
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 </style>
 </head>
 <body>
@@ -393,7 +401,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 '<strong>얼마나 자주</strong>' 하는지를 나타내는 말이 <strong>빈도부사</strong>입니다. 자주 하는 것부터 전혀 안 하는 것까지 순서로 외우면 쉽습니다.<br>
             <small lang="en" translate="yes"><em>Frequency adverbs tell <strong>how often</strong> something happens — from "always" at the top down to "never." Learn them in order.</em></small>
         </div>
-        <table class="gstep-table">
+        <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:26%">빈도<br><small lang="en" translate="yes">How often</small></th><th style="width:30%">부사<br><small lang="en" translate="yes">Adverb</small></th><th>예문<br><small lang="en" translate="yes">Example</small></th></tr></thead>
             <tbody>
                 <tr><td style="letter-spacing:2px;font-size:1.05rem;"><span style="color:#f59e0b;">●●●●●</span></td><td><strong>항상</strong><br><small style="color:#9ca3af;" lang="en" translate="yes"><em>always</em></small></td><td><strong>항상 운동합니다</strong><br><small lang="en" translate="yes"><em>(I always exercise.)</em></small></td></tr>
@@ -402,7 +410,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                 <tr><td style="letter-spacing:2px;font-size:1.05rem;"><span style="color:#f59e0b;">●</span><span style="color:#e5e7eb;">●●●●</span></td><td><strong>거의</strong> <small style="color:#dc2626;font-weight:700;">+ 부정</small><br><small style="color:#9ca3af;" lang="en" translate="yes"><em>hardly ever</em></small></td><td><strong>거의 <span style="color:#dc2626;">안</span> 합니다</strong><br><small lang="en" translate="yes"><em>(I hardly ever do it.)</em></small></td></tr>
                 <tr><td style="letter-spacing:2px;font-size:1.05rem;"><span style="color:#e5e7eb;">●●●●●</span></td><td><strong>전혀</strong> <small style="color:#dc2626;font-weight:700;">+ 부정</small><br><small style="color:#9ca3af;" lang="en" translate="yes"><em>never</em></small></td><td><strong>전혀 <span style="color:#dc2626;">안</span> 합니다</strong><br><small lang="en" translate="yes"><em>(I never do it.)</em></small></td></tr>
             </tbody>
-        </table>
+        </table></div>
         <p style="margin:8px 2px 0; font-size:0.86rem; color:#9ca3af; line-height:1.6;">※ <strong style="color:#dc2626;">거의·전혀</strong>는 항상 <strong>부정</strong>(안 / 못 / 없다)과 함께 씁니다.<br><small lang="en" translate="yes"><em><span lang="ko" translate="no">거의</span> and <span lang="ko" translate="no">전혀</span> always pair with a negative (<span lang="ko" translate="no">안 / 못 / 없다</span>).</em></small></p>
     </div>
 </div>
@@ -438,7 +446,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <strong>~마다</strong>는 시간 명사 뒤에 붙어 "<strong>매 ~, ~마다</strong>"라는 뜻이 됩니다. 그 시간이 돌아올 때마다 반복되는 일을 나타냅니다.<br>
             <small lang="en" translate="yes"><em><strong>~<span lang="ko" translate="no">마다</span></strong> attaches to a time noun to mean "<strong>every ~</strong>" — something that repeats each time that period comes around.</em></small>
         </div>
-        <table class="gstep-table">
+        <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:34%">시간 명사<br><small lang="en" translate="yes">Time noun</small></th><th>~마다<br><small lang="en" translate="yes">Every ~</small></th></tr></thead>
             <tbody>
                 <tr><td><span style="display:inline-block;padding:4px 14px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.9rem;">아침</span><br><small style="display:block;margin-top:6px;color:#9ca3af;" lang="en" translate="yes">(morning)</small></td><td><strong>아침<span class="accent">마다</span></strong><br><small lang="en" translate="yes"><em>(every morning)</em></small></td></tr>
@@ -446,7 +454,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                 <tr><td><span style="display:inline-block;padding:4px 14px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.9rem;">주말</span><br><small style="display:block;margin-top:6px;color:#9ca3af;" lang="en" translate="yes">(weekend)</small></td><td><strong>주말<span class="accent">마다</span></strong><br><small lang="en" translate="yes"><em>(every weekend)</em></small></td></tr>
                 <tr><td><span style="display:inline-block;padding:4px 14px;border-radius:999px;background:linear-gradient(135deg,#fde68a,#fcd34d);color:#92400e;font-weight:800;font-size:0.9rem;">해</span><br><small style="display:block;margin-top:6px;color:#9ca3af;" lang="en" translate="yes">(year)</small></td><td><strong>해<span class="accent">마다</span></strong><br><small lang="en" translate="yes"><em>(every year)</em></small></td></tr>
             </tbody>
-        </table>
+        </table></div>
     </div>
 </div>
 
@@ -481,7 +489,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사 + 부사어(장소) + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverb + Adverbial (Place) + Predicate (Verb)</span></th></tr>
@@ -493,7 +501,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>to the beach</strong></td><td class="exp-role">부사어(장소)<br><small><span lang="en" translate="yes">Adverbial (Place)</span></small></td><td class="exp-form"><strong>해변에</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>goes</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>갑니다</strong></td><td><strong>가다</strong> → <strong>가</strong> + <strong>ㅂ니다</strong> → <strong>갑니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -524,7 +532,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사 + 부사어(장소) + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverb + Adverbial (Place) + Predicate (Verb)</span></th></tr>
@@ -536,7 +544,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>to the coffee shop</strong></td><td class="exp-role">부사어(장소)<br><small><span lang="en" translate="yes">Adverbial (Place)</span></small></td><td class="exp-form"><strong>커피숍에</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>goes</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>갑니다</strong></td><td><strong>가다</strong> → <strong>가</strong> + <strong>ㅂ니다</strong> → <strong>갑니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -566,7 +574,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사 + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverb + Object + Predicate (Verb)</span></th></tr>
@@ -577,7 +585,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>always</strong></td><td class="exp-role">부사<br><small><span lang="en" translate="yes">Adverb</span></small></td><td class="exp-form"><strong>항상</strong></td><td></td></tr>
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>sings</strong></td><td class="exp-role">목적어 + 서술어(동사)<br><small><span lang="en" translate="yes">Object + Predicate (Verb)</span></small></td><td class="exp-form"><strong>노래를 부릅니다</strong></td><td></td></tr>
             </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -607,7 +615,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(시간) + 목적어 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Time) + Object + Predicate (Verb)</span></th></tr>
@@ -618,7 +626,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>every morning</strong></td><td class="exp-role">부사어(시간)<br><small><span lang="en" translate="yes">Adverbial (Time)</span></small></td><td class="exp-form"><strong>아침마다</strong></td><td><strong>아침</strong> + <strong>마다</strong> → <strong>아침마다</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>exercises</strong></td><td class="exp-role">목적어 + 서술어(동사)<br><small><span lang="en" translate="yes">Object + Predicate (Verb)</span></small></td><td class="exp-form"><strong>운동을 합니다</strong></td><td><strong>운동하다</strong> = <strong>운동을 하다</strong> → <strong>운동을 합니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         
     </div>
 </div>
@@ -649,7 +657,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <div class="explain-box">
     <button class="explain-toggle" onclick="this.nextElementSibling.classList.toggle('shown')">📖 해설<span class="gloss" lang="en" translate="yes">Explanation</span></button>
     <div class="explain-content">
-        <table class="exp-table">
+        <div class="tbl-scroll"><table class="exp-table">
             <colgroup><col style="width:20%"><col style="width:18%"><col style="width:20%"><col style="width:42%"></colgroup>
             <thead>
                 <tr><th colspan="4" style="background:#ede9fe;color:#5b21b6;font-weight:700;text-align:center;padding:10px;font-size:0.95rem;letter-spacing:0.02em;text-transform:none;">한국어 어순: 주어 + 부사어(시간 + 장소) + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Time + Place) + Predicate (Verb)</span></th></tr>
@@ -661,12 +669,12 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>to a coffee shop</strong></td><td class="exp-role">부사어(장소)<br><small><span lang="en" translate="yes">Adverbial (Place)</span></small></td><td class="exp-form"><strong>커피숍에</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>goes</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>갑니다</strong></td><td><strong>가다</strong> → <strong>가</strong> + <strong>ㅂ니다</strong> → <strong>갑니다</strong></td></tr>
         </tbody>
-        </table>
+        </table></div>
         <div class="explain-note" style="background:linear-gradient(135deg,#ccfbf1 0%,#f0fdfa 100%);border-left:4px solid #0d9488;color:#115e59;">
             <strong>'~마다' ↔ '매~': 같은 의미, 두 어휘</strong><br>
             <small lang="en" translate="yes">'~<span lang="ko" translate="no">마다</span>' vs '<span lang="ko" translate="no">매</span>~': both mean "every [time unit]".</small><br>
             <span style="font-size:0.92rem;">시간 단위 명사 4종은 두 가지 방식으로 표현할 수 있습니다 — <strong>~마다 형</strong> 또는 <strong>매~ 형</strong>. (조사 '~마다'는 고유어입니다.)</span>
-            <table style="width:100%;border-collapse:collapse;font-size:0.92rem;margin-top:10px;">
+            <div class="tbl-scroll"><table style="width:100%;border-collapse:collapse;font-size:0.92rem;margin-top:10px;">
                 <thead>
                     <tr style="background:#99f6e4;">
                         <th style="padding:8px;border:1px solid #5eead4;text-align:center;color:#115e59;"><strong>~마다</strong> 형</th>
@@ -680,7 +688,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
                     <tr><td style="padding:8px;border:1px solid #5eead4;text-align:center;font-weight:800;color:#0f766e;background:#fff;"><strong>달마다</strong></td><td style="padding:8px;border:1px solid #5eead4;text-align:center;font-weight:800;color:#0f766e;background:#fff;"><strong>매월</strong> (每月)</td><td style="padding:8px;border:1px solid #5eead4;text-align:center;background:#fff;"><span lang="en" translate="yes">every month</span></td></tr>
                     <tr><td style="padding:8px;border:1px solid #5eead4;text-align:center;font-weight:800;color:#0f766e;background:#fff;"><strong>해마다</strong></td><td style="padding:8px;border:1px solid #5eead4;text-align:center;font-weight:800;color:#0f766e;background:#fff;"><strong>매년</strong> (每年)</td><td style="padding:8px;border:1px solid #5eead4;text-align:center;background:#fff;"><span lang="en" translate="yes">every year</span></td></tr>
                 </tbody>
-            </table>
+            </table></div>
             <div style="font-size:0.85rem;color:#134e4a;margin-top:8px;line-height:1.5;">두 형태 모두 같은 의미. 한자어 <strong>매~</strong>가 문어·격식 표현에서 약간 더 흔합니다 (예: 신문·공고). 일상 대화에서는 둘 다 자연스럽게 쓰입니다.</div>
         </div>
     </div>

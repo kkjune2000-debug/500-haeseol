@@ -581,7 +581,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <button class="pr80-btn primary" onclick="pr80RevealAll(this)">💡 전체 정답<span class="gloss" lang="en" translate="yes">All answers</span></button>
     </div>
   </div>
-  <table><thead><tr><th style="width:6%">#</th><th style="text-align:left;">기본형<span class="gloss" lang="en" translate="yes">Base</span></th><th>평서형<span class="gloss" lang="en" translate="yes">Statement</span></th><th>의문형<span class="gloss" lang="en" translate="yes">Question</span></th><th style="width:18%"></th></tr></thead><tbody id="pr80BodyA"></tbody></table>
+  <div class="tbl-scroll"><table><thead><tr><th style="width:6%">#</th><th style="text-align:left;">기본형<span class="gloss" lang="en" translate="yes">Base</span></th><th>평서형<span class="gloss" lang="en" translate="yes">Statement</span></th><th>의문형<span class="gloss" lang="en" translate="yes">Question</span></th><th style="width:18%"></th></tr></thead><tbody id="pr80BodyA"></tbody></table></div>
 </div>
 
 <style>
@@ -784,6 +784,14 @@ function pr80RevealAll(btn){var box=btn.closest('.pr80');box.querySelectorAll('.
   .fc-back{margin-top:6px;border:1px solid #3b82f6;}
   .fc-front{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
   .fc-flip-hint,.fc-tts{display:none;}
+}
+
+/* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
+   ★부모 상자에 걸면 세로로 잘린다(overflow-x 는 세로도 auto 로 만든다). 그래서 감싼다. */
+.tbl-scroll { max-width: 100%; }
+@media (max-width: 600px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 }
 </style>
 
