@@ -215,7 +215,8 @@
 .stem-da .sd-extra .sx-ko .da{background:#fbeeee;color:#9b5757;padding:1px 5px;border-radius:4px;font-weight:700;}
 .stem-da .sd-extra .sx-en{font-size:0.78rem;color:#94a3b8;font-style:italic;font-family:'Lato',sans-serif;line-height:1.45;margin-top:2px;}
 .stem-da .sd-extra .sx-examples{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
-.stem-da .sd-extra .sx-ex{background:#fafbfc;border:1px dashed #e2e8f0;border-radius:6px;padding:6px 10px;font-size:0.88rem;color:#475569;display:flex;align-items:baseline;gap:6px;}
+.stem-da .sd-extra /* ★한국어 위·영어 아래 — flex 를 가로로 두면 두 말이 한 줄에 붙는다 (2026-08-13 사용자 지적) */
+.sx-ex{background:#fafbfc;border:1px dashed #e2e8f0;border-radius:6px;padding:6px 10px;font-size:0.88rem;color:#475569;display:flex;flex-direction:column;align-items:flex-start;gap:2px;}
 .stem-da .sd-extra .sx-ex .ex-pred{color:#9b5757;font-weight:800;background:#fbeeee;padding:1px 5px;border-radius:4px;}
 .stem-da .sd-extra .sx-ex .ex-en{font-size:0.74rem;color:#94a3b8;font-style:italic;font-family:'Lato',sans-serif;}
 
