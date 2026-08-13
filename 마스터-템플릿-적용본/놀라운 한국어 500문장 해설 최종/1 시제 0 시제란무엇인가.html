@@ -770,16 +770,20 @@
 
 <style>
 .tense-howto{margin:20px 0 8px;border:1px solid #e4e9f0;border-radius:16px;overflow:hidden;box-shadow:0 3px 14px rgba(100,116,139,0.09);background:#fff;}
-.tense-howto .th-head{display:grid;grid-template-columns:0.8fr 1.5fr 1.7fr;background:#f7f9fc;border-bottom:1px solid #e4e9f0;}
+/* ★줄(.th-row)에만 border-left:5px 이 있어 격자가 5px 밀린다.
+   머리에도 같은 폭을 투명으로 두어야 머리와 칸이 한 x 에 선다. */
+.tense-howto .th-head{display:grid;grid-template-columns:0.9fr 1.45fr 1.65fr;background:#f7f9fc;border-bottom:1px solid #e4e9f0;border-left:5px solid transparent;}
 .tense-howto .th-head > div{padding:11px 18px;font-size:0.7rem;font-weight:800;color:#94a3b8;text-transform:uppercase;letter-spacing:0.7px;font-family:'Lato',sans-serif;}
-.tense-howto .th-row{display:grid;grid-template-columns:0.8fr 1.5fr 1.7fr;align-items:center;border-bottom:1px solid #f1f5f9;border-left:5px solid var(--tc);transition:background 0.18s;}
+.tense-howto .th-row{display:grid;grid-template-columns:0.9fr 1.45fr 1.65fr;align-items:center;border-bottom:1px solid #f1f5f9;border-left:5px solid var(--tc);transition:background 0.18s;}
 .tense-howto .th-row:last-child{border-bottom:none;}
 .tense-howto .th-row:hover{background:var(--tc-bg);}
 .tense-howto .th-cell{padding:17px 18px;}
 .tense-howto .th-tense{display:flex;flex-direction:column;gap:1px;}
 .tense-howto .th-tense .tt-ko{font-size:1.15rem;font-weight:900;color:var(--tc);letter-spacing:-0.3px;}
 .tense-howto .th-tense .tt-en{font-size:0.68rem;font-weight:700;color:#a3adbb;text-transform:uppercase;letter-spacing:0.6px;font-family:'Lato',sans-serif;}
-.tense-howto .th-rule{font-size:0.95rem;color:#64748b;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:nowrap;}
+/* ★가운데 정렬을 쓰면 상자 폭이 줄마다 달라(68·82·100px) 어간이 16px 씩 밀리고
+   머리 「만드는 법」과도 77px 어긋난다. 왼쪽에 맞춰 세 줄의 어간을 한 x 에 세운다. */
+.tense-howto .th-rule{font-size:0.95rem;color:#64748b;font-weight:600;display:flex;align-items:center;justify-content:flex-start;gap:8px;flex-wrap:nowrap;}
 .tense-howto .tr-stem{display:flex;flex-direction:column;align-items:center;line-height:1.1;}
 .tense-howto .tr-stem b{color:#94a3b8;font-weight:800;font-size:0.95rem;}
 .tense-howto .tr-stem small{color:#a3adbb;font-size:0.62rem;font-style:italic;font-weight:600;font-family:'Lato',sans-serif;}
