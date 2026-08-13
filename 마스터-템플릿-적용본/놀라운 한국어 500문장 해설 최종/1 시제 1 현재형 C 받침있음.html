@@ -503,8 +503,8 @@ document.addEventListener('DOMContentLoaded', function(){
     </div>
   </div>
 <div class="sl-all">
-<button class="sl-all-btn" onclick="tblAll(this,'f')">🔊 여성 전체 듣기<span class="gloss" lang="en" translate="yes">Play all (female)</span></button>
-<button class="sl-all-btn" onclick="tblAll(this,'m')">🔊 남성 전체 듣기<span class="gloss" lang="en" translate="yes">Play all (male)</span></button>
+<button class="sl-all-btn" onclick="tblAll(this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button>
+<button class="sl-all-btn" onclick="tblAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button>
 </div>
 </div>
 
@@ -537,7 +537,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="rs-cell rs-ex">
         <span class="rs-base">가다<span class="gloss" lang="en" translate="yes">to go</span></span>
         <span class="rs-arrow">➜</span>
-        <span class="rs-ex-pair"><span class="rs-result statement" onclick="speakKorean('갑니다')">갑니다</span><span class="rs-result question" onclick="speakKorean('갑니까?')">갑니까?</span></span>
+        <span class="rs-ex-pair"><span class="rs-ex-one"><span class="rs-result statement">갑니다</span><button class="speak-btn rs-spk" onclick="speakKorean('갑니다')">🔊</button></span><span class="rs-ex-one"><span class="rs-result question">갑니까?</span><button class="speak-btn rs-spk" onclick="speakKorean('갑니까?')">🔊</button></span></span>
       </div>
     </div>
     <div class="rs-row r-b">
@@ -549,7 +549,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="rs-cell rs-ex">
         <span class="rs-base">공부하다<span class="gloss" lang="en" translate="yes">to study</span></span>
         <span class="rs-arrow">➜</span>
-        <span class="rs-ex-pair"><span class="rs-result statement" onclick="speakKorean('공부합니다')">공부합니다</span><span class="rs-result question" onclick="speakKorean('공부합니까?')">공부합니까?</span></span>
+        <span class="rs-ex-pair"><span class="rs-ex-one"><span class="rs-result statement">공부합니다</span><button class="speak-btn rs-spk" onclick="speakKorean('공부합니다')">🔊</button></span><span class="rs-ex-one"><span class="rs-result question">공부합니까?</span><button class="speak-btn rs-spk" onclick="speakKorean('공부합니까?')">🔊</button></span></span>
       </div>
     </div>
     <div class="rs-row r-b">
@@ -561,14 +561,11 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="rs-cell rs-ex">
         <span class="rs-base">먹다<span class="gloss" lang="en" translate="yes">to eat</span></span>
         <span class="rs-arrow">➜</span>
-        <span class="rs-ex-pair"><span class="rs-result statement" onclick="speakKorean('먹습니다')">먹습니다</span><span class="rs-result question" onclick="speakKorean('먹습니까?')">먹습니까?</span></span>
+        <span class="rs-ex-pair"><span class="rs-ex-one"><span class="rs-result statement">먹습니다</span><button class="speak-btn rs-spk" onclick="speakKorean('먹습니다')">🔊</button></span><span class="rs-ex-one"><span class="rs-result question">먹습니까?</span><button class="speak-btn rs-spk" onclick="speakKorean('먹습니까?')">🔊</button></span></span>
       </div>
     </div>
   </div>
-<div class="sl-all">
-<button class="sl-all-btn" onclick="tblAll(this,'f')">🔊 여성 전체 듣기<span class="gloss" lang="en" translate="yes">Play all (female)</span></button>
-<button class="sl-all-btn" onclick="tblAll(this,'m')">🔊 남성 전체 듣기<span class="gloss" lang="en" translate="yes">Play all (male)</span></button>
-</div>
+
 </div>
 
 <hr>
@@ -692,7 +689,7 @@ function pr80RevealAll(btn){var box=btn.closest('.pr80');box.querySelectorAll('.
 
 <style>
 .rule-summary{margin:14px 0 18px 0;background:linear-gradient(135deg,#f7f9fc 0%,#f1f5fa 100%);border:1px solid #e0e8f2;border-radius:12px;padding:14px 16px;}
-.rule-summary .rs-head{display:grid;grid-template-columns:1fr 1.1fr 2.05fr;gap:10px;padding:4px 14px 10px 14px;font-size:0.78rem;font-weight:800;color:#94a3b8;letter-spacing:0.5px;font-family:'Noto Sans KR',sans-serif;border-bottom:1px dashed #d8e0eb;margin-bottom:8px;}
+.rule-summary .rs-head{display:grid;grid-template-columns:1fr 1.1fr 2.05fr;gap:10px;padding:4px 14px 10px 14px;font-size:0.78rem;font-weight:800;color:#94a3b8;letter-spacing:0.5px;font-family:'Noto Sans KR',sans-serif;border-bottom:1px dashed #d8e0eb;margin-bottom:8px;border-left:4px solid transparent;}
 .rule-summary .rs-head > div{display:flex;flex-direction:column;gap:1px;}
 .rule-summary .rs-head small{font-size:0.62rem;font-weight:700;color:#a8b3c2;letter-spacing:0.5px;text-transform:uppercase;font-family:'Lato',sans-serif;}
 .rule-summary .rs-rows{display:flex;flex-direction:column;gap:6px;}
@@ -711,10 +708,16 @@ function pr80RevealAll(btn){var box=btn.closest('.pr80');box.querySelectorAll('.
 .rule-summary .rs-end-text{display:flex;flex-direction:column;gap:1px;line-height:1.2;}
 .rule-summary .rs-end-text strong{font-size:0.95rem;color:#334155;}
 .rule-summary .rs-sub{font-size:0.7rem;color:#94a3b8;font-family:'Lato',sans-serif;font-weight:600;letter-spacing:0.2px;}
-.rule-summary .rs-rule{gap:8px;flex-wrap:nowrap;align-items:center;justify-content:center;}
+/* ★가운데 정렬은 상자 폭이 줄마다 달라 + 와 상자를 밀어 낸다 (2026-08-14 사용자 지적) */
+.rule-summary .rs-rule{gap:8px;flex-wrap:nowrap;align-items:center;justify-content:flex-start;}
 .rule-summary .rs-rule .rs-op{color:#64748b;font-weight:800;font-size:0.95rem;}
 .rule-summary .rs-rule .rs-plus{color:#64748b;font-weight:800;font-size:0.9rem;margin:0 1px;}
 .rule-summary .rs-ends{display:flex;flex-direction:column;gap:5px;}
+/* ★`+` 가 없는 줄은 상자가 17px 앞으로 당겨진다 (+ 폭 9px + gap 8px, 2026-08-14 실측).
+   `+` 자리를 폭이 정해진 칸으로 두고, 없는 줄에는 같은 만큼 여백을 준다. */
+.rule-summary .rs-rule{--op-w:15px;}  /* 부호는 + 9px 와 → 15px 두 갈래 — 넓은 쪽에 맞춘다 */
+.rule-summary .rs-rule .rs-op{min-width:var(--op-w);text-align:center;}
+.rule-summary .rs-rule > .rs-ends:first-child{margin-left:calc(var(--op-w) + 8px);}
 .rule-summary .rs-endrow{display:flex;align-items:center;gap:6px;}
 .rule-summary .rs-tag{font-size:0.62rem;font-weight:800;color:#94a3b8;font-family:'Lato',sans-serif;letter-spacing:0.2px;}
 .rule-summary .rs-droptag{font-size:0.6rem;font-weight:800;color:#8a6a26;background:#fef3e2;border:1px solid #f0dfa6;padding:1px 5px;border-radius:6px;line-height:1;white-space:nowrap;}
@@ -723,15 +726,24 @@ function pr80RevealAll(btn){var box=btn.closest('.pr80');box.querySelectorAll('.
 .rule-summary .rs-rule .rs-ending.drop{background:#fef3e2;color:#8a6a26;text-decoration:line-through;text-decoration-color:#c9a55c;}
 .rule-summary .rs-ex{gap:6px;flex-wrap:nowrap;align-items:center;}
 .rule-summary .rs-ex-pair{display:flex;flex-direction:column;gap:5px;align-items:flex-start;}
+/* ★보기처럼 🔊 단추를 옆에 둔다 (2026-08-14 사용자 지시).
+   글자에만 onclick 이 달려 있으면 눌러야 하는 줄 모른다. */
+.rule-summary .rs-ex-one{display:flex;align-items:center;gap:1px;}
+.rule-summary .rs-spk{font-size:0.95rem;margin-left:2px;padding:1px 4px;}
 .rule-summary .rs-ex-stack{flex-direction:column;align-items:flex-start;gap:6px;}
 .rule-summary .rs-ex-main{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
 .rule-summary .rs-stem{font-size:0.95rem;font-weight:800;padding:4px 9px;border-radius:5px;color:#475569;background:#f1f5f9;line-height:1;}
 .rule-summary .rs-arrow{color:#cbd5e1;font-weight:700;font-size:0.95rem;}
 .rule-summary .rs-result{font-size:0.92rem;font-weight:800;padding:4px 9px;border-radius:5px;line-height:1;}
-.rule-summary .rs-row.r-a .rs-result.statement,.rule-summary .rs-row.r-c .rs-result.statement{background:#3d5a85;color:#fff;}
-.rule-summary .rs-row.r-a .rs-result.question,.rule-summary .rs-row.r-c .rs-result.question{background:#fff;color:#3d5a85;border:1.5px solid #3d5a85;}
-.rule-summary .rs-row.r-b .rs-result.statement{background:#3f6149;color:#fff;}
-.rule-summary .rs-row.r-b .rs-result.question{background:#fff;color:#3f6149;border:1.5px solid #3f6149;}
+/* ★파스텔 (2026-08-14 사용자 지시) — 진한 바탕+흰 글자를 옅은 바탕+짙은 글자로.
+   평서/의문의 구별은 「채웠는가」로 살린다. 테두리 굵기를 같게 두어 상자 크기도 맞춘다.
+   ★r-c 는 뱃지가 자주인데 결과만 파랑이었다(네 파일). 제 색으로 돌린다. */
+.rule-summary .rs-row.r-a .rs-result.statement{background:#dbe5f1;color:#3d5a85;border:1.5px solid #b8c8dd;}
+.rule-summary .rs-row.r-a .rs-result.question{background:#fff;color:#3d5a85;border:1.5px solid #b8c8dd;}
+.rule-summary .rs-row.r-b .rs-result.statement{background:#d4e3d7;color:#3f6149;border:1.5px solid #c6d8c9;}
+.rule-summary .rs-row.r-b .rs-result.question{background:#fff;color:#3f6149;border:1.5px solid #c6d8c9;}
+.rule-summary .rs-row.r-c .rs-result.statement{background:#ecd6d6;color:#874949;border:1.5px solid #e3c8c8;}
+.rule-summary .rs-row.r-c .rs-result.question{background:#fff;color:#874949;border:1.5px solid #e3c8c8;}
 .rule-summary .rs-base{font-size:0.92rem;font-weight:800;color:#334155;line-height:1;white-space:nowrap;}
 .rule-summary .rs-colon{color:#94a3b8;font-weight:800;margin:0 1px;}
 .rule-summary .rs-op2{color:#64748b;font-weight:800;font-size:0.88rem;}
