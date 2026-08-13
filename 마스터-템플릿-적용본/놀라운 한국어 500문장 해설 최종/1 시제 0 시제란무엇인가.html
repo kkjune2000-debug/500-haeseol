@@ -795,7 +795,9 @@
 .tense-howto .te-base b{color:#475569;font-weight:800;font-size:0.96rem;white-space:nowrap;}
 .tense-howto .te-base small{color:#a3adbb;font-size:0.68rem;font-style:italic;font-weight:600;font-family:'Lato',sans-serif;white-space:nowrap;}
 .tense-howto .te-arrow{color:var(--tc);font-weight:800;}
-.tense-howto .te-result{background:var(--tc);color:#fff;font-weight:800;font-size:0.94rem;padding:5px 11px;border-radius:8px;box-shadow:0 2px 6px var(--tc-bg);white-space:nowrap;}
+/* ★파스텔 — 진한 바탕에 흰 글자였던 것을 옅은 바탕에 짙은 글자로 (2026-08-14 사용자 지시).
+   같은 표의 .tr-end 와 같은 색 변수를 써서 표 안에서 말이 맞게 한다. */
+.tense-howto .te-result{background:var(--tc-bg);color:var(--tc);font-weight:800;font-size:0.94rem;padding:5px 11px;border-radius:8px;border:1px solid var(--tc-bd);white-space:nowrap;}
 @media(max-width:600px){
   .tense-howto .th-head{display:none;}
   .tense-howto .th-row{grid-template-columns:1fr;gap:2px;padding:8px 0;}
