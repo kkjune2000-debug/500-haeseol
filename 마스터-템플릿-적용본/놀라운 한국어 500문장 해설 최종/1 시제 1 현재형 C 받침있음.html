@@ -588,9 +588,26 @@ document.addEventListener('DOMContentLoaded', function(){
 .pr80-score{font-weight:800;color:#1e3a8a;}
 .pr80-score b{color:#2563eb;font-size:1.15rem;}
 .pr80-btns{display:flex;gap:8px;flex-wrap:wrap;}
-.pr80-btn{background:#fff;border:1px solid #bfdbfe;color:#1e40af;padding:7px 14px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.85rem;font-family:inherit;}
-.pr80-btn:hover{background:#dbeafe;}
-.pr80-btn.primary{background:#2563eb;color:#fff;border-color:#2563eb;}
+/* 여성·남성 — 이 아홉 파일에는 CSS 가 아예 없어 브라우저 기본 회색으로
+   그려지고 있었다 (2026-08-14 발견). 나머지 14파일과 같은 꼴로 채운다.
+   고른 상태(.on)는 「조금 진한 바탕 + 같은 계열 테두리」로 살린다. */
+.jm-vsel{border:1px solid #d9dee6;padding:7px 12px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.85rem;font-family:inherit;line-height:1.15;}
+.jm-vsel .gloss{font-size:.72em;opacity:.72;font-weight:700;}
+.jm-vsel[data-sex="f"]{background:#fdf2f6;border-color:#f0cdd9;color:#9d4f6c;}
+.jm-vsel[data-sex="f"].on{background:#f6dbe5;border-color:#dda9bd;color:#8a3f5c;}
+.jm-vsel[data-sex="m"]{background:#f1f5fb;border-color:#c7d8ec;color:#3d5a85;}
+.jm-vsel[data-sex="m"].on{background:#d8e5f4;border-color:#a9c2de;color:#33507a;}
+.jm-vsel.on{font-weight:800;}
+.jm-vsel.on .gloss{opacity:.8;}
+/* ★단추를 갈래마다 다른 파스텔로 (2026-08-14 사용자 지시).
+   진한 바탕 + 흰 글자는 쓰지 않는다. */
+.pr80-btn{background:#f5f6f8;border:1px solid #d9dee6;color:#55606f;padding:7px 14px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.85rem;font-family:inherit;}
+.pr80-btn:hover{background:#e9ecf1;}
+.pr80-btn.primary{background:#fdf4dd;border-color:#eddca6;color:#87651b;}
+.pr80-btn.primary:hover{background:#f8ead0;}
+
+
+
 .pr80 table{width:100%;border-collapse:collapse;table-layout:auto;}
 .pr80 input.pri{min-width:120px;}
 .pr80 .ans-btn,.pr80 .pre-btn{padding:6px 9px;font-size:0.8rem;}
