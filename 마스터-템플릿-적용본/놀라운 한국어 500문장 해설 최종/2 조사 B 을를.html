@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
-<div class="example-box">저는 밥을 먹습니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;저는 밥을 먹습니다.&#39;)" title="Listen">🔊</button></div>
+<div class="example-box">저는 사과를 먹습니다.<button type="button" class="jm-spk" onclick="speakKorean(&#39;저는 사과를 먹습니다.&#39;)" title="Listen">🔊</button></div>
 
 <p class="ko"><strong>「무엇을?」</strong>에 답하는 말이 목적어입니다. 한국어는 목적어 뒤에 <span class="particle">을/를</span>을 붙입니다.</p>
 <p class="en" lang="en" translate="yes">The word that answers <strong>“what?”</strong> is the object. In Korean you put <span lang="ko" translate="no">을/를</span> after it.</p>
@@ -716,7 +716,7 @@ input[readonly] + .jm-spk{display:inline-block;}
 </div><script>/* ak-audio v1 */
 /* 미리 구운 MP3 를 먼저 쓴다. 없거나 못 읽으면 브라우저 음성으로 넘어간다.
    f = SunHi(여성) · m = Hyunsu(남성) — 둘 다 신경망 음성이다. */
-var AK_SND = {"커피": "1776", "커피를": "1780", "영화": "1468", "영화를": "1472", "빵을": "1236", "사랑": "1247", "사랑을": "1250", "책을": "1744", "물을": "1133", "사과": "1239", "사과를": "1243", "음식": "1530", "음식을": "1531", "우유": "1503", "우유를": "1505", "꽃을": "0809", "친구": "1770", "친구를": "1771", "한국어": "1950", "한국어를": "1951", "빵": "1927", "꽃": "1918", "저는 밥을 먹습니다.": "1963", "빵을 먹습니다.": "2029", "커피를 마십니다.": "2030", "한국어를 공부합니다.": "2031"};
+var AK_SND = {"커피": "1776", "커피를": "1780", "영화": "1468", "영화를": "1472", "빵을": "1236", "사랑": "1247", "사랑을": "1250", "책을": "1744", "물을": "1133", "사과": "1239", "사과를": "1243", "음식": "1530", "음식을": "1531", "우유": "1503", "우유를": "1505", "꽃을": "0809", "친구": "1770", "친구를": "1771", "한국어": "1950", "한국어를": "1951", "빵": "1927", "꽃": "1918", "저는 사과를 먹습니다.": "1952", "빵을 먹습니다.": "2029", "커피를 마십니다.": "2030", "한국어를 공부합니다.": "2031"};
 var AK_AU = null;
 function akPlayFile(text, sex){
   var n = AK_SND[text];
