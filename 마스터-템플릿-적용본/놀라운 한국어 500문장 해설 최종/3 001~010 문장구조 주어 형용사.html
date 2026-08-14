@@ -197,6 +197,9 @@
         .antonym-table .ant-word { font-size: 1.14rem; font-weight: 700; color: #1e40af; line-height: 1.3; }
         .antonym-table .ant-en { display: block; color: #64748b; font-size: 0.82rem; font-weight: 500; margin-top: 3px; letter-spacing: 0; }
         .antonym-table .ant-arrow { color: #94a3b8; font-size: 1.2rem; font-weight: 700; width: 36px; }
+.antonym-table .ant-spk { font-size: 0.95rem; margin-left: 5px; padding: 1px 4px; vertical-align: baseline; }
+.antonym-table .ant-spk:hover { background: #e0e7ff; }
+@media print { .antonym-table .ant-spk { display: none; } }
         /* Antonym table — 은은한 50-level 파스텔 (페어 매핑은 antonym 플래시카드와 동일) */
         /* 띠 행을 없앴으므로 쌍 1~10 = nth-child(1~10) (플래시 카드와 같은 색 짝) */
         .antonym-table tbody tr:nth-child(1)  td { background: #fdf2f8; }  /* 크다/작다 — pink */
@@ -988,16 +991,16 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             </tr>
         </thead>
         <tbody>
-            <tr><td class="ant-num">1</td><td class="ant-word">크다<span class="ant-en" lang="en" translate="yes">big / large</span></td><td class="ant-arrow">↔</td><td class="ant-word">작다<span class="ant-en" lang="en" translate="yes">small</span></td></tr>
-            <tr><td class="ant-num">2</td><td class="ant-word">많다<span class="ant-en" lang="en" translate="yes">many / a lot</span></td><td class="ant-arrow">↔</td><td class="ant-word">적다<span class="ant-en" lang="en" translate="yes">few / little</span></td></tr>
-            <tr><td class="ant-num">3</td><td class="ant-word">높다<span class="ant-en" lang="en" translate="yes">high / tall</span></td><td class="ant-arrow">↔</td><td class="ant-word">낮다<span class="ant-en" lang="en" translate="yes">low</span></td></tr>
-            <tr><td class="ant-num">4</td><td class="ant-word">길다<span class="ant-en" lang="en" translate="yes">long</span></td><td class="ant-arrow">↔</td><td class="ant-word">짧다<span class="ant-en" lang="en" translate="yes">short</span></td></tr>
-            <tr><td class="ant-num">5</td><td class="ant-word">빠르다<span class="ant-en" lang="en" translate="yes">fast / quick</span></td><td class="ant-arrow">↔</td><td class="ant-word">느리다<span class="ant-en" lang="en" translate="yes">slow</span></td></tr>
-            <tr><td class="ant-num">6</td><td class="ant-word">좋다<span class="ant-en" lang="en" translate="yes">good</span></td><td class="ant-arrow">↔</td><td class="ant-word">나쁘다<span class="ant-en" lang="en" translate="yes">bad</span></td></tr>
-            <tr><td class="ant-num">7</td><td class="ant-word">쉽다<span class="ant-en" lang="en" translate="yes">easy</span></td><td class="ant-arrow">↔</td><td class="ant-word">어렵다<span class="ant-en" lang="en" translate="yes">difficult / hard</span></td></tr>
-            <tr><td class="ant-num">8</td><td class="ant-word">싸다<span class="ant-en" lang="en" translate="yes">cheap</span></td><td class="ant-arrow">↔</td><td class="ant-word">비싸다<span class="ant-en" lang="en" translate="yes">expensive</span></td></tr>
-            <tr><td class="ant-num">9</td><td class="ant-word">덥다<span class="ant-en" lang="en" translate="yes">hot (weather)</span></td><td class="ant-arrow">↔</td><td class="ant-word">춥다<span class="ant-en" lang="en" translate="yes">cold (weather)</span></td></tr>
-            <tr><td class="ant-num">10</td><td class="ant-word">무겁다<span class="ant-en" lang="en" translate="yes">heavy</span></td><td class="ant-arrow">↔</td><td class="ant-word">가볍다<span class="ant-en" lang="en" translate="yes">light</span></td></tr>
+            <tr><td class="ant-num">1</td><td class="ant-word">크다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('크다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">big / large</span></td><td class="ant-arrow">↔</td><td class="ant-word">작다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('작다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">small</span></td></tr>
+            <tr><td class="ant-num">2</td><td class="ant-word">많다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('많다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">many / a lot</span></td><td class="ant-arrow">↔</td><td class="ant-word">적다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('적다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">few / little</span></td></tr>
+            <tr><td class="ant-num">3</td><td class="ant-word">높다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('높다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">high / tall</span></td><td class="ant-arrow">↔</td><td class="ant-word">낮다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('낮다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">low</span></td></tr>
+            <tr><td class="ant-num">4</td><td class="ant-word">길다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('길다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">long</span></td><td class="ant-arrow">↔</td><td class="ant-word">짧다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('짧다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">short</span></td></tr>
+            <tr><td class="ant-num">5</td><td class="ant-word">빠르다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('빠르다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">fast / quick</span></td><td class="ant-arrow">↔</td><td class="ant-word">느리다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('느리다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">slow</span></td></tr>
+            <tr><td class="ant-num">6</td><td class="ant-word">좋다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('좋다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">good</span></td><td class="ant-arrow">↔</td><td class="ant-word">나쁘다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('나쁘다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">bad</span></td></tr>
+            <tr><td class="ant-num">7</td><td class="ant-word">쉽다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('쉽다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">easy</span></td><td class="ant-arrow">↔</td><td class="ant-word">어렵다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('어렵다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">difficult / hard</span></td></tr>
+            <tr><td class="ant-num">8</td><td class="ant-word">싸다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('싸다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">cheap</span></td><td class="ant-arrow">↔</td><td class="ant-word">비싸다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('비싸다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">expensive</span></td></tr>
+            <tr><td class="ant-num">9</td><td class="ant-word">덥다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('덥다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">hot (weather)</span></td><td class="ant-arrow">↔</td><td class="ant-word">춥다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('춥다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">cold (weather)</span></td></tr>
+            <tr><td class="ant-num">10</td><td class="ant-word">무겁다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('무겁다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">heavy</span></td><td class="ant-arrow">↔</td><td class="ant-word">가볍다<button translate="yes" class="speak-btn ant-spk" onclick="speakKorean('가볍다')" title="Listen">🔊</button><span class="ant-en" lang="en" translate="yes">light</span></td></tr>
         </tbody>
     </table></div>
 
@@ -1450,8 +1453,8 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 
 <h2>4. 쓰기 시험</h2>
 <p class="subtitle"><span lang="en" translate="yes">Writing Test</span></p>
-<p class="ko">영어를 보고 한국어로 써 보세요. 「✅ 채점」으로 확인하세요.</p>
-<p class="en" lang="en" translate="yes">Read the English and write it in Korean, then press Grade.</p>
+<p class="ko">영어를 보고 한국어로 써 보세요. 「✅ 채점」으로 확인하세요. 띄어쓰기와 마침표·물음표는 채점에 넣지 않습니다.</p>
+<p class="en" lang="en" translate="yes">Read the English and write it in Korean, then press Grade. Spacing, periods and question marks are not graded.</p>
 
 <div class="wt-toolbar">
   <div class="wt-score" id="wtScoreBox">✓ 점수 <span lang="en" translate="yes">· Score:</span> <span class="wt-correct" id="wtCorrect">–</span> <span class="wt-total">/ 10</span><span class="wt-pct" id="wtPct"></span></div>
