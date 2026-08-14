@@ -501,6 +501,11 @@ document.addEventListener('DOMContentLoaded', function(){
 .pr80-score{font-weight:800;color:#1e3a8a;}
 .pr80-score b{color:#2563eb;font-size:1.15rem;}
 .pr80-btns{display:flex;gap:8px;flex-wrap:wrap;}
+/* 전체 듣기 — 「전체 정답」을 누르기 전에는 꺼 둔다 (정답 먼저 듣기 방지) */
+.pr80-listen{background:#eef7f0;border-color:#c6d8c9;color:#3f6149;}
+.pr80-listen:hover:not([disabled]){background:#e0efe4;}
+.pr80-listen[disabled]{opacity:.45;cursor:not-allowed;}
+.pr80-listen.playing{background:#fdecec;border-color:#f0c4c4;color:#9b4747;}
 /* ★단추를 갈래마다 다른 파스텔로 (2026-08-14 사용자 지시).
    진한 바탕 + 흰 글자는 쓰지 않는다. */
 .pr80-btn{background:#f2f3f5;border:1px solid #dcdee2;color:#5b6470;padding:7px 14px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.85rem;font-family:inherit;}
@@ -557,7 +562,7 @@ document.addEventListener('DOMContentLoaded', function(){
     <div class="pr80-score">맞은 개수 <span lang="en" translate="yes">· Correct:</span> <b id="prJC">0</b> <span style="color:#94a3b8;">/ 12</span></div>
     <div class="pr80-btns">
       <button type="button" class="jm-vsel" data-sex="f" onclick="jmSetSex('f',this)">여성<span class="gloss" lang="en" translate="yes">Female</span></button><button type="button" class="jm-vsel" data-sex="m" onclick="jmSetSex('m',this)">남성<span class="gloss" lang="en" translate="yes">Male</span></button><button class="pr80-btn" onclick="prJReset()">🔄 초기화<span class="gloss" lang="en" translate="yes">Reset</span></button>
-      <button class="pr80-btn primary" onclick="prJRevealAll()">💡 전체 정답<span class="gloss" lang="en" translate="yes">All answers</span></button>
+      <button class="pr80-btn pr80-listen" onclick="prJAll(this)" disabled title="「전체 정답」을 누르면 켜집니다">🔊 전체 듣기<span class="gloss" lang="en" translate="yes">Play all</span></button><button class="pr80-btn primary" onclick="prJRevealAll()">💡 전체 정답<span class="gloss" lang="en" translate="yes">All answers</span></button>
     </div>
   </div>
   <div class="tbl-scroll"><table><thead><tr><th style="width:6%">#</th><th style="text-align:left;">단어<span class="gloss" lang="en" translate="yes">Word</span></th><th>단어 + 을/를</th><th style="width:18%"></th></tr></thead><tbody id="prJBody"></tbody></table></div>
@@ -589,8 +594,11 @@ function prJCheck(inp){var ans=prJNorm(inp.dataset.ans),val=prJNorm(inp.value);i
 function prJTally(){document.getElementById('prJC').textContent=document.querySelectorAll('#prJBody .pri.correct').length;}
 function prJOne(btn){var tr=btn.closest('tr');tr.querySelectorAll('.pri').forEach(function(inp){inp.value=inp.dataset.ans;inp.classList.remove('wrong');inp.classList.add('correct');});prJTally();}
 function prJToggle(btn){var e=btn.closest('tr').nextElementSibling;e.style.display=(e.style.display==='none'||!e.style.display)?'table-row':'none';}
-function prJReset(){document.querySelectorAll('#prJBody .pri').forEach(function(inp){inp.value='';inp.classList.remove('correct','wrong');});document.querySelectorAll('#prJBody .pre-row').forEach(function(r){r.style.display='none';});prJTally();}
-function prJRevealAll(){document.querySelectorAll('#prJBody .pri').forEach(function(inp){inp.value=inp.dataset.ans;inp.classList.remove('wrong');inp.classList.add('correct');});prJTally();}
+function prJReset(){document.querySelectorAll('#prJBody .pri').forEach(function(inp){inp.value='';inp.classList.remove('correct','wrong');});document.querySelectorAll('#prJBody .pre-row').forEach(function(r){r.style.display='none';});prJTally();if(typeof slStop2==='function')slStop2();prJAllToggle(false);}
+function prJAllToggle(on){var b=document.querySelector('.pr80-listen');if(!b)return;b.disabled=!on;if(!on&&b.classList.contains('playing')){b.classList.remove('playing');var lb=b.getAttribute('data-label');if(lb)b.innerHTML=lb;}}
+/* 이어 재생은 slPlay2·slStop2 를 그대로 쓴다 — 칸은 onclick 이 없어 data-ans 에서 모은다 */
+function prJAll(btn){var was=btn.classList.contains('playing');if(typeof slStop2==='function')slStop2();if(was)return;var ins=document.querySelectorAll('#prJBody .pri'),items=[],k,a;for(k=0;k<ins.length;k++){a=(ins[k].getAttribute('data-ans')||'').split('/')[0];if(a&&/[가-힣]/.test(a))items.push([ins[k],a]);}if(!items.length)return;if(!btn.getAttribute('data-label'))btn.setAttribute('data-label',btn.innerHTML);btn.classList.add('playing');btn.innerHTML='\u25a0 \uba48\ucda4<span class="gloss" lang="en" translate="yes">Stop</span>';var sex=(typeof AK_SEX!=='undefined')?AK_SEX:'f';var my=++AK_SEQ_ID2,i=0;function next(){if(my!==AK_SEQ_ID2)return;for(var k2=0;k2<items.length;k2++)items[k2][0].classList.remove('sl-now');if(i>=items.length){slStop2();return;}var it=items[i++];it[0].classList.add('sl-now');slPlay2(it[1],sex,function(){if(my===AK_SEQ_ID2)next();});}next();}
+function prJRevealAll(){document.querySelectorAll('#prJBody .pri').forEach(function(inp){inp.value=inp.dataset.ans;inp.classList.remove('wrong');inp.classList.add('correct');});prJTally();prJAllToggle(true);}
 </script>
 
 
