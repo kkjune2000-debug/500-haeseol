@@ -84,10 +84,12 @@ def build(src, tr, dst):
     #    한국어 줄을 그 언어로 바꾸고, 뜻이 겹치는 gloss 는 지운다
     #    한국어 라벨 뒤에 <br>·<small> 이 낄 수 있고, gloss 클래스가 없는 슬롯도 있다
     keys = sorted(tr.UI, key=len, reverse=True)
+    # ★UI 표가 비면 "|".join 이 빈 갈래가 되어 빈 글자에 걸린다 (KeyError: '').
+    #   표를 갓 만들어 UI 가 아직 빈 언어판에서 터진다.
     KEY = re.compile(r"(>|\A)(\s*)(" + "|".join(re.escape(k) for k in keys) +
-                     r")(\s*)(<br\s*/?>)?\s*(<small[^>]*>)?\s*(<span[^>]*translate=\"yes\"[^>]*>)")
+                     r")(\s*)(<br\s*/?>)?\s*(<small[^>]*>)?\s*(<span[^>]*translate=\"yes\"[^>]*>)") if keys else None
     parts, pos = [], 0
-    while True:
+    while KEY:
         m = KEY.search(s, pos)
         if not m:
             break
@@ -140,6 +142,25 @@ def build(src, tr, dst):
                     rep["스크립트"] += 1
         return js
     s = re.sub(r"<script\b.*?</script>", fix_js, s, flags=re.S)
+
+    # ── ④ <title> ─────────────────────────────────────
+    #    ★<title> 안에는 자식 태그를 못 넣어 <span translate="no"> 로 부분만 잠글 수 없다.
+    #    그래서 한국어가 든 제목 80개는 통째로 잠갔다(translate="no") — 안 그러면
+    #    브라우저 번역이 문법 항목인 「에」·「은는」·「ㄹ받침」까지 옮겨 버린다.
+    #    잠긴 제목은 ①번 슬롯에 안 걸리므로 여기서 통째로 갈아 끼운다.
+    #    아직 열려 있는 제목(영어뿐)은 ①이 이미 했으므로 건드리지 않는다.
+    def fix_title(m):
+        if 'translate="yes"' in m.group(1):
+            return m.group(0)
+        key = m.group(2).strip()
+        v = getattr(tr, "TITLE", {}).get(key) or tr.TEXT.get(key)
+        if not v:
+            rep["제목 빠짐"] = rep.get("제목 빠짐", 0) + 1
+            miss.add(key)
+            return m.group(0)
+        rep["제목"] = rep.get("제목", 0) + 1
+        return "<title" + m.group(1) + ">" + v + "</title>"
+    s = re.sub(r"<title([^>]*)>(.*?)</title>", fix_title, s, count=1, flags=re.S)
 
     s = re.sub(r'<html lang="ko"', '<html lang="%s"' % tr.LANG, s, count=1)
     os.makedirs(os.path.dirname(dst), exist_ok=True)

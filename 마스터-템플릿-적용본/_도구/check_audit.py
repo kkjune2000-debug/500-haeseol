@@ -181,6 +181,16 @@ def layer_slot(bad):
             if opened and lang.startswith("en") and HANGUL.search(t):
                 bad["en 슬롯 속 안 잠긴 한국어"].append((f, f"{line}행 {t[:44]}"))
 
+        # ── <title> — 위 Walk 는 title 을 건너뛴다(SKIP). 따로 본다.
+        #    ★<title> 안에는 자식 태그를 못 넣어 <span translate="no"> 로
+        #    부분만 잠글 수 없다. 그래서 한국어가 들면 통째로 잠근다 —
+        #    안 그러면 브라우저 번역이 문법 항목인 「에」·「은는」까지 옮긴다.
+        #    언어판은 lang_build.py ④단계가 제목을 통째로 갈아 끼운다.
+        m = re.search(r"<title([^>]*)>(.*?)</title>", s, re.S)
+        if m and HANGUL.search(m.group(2)) and 'translate="no"' not in m.group(1):
+            bad["제목 속 한국어가 안 잠김"].append(
+                (f, m.group(2).strip()[:44]))
+
 
 # ── 층 3. 내용 ────────────────────────────────────────────────
 def norm(s):
@@ -300,6 +310,7 @@ def main():
             "없는 id 를 부름", "문장 번호 빠짐", "문장 번호 겹침",
             "여성 음원 없음", "남성 음원 없음",
             "파싱 실패", "슬롯 밖 영어", "en 슬롯 속 안 잠긴 한국어",
+            "제목 속 한국어가 안 잠김",
             "영어 제목 없는 번호", "쓰기 정답이 문장과 다름", "한 파일 안 문장 겹침",
             "표제어 비었음", "뜻풀이 없음", "뜻풀이에 슬롯 없음", "파일에 안 나오는 표제어"]
     n_bad = 0
