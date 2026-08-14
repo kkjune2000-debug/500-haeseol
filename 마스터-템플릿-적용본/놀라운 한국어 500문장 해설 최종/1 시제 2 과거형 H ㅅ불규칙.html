@@ -385,20 +385,6 @@ document.addEventListener('DOMContentLoaded', function(){
 .sum-past .sp-ex .sp-from{color:#64748b;font-weight:600;}
 .sum-past .sp-ex .sp-arr{font-weight:800;}
 .sum-past .sp-ex .sp-out{font-weight:800;}
-.sum-past .sp-tip{margin-top:12px;padding:10px 12px;background:#fffbf0;border:1px dashed #e6c78a;border-radius:10px;font-size:0.84rem;color:#6b521d;line-height:1.55;}
-.sum-past .sp-tip strong{color:#8a6a26;}
-/* ★영어 줄이 #9a7d3e 라 밝기 차가 3.78 이었다 (기준 4.5). 이 상자를 다시 쓰며 함께 올렸다. */
-.sum-past .sp-tip .en{color:#7a6229;display:block;font-size:0.78rem;margin-top:6px;}
-/* 「적용 순서」는 카드가 겹칠 때 쓰는 것이다 — 80낱말 중 30개(하다 18·ㅡ 7·르 5)가
-   어간이 모음으로 끝나 Ⓑ 줄임처럼 보인다. 그래서 겹침과 틀린 꼴을 먼저 보인다. */
-.sum-past .sp-tip .tip-lead{margin:4px 0 0;}
-.sum-past .sp-tip .tip-rest{margin:6px 0 0;}
-.sum-past .sp-tip .tip-ex{margin:6px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:3px 20px;}
-/* ★좁은 화면에서 「공/부하았습니다」처럼 낱말 가운데가 잘렸다 — 한국어는 낱말째 넘긴다 */
-.sum-past .sp-tip .tip-ex li{font-size:0.9rem;word-break:keep-all;}
-.sum-past .sp-tip .tip-ex .ok{font-weight:800;color:#6b521d;}
-.sum-past .sp-tip .tip-ex .no{color:#7d6940;text-decoration:line-through;}
-.sum-past .sp-tip .tip-ex .no::before{content:'✗ ';text-decoration:none;display:inline-block;}
 
 .sum-past .sp-card.p-gold{background:linear-gradient(180deg,#fffaef 0%,#fef3e2 100%);border-color:#e6c78a;}
 .sum-past .sp-card.p-gold .sp-badge{background:#8a6a26;}
@@ -491,17 +477,6 @@ document.addEventListener('DOMContentLoaded', function(){
     </div>
   </div>
 
-  <div class="sp-tip">
-    <strong>💡 카드가 둘 걸릴 때 — 어느 것을 먼저 보나</strong>
-    <p class="tip-lead">어간이 <strong>모음으로 끝나면</strong> Ⓑ 줄임처럼 보입니다. 그러나 <strong>하다 · ㅡ · 르</strong>는 그쪽이 먼저입니다.</p>
-    <ul class="tip-ex">
-      <li>공부하다 → Ⓒ <span class="ok">공부했습니다</span> <span class="no">공부하았습니다</span></li>
-      <li>아프다 → Ⓓ <span class="ok">아팠습니다</span> <span class="no">아프았습니다</span></li>
-      <li>다르다 → Ⓔ <span class="ok">달랐습니다</span> <span class="no">다르았습니다</span></li>
-    </ul>
-    <p class="tip-rest">그 밖에는 — 모음으로 끝나면 Ⓑ, 받침이 있으면 Ⓐ (았/었). 불규칙 받침은 Ⓕ~Ⓗ.</p>
-    <span class="en"><strong><span lang="en" translate="yes">When two cards match — which comes first?</span></strong> <span lang="en" translate="yes">A stem ending in a vowel looks like Ⓑ contraction, but</span> <span lang="ko" translate="no">하다 · ㅡ · 르</span> <span lang="en" translate="yes">come first. Otherwise: vowel ending → Ⓑ, final consonant → Ⓐ</span> (<span lang="ko" translate="no">았/었</span>)<span lang="en" translate="yes">. Irregular finals → Ⓕ–Ⓗ.</span></span>
-  </div>
 </div>
 <style>
 .pr80{margin:16px 0 10px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;box-shadow:0 1px 6px rgba(100,116,139,0.06);}
