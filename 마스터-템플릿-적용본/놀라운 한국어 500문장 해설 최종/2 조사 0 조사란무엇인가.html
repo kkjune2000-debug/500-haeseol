@@ -415,10 +415,12 @@ blockquote .bq-line + .bq-line{margin-top:9px;}
 .rule-summary .rs-row.r-c{border-left:4px solid #e3c8c8;}
 .rule-summary .rs-cell{display:flex;align-items:center;}
 .rule-summary .rs-end{gap:10px;}
-.rule-summary .rs-badge{font-size:0.85rem;font-weight:800;padding:4px 8px;border-radius:7px;font-family:'Lato',sans-serif;flex-shrink:0;line-height:1;}
-.rule-summary .rs-row.r-a .rs-badge{background:#f1f3f6;color:#3d5a85;}
-.rule-summary .rs-row.r-b .rs-badge{background:#f2f5f3;color:#3f6149;}
-.rule-summary .rs-row.r-c .rs-badge{background:#f6f1f1;color:#874949;}
+/* ★둥근 네모 안에 동그라미 글자(🅐)를 넣어 동그라미가 겹쳐 보였다.
+   옆은 원 안에 진한 보통 글자로 바꿈 (2026-08-15 사용자 지시). */
+.rule-summary .rs-badge{font-size:0.8rem;font-weight:800;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;padding:0;border-radius:50%;border:1.5px solid transparent;box-sizing:border-box;font-family:'Lato',sans-serif;flex-shrink:0;line-height:1;}
+.rule-summary .rs-row.r-a .rs-badge{background:#f1f3f6;color:#3d5a85;border-color:#bfc7d4;}
+.rule-summary .rs-row.r-b .rs-badge{background:#f2f5f3;color:#3f6149;border-color:#c3d0c7;}
+.rule-summary .rs-row.r-c .rs-badge{background:#f6f1f1;color:#874949;border-color:#d2c1c1;}
 .rule-summary .rs-end-text{display:flex;flex-direction:column;gap:1px;line-height:1.2;}
 .rule-summary .rs-end-text strong{font-size:0.95rem;color:#334155;}
 .rule-summary .rs-sub{font-size:0.7rem;color:#94a3b8;font-family:'Lato',sans-serif;font-weight:600;letter-spacing:0.2px;}
@@ -513,7 +515,7 @@ blockquote .bq-line + .bq-line{margin-top:9px;}
   <div class="rs-rows">
     <div class="rs-row r-a">
       <div class="rs-cell rs-end">
-        <span class="rs-badge">Ⓐ</span>
+        <span class="rs-badge">A</span>
         <div class="rs-end-text"><strong>은/는 · 이/가</strong><span class="rs-sub">주어<span class="gloss" lang="en" translate="yes">subject</span></span></div>
       </div>
       <div class="rs-cell rs-rule"><div class="rs-ends"><span class="rs-endrow"><span class="rs-ending">는 · 가</span><span class="rs-tag">받침 X<span class="gloss" lang="en" translate="yes">none</span></span></span><span class="rs-endrow"><span class="rs-ending">은 · 이</span><span class="rs-tag">받침 O<span class="gloss" lang="en" translate="yes">yes</span></span></span></div></div>
@@ -523,7 +525,7 @@ blockquote .bq-line + .bq-line{margin-top:9px;}
     </div>
     <div class="rs-row r-b">
       <div class="rs-cell rs-end">
-        <span class="rs-badge">Ⓑ</span>
+        <span class="rs-badge">B</span>
         <div class="rs-end-text"><strong>을/를</strong><span class="rs-sub">목적어<span class="gloss" lang="en" translate="yes">object</span></span></div>
       </div>
       <div class="rs-cell rs-rule"><div class="rs-ends"><span class="rs-endrow"><span class="rs-ending">를</span><span class="rs-tag">받침 X<span class="gloss" lang="en" translate="yes">none</span></span></span><span class="rs-endrow"><span class="rs-ending">을</span><span class="rs-tag">받침 O<span class="gloss" lang="en" translate="yes">yes</span></span></span></div></div>
@@ -533,7 +535,7 @@ blockquote .bq-line + .bq-line{margin-top:9px;}
     </div>
     <div class="rs-row r-a">
       <div class="rs-cell rs-end">
-        <span class="rs-badge">Ⓓ</span>
+        <span class="rs-badge">D</span>
         <div class="rs-end-text"><strong>와/과</strong><span class="rs-sub">그리고<span class="gloss" lang="en" translate="yes">and</span></span></div>
       </div>
       <div class="rs-cell rs-rule"><div class="rs-ends"><span class="rs-endrow"><span class="rs-ending">와</span><span class="rs-tag">받침 X<span class="gloss" lang="en" translate="yes">none</span></span></span><span class="rs-endrow"><span class="rs-ending">과</span><span class="rs-tag">받침 O<span class="gloss" lang="en" translate="yes">yes</span></span></span></div></div>
@@ -543,7 +545,7 @@ blockquote .bq-line + .bq-line{margin-top:9px;}
     </div>
     <div class="rs-row r-b">
       <div class="rs-cell rs-end">
-        <span class="rs-badge">Ⓔ</span>
+        <span class="rs-badge">E</span>
         <div class="rs-end-text"><strong>나/이나</strong><span class="rs-sub">선택<span class="gloss" lang="en" translate="yes">or</span></span></div>
       </div>
       <div class="rs-cell rs-rule"><div class="rs-ends"><span class="rs-endrow"><span class="rs-ending">나</span><span class="rs-tag">받침 X<span class="gloss" lang="en" translate="yes">none</span></span></span><span class="rs-endrow"><span class="rs-ending">이나</span><span class="rs-tag">받침 O<span class="gloss" lang="en" translate="yes">yes</span></span></span></div></div>
@@ -567,7 +569,7 @@ blockquote .bq-line + .bq-line{margin-top:9px;}
   <div class="rs-rows">
     <div class="rs-row r-c">
       <div class="rs-cell rs-end">
-        <span class="rs-badge">Ⓒ</span>
+        <span class="rs-badge">C</span>
         <div class="rs-end-text"><strong>에게/에</strong><span class="rs-sub">대상<span class="gloss" lang="en" translate="yes">to</span></span></div>
       </div>
       <div class="rs-cell rs-rule"><div class="rs-ends"><span class="rs-endrow"><span class="rs-ending">에게</span><span class="rs-tag">사람·동물<span class="gloss" lang="en" translate="yes">person·animal</span></span></span><span class="rs-endrow"><span class="rs-ending">에</span><span class="rs-tag">그 밖 전부<span class="gloss" lang="en" translate="yes">everything else</span></span></span></div></div>
@@ -577,7 +579,7 @@ blockquote .bq-line + .bq-line{margin-top:9px;}
     </div>
     <div class="rs-row r-a">
       <div class="rs-cell rs-end">
-        <span class="rs-badge">Ⓕ</span>
+        <span class="rs-badge">F</span>
         <div class="rs-end-text"><strong>에</strong><span class="rs-sub">시간<span class="gloss" lang="en" translate="yes">time</span></span></div>
       </div>
       <div class="rs-cell rs-rule"><div class="rs-ends"><span class="rs-endrow"><span class="rs-ending">에</span><span class="rs-tag">항상<span class="gloss" lang="en" translate="yes">always</span></span></span></div></div>
@@ -587,7 +589,7 @@ blockquote .bq-line + .bq-line{margin-top:9px;}
     </div>
     <div class="rs-row r-b">
       <div class="rs-cell rs-end">
-        <span class="rs-badge">Ⓖ</span>
+        <span class="rs-badge">G</span>
         <div class="rs-end-text"><strong>에서</strong><span class="rs-sub">장소<span class="gloss" lang="en" translate="yes">place</span></span></div>
       </div>
       <div class="rs-cell rs-rule"><div class="rs-ends"><span class="rs-endrow"><span class="rs-ending">에서</span><span class="rs-tag">항상<span class="gloss" lang="en" translate="yes">always</span></span></span></div></div>

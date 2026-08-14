@@ -439,10 +439,12 @@ document.addEventListener('DOMContentLoaded', function(){
 .rule-summary .rs-row.r-c{border-left:4px solid #e3c8c8;}
 .rule-summary .rs-cell{display:flex;align-items:center;}
 .rule-summary .rs-end{gap:10px;}
-.rule-summary .rs-badge{font-size:0.85rem;font-weight:800;padding:4px 8px;border-radius:7px;font-family:'Lato',sans-serif;flex-shrink:0;line-height:1;}
-.rule-summary .rs-row.r-a .rs-badge{background:#f1f3f6;color:#3d5a85;}
-.rule-summary .rs-row.r-b .rs-badge{background:#f2f5f3;color:#3f6149;}
-.rule-summary .rs-row.r-c .rs-badge{background:#f6f1f1;color:#874949;}
+/* ★둥근 네모 안에 동그라미 글자(🅐)를 넣어 동그라미가 겹쳐 보였다.
+   옆은 원 안에 진한 보통 글자로 바꿈 (2026-08-15 사용자 지시). */
+.rule-summary .rs-badge{font-size:0.8rem;font-weight:800;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;padding:0;border-radius:50%;border:1.5px solid transparent;box-sizing:border-box;font-family:'Lato',sans-serif;flex-shrink:0;line-height:1;}
+.rule-summary .rs-row.r-a .rs-badge{background:#f1f3f6;color:#3d5a85;border-color:#bfc7d4;}
+.rule-summary .rs-row.r-b .rs-badge{background:#f2f5f3;color:#3f6149;border-color:#c3d0c7;}
+.rule-summary .rs-row.r-c .rs-badge{background:#f6f1f1;color:#874949;border-color:#d2c1c1;}
 .rule-summary .rs-end-text{display:flex;flex-direction:column;gap:1px;line-height:1.2;}
 .rule-summary .rs-end-text strong{font-size:0.95rem;color:#334155;}
 .rule-summary .rs-sub{font-size:0.7rem;color:#94a3b8;font-family:'Lato',sans-serif;font-weight:600;letter-spacing:0.2px;}
@@ -514,7 +516,7 @@ document.addEventListener('DOMContentLoaded', function(){
   <div class="rs-rows">
     <div class="rs-row r-a">
       <div class="rs-cell rs-end">
-        <span class="rs-badge">Ⓐ</span>
+        <span class="rs-badge">A</span>
         <div class="rs-end-text"><strong>규칙</strong><span class="rs-sub">았/었<span class="gloss" lang="en" translate="yes">regular</span></span></div>
       </div>
       <div class="rs-cell rs-rule"><span class="rs-op">+</span><div class="rs-ends"><span class="rs-endrow"><span class="rs-ending">았습니다</span><span class="rs-tag">ㅏ·ㅗ<span class="gloss" lang="en" translate="yes">bright vowel</span></span></span><span class="rs-endrow"><span class="rs-ending">었습니다</span><span class="rs-tag">그 외<span class="gloss" lang="en" translate="yes">others</span></span></span></div></div>
@@ -524,7 +526,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </div>
     <div class="rs-row r-b">
       <div class="rs-cell rs-end">
-        <span class="rs-badge">Ⓑ</span>
+        <span class="rs-badge">B</span>
         <div class="rs-end-text"><strong>줄임</strong><span class="rs-sub">모음 끝<span class="gloss" lang="en" translate="yes">contraction</span></span></div>
       </div>
       <div class="rs-cell rs-rule"><div class="rs-ends"><span class="rs-endrow"><span class="rs-ending">모음 + 았/었</span><span class="rs-tag">줄임<span class="gloss" lang="en" translate="yes">contraction</span></span></span></div></div>
