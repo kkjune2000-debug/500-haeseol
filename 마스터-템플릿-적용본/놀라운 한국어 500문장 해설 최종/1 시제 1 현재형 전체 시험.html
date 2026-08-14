@@ -134,12 +134,14 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .pt-score .pt-correct{color:#4b7358;font-size:1.1rem;}
 .pt-score .pt-total{color:#94a3b8;}
 .pt-btns{display:flex;gap:8px;flex-wrap:wrap;}
-.pt-btn{background:#fff;border:1px solid #d6dfec;color:#475569;padding:7px 14px;border-radius:8px;cursor:pointer;font-size:0.85rem;font-weight:700;transition:all 0.15s;font-family:inherit;}
-.pt-btn:hover{background:#f5f7fb;border-color:#b8c8dd;}
-.pt-btn.primary{background:#546a87;color:#fff;border-color:#546a87;}
-.pt-btn.primary:hover{background:#475569;border-color:#475569;}
-.pt-btn.grade{background:#4b7358;color:#fff;border-color:#4b7358;}
-.pt-btn.grade:hover{background:#3f6149;border-color:#3f6149;}
+/* ★단추를 갈래마다 다른 파스텔로 — 연습표 23파일과 같은 규칙.
+   진한 바탕 + 흰 글자는 쓰지 않는다 (여성·남성이 파스텔이라 나란히 서면 어긋난다). */
+.pt-btn{background:#f2f3f5;border:1px solid #dcdee2;color:#5b6470;padding:7px 14px;border-radius:8px;cursor:pointer;font-size:0.85rem;font-weight:700;transition:all 0.15s;font-family:inherit;}
+.pt-btn:hover{background:#e7e9ec;border-color:#cdd0d6;}
+.pt-btn.primary{background:#fdf4dd;border-color:#eddca6;color:#87651b;}
+.pt-btn.primary:hover{background:#f8ead0;}
+.pt-btn.grade{background:#f3f0fb;border-color:#d9d0ee;color:#5f4b8b;}
+.pt-btn.grade:hover{background:#eae4f7;}
 .pt-input.empty-wrong{background:#fbeeee;border-color:#ebcece;}
 .pt-score .pt-pct{font-size:0.85rem;color:#94a3b8;margin-left:6px;font-weight:600;}
 .pt-score.is-graded .pt-correct{font-size:1.25rem;}
@@ -156,6 +158,24 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .pt-input.correct{background:#eef7f0;border-color:#cce3d3;color:#4b7358;}
 .pt-input.wrong{background:#fbeeee;border-color:#ebcece;color:#9b5757;}
 .pt-input.revealed{background:#f5f7fb;border-color:#d6dfec;color:#546a87;font-style:italic;}
+/* 정답이 보이는 칸은 눌러서 들을 수 있다 — 맞힌 칸(.correct)과 정답을 편 칸(.revealed).
+   빈칸·틀린 칸은 눌러도 아무 일도 하지 않는다 (정답 먼저 듣기 방지). */
+.pt-input.correct,.pt-input.revealed{cursor:pointer;}
+.sl-now{outline:2px solid #10b981;outline-offset:2px;border-radius:6px;}
+/* 목소리 고르기 — 연습표 23파일과 같은 파스텔 */
+.jm-vsel{border:1px solid #d9dee6;padding:7px 12px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.85rem;font-family:inherit;line-height:1.15;}
+.jm-vsel .gloss{font-size:.72em;opacity:.72;font-weight:700;}
+.jm-vsel[data-sex="f"]{background:#fdf2f6;border-color:#f0cdd9;color:#9d4f6c;}
+.jm-vsel[data-sex="f"].on{background:#f6dbe5;border-color:#dda9bd;color:#8a3f5c;}
+.jm-vsel[data-sex="m"]{background:#d5e6f7;border-color:#a3c1e0;color:#334d76;}
+.jm-vsel[data-sex="m"].on{background:#b9d5f0;border-color:#84a9d1;color:#2a4369;}
+.jm-vsel.on{font-weight:800;}
+.jm-vsel.on .gloss{opacity:.8;}
+/* 전체 듣기 — 「💡 정답」을 누르기 전에는 꺼 둔다 (정답 먼저 듣기 방지) */
+.pt-listen{background:#eef7f0;border-color:#c6d8c9;color:#3f6149;}
+.pt-listen:hover:not([disabled]){background:#e0efe4;}
+.pt-listen[disabled]{opacity:.45;cursor:not-allowed;}
+.pt-listen.playing{background:#fdecec;border-color:#f0c4c4;color:#9b4747;}
 @media print{.pt-btns{display:none;}.pt-input{border-color:#cbd5e1;background:#fff !important;color:#334155 !important;}}
 /* 쓰기 퀴즈 카드화 (그룹별 4열 — 종합 #pptTable 제외) */
 .pt-table:not(#pptTable) thead,.pt-table:not(#pptTable) colgroup{display:none;}
@@ -207,8 +227,11 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
   <div class="pt-toolbar">
     <div class="pt-score" id="ptScoreBox">✓ 점수 <span lang="en" translate="yes">· Score:</span> <span class="pt-correct" id="ptCorrect">0</span> <span class="pt-total">/ 160</span><span class="pt-pct" id="ptPct"></span></div>
     <div class="pt-btns">
+      <button type="button" class="jm-vsel" data-sex="f" onclick="jmSetSex('f',this)">여성<span class="gloss" lang="en" translate="yes">Female</span></button>
+      <button type="button" class="jm-vsel" data-sex="m" onclick="jmSetSex('m',this)">남성<span class="gloss" lang="en" translate="yes">Male</span></button>
       <button class="pt-btn" onclick="ptReset()">🔄 초기화<span class="gloss" lang="en" translate="yes">Reset</span></button>
       <button class="pt-btn grade" onclick="ptGrade()">✅ 점수<span class="gloss" lang="en" translate="yes">Score</span></button>
+      <button class="pt-btn pt-listen" onclick="ptAll(this)" disabled title="「💡 정답」을 누르면 켜집니다">🔊 전체 듣기<span class="gloss" lang="en" translate="yes">Play all</span></button>
       <button class="pt-btn primary" onclick="ptReveal()">💡 정답<span class="gloss" lang="en" translate="yes">Answer</span></button>
     </div>
   </div>
@@ -278,6 +301,47 @@ function ptReset(){
     inp.classList.remove('correct','wrong','revealed');
   });
   ptScore();
+  if (typeof slStop2 === 'function') slStop2();
+  ptAllToggle(false);
+}
+/* 전체 듣기 — 「💡 정답」을 누른 뒤에만 켠다 (연습표 23파일과 같은 규칙) */
+function ptAllToggle(on){
+  var b = document.querySelector('.pt-listen');
+  if (!b) return;
+  b.disabled = !on;
+  if (!on && b.classList.contains('playing')){
+    b.classList.remove('playing');
+    var lb = b.getAttribute('data-label');
+    if (lb) b.innerHTML = lb;
+  }
+}
+/* 이어 재생은 slPlay2·slStop2 를 그대로 쓴다 — 칸은 onclick 이 없어 data-ans 에서 모은다.
+   160칸이라 이번 칸이 화면 밖으로 나간다 — 초록 테두리를 따라 굴려 준다. */
+function ptAll(btn){
+  var was = btn.classList.contains('playing');
+  if (typeof slStop2 === 'function') slStop2();
+  if (was) return;
+  var ins = document.querySelectorAll('#ptTable .pt-input'), items = [], k, a;
+  for (k = 0; k < ins.length; k++){
+    a = (ins[k].getAttribute('data-ans') || '').split('/')[0];
+    if (a && /[가-힣]/.test(a)) items.push([ins[k], a]);
+  }
+  if (!items.length) return;
+  if (!btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.innerHTML);
+  btn.classList.add('playing');
+  btn.innerHTML = '■ 멈춤<span class="gloss" lang="en" translate="yes">Stop</span>';
+  var sex = (typeof AK_SEX !== 'undefined') ? AK_SEX : 'f';
+  var my = ++AK_SEQ_ID2, i = 0;
+  function next(){
+    if (my !== AK_SEQ_ID2) return;
+    for (var k2 = 0; k2 < items.length; k2++) items[k2][0].classList.remove('sl-now');
+    if (i >= items.length){ slStop2(); return; }
+    var it = items[i++];
+    it[0].classList.add('sl-now');
+    try { it[0].scrollIntoView({behavior:'smooth', block:'center'}); } catch(e){}
+    slPlay2(it[1], sex, function(){ if (my === AK_SEQ_ID2) next(); });
+  }
+  next();
 }
 function ptReveal(){
   document.querySelectorAll('#ptTable .pt-input').forEach(function(inp){
@@ -288,6 +352,7 @@ function ptReveal(){
   document.getElementById('ptCorrect').textContent = '–';
   document.getElementById('ptPct').textContent = '';
   document.getElementById('ptScoreBox').classList.remove('is-graded');
+  ptAllToggle(true);
 }
 function ptGrade(){
   const inputs = document.querySelectorAll('#ptTable .pt-input');
@@ -432,6 +497,94 @@ else akVoiceInit();if('speechSynthesis' in window){window.speechSynthesis.onvoic
     } else if(ex){ ex.parentNode.removeChild(ex); }
   }, true);
 })();
+</script>
+<script>
+/* jm-voice v1 — 목소리 고르기 (여성·남성). 연습표 23파일과 같은 셈본 */
+function jmSetSex(sex, btn){
+  AK_SEX = sex;
+  try { localStorage.setItem('akVoiceSex', sex); } catch(e){}
+  var bs = document.querySelectorAll('.jm-vsel');
+  for (var i = 0; i < bs.length; i++)
+    bs[i].classList.toggle('on', bs[i].getAttribute('data-sex') === sex);
+}
+(function(){
+  function jmInit(){
+    var bs = document.querySelectorAll('.jm-vsel');
+    for (var i = 0; i < bs.length; i++)
+      bs[i].classList.toggle('on', bs[i].getAttribute('data-sex') === AK_SEX);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', jmInit);
+  else jmInit();
+})();
+</script>
+<script>
+/* jm-box v2 */
+/* 정답이 보이는 칸을 누르면 소리가 난다 — 맞혀서 초록이 된 칸(.correct)과 정답을 편 칸(.revealed).
+   ★연습표는 정답을 펴면 .correct 가 붙지만 이 쓰기 시험은 .revealed 가 붙는다 — 둘 다 봐야 한다.
+   맞히기 전의 빈칸·틀린 칸은 눌러도 아무 일도 하지 않는다 (정답 먼저 듣기 방지). */
+document.addEventListener('click', function(ev){
+  var t = ev.target;
+  if (!t || t.tagName !== 'INPUT' || !t.classList) return;
+  if (!t.classList.contains('correct') && !t.classList.contains('revealed') && !t.readOnly) return;
+  var a = (t.getAttribute('data-ans') || '').split('/')[0];
+  if (a && /[가-힣]/.test(a)) speakKorean(a);
+});
+</script>
+<script>
+/* 전체 듣기 (ak-listen-all v1)
+   · 음원이 있으면 mp3(onended), 없으면 브라우저 음성(onend)으로 잇는다
+   · cancel() 직후 speak() 금지 — 60ms 규칙
+   · 재생 중에 낱말을 누르면 전체 듣기를 멈춘다 (두 소리가 겹치지 않게) */
+var AK_SEQ_ID2 = 0;
+function slStop2(){
+  AK_SEQ_ID2++;
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  if (window.AK_AU){ try { AK_AU.pause(); } catch(e){} }
+  var i, ns = document.querySelectorAll('.sl-now');
+  for (i = 0; i < ns.length; i++) ns[i].classList.remove('sl-now');
+  /* ★단추 갈래가 셋이다 — 활용표(sl-all-btn) · 연습표(pr80-listen) · 쓰기 시험(pt-listen).
+     하나만 보면 끝까지 다 들은 뒤 단추가 「■ 멈춤」에 멈춰 있다 (2026-08-14 브라우저에서 확인). */
+  var bs = document.querySelectorAll('.sl-all-btn.playing, .pr80-listen.playing, .pt-listen.playing');
+  for (i = 0; i < bs.length; i++){
+    bs[i].classList.remove('playing');
+    var lb = bs[i].getAttribute('data-label');
+    if (lb) bs[i].innerHTML = lb;
+  }
+}
+function slTTS2(text, sex, done){
+  if (!('speechSynthesis' in window)){ done(); return; }
+  var v = (typeof akPick === 'function') ? akPick(sex) : null;
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(text);
+  u.lang = (v && v.lang) || 'ko-KR';
+  u.rate = 0.92;
+  if (v) u.voice = v;
+  u.onend = done;
+  setTimeout(function(){ window.speechSynthesis.speak(u); }, 60);
+}
+function slPlay2(text, sex, done){
+  var n = window.AK_SND ? AK_SND[text] : null;
+  if (!n){ slTTS2(text, sex, done); return; }
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  if (!window.AK_AU) AK_AU = new Audio();
+  try { AK_AU.pause(); } catch(e){}
+  AK_AU.onended = done;
+  AK_AU.onerror = function(){ slTTS2(text, sex, done); };
+  AK_AU.src = encodeURI('_소리/' + (sex === 'm' ? 'm' : 'f') + '/' + n + '.mp3');
+  var p = AK_AU.play();
+  if (p && p.catch) p.catch(function(){ slTTS2(text, sex, done); });
+}
+document.addEventListener('click', function(e){
+  var t = e.target;
+  while (t && t !== document){
+    if (t.className && String(t.className).indexOf('pt-listen') >= 0) return;
+    if (t.classList && (t.classList.contains('correct') || t.classList.contains('revealed'))){
+      if (document.querySelector('.pt-listen.playing')) slStop2();
+      return;
+    }
+    t = t.parentNode;
+  }
+}, true);
 </script>
 <div class="ak-notice" id="akNotice">이 브라우저에는 한국어 남성 음성이 없어 <b>목소리를 낮춰</b> 읽습니다. 진짜 남성 음성은 Microsoft Edge 에서 나옵니다.<span class="gloss" lang="en" translate="yes">This browser has no Korean male voice, so the female voice is pitched down. Open the page in Microsoft Edge for a real male voice.</span></div>
 </body></html>

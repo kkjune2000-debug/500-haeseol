@@ -705,7 +705,9 @@ function slStop2(){
   if (window.AK_AU){ try { AK_AU.pause(); } catch(e){} }
   var i, ns = document.querySelectorAll('.sl-now');
   for (i = 0; i < ns.length; i++) ns[i].classList.remove('sl-now');
-  var bs = document.querySelectorAll('.sl-all-btn.playing');
+  /* ★단추 갈래가 셋이다 — 활용표(sl-all-btn) · 연습표(pr80-listen) · 쓰기 시험(pt-listen).
+     하나만 보면 끝까지 다 든 뒤 단추가 「■ 멈춤」에 멈춰 있다 (2026-08-14 브라우저에서 확인). */
+  var bs = document.querySelectorAll('.sl-all-btn.playing, .pr80-listen.playing, .pt-listen.playing');
   for (i = 0; i < bs.length; i++){
     bs[i].classList.remove('playing');
     var lb = bs[i].getAttribute('data-label');
@@ -768,8 +770,14 @@ document.addEventListener('click', function(e){
   var t = e.target;
   while (t && t !== document){
     if (t.className && String(t.className).indexOf('sl-all-btn') >= 0) return;
-    if (t.getAttribute && /speakKorean\(/.test(t.getAttribute('onclick') || '')){
-      if (document.querySelector('.sl-all-btn.playing')) slStop2();
+    if (t.className && String(t.className).indexOf('pr80-listen') >= 0) return;
+    /* ★연습표 칸은 onclick 이 없어 speakKorean 그물에 안 걸린다 — 따로 본다.
+       안 보면 재생 중에 칸을 눌렀을 때 소리는 끊기고 단추만
+       「■ 멈춤」에 남는다 (2026-08-14 브라우저에서 확인). */
+    var akCell = t.tagName === 'INPUT' && t.classList &&
+      (t.classList.contains('correct') || t.classList.contains('prex') || t.readOnly);
+    if (akCell || (t.getAttribute && /speakKorean\(/.test(t.getAttribute('onclick') || ''))){
+      if (document.querySelector('.sl-all-btn.playing, .pr80-listen.playing')) slStop2();
       return;
     }
     t = t.parentNode;
