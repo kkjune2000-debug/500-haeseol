@@ -86,10 +86,10 @@
         .wt-btns { display:flex; gap:8px; flex-wrap:wrap; }
         .wt-btn { background:#fff; color:#475569; border:1px solid #cbd5e1; padding:8px 14px; border-radius:8px; cursor:pointer; font-size:0.85rem; font-weight:700; transition:all 0.15s; font-family:inherit; }
         .wt-btn:hover { background:#f1f5f9; border-color:#14b8a6; }
-        .wt-btn.grade { background:#16a34a; color:#fff; border-color:#16a34a; }
-        .wt-btn.grade:hover { background:#15803d; border-color:#15803d; }
-        .wt-btn.primary { background:#0d776b; color:#fff; border-color:#0d776b; }
-        .wt-btn.primary:hover { background:#0b655a; border-color:#0b655a; }
+        .wt-btn.grade { background:#eef9f2; color:#117b38; border-color:#b3e0c4; }
+        .wt-btn.grade:hover {color:#137337; background:#e2f3e8; border-color:#b4dfc4; }
+        .wt-btn.primary { background:#eef9f8; color:#0d776b; border-color:#b2e1dc; }
+        .wt-btn.primary:hover {color:#0b655a; background:#e1f4f2; border-color:#b2e1db; }
         .writing-input.correct { border-color:#fde047 !important; background:#fefce8 !important; color:#854d0e; font-weight:800; }
         .writing-input.wrong { border-color:#fecaca !important; background:#fef2f2 !important; color:#991b1b; }
         .writing-input.celebrating { animation: wtCorrectPop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1); }
@@ -191,7 +191,7 @@
         .gstep { display: grid; grid-template-columns: 1fr; gap: 12px; padding: 24px 28px 22px; margin: 18px 0; background: linear-gradient(135deg, #eff6ff 0%, #ffffff 65%); border: 1px solid #bfdbfe; border-radius: 18px; box-shadow: 0 2px 6px rgba(15,23,42,0.04); position: relative; overflow: hidden; transition: box-shadow 0.2s ease, transform 0.15s ease; }
         .gstep::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%); opacity: 0.9; }
         .gstep:hover { box-shadow: 0 6px 18px rgba(30,58,138,0.10); transform: translateY(-1px); }
-        .gstep-num { flex-shrink: 0; width: 42px; height: 42px; background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.15rem; font-weight: 900; letter-spacing: -0.02em; box-shadow: 0 4px 10px rgba(30,58,138,0.30), inset 0 -3px 6px rgba(0,0,0,0.12); }
+        .gstep-num { flex-shrink: 0; width: 42px; height: 42px; background: linear-gradient(135deg, #eff1f8 0%, #eef1f9 50%, #edf2fa 100%); color:#1e3a8a; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.15rem; font-weight: 900; letter-spacing: -0.02em; box-shadow: 0 4px 10px rgba(30,58,138,0.30), inset 0 -3px 6px rgba(0,0,0,0.12); }
         .gstep-body { min-width: 0; }
         .gstep-body p { margin: 0 0 6px 0; }
         .gstep-body p:last-child { margin-bottom: 0; }
@@ -289,8 +289,8 @@
         .em-stat { display: inline-flex; align-items: baseline; gap: 6px; padding: 6px 12px; background: #f1f5f9; border-radius: 8px; }
         .em-stat-label { font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; }
         .em-stat-num { font-size: 1.05rem; font-weight: 900; color: #1e40af; }
-        .em-reset { margin-left: auto; background: #1e40af; color: #fff; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 700; transition: background 0.2s; font-family: inherit; }
-        .em-reset:hover { background: #1e3a8a; }
+        .em-reset { margin-left: auto; background: #eff1f8; color:#1e40af; border:1px solid #b5bede; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 700; transition: background 0.2s; font-family: inherit; }
+        .em-reset:hover {color:#1e3a8a; background: #e3e7f2;border:1px solid #b7c0dc;}
         .em-progress { height: 8px; background: #e2e8f0; border-radius: 999px; overflow: hidden; margin-bottom: 12px; }
         .em-progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, #3b82f6, #60a5fa); border-radius: 999px; transition: width 0.35s ease; }
         .em-message { padding: 10px 14px; background: #eff6ff; border-left: 3px solid #3b82f6; border-radius: 6px; font-size: 0.92rem; color: #1e293b; margin-bottom: 14px; min-height: 1.5em; }
@@ -1095,7 +1095,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 
 <style>
 .num-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 18px 0; border-radius: 18px; overflow: hidden; box-shadow: 0 10px 32px rgba(99,102,241,0.14), 0 2px 6px rgba(15,23,42,0.05); font-size: 0.95rem; table-layout: fixed; background: #fff; }
-.num-table thead th.num-title { background: linear-gradient(135deg, #4338ca 0%, #6366f1 50%, #818cf8 100%); color: #fff; font-size: 1.3rem; font-weight: 900; padding: 26px 16px 22px; letter-spacing: 0.01em; text-transform: none; border: none; text-align: center; position: relative; }
+.num-table thead th.num-title { background: linear-gradient(135deg, #f0f0f8 0%, #eeeef9 50%, #edeffa 100%); color:#4338ca; font-size: 1.3rem; font-weight: 900; padding: 26px 16px 22px; letter-spacing: 0.01em; text-transform: none; border:1px solid #bbb8db; text-align: center; position: relative; }
 .num-table thead th.num-title::after { content: ''; position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); width: 56px; height: 3px; background: rgba(255,255,255,0.55); border-radius: 999px; }
 .num-table thead th.num-title .num-title-ko { display: block; font-weight: 600; font-size: 0.92rem; opacity: 0.85; margin-top: 6px; letter-spacing: 0.04em; }
 .num-table thead th { background: #f8fafc; color: #475569; font-weight: 800; padding: 14px 8px 12px; text-align: center; font-size: 0.7rem; letter-spacing: 0.13em; text-transform: uppercase; border: none; border-bottom: 1px solid #e2e8f0; line-height: 1.4; }
@@ -1147,8 +1147,8 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .nm-stat { display: inline-flex; align-items: baseline; gap: 6px; padding: 6px 12px; background: #f1f5f9; border-radius: 8px; }
 .nm-stat-label { font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; }
 .nm-stat-num { font-size: 1.05rem; font-weight: 900; color: #3730a3; }
-.nm-reset { margin-left: auto; background: #4f46e5; color: #fff; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 700; transition: background 0.2s; font-family: inherit; }
-.nm-reset:hover { background: #4338ca; }
+.nm-reset { margin-left: auto; background: #efeef9; color:#4f46e5; border:1px solid #b6b3e0; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 700; transition: background 0.2s; font-family: inherit; }
+.nm-reset:hover {color:#4338ca; background: #e5e4f2;border:1px solid #bbb8db;}
 .nm-progress { height: 8px; background: #e2e8f0; border-radius: 999px; overflow: hidden; margin-bottom: 12px; }
 .nm-progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, #6366f1, #818cf8); border-radius: 999px; transition: width 0.35s ease; }
 .nm-message { padding: 10px 14px; background: #e0e7ff; border-left: 3px solid #6366f1; border-radius: 6px; font-size: 0.92rem; color: #1e293b; margin-bottom: 14px; min-height: 1.5em; }
@@ -1170,7 +1170,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .spk-m { margin-left:2px; }
 .spk-off { opacity:0.62; }
 .ak-notice { position:fixed; left:50%; bottom:22px; transform:translateX(-50%) translateY(14px);
-    z-index:10000; max-width:min(92vw,460px); background:#1e293b; color:#fff; border-radius:10px;
+    z-index:10000; max-width:min(92vw,460px); background:#f1f3f6; color:#1e293b; border-radius:10px;
     padding:11px 16px; font-size:0.86rem; line-height:1.45; box-shadow:0 6px 20px rgba(15,23,42,0.3);
     opacity:0; pointer-events:none; transition:opacity 0.2s, transform 0.2s; }
 .ak-notice.on { opacity:1; transform:translateX(-50%) translateY(0); }
