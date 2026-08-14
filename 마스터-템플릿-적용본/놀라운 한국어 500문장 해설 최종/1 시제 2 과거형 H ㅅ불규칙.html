@@ -377,7 +377,9 @@ document.addEventListener('DOMContentLoaded', function(){
 .sum-past .sp-card{background:#fff;border:1.5px solid;border-radius:12px;padding:12px 12px 11px 12px;display:flex;flex-direction:column;gap:8px;transition:transform 0.16s ease,box-shadow 0.16s ease;}
 .sum-past .sp-card:hover{transform:translateY(-2px);}
 .sum-past .sp-head{display:flex;align-items:flex-start;gap:9px;}
-.sum-past .sp-badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;color:#fff;font-weight:800;font-size:1.05rem;flex-shrink:0;line-height:1;}
+/* ★Ⓐ~Ⓗ 표지는 파스텔로 — 진한 바탕 + 흰 글자는 쓰지 않는다 (2026-08-14 사용자 규칙).
+   테두리 색을 갈래마다 주므로 여기서 border 를 열어 둔다. */
+.sum-past .sp-badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;border:1.5px solid transparent;font-weight:800;font-size:1.05rem;flex-shrink:0;line-height:1;box-sizing:border-box;}
 .sum-past .sp-title{font-weight:800;font-size:0.95rem;line-height:1.25;color:#222;}
 .sum-past .sp-title small{display:block;color:#888;font-size:0.72rem;font-weight:500;margin-top:1px;letter-spacing:0.2px;}
 .sum-past .sp-rule{background:rgba(255,255,255,0.75);border:1.5px solid;border-radius:8px;padding:6px 10px;font-weight:700;font-size:0.88rem;text-align:center;line-height:1.35;}
@@ -387,24 +389,24 @@ document.addEventListener('DOMContentLoaded', function(){
 .sum-past .sp-ex .sp-out{font-weight:800;}
 
 .sum-past .sp-card.p-gold{background:linear-gradient(180deg,#fffaef 0%,#fef3e2 100%);border-color:#e6c78a;}
-.sum-past .sp-card.p-gold .sp-badge{background:#8a6a26;}
+.sum-past .sp-card.p-gold .sp-badge{background:#fbf0d8;color:#6b521d;border-color:#d4b97a;}
 .sum-past .sp-card.p-gold .sp-rule{border-color:#d4b97a;color:#6b521d;}
 .sum-past .sp-card.p-gold .sp-ex .sp-out,.sum-past .sp-card.p-gold .sp-ex .sp-arr{color:#8a6a26;}
 
 
 .sum-past .sp-card.p-rose{background:linear-gradient(180deg,#fdf7f7 0%,#fcf4f4 100%);border-color:#e0b9b9;}
-.sum-past .sp-card.p-rose .sp-badge{background:#9b5757;}
+.sum-past .sp-card.p-rose .sp-badge{background:#f8e8e8;color:#7a3d3d;border-color:#e0b9b9;}
 .sum-past .sp-card.p-rose .sp-rule{border-color:#e0b9b9;color:#7a3d3d;}
 .sum-past .sp-card.p-rose .sp-ex .sp-out,.sum-past .sp-card.p-rose .sp-ex .sp-arr{color:#9b5757;}
 
 .sum-past .sp-card.p-sage{background:linear-gradient(180deg,#f5faf6 0%,#eef7f0 100%);border-color:#b6d4bf;}
-.sum-past .sp-card.p-sage .sp-badge{background:#4b7358;}
+.sum-past .sp-card.p-sage .sp-badge{background:#e7f2ea;color:#385a42;border-color:#b6d4bf;}
 .sum-past .sp-card.p-sage .sp-rule{border-color:#b6d4bf;color:#385a42;}
 .sum-past .sp-card.p-sage .sp-ex .sp-out,.sum-past .sp-card.p-sage .sp-ex .sp-arr{color:#4b7358;}
 
 
 .sum-past .sp-card.p-lavender{background:linear-gradient(180deg,#faf5fc 0%,#efe4f5 100%);border-color:#c9b6d9;}
-.sum-past .sp-card.p-lavender .sp-badge{background:#6b4a8a;}
+.sum-past .sp-card.p-lavender .sp-badge{background:#efe4f5;color:#523669;border-color:#c9b6d9;}
 .sum-past .sp-card.p-lavender .sp-rule{border-color:#c9b6d9;color:#523669;}
 .sum-past .sp-card.p-lavender .sp-ex .sp-out,.sum-past .sp-card.p-lavender .sp-ex .sp-arr{color:#6b4a8a;}
 
