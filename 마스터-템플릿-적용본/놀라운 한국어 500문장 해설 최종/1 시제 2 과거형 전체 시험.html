@@ -89,6 +89,12 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .pt-btn:hover{background:#f5f7fb;border-color:#b8c8dd;}
 .pt-btn.primary{background:#f2f3f5;color:#546a87;border-color:#c3c9d0;}
 .pt-btn.primary:hover{color:#475569;background:#e8eaed;border-color:#c4c8cf;}
+/* 전체 듣기 — 모두 맞히기 전에는 꺼 둔다 (2026-08-15 사용자 지시) */
+.allt-listen{background:#eef7f0;border-color:#c6d8c9;color:#3f6149;}
+.allt-listen:hover:not([disabled]){background:#e0efe4;}
+.allt-listen[disabled]{opacity:.45;cursor:not-allowed;}
+.allt-listen.playing{background:#fdecec;border-color:#f0c4c4;color:#9b4747;}
+
 .pt-btn.grade{background:#f2f5f3;color:#4b7358;border-color:#c3d0c7;}
 .pt-btn.grade:hover{color:#3f6149;background:#e8edea;border-color:#c3d0c7;}
 .pt-input.empty-wrong{background:#fbeeee;border-color:#ebcece;}
@@ -141,7 +147,16 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .wqg-num{font-family:'Lato','Noto Sans KR',sans-serif;font-weight:900;color:#3b82f6;font-size:1.05rem;min-width:28px;}
 .wqg-prompt{font-size:1.1rem;font-weight:800;color:#1e293b;}
 .wqg-prompt small{font-weight:600;color:#94a3b8;font-size:0.85rem;margin-left:2px;}
-.wqg-head .wqg-tts{margin-left:auto;}
+.wqg-head .wqg-all{margin-left:auto;}
+/* ★카드 🔊 는 그 카드를 다 맞힌 뒤에 나온다 — 「1 시제 종합 시험」에서 옮겨 왔다.
+   과거형 전체 시험만 이 장치가 빠져 있었다 (2026-08-15 사용자 지시). */
+.wqg-all{display:none;gap:6px;margin-left:8px;vertical-align:middle;}
+.wqg-all.on{display:inline-flex;}
+.wqg-allbtn{font-size:0.78rem;font-weight:700;color:#166534;background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:2px 10px;cursor:pointer;font-family:inherit;}
+.wqg-allbtn:hover{background:#dcfce7;}
+.wqg-allbtn .gloss{font-size:0.66em;}
+@media print{.wqg-all{display:none !important;}}
+
 .wqg-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .wqg-cell{position:relative;display:flex;flex-direction:column;gap:4px;}
 .wqg-label{font-size:0.72rem;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:0.4px;font-family:'Lato','Noto Sans KR',sans-serif;}
@@ -282,6 +297,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
     <div class="pt-btns">
       <button class="pt-btn" onclick="alltReset()">🔄 초기화<span class="gloss" lang="en" translate="yes">Reset</span></button>
       <button class="pt-btn grade" onclick="alltGrade()">✅ 점수<span class="gloss" lang="en" translate="yes">Score</span></button>
+      <button class="pt-btn allt-listen" onclick="alltAll(this)" disabled title="모두 맞히면 켜집니다">🔊 전체 듣기<span class="gloss" lang="en" translate="yes">Play all</span></button>
       <button class="pt-btn primary" onclick="alltReveal()">💡 정답<span class="gloss" lang="en" translate="yes">Answer</span></button>
     </div>
   </div>
@@ -451,10 +467,9 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
   let html = '';
   words.forEach(function(w, i){
     const n = i + 1;
-    var esc = (w[2]||'').replace(/'/g,"\\'");
-    html += '<div class="wqg-card">' +
+    html += '<div class="wqg-card" data-forms="'+w.slice(2,6).join('|')+'">' +
       '<div class="wqg-head"><span class="wqg-num">'+n+'</span><span class="wqg-prompt"><b>'+w[0]+'</b> <small>('+w[1]+')</small></span>' +
-        '<button translate="yes" class="speak-btn wqg-tts" onclick="speakKorean(\''+esc+'\')" title="Listen">🔊</button></div>' +
+        '<span class="wqg-all"><button translate="yes" class="wqg-allbtn" onclick="alltSeq(this,\'f\')">🔊 여성<span class="gloss" lang="en" translate="yes">Female</span></button><button translate="yes" class="wqg-allbtn" onclick="alltSeq(this,\'m\')">🔊 남성<span class="gloss" lang="en" translate="yes">Male</span></button></span></div>' +
       '<div class="wqg-grid">' +
         '<div class="wqg-cell"><span class="wqg-label">현재형 평서형<span class="gloss" lang="en" translate="yes">Present</span></span><input translate="yes" class="pt-input" type="text" data-ans="'+w[2]+'" oninput="alltCheck(this)" placeholder="..."></div>' +
         '<div class="wqg-cell"><span class="wqg-label">현재형 의문형<span class="gloss" lang="en" translate="yes">Present Q</span></span><input translate="yes" class="pt-input" type="text" data-ans="'+w[3]+'" oninput="alltCheck(this)" placeholder="..."></div>' +
@@ -649,4 +664,108 @@ else akVoiceInit();if('speechSynthesis' in window){window.speechSynthesis.onvoic
 })();
 </script>
 <div class="ak-notice" id="akNotice">이 브라우저에는 한국어 남성 음성이 없어 <b>목소리를 낮춰</b> 읽습니다. 진짜 남성 음성은 Microsoft Edge 에서 나옵니다.<span class="gloss" lang="en" translate="yes">This browser has no Korean male voice, so the female voice is pitched down. Open the page in Microsoft Edge for a real male voice.</span></div>
+<script>
+/* 카드 소리 — 「1 시제 종합 시험」에서 옮겨 옴 */
+var AK_SEQ_ID = 0;
+function akSpeakSeq(list, sex, done){
+  sex = sex || AK_SEX;
+  var my = ++AK_SEQ_ID, i = 0;
+  function next(){
+    if (my !== AK_SEQ_ID) return;
+    if (i >= list.length){ if (done) done(); return; }
+    var text = list[i++];
+    var n = window.AK_SND ? AK_SND[text] : null;
+    if (n){
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
+      if (window.AK_AU){ AK_AU.pause(); AK_AU.currentTime = 0; }
+      AK_AU = new Audio(encodeURI('_소리/' + (sex === 'm' ? 'm' : 'f') + '/' + n + '.mp3'));
+      AK_AU.onended = next;
+      AK_AU.onerror = function(){ tts(text); };
+      var p = AK_AU.play();
+      if (p && p.catch) p.catch(function(){ tts(text); });
+    } else tts(text);
+  }
+  function tts(text){
+    if (!('speechSynthesis' in window)) return;
+    var v = akPick(sex);
+    window.speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = (v && v.lang) || 'ko-KR';
+    u.rate = 0.92;
+    if (v) u.voice = v;
+    u.onend = next;
+    /* cancel() 직후 speak() 금지 — 60ms 규칙 */
+    setTimeout(function(){ if (my === AK_SEQ_ID) window.speechSynthesis.speak(u); }, 60);
+  }
+  next();
+}
+/* 퀴즈2 — 카드의 여섯 활용형을 고른 목소리로 이어 읽기 */
+function alltSeq(btn, sex){
+  var card = btn.closest('.wqg-card');
+  if (card && card.dataset.forms) akSpeakSeq(card.dataset.forms.split('|'), sex);
+}
+/* 퀴즈2 — 여섯 칸의 정답이 다 보일 때 단추를 보인다.
+   맞혀서 초록이 된 것(correct)과 「💡 정답」으로 채워진 것(revealed) 둘 다 해당한다. */
+
+/* 절 전체 듣기 — 카드의 data-forms 를 차례로 잇는다 (2026-08-15 사용자 지시) */
+function alltAllReset(){
+  var bs = document.querySelectorAll('.allt-listen.playing'), i, lb;
+  for (i = 0; i < bs.length; i++){
+    bs[i].classList.remove('playing');
+    lb = bs[i].getAttribute('data-label');
+    if (lb) bs[i].innerHTML = lb;
+  }
+}
+function alltAll(btn){
+  var was = btn.classList.contains('playing');
+  AK_SEQ_ID++;                                  /* 앞 재생 끊기 */
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  if (window.AK_AU){ try { AK_AU.pause(); } catch(e){} }
+  alltAllReset();
+  if (was) return;
+  var list = [];
+  document.querySelectorAll('.wqg-card').forEach(function(c){
+    if (c.dataset.forms) list = list.concat(c.dataset.forms.split('|'));
+  });
+  if (!list.length) return;
+  if (!btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.innerHTML);
+  btn.classList.add('playing');
+  btn.innerHTML = '\u25a0 \uba48\ucda4<span class="gloss" lang="en" translate="yes">Stop</span>';
+  akSpeakSeq(list, (typeof AK_SEX !== 'undefined') ? AK_SEX : 'f', alltAllReset);
+}
+function alltCardBtns(card){
+  if (!card) return;
+  var box = card.querySelector('.wqg-all');
+  if (!box) return;
+  var inputs = card.querySelectorAll('.pt-input');
+  var ok = inputs.length > 0;
+  inputs.forEach(function(x){
+    if (!x.classList.contains('correct') && !x.classList.contains('revealed')) ok = false;
+  });
+  if (box.classList.contains('on') !== ok) box.classList.toggle('on', ok);
+}
+function alltCardBtnsAll(){
+  document.querySelectorAll('.wqg-card').forEach(alltCardBtns);
+  var lb = document.querySelector('.allt-listen');
+  if (lb){
+    var cards = document.querySelectorAll('.wqg-card'), all = cards.length > 0, i;
+    for (i = 0; i < cards.length; i++){
+      var b = cards[i].querySelector('.wqg-all');
+      if (!b || !b.classList.contains('on')) { all = false; break; }
+    }
+    lb.disabled = !all;
+    if (!all && lb.classList.contains('playing')){ AK_SEQ_ID++; alltAllReset(); }
+  }
+}
+document.addEventListener('input', function(ev){
+  var x = ev.target;
+  if (x && x.classList && x.classList.contains('pt-input')) alltCardBtnsAll();
+});
+document.addEventListener('click', function(ev){
+  var b = ev.target && ev.target.closest ? ev.target.closest('button') : null;
+  if (!b) return;
+  var oc = b.getAttribute('onclick') || '';
+  if (/allt(Grade|Reveal|Reset)\(/.test(oc)) setTimeout(alltCardBtnsAll, 0);
+});
+</script>
 </body></html>

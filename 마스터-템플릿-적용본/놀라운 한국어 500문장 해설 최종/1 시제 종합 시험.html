@@ -89,6 +89,12 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .pt-btn:hover{background:#f5f7fb;border-color:#b8c8dd;}
 .pt-btn.primary{background:#f2f3f5;color:#546a87;border-color:#c3c9d0;}
 .pt-btn.primary:hover{color:#475569;background:#e8eaed;border-color:#c4c8cf;}
+/* 전체 듣기 — 모두 맞히기 전에는 꺼 둔다 (2026-08-15 사용자 지시) */
+.allt-listen{background:#eef7f0;border-color:#c6d8c9;color:#3f6149;}
+.allt-listen:hover:not([disabled]){background:#e0efe4;}
+.allt-listen[disabled]{opacity:.45;cursor:not-allowed;}
+.allt-listen.playing{background:#fdecec;border-color:#f0c4c4;color:#9b4747;}
+
 .pt-btn.grade{background:#f2f5f3;color:#4b7358;border-color:#c3d0c7;}
 .pt-btn.grade:hover{color:#3f6149;background:#e8edea;border-color:#c3d0c7;}
 .pt-input.empty-wrong{background:#fbeeee;border-color:#ebcece;}
@@ -292,6 +298,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
     <div class="pt-btns">
       <button class="pt-btn" onclick="alltReset()">🔄 초기화<span class="gloss" lang="en" translate="yes">Reset</span></button>
       <button class="pt-btn grade" onclick="alltGrade()">✅ 점수<span class="gloss" lang="en" translate="yes">Score</span></button>
+      <button class="pt-btn allt-listen" onclick="alltAll(this)" disabled title="모두 맞히면 켜집니다">🔊 전체 듣기<span class="gloss" lang="en" translate="yes">Play all</span></button>
       <button class="pt-btn primary" onclick="alltReveal()">💡 정답<span class="gloss" lang="en" translate="yes">Answer</span></button>
     </div>
   </div>
@@ -658,11 +665,12 @@ function fcSeq(btn, sex){
   var card = btn.closest('.fc-card');
   if (card && card.dataset.forms) akSpeakSeq(card.dataset.forms.split('|'), sex);
 }
-function akSpeakSeq(list, sex){
+function akSpeakSeq(list, sex, done){
   sex = sex || AK_SEX;
   var my = ++AK_SEQ_ID, i = 0;
   function next(){
-    if (my !== AK_SEQ_ID || i >= list.length) return;
+    if (my !== AK_SEQ_ID) return;
+    if (i >= list.length){ if (done) done(); return; }
     var text = list[i++];
     var n = window.AK_SND ? AK_SND[text] : null;
     if (n){
@@ -696,6 +704,33 @@ function alltSeq(btn, sex){
 }
 /* 퀴즈2 — 여섯 칸의 정답이 다 보일 때 단추를 보인다.
    맞혀서 초록이 된 것(correct)과 「💡 정답」으로 채워진 것(revealed) 둘 다 해당한다. */
+
+/* 절 전체 듣기 — 카드의 data-forms 를 차례로 잇는다 (2026-08-15 사용자 지시) */
+function alltAllReset(){
+  var bs = document.querySelectorAll('.allt-listen.playing'), i, lb;
+  for (i = 0; i < bs.length; i++){
+    bs[i].classList.remove('playing');
+    lb = bs[i].getAttribute('data-label');
+    if (lb) bs[i].innerHTML = lb;
+  }
+}
+function alltAll(btn){
+  var was = btn.classList.contains('playing');
+  AK_SEQ_ID++;                                  /* 앞 재생 끊기 */
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  if (window.AK_AU){ try { AK_AU.pause(); } catch(e){} }
+  alltAllReset();
+  if (was) return;
+  var list = [];
+  document.querySelectorAll('.wqg-card').forEach(function(c){
+    if (c.dataset.forms) list = list.concat(c.dataset.forms.split('|'));
+  });
+  if (!list.length) return;
+  if (!btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.innerHTML);
+  btn.classList.add('playing');
+  btn.innerHTML = '\u25a0 \uba48\ucda4<span class="gloss" lang="en" translate="yes">Stop</span>';
+  akSpeakSeq(list, (typeof AK_SEX !== 'undefined') ? AK_SEX : 'f', alltAllReset);
+}
 function alltCardBtns(card){
   if (!card) return;
   var box = card.querySelector('.wqg-all');
@@ -709,10 +744,20 @@ function alltCardBtns(card){
 }
 function alltCardBtnsAll(){
   document.querySelectorAll('.wqg-card').forEach(alltCardBtns);
+  var lb = document.querySelector('.allt-listen');
+  if (lb){
+    var cards = document.querySelectorAll('.wqg-card'), all = cards.length > 0, i;
+    for (i = 0; i < cards.length; i++){
+      var b = cards[i].querySelector('.wqg-all');
+      if (!b || !b.classList.contains('on')) { all = false; break; }
+    }
+    lb.disabled = !all;
+    if (!all && lb.classList.contains('playing')){ AK_SEQ_ID++; alltAllReset(); }
+  }
 }
 document.addEventListener('input', function(ev){
   var x = ev.target;
-  if (x && x.classList && x.classList.contains('pt-input')) alltCardBtns(x.closest('.wqg-card'));
+  if (x && x.classList && x.classList.contains('pt-input')) alltCardBtnsAll();
 });
 document.addEventListener('click', function(ev){
   var b = ev.target && ev.target.closest ? ev.target.closest('button') : null;
