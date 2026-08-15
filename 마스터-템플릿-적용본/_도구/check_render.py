@@ -93,13 +93,27 @@ def main():
                 if m.type == "error" and not IGNORE.search(m.text):
                     errs.append("console: " + m.text[:110])
             page.on("console", on_console)
-            try:
-                page.goto("file:///" + os.path.join(BOOK, fn).replace("\\", "/"),
-                          wait_until="load", timeout=30000)
-                page.wait_for_timeout(320)
-                r = page.evaluate(PROBE)
-            except Exception as e:
-                rows.append({"file": fn, "fatal": str(e)[:120]})
+            # ★쪽마다 fonts.googleapis.com 에서 글꼴을 받는다. 망이 늦으면
+            #   「열지 못함」으로 세어져 같은 파일인데 0건과 2건을 오갔다.
+            #   그래서 한 번 다시 열어 본다 — 두 번 다 실패해야 참으로 못 연 것이다.
+            #   글꼴을 막으면 흔들림은 없어지지만 글자 너비가 달라져
+            #   「가로 넘침」의 잣대가 바뀐다. 그래서 글꼴은 그대로 받는다.
+            r = None
+            for tries in (1, 2):
+                try:
+                    page.goto("file:///" + os.path.join(BOOK, fn).replace("\\", "/"),
+                              wait_until="load", timeout=60000)
+                    # 글꼴이 다 앉아야 너비가 안 흔들린다 (늦으면 3초에서 끊는다)
+                    page.evaluate("() => Promise.race(["
+                                  "document.fonts.ready,"
+                                  "new Promise(r => setTimeout(r, 3000))])")
+                    page.wait_for_timeout(320)
+                    r = page.evaluate(PROBE)
+                    break
+                except Exception as e:
+                    if tries == 2:
+                        rows.append({"file": fn, "fatal": str(e)[:120]})
+            if r is None:
                 page.remove_listener("console", on_console)
                 continue
             page.remove_listener("console", on_console)
