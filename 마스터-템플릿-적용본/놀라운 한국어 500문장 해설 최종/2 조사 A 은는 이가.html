@@ -302,10 +302,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
 input[data-ans].correct,input[data-ans].prex{cursor:pointer;}
 
 /* 활용표 전체 듣기 (여성·남성). 지금 읽는 낱말에 테두리가 든다. */
-.sl-all{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 2px 0;}
-/* ★활용표의 전체 듣기는 오른쪽 — 그 단추가 읽는 결과 상자가 오른쪽에 있다
-   (2026-08-14 사용자 결정). 따라 읽기 목록은 왼쪽 그대로 둔다. */
-.conj-rule .sl-all,.conj-contract .sl-all,.conj-past .sl-all{justify-content:flex-end;}
+.sl-all{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 2px 0;justify-content:flex-end}
+/* ★전체 듣기 단추는 모두 오른쪽 (2026-08-15 사용자 결정).
+   앞서 2026-08-14 에는 활용표만 오른쪽이고 따라 읽기는 왼쪽이었다.
+   이제 .sl-all 밑틀이 오른쪽이라 갈래별 규칙은 필요 없다. */
 .sl-all-btn{background:#eff6ff;color:#1e3a8a;border:1px solid #bfdbfe;padding:7px 14px;border-radius:8px;cursor:pointer;font-size:0.8rem;font-weight:700;line-height:1.3;font-family:inherit;transition:background 0.2s;}
 .sl-all-btn:hover{background:#dbeafe;}
 .sl-all-btn.playing{background:#fee2e2;border-color:#fecaca;color:#991b1b;}
