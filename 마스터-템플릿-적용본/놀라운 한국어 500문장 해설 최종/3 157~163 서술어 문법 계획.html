@@ -967,6 +967,22 @@ p.en{margin-bottom:16px;}
     <button class="wt-btn primary" onclick="wtReveal()">💡 정답<span class="gloss" lang="en" translate="yes">Answer</span></button>
   </div>
 </div>
+<style>
+/* wt-all v1 — 쓰기 시험을 다 맞히면(또는 정답을 펴면) 나오는 전체 듣기. */
+.wt-all{margin:0 0 12px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:10px;padding:11px 13px;}
+.wt-all[hidden]{display:none;}
+.wt-all-msg{font-weight:800;color:#065f46;font-size:0.92rem;line-height:1.55;}
+.wt-all-msg small{display:block;font-weight:600;color:#047857;font-size:0.79rem;margin-top:2px;}
+.wt-all-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px;}
+.writing-item.sl-now{box-shadow:inset 0 0 0 2px #10b981;border-radius:8px;}
+</style>
+<div id="wtAllBox" class="wt-all" hidden>
+<div class="wt-all-msg">🎉 이제 문장을 소리로 확인해 보세요.<small lang="en" translate="yes">Now listen to the sentences.</small></div>
+<div class="wt-all-btns">
+<button class="sl-all-btn" onclick="wtAll(this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button>
+<button class="sl-all-btn" onclick="wtAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button>
+</div>
+</div>
 <div class="writing-practice">
     <div class="writing-item"><div class="writing-header"><span class="writing-num">157</span><span class="writing-en"><span lang="en" translate="yes">I'm going to go to Korea next year.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('저는 내년에 한국에 가려고 합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('저는 내년에 한국에 가려고 합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="저는 내년에 한국에 가려고 합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
     <div class="writing-item"><div class="writing-header"><span class="writing-num">158</span><span class="writing-en"><span lang="en" translate="yes">I'm going to meet my friend this weekend.</span></span><button translate="yes" class="speak-btn spk-f" onclick="speakKorean('저는 이번 주말에 친구를 만나려고 합니다.','f')" title="Listen — female voice">🔊<span class="spk-tag">여</span></button><button translate="yes" class="speak-btn spk-m" onclick="speakKorean('저는 이번 주말에 친구를 만나려고 합니다.','m')" title="Listen — male voice">🔊<span class="spk-tag">남</span></button></div><textarea translate="yes" class="writing-input" data-ans="저는 이번 주말에 친구를 만나려고 합니다." oninput="wtCheck(this)" placeholder="Write in Korean."></textarea></div>
@@ -1164,6 +1180,7 @@ function wtCheck(inp){
 }
 function wtScore(){ wtScoreReset(); }
 function wtReset(){
+  slStop(); wtAllToggle(false);
   document.querySelectorAll('.writing-practice .writing-item').forEach(function(it){ wtRowClear(it); });
   document.querySelectorAll('.writing-practice .writing-input').forEach(function(inp){
     inp.value = ''; inp.classList.remove('correct','wrong','revealed');
@@ -1171,6 +1188,7 @@ function wtReset(){
   wtScoreReset();
 }
 function wtReveal(){
+  slStop(); wtAllToggle(true);
   document.querySelectorAll('.writing-practice .writing-item').forEach(function(it){ wtRowClear(it); });
   document.querySelectorAll('.writing-practice .writing-input').forEach(function(inp){
     inp.value = inp.dataset.ans; inp.classList.remove('correct','wrong'); inp.classList.add('revealed');
@@ -1220,6 +1238,38 @@ function wtAgain(btn){
   wtScoreReset();
   inp.focus();
 }
+function wtAllToggle(on){
+  var b = document.getElementById('wtAllBox');
+  if (b) b.hidden = !on;
+}
+function wtAll(btn, sex){
+  var was = btn.classList.contains('playing');
+  slStop();
+  if (was) return;                       /* 같은 단추를 다시 누르면 멈춘다 */
+  var its = document.querySelectorAll('.writing-practice .writing-item'),
+      items = [], i, inp;
+  for (i = 0; i < its.length; i++){
+    inp = its[i].querySelector('.writing-input');
+    if (inp && inp.dataset.ans) items.push([its[i], inp.dataset.ans]);
+  }
+  if (!items.length) return;
+  if (!btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.innerHTML);
+  btn.classList.add('playing');
+  btn.innerHTML = '\u25a0 \uba48\ucda4<span class=\"gloss\" lang=\"en\" translate=\"yes\">Stop</span>';
+  try { localStorage.setItem('akVoiceSex', sex); } catch(e){}
+  if (typeof AK_SEX !== 'undefined') AK_SEX = sex;
+  var my = ++AK_SEQ_ID, k = 0;
+  function next(){
+    if (my !== AK_SEQ_ID) return;
+    for (var j = 0; j < items.length; j++) items[j][0].classList.remove('sl-now');
+    if (k >= items.length){ slStop(); return; }
+    var it = items[k++];
+    it[0].classList.add('sl-now');
+    it[0].scrollIntoView({behavior:'smooth', block:'center'});
+    slPlay(it[1], sex, function(){ if (my === AK_SEQ_ID) next(); });
+  }
+  next();
+}
 function wtGrade(){
   var items = document.querySelectorAll('.writing-practice .writing-item');
   var c = 0, total = 0;
@@ -1241,6 +1291,7 @@ function wtGrade(){
   var pe = document.getElementById('wtPct');
   if (pe) pe.textContent = '· ' + (total ? Math.round(c * 100 / total) : 0) + '%';
   var be = document.getElementById('wtScoreBox'); if (be) be.classList.add('is-graded');
+  wtAllToggle(c === total && c > 0);
   if (c === total && c > 0 && typeof celebrateShow === 'function'){
     celebrateShow(c, 0, wtReset, '모든 문장을 정확히 작성했습니다!<br><span style="color:#5a6d87;font-size:0.9rem;">All sentences correct!</span>');
   }
