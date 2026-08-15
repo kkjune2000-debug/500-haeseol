@@ -372,6 +372,11 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
   .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 }
+
+/* ★한국어 한 문장 / 영어 한 문장으로 짝지었다 (2026-08-15 사용자 결정).
+   빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
+p.ko{margin-bottom:2px;}
+p.en{margin-bottom:16px;}
 </style>
 </head>
 <body>
@@ -687,8 +692,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 
 <h2>2. 카드 보고 말하기</h2>
 <p class="subtitle"><span lang="en" translate="yes">Look &amp; Speak</span></p>
-<p class="ko">카드의 영어를 보고 한국어로 말해 보세요. 카드를 눌러 답을 확인하세요.</p>
-<p class="en" lang="en" translate="yes">Look at the English, say it in Korean, then tap the card to check.</p>
+<p class="ko">카드의 영어를 보고 한국어로 말해 보세요.</p>
+<p class="en" lang="en" translate="yes">Look at the English on the card and say it in Korean.</p>
+<p class="ko">카드를 눌러 답을 확인하세요.</p>
+<p class="en" lang="en" translate="yes">Tap the card to check your answer.</p>
 
 <div class="flashcard-grid look-speak">
     <div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-num"><span lang="en" translate="yes">449 · EN</span></div><div class="flashcard-text"><span lang="en" translate="yes">It was so hot yesterday.</span></div><div class="flashcard-hint">↻ 클릭</div></div><div class="flashcard-back"><div class="flashcard-num"><span lang="en" translate="yes">449 · KR</span></div><div class="flashcard-text">어제는 너무 더웠습니다.</div><button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean('어제는 너무 더웠습니다.')" title="Listen">🔊</button></div></div></div>
@@ -724,8 +731,12 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 
 <h2>4. 쓰기 시험</h2>
 <p class="subtitle"><span lang="en" translate="yes">Writing Test</span></p>
-<p class="ko">영어를 보고 한국어로 써 보세요. 「✅ 채점」으로 확인하세요. 띄어쓰기와 마침표·물음표는 채점에 넣지 않습니다.</p>
-<p class="en" lang="en" translate="yes">Read the English and write it in Korean, then press Grade. Spacing, periods and question marks are not graded.</p>
+<p class="ko">영어를 보고 한국어로 써 보세요.</p>
+<p class="en" lang="en" translate="yes">Read the English and write it in Korean.</p>
+<p class="ko">「✅ 채점」으로 확인하세요.</p>
+<p class="en" lang="en" translate="yes">Press ✅ Grade to check.</p>
+<p class="ko">띄어쓰기와 마침표·물음표는 채점에 넣지 않습니다.</p>
+<p class="en" lang="en" translate="yes">Spacing, periods and question marks are not graded.</p>
 
 <div class="wt-toolbar">
   <div class="wt-score" id="wtScoreBox">✓ 점수 <span lang="en" translate="yes">· Score:</span> <span class="wt-correct" id="wtCorrect">–</span> <span class="wt-total">/ 5</span><span class="wt-pct" id="wtPct"></span></div>

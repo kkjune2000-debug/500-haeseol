@@ -32,6 +32,11 @@ input[data-ans].correct,input[data-ans].prex{cursor:pointer;}
 .sl-all-btn:hover{background:#dbeafe;}
 .sl-all-btn.playing{background:#fee2e2;border-color:#fecaca;color:#991b1b;}
 .sl-now{outline:2px solid #10b981;outline-offset:2px;border-radius:6px;}
+
+/* ★한국어 한 문장 / 영어 한 문장으로 짝지었다 (2026-08-15 사용자 결정).
+   빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
+p.ko{margin-bottom:2px;}
+p.en{margin-bottom:16px;}
 </style></head><body>
 <script>
 /* jm-voice v1 */
@@ -330,9 +335,13 @@ document.addEventListener('DOMContentLoaded', function(){
 
 <div class="exception">
   <p class="ko" style="margin:0 0 4px 0;font-weight:800;color:#b91c1c;">❗ 예외: '돕다'와 '곱다'는 '~아/어' 앞에서만 'ㅂ'이 '오'로 바뀝니다.</p>
-  <p class="ko" style="margin:0 0 2px 0;">'오' 뒤에는 '았'이 붙습니다. 돕 → 도오 + 았 → <strong>도왔습니다</strong> · 곱 → 고오 + 았 → <strong>고왔습니다</strong></p>
-  <p class="ko" style="margin:4px 0 2px 0;">미래형처럼 '~(으)ㄹ' 앞에서는 다른 'ㅂ 불규칙'과 똑같이 '우'가 됩니다. 돕 → 도우 + ㄹ → <strong>도울 것입니다</strong> (도올 것입니다 ✕)</p>
-  <p class="en" style="margin:0;font-style:italic;" lang="en" translate="yes">Exception: in <span lang="ko" translate="no">돕다</span> and <span lang="ko" translate="no">곱다</span>, '<span lang="ko" translate="no">ㅂ</span>' becomes '<span lang="ko" translate="no">오</span>' <b>only before <span lang="ko" translate="no">~아/어</span></b>, which takes <span lang="ko" translate="no">았</span> — <span lang="ko" translate="no">도왔습니다</span>, <span lang="ko" translate="no">고왔습니다</span>. Before <span lang="ko" translate="no">~(으)ㄹ</span> (future) it is '<span lang="ko" translate="no">우</span>' like every other <span lang="ko" translate="no">ㅂ</span> irregular — <span lang="ko" translate="no">도울 것입니다</span>.</p>
+  <p class="en" style="margin:0;font-style:italic;" lang="en" translate="yes">Exception: in <span lang="ko" translate="no">돕다</span> and <span lang="ko" translate="no">곱다</span>, '<span lang="ko" translate="no">ㅂ</span>' becomes '<span lang="ko" translate="no">오</span>' <b>only before <span lang="ko" translate="no">~아/어</span></b>.</p>
+  <p class="ko" style="margin:0 0 2px 0;">'오' 뒤에는 '았'이 붙습니다.</p>
+  <p class="en" style="margin:0;font-style:italic;" lang="en" translate="yes">That '<span lang="ko" translate="no">오</span>' then takes <span lang="ko" translate="no">았</span> — <span lang="ko" translate="no">도왔습니다</span>, <span lang="ko" translate="no">고왔습니다</span>.</p>
+  <p class="ko" style="margin:2px 0 0;font-weight:700;">돕 → 도오 + 았 → <strong>도왔습니다</strong> · 곱 → 고오 + 았 → <strong>고왔습니다</strong></p>
+  <p class="ko" style="margin:4px 0 2px 0;">미래형처럼 '~(으)ㄹ' 앞에서는 다른 'ㅂ 불규칙'과 똑같이 '우'가 됩니다.</p>
+  <p class="en" style="margin:0;font-style:italic;" lang="en" translate="yes">Before <span lang="ko" translate="no">~(으)ㄹ</span> (future) it is '<span lang="ko" translate="no">우</span>' like every other <span lang="ko" translate="no">ㅂ</span> irregular — <span lang="ko" translate="no">도울 것입니다</span>.</p>
+  <p class="ko" style="margin:2px 0 0;font-weight:700;">돕 → 도우 + ㄹ → <strong>도울 것입니다</strong> (도올 것입니다 ✕)</p>
 </div>
 
 <div style="margin:14px 0 4px 0;padding:10px 14px;background:#fff8e6;border-left:4px solid #e8c97a;border-radius:6px;">
