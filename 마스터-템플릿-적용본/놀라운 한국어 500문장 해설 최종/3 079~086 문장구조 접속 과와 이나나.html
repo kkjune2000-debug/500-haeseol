@@ -312,7 +312,9 @@
         .taste-card { padding: 14px 16px; border-radius: 12px; border: 2px solid var(--tc-border, #e2e8f0); border-left-width: 5px; background: var(--tc-bg, #f8fafc); box-shadow: 0 2px 6px rgba(0,0,0,0.04); }
         .taste-card .taste-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
         .taste-card .taste-ko { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.25rem; font-weight: 800; color: #1e293b; }
-        .taste-card .taste-en { font-size: 0.92rem; color: #59687c; font-weight: 500; }
+        /* ★영어는 한국어 아랫줄에 (2026-08-15 사용자 결정).
+   앞서는 .taste-head 안에 나란히 있어 한 줄에 셋이 붙어 있었다. */
+        .taste-card .taste-en { display: block; margin-top: 3px; font-size: 0.92rem; color: #59687c; font-weight: 500; }
         .taste-card .speak-btn { margin-left: auto; }
         /* Game completion celebration overlay */
         .celebrate-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.55); display: none; align-items: center; justify-content: center; z-index: 1000; backdrop-filter: blur(6px); animation: celebrateFadeIn 0.3s ease; }
@@ -1047,58 +1049,58 @@ small.en-line{display:inline-block;margin-bottom:9px;}
     <div class="taste-card" style="--tc-bg:#fdf2f8; --tc-border:#fbcfe8;">
         <div class="taste-head">
             <span class="taste-ko">달다</span>
-            <span class="taste-en"><span lang="en" translate="yes">— sweet</span></span>
             <button translate="yes" class="speak-btn" onclick="speakKorean('달다')" title="Listen">🔊</button>
         </div>
+        <div class="taste-en"><span lang="en" translate="yes">sweet</span></div>
     </div>
     <div class="taste-card" style="--tc-bg:#e0f2fe; --tc-border:#7dd3fc;">
         <div class="taste-head">
             <span class="taste-ko">짜다</span>
-            <span class="taste-en"><span lang="en" translate="yes">— salty</span></span>
             <button translate="yes" class="speak-btn" onclick="speakKorean('짜다')" title="Listen">🔊</button>
         </div>
+        <div class="taste-en"><span lang="en" translate="yes">salty</span></div>
     </div>
     <div class="taste-card" style="--tc-bg:#fefce8; --tc-border:#fef08a;">
         <div class="taste-head">
             <span class="taste-ko">시다</span>
-            <span class="taste-en"><span lang="en" translate="yes">— sour</span></span>
             <button translate="yes" class="speak-btn" onclick="speakKorean('시다')" title="Listen">🔊</button>
         </div>
+        <div class="taste-en"><span lang="en" translate="yes">sour</span></div>
     </div>
     <div class="taste-card" style="--tc-bg:#fff7ed; --tc-border:#fed7aa;">
         <div class="taste-head">
             <span class="taste-ko">쓰다</span>
-            <span class="taste-en"><span lang="en" translate="yes">— bitter</span></span>
             <button translate="yes" class="speak-btn" onclick="speakKorean('쓰다')" title="Listen">🔊</button>
         </div>
+        <div class="taste-en"><span lang="en" translate="yes">bitter</span></div>
     </div>
     <div class="taste-card" style="--tc-bg:#fef2f2; --tc-border:#fecaca;">
         <div class="taste-head">
             <span class="taste-ko">맵다</span>
-            <span class="taste-en"><span lang="en" translate="yes">— spicy</span></span>
             <button translate="yes" class="speak-btn" onclick="speakKorean('맵다')" title="Listen">🔊</button>
         </div>
+        <div class="taste-en"><span lang="en" translate="yes">spicy</span></div>
     </div>
     <div class="taste-card" style="--tc-bg:#eff6ff; --tc-border:#bfdbfe;">
         <div class="taste-head">
             <span class="taste-ko">싱겁다</span>
-            <span class="taste-en"><span lang="en" translate="yes">— bland</span></span>
             <button translate="yes" class="speak-btn" onclick="speakKorean('싱겁다')" title="Listen">🔊</button>
         </div>
+        <div class="taste-en"><span lang="en" translate="yes">bland</span></div>
     </div>
     <div class="taste-card" style="--tc-bg:#dcfce7; --tc-border:#86efac;">
         <div class="taste-head">
             <span class="taste-ko">고소하다</span>
-            <span class="taste-en"><span lang="en" translate="yes">— savory · nutty</span></span>
             <button translate="yes" class="speak-btn" onclick="speakKorean('고소하다')" title="Listen">🔊</button>
         </div>
+        <div class="taste-en"><span lang="en" translate="yes">savory · nutty</span></div>
     </div>
     <div class="taste-card" style="--tc-bg:#fffbeb; --tc-border:#fde68a;">
         <div class="taste-head">
             <span class="taste-ko">느끼하다</span>
-            <span class="taste-en"><span lang="en" translate="yes">— greasy</span></span>
             <button translate="yes" class="speak-btn" onclick="speakKorean('느끼하다')" title="Listen">🔊</button>
         </div>
+        <div class="taste-en"><span lang="en" translate="yes">greasy</span></div>
     </div>
 </div>
 
