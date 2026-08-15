@@ -72,6 +72,9 @@
         .answer-content { display: none; margin-top: 10px; padding: 12px 16px; background: #fffbeb; border-radius: 8px; border-left: 4px solid #f59e0b; }
         .answer-content .ans-kr { font-size: 1.15rem; font-weight: 900; color: #92400e; }
         .note-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 4px; margin: 12px 0 16px 0; font-size: 0.92rem; }
+/* ★색 있는 안내 상자 안에서는 .en(#64748b) 이 밝기 차 4.3 밖에 안 된다 — 밑틀 값은 흰 바탕을 두고 정한 것이다 (2026-08-15). */
+.caution .en,.exception .en,.note-box .en{color:#475569;}
+
         .pattern { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 12px; align-items: stretch; margin: 16px 0 24px; }
         .pattern-block { background: #fff; border: 2px solid #fde68a; border-radius: 14px; padding: 20px 22px 18px; box-shadow: 0 2px 12px rgba(245,158,11,0.08); display: flex; flex-direction: column; gap: 6px; position: relative; overflow: hidden; }
         .pattern-block::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #f59e0b, #fbbf24); }
