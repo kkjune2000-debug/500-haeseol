@@ -2367,12 +2367,24 @@ function numtAll(btn, sex){
   var wrap = bar && bar.previousElementSibling;   /* 바는 표 아래에 있다 */
   var tbl = wrap && wrap.querySelector('table.num-table');
   if (!tbl) return;
-  var nodes = tbl.querySelectorAll('td.num-ko [onclick]'), items = [], k, oc, mm;
-  for (k = 0; k < nodes.length; k++){
-    oc = nodes[k].getAttribute('onclick') || '';
-    mm = oc.match(/speakKorean\('([^']*)'/);
-    if (mm) items.push([nodes[k].closest('td'), mm[1]]);
+  /* ★갈래별로 읽는다 — 한자어를 끝까지, 그다음 고유어를 끝까지.
+     줄 차례로 읽으면 「일 하나 이 둘」이 되어 어느 쪽이 어느 갈래인지
+     귀로 못 가른다. */
+  var rows = tbl.querySelectorAll('tbody tr'), cols = [], k, j, oc, mm;
+  for (k = 0; k < rows.length; k++){
+    var kos = rows[k].querySelectorAll('td.num-ko');
+    for (j = 0; j < kos.length; j++){
+      var b = kos[j].querySelector('[onclick]');
+      if (!b) continue;
+      oc = b.getAttribute('onclick') || '';
+      mm = oc.match(/speakKorean\('([^']*)'/);
+      if (!mm) continue;
+      if (!cols[j]) cols[j] = [];
+      cols[j].push([kos[j], mm[1]]);
+    }
   }
+  var items = [];
+  for (j = 0; j < cols.length; j++) if (cols[j]) items = items.concat(cols[j]);
   if (!items.length) return;
   if (!btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.innerHTML);
   btn.classList.add('playing');
