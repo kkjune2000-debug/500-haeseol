@@ -315,11 +315,14 @@
         .em-progress-bar { height: 100%; width: 0%; background: linear-gradient(90deg, #3b82f6, #60a5fa); border-radius: 999px; transition: width 0.35s ease; }
         .em-message { padding: 10px 14px; background: #eff6ff; border-left: 3px solid #3b82f6; border-radius: 6px; font-size: 0.92rem; color: #1e293b; margin-bottom: 14px; min-height: 1.5em; }
         .em-message.complete { background: #f0fdf4; border-left-color: #22c55e; color: #166534; font-weight: 800; }
-        .em-columns { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto repeat(var(--em-rows, 8), 84px); gap: 8px 14px; }
+        .em-columns { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto repeat(var(--em-rows, 8), minmax(84px, 1fr)); gap: 8px 14px; }
         .em-col-header { font-size: 0.72rem; font-weight: 800; color: #59687c; text-transform: uppercase; letter-spacing: 0.1em; padding-left: 6px; }
-        #emEnglishList { grid-column: 1; display: flex; flex-direction: column; gap: 8px; }
-        #emKoreanList { grid-column: 2; display: flex; flex-direction: column; gap: 8px; }
-        .em-list { grid-row: 2 / -1; display: grid; grid-template-rows: subgrid; gap: 0; }
+        #emEnglishList { grid-column: 1; display: grid; grid-auto-rows: 1fr; gap: 8px; }
+        #emKoreanList { grid-column: 2; display: grid; grid-auto-rows: 1fr; gap: 8px; }
+        .em-list { grid-row: 2 / -1; display: grid; grid-template-rows: subgrid; gap: 8px; }
+        /* ★좁은 화면에서는 부모에 줄틀이 없다. subgrid 를 풀지 않으면
+           칸이 모두 한 줄에 포개진다. */
+        @media (max-width: 600px) { .em-list { grid-template-rows: none; grid-auto-rows: minmax(60px, 1fr); } }
         .em-slot { min-height: 60px; display: flex; }
         .em-slot > .em-item { width: 100%; height: 100%; }
         .em-item { width: 100%; min-height: 60px; border: 2px solid var(--em-border, #e2e8f0); border-left: 2px solid var(--em-border, #e2e8f0); border-radius: 12px; background: var(--em-bg, #f8fafc); cursor: pointer; padding: 10px 14px; display: flex; align-items: center; justify-content: center; gap: 10px; text-align: center; transition: transform 0.15s, filter 0.15s, box-shadow 0.15s, opacity 0.3s; font-family: inherit; color: #334155; }
@@ -332,7 +335,7 @@
         @keyframes emShake { 0%,100% {transform:translateX(0);} 20%{transform:translateX(-6px);} 40%{transform:translateX(6px);} 60%{transform:translateX(-4px);} 80%{transform:translateX(4px);} }
         @media (max-width: 600px) {
             .em-columns { grid-template-columns: 1fr; grid-template-rows: none; }
-            #emEnglishList, #emKoreanList { grid-row: auto; grid-column: 1; display: flex; flex-direction: column; gap: 8px; }
+            #emEnglishList, #emKoreanList { grid-row: auto; grid-column: 1; display: grid; grid-template-rows: none; grid-auto-rows: 1fr; gap: 8px; }
         }
         /* Game completion celebration overlay */
         .celebrate-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.55); display: none; align-items: center; justify-content: center; z-index: 1000; backdrop-filter: blur(6px); animation: celebrateFadeIn 0.3s ease; }
