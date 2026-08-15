@@ -12,7 +12,7 @@
         .container { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 48px 40px; }
         h1 { font-size: 2rem; font-weight: 900; color: #1e293b; border-bottom: 4px solid #3b82f6; padding-bottom: 12px; margin-bottom: 4px; }
         h1 .h1-line2 { display: block; }
-        h1 + .subtitle { color: #64748b; font-size: 1rem; margin-bottom: 40px; }
+        h1 + .subtitle { color: #59687c; font-size: 1rem; margin-bottom: 40px; }
         /* Title block — category-themed gradient (overrides legacy h1 layout when used) */
         .title-block { margin: 0 0 44px 0; padding: 28px 32px 24px; border-radius: 16px; background: linear-gradient(135deg, var(--title-bg-start, #faf5ff) 0%, #ffffff 70%); box-shadow: 0 2px 14px rgba(15,23,42,0.06); position: relative; overflow: hidden; }
         .title-block::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--title-gradient); opacity: 0.95; }
@@ -22,7 +22,7 @@
         .title-divider { height: 3px; background: var(--title-gradient); border-radius: 999px; margin: 18px 0 16px; opacity: 0.85; }
         .title-ko { display: flex; flex-direction: column; gap: 4px; }
         .title-en .title-main { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.02rem; font-weight: 800; color: var(--title-ko-main-color, #1e293b); margin: 0; padding: 0; border: none; letter-spacing: -0.01em; }
-        .title-en .title-sub { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.9rem; color: #64748b; line-height: 1.65; margin: 0; }
+        .title-en .title-sub { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.9rem; color: #59687c; line-height: 1.65; margin: 0; }
         /* Category palettes — apply class to .title-block */
         .title-block.sentence  { --title-gradient: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%); --title-bg-start: #eff6ff; --title-sub-color: #1e40af; --title-ko-main-color: #1e3a8a; }
         .title-block.predicate { --title-gradient: linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #8b5cf6 100%); --title-bg-start: #faf5ff; --title-sub-color: #5b21b6; --title-ko-main-color: #4c1d95; }
@@ -41,10 +41,10 @@
         }
         h2 { font-size: 1.5rem; font-weight: 800; color: #1e40af; margin-top: 48px; margin-bottom: 4px; padding-top: 24px; border-top: 2px solid #e2e8f0; }
         h2:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
-        h2 + .subtitle { color: #64748b; font-size: 0.95rem; margin-bottom: 20px; }
+        h2 + .subtitle { color: #59687c; font-size: 0.95rem; margin-bottom: 20px; }
         h3 { font-size: 1.2rem; font-weight: 700; color: #1e40af; margin-top: 36px; margin-bottom: 12px; padding: 10px 14px; background: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 4px; }
         .en { margin-bottom: 2px; }
-        .ko { color: #64748b; font-size: 0.92rem; margin-bottom: 16px; }
+        .ko { color: #59687c; font-size: 0.92rem; margin-bottom: 16px; }
         blockquote { background: #f8fafc; border-left: 3px solid #cbd5e1; padding: 12px 16px; margin: 12px 0 16px 0; border-radius: 4px; font-size: 0.95rem; line-height: 2; }
         pre { background: #1e293b; color: #e2e8f0; padding: 16px 20px; border-radius: 8px; margin: 12px 0 16px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.9rem; line-height: 1.6; }
         table { width: 100%; border-collapse: collapse; margin: 12px 0 20px 0; font-size: 0.92rem; }
@@ -60,7 +60,7 @@
         .answer-content .ans-kr { font-size: 1.15rem; font-weight: 900; color: #1e40af; }
         .note-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 4px; margin: 12px 0 16px 0; font-size: 0.92rem; }
         hr { border: none; border-top: 1px solid #e2e8f0; margin: 32px 0; }
-        .footer { text-align: center; color: #94a3b8; font-size: 0.85rem; margin-top: 48px; padding-top: 20px; border-top: 2px solid #e2e8f0; }
+        .footer { text-align: center; color: #5a6d87; font-size: 0.85rem; margin-top: 48px; padding-top: 20px; border-top: 2px solid #e2e8f0; }
         @media print { body { background: none; padding: 0; } .container { box-shadow: none; padding: 20px; } .answer-content { display: block !important; } .answer-toggle { display: none; } }
         .speak-btn { background: none; border: none; cursor: pointer; font-size: 1.3rem; vertical-align: middle; margin-left: 8px; padding: 2px 6px; border-radius: 6px; transition: background 0.2s; }
         .speak-btn:hover { background: #e0e7ff; }
@@ -68,9 +68,9 @@
         .sentence-list { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 0 0 24px; }
         .sentence-item { display: grid; grid-template-columns: 44px 1fr auto; gap: 16px; align-items: center; padding: 12px 18px; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; }
         .sentence-item:hover { border-color: #3b82f6; box-shadow: 0 4px 14px rgba(59,130,246,0.10); }
-        .sentence-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.25rem; font-weight: 900; color: #3b82f6; text-align: center; letter-spacing: -0.02em; }
+        .sentence-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.25rem; font-weight: 900; color: #0a5de4; text-align: center; letter-spacing: -0.02em; }
         .sentence-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-        .sentence-en { font-size: 1.06rem; color: #64748b; font-weight: 700; }
+        .sentence-en { font-size: 1.06rem; color: #59687c; font-weight: 700; }
         .sentence-kr { font-size: 1.06rem; font-weight: 700; color: #1e293b; line-height: 1.4; }
         .sentence-listen { background: #eff6ff; border: none; cursor: pointer; width: 40px; height: 40px; border-radius: 50%; font-size: 1.05rem; transition: background 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: center; padding: 0; }
         .sentence-listen:hover { background: #3b82f6; transform: scale(1.08); }
@@ -82,20 +82,20 @@
         .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
         .flashcard-front, .flashcard-back { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 22px; text-align: center; box-shadow: 0 4px 16px rgba(30,41,59,0.08); }
         .flashcard-front { background: #fff; border: 2px solid #bfdbfe; color: #1e293b; }
-        .flashcard-back { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 60%, #60a5fa 100%); color: #fff; transform: rotateY(180deg); }
-        .flashcard-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.2em; margin-bottom: 12px; opacity: 0.65; }
+        .flashcard-back { background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 55%, #2563eb 100%); color: #fff; transform: rotateY(180deg); }
+        .flashcard-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.2em; margin-bottom: 12px; opacity:1; }
         .flashcard-front .flashcard-text { font-size: 1.06rem; font-weight: 700; line-height: 1.4; }
         .flashcard-back .flashcard-text { font-size: 1.06rem; font-weight: 700; line-height: 1.4; }
-        .flashcard-hint { position: absolute; bottom: 10px; right: 14px; font-size: 0.68rem; color: #94a3b8; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
-        .flashcard-listen { position: absolute; bottom: 10px; right: 10px; background: rgba(255,255,255,0.22); border: none; cursor: pointer; width: 36px; height: 36px; border-radius: 50%; font-size: 1rem; transition: background 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: center; padding: 0; color: #fff; }
-        .flashcard-listen:hover { background: rgba(255,255,255,0.4); transform: scale(1.1); }
+        .flashcard-hint { position: absolute; bottom: 10px; right: 14px; font-size: 0.68rem; color: #5a6d87; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+        .flashcard-listen { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.18); border: none; cursor: pointer; width: 36px; height: 36px; border-radius: 50%; font-size: 1rem; transition: background 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: center; padding: 0; color: #fff; }
+        .flashcard-listen:hover { background: rgba(0,0,0,0.32); transform: scale(1.1); }
         @media (max-width: 600px) { .flashcard-grid { grid-template-columns: 1fr; } }
         /* Writing Test (comprehensive) */
         .writing-practice { display: flex; flex-direction: column; gap: 14px; margin: 16px 0 24px; }
         .writing-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }
         .writing-item:focus-within { border-color: #3b82f6; box-shadow: 0 2px 12px rgba(59,130,246,0.10); }
         .writing-header { display: flex; align-items: baseline; gap: 12px; }
-        .writing-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.05rem; font-weight: 900; color: #3b82f6; min-width: 28px; letter-spacing: -0.02em; }
+        .writing-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.05rem; font-weight: 900; color: #0a5de4; min-width: 28px; letter-spacing: -0.02em; }
         .writing-en { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.05rem; font-weight: 600; color: #1e293b; }
         .writing-input { width: 100%; min-height: 46px; padding: 10px 14px; font-family: 'Noto Sans KR', sans-serif; font-size: 1rem; color: #1e293b; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; resize: vertical; transition: border-color 0.2s, background 0.2s; box-sizing: border-box; }
         .writing-input:focus { outline: none; border-color: #3b82f6; background: #fff; }
@@ -103,7 +103,7 @@
         .wt-toolbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; padding:12px 16px; background:#ebf2fe; border:1px solid #a6c6fa; border-radius:10px; margin:14px 0 18px 0; }
         .wt-score { font-size:0.95rem; font-weight:700; color:#475569; }
         .wt-score .wt-correct { color:#26549f; font-size:1.1rem; }
-        .wt-score .wt-total { color:#94a3b8; }
+        .wt-score .wt-total { color:#5a6d87; }
         .wt-score .wt-pct { margin-left:8px; color:#26549f; font-weight:800; }
         .wt-score.is-graded { color:#1e293b; }
         .wt-btns { display:flex; gap:8px; flex-wrap:wrap; }
@@ -136,7 +136,7 @@
             white-space: nowrap;
             animation: wtBadgePop 5s ease forwards;
         }
-        .wt-celebrate-badge small { font-weight: 700; font-size: 0.78rem; opacity: 0.85; margin-left: 6px; }
+        .wt-celebrate-badge small { font-weight: 700; font-size: 0.78rem; opacity:1; margin-left: 6px; }
         @keyframes wtBadgePop {
             0% { transform: translateY(10px) scale(0.65); opacity: 0; }
             7% { transform: translateY(-6px) scale(1.08); opacity: 1; }
@@ -211,7 +211,7 @@
         .gstep-body p.ko { color: #475569; font-size: 0.94rem; line-height: 1.65; margin-bottom: 12px; font-weight: 500; }
         .gstep-body p.ko strong { color: #5b21b6; font-weight: 700; }
         .gstep-pattern { background: linear-gradient(135deg, #ede9fe 0%, #faf5ff 100%); color: #4c1d95; border: 1px solid #ddd6fe; border-left: 4px solid #6d28d9; padding: 14px 18px; border-radius: 10px; margin: 14px 0 10px 0; font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.08rem; font-weight: 800; line-height: 1.55; box-shadow: 0 2px 6px rgba(76,29,149,0.05); }
-        .gstep-pattern small { display: block; color: #7c3aed; font-weight: 500; font-size: 0.8rem; margin-top: 7px; letter-spacing: 0.02em; opacity: 0.92; }
+        .gstep-pattern small { display: block; color: #7c3aed; font-weight: 500; font-size: 0.8rem; margin-top: 7px; letter-spacing: 0.02em; opacity:1; }
         .gstep-pattern .accent { color: #6d28d9; font-weight: 800; font-family: inherit; }
         .gstep blockquote { background: #fff; border: 1px solid #e9d5ff; border-left: 3px solid #8b5cf6; border-radius: 8px; padding: 12px 16px; margin: 12px 0 10px 0; line-height: 1.85; font-size: 0.93rem; color: #1e293b; font-style: normal; }
         .gstep blockquote strong { color: #6d28d9; font-weight: 800; }
@@ -322,10 +322,10 @@
         /* English ↔ Korean Sentence Matching Game (em-) */
         .em-game { margin-top: 16px; padding: 18px; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; }
         .em-game-title { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1rem; font-weight: 800; color: #1e40af; margin: 0 0 8px 0; padding: 8px 14px; background: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 6px; }
-        .em-game-desc { color: #64748b; font-size: 0.92rem; margin: 0 0 14px 0; }
+        .em-game-desc { color: #59687c; font-size: 0.92rem; margin: 0 0 14px 0; }
         .em-toolbar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
         .em-stat { display: inline-flex; align-items: baseline; gap: 6px; padding: 6px 12px; background: #f1f5f9; border-radius: 8px; }
-        .em-stat-label { font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; }
+        .em-stat-label { font-size: 0.72rem; font-weight: 800; color: #59687c; text-transform: uppercase; letter-spacing: 0.1em; }
         .em-stat-num { font-size: 1.05rem; font-weight: 900; color: #1e40af; }
         .em-reset { margin-left: auto; background: #eff1f8; color:#1e40af; border:1px solid #b5bede; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 700; transition: background 0.2s; font-family: inherit; }
         .em-reset:hover {color:#1e3a8a; background: #e3e7f2;border:1px solid #b7c0dc;}
@@ -336,7 +336,7 @@
         .em-columns { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto repeat(var(--em-rows, 8), 84px); gap: 8px 14px; }
         #emEnglishList { grid-column: 1; }
         #emKoreanList { grid-column: 2; }
-        .em-col-header { font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; padding-left: 6px; }
+        .em-col-header { font-size: 0.72rem; font-weight: 800; color: #59687c; text-transform: uppercase; letter-spacing: 0.1em; padding-left: 6px; }
         .em-list { grid-row: 2 / -1; display: grid; grid-template-rows: subgrid; gap: 0; }
         .em-slot { display: flex; align-items: stretch; min-height: 60px; }
         .em-slot > .em-item { width: 100%; }
@@ -377,8 +377,8 @@
         .gstep-table td, .gstep-table th { word-break: keep-all; overflow-wrap: break-word; }
         .exp-table td, .exp-table th { word-break: keep-all; overflow-wrap: break-word; }
 
-.gloss{text-transform:none;display:block;font-weight:600;font-size:0.86em;opacity:0.72;letter-spacing:0;margin-top:1px;}
-button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
+.gloss{text-transform:none;display:block;font-weight:600;font-size:0.86em;opacity:1;letter-spacing:0;margin-top:1px;}
+button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
 </style>
 </head>
 <body>
@@ -410,33 +410,33 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
     .numt .dig { font-weight:800; color:#0f172a; }
     .numt .rd  { font-weight:700; }
     .numt.wide td, .numt.wide th { font-size:0.8rem; padding:10px 3px; }
-    .numt .na { color:#cbd5e1; font-style:italic; }
+    .numt .na { color:#557193; font-style:italic; }
     .msep{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1.0;margin:0 1px;position:relative;top:4px;}
-    .msep .munit{font-size:0.5rem;color:#b45309;font-weight:800;margin-top:5px;}
-    .ans-bar{margin:12px 0 4px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}.ans-btn{background:#fff;border:1px solid #cbd5e1;color:#475569;padding:5px 12px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.8rem;font-family:inherit;}.ans-btn:hover{background:#f1f5f9;}.ans-btn.on{background:#fef3c7;border-color:#fcd34d;color:#92400e;}.ans-hint{font-size:0.78rem;color:#94a3b8;}.q-cell .q-text{display:none;}.q-cell:not(.revealed){text-align:center !important;}.q-cell.revealed .q-text{display:inline;cursor:pointer;}.q-cell.revealed .q-ans{display:none;}.q-ans{background:#fff;border:1px solid #cbd5e1;color:#16a34a;padding:1px 9px;border-radius:8px;cursor:pointer;font-size:0.92rem;font-weight:800;font-family:inherit;line-height:1.4;}.q-ans:hover{background:#f0fdf4;border-color:#86efac;}table.numt td.q-sample,table.symt td.q-sample{box-shadow:inset 0 0 0 2px #f59e0b;}
+    .msep .munit{font-size:0.5rem;color:#8f4207;font-weight:800;margin-top:5px;}
+    .ans-bar{margin:12px 0 4px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}.ans-btn{background:#fff;border:1px solid #cbd5e1;color:#475569;padding:5px 12px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.8rem;font-family:inherit;}.ans-btn:hover{background:#f1f5f9;}.ans-btn.on{background:#fef3c7;border-color:#fcd34d;color:#92400e;}.ans-hint{font-size:0.78rem;color:#5a6d87;}.q-cell .q-text{display:none;}.q-cell:not(.revealed){text-align:center !important;}.q-cell.revealed .q-text{display:inline;cursor:pointer;}.q-cell.revealed .q-ans{display:none;}.q-ans{background:#fff;border:1px solid #cbd5e1;color:#107435;padding:1px 9px;border-radius:8px;cursor:pointer;font-size:0.92rem;font-weight:800;font-family:inherit;line-height:1.4;}.q-ans:hover{background:#f0fdf4;border-color:#86efac;}table.numt td.q-sample,table.symt td.q-sample{box-shadow:inset 0 0 0 2px #f59e0b;}
     .symt{width:100%;border-collapse:collapse;font-size:0.88rem;margin:8px 0 16px;}
     .symt th{padding:9px 8px;border:1px solid #cbd5e1;font-weight:800;text-align:center;}.symt th:nth-child(1),.symt th:nth-child(4){background:#fce7f3;color:#9d174d;}.symt th:nth-child(2),.symt th:nth-child(5){background:#e9f7c5;color:#3f6212;}.symt th:nth-child(3){background:#e2e8f0;color:#334155;}
     .symt td{padding:9px 8px;border:1px solid #cbd5e1;vertical-align:middle;text-align:center;}
     .symt td:first-child{font-weight:900;font-size:1.05rem;color:#0f172a;background:#fdf2f8;width:11%;}
     .symt td:nth-child(2){font-weight:800;color:#3f6212;background:#f7fee7;width:17%;}
     .symt td:nth-child(3){text-align:center;color:#475569;font-size:0.85rem;width:20%;background:#f8fafc;}.symt td:nth-child(4){text-align:center;color:#0f172a;font-weight:700;font-size:0.85rem;width:20%;background:#fdf2f8;}.symt td:nth-child(5){text-align:left;color:#3f6212;font-size:0.85rem;background:#edfacb;}
-    .symt td:nth-child(3) small{color:#94a3b8;}
+    .symt td:nth-child(3) small{color:#5a6d87;}
     .ilrule{background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid #f59e0b;border-radius:10px;padding:14px 18px;margin:16px 0 18px;}
-    .ilrule-ttl{font-weight:800;color:#b45309;font-size:1rem;margin-bottom:8px;}
+    .ilrule-ttl{font-weight:800;color:#8f4207;font-size:1rem;margin-bottom:8px;}
     .ilrule-ttl small{font-weight:600;color:#92400e;}
     .ilrule-p{font-size:0.92rem;line-height:1.8;margin-bottom:10px;}
     .ilrule-tbl{width:100%;max-width:440px;border-collapse:collapse;font-size:0.86rem;margin:6px auto 0;}
     .ilrule-tbl th{background:#fde68a;color:#92400e;padding:7px 8px;border:1px solid #fcd34d;font-weight:800;text-align:center;}
     .ilrule-tbl td{padding:7px 8px;border:1px solid #fde68a;text-align:center;}
     .ilrule-tbl td.ok{background:#ecfdf5;color:#166534;font-weight:800;}
-    .ilrule-tbl td.x{background:#fef2f2;}.ilrule-tbl td.x s{color:#dc2626;text-decoration:line-through;text-decoration-color:#dc2626;font-weight:700;}
+    .ilrule-tbl td.x{background:#fef2f2;}.ilrule-tbl td.x s{color:#c62020;text-decoration:line-through;text-decoration-color:#dc2626;font-weight:700;}
     /* section tints (s1 blue · s2 green · s3 amber · s4 rose · s5 purple · s6 teal · s7 sky) */
     /* s1 — 숫자(옅은 분홍) / 한자어·고유어(흐린 연두 두 단계) — s3~s5와 동일 계열 */
     .s1 tr:nth-child(1) td{background:#fdf2f8;color:#9d174d}
     .s1 tr:nth-child(1) td.dig{color:#0f172a}
     .s1 tr:nth-child(2) td{background:#f7fee7;color:#3f6212}
     .s1 tr:nth-child(3) td{background:#e3f3c2;color:#3f6212}
-    .s1 tr:nth-child(3) td.na{background:#f8fafc;color:#cbd5e1}
+    .s1 tr:nth-child(3) td.na{background:#f8fafc;color:#557193}
     /* s2 — 숫자(옅은 분홍) / 읽기(흐린 연두) — s3~s5와 동일 계열 */
     .s2 tr:nth-child(1) td{background:#fdf2f8;color:#9d174d}
     .s2 tr:nth-child(1) td.dig{color:#0f172a}
@@ -457,8 +457,8 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
     .chunk-box .ttl { font-weight:800; color:#1e3a8a; margin-bottom:8px; font-size:1rem; }
     .chunk-demo { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; align-items:center; margin:12px 0; font-size:1.15rem; font-weight:900; }
     .chunk-blk { padding:6px 10px; border-radius:8px; background:#dbeafe; color:#1e40af; letter-spacing:1px; }
-    .chunk-unit { font-size:0.95rem; font-weight:800; color:#b45309; padding:0 2px; }
-    .chunk-arrow { color:#94a3b8; font-weight:900; }
+    .chunk-unit { font-size:0.95rem; font-weight:800; color:#8f4207; padding:0 2px; }
+    .chunk-arrow { color:#5a6d87; font-weight:900; }
     .chunk-result { text-align:center; font-size:1.05rem; font-weight:800; color:#0f172a; margin-top:6px; }
     .chunk-ladder { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin-top:12px; font-size:0.84rem; font-weight:700; color:#475569; }
     .chunk-ladder span { background:#fff; border:1px solid #cbd5e1; border-radius:999px; padding:4px 12px; }
@@ -484,8 +484,8 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
             <thead><tr><th style="width:50%; background:#dbeafe; color:#1e40af;">한자어를 쓸 때<br><small lang="en" translate="yes">Use Sino-Korean for…</small></th><th style="background:#d1fae5; color:#166534;">고유어를 쓸 때<br><small lang="en" translate="yes">Use Native Korean for…</small></th></tr></thead>
             <tbody>
                 <tr>
-                    <td style="text-align:center; line-height:1.6; background:#eff6ff;">날짜 (년·월·일)<br><small lang="en" translate="yes"><em style="color:#94a3b8;">Dates (year · month · day)</em></small><br>시간의 <strong>분·초</strong><br><small lang="en" translate="yes"><em style="color:#94a3b8;">Minutes · seconds</em></small><br>돈 (원)<br><small lang="en" translate="yes"><em style="color:#94a3b8;">Money (won)</em></small><br>전화번호·번호·층<br><small lang="en" translate="yes"><em style="color:#94a3b8;">Phone numbers · numbers · floors</em></small><br><strong>100 이상</strong>의 큰 수<br><small lang="en" translate="yes"><em style="color:#94a3b8;">Large numbers (100 and above)</em></small></td>
-                    <td style="text-align:center; line-height:1.6; background:#ecfdf5;">개수 (몇 개)<br><small lang="en" translate="yes"><em style="color:#94a3b8;">Counting things (how many)</em></small><br>나이<br><small lang="en" translate="yes"><em style="color:#94a3b8;">Age</em></small><br>시각의 <strong>시 <span lang="en" translate="yes">(hour)</span></strong><br><small lang="en" translate="yes"><em style="color:#94a3b8;">The hour when telling time</em></small><br><small style="color:#64748b;">예) 한 시, 두 시, 세 시<br><em lang="en" translate="yes">e.g., <span lang="ko" translate="no">한 시</span>, <span lang="ko" translate="no">두 시</span>, <span lang="ko" translate="no">세 시</span></em></small><br><small lang="en" translate="yes"><em style="color:#94a3b8;">e.g., 1, 2, 3 o'clock</em></small></td>
+                    <td style="text-align:center; line-height:1.6; background:#eff6ff;">날짜 (년·월·일)<br><small lang="en" translate="yes"><em style="color:#5a6d87;">Dates (year · month · day)</em></small><br>시간의 <strong>분·초</strong><br><small lang="en" translate="yes"><em style="color:#5a6d87;">Minutes · seconds</em></small><br>돈 (원)<br><small lang="en" translate="yes"><em style="color:#5a6d87;">Money (won)</em></small><br>전화번호·번호·층<br><small lang="en" translate="yes"><em style="color:#5a6d87;">Phone numbers · numbers · floors</em></small><br><strong>100 이상</strong>의 큰 수<br><small lang="en" translate="yes"><em style="color:#5a6d87;">Large numbers (100 and above)</em></small></td>
+                    <td style="text-align:center; line-height:1.6; background:#ecfdf5;">개수 (몇 개)<br><small lang="en" translate="yes"><em style="color:#5a6d87;">Counting things (how many)</em></small><br>나이<br><small lang="en" translate="yes"><em style="color:#5a6d87;">Age</em></small><br>시각의 <strong>시 <span lang="en" translate="yes">(hour)</span></strong><br><small lang="en" translate="yes"><em style="color:#5a6d87;">The hour when telling time</em></small><br><small style="color:#59687c;">예) 한 시, 두 시, 세 시<br><em lang="en" translate="yes">e.g., <span lang="ko" translate="no">한 시</span>, <span lang="ko" translate="no">두 시</span>, <span lang="ko" translate="no">세 시</span></em></small><br><small lang="en" translate="yes"><em style="color:#5a6d87;">e.g., 1, 2, 3 o'clock</em></small></td>
                 </tr>
             </tbody>
         </table></div>
@@ -509,7 +509,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <hr>
 
 <h2>1. 1~100까지 읽기<span class="gloss" lang="en" translate="yes">Reading Numbers 1~100</span></h2>
-<p class="subtitle" lang="en" translate="yes"><span lang="ko" translate="no">한자어와 고유어를 나란히 익히세요</span><br><small style="font-weight:400;color:#94a3b8;">Learn Sino-Korean and Native Korean side by side</small></p>
+<p class="subtitle" lang="en" translate="yes"><span lang="ko" translate="no">한자어와 고유어를 나란히 익히세요</span><br><small style="font-weight:400;color:#5a6d87;">Learn Sino-Korean and Native Korean side by side</small></p>
 
 <div class="tbl-scroll"><table class="numt s1 wide">
     <tr><td class="lbl">숫자</td><td class="dig">1</td><td class="dig">2</td><td class="dig">3</td><td class="dig">4</td><td class="dig">5</td><td class="dig">6</td><td class="dig">7</td><td class="dig">8</td><td class="dig">9</td><td class="dig">10</td><td class="dig">11</td><td class="dig">12</td></tr>
@@ -528,7 +528,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .numfc-bar{display:flex;align-items:center;gap:10px;margin:8px 0;flex-wrap:wrap;}
 .numfc-shuffle{background:#fdf2f8;border:1px solid #fbcfe8;color:#9d174d;padding:5px 14px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.82rem;font-family:inherit;}
 .numfc-shuffle:hover{filter:brightness(0.97);}
-.numfc-hint{font-size:0.78rem;color:#94a3b8;}
+.numfc-hint{font-size:0.78rem;color:#5a6d87;}
 .numfc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(106px,1fr));gap:10px;margin:6px 0 14px;}
 .numfc{perspective:800px;height:126px;cursor:pointer;}
 .numfc-in{position:relative;width:100%;height:100%;transition:transform 0.5s;transform-style:preserve-3d;}
@@ -536,26 +536,26 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .numfc-f,.numfc-b{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.07);}
 .numfc-f{background:#f8fafc;border:2px solid #e2e8f0;}
 .numfc-f .n{font-size:2.3rem;font-weight:900;color:#0f172a;line-height:1;}
-.numfc-f .hint{font-size:0.68rem;margin-top:8px;color:#94a3b8;}
+.numfc-f .hint{font-size:0.68rem;margin-top:8px;color:#5a6d87;}
 .numfc-b{background:#fff;border:2px solid #e2e8f0;transform:rotateY(180deg);}
-.numfc-b small{display:block;font-size:0.62rem;font-weight:700;opacity:0.8;margin-bottom:3px;}
+.numfc-b small{display:block;font-size:0.62rem;font-weight:700;margin-bottom:3px;}
 .numfc-b .sino,.numfc-b .nat{font-weight:900;font-size:1.5rem;line-height:1.1;}
 .numfc-b .sino{color:#1e40af;} .numfc-b .nat{color:#166534;}
-.numfc.s .numfc-f{background:#eff6ff;border-color:#bfdbfe;} .numfc.s .numfc-f .hint{color:#2563eb;} .numfc.s .numfc-b{border-color:#bfdbfe;}
-.numfc.n .numfc-f{background:#ecfdf5;border-color:#bbf7d0;} .numfc.n .numfc-f .hint{color:#16a34a;} .numfc.n .numfc-b{border-color:#bbf7d0;}
+.numfc.s .numfc-f{background:#eff6ff;border-color:#bfdbfe;} .numfc.s .numfc-f .hint{color:#1557e6;} .numfc.s .numfc-b{border-color:#bfdbfe;}
+.numfc.n .numfc-f{background:#ecfdf5;border-color:#bbf7d0;} .numfc.n .numfc-f .hint{color:#107435;} .numfc.n .numfc-b{border-color:#bbf7d0;}
 </style>
 
-<div style="font-weight:800;color:#1e40af;margin:8px 0 2px;font-size:0.95rem;">① 한자어 <small style="font-weight:600;color:#64748b;" lang="en" translate="yes">Sino-Korean</small></div>
+<div style="font-weight:800;color:#1e40af;margin:8px 0 2px;font-size:0.95rem;">① 한자어 <small style="font-weight:600;color:#59687c;" lang="en" translate="yes">Sino-Korean</small></div>
 <div class="numfc-bar"><button class="numfc-shuffle" onclick="numfcShuffle('S')" style="background:#eff6ff;border-color:#bfdbfe;color:#1e40af;">🔀 섞기<span class="gloss" lang="en" translate="yes">Shuffle</span></button><button class="numfc-shuffle" onclick="numfcReset('S')" style="background:#fff;border-color:#cbd5e1;color:#475569;">↺ 순서대로<span class="gloss" lang="en" translate="yes">In order</span></button><span class="numfc-hint">숫자를 보고 한자어로 읽어 보세요 (클릭하면 정답)<span class="gloss" lang="en" translate="yes">Read in Sino-Korean (tap to reveal)</span></span></div>
 <div class="numfc-grid" id="numfcS"></div>
 
-<div style="font-weight:800;color:#166534;margin:12px 0 2px;font-size:0.95rem;">② 고유어 <small style="font-weight:600;color:#64748b;" lang="en" translate="yes">Native Korean</small></div>
+<div style="font-weight:800;color:#166534;margin:12px 0 2px;font-size:0.95rem;">② 고유어 <small style="font-weight:600;color:#59687c;" lang="en" translate="yes">Native Korean</small></div>
 <div class="numfc-bar"><button class="numfc-shuffle" onclick="numfcShuffle('N')" style="background:#ecfdf5;border-color:#bbf7d0;color:#166534;">🔀 섞기<span class="gloss" lang="en" translate="yes">Shuffle</span></button><button class="numfc-shuffle" onclick="numfcReset('N')" style="background:#fff;border-color:#cbd5e1;color:#475569;">↺ 순서대로<span class="gloss" lang="en" translate="yes">In order</span></button><span class="numfc-hint">숫자를 보고 고유어로 읽어 보세요 (100은 한자어만 씀)<span class="gloss" lang="en" translate="yes">Read in Native Korean (100 is Sino-only)</span></span></div>
 <div class="numfc-grid" id="numfcN"></div>
 
 <script>
 var NUMFC=[["1","일","하나"],["2","이","둘"],["3","삼","셋"],["4","사","넷"],["5","오","다섯"],["6","육","여섯"],["7","칠","일곱"],["8","팔","여덟"],["9","구","아홉"],["10","십","열"],["11","십일","열하나"],["12","십이","열둘"],["13","십삼","열셋"],["15","십오","열다섯"],["20","이십","스물"],["23","이십삼","스물셋"],["30","삼십","서른"],["36","삼십육","서른여섯"],["40","사십","마흔"],["42","사십이","마흔둘"],["50","오십","쉰"],["57","오십칠","쉰일곱"],["60","육십","예순"],["68","육십팔","예순여덟"],["70","칠십","일흔"],["75","칠십오","일흔다섯"],["80","팔십","여든"],["88","팔십팔","여든여덟"],["90","구십","아흔"],["91","구십일","아흔하나"],["99","구십구","아흔아홉"],["100","백","—"]];
-function numfcCard(d,type){var cls=(type==='S')?'s':'n';var lab=(type==='S')?'한자어':'고유어';var ans=(type==='S')?('<div class="sino">'+d[1]+'</div>'):('<div class="nat">'+d[2]+'</div>');return '<div class="numfc '+cls+'" onclick="this.classList.toggle(\'flipped\')"><div class="numfc-in"><div class="numfc-f"><div class="n">'+d[0]+'</div><div class="hint">읽고 확인 ↻<br><span style="font-size:0.85em;opacity:0.8;">Read &amp; check</span></div></div><div class="numfc-b"><small>'+lab+'</small>'+ans+'</div></div></div>';}
+function numfcCard(d,type){var cls=(type==='S')?'s':'n';var lab=(type==='S')?'한자어':'고유어';var ans=(type==='S')?('<div class="sino">'+d[1]+'</div>'):('<div class="nat">'+d[2]+'</div>');return '<div class="numfc '+cls+'" onclick="this.classList.toggle(\'flipped\')"><div class="numfc-in"><div class="numfc-f"><div class="n">'+d[0]+'</div><div class="hint">읽고 확인 ↻<br><span style="font-size:0.85em;">Read &amp; check</span></div></div><div class="numfc-b"><small>'+lab+'</small>'+ans+'</div></div></div>';}
 function numfcRender(id,type,arr){var h='';arr.forEach(function(d){if(type==='N'&&d[2]==='—')return;h+=numfcCard(d,type);});document.getElementById(id).innerHTML=h;}
 function numfcShuffle(type){var a=NUMFC.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}numfcRender(type==='S'?'numfcS':'numfcN',type,a);}
 function numfcReset(type){numfcRender(type==='S'?'numfcS':'numfcN',type,NUMFC);}
@@ -566,7 +566,7 @@ numfcRender('numfcN','N',NUMFC);
 <hr>
 
 <h2>2. 큰 수 읽기<span class="gloss" lang="en" translate="yes">Reading Big Numbers</span></h2>
-<p class="subtitle" lang="en" translate="yes"><span lang="ko" translate="no">백 · 천부터 만 · 억 · 조까지</span><br><small style="font-weight:400;color:#94a3b8;">From hundreds and thousands up to trillions (<span lang="ko" translate="no">만 · 억 · 조</span>)</small></p>
+<p class="subtitle" lang="en" translate="yes"><span lang="ko" translate="no">백 · 천부터 만 · 억 · 조까지</span><br><small style="font-weight:400;color:#5a6d87;">From hundreds and thousands up to trillions (<span lang="ko" translate="no">만 · 억 · 조</span>)</small></p>
 
 <div class="tbl-scroll"><table class="numt s2">
     <tr><td class="lbl">숫자</td><td class="dig">101</td><td class="dig">120</td><td class="dig">156</td><td class="dig">201</td><td class="dig">234</td><td class="dig">289</td></tr>
@@ -587,7 +587,7 @@ numfcRender('numfcN','N',NUMFC);
         <span class="chunk-arrow">→</span>
         <span style="color:#1e40af;">12,345,678</span>
     </div>
-    <div class="chunk-result">천이백삼십사<span style="color:#b45309;">만</span> 오천육백칠십팔</div>
+    <div class="chunk-result">천이백삼십사<span style="color:#8f4207;">만</span> 오천육백칠십팔</div>
     <div class="chunk-ladder">
         <span>일 (1)</span><span>만 (10,000)</span><span>억 (1억 = 만×만)</span><span>조 (1조 = 억×만)</span>
     </div>
@@ -641,9 +641,9 @@ numfcRender('numfcN','N',NUMFC);
 <hr>
 
 <h2>3. 특별한 읽기<span class="gloss" lang="en" translate="yes">Special Readings</span></h2>
-<p class="subtitle" lang="en" translate="yes"><span lang="ko" translate="no">연산 · 소수 · 분수 · 퍼센트 · 온도 · 거리 · 시간 · 날짜</span><br><small style="font-weight:400;color:#94a3b8;">Operations · Decimals · Fractions · Percent · Temperature · Distance · Time · Date</small></p>
+<p class="subtitle" lang="en" translate="yes"><span lang="ko" translate="no">연산 · 소수 · 분수 · 퍼센트 · 온도 · 거리 · 시간 · 날짜</span><br><small style="font-weight:400;color:#5a6d87;">Operations · Decimals · Fractions · Percent · Temperature · Distance · Time · Date</small></p>
 
-<h3 style="margin:0 0 10px; padding:8px 14px; font-size:1.05rem; font-weight:800; color:#075985; background:#f0f9ff; border-left:4px solid #0ea5e9; border-radius:4px;">연산·기호 읽는 법<br><small style="font-weight:600;" lang="en" translate="yes">How to read symbols</small></h3><p style="font-size:0.92rem; line-height:1.8; margin:0 0 8px;">특별한 수를 읽기 전에, 아래 기호와 말을 먼저 익히세요.<br><small lang="en" translate="yes"><em>Learn these symbols and words first, before reading the special numbers below.</em></small></p><div class="tbl-scroll"><table class="symt"><thead><tr><th>기호<span class="gloss" lang="en" translate="yes">Symbol</span></th><th>이름<span class="gloss" lang="en" translate="yes">Name</span></th><th>뜻<span class="gloss" lang="en" translate="yes">Meaning</span></th><th>연산<span class="gloss" lang="en" translate="yes">Expression</span></th><th>읽기<span class="gloss" lang="en" translate="yes">Reading</span></th></tr></thead><tbody><tr><td>+</td><td>더하기</td><td><span lang="en" translate="yes">plus</span></td><td>1 + 2</td><td>일 더하기 이</td></tr><tr><td>−</td><td>빼기</td><td><span lang="en" translate="yes">minus</span></td><td>6 − 4</td><td>육 빼기 사</td></tr><tr><td>×</td><td>곱하기</td><td><span lang="en" translate="yes">times</span></td><td>6 × 7</td><td>육 곱하기 칠</td></tr><tr><td>÷</td><td>나누기</td><td><span lang="en" translate="yes">divided by</span></td><td>12 ÷ 4</td><td>십이 나누기 사</td></tr><tr><td>=</td><td>는 / 은</td><td><span lang="en" translate="yes">is, equals</span></td><td>1 + 2 = 3</td><td>일 더하기 이는 삼</td></tr><tr><td>.</td><td>점</td><td><span lang="en" translate="yes">(decimal) point</span></td><td>0.123</td><td>영점 일이삼</td></tr><tr><td>a/b</td><td>분의</td><td><span lang="en" translate="yes">fraction</span></td><td>3/4</td><td>사분의 삼</td></tr><tr><td>%</td><td>퍼센트</td><td><span lang="en" translate="yes">percent</span></td><td>100%</td><td>백 퍼센트</td></tr><tr><td>℃</td><td>영상 / 영하 … 도</td><td><span lang="en" translate="yes">above / below zero</span></td><td>+10℃ / −15℃</td><td>영상 십도 / 영하 십오도</td></tr></tbody></table></div><p style="font-size:0.8rem;color:#64748b;margin:4px 0 14px;">※ 분수는 <b>분모(아래)</b>부터 읽습니다 — 3/4 → 사분의 삼. <br><small lang="en" translate="yes"><em>Fractions are read denominator-first.</em></small></p>
+<h3 style="margin:0 0 10px; padding:8px 14px; font-size:1.05rem; font-weight:800; color:#075985; background:#f0f9ff; border-left:4px solid #0ea5e9; border-radius:4px;">연산·기호 읽는 법<br><small style="font-weight:600;" lang="en" translate="yes">How to read symbols</small></h3><p style="font-size:0.92rem; line-height:1.8; margin:0 0 8px;">특별한 수를 읽기 전에, 아래 기호와 말을 먼저 익히세요.<br><small lang="en" translate="yes"><em>Learn these symbols and words first, before reading the special numbers below.</em></small></p><div class="tbl-scroll"><table class="symt"><thead><tr><th>기호<span class="gloss" lang="en" translate="yes">Symbol</span></th><th>이름<span class="gloss" lang="en" translate="yes">Name</span></th><th>뜻<span class="gloss" lang="en" translate="yes">Meaning</span></th><th>연산<span class="gloss" lang="en" translate="yes">Expression</span></th><th>읽기<span class="gloss" lang="en" translate="yes">Reading</span></th></tr></thead><tbody><tr><td>+</td><td>더하기</td><td><span lang="en" translate="yes">plus</span></td><td>1 + 2</td><td>일 더하기 이</td></tr><tr><td>−</td><td>빼기</td><td><span lang="en" translate="yes">minus</span></td><td>6 − 4</td><td>육 빼기 사</td></tr><tr><td>×</td><td>곱하기</td><td><span lang="en" translate="yes">times</span></td><td>6 × 7</td><td>육 곱하기 칠</td></tr><tr><td>÷</td><td>나누기</td><td><span lang="en" translate="yes">divided by</span></td><td>12 ÷ 4</td><td>십이 나누기 사</td></tr><tr><td>=</td><td>는 / 은</td><td><span lang="en" translate="yes">is, equals</span></td><td>1 + 2 = 3</td><td>일 더하기 이는 삼</td></tr><tr><td>.</td><td>점</td><td><span lang="en" translate="yes">(decimal) point</span></td><td>0.123</td><td>영점 일이삼</td></tr><tr><td>a/b</td><td>분의</td><td><span lang="en" translate="yes">fraction</span></td><td>3/4</td><td>사분의 삼</td></tr><tr><td>%</td><td>퍼센트</td><td><span lang="en" translate="yes">percent</span></td><td>100%</td><td>백 퍼센트</td></tr><tr><td>℃</td><td>영상 / 영하 … 도</td><td><span lang="en" translate="yes">above / below zero</span></td><td>+10℃ / −15℃</td><td>영상 십도 / 영하 십오도</td></tr></tbody></table></div><p style="font-size:0.8rem;color:#59687c;margin:4px 0 14px;">※ 분수는 <b>분모(아래)</b>부터 읽습니다 — 3/4 → 사분의 삼. <br><small lang="en" translate="yes"><em>Fractions are read denominator-first.</em></small></p>
 
 <div class="tbl-scroll"><table class="numt s6">
     <thead><tr><th style="width:38%">표현<span class="gloss" lang="en" translate="yes">Expression</span></th><th>읽기<span class="gloss" lang="en" translate="yes">Reading</span></th></tr></thead>
@@ -679,14 +679,14 @@ numfcRender('numfcN','N',NUMFC);
 .cntr{width:100%;border-collapse:collapse;font-size:0.92rem;margin:8px 0 6px;}
 .cntr th,.cntr td{border:1px solid #bbf7d0;padding:8px 6px;text-align:center;}
 .cntr thead th{background:#bbf7d0;color:#065f46;font-weight:800;}
-.cntr thead th small{display:block;font-weight:600;font-size:0.62rem;color:#16a34a;margin-top:1px;}
+.cntr thead th small{display:block;font-weight:600;font-size:0.62rem;color:#107435;margin-top:1px;}
 .cntr .numcol{background:#ecfdf5;color:#166534;font-weight:800;font-size:0.82rem;white-space:nowrap;width:18%;}
-.cntr .numcol small{font-weight:600;color:#16a34a;}
-.cntr td b{color:#047857;}
+.cntr .numcol small{font-weight:600;color:#107435;}
+.cntr td b{color:#047152;}
 .cntr tr.chg td{background:#f0fdf4;}
 .cntr tr.chg .numcol{background:#d1fae5;}
 .cntr tr.same .numcol{background:#f8fafc;color:#475569;}
-.cntr tr.same .numcol small{color:#94a3b8;}
+.cntr tr.same .numcol small{color:#5a6d87;}
 
 
 .spk-tag { font-size:0.62em; font-weight:800; margin-left:1px; vertical-align:0.12em; letter-spacing:0; }
@@ -697,7 +697,7 @@ numfcRender('numfcN','N',NUMFC);
     padding:11px 16px; font-size:0.86rem; line-height:1.45; box-shadow:0 6px 20px rgba(15,23,42,0.3);
     opacity:0; pointer-events:none; transition:opacity 0.2s, transform 0.2s; }
 .ak-notice.on { opacity:1; transform:translateX(-50%) translateY(0); }
-.ak-notice .gloss { color:#475569; opacity:0.95; }
+.ak-notice .gloss { color:#475569; opacity:1; }
 @media print { .ak-notice { display:none; } }
 
 /* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
@@ -719,16 +719,16 @@ numfcRender('numfcN','N',NUMFC);
 <tr class="same"><td class="numcol">6<br><small>여섯</small></td><td><b>여섯</b> 시</td><td><b>여섯</b> 개</td><td><b>여섯</b> 잔</td><td><b>여섯</b> 명</td></tr>
 </tbody>
 </table></div>
-<p style="font-size:0.82rem; color:#64748b; margin:4px 0 12px;">★ <strong>20</strong>도 바뀝니다: 스물 → <strong>스무</strong> (스무 개, 스무 살). <small lang="en" translate="yes"><em>20 also changes: <span lang="ko" translate="no">스물</span> → <span lang="ko" translate="no">스무</span>.</em></small></p>
+<p style="font-size:0.82rem; color:#59687c; margin:4px 0 12px;">★ <strong>20</strong>도 바뀝니다: 스물 → <strong>스무</strong> (스무 개, 스무 살). <small lang="en" translate="yes"><em>20 also changes: <span lang="ko" translate="no">스물</span> → <span lang="ko" translate="no">스무</span>.</em></small></p>
 
 <hr>
 
 <h2>4. 숫자 짝 맞추기</h2>
 <p class="subtitle"><span lang="en" translate="yes">Number Matching</span></p>
-<p class="subtitle" lang="en" translate="yes"><span lang="ko" translate="no">왼쪽 숫자와 오른쪽 한국어 읽기를 짝 맞추기</span><br><small style="font-weight:400;color:#94a3b8;">Match each number with its Korean reading</small></p>
+<p class="subtitle" lang="en" translate="yes"><span lang="ko" translate="no">왼쪽 숫자와 오른쪽 한국어 읽기를 짝 맞추기</span><br><small style="font-weight:400;color:#5a6d87;">Match each number with its Korean reading</small></p>
 
 <div class="em-game">
-        <p class="em-game-desc">왼쪽 숫자를 클릭하고, 그 읽기에 맞는 오른쪽 한국어를 클릭하세요. 짝이 맞으면 두 칸이 사라집니다. <br><span style="color:#94a3b8;"><span lang="en" translate="yes">Click a number, then its Korean reading — both disappear when matched.</span></span></p>
+        <p class="em-game-desc">왼쪽 숫자를 클릭하고, 그 읽기에 맞는 오른쪽 한국어를 클릭하세요. 짝이 맞으면 두 칸이 사라집니다. <br><span style="color:#5a6d87;"><span lang="en" translate="yes">Click a number, then its Korean reading — both disappear when matched.</span></span></p>
     <div class="em-toolbar">
         <span class="em-stat"><span class="em-stat-label">정답</span><span id="emCorrect" class="em-stat-num">0/10</span></span>
         <span class="em-stat"><span class="em-stat-label">오답</span><span id="emWrong" class="em-stat-num">0</span></span>
@@ -945,8 +945,8 @@ function emCheck(){
     setTimeout(function(){
       emRemoved.push(pid); emCorrect++;
       emSelEn = null; emSelKo = null;
-      if(emCorrect === emPairs.length){ emUpdate('🎉 완료! 모든 문장을 맞췄습니다. <span style="color:#15803d;">All matched!</span>', true);
-        celebrateShow(emCorrect, emWrong, emReset, '모든 문장을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All sentences matched!</span>'); }
+      if(emCorrect === emPairs.length){ emUpdate('🎉 완료! 모든 문장을 맞췄습니다. <span style="color:#0f5e2c;">All matched!</span>', true);
+        celebrateShow(emCorrect, emWrong, emReset, '모든 문장을 맞췄습니다!<br><span style="color:#5a6d87;font-size:0.9rem;">All sentences matched!</span>'); }
       else { emUpdate('<strong>'+eTxt+' ↔ '+kTxt+'</strong> 정답!'); }
       emRender();
     }, 300);
@@ -957,7 +957,7 @@ function emCheck(){
   if(kEl) kEl.classList.add('wrong');
   const eTxt = emSelEn.text, kTxt = emSelKo.text;
   emSelEn = null; emSelKo = null;
-  emUpdate('<strong>'+eTxt+'</strong> ↔ <strong>'+kTxt+'</strong> — 짝이 아닙니다. 다시 고르세요. <span style="color:#94a3b8;">Not a match.</span>');
+  emUpdate('<strong>'+eTxt+'</strong> ↔ <strong>'+kTxt+'</strong> — 짝이 아닙니다. 다시 고르세요. <span style="color:#5a6d87;">Not a match.</span>');
   setTimeout(function(){ emRender(); }, 600);
 }
 function emReset(){
@@ -1005,7 +1005,7 @@ function celebrateRestart(){
     <div class="celebrate-card" onclick="event.stopPropagation()">
         <span class="celebrate-emoji">🎉</span>
         <h3 class="celebrate-title" id="celebrateTitle">완료!</h3>
-        <p class="celebrate-subtitle" id="celebrateSubtitle">모든 짝을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;"><span lang="en" translate="yes">All matched!</span></span></p>
+        <p class="celebrate-subtitle" id="celebrateSubtitle">모든 짝을 맞췄습니다!<br><span style="color:#5a6d87;font-size:0.9rem;"><span lang="en" translate="yes">All matched!</span></span></p>
         <div class="celebrate-stats">
             <div class="celebrate-stat"><strong id="celebrateCorrect">0</strong><span>정답<span class="gloss" lang="en" translate="yes">Correct</span></span></div>
             <div class="celebrate-stat"><strong id="celebrateWrong">0</strong><span>오답<span class="gloss" lang="en" translate="yes">Wrong</span></span></div>

@@ -12,7 +12,7 @@
         .container { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 48px 40px; }
         h1 { font-size: 2rem; font-weight: 900; color: #1e293b; border-bottom: 4px solid #3b82f6; padding-bottom: 12px; margin-bottom: 4px; }
         h1 .h1-line2 { display: block; }
-        h1 + .subtitle { color: #64748b; font-size: 1rem; margin-bottom: 40px; }
+        h1 + .subtitle { color: #59687c; font-size: 1rem; margin-bottom: 40px; }
         /* Title block — category-themed gradient (overrides legacy h1 layout when used) */
         .title-block { margin: 0 0 44px 0; padding: 28px 32px 24px; border-radius: 16px; background: linear-gradient(135deg, var(--title-bg-start, #faf5ff) 0%, #ffffff 70%); box-shadow: 0 2px 14px rgba(15,23,42,0.06); position: relative; overflow: hidden; }
         .title-block::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--title-gradient); opacity: 0.95; }
@@ -23,8 +23,8 @@
         .title-divider { height: 3px; background: var(--title-gradient); border-radius: 999px; margin: 18px 0 16px; opacity: 0.85; }
         .title-ko { display: flex; flex-direction: column; gap: 4px; }
         .title-en .title-main { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.02rem; font-weight: 800; color: var(--title-ko-main-color, #1e293b); margin: 0; padding: 0; border: none; letter-spacing: -0.01em; }
-        .title-en .title-sub { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.9rem; color: #64748b; line-height: 1.65; margin: 0; }
-        .title-en .title-range-en { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.85rem; font-weight: 700; color: #64748b; margin: 0; letter-spacing: 0.01em; }
+        .title-en .title-sub { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.9rem; color: #59687c; line-height: 1.65; margin: 0; }
+        .title-en .title-range-en { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.85rem; font-weight: 700; color: #59687c; margin: 0; letter-spacing: 0.01em; }
         /* Category palettes — apply class to .title-block */
         .title-block.sentence  { --title-gradient: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%); --title-bg-start: #eff6ff; --title-sub-color: #1e40af; --title-ko-main-color: #1e3a8a; }
         .title-block.predicate { --title-gradient: linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #8b5cf6 100%); --title-bg-start: #faf5ff; --title-sub-color: #5b21b6; --title-ko-main-color: #4c1d95; }
@@ -44,10 +44,10 @@
         }
         h2 { font-size: 1.5rem; font-weight: 800; color: #1e40af; margin-top: 48px; margin-bottom: 4px; padding-top: 24px; border-top: 2px solid #e2e8f0; }
         h2:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
-        h2 + .subtitle { color: #64748b; font-size: 0.95rem; margin-bottom: 20px; }
+        h2 + .subtitle { color: #59687c; font-size: 0.95rem; margin-bottom: 20px; }
         h3 { font-size: 1.2rem; font-weight: 700; color: #1e40af; margin-top: 36px; margin-bottom: 12px; padding: 10px 14px; background: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 4px; }
         .en { margin-bottom: 2px; }
-        .ko { color: #64748b; font-size: 0.92rem; margin-bottom: 16px; }
+        .ko { color: #59687c; font-size: 0.92rem; margin-bottom: 16px; }
         blockquote { background: #f8fafc; border-left: 3px solid #cbd5e1; padding: 12px 16px; margin: 12px 0 16px 0; border-radius: 4px; font-size: 0.95rem; line-height: 2; }
         pre { background: #1e293b; color: #e2e8f0; padding: 16px 20px; border-radius: 8px; margin: 12px 0 16px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.9rem; line-height: 1.6; }
         table { width: 100%; border-collapse: collapse; margin: 12px 0 20px 0; font-size: 0.92rem; }
@@ -58,8 +58,8 @@
 .vocab-box .v-list { display:flex; flex-wrap:wrap; gap:9px 22px; }
 .vocab-box .v-item { line-height:1.3; max-width:100%; overflow-wrap:anywhere; }
 .vocab-box .v-item b { font-weight:700; color:#78350f; font-size:1.02em; }
-.vocab-box .v-item .gloss { color:#92400e; opacity:0.8; }
-.vocab-box .vocab-title .gloss { color:#b45309; font-weight:700; }
+.vocab-box .v-item .gloss { color:#92400e; opacity:1; }
+.vocab-box .vocab-title .gloss { color:#8f4207; font-weight:700; }
 
         .vocab-box .vocab-title { font-size: 0.8rem; font-weight: 700; color: #1e40af; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
         .answer-box { margin: 0 0 24px 0; }
@@ -69,7 +69,7 @@
         .answer-content .ans-kr { font-size: 1.15rem; font-weight: 900; color: #1e40af; }
         .note-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 4px; margin: 12px 0 16px 0; font-size: 0.92rem; }
         hr { border: none; border-top: 1px solid #e2e8f0; margin: 32px 0; }
-        .footer { text-align: center; color: #94a3b8; font-size: 0.85rem; margin-top: 48px; padding-top: 20px; border-top: 2px solid #e2e8f0; }
+        .footer { text-align: center; color: #5a6d87; font-size: 0.85rem; margin-top: 48px; padding-top: 20px; border-top: 2px solid #e2e8f0; }
         @media print { body { background: none; padding: 0; } .container { box-shadow: none; padding: 20px; } .answer-content { display: block !important; } .answer-toggle { display: none; } }
         .speak-btn { background: none; border: none; cursor: pointer; font-size: 1.3rem; vertical-align: middle; margin-left: 8px; padding: 2px 6px; border-radius: 6px; transition: background 0.2s; }
         .speak-btn:hover { background: #e0e7ff; }
@@ -79,9 +79,9 @@
            남 단추가 다음 줄로 밀려난다 */
         .sentence-item .sentence-spk { display: flex; flex-direction: column; gap: 5px; align-items: center; }
         .sentence-item:hover { border-color: #3b82f6; box-shadow: 0 4px 14px rgba(59,130,246,0.10); }
-        .sentence-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.25rem; font-weight: 900; color: #3b82f6; text-align: center; letter-spacing: -0.02em; }
+        .sentence-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.25rem; font-weight: 900; color: #0a5de4; text-align: center; letter-spacing: -0.02em; }
         .sentence-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-        .sentence-en { font-size: 1.06rem; color: #64748b; font-weight: 700; }
+        .sentence-en { font-size: 1.06rem; color: #59687c; font-weight: 700; }
         .sentence-kr { font-size: 1.06rem; font-weight: 700; color: #1e293b; line-height: 1.4; }
         .sentence-listen { background: #eff6ff; border: none; cursor: pointer; width: 40px; height: 40px; border-radius: 50%; font-size: 1.05rem; transition: background 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: center; padding: 0; }
         .sentence-listen:hover { background: #3b82f6; transform: scale(1.08); }
@@ -92,19 +92,19 @@
         .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
         .flashcard-front, .flashcard-back { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 22px; text-align: center; box-shadow: 0 4px 16px rgba(30,41,59,0.08); }
         .flashcard-front { background: #fff; border: 2px solid #bfdbfe; color: #1e293b; }
-        .flashcard-back { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 60%, #60a5fa 100%); color: #fff; transform: rotateY(180deg); }
-        .flashcard-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.2em; margin-bottom: 12px; opacity: 0.65; }
+        .flashcard-back { background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 55%, #2563eb 100%); color: #fff; transform: rotateY(180deg); }
+        .flashcard-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.2em; margin-bottom: 12px; opacity:1; }
         .flashcard-front .flashcard-text { font-size: 1.06rem; font-weight: 700; line-height: 1.4; }
         .flashcard-back .flashcard-text { font-size: 1.06rem; font-weight: 700; line-height: 1.4; }
-        .flashcard-hint { position: absolute; bottom: 10px; right: 14px; font-size: 0.68rem; color: #94a3b8; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
-        .flashcard-listen { position: absolute; bottom: 10px; right: 10px; background: rgba(255,255,255,0.22); border: none; cursor: pointer; width: 36px; height: 36px; border-radius: 50%; font-size: 1rem; transition: background 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: center; padding: 0; color: #fff; }
-        .flashcard-listen:hover { background: rgba(255,255,255,0.4); transform: scale(1.1); }
+        .flashcard-hint { position: absolute; bottom: 10px; right: 14px; font-size: 0.68rem; color: #5a6d87; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+        .flashcard-listen { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.18); border: none; cursor: pointer; width: 36px; height: 36px; border-radius: 50%; font-size: 1rem; transition: background 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: center; padding: 0; color: #fff; }
+        .flashcard-listen:hover { background: rgba(0,0,0,0.32); transform: scale(1.1); }
         @media (max-width: 600px) { .flashcard-grid { grid-template-columns: 1fr; } }
         .writing-practice { display: flex; flex-direction: column; gap: 14px; margin: 16px 0 24px; }
         .writing-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }
         .writing-item:focus-within { border-color: #3b82f6; box-shadow: 0 2px 12px rgba(59,130,246,0.10); }
         .writing-header { display: flex; align-items: baseline; gap: 12px; }
-        .writing-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.05rem; font-weight: 900; color: #3b82f6; min-width: 28px; letter-spacing: -0.02em; }
+        .writing-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.05rem; font-weight: 900; color: #0a5de4; min-width: 28px; letter-spacing: -0.02em; }
         .writing-en { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.05rem; font-weight: 600; color: #1e293b; }
         .writing-input { width: 100%; min-height: 46px; padding: 10px 14px; font-family: 'Noto Sans KR', sans-serif; font-size: 1rem; color: #1e293b; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; resize: vertical; transition: border-color 0.2s, background 0.2s; box-sizing: border-box; }
         .writing-input:focus { outline: none; border-color: #3b82f6; background: #fff; }
@@ -112,7 +112,7 @@
         .wt-toolbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; padding:12px 16px; background:#ebf2fe; border:1px solid #a6c6fa; border-radius:10px; margin:14px 0 18px 0; }
         .wt-score { font-size:0.95rem; font-weight:700; color:#475569; }
         .wt-score .wt-correct { color:#26549f; font-size:1.1rem; }
-        .wt-score .wt-total { color:#94a3b8; }
+        .wt-score .wt-total { color:#5a6d87; }
         .wt-score .wt-pct { margin-left:8px; color:#26549f; font-weight:800; }
         .wt-score.is-graded { color:#1e293b; }
         .wt-btns { display:flex; gap:8px; flex-wrap:wrap; }
@@ -145,7 +145,7 @@
             white-space: nowrap;
             animation: wtBadgePop 5s ease forwards;
         }
-        .wt-celebrate-badge small { font-weight: 700; font-size: 0.78rem; opacity: 0.85; margin-left: 6px; }
+        .wt-celebrate-badge small { font-weight: 700; font-size: 0.78rem; opacity:1; margin-left: 6px; }
         @keyframes wtBadgePop {
             0% { transform: translateY(10px) scale(0.65); opacity: 0; }
             7% { transform: translateY(-6px) scale(1.08); opacity: 1; }
@@ -177,16 +177,16 @@
         .wt-rbtn .gloss { font-size: 0.68em; font-weight: 600; }
         .wt-diff { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px 12px; }
         .wt-dline { display: flex; gap: 10px; align-items: baseline; line-height: 1.75; }
-        .wt-dline b { font-size: 0.72rem; font-weight: 800; color: #94a3b8; min-width: 68px; flex-shrink: 0; }
+        .wt-dline b { font-size: 0.72rem; font-weight: 800; color: #5a6d87; min-width: 68px; flex-shrink: 0; }
         .wt-dline span { font-size: 1rem; }
         .wt-x { color: #b91c1c; text-decoration: underline wavy #f87171; text-underline-offset: 3px; }
         .wt-o { color: #166534; font-weight: 800; text-decoration: underline #86efac; text-underline-offset: 3px; }
         @media print { .wt-result { display: none; } }
         /* 조사만 다른 답 — 정답으로 세고 차이를 알려 주는 쪽지 */
         .wt-note { background: #fffbeb; border: 1px solid #fde68a; border-left: 4px solid #f59e0b; border-radius: 8px; padding: 8px 12px; margin-top: 2px; font-size: 0.92rem; color: #78350f; }
-        .wt-note b { color: #b45309; margin-right: 6px; }
-        .wt-nline { margin-top: 3px; font-size: 0.9rem; opacity: 0.92; }
-        .wt-nline .gloss { display: block; color: #92400e; opacity: 0.8; }
+        .wt-note b { color: #8f4207; margin-right: 6px; }
+        .wt-nline { margin-top: 3px; font-size: 0.9rem; opacity:1; }
+        .wt-nline .gloss { display: block; color: #92400e; opacity:1; }
         @media print { .wt-note { display: none; } }
         .vocab-toggle { background:#d1fae5; color:#065f46; border:1px solid #a7f3d0; padding:8px 18px; border-radius:6px; cursor:pointer; font-size:0.85rem; font-weight:700; margin:12px 0 0 0; transition:background 0.2s; }
         .vocab-toggle:hover { background:#a7f3d0; }
@@ -237,16 +237,16 @@
         .gstep-body p.ko { color: #475569; font-size: 0.94rem; line-height: 1.65; margin-bottom: 12px; font-weight: 500; }
         .gstep-body p.ko strong { color: #065f46; font-weight: 700; }
         .gstep-pattern { background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 100%); color: #064e3b; border: 1px solid #a7f3d0; border-left: 4px solid #047857; padding: 14px 18px; border-radius: 10px; margin: 14px 0 10px 0; font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.08rem; font-weight: 800; line-height: 1.55; box-shadow: 0 2px 6px rgba(6,78,59,0.05); }
-        .gstep-pattern small { display: block; color: #10b981; font-weight: 500; font-size: 0.8rem; margin-top: 7px; letter-spacing: 0.02em; opacity: 0.92; }
-        .gstep-pattern .accent { color: #047857; font-weight: 800; font-family: inherit; }
+        .gstep-pattern small { display: block; color: #0b7c56; font-weight: 500; font-size: 0.8rem; margin-top: 7px; letter-spacing: 0.02em; opacity:1; }
+        .gstep-pattern .accent { color: #047152; font-weight: 800; font-family: inherit; }
         .gstep blockquote { background: #fff; border: 1px solid #a7f3d0; border-left: 3px solid #10b981; border-radius: 8px; padding: 12px 16px; margin: 12px 0 10px 0; line-height: 1.85; font-size: 0.93rem; color: #1e293b; font-style: normal; }
-        .gstep blockquote strong { color: #047857; font-weight: 800; }
+        .gstep blockquote strong { color: #047152; font-weight: 800; }
         .gstep-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 14px 0 10px 0; font-size: 0.93rem; background: #fff; border: 1px solid #a7f3d0; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(22,163,74,0.14); }
-        .gstep-table thead th { background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); color: #047857; font-weight: 800; padding: 13px 12px; text-align: center; font-size: 0.9rem; letter-spacing: 0.01em; }
+        .gstep-table thead th { background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); color: #047152; font-weight: 800; padding: 13px 12px; text-align: center; font-size: 0.9rem; letter-spacing: 0.01em; }
         .gstep-table tbody td { padding: 10px 14px; border-bottom: 1px solid #ecfdf5; background: #fff; line-height: 1.55; text-align: center; }
         .gstep-table tbody tr:last-child td { border-bottom: none; }
         .gstep-table tbody tr:nth-child(even) td { background: #ecfdf5; }
-        .gstep-table tbody td .accent { color: #047857; font-weight: 700; font-family: inherit; }
+        .gstep-table tbody td .accent { color: #047152; font-weight: 700; font-family: inherit; }
         .gstep-table tbody td strong { color: #065f46; font-weight: 800; }
         .gstep .explain-note { background: linear-gradient(135deg, #fef9c3 0%, #fefce8 70%); border-left: 4px solid #f59e0b; padding: 12px 18px; border-radius: 10px; margin-top: 14px; font-size: 0.92rem; line-height: 1.7; color: #713f12; box-shadow: 0 1px 3px rgba(245,158,11,0.06); }
         .gstep .explain-note strong { color: #92400e; font-weight: 800; }
@@ -288,10 +288,10 @@
         /* English ↔ Korean Sentence Matching Game (em-) */
         .em-game { margin-top: 16px; padding: 18px; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; }
         .em-game-title { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1rem; font-weight: 800; color: #1e40af; margin: 0 0 8px 0; padding: 8px 14px; background: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 6px; }
-        .em-game-desc { color: #64748b; font-size: 0.92rem; margin: 0 0 14px 0; }
+        .em-game-desc { color: #59687c; font-size: 0.92rem; margin: 0 0 14px 0; }
         .em-toolbar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
         .em-stat { display: inline-flex; align-items: baseline; gap: 6px; padding: 6px 12px; background: #f1f5f9; border-radius: 8px; }
-        .em-stat-label { font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; }
+        .em-stat-label { font-size: 0.72rem; font-weight: 800; color: #59687c; text-transform: uppercase; letter-spacing: 0.1em; }
         .em-stat-num { font-size: 1.05rem; font-weight: 900; color: #1e40af; }
         .em-reset { margin-left: auto; background: #eff1f8; color:#1e40af; border:1px solid #b5bede; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 700; transition: background 0.2s; font-family: inherit; }
         .em-reset:hover {color:#1e3a8a; background: #e3e7f2;border:1px solid #b7c0dc;}
@@ -300,7 +300,7 @@
         .em-message { padding: 10px 14px; background: #eff6ff; border-left: 3px solid #3b82f6; border-radius: 6px; font-size: 0.92rem; color: #1e293b; margin-bottom: 14px; min-height: 1.5em; }
         .em-message.complete { background: #f0fdf4; border-left-color: #22c55e; color: #166534; font-weight: 800; }
         .em-columns { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto repeat(var(--em-rows, 4), 84px); gap: 8px 14px; }
-        .em-col-header { font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; padding-left: 6px; }
+        .em-col-header { font-size: 0.72rem; font-weight: 800; color: #59687c; text-transform: uppercase; letter-spacing: 0.1em; padding-left: 6px; }
         #emEnglishList { grid-column: 1; }
         #emKoreanList { grid-column: 2; }
         .em-list { grid-row: 2 / -1; display: grid; grid-template-rows: subgrid; gap: 0; }
@@ -343,8 +343,8 @@
         .gstep-table td, .gstep-table th { word-break: keep-all; overflow-wrap: break-word; }
         .exp-table td, .exp-table th { word-break: keep-all; overflow-wrap: break-word; }
 
-.gloss{text-transform:none;display:block;font-weight:600;font-size:0.86em;opacity:0.72;letter-spacing:0;margin-top:1px;}
-button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
+.gloss{text-transform:none;display:block;font-weight:600;font-size:0.86em;opacity:1;letter-spacing:0;margin-top:1px;}
+button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
 
 
 .spk-tag { font-size:0.62em; font-weight:800; margin-left:1px; vertical-align:0.12em; letter-spacing:0; }
@@ -355,7 +355,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
     padding:11px 16px; font-size:0.86rem; line-height:1.45; box-shadow:0 6px 20px rgba(15,23,42,0.3);
     opacity:0; pointer-events:none; transition:opacity 0.2s, transform 0.2s; }
 .ak-notice.on { opacity:1; transform:translateX(-50%) translateY(0); }
-.ak-notice .gloss { color:#475569; opacity:0.95; }
+.ak-notice .gloss { color:#475569; opacity:1; }
 @media print { .ak-notice { display:none; } }
 /* spk-after v1 */
 /* 쓰기 테스트 — 정답을 맞히거나 답을 펼치기 전에는 문제 옆 소리 단추를 숨긴다 */
@@ -418,7 +418,7 @@ p.en{margin-bottom:16px;}
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:8px 10px; text-align:center;"><strong>일어나자마자</strong> 물을 마셨습니다.<br><small lang="en" translate="yes"><em>I drank water as soon as I woke up.</em></small></td><td style="padding:8px 10px; text-align:center; color:#dc2626;"><strong>일어났자마자</strong> 물을 마셨습니다.</td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center;"><strong>일어나자마자</strong> 물을 마셨습니다.<br><small lang="en" translate="yes"><em>I drank water as soon as I woke up.</em></small></td><td style="padding:8px 10px; text-align:center; color:#c62020;"><strong>일어났자마자</strong> 물을 마셨습니다.</td></tr>
                 </tbody>
             </table></div>
         </div>
@@ -442,12 +442,12 @@ p.en{margin-bottom:16px;}
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>일어나다</strong><br><small lang="en" translate="yes">wake up</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">일어나 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047857;"><strong>일어나자마자</strong></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>켜다</strong><br><small lang="en" translate="yes">turn on</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">켜 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047857;"><strong>켜자마자</strong></td></tr>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>도착하다</strong><br><small lang="en" translate="yes">arrive</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">도착하 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047857;"><strong>도착하자마자</strong></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>만나다</strong><br><small lang="en" translate="yes">meet</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">만나 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047857;"><strong>만나자마자</strong></td></tr>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>먹다</strong><br><small lang="en" translate="yes">eat</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">먹 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047857;"><strong>먹자마자</strong></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center;"><strong>듣다</strong><br><small lang="en" translate="yes">listen</small></td><td style="padding:8px 10px; text-align:center;">듣 + 자마자</td><td style="padding:8px 10px; text-align:center; color:#047857;"><strong>듣자마자</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>일어나다</strong><br><small lang="en" translate="yes">wake up</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">일어나 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>일어나자마자</strong></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>켜다</strong><br><small lang="en" translate="yes">turn on</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">켜 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>켜자마자</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>도착하다</strong><br><small lang="en" translate="yes">arrive</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">도착하 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>도착하자마자</strong></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>만나다</strong><br><small lang="en" translate="yes">meet</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">만나 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>만나자마자</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>먹다</strong><br><small lang="en" translate="yes">eat</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">먹 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>먹자마자</strong></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center;"><strong>듣다</strong><br><small lang="en" translate="yes">listen</small></td><td style="padding:8px 10px; text-align:center;">듣 + 자마자</td><td style="padding:8px 10px; text-align:center; color:#047152;"><strong>듣자마자</strong></td></tr>
                 </tbody>
             </table></div>
         </div>
@@ -471,8 +471,8 @@ p.en{margin-bottom:16px;}
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047857;"><strong>1)</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;">주어 + <strong>부사어/부사절</strong> + (목적어) + 서술어<br><small lang="en" translate="yes"><em>Subject + Adverbial/Clause + (Object) + Predicate</em></small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;">그는 <strong>일어나자마자</strong> 물을 마셨습니다.<br><small lang="en" translate="yes"><em>He drank water as soon as he woke up.</em></small></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:10px; text-align:center; color:#047857;"><strong>2)</strong></td><td style="padding:10px; text-align:center;"><strong>부사어/부사절</strong> + 주어 + (목적어) + 서술어<br><small lang="en" translate="yes"><em>Adverbial/Clause + Subject + (Object) + Predicate</em></small></td><td style="padding:10px; text-align:center;"><strong>제가 컴퓨터를 켜자마자</strong> 전기가 나갔습니다.<br><small lang="en" translate="yes"><em>The power went out as soon as I turned on the computer.</em></small></td></tr>
+                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>1)</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;">주어 + <strong>부사어/부사절</strong> + (목적어) + 서술어<br><small lang="en" translate="yes"><em>Subject + Adverbial/Clause + (Object) + Predicate</em></small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;">그는 <strong>일어나자마자</strong> 물을 마셨습니다.<br><small lang="en" translate="yes"><em>He drank water as soon as he woke up.</em></small></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:10px; text-align:center; color:#047152;"><strong>2)</strong></td><td style="padding:10px; text-align:center;"><strong>부사어/부사절</strong> + 주어 + (목적어) + 서술어<br><small lang="en" translate="yes"><em>Adverbial/Clause + Subject + (Object) + Predicate</em></small></td><td style="padding:10px; text-align:center;"><strong>제가 컴퓨터를 켜자마자</strong> 전기가 나갔습니다.<br><small lang="en" translate="yes"><em>The power went out as soon as I turned on the computer.</em></small></td></tr>
                 </tbody>
             </table></div>
             <div style="margin-top:10px; padding:10px 12px; background:#ecfdf5; border-left:3px solid #047857; border-radius:6px; font-size:0.9rem; line-height:1.7;"><strong>💡 핵심:</strong> 두 어순 모두 자연스럽고 옳습니다.<br><small lang="en" translate="yes"><em><strong>Key:</strong> Both orders are natural and correct.</em></small><br><strong>강조하고 싶은 정보</strong>에 따라 위치가 달라집니다 — 부사절을 문장 맨 앞에 두면 그 부분이 더 강조됩니다.<br><small lang="en" translate="yes"><em>The position depends on <strong>what you want to emphasize</strong> — putting the adverbial clause at the very front emphasizes it more.</em></small>
@@ -574,30 +574,30 @@ p.en{margin-bottom:16px;}
         <div style="margin-top:14px;background:linear-gradient(135deg,#eef2ff 0%,#e0e7ff 100%);border:1px solid #c7d2fe;border-left:4px solid #4f46e5;border-radius:10px;padding:14px 18px;box-shadow:0 1px 3px rgba(79,70,229,0.05);">
             <div style="font-weight:800;color:#3730a3;margin-bottom:10px;font-size:0.95rem;">📖 절 안의 주어 마커<span class="gloss" lang="en" translate="yes">Subject markers in subordinate clauses</span></div>
             <div style="font-size:0.92rem;color:#1e293b;line-height:1.7;">
-                <div style="margin-bottom:10px;"><strong style="color:#4338ca;">규칙 <span lang="en" translate="yes">· Rule:</span></strong> 한 문장 안에 <strong>부사절</strong>·<strong>서술절</strong>·<strong>관형절</strong>이 있을 때, 그 절 안의 <strong>주어는 반드시 <span style="color:#dc2626;">이/가</span></strong>를 사용한다.<br><small lang="en" translate="yes"><em>When a sentence contains an adverbial / predicate / modifier clause, the subject INSIDE that clause must use <strong><span lang="ko" translate="no">이/가</span></strong>.</em></small><br>절 안의 주어는 절대 <strong style="color:#dc2626;">은/는</strong>을 쓰지 않는다.<br><small lang="en" translate="yes"><em>Never use <strong><span lang="ko" translate="no">은/는</span></strong> for a clause-internal subject.</em></small></div>
+                <div style="margin-bottom:10px;"><strong style="color:#4338ca;">규칙 <span lang="en" translate="yes">· Rule:</span></strong> 한 문장 안에 <strong>부사절</strong>·<strong>서술절</strong>·<strong>관형절</strong>이 있을 때, 그 절 안의 <strong>주어는 반드시 <span style="color:#c62020;">이/가</span></strong>를 사용한다.<br><small lang="en" translate="yes"><em>When a sentence contains an adverbial / predicate / modifier clause, the subject INSIDE that clause must use <strong><span lang="ko" translate="no">이/가</span></strong>.</em></small><br>절 안의 주어는 절대 <strong style="color:#c62020;">은/는</strong>을 쓰지 않는다.<br><small lang="en" translate="yes"><em>Never use <strong><span lang="ko" translate="no">은/는</span></strong> for a clause-internal subject.</em></small></div>
                 <div style="margin:12px 0 6px 0;font-weight:700;color:#4338ca;">① 절<span lang="en" translate="yes">(clause)</span>의 종류</div>
                 <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px 12px;margin-bottom:10px;">
-                    <div style="padding:8px 12px;background:#fff;border:1px solid #c7d2fe;border-radius:8px;"><strong style="color:#3730a3;">부사절</strong> <span style="color:#6b7280;font-size:0.85rem;"><span lang="en" translate="yes">— Adverbial clause:</span> 부사어 안에 주어+서술어</span></div>
-                    <div style="padding:8px 12px;background:#fff;border:1px solid #c7d2fe;border-radius:8px;"><strong style="color:#3730a3;">서술절</strong> <span style="color:#6b7280;font-size:0.85rem;"><span lang="en" translate="yes">— Predicate clause:</span> 서술어 안에 주어+서술어</span></div>
-                    <div style="padding:8px 12px;background:#fff;border:1px solid #c7d2fe;border-radius:8px;"><strong style="color:#3730a3;">관형절</strong> <span style="color:#6b7280;font-size:0.85rem;"><span lang="en" translate="yes">— Modifier clause:</span> 명사 앞 ~는/~ㄴ/~ㄹ 절</span></div>
-                    <div style="padding:8px 12px;background:#fff;border:1px solid #c7d2fe;border-radius:8px;"><strong style="color:#3730a3;">주절</strong> <span style="color:#6b7280;font-size:0.85rem;"><span lang="en" translate="yes">— Main clause:</span> 문장의 핵심 주어+서술어</span></div>
+                    <div style="padding:8px 12px;background:#fff;border:1px solid #c7d2fe;border-radius:8px;"><strong style="color:#3730a3;">부사절</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— Adverbial clause:</span> 부사어 안에 주어+서술어</span></div>
+                    <div style="padding:8px 12px;background:#fff;border:1px solid #c7d2fe;border-radius:8px;"><strong style="color:#3730a3;">서술절</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— Predicate clause:</span> 서술어 안에 주어+서술어</span></div>
+                    <div style="padding:8px 12px;background:#fff;border:1px solid #c7d2fe;border-radius:8px;"><strong style="color:#3730a3;">관형절</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— Modifier clause:</span> 명사 앞 ~는/~ㄴ/~ㄹ 절</span></div>
+                    <div style="padding:8px 12px;background:#fff;border:1px solid #c7d2fe;border-radius:8px;"><strong style="color:#3730a3;">주절</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— Main clause:</span> 문장의 핵심 주어+서술어</span></div>
                 </div>
                 <div style="margin:12px 0 6px 0;font-weight:700;color:#4338ca;">② Q293 분석 예<span class="gloss" lang="en" translate="yes">Q293 example</span></div>
                 <div style="padding:10px 14px;background:#fff;border:1px solid #c7d2fe;border-radius:8px;margin-bottom:8px;">
                     <strong style="color:#3730a3;">제가</strong> 컴퓨터를 켜자마자 <strong style="color:#3730a3;">전기가</strong> 나갔습니다.<br>
-                    <span style="color:#6b7280;font-size:0.88rem;">└ <strong>부사절</strong> 주어: <strong style="color:#16a34a;">제가</strong> (이/가 ✓)</span><br>
+                    <span style="color:#636976;font-size:0.88rem;">└ <strong>부사절</strong> 주어: <strong style="color:#107435;">제가</strong> (이/가 ✓)</span><br>
                     <small lang="en" translate="yes"><em>Subject of the adverbial clause: <strong><span lang="ko" translate="no">제가</span></strong> (uses <span lang="ko" translate="no">이/가</span> ✓)</em></small>
                 </div>
                 <div style="margin:12px 0 6px 0;font-weight:700;color:#4338ca;">③ 잘못된 예 ↔ 올바른 예</div>
                 <div style="padding:8px 12px;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;margin-bottom:6px;">
-                    <span style="color:#dc2626;font-weight:700;">✗ 잘못</span>: <strong>저는</strong> 컴퓨터를 켜자마자 전기가 나갔습니다. <span style="color:#6b7280;font-size:0.85rem;">— 부사절 안 주어에 "는" 사용 (X)</span><br>
+                    <span style="color:#c62020;font-weight:700;">✗ 잘못</span>: <strong>저는</strong> 컴퓨터를 켜자마자 전기가 나갔습니다. <span style="color:#636976;font-size:0.85rem;">— 부사절 안 주어에 "는" 사용 (X)</span><br>
                     <small lang="en" translate="yes"><em>✗ Wrong: used <strong><span lang="ko" translate="no">는</span></strong> for the adverbial-clause subject.</em></small>
                 </div>
                 <div style="padding:8px 12px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;">
-                    <span style="color:#16a34a;font-weight:700;">✓ 올바름</span>: <strong>제가</strong> 컴퓨터를 켜자마자 전기가 나갔습니다. <span style="color:#6b7280;font-size:0.85rem;">— 부사절 안 주어에 "가" 사용 (O)</span><br>
+                    <span style="color:#107435;font-weight:700;">✓ 올바름</span>: <strong>제가</strong> 컴퓨터를 켜자마자 전기가 나갔습니다. <span style="color:#636976;font-size:0.85rem;">— 부사절 안 주어에 "가" 사용 (O)</span><br>
                     <small lang="en" translate="yes"><em>✓ Correct: used <strong><span lang="ko" translate="no">가</span></strong> for the adverbial-clause subject.</em></small>
                 </div>
-                <div style="margin-top:10px;font-size:0.88rem;color:#6b7280;line-height:1.6;">💡 <strong>은/는</strong>은 종속절 안에서는 사용 불가. 종속절 안의 주어는 <strong>이/가</strong>를 사용.<br><em lang="en" translate="yes">Tip: <strong><span lang="ko" translate="no">은/는</span></strong> cannot appear inside a subordinate clause — clause-internal subjects always take <strong><span lang="ko" translate="no">이/가</span></strong>.</em></div>
+                <div style="margin-top:10px;font-size:0.88rem;color:#636976;line-height:1.6;">💡 <strong>은/는</strong>은 종속절 안에서는 사용 불가. 종속절 안의 주어는 <strong>이/가</strong>를 사용.<br><em lang="en" translate="yes">Tip: <strong><span lang="ko" translate="no">은/는</span></strong> cannot appear inside a subordinate clause — clause-internal subjects always take <strong><span lang="ko" translate="no">이/가</span></strong>.</em></div>
             </div>
         </div>
     </div>
@@ -726,7 +726,7 @@ p.en{margin-bottom:16px;}
 <p class="subtitle"><span lang="en" translate="yes">Sentence Matching</span></p>
 
 <div class="em-game">
-        <p class="em-game-desc">왼쪽 영어 문장을 클릭하고, 그 뜻에 맞는 오른쪽 한국어 문장을 클릭하세요. 짝이 맞으면 두 문장이 사라집니다. <span style="color:#94a3b8;"><span lang="en" translate="yes">Click an English sentence, then its Korean match — both disappear when matched.</span></span></p>
+        <p class="em-game-desc">왼쪽 영어 문장을 클릭하고, 그 뜻에 맞는 오른쪽 한국어 문장을 클릭하세요. 짝이 맞으면 두 문장이 사라집니다. <span style="color:#5a6d87;"><span lang="en" translate="yes">Click an English sentence, then its Korean match — both disappear when matched.</span></span></p>
     <div class="em-toolbar">
         <span class="em-stat"><span class="em-stat-label">정답</span><span id="emCorrect" class="em-stat-num">0/4</span></span>
         <span class="em-stat"><span class="em-stat-label">오답</span><span id="emWrong" class="em-stat-num">0</span></span>
@@ -1033,7 +1033,7 @@ function wtGrade(){
   if (pe) pe.textContent = '· ' + (total ? Math.round(c * 100 / total) : 0) + '%';
   var be = document.getElementById('wtScoreBox'); if (be) be.classList.add('is-graded');
   if (c === total && c > 0 && typeof celebrateShow === 'function'){
-    celebrateShow(c, 0, wtReset, '모든 문장을 정확히 작성했습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All sentences correct!</span>');
+    celebrateShow(c, 0, wtReset, '모든 문장을 정확히 작성했습니다!<br><span style="color:#5a6d87;font-size:0.9rem;">All sentences correct!</span>');
   }
 }
 /* ── 채점 관용 ── 조사만 다른 답은 정답으로 세고 차이를 알려 준다.
@@ -1171,8 +1171,8 @@ function emCheck(){
     setTimeout(function(){
       emRemoved.push(pid); emCorrect++;
       emSelEn = null; emSelKo = null;
-      if(emCorrect === emPairs.length){ emUpdate('🎉 완료! 모든 문장을 맞췄습니다. <span style="color:#15803d;">All matched!</span>', true);
-        celebrateShow(emCorrect, emWrong, emReset, '모든 문장을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;">All sentences matched!</span>'); }
+      if(emCorrect === emPairs.length){ emUpdate('🎉 완료! 모든 문장을 맞췄습니다. <span style="color:#0f5e2c;">All matched!</span>', true);
+        celebrateShow(emCorrect, emWrong, emReset, '모든 문장을 맞췄습니다!<br><span style="color:#5a6d87;font-size:0.9rem;">All sentences matched!</span>'); }
       else { emUpdate('<strong>'+eTxt+' ↔ '+kTxt+'</strong> 정답!'); }
       emRender();
     }, 300);
@@ -1183,7 +1183,7 @@ function emCheck(){
   if(kEl) kEl.classList.add('wrong');
   const eTxt = emSelEn.text, kTxt = emSelKo.text;
   emSelEn = null; emSelKo = null;
-  emUpdate('<strong>'+eTxt+'</strong> ↔ <strong>'+kTxt+'</strong> — 짝이 아닙니다. 다시 고르세요. <span style="color:#94a3b8;">Not a match.</span>');
+  emUpdate('<strong>'+eTxt+'</strong> ↔ <strong>'+kTxt+'</strong> — 짝이 아닙니다. 다시 고르세요. <span style="color:#5a6d87;">Not a match.</span>');
   setTimeout(function(){ emRender(); }, 600);
 }
 function emReset(){
@@ -1231,7 +1231,7 @@ function celebrateRestart(){
     <div class="celebrate-card" onclick="event.stopPropagation()">
         <span class="celebrate-emoji">🎉</span>
         <h3 class="celebrate-title" id="celebrateTitle">완료!</h3>
-        <p class="celebrate-subtitle" id="celebrateSubtitle">모든 짝을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;"><span lang="en" translate="yes">All matched!</span></span></p>
+        <p class="celebrate-subtitle" id="celebrateSubtitle">모든 짝을 맞췄습니다!<br><span style="color:#5a6d87;font-size:0.9rem;"><span lang="en" translate="yes">All matched!</span></span></p>
         <div class="celebrate-stats">
             <div class="celebrate-stat"><strong id="celebrateCorrect">0</strong><span>정답<span class="gloss" lang="en" translate="yes">Correct</span></span></div>
             <div class="celebrate-stat"><strong id="celebrateWrong">0</strong><span>오답<span class="gloss" lang="en" translate="yes">Wrong</span></span></div>

@@ -12,7 +12,7 @@
         .container { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 48px 40px; }
         h1 { font-size: 2rem; font-weight: 900; color: #1e293b; border-bottom: 4px solid #3b82f6; padding-bottom: 12px; margin-bottom: 4px; }
         h1 .h1-line2 { display: block; }
-        h1 + .subtitle { color: #64748b; font-size: 1rem; margin-bottom: 40px; }
+        h1 + .subtitle { color: #59687c; font-size: 1rem; margin-bottom: 40px; }
         /* Title block — category-themed gradient (overrides legacy h1 layout when used) */
         .title-block { margin: 0 0 44px 0; padding: 28px 32px 24px; border-radius: 16px; background: linear-gradient(135deg, var(--title-bg-start, #faf5ff) 0%, #ffffff 70%); box-shadow: 0 2px 14px rgba(15,23,42,0.06); position: relative; overflow: hidden; }
         .title-block::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--title-gradient); opacity: 0.95; }
@@ -22,7 +22,7 @@
         .title-divider { height: 3px; background: var(--title-gradient); border-radius: 999px; margin: 18px 0 16px; opacity: 0.85; }
         .title-ko { display: flex; flex-direction: column; gap: 4px; }
         .title-en .title-main { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.02rem; font-weight: 800; color: var(--title-ko-main-color, #1e293b); margin: 0; padding: 0; border: none; letter-spacing: -0.01em; }
-        .title-en .title-sub { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.9rem; color: #64748b; line-height: 1.65; margin: 0; }
+        .title-en .title-sub { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.9rem; color: #59687c; line-height: 1.65; margin: 0; }
         /* Category palettes — apply class to .title-block */
         .title-block.sentence  { --title-gradient: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%); --title-bg-start: #eff6ff; --title-sub-color: #1e40af; --title-ko-main-color: #1e3a8a; }
         .title-block.predicate { --title-gradient: linear-gradient(135deg, #4c1d95 0%, #6d28d9 50%, #8b5cf6 100%); --title-bg-start: #faf5ff; --title-sub-color: #5b21b6; --title-ko-main-color: #4c1d95; }
@@ -41,10 +41,10 @@
         }
         h2 { font-size: 1.5rem; font-weight: 800; color: #1e40af; margin-top: 48px; margin-bottom: 4px; padding-top: 24px; border-top: 2px solid #e2e8f0; }
         h2:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
-        h2 + .subtitle { color: #64748b; font-size: 0.95rem; margin-bottom: 20px; }
+        h2 + .subtitle { color: #59687c; font-size: 0.95rem; margin-bottom: 20px; }
         h3 { font-size: 1.2rem; font-weight: 700; color: #1e40af; margin-top: 36px; margin-bottom: 12px; padding: 10px 14px; background: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 4px; }
         .en { margin-bottom: 2px; }
-        .ko { color: #64748b; font-size: 0.92rem; margin-bottom: 16px; }
+        .ko { color: #59687c; font-size: 0.92rem; margin-bottom: 16px; }
         blockquote { background: #f8fafc; border-left: 3px solid #cbd5e1; padding: 12px 16px; margin: 12px 0 16px 0; border-radius: 4px; font-size: 0.95rem; line-height: 2; }
         pre { background: #1e293b; color: #e2e8f0; padding: 16px 20px; border-radius: 8px; margin: 12px 0 16px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.9rem; line-height: 1.6; }
         table { width: 100%; border-collapse: collapse; margin: 12px 0 20px 0; font-size: 0.92rem; }
@@ -60,7 +60,7 @@
         .answer-content .ans-kr { font-size: 1.15rem; font-weight: 900; color: #1e40af; }
         .note-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 4px; margin: 12px 0 16px 0; font-size: 0.92rem; }
         hr { border: none; border-top: 1px solid #e2e8f0; margin: 32px 0; }
-        .footer { text-align: center; color: #94a3b8; font-size: 0.85rem; margin-top: 48px; padding-top: 20px; border-top: 2px solid #e2e8f0; }
+        .footer { text-align: center; color: #5a6d87; font-size: 0.85rem; margin-top: 48px; padding-top: 20px; border-top: 2px solid #e2e8f0; }
         @media print { body { background: none; padding: 0; } .container { box-shadow: none; padding: 20px; } .answer-content { display: block !important; } .answer-toggle { display: none; } }
         .speak-btn { background: none; border: none; cursor: pointer; font-size: 1.3rem; vertical-align: middle; margin-left: 8px; padding: 2px 6px; border-radius: 6px; transition: background 0.2s; }
         .speak-btn:hover { background: #e0e7ff; }
@@ -68,9 +68,9 @@
         .sentence-list { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 0 0 24px; }
         .sentence-item { display: grid; grid-template-columns: 44px 1fr auto; gap: 16px; align-items: center; padding: 12px 18px; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; }
         .sentence-item:hover { border-color: #3b82f6; box-shadow: 0 4px 14px rgba(59,130,246,0.10); }
-        .sentence-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.25rem; font-weight: 900; color: #3b82f6; text-align: center; letter-spacing: -0.02em; }
+        .sentence-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.25rem; font-weight: 900; color: #0a5de4; text-align: center; letter-spacing: -0.02em; }
         .sentence-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-        .sentence-en { font-size: 1.06rem; color: #64748b; font-weight: 700; }
+        .sentence-en { font-size: 1.06rem; color: #59687c; font-weight: 700; }
         .sentence-kr { font-size: 1.06rem; font-weight: 700; color: #1e293b; line-height: 1.4; }
         .sentence-listen { background: #eff6ff; border: none; cursor: pointer; width: 40px; height: 40px; border-radius: 50%; font-size: 1.05rem; transition: background 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: center; padding: 0; }
         .sentence-listen:hover { background: #3b82f6; transform: scale(1.08); }
@@ -82,14 +82,14 @@
         .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
         .flashcard-front, .flashcard-back { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 22px; text-align: center; box-shadow: 0 4px 16px rgba(30,41,59,0.08); }
         .flashcard-front { background: #fff; border: 2px solid #bfdbfe; color: #1e293b; }
-        .flashcard-back { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 60%, #60a5fa 100%); color: #fff; transform: rotateY(180deg); }
-        .flashcard-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.2em; margin-bottom: 12px; opacity: 0.65; }
+        .flashcard-back { background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 55%, #2563eb 100%); color: #fff; transform: rotateY(180deg); }
+        .flashcard-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.2em; margin-bottom: 12px; opacity:1; }
         .flashcard-front .flashcard-text { font-size: 1.06rem; font-weight: 700; line-height: 1.4; }
-        .flashcard-en { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.78rem; font-weight: 600; color: #94a3b8; margin-top: 6px; font-style: italic; }
+        .flashcard-en { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 0.78rem; font-weight: 600; color: #5a6d87; margin-top: 6px; font-style: italic; }
         .flashcard-back .flashcard-text { font-size: 1.06rem; font-weight: 700; line-height: 1.4; }
-        .flashcard-hint { position: absolute; bottom: 10px; right: 14px; font-size: 0.68rem; color: #94a3b8; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
-        .flashcard-listen { position: absolute; bottom: 10px; right: 10px; background: rgba(255,255,255,0.22); border: none; cursor: pointer; width: 36px; height: 36px; border-radius: 50%; font-size: 1rem; transition: background 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: center; padding: 0; color: #fff; }
-        .flashcard-listen:hover { background: rgba(255,255,255,0.4); transform: scale(1.1); }
+        .flashcard-hint { position: absolute; bottom: 10px; right: 14px; font-size: 0.68rem; color: #5a6d87; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+        .flashcard-listen { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.18); border: none; cursor: pointer; width: 36px; height: 36px; border-radius: 50%; font-size: 1rem; transition: background 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: center; padding: 0; color: #fff; }
+        .flashcard-listen:hover { background: rgba(0,0,0,0.32); transform: scale(1.1); }
         @media (max-width: 600px) { .flashcard-grid { grid-template-columns: 1fr; } }
         /* Writing Test (comprehensive) */
         @media print { .writing-input { background: #fff; min-height: 60px; } }
@@ -186,7 +186,7 @@
         .gstep-body p.ko { color: #475569; font-size: 0.94rem; line-height: 1.65; margin-bottom: 12px; font-weight: 500; }
         .gstep-body p.ko strong { color: #5b21b6; font-weight: 700; }
         .gstep-pattern { background: linear-gradient(135deg, #ede9fe 0%, #faf5ff 100%); color: #4c1d95; border: 1px solid #ddd6fe; border-left: 4px solid #6d28d9; padding: 14px 18px; border-radius: 10px; margin: 14px 0 10px 0; font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.08rem; font-weight: 800; line-height: 1.55; box-shadow: 0 2px 6px rgba(76,29,149,0.05); }
-        .gstep-pattern small { display: block; color: #7c3aed; font-weight: 500; font-size: 0.8rem; margin-top: 7px; letter-spacing: 0.02em; opacity: 0.92; }
+        .gstep-pattern small { display: block; color: #7c3aed; font-weight: 500; font-size: 0.8rem; margin-top: 7px; letter-spacing: 0.02em; opacity:1; }
         .gstep-pattern .accent { color: #6d28d9; font-weight: 800; font-family: inherit; }
         .gstep blockquote { background: #fff; border: 1px solid #e9d5ff; border-left: 3px solid #8b5cf6; border-radius: 8px; padding: 12px 16px; margin: 12px 0 10px 0; line-height: 1.85; font-size: 0.93rem; color: #1e293b; font-style: normal; }
         .gstep blockquote strong { color: #6d28d9; font-weight: 800; }
@@ -311,8 +311,8 @@
         .gstep-table td, .gstep-table th { word-break: keep-all; overflow-wrap: break-word; }
         .exp-table td, .exp-table th { word-break: keep-all; overflow-wrap: break-word; }
 
-.gloss{text-transform:none;display:block;font-weight:600;font-size:0.86em;opacity:0.72;letter-spacing:0;margin-top:1px;}
-button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
+.gloss{text-transform:none;display:block;font-weight:600;font-size:0.86em;opacity:1;letter-spacing:0;margin-top:1px;}
+button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
 </style>
 </head>
 <body>
@@ -351,8 +351,9 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
     .stylem tbody tr:nth-child(even) td.wcol { background:#e9edf2; }
 
     /* style-contrast flashcard back */
+    .flashcard-grid.look-speak .flashcard-back { background:linear-gradient(135deg,#fce7f3 0%,#fbcfe8 100%); color:#831843; }
     .sc-line { display:block; font-size:0.96rem; line-height:1.75; }
-    .sc-tag { font-weight:900; font-size:0.74rem; margin-right:6px; }
+    .sc-tag { font-weight:900; font-size:0.74rem; margin-right:6px; background:#fff; padding:1px 7px; border-radius:6px; }
 
 </style>
 
@@ -367,9 +368,9 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
         <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:22%">스타일<span class="gloss" lang="en" translate="yes">Style</span></th><th>어미<span class="gloss" lang="en" translate="yes">Ending</span></th><th>쓰는 상황<span class="gloss" lang="en" translate="yes">When</span></th><th>예: 가다</th></tr></thead>
             <tbody>
-                <tr><td><span class="accent">격식체</span><br><small lang="en" translate="yes">Formal</small></td><td>-ㅂ니다<br>-습니다</td><td style="text-align:left; line-height:1.55;">공식·격식 상황<br><small lang="en" translate="yes"><em style="color:#94a3b8;">Formal / official situations</em></small><br><small>발표·뉴스·안내·서비스<br><em lang="en" translate="yes">Presentations · news · announcements · service</em></small><br><small lang="en" translate="yes"><em style="color:#94a3b8;">presentations · news · announcements · service</em></small></td><td><strong>갑니다</strong></td></tr>
-                <tr><td><span class="accent">구어체</span><br><small lang="en" translate="yes">Spoken</small></td><td>-아요<br>-어요</td><td style="text-align:left; line-height:1.55;">일상 대화 (가장 흔함)<br><small lang="en" translate="yes"><em style="color:#94a3b8;">Everyday conversation (most common)</em></small><br><small>친구·가족·일상<br><em lang="en" translate="yes">Friends · family · everyday life</em></small><br><small lang="en" translate="yes"><em style="color:#94a3b8;">friends · family · daily life</em></small></td><td><strong>가요</strong></td></tr>
-                <tr><td><span class="accent">문어체</span><br><small lang="en" translate="yes">Written</small></td><td>-ㄴ다<br>-는다<br>다</td><td style="text-align:left; line-height:1.55;">글말<br><small lang="en" translate="yes"><em style="color:#94a3b8;">Written language</em></small><br><small>책·신문·일기·보고<br><em lang="en" translate="yes">Books · newspapers · diaries · reports</em></small><br><small lang="en" translate="yes"><em style="color:#94a3b8;">books · newspapers · diaries · reports</em></small></td><td><strong>간다</strong></td></tr>
+                <tr><td><span class="accent">격식체</span><br><small lang="en" translate="yes">Formal</small></td><td>-ㅂ니다<br>-습니다</td><td style="text-align:left; line-height:1.55;">공식·격식 상황<br><small lang="en" translate="yes"><em style="color:#5a6d87;">Formal / official situations</em></small><br><small>발표·뉴스·안내·서비스<br><em lang="en" translate="yes">Presentations · news · announcements · service</em></small><br><small lang="en" translate="yes"><em style="color:#5a6d87;">presentations · news · announcements · service</em></small></td><td><strong>갑니다</strong></td></tr>
+                <tr><td><span class="accent">구어체</span><br><small lang="en" translate="yes">Spoken</small></td><td>-아요<br>-어요</td><td style="text-align:left; line-height:1.55;">일상 대화 (가장 흔함)<br><small lang="en" translate="yes"><em style="color:#5a6d87;">Everyday conversation (most common)</em></small><br><small>친구·가족·일상<br><em lang="en" translate="yes">Friends · family · everyday life</em></small><br><small lang="en" translate="yes"><em style="color:#5a6d87;">friends · family · daily life</em></small></td><td><strong>가요</strong></td></tr>
+                <tr><td><span class="accent">문어체</span><br><small lang="en" translate="yes">Written</small></td><td>-ㄴ다<br>-는다<br>다</td><td style="text-align:left; line-height:1.55;">글말<br><small lang="en" translate="yes"><em style="color:#5a6d87;">Written language</em></small><br><small>책·신문·일기·보고<br><em lang="en" translate="yes">Books · newspapers · diaries · reports</em></small><br><small lang="en" translate="yes"><em style="color:#5a6d87;">books · newspapers · diaries · reports</em></small></td><td><strong>간다</strong></td></tr>
             </tbody>
         </table></div>
     </div>
@@ -393,14 +394,14 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .cmk tr.r-past td:first-child{border-left-color:#4ade80;}
 .cmk tr.r-fut td:first-child{border-left-color:#fbbf24;}
 .cmk .tb{display:inline-flex;flex-direction:column;align-items:center;gap:0;font-weight:800;padding:5px 13px;border-radius:9px;line-height:1.15;font-size:0.98rem;}
-.cmk .tb small{font-size:0.58rem;font-weight:700;opacity:0.85;font-family:'Lato',sans-serif;letter-spacing:0.6px;}
+.cmk .tb small{font-size:0.58rem;font-weight:700;opacity:1;font-family:'Lato',sans-serif;letter-spacing:0.6px;}
 .cmk .t-pres{background:#dbeafe;color:#1e40af;}
 .cmk .t-past{background:#dcfce7;color:#166534;}
 .cmk .t-fut{background:#fef3c7;color:#92400e;}
 .cmk .mk{display:flex;flex-direction:column;gap:8px;}
 .cmk .mkrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
 .cmk .pos{font-size:0.68rem;font-weight:800;color:#475569;background:#f1f5f9;padding:3px 8px;border-radius:6px;white-space:nowrap;min-width:64px;text-align:center;}
-.cmk .stem{color:#94a3b8;font-weight:700;font-size:0.9rem;}
+.cmk .stem{color:#5a6d87;font-weight:700;font-size:0.9rem;}
 .cmk .chip{display:inline-block;font-weight:800;padding:4px 12px;border-radius:8px;border:1.6px solid;font-size:0.96rem;line-height:1.4;white-space:nowrap;text-align:center;}
 .cmk .c-pres{color:#1e40af;border-color:#bfdbfe;background:#eff6ff;}
 .cmk .c-past{color:#166534;border-color:#bbf7d0;background:#f0fdf4;}
@@ -416,7 +417,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 .cmk .vstack{display:inline-flex;flex-direction:column;gap:6px;align-items:stretch;}
 .cmk .vstack .chip,.cmk .vstack .pill{min-width:78px;text-align:center;padding-top:5px;padding-bottom:5px;font-size:0.93rem;line-height:1.3;box-sizing:border-box;}
 .cmk .vstack .cl{display:flex;align-items:center;gap:7px;}
-.cmk .vstack .cl .pos{min-width:70px;}.cmk .bat{font-size:0.66rem;font-weight:800;padding:3px 7px;border-radius:6px;white-space:nowrap;min-width:76px;text-align:center;box-sizing:border-box;}.cmk .bat-no{color:#dc2626;background:#fef2f2;}.cmk .bat-yes{color:#16a34a;background:#f0fdf4;}.cmk .bat-yang{color:#b45309;background:#fef3c7;}.cmk .bat-eum{color:#1e40af;background:#dbeafe;}.cmk .bat-hada{color:#475569;background:#eef2f6;}.cmk .mkgrp{display:inline-flex;flex-direction:column;gap:6px;align-items:flex-start;}.cmk .posgrp{display:flex;align-items:center;gap:8px;}.cmk .pos-2l{line-height:1.2;}
+.cmk .vstack .cl .pos{min-width:70px;}.cmk .bat{font-size:0.66rem;font-weight:800;padding:3px 7px;border-radius:6px;white-space:nowrap;min-width:76px;text-align:center;box-sizing:border-box;}.cmk .bat-no{color:#c62020;background:#fef2f2;}.cmk .bat-yes{color:#107435;background:#f0fdf4;}.cmk .bat-yang{color:#8f4207;background:#fef3c7;}.cmk .bat-eum{color:#1e40af;background:#dbeafe;}.cmk .bat-hada{color:#475569;background:#eef2f6;}.cmk .mkgrp{display:inline-flex;flex-direction:column;gap:6px;align-items:flex-start;}.cmk .posgrp{display:flex;align-items:center;gap:8px;}.cmk .pos-2l{line-height:1.2;}
 </style>
         <div class="tbl-scroll"><table class="cmk">
             <thead><tr><th>시제<span class="gloss" lang="en" translate="yes">Tense</span></th><th>만드는 법<span class="gloss" lang="en" translate="yes">How</span></th><th>예 (가다 · 먹다 · 하다)</th></tr></thead>
@@ -489,7 +490,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <hr>
 
 <h2>2. 플래시 카드<span class="gloss" lang="en" translate="yes">Flashcards</span></h2>
-<p class="subtitle" lang="en" translate="yes"><span lang="ko" translate="no">단어를 보고 구어체·문어체 형태를 떠올린 뒤 카드를 뒤집어 확인하세요</span><br><small style="font-weight:400;color:#94a3b8;">Recall the form, then tap to flip</small></p>
+<p class="subtitle" lang="en" translate="yes"><span lang="ko" translate="no">단어를 보고 구어체·문어체 형태를 떠올린 뒤 카드를 뒤집어 확인하세요</span><br><small style="font-weight:400;color:#5a6d87;">Recall the form, then tap to flip</small></p>
 
 <h3 class="stylep-h sh-polite">① 구어체 <span lang="en" translate="yes">· Spoken</span><span style="display:block;font-weight:600;font-size:0.88rem;margin-top:4px;line-height:1.5;">-아요<br>-어요</span></h3>
 <div class="flashcard-grid look-speak" id="lsGridPol"></div>
@@ -500,7 +501,7 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:0.75;margin-top:1px;}
 <hr>
 
 <h2>3. 문체별 연습<span class="gloss" lang="en" translate="yes">Practice by Style</span></h2>
-<p class="subtitle" lang="en" translate="yes"><span lang="ko" translate="no">단어를 보고 각 문체의 현재·과거·미래를 떠올린 뒤</span> [?]<span lang="ko" translate="no">로 확인하세요</span><br><small style="font-weight:400;color:#94a3b8;">Recall each form, then tap ? to check</small></p>
+<p class="subtitle" lang="en" translate="yes"><span lang="ko" translate="no">단어를 보고 각 문체의 현재·과거·미래를 떠올린 뒤</span> [?]<span lang="ko" translate="no">로 확인하세요</span><br><small style="font-weight:400;color:#5a6d87;">Recall each form, then tap ? to check</small></p>
 
 <h3 class="stylep-h sh-formal">① 격식체 <span lang="en" translate="yes">· Formal</span><span style="display:block;font-weight:600;font-size:0.88rem;margin-top:4px;line-height:1.5;">-ㅂ니다<br>-습니다</span></h3>
 <div class="ans-bar"><button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기<span class="gloss" lang="en" translate="yes">Show all</span></button><button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기<span class="gloss" lang="en" translate="yes">Hide again</span></button></div>
@@ -561,7 +562,7 @@ var STYLE_M = [
   STYLES.forEach(function(s){
     var idx=s[1], h='';
     STYLE_M.forEach(function(r){
-      var smp=(r[0]==='가다'); h+='<tr'+(smp?' class="q-sample"':'')+'><td class="spw">'+r[0]+(smp?'<br><small style="color:#f59e0b;font-weight:800;">보기</small>':'')+'</td>';
+      var smp=(r[0]==='가다'); h+='<tr'+(smp?' class="q-sample"':'')+'><td class="spw">'+r[0]+(smp?'<br><small style="color:#966106;font-weight:800;">보기</small>':'')+'</td>';
       idx.forEach(function(i){ h+=smp?('<td class="spcell">'+r[i]+'</td>'):('<td class="spcell q-cell"><span class="q-text" onclick="qHide(this)">'+r[i]+'</span><button class="q-ans" onclick="qReveal(this)">?</button></td>'); });
       h+='</tr>';
     });
@@ -573,7 +574,7 @@ var STYLE_M = [
 (function(){
     /* 두 덱: 구어체 / 문어체 — 한눈에 보기(STYLE_M) 전체 21단어. 앞면=단어+영어뜻, 뒷면=해당 문체의 현재·과거·미래 */
     var EN = {"가다":"to go","만나다":"to meet","먹다":"to eat","있다":"to exist / have","없다":"to not exist","알다":"to know","만들다":"to make","오다":"to come","배우다":"to learn","마시다":"to drink","그리다":"to draw","내다":"to pay","하다":"to do","사랑하다":"to love","이다":"to be","크다":"to be big","다르다":"to be different","쉽다":"to be easy","좋다":"to be good","듣다":"to listen","믿다":"to believe"};
-    var TLAB = [["현재","#2563eb"],["과거","#16a34a"],["미래","#d97706"]];
+    var TLAB = [["현재","#1e3a8a"],["과거","#14532d"],["미래","#7c2d12"]];
     function buildDeck(gridId, idxArr){
         var html = "";
         STYLE_M.forEach(function(r){
@@ -737,7 +738,7 @@ function celebrateRestart(){
     <div class="celebrate-card" onclick="event.stopPropagation()">
         <span class="celebrate-emoji">🎉</span>
         <h3 class="celebrate-title" id="celebrateTitle">완료!</h3>
-        <p class="celebrate-subtitle" id="celebrateSubtitle">모든 짝을 맞췄습니다!<br><span style="color:#94a3b8;font-size:0.9rem;"><span lang="en" translate="yes">All matched!</span></span></p>
+        <p class="celebrate-subtitle" id="celebrateSubtitle">모든 짝을 맞췄습니다!<br><span style="color:#5a6d87;font-size:0.9rem;"><span lang="en" translate="yes">All matched!</span></span></p>
         <div class="celebrate-stats">
             <div class="celebrate-stat"><strong id="celebrateCorrect">0</strong><span>정답<span class="gloss" lang="en" translate="yes">Correct</span></span></div>
             <div class="celebrate-stat"><strong id="celebrateWrong">0</strong><span>오답<span class="gloss" lang="en" translate="yes">Wrong</span></span></div>
@@ -753,13 +754,13 @@ function celebrateRestart(){
 .q-cell:not(.revealed){text-align:center !important;}
 .q-cell.revealed .q-text{display:inline;cursor:pointer;}
 .q-cell.revealed .q-ans{display:none;}
-.q-ans{background:#fff;border:1px solid #cbd5e1;color:#16a34a;padding:0 6px;border-radius:7px;cursor:pointer;font-size:0.8rem;font-weight:800;font-family:inherit;line-height:1.5;text-decoration:none;}
+.q-ans{background:#fff;border:1px solid #cbd5e1;color:#107435;padding:0 6px;border-radius:7px;cursor:pointer;font-size:0.8rem;font-weight:800;font-family:inherit;line-height:1.5;text-decoration:none;}
 .q-ans:hover{background:#f0fdf4;border-color:#86efac;}
 .ans-bar{margin:10px 0 6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
 .ans-btn{background:#fff;border:1px solid #cbd5e1;color:#475569;padding:5px 12px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.82rem;font-family:inherit;}
 .ans-btn:hover{background:#f1f5f9;}
-.ans-hint{font-size:0.8rem;color:#94a3b8;}
-.stylep-h{margin:16px 0 4px;padding:8px 14px;font-size:1.05rem;font-weight:800;border-left:4px solid;border-radius:4px;}.sh-formal{color:#92400e;background:#fffbeb;border-left-color:#f59e0b;}.sh-polite{color:#1e40af;background:#eff6ff;border-left-color:#3b82f6;}.sh-written{color:#166534;background:#ecfdf5;border-left-color:#22c55e;}.stylep-wrap{overflow-x:auto;margin:4px 0 12px;}.stylep{width:100%;border-collapse:collapse;font-size:0.92rem;min-width:440px;}.stylep th,.stylep td{border:1px solid #cbd5e1;padding:9px 6px;text-align:center;}.stylep thead th{background:#f1f5f9;color:#334155;font-weight:800;}.stylep .spw{background:#f8fafc;font-weight:800;color:#0f172a;white-space:nowrap;width:26%;}.stylep tr.q-sample td{background:#fffbeb;}.stylep tr.q-sample .spw{background:#fef3c7;color:#b45309;}.stylem tbody tr.mat-sample td{background:#fffbeb !important;}.stylem tbody tr.mat-sample .wcol{background:#fef3c7 !important;color:#b45309 !important;}.stylem tbody tr.mat-sample .wcol::after{content:"보기";display:block;font-size:0.58rem;font-weight:800;color:#f59e0b;}
+.ans-hint{font-size:0.8rem;color:#5a6d87;}
+.stylep-h{margin:16px 0 4px;padding:8px 14px;font-size:1.05rem;font-weight:800;border-left:4px solid;border-radius:4px;}.sh-formal{color:#92400e;background:#fffbeb;border-left-color:#f59e0b;}.sh-polite{color:#1e40af;background:#eff6ff;border-left-color:#3b82f6;}.sh-written{color:#166534;background:#ecfdf5;border-left-color:#22c55e;}.stylep-wrap{overflow-x:auto;margin:4px 0 12px;}.stylep{width:100%;border-collapse:collapse;font-size:0.92rem;min-width:440px;}.stylep th,.stylep td{border:1px solid #cbd5e1;padding:9px 6px;text-align:center;}.stylep thead th{background:#f1f5f9;color:#334155;font-weight:800;}.stylep .spw{background:#f8fafc;font-weight:800;color:#0f172a;white-space:nowrap;width:26%;}.stylep tr.q-sample td{background:#fffbeb;}.stylep tr.q-sample .spw{background:#fef3c7;color:#8f4207;}.stylem tbody tr.mat-sample td{background:#fffbeb !important;}.stylem tbody tr.mat-sample .wcol{background:#fef3c7 !important;color:#8f4207 !important;}.stylem tbody tr.mat-sample .wcol::after{content:"보기";display:block;font-size:0.58rem;font-weight:800;color:#966106;}
 @media print{.q-cell .q-text{display:inline !important;}.q-ans,.ans-bar{display:none !important;}}
 
 
@@ -771,7 +772,7 @@ function celebrateRestart(){
     padding:11px 16px; font-size:0.86rem; line-height:1.45; box-shadow:0 6px 20px rgba(15,23,42,0.3);
     opacity:0; pointer-events:none; transition:opacity 0.2s, transform 0.2s; }
 .ak-notice.on { opacity:1; transform:translateX(-50%) translateY(0); }
-.ak-notice .gloss { color:#475569; opacity:0.95; }
+.ak-notice .gloss { color:#475569; opacity:1; }
 @media print { .ak-notice { display:none; } }
 
 /* 좁은 화면에서 표가 쪽 밖으로 나가지 않게 — 넓은 화면에서는 아무 일도 하지 않는다.
