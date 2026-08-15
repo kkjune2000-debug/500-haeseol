@@ -51,8 +51,8 @@
         blockquote { background: #f8fafc; border-left: 3px solid #cbd5e1; padding: 12px 16px; margin: 12px 0 16px 0; border-radius: 4px; font-size: 0.95rem; line-height: 2; }
         pre { background: #1e293b; color: #e2e8f0; padding: 16px 20px; border-radius: 8px; margin: 12px 0 16px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.9rem; line-height: 1.6; }
         table { width: 100%; border-collapse: collapse; margin: 12px 0 20px 0; font-size: 0.92rem; }
-        thead th { background:#f2f3f9; color:#3a3f57; font-weight: 700; padding: 10px 12px; border-bottom: 2px solid #dfe1ec; text-align: left; }
-        tbody td { padding: 8px 12px; border-bottom: 1px solid #e2e8f0; }
+        thead th { background:#f2f3f9; color:#3a3f57; font-weight: 700; padding: 10px 12px; border-bottom:2px solid #dfe1ec; text-align: left; }
+        tbody td { padding: 8px 12px; border-bottom:1px solid #dfe1ec; }
         tbody tr:nth-child(even) { background: #f8fafc; }
         .vocab-box { background: #eff6ff; border-radius: 10px; padding: 14px 18px; margin: 12px 0 16px 0; border-left: 4px solid #3b82f6; }
 .vocab-box .v-list { display:flex; flex-wrap:wrap; gap:9px 22px; }
@@ -215,10 +215,10 @@
         .explain-note strong{ color:#2b3140; font-weight:800; }
         @media print { .vocab-toggle + .vocab-box { display:block !important; } .vocab-toggle { display:none; } .explain-content { display:block !important; } .explain-toggle { display:none; } }
         .exp-table { width: 100%; border-collapse: collapse; margin: 6px 0 12px 0; font-size: 0.93rem; table-layout: fixed; }
-        .exp-table thead th { background:#f2f3f9; color:#3a3f57; font-weight: 800; padding: 8px 10px; text-align: center; border-bottom: 2px solid #dfe1ec; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+        .exp-table thead th { background:#f2f3f9; color:#3a3f57; font-weight: 800; padding: 8px 10px; text-align: center; border-bottom:2px solid #dfe1ec; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
         .exp-table tbody td:last-child { text-align: center; }
         .exp-table thead th:last-child { text-align: center; }
-        .exp-table tbody td { padding: 12px 10px; border-bottom: 1px solid #ede9fe; vertical-align: middle; line-height: 1.6; word-break: keep-all; overflow-wrap: anywhere; }
+        .exp-table tbody td { padding: 12px 10px; border-bottom:1px solid #dfe1ec; vertical-align: middle; line-height: 1.6; word-break: keep-all; overflow-wrap: anywhere; }
         .exp-table tbody tr:last-child td { border-bottom: none; }
         .exp-table tbody tr:nth-child(even) td { background: #faf5ff; }
         .exp-table .exp-en { color: #000; font-weight: 800; width: 20%; word-break: keep-all; overflow-wrap: normal; hyphens: none; text-align: center; }
@@ -243,7 +243,7 @@
         .gstep blockquote strong { color: #047152; font-weight: 800; }
         .gstep-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 14px 0 10px 0; font-size: 0.93rem; background: #fff; border: 1px solid #a7f3d0; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(22,163,74,0.14); }
         .gstep-table thead th { background:#f2f3f9; color:#3a3f57; font-weight: 800; padding: 13px 12px; text-align: center; font-size: 0.9rem; letter-spacing: 0.01em; }
-        .gstep-table tbody td { padding: 10px 14px; border-bottom: 1px solid #ecfdf5; background: #fff; line-height: 1.55; text-align: center; }
+        .gstep-table tbody td { padding: 10px 14px; border-bottom:1px solid #dfe1ec; background: #fff; line-height: 1.55; text-align: center; }
         .gstep-table tbody tr:last-child td { border-bottom: none; }
         .gstep-table tbody tr:nth-child(even) td { background: #ecfdf5; }
         .gstep-table tbody td .accent { color: #047152; font-weight: 700; font-family: inherit; }
@@ -439,8 +439,8 @@ small.en-line{display:inline-block;margin-bottom:9px;}
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:6px; overflow:hidden; font-size:0.9rem;">
                 <thead>
                     <tr style="background:#f2f3f9; color:#3a3f57;">
-                        <th style="padding:7px 10px; text-align:center; font-weight:800; border-bottom:2px solid #f87171;">✅ 맞음</th>
-                        <th style="padding:7px 10px; text-align:center; font-weight:800; border-bottom:2px solid #f87171;">❌ 틀림</th>
+                        <th style="padding:7px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec;">✅ 맞음</th>
+                        <th style="padding:7px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec;">❌ 틀림</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -462,17 +462,17 @@ small.en-line{display:inline-block;margin-bottom:9px;}
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:#f2f3f9; color:#3a3f57;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">동사<br><small class="en-line" lang="en" translate="yes">Verb</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">어간 + 자마자<br><small class="en-line" lang="en" translate="yes">Stem + <span lang="ko" translate="no">자마자</span></small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">결과<br><small class="en-line" lang="en" translate="yes">Full form</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec;">동사<br><small class="en-line" lang="en" translate="yes">Verb</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec;">어간 + 자마자<br><small class="en-line" lang="en" translate="yes">Stem + <span lang="ko" translate="no">자마자</span></small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec;">결과<br><small class="en-line" lang="en" translate="yes">Full form</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>일어나다</strong><br><small class="en-line" lang="en" translate="yes">wake up</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">일어나 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>일어나자마자</strong></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>켜다</strong><br><small class="en-line" lang="en" translate="yes">turn on</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">켜 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>켜자마자</strong></td></tr>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>도착하다</strong><br><small class="en-line" lang="en" translate="yes">arrive</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">도착하 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>도착하자마자</strong></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>만나다</strong><br><small class="en-line" lang="en" translate="yes">meet</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">만나 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>만나자마자</strong></td></tr>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>먹다</strong><br><small class="en-line" lang="en" translate="yes">eat</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">먹 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>먹자마자</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;"><strong>일어나다</strong><br><small class="en-line" lang="en" translate="yes">wake up</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;">일어나 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec; color:#047152;"><strong>일어나자마자</strong></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;"><strong>켜다</strong><br><small class="en-line" lang="en" translate="yes">turn on</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;">켜 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec; color:#047152;"><strong>켜자마자</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;"><strong>도착하다</strong><br><small class="en-line" lang="en" translate="yes">arrive</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;">도착하 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec; color:#047152;"><strong>도착하자마자</strong></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;"><strong>만나다</strong><br><small class="en-line" lang="en" translate="yes">meet</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;">만나 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec; color:#047152;"><strong>만나자마자</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;"><strong>먹다</strong><br><small class="en-line" lang="en" translate="yes">eat</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;">먹 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec; color:#047152;"><strong>먹자마자</strong></td></tr>
                     <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center;"><strong>듣다</strong><br><small class="en-line" lang="en" translate="yes">listen</small></td><td style="padding:8px 10px; text-align:center;">듣 + 자마자</td><td style="padding:8px 10px; text-align:center; color:#047152;"><strong>듣자마자</strong></td></tr>
                 </tbody>
             </table></div>
@@ -491,13 +491,13 @@ small.en-line{display:inline-block;margin-bottom:9px;}
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:#f2f3f9; color:#3a3f57;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857; width:14%;">유형<br><small class="en-line" lang="en" translate="yes">Pattern</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857; width:38%;">어순<br><small class="en-line" lang="en" translate="yes">Word order</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">예문<br><small class="en-line" lang="en" translate="yes">Example</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec; width:14%;">유형<br><small class="en-line" lang="en" translate="yes">Pattern</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec; width:38%;">어순<br><small class="en-line" lang="en" translate="yes">Word order</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec;">예문<br><small class="en-line" lang="en" translate="yes">Example</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>1)</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;">주어 + <strong>부사어/부사절</strong> + (목적어) + 서술어<br><small class="en-line" lang="en" translate="yes"><em>Subject + Adverbial/Clause + (Object) + Predicate</em></small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;">그는 <strong>일어나자마자</strong> 물을 마셨습니다.<br><small class="en-line" lang="en" translate="yes"><em>He drank water as soon as he woke up.</em></small></td></tr>
+                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #dfe1ec; color:#047152;"><strong>1)</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dfe1ec;">주어 + <strong>부사어/부사절</strong> + (목적어) + 서술어<br><small class="en-line" lang="en" translate="yes"><em>Subject + Adverbial/Clause + (Object) + Predicate</em></small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dfe1ec;">그는 <strong>일어나자마자</strong> 물을 마셨습니다.<br><small class="en-line" lang="en" translate="yes"><em>He drank water as soon as he woke up.</em></small></td></tr>
                     <tr style="background:#ecfdf5;"><td style="padding:10px; text-align:center; color:#047152;"><strong>2)</strong></td><td style="padding:10px; text-align:center;"><strong>부사어/부사절</strong> + 주어 + (목적어) + 서술어<br><small class="en-line" lang="en" translate="yes"><em>Adverbial/Clause + Subject + (Object) + Predicate</em></small></td><td style="padding:10px; text-align:center;"><strong>제가 컴퓨터를 켜자마자</strong> 전기가 나갔습니다.<br><small class="en-line" lang="en" translate="yes"><em>The power went out as soon as I turned on the computer.</em></small></td></tr>
                 </tbody>
             </table></div>

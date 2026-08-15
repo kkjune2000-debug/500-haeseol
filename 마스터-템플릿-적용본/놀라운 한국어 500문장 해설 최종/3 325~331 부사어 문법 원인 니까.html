@@ -49,8 +49,8 @@
         blockquote { background: #f8fafc; border-left: 3px solid #cbd5e1; padding: 12px 16px; margin: 12px 0 16px 0; border-radius: 4px; font-size: 0.95rem; line-height: 2; }
         pre { background: #1e293b; color: #e2e8f0; padding: 16px 20px; border-radius: 8px; margin: 12px 0 16px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.9rem; line-height: 1.6; }
         table { width: 100%; border-collapse: collapse; margin: 12px 0 20px 0; font-size: 0.92rem; }
-        thead th { background:#f2f3f9; color:#3a3f57; font-weight: 700; padding: 10px 12px; border-bottom: 2px solid #dfe1ec; text-align: left; }
-        tbody td { padding: 8px 12px; border-bottom: 1px solid #e2e8f0; }
+        thead th { background:#f2f3f9; color:#3a3f57; font-weight: 700; padding: 10px 12px; border-bottom:2px solid #dfe1ec; text-align: left; }
+        tbody td { padding: 8px 12px; border-bottom:1px solid #dfe1ec; }
         tbody tr:nth-child(even) { background: #f8fafc; }
         .vocab-box { background: #ecfdf5; border-radius: 10px; padding: 14px 18px; margin: 12px 0 16px 0; border-left: 4px solid #10b981; }
 .vocab-box .v-list { display:flex; flex-wrap:wrap; gap:9px 22px; }
@@ -213,9 +213,9 @@
         .explain-note strong{ color:#2b3140; font-weight:800; }
         @media print { .vocab-toggle + .vocab-box { display:block !important; } .vocab-toggle { display:none; } .explain-content { display:block !important; } .explain-toggle { display:none; } }
         .exp-table { width: 100%; border-collapse: collapse; margin: 6px 0 12px 0; font-size: 0.93rem; table-layout: fixed; }
-        .exp-table thead th { background:#f2f3f9; color:#3a3f57; font-weight: 800; padding: 8px 10px; text-align: center; border-bottom: 2px solid #dfe1ec; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+        .exp-table thead th { background:#f2f3f9; color:#3a3f57; font-weight: 800; padding: 8px 10px; text-align: center; border-bottom:2px solid #dfe1ec; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
         .exp-table tbody td:last-child { text-align: center; }
-        .exp-table tbody td { padding: 12px 10px; border-bottom: 1px solid #d1fae5; vertical-align: middle; line-height: 1.6; word-break: keep-all; overflow-wrap: anywhere; }
+        .exp-table tbody td { padding: 12px 10px; border-bottom:1px solid #dfe1ec; vertical-align: middle; line-height: 1.6; word-break: keep-all; overflow-wrap: anywhere; }
         .exp-table tbody tr:last-child td { border-bottom: none; }
         .exp-table tbody tr:nth-child(even) td { background: #ecfdf5; }
         .exp-table .exp-en { color: #000; font-weight: 800; width: 20%; word-break: keep-all; overflow-wrap: normal; hyphens: none; text-align: center; }
@@ -237,9 +237,9 @@
         .gstep-pattern .accent{ color:#35347a; font-weight:800; font-family:inherit; }
         .gstep blockquote { background: #fff; border: 1px solid #a7f3d0; border-left: 3px solid #10b981; border-radius: 8px; padding: 12px 16px; margin: 12px 0 10px 0; line-height: 1.85; font-size: 0.93rem; color: #1e293b; font-style: normal; }
         .gstep blockquote strong { color: #047152; font-weight: 800; }
-        .gstep-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 14px 0 10px 0; font-size: 0.93rem; background: #fff; border: 1px solid #a7f3d0; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(22,163,74,0.14); }
+        .gstep-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 14px 0 10px 0; font-size: 0.93rem; background: #fff; border:1px solid #dfe1ec; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(22,163,74,0.14); }
         .gstep-table thead th { background:#f2f3f9; color:#3a3f57; font-weight: 800; padding: 13px 12px; text-align: center; font-size: 0.9rem; letter-spacing: 0.01em; }
-        .gstep-table tbody td { padding: 10px 14px; border-bottom: 1px solid #ecfdf5; background: #fff; line-height: 1.55; text-align: center; }
+        .gstep-table tbody td { padding: 10px 14px; border-bottom:1px solid #dfe1ec; background: #fff; line-height: 1.55; text-align: center; }
         .gstep-table tbody tr:last-child td { border-bottom: none; }
         .gstep-table tbody tr:nth-child(even) td { background: #ecfdf5; }
         .gstep-table tbody td .accent { color: #047152; font-weight: 800; font-family: inherit; }
@@ -850,15 +850,15 @@ small.en-line{display:inline-block;margin-bottom:9px;}
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:#f2f3f9; color:#3a3f57;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #fbbf24;">기본형<br><small class="en-line" lang="en" translate="yes">Verb</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #fbbf24;">어간 + 니까<br><small class="en-line" lang="en" translate="yes">Stem + <span lang="ko" translate="no">니까</span></small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #fbbf24;">결과<br><small class="en-line" lang="en" translate="yes">Result</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec;">기본형<br><small class="en-line" lang="en" translate="yes">Verb</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec;">어간 + 니까<br><small class="en-line" lang="en" translate="yes">Stem + <span lang="ko" translate="no">니까</span></small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec;">결과<br><small class="en-line" lang="en" translate="yes">Result</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #fef3c7;"><strong>열다</strong></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #fef3c7;">열 + 니까</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #fef3c7; color:#92400e;"><strong>여니까</strong></td></tr>
-                    <tr style="background:#fffbeb;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #fef3c7;"><strong>살다</strong></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #fef3c7;">살 + 니까</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #fef3c7; color:#92400e;"><strong>사니까</strong></td></tr>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #fef3c7;"><strong>만들다</strong></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #fef3c7;">만들 + 니까</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #fef3c7; color:#92400e;"><strong>만드니까</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;"><strong>열다</strong></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;">열 + 니까</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec; color:#92400e;"><strong>여니까</strong></td></tr>
+                    <tr style="background:#fffbeb;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;"><strong>살다</strong></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;">살 + 니까</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec; color:#92400e;"><strong>사니까</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;"><strong>만들다</strong></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;">만들 + 니까</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec; color:#92400e;"><strong>만드니까</strong></td></tr>
                     <tr style="background:#fffbeb;"><td style="padding:8px 10px; text-align:center;"><strong>알다</strong></td><td style="padding:8px 10px; text-align:center;">알 + 니까</td><td style="padding:8px 10px; text-align:center; color:#92400e;"><strong>아니까</strong></td></tr>
                 </tbody>
             </table></div>

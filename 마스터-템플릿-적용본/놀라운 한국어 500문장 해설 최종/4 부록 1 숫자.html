@@ -48,8 +48,8 @@
         blockquote { background: #f8fafc; border-left: 3px solid #cbd5e1; padding: 12px 16px; margin: 12px 0 16px 0; border-radius: 4px; font-size: 0.95rem; line-height: 2; }
         pre { background: #1e293b; color: #e2e8f0; padding: 16px 20px; border-radius: 8px; margin: 12px 0 16px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.9rem; line-height: 1.6; }
         table { width: 100%; border-collapse: collapse; margin: 12px 0 20px 0; font-size: 0.92rem; }
-        thead th { background:#f2f3f9; color:#3a3f57; font-weight: 700; padding: 10px 12px; border-bottom: 2px solid #dfe1ec; text-align: left; }
-        tbody td { padding: 8px 12px; border-bottom: 1px solid #e2e8f0; }
+        thead th { background:#f2f3f9; color:#3a3f57; font-weight: 700; padding: 10px 12px; border-bottom:2px solid #dfe1ec; text-align: left; }
+        tbody td { padding: 8px 12px; border-bottom:1px solid #dfe1ec; }
         tbody tr:nth-child(even) { background: #f8fafc; }
         .vocab-box { background: #eff6ff; border-radius: 10px; padding: 14px 18px; margin: 12px 0 16px 0; border-left: 4px solid #3b82f6; }
         .vocab-box .vocab-title { font-size: 0.8rem; font-weight: 700; color: #1e40af; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
@@ -190,9 +190,9 @@
         @media print { .vocab-toggle + .vocab-box { display:block !important; } .vocab-toggle { display:none; } .explain-content { display:block !important; } .explain-toggle { display:none; } }
         /* exp-table (3-column) */
         .exp-table { width: 100%; border-collapse: collapse; margin: 6px 0 12px 0; font-size: 0.93rem; table-layout: fixed; }
-        .exp-table thead th { background:#f2f3f9; color:#3a3f57; font-weight: 800; padding: 8px 10px; text-align: center; border-bottom: 2px solid #dfe1ec; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+        .exp-table thead th { background:#f2f3f9; color:#3a3f57; font-weight: 800; padding: 8px 10px; text-align: center; border-bottom:2px solid #dfe1ec; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
         .exp-table tbody td:last-child { text-align: center; }
-        .exp-table tbody td { padding: 12px 10px; border-bottom: 1px solid #ede9fe; vertical-align: middle; line-height: 1.6; word-break: keep-all; overflow-wrap: anywhere; }
+        .exp-table tbody td { padding: 12px 10px; border-bottom:1px solid #dfe1ec; vertical-align: middle; line-height: 1.6; word-break: keep-all; overflow-wrap: anywhere; }
         .exp-table tbody tr:last-child td { border-bottom: none; }
         .exp-table tbody tr:nth-child(even) td { background: #faf5ff; }
         .exp-table .exp-en { color: #000; font-weight: 800; width: 20%; word-break: keep-all; overflow-wrap: normal; hyphens: none; text-align: center; }
@@ -215,9 +215,9 @@
         .gstep-pattern .accent{ color:#35347a; font-weight:800; font-family:inherit; }
         .gstep blockquote { background: #fff; border: 1px solid #e9d5ff; border-left: 3px solid #8b5cf6; border-radius: 8px; padding: 12px 16px; margin: 12px 0 10px 0; line-height: 1.85; font-size: 0.93rem; color: #1e293b; font-style: normal; }
         .gstep blockquote strong { color: #6d28d9; font-weight: 800; }
-        .gstep-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 14px 0 10px 0; font-size: 0.93rem; background: #fff; border: 1px solid #ddd6fe; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(124,58,237,0.14); }
+        .gstep-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 14px 0 10px 0; font-size: 0.93rem; background: #fff; border:1px solid #dfe1ec; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(124,58,237,0.14); }
         .gstep-table thead th { background:#f2f3f9; color:#3a3f57; font-weight: 800; padding: 13px 12px; text-align: center; font-size: 0.9rem; letter-spacing: 0.01em; }
-        .gstep-table tbody td { padding: 10px 14px; border-bottom: 1px solid #faf5ff; background: #fff; line-height: 1.55; text-align: center; }
+        .gstep-table tbody td { padding: 10px 14px; border-bottom:1px solid #dfe1ec; background: #fff; line-height: 1.55; text-align: center; }
         .gstep-table tbody tr:last-child td { border-bottom: none; }
         .gstep-table tbody tr:nth-child(even) td { background: #faf5ff; }
         .gstep-table tbody td .accent { color: #6d28d9; font-weight: 700; font-family: inherit; }
@@ -441,7 +441,7 @@ small.en-line{display:inline-block;margin-bottom:9px;}
 
     /* ===== Number reference tables — original 7-color pastel scheme ===== */
     .numt { width:100%; border-collapse:collapse; font-size:0.88rem; margin:10px 0 8px; }
-    .numt td, .numt th { border:1px solid #cbd5e1; padding:12px 5px; text-align:center; word-break:keep-all; vertical-align:middle; }
+    .numt td, .numt th { border:1px solid #dfe1ec; padding:12px 5px; text-align:center; word-break:keep-all; vertical-align:middle; }
     .numt th { font-size:0.78rem; font-weight:800; }
     .numt .lbl { font-weight:800; font-size:0.74rem; white-space:nowrap; }
     .numt .dig { font-weight:800; color:#0f172a; }
@@ -452,8 +452,8 @@ small.en-line{display:inline-block;margin-bottom:9px;}
     .msep .munit{font-size:0.5rem;color:#8f4207;font-weight:800;margin-top:5px;}
     .ans-bar{margin:12px 0 4px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}.ans-btn{background:#fff;border:1px solid #cbd5e1;color:#475569;padding:5px 12px;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.8rem;font-family:inherit;}.ans-btn:hover{background:#f1f5f9;}.ans-btn.on{background:#fef3c7;border-color:#fcd34d;color:#92400e;}.ans-hint{font-size:0.78rem;color:#5a6d87;}.q-cell .q-text{display:none;}.q-cell:not(.revealed){text-align:center !important;}.q-cell.revealed .q-text{display:inline;cursor:pointer;}.q-cell.revealed .q-ans{display:none;}.q-ans{background:#fff;border:1px solid #cbd5e1;color:#107435;padding:1px 9px;border-radius:8px;cursor:pointer;font-size:0.92rem;font-weight:800;font-family:inherit;line-height:1.4;}.q-ans:hover{background:#f0fdf4;border-color:#86efac;}table.numt td.q-sample,table.symt td.q-sample{box-shadow:inset 0 0 0 2px #f59e0b;}
     .symt{width:100%;border-collapse:collapse;font-size:0.88rem;margin:8px 0 16px;}
-    .symt th{padding:9px 8px;border:1px solid #cbd5e1;font-weight:800;text-align:center;}.symt th:nth-child(1),.symt th:nth-child(4){background:#fce7f3;color:#9d174d;}.symt th:nth-child(2),.symt th:nth-child(5){background:#e9f7c5;color:#3f6212;}.symt th:nth-child(3){background:#e2e8f0;color:#334155;}
-    .symt td{padding:9px 8px;border:1px solid #cbd5e1;vertical-align:middle;text-align:center;}
+    .symt th{padding:9px 8px;border:1px solid #dfe1ec;font-weight:800;text-align:center;}.symt th:nth-child(1),.symt th:nth-child(4){background:#fce7f3;color:#9d174d;}.symt th:nth-child(2),.symt th:nth-child(5){background:#e9f7c5;color:#3f6212;}.symt th:nth-child(3){background:#e2e8f0;color:#334155;}
+    .symt td{padding:9px 8px;border:1px solid #dfe1ec;vertical-align:middle;text-align:center;}
     .symt td:first-child{font-weight:900;font-size:1.05rem;color:#0f172a;background:#fdf2f8;width:11%;}
     .symt td:nth-child(2){font-weight:800;color:#3f6212;background:#f7fee7;width:17%;}
     .symt td:nth-child(3){text-align:center;color:#475569;font-size:0.85rem;width:20%;background:#f8fafc;}.symt td:nth-child(4){text-align:center;color:#0f172a;font-weight:700;font-size:0.85rem;width:20%;background:#fdf2f8;}.symt td:nth-child(5){text-align:left;color:#3f6212;font-size:0.85rem;background:#edfacb;}
@@ -464,7 +464,7 @@ small.en-line{display:inline-block;margin-bottom:9px;}
     .ilrule-p{font-size:0.92rem;line-height:1.8;margin-bottom:10px;}
     .ilrule-tbl{width:100%;max-width:440px;border-collapse:collapse;font-size:0.86rem;margin:6px auto 0;}
     .ilrule-tbl th{background:#f2f3f9;color:#3a3f57;padding:7px 8px;border:1px solid #dfe1ec;font-weight:800;text-align:center;}
-    .ilrule-tbl td{padding:7px 8px;border:1px solid #fde68a;text-align:center;}
+    .ilrule-tbl td{padding:7px 8px;border:1px solid #dfe1ec;text-align:center;}
     .ilrule-tbl td.ok{background:#ecfdf5;color:#166534;font-weight:800;}
     .ilrule-tbl td.x{background:#fef2f2;}.ilrule-tbl td.x s{color:#c62020;text-decoration:line-through;text-decoration-color:#dc2626;font-weight:700;}
     /* section tints (s1 blue · s2 green · s3 amber · s4 rose · s5 purple · s6 teal · s7 sky) */
@@ -725,7 +725,7 @@ numfcRender('numfcN','N',NUMFC);
 <p style="font-size:0.92rem; line-height:1.8; margin:0 0 8px;">시 · 개 · 잔 · 명처럼 <strong>수를 세는 말(분류사)</strong> 앞에서는 <strong>1~4</strong>가 <strong>한 · 두 · 세 · 네</strong>로 바뀝니다.<br><small class="en-line" lang="en" translate="yes"><em>Before counters such as <span lang="ko" translate="no">시 · 개 · 잔 · 명</span>, the numbers 1~4 change to <span lang="ko" translate="no">한 · 두 · 세 · 네</span>.</em></small><br><strong>5</strong>부터는 그대로 씁니다.<br><small class="en-line" lang="en" translate="yes"><em>From 5 on, they stay the same.</em></small></p>
 <style>
 .cntr{width:100%;border-collapse:collapse;font-size:0.92rem;margin:8px 0 6px;}
-.cntr th,.cntr td{border:1px solid #bbf7d0;padding:8px 6px;text-align:center;}
+.cntr th,.cntr td{border:1px solid #dfe1ec;padding:8px 6px;text-align:center;}
 .cntr thead th{background:#f2f3f9;color:#3a3f57;font-weight:800;}
 .cntr thead th small{display:block;font-weight:600;font-size:0.62rem;color:#3a3f57;margin-top:1px;}
 .cntr .numcol{background:#ecfdf5;color:#166534;font-weight:800;font-size:0.82rem;white-space:nowrap;width:18%;}

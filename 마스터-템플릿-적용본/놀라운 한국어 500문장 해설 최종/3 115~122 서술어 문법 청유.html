@@ -51,8 +51,8 @@
         blockquote { background: #f8fafc; border-left: 3px solid #cbd5e1; padding: 12px 16px; margin: 12px 0 16px 0; border-radius: 4px; font-size: 0.95rem; line-height: 2; }
         pre { background: #1e293b; color: #e2e8f0; padding: 16px 20px; border-radius: 8px; margin: 12px 0 16px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.9rem; line-height: 1.6; }
         table { width: 100%; border-collapse: collapse; margin: 12px 0 20px 0; font-size: 0.92rem; }
-        thead th { background:#f2f3f9; color:#3a3f57; font-weight: 700; padding: 10px 12px; border-bottom: 2px solid #dfe1ec; text-align: left; }
-        tbody td { padding: 8px 12px; border-bottom: 1px solid #e2e8f0; }
+        thead th { background:#f2f3f9; color:#3a3f57; font-weight: 700; padding: 10px 12px; border-bottom:2px solid #dfe1ec; text-align: left; }
+        tbody td { padding: 8px 12px; border-bottom:1px solid #dfe1ec; }
         tbody tr:nth-child(even) { background: #f8fafc; }
         .vocab-box { background: #eff6ff; border-radius: 10px; padding: 14px 18px; margin: 12px 0 16px 0; border-left: 4px solid #3b82f6; }
 .vocab-box .v-list { display:flex; flex-wrap:wrap; gap:9px 22px; }
@@ -222,9 +222,9 @@
         @media print { .vocab-toggle + .vocab-box { display:block !important; } .vocab-toggle { display:none; } .explain-content { display:block !important; } .explain-toggle { display:none; } }
         /* exp-table (3-column) */
         .exp-table { width: 100%; border-collapse: collapse; margin: 6px 0 12px 0; font-size: 0.93rem; table-layout: fixed; }
-        .exp-table thead th { background:#f2f3f9; color:#3a3f57; font-weight: 800; padding: 8px 10px; text-align: center; border-bottom: 2px solid #dfe1ec; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+        .exp-table thead th { background:#f2f3f9; color:#3a3f57; font-weight: 800; padding: 8px 10px; text-align: center; border-bottom:2px solid #dfe1ec; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
         .exp-table tbody td:last-child { text-align: center; }
-        .exp-table tbody td { padding: 12px 10px; border-bottom: 1px solid #ede9fe; vertical-align: middle; line-height: 1.6; word-break: keep-all; overflow-wrap: anywhere; }
+        .exp-table tbody td { padding: 12px 10px; border-bottom:1px solid #dfe1ec; vertical-align: middle; line-height: 1.6; word-break: keep-all; overflow-wrap: anywhere; }
         .exp-table tbody tr:last-child td { border-bottom: none; }
         .exp-table tbody tr:nth-child(even) td { background: #faf5ff; }
         .exp-table .exp-en { color: #000; font-weight: 800; width: 20%; word-break: keep-all; overflow-wrap: normal; hyphens: none; text-align: center; }
@@ -247,9 +247,9 @@
         .gstep-pattern .accent{ color:#35347a; font-weight:800; font-family:inherit; }
         .gstep blockquote { background: #fff; border: 1px solid #e9d5ff; border-left: 3px solid #8b5cf6; border-radius: 8px; padding: 12px 16px; margin: 12px 0 10px 0; line-height: 1.85; font-size: 0.93rem; color: #1e293b; font-style: normal; }
         .gstep blockquote strong { color: #6d28d9; font-weight: 800; }
-        .gstep-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 14px 0 10px 0; font-size: 0.93rem; background: #fff; border: 1px solid #ddd6fe; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(124,58,237,0.14); }
+        .gstep-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 14px 0 10px 0; font-size: 0.93rem; background: #fff; border:1px solid #dfe1ec; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(124,58,237,0.14); }
         .gstep-table thead th { background:#f2f3f9; color:#3a3f57; font-weight: 800; padding: 13px 12px; text-align: center; font-size: 0.9rem; letter-spacing: 0.01em; }
-        .gstep-table tbody td { padding: 10px 14px; border-bottom: 1px solid #faf5ff; background: #fff; line-height: 1.55; text-align: center; }
+        .gstep-table tbody td { padding: 10px 14px; border-bottom:1px solid #dfe1ec; background: #fff; line-height: 1.55; text-align: center; }
         .gstep-table tbody tr:last-child td { border-bottom: none; }
         .gstep-table tbody tr:nth-child(even) td { background: #faf5ff; }
         .gstep-table tbody td .accent { color: #6d28d9; font-weight: 700; font-family: inherit; }
@@ -462,13 +462,13 @@ small.en-line{display:inline-block;margin-bottom:9px;}
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:#f2f3f9; color:#3a3f57;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #a855f7; width:22%;">영어<br><small class="en-line" lang="en" translate="yes">English</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #a855f7;">한국어<br><small class="en-line" lang="en" translate="yes">Korean</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #a855f7;">기능<br><small class="en-line" lang="en" translate="yes">Function</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec; width:22%;">영어<br><small class="en-line" lang="en" translate="yes">English</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec;">한국어<br><small class="en-line" lang="en" translate="yes">Korean</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec;">기능<br><small class="en-line" lang="en" translate="yes">Function</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #ede9fe; color:#6d28d9;"><strong><span lang="en" translate="yes">Shall we...?</span></strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #ede9fe;"><strong>~ㄹ/을까요?</strong><br><small class="en-line" lang="en" translate="yes">(<span lang="ko" translate="no">질문</span> · question)</small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #ede9fe;">상대의 의견을 물음<br><small class="en-line" lang="en" translate="yes"><em>asks the listener's opinion</em></small></td></tr>
+                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #dfe1ec; color:#6d28d9;"><strong><span lang="en" translate="yes">Shall we...?</span></strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dfe1ec;"><strong>~ㄹ/을까요?</strong><br><small class="en-line" lang="en" translate="yes">(<span lang="ko" translate="no">질문</span> · question)</small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dfe1ec;">상대의 의견을 물음<br><small class="en-line" lang="en" translate="yes"><em>asks the listener's opinion</em></small></td></tr>
                     <tr style="background:#faf7ff;"><td style="padding:10px; text-align:center; color:#6d28d9;"><strong><span lang="en" translate="yes">Let's...!</span></strong></td><td style="padding:10px; text-align:center;"><strong>~ㅂ시다/읍시다</strong><br><small class="en-line" lang="en" translate="yes">(<span lang="ko" translate="no">서술</span> · statement)</small></td><td style="padding:10px; text-align:center;">거절하기 어려움<br><small class="en-line" lang="en" translate="yes"><em>hard to refuse</em></small></td></tr>
                 </tbody>
             </table></div>
@@ -560,7 +560,7 @@ small.en-line{display:inline-block;margin-bottom:9px;}
 </div>
 <div class="tbl-scroll"><table style="width:100%;border-collapse:collapse;font-size:0.9rem;margin:12px 0;table-layout:fixed;">
     <thead><tr><th style="padding:10px 8px;text-align:center;font-weight:800;color:#3a3f57;background:#f2f3f9;border:1px solid #dfe1ec;word-break:keep-all;width:26%;">언제<span class="gloss" lang="en" translate="yes">When</span></th><th style="padding:10px 8px;text-align:center;font-weight:800;color:#3a3f57;background:#f2f3f9;border:1px solid #dfe1ec;word-break:keep-all;width:37%;">~(으)ㄹ까요?</th><th style="padding:10px 8px;text-align:center;font-weight:800;color:#3a3f57;background:#f2f3f9;border:1px solid #dfe1ec;word-break:keep-all;width:37%;">~(으)ㄹ래요?</th></tr></thead>
-    <tbody><tr><td style="padding:10px 8px;text-align:center;border:1px solid #ede9fe;word-break:keep-all;font-weight:800;color:#4c1d95;">서술문<span class="gloss" lang="en" translate="yes">Statement</span></td><td style="padding:10px 8px;text-align:center;border:1px solid #ede9fe;word-break:keep-all;color:#c62020;font-weight:800;">✗</td><td style="padding:10px 8px;text-align:center;border:1px solid #ede9fe;word-break:keep-all;"><strong>저는 안 갈래요</strong><span class="gloss" lang="en" translate="yes">I don't want to go</span></td></tr><tr><td style="padding:10px 8px;text-align:center;border:1px solid #ede9fe;word-break:keep-all;font-weight:800;color:#4c1d95;">추측<span class="gloss" lang="en" translate="yes">Guessing</span></td><td style="padding:10px 8px;text-align:center;border:1px solid #ede9fe;word-break:keep-all;"><strong>비가 올까요?</strong><span class="gloss" lang="en" translate="yes">Do you think it will rain?</span></td><td style="padding:10px 8px;text-align:center;border:1px solid #ede9fe;word-break:keep-all;color:#c62020;font-weight:800;">✗</td></tr><tr><td style="padding:10px 8px;text-align:center;border:1px solid #ede9fe;word-break:keep-all;font-weight:800;color:#4c1d95;">윗사람에게<span class="gloss" lang="en" translate="yes">To someone older</span></td><td style="padding:10px 8px;text-align:center;border:1px solid #ede9fe;word-break:keep-all;"><strong>같이 갈까요?</strong><span class="gloss" lang="en" translate="yes">Shall we go together?</span></td><td style="padding:10px 8px;text-align:center;border:1px solid #ede9fe;word-break:keep-all;"><strong>같이 가실래요?</strong><span class="gloss" lang="en" translate="yes">Would you like to go together?</span></td></tr></tbody>
+    <tbody><tr><td style="padding:10px 8px;text-align:center;border:1px solid #dfe1ec;word-break:keep-all;font-weight:800;color:#4c1d95;">서술문<span class="gloss" lang="en" translate="yes">Statement</span></td><td style="padding:10px 8px;text-align:center;border:1px solid #dfe1ec;word-break:keep-all;color:#c62020;font-weight:800;">✗</td><td style="padding:10px 8px;text-align:center;border:1px solid #dfe1ec;word-break:keep-all;"><strong>저는 안 갈래요</strong><span class="gloss" lang="en" translate="yes">I don't want to go</span></td></tr><tr><td style="padding:10px 8px;text-align:center;border:1px solid #dfe1ec;word-break:keep-all;font-weight:800;color:#4c1d95;">추측<span class="gloss" lang="en" translate="yes">Guessing</span></td><td style="padding:10px 8px;text-align:center;border:1px solid #dfe1ec;word-break:keep-all;"><strong>비가 올까요?</strong><span class="gloss" lang="en" translate="yes">Do you think it will rain?</span></td><td style="padding:10px 8px;text-align:center;border:1px solid #dfe1ec;word-break:keep-all;color:#c62020;font-weight:800;">✗</td></tr><tr><td style="padding:10px 8px;text-align:center;border:1px solid #dfe1ec;word-break:keep-all;font-weight:800;color:#4c1d95;">윗사람에게<span class="gloss" lang="en" translate="yes">To someone older</span></td><td style="padding:10px 8px;text-align:center;border:1px solid #dfe1ec;word-break:keep-all;"><strong>같이 갈까요?</strong><span class="gloss" lang="en" translate="yes">Shall we go together?</span></td><td style="padding:10px 8px;text-align:center;border:1px solid #dfe1ec;word-break:keep-all;"><strong>같이 가실래요?</strong><span class="gloss" lang="en" translate="yes">Would you like to go together?</span></td></tr></tbody>
 </table></div>
 <div class="gb gb-warn"><span class="gb-lab">주의<i lang="en" translate="yes">Caution</i></span>
     <strong>⚠️ 윗사람에게는 「같이 갈래요?」라고 하지 않습니다.</strong><br>
@@ -628,16 +628,16 @@ small.en-line{display:inline-block;margin-bottom:9px;}
             <div class="tbl-scroll"><table style="width:100%;border-collapse:collapse;font-size:0.9rem;text-align:center;">
                 <thead>
                     <tr style="background:#f2f3f9;color:#3a3f57;">
-                        <th style="padding:7px 10px;border:1px solid #99f6e4;text-align:center;">기간<br><small class="en-line" lang="en" translate="yes">Period</small></th>
-                        <th style="padding:7px 10px;border:1px solid #99f6e4;text-align:center;">지난<br><small class="en-line" lang="en" translate="yes">last</small></th>
-                        <th style="padding:7px 10px;border:1px solid #99f6e4;text-align:center;">이번<br><small class="en-line" lang="en" translate="yes">this</small></th>
-                        <th style="padding:7px 10px;border:1px solid #99f6e4;text-align:center;">다음<br><small class="en-line" lang="en" translate="yes">next</small></th>
+                        <th style="padding:7px 10px;border:1px solid #dfe1ec;text-align:center;">기간<br><small class="en-line" lang="en" translate="yes">Period</small></th>
+                        <th style="padding:7px 10px;border:1px solid #dfe1ec;text-align:center;">지난<br><small class="en-line" lang="en" translate="yes">last</small></th>
+                        <th style="padding:7px 10px;border:1px solid #dfe1ec;text-align:center;">이번<br><small class="en-line" lang="en" translate="yes">this</small></th>
+                        <th style="padding:7px 10px;border:1px solid #dfe1ec;text-align:center;">다음<br><small class="en-line" lang="en" translate="yes">next</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:6px 10px;border:1px solid #d1fae5;background:#fff;"><strong>주</strong><br><small class="en-line" lang="en" translate="yes">week</small></td><td style="padding:6px 10px;border:1px solid #d1fae5;background:#fff;"><strong>지난주</strong></td><td style="padding:6px 10px;border:1px solid #d1fae5;background:#fff;"><strong>이번 주</strong></td><td style="padding:6px 10px;border:1px solid #d1fae5;background:#fff;"><strong>다음 주</strong></td></tr>
-                    <tr><td style="padding:6px 10px;border:1px solid #d1fae5;background:#fff;"><strong>달</strong><br><small class="en-line" lang="en" translate="yes">month</small></td><td style="padding:6px 10px;border:1px solid #d1fae5;background:#fff;"><strong>지난달</strong></td><td style="padding:6px 10px;border:1px solid #d1fae5;background:#fff;"><strong>이번 달</strong></td><td style="padding:6px 10px;border:1px solid #d1fae5;background:#fff;"><strong>다음 달</strong></td></tr>
-                    <tr><td style="padding:6px 10px;border:1px solid #d1fae5;background:#fff;"><strong>해</strong><br><small class="en-line" lang="en" translate="yes">year</small></td><td style="padding:6px 10px;border:1px solid #d1fae5;background:#fff;"><strong>지난해</strong> <small>= 작년</small></td><td style="padding:6px 10px;border:1px solid #d1fae5;background:#fff;"><strong>이번 해</strong> <small>= 올해</small></td><td style="padding:6px 10px;border:1px solid #d1fae5;background:#fff;"><strong>다음 해</strong> <small>= 내년</small></td></tr>
+                    <tr><td style="padding:6px 10px;border:1px solid #dfe1ec;background:#fff;"><strong>주</strong><br><small class="en-line" lang="en" translate="yes">week</small></td><td style="padding:6px 10px;border:1px solid #dfe1ec;background:#fff;"><strong>지난주</strong></td><td style="padding:6px 10px;border:1px solid #dfe1ec;background:#fff;"><strong>이번 주</strong></td><td style="padding:6px 10px;border:1px solid #dfe1ec;background:#fff;"><strong>다음 주</strong></td></tr>
+                    <tr><td style="padding:6px 10px;border:1px solid #dfe1ec;background:#fff;"><strong>달</strong><br><small class="en-line" lang="en" translate="yes">month</small></td><td style="padding:6px 10px;border:1px solid #dfe1ec;background:#fff;"><strong>지난달</strong></td><td style="padding:6px 10px;border:1px solid #dfe1ec;background:#fff;"><strong>이번 달</strong></td><td style="padding:6px 10px;border:1px solid #dfe1ec;background:#fff;"><strong>다음 달</strong></td></tr>
+                    <tr><td style="padding:6px 10px;border:1px solid #dfe1ec;background:#fff;"><strong>해</strong><br><small class="en-line" lang="en" translate="yes">year</small></td><td style="padding:6px 10px;border:1px solid #dfe1ec;background:#fff;"><strong>지난해</strong> <small>= 작년</small></td><td style="padding:6px 10px;border:1px solid #dfe1ec;background:#fff;"><strong>이번 해</strong> <small>= 올해</small></td><td style="padding:6px 10px;border:1px solid #dfe1ec;background:#fff;"><strong>다음 해</strong> <small>= 내년</small></td></tr>
                 </tbody>
             </table></div>
         </div>

@@ -51,8 +51,8 @@
         blockquote { background: #f8fafc; border-left: 3px solid #cbd5e1; padding: 12px 16px; margin: 12px 0 16px 0; border-radius: 4px; font-size: 0.95rem; line-height: 2; }
         pre { background: #1e293b; color: #e2e8f0; padding: 16px 20px; border-radius: 8px; margin: 12px 0 16px 0; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.9rem; line-height: 1.6; }
         table { width: 100%; border-collapse: collapse; margin: 12px 0 20px 0; font-size: 0.92rem; }
-        thead th { background:#f2f3f9; color:#3a3f57; font-weight: 700; padding: 10px 12px; border-bottom: 2px solid #dfe1ec; text-align: left; }
-        tbody td { padding: 8px 12px; border-bottom: 1px solid #e2e8f0; }
+        thead th { background:#f2f3f9; color:#3a3f57; font-weight: 700; padding: 10px 12px; border-bottom:2px solid #dfe1ec; text-align: left; }
+        tbody td { padding: 8px 12px; border-bottom:1px solid #dfe1ec; }
         tbody tr:nth-child(even) { background: #f8fafc; }
         .vocab-box { background: #eff6ff; border-radius: 10px; padding: 14px 18px; margin: 12px 0 16px 0; border-left: 4px solid #3b82f6; }
 .vocab-box .v-list { display:flex; flex-wrap:wrap; gap:9px 22px; }
@@ -222,9 +222,9 @@
         @media print { .vocab-toggle + .vocab-box { display:block !important; } .vocab-toggle { display:none; } .explain-content { display:block !important; } .explain-toggle { display:none; } }
         /* exp-table (3-column) */
         .exp-table { width: 100%; border-collapse: collapse; margin: 6px 0 12px 0; font-size: 0.93rem; table-layout: fixed; }
-        .exp-table thead th { background:#f2f3f9; color:#3a3f57; font-weight: 800; padding: 8px 10px; border-bottom: 2px solid #dfe1ec; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; }
+        .exp-table thead th { background:#f2f3f9; color:#3a3f57; font-weight: 800; padding: 8px 10px; border-bottom:2px solid #dfe1ec; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; }
         .exp-table tbody td:last-child { text-align: center; }
-        .exp-table tbody td { padding: 12px 10px; border-bottom: 1px solid #ede9fe; vertical-align: middle; line-height: 1.6; word-break: keep-all; overflow-wrap: anywhere; }
+        .exp-table tbody td { padding: 12px 10px; border-bottom:1px solid #dfe1ec; vertical-align: middle; line-height: 1.6; word-break: keep-all; overflow-wrap: anywhere; }
         .exp-table tbody tr:last-child td { border-bottom: none; }
         .exp-table tbody tr:nth-child(even) td { background: #faf5ff; }
         .exp-table .exp-en { color: #000; font-weight: 800; width: 20%; word-break: keep-all; overflow-wrap: normal; hyphens: none; text-align: center; }
@@ -255,7 +255,7 @@
         /* Comparison table — card-cell */
         .gstep-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 14px 0 10px 0; font-size: 0.93rem; background: #fff; border: 1px solid #ddd6fe; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(124,58,237,0.14); }
         .gstep-table thead th { background:#f2f3f9; color:#3a3f57; font-weight: 800; padding: 13px 12px; text-align: center; font-size: 0.9rem; letter-spacing: 0.01em; }
-        .gstep-table tbody td { padding: 10px 14px; border-bottom: 1px solid #f5f3ff; background: #fff; line-height: 1.55; text-align: center; }
+        .gstep-table tbody td { padding: 10px 14px; border-bottom:1px solid #dfe1ec; background: #fff; line-height: 1.55; text-align: center; }
         .gstep-table tbody tr:last-child td { border-bottom: none; }
         .gstep-table tbody tr:nth-child(even) td { background: #faf5ff; }
         .gstep-table tbody td .accent { color: #6d28d9; font-weight: 700; font-family: inherit; }
@@ -485,14 +485,14 @@ small.en-line{display:inline-block;margin-bottom:9px;}
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:#f2f3f9; color:#3a3f57;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #a855f7;">동사<br><small class="en-line" lang="en" translate="yes">Verb</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #a855f7;">동사 + 고 있습니다<br><small>어간 + 고 있습니다<br><em lang="en" translate="yes">Stem + <span lang="ko" translate="no">고 있습니다</span></em></small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #a855f7;">결과<br><small class="en-line" lang="en" translate="yes">Full form</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec;">동사<br><small class="en-line" lang="en" translate="yes">Verb</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec;">동사 + 고 있습니다<br><small>어간 + 고 있습니다<br><em lang="en" translate="yes">Stem + <span lang="ko" translate="no">고 있습니다</span></em></small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec;">결과<br><small class="en-line" lang="en" translate="yes">Full form</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #ede9fe;"><strong>가다</strong><br><small class="en-line" lang="en" translate="yes">go</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #ede9fe;">가 + 고 있습니다</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #ede9fe; color:#6d28d9;"><strong>가고 있습니다</strong></td></tr>
-                    <tr style="background:#faf7ff;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #ede9fe;"><strong>듣다</strong><br><small class="en-line" lang="en" translate="yes">listen (<span lang="ko" translate="no">ㄷ-불규칙</span>)</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #ede9fe;">듣 + 고 있습니다<br><small class="en-line" lang="en" translate="yes"><em>(no <span lang="ko" translate="no">ㄷ</span>-irregular!)</em></small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #ede9fe; color:#6d28d9;"><strong>듣고 있습니다</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;"><strong>가다</strong><br><small class="en-line" lang="en" translate="yes">go</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;">가 + 고 있습니다</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec; color:#6d28d9;"><strong>가고 있습니다</strong></td></tr>
+                    <tr style="background:#faf7ff;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;"><strong>듣다</strong><br><small class="en-line" lang="en" translate="yes">listen (<span lang="ko" translate="no">ㄷ-불규칙</span>)</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec;">듣 + 고 있습니다<br><small class="en-line" lang="en" translate="yes"><em>(no <span lang="ko" translate="no">ㄷ</span>-irregular!)</em></small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #dfe1ec; color:#6d28d9;"><strong>듣고 있습니다</strong></td></tr>
                     <tr><td style="padding:8px 10px; text-align:center;"><strong>배우다</strong><br><small class="en-line" lang="en" translate="yes">learn</small></td><td style="padding:8px 10px; text-align:center;">배우 + 고 있습니다</td><td style="padding:8px 10px; text-align:center; color:#6d28d9;"><strong>배우고 있습니다</strong></td></tr>
                 </tbody>
             </table></div>
@@ -513,14 +513,14 @@ small.en-line{display:inline-block;margin-bottom:9px;}
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:#f2f3f9; color:#3a3f57;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #a855f7; width:20%;">패턴<br><small class="en-line" lang="en" translate="yes">Pattern</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #a855f7; width:42%;">형태<br><small class="en-line" lang="en" translate="yes">Form</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #a855f7;">예문<br><small class="en-line" lang="en" translate="yes">Example</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec; width:20%;">패턴<br><small class="en-line" lang="en" translate="yes">Pattern</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec; width:42%;">형태<br><small class="en-line" lang="en" translate="yes">Form</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #dfe1ec;">예문<br><small class="en-line" lang="en" translate="yes">Example</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #ede9fe; color:#6d28d9; word-break:keep-all; white-space:nowrap;"><strong>~고 있다</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #ede9fe; word-break:keep-all; white-space:nowrap;">동사<small lang="en" translate="yes"> (Verb)</small> + <strong>고 있습니다</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #ede9fe; word-break:keep-all;"><strong>회의하고 있습니다</strong><br><small class="en-line" lang="en" translate="yes"><em>am having a meeting</em></small></td></tr>
-                    <tr style="background:#faf7ff;"><td style="padding:10px; text-align:center; border-bottom:1px solid #ede9fe; color:#6d28d9; word-break:keep-all; white-space:nowrap;"><strong>~는 중이다</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #ede9fe; word-break:keep-all; white-space:nowrap;">동사<small lang="en" translate="yes"> (Verb)</small> + <strong>는 중입니다</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #ede9fe; word-break:keep-all;"><strong>회의하는 중입니다</strong><br><small class="en-line" lang="en" translate="yes"><em>am in the middle of a meeting (emphatic)</em></small></td></tr>
+                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #dfe1ec; color:#6d28d9; word-break:keep-all; white-space:nowrap;"><strong>~고 있다</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dfe1ec; word-break:keep-all; white-space:nowrap;">동사<small lang="en" translate="yes"> (Verb)</small> + <strong>고 있습니다</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dfe1ec; word-break:keep-all;"><strong>회의하고 있습니다</strong><br><small class="en-line" lang="en" translate="yes"><em>am having a meeting</em></small></td></tr>
+                    <tr style="background:#faf7ff;"><td style="padding:10px; text-align:center; border-bottom:1px solid #dfe1ec; color:#6d28d9; word-break:keep-all; white-space:nowrap;"><strong>~는 중이다</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dfe1ec; word-break:keep-all; white-space:nowrap;">동사<small lang="en" translate="yes"> (Verb)</small> + <strong>는 중입니다</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dfe1ec; word-break:keep-all;"><strong>회의하는 중입니다</strong><br><small class="en-line" lang="en" translate="yes"><em>am in the middle of a meeting (emphatic)</em></small></td></tr>
                     <tr><td style="padding:10px; text-align:center; color:#6d28d9; word-break:keep-all; white-space:nowrap;"><strong>~중이다</strong></td><td style="padding:10px; text-align:center; word-break:keep-all; white-space:nowrap;">명사<small lang="en" translate="yes"> (Noun)</small> + <strong>중입니다</strong></td><td style="padding:10px; text-align:center; word-break:keep-all;"><strong>회의 중입니다</strong><br><small class="en-line" lang="en" translate="yes"><em>am in a meeting (noun + <span lang="ko" translate="no">중</span>)</em></small></td></tr>
                 </tbody>
             </table></div>
