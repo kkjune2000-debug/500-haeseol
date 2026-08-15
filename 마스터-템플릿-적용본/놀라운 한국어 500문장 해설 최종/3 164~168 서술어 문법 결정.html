@@ -316,7 +316,7 @@
         .em-list { grid-row: 2 / -1; display: grid; grid-template-rows: subgrid; gap: 0; }
         .em-slot { display: flex; align-items: stretch; min-height: 60px; }
         .em-slot > .em-item { width: 100%; }
-        .em-item { width: 100%; min-height: 60px; border: 2px solid var(--em-border, #e2e8f0); border-left: 5px solid var(--em-border, #e2e8f0); border-radius: 12px; background: var(--em-bg, #f8fafc); cursor: pointer; padding: 10px 14px; display: flex; align-items: center; justify-content: center; gap: 10px; text-align: center; transition: transform 0.15s, filter 0.15s, box-shadow 0.15s, opacity 0.3s; font-family: inherit; color: #334155; }
+        .em-item { width: 100%; min-height: 60px; border: 2px solid var(--em-border, #e2e8f0); border-left: 2px solid var(--em-border, #e2e8f0); border-radius: 12px; background: var(--em-bg, #f8fafc); cursor: pointer; padding: 10px 14px; display: flex; align-items: center; justify-content: center; gap: 10px; text-align: center; transition: transform 0.15s, filter 0.15s, box-shadow 0.15s, opacity 0.3s; font-family: inherit; color: #334155; }
         .em-item:hover { filter: brightness(0.95); transform: translateY(-2px); }
         .em-item.selected { transform: scale(1.02); box-shadow: 0 0 0 3px #3b82f6, 0 6px 16px rgba(59,130,246,0.25); }
         .em-item.wrong { background: #fef2f2 !important; border-color: #ef4444 !important; border-left-color: #ef4444 !important; animation: emShake 0.45s ease; }
@@ -1220,16 +1220,33 @@ const emPairs = [
   { id:5, en:'We decided to get married next spring.', ko:'우리는 내년 봄에 결혼하기로 했습니다.' }
 ];
 const emPastels = [
-  { bg:'#fdf2f8', border:'#fbcfe8' },{ bg:'#fff1f2', border:'#fecdd3' },
-  { bg:'#fef2f2', border:'#fecaca' },{ bg:'#fff7ed', border:'#fed7aa' },
-  { bg:'#fffbeb', border:'#fde68a' },{ bg:'#fefce8', border:'#fef08a' },
-  { bg:'#f7fee7', border:'#d9f99d' },{ bg:'#f0fdf4', border:'#bbf7d0' },
-  { bg:'#ecfdf5', border:'#a7f3d0' },{ bg:'#f0fdfa', border:'#99f6e4' },
-  { bg:'#ecfeff', border:'#a5f3fc' },{ bg:'#f0f9ff', border:'#bae6fd' },
-  { bg:'#eff6ff', border:'#bfdbfe' },{ bg:'#eef2ff', border:'#c7d2fe' },
-  { bg:'#f5f3ff', border:'#ddd6fe' },{ bg:'#faf5ff', border:'#e9d5ff' },
-  { bg:'#fdf4ff', border:'#f5d0fe' },{ bg:'#fce7f3', border:'#f9a8d4' },
-  { bg:'#dcfce7', border:'#86efac' },{ bg:'#e0f2fe', border:'#7dd3fc' }
+  /* ★bg = 50단, border = 100~200단(짙은 것은 한 단 낮춤), text = 800단.
+     짙기는 「카드 보고 말하기」 카드에 맞췄다 — 넓은 칸이라 조금만 진해도 튄다.
+     24갈래다. 20칸을 겹치지 않게 채우고도 남는다. */
+  { bg:'#fdf2f8', border:'#fbcfe8', text:'#9d174d' },  // pink
+  { bg:'#fff1f2', border:'#fecdd3', text:'#9f1239' },  // rose
+  { bg:'#fef2f2', border:'#fecaca', text:'#991b1b' },  // red
+  { bg:'#fff8f4', border:'#fbdcc9', text:'#9a4a1e' },  // peach
+  { bg:'#fff7ed', border:'#ffedd5', text:'#9a3412' },  // orange
+  { bg:'#fffbeb', border:'#fef3c7', text:'#92400e' },  // amber
+  { bg:'#faf8f2', border:'#e8dfc9', text:'#6b5423' },  // sand
+  { bg:'#fefce8', border:'#fef9c3', text:'#854d0e' },  // yellow
+  { bg:'#f7fee7', border:'#ecfccb', text:'#3f6212' },  // lime
+  { bg:'#f6faf4', border:'#d7e7cf', text:'#3f6046' },  // sage
+  { bg:'#f0fdf4', border:'#bbf7d0', text:'#166534' },  // green
+  { bg:'#ecfdf5', border:'#a7f3d0', text:'#065f46' },  // emerald
+  { bg:'#f0fdfa', border:'#ccfbf1', text:'#115e59' },  // teal
+  { bg:'#f3fafa', border:'#d2e9e7', text:'#1f5f5c' },  // mist
+  { bg:'#ecfeff', border:'#cffafe', text:'#155e75' },  // cyan
+  { bg:'#f0f9ff', border:'#bae6fd', text:'#075985' },  // sky
+  { bg:'#f4f8fc', border:'#d3e3f0', text:'#1f4d6b' },  // steel
+  { bg:'#eff6ff', border:'#bfdbfe', text:'#1e40af' },  // blue
+  { bg:'#eef2ff', border:'#c7d2fe', text:'#3730a3' },  // indigo
+  { bg:'#f5f3ff', border:'#ddd6fe', text:'#5b21b6' },  // violet
+  { bg:'#faf5ff', border:'#e9d5ff', text:'#6b21a8' },  // purple
+  { bg:'#fbf5f9', border:'#ecd6e4', text:'#7a2f5c' },  // mauve
+  { bg:'#fdf4ff', border:'#f5d0fe', text:'#86198f' },  // fuchsia
+  { bg:'#f8fafc', border:'#e2e8f0', text:'#334155' }   // slate
 ];
 let emEnItems = [], emKoItems = [], emSelEn = null, emSelKo = null, emRemoved = [], emCorrect = 0, emWrong = 0;
 function emShuffle(arr){ const c=[...arr]; for(let i=c.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[c[i],c[j]]=[c[j],c[i]];} return c; }
