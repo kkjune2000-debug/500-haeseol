@@ -338,8 +338,8 @@
         .em-message { padding: 10px 14px; background: #fef3c7; border-left: 3px solid #f59e0b; border-radius: 6px; font-size: 0.92rem; color: #1e293b; margin-bottom: 14px; min-height: 1.5em; }
         .em-message.complete { background: #fffbeb; border-left-color: #d97706; color: #92400e; font-weight: 800; }
         .em-columns { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto repeat(var(--em-rows, 8), 84px); gap: 8px 14px; }
-        #emEnglishList { grid-column: 1; }
-        #emKoreanList { grid-column: 2; }
+        #emEnglishList { grid-column: 1; display: flex; flex-direction: column; gap: 8px; }
+        #emKoreanList { grid-column: 2; display: flex; flex-direction: column; gap: 8px; }
         .em-col-header { font-size: 0.72rem; font-weight: 800; color: #59687c; text-transform: uppercase; letter-spacing: 0.1em; padding-left: 6px; }
         .em-list { grid-row: 2 / -1; display: grid; grid-template-rows: subgrid; gap: 0; }
         .em-slot { display: flex; align-items: stretch; min-height: 60px; }

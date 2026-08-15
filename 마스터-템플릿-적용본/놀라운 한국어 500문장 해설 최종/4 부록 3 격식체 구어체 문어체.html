@@ -277,8 +277,8 @@
         .flashcard-grid.look-speak .flashcard:nth-child(n) .flashcard-back { color: #334155; }
         /* English ↔ Korean Sentence Matching Game (em-) */
         .em-message.complete { background: #f0fdf4; border-left-color: #22c55e; color: #166534; font-weight: 800; }
-        #emEnglishList { grid-column: 1; }
-        #emKoreanList { grid-column: 2; }
+        #emEnglishList { grid-column: 1; display: flex; flex-direction: column; gap: 8px; }
+        #emKoreanList { grid-column: 2; display: flex; flex-direction: column; gap: 8px; }
         .em-item.selected { transform: scale(1.02); box-shadow: 0 0 0 3px #3b82f6, 0 6px 16px rgba(59,130,246,0.25); }
         .em-item.wrong { background: #fef2f2 !important; border-color: #ef4444 !important; border-left-color: #ef4444 !important; animation: emShake 0.45s ease; }
         .em-item.removing { opacity: 0; transform: scale(0.5); pointer-events: none; }
