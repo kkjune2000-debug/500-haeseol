@@ -383,6 +383,15 @@ small.en-line{display:inline-block;margin-bottom:9px;}
 /* ★한국어와 그 영어는 붙이고, 짝과 짝 사이만 벌린다.
    앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
    것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
+        /* num-all v1 — 숫자 읽기 표를 차례로 듣는다.
+           읽는 칸에 테두리가 켜지고, 다시 누르면 멎는다. */
+        .numt-all{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px;}
+        .nt-btn{background:#eff6ff;color:#1e3a8a;border:1px solid #bfdbfe;
+                padding:6px 13px;border-radius:8px;cursor:pointer;
+                font-size:0.85rem;font-weight:700;}
+        .nt-btn:hover{background:#dbeafe;}
+        .nt-btn.playing{background:#fdecec;border-color:#f0c4c4;color:#9b4747;}
+        .numt td.nt-now{box-shadow:inset 0 0 0 2px #2563eb;}
 </style>
 </head>
 <body>
@@ -479,10 +488,11 @@ small.en-line{display:inline-block;margin-bottom:9px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#1e3a8a; background:#eff6ff; border-left:4px solid #2563eb; border-radius:4px;">한국어 숫자는 두 가지<br><small style="font-weight:600;"><span lang="en" translate="yes">Two number systems</span></small></h3>
         <div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">한국어에는 숫자를 읽는 방법이 <strong>두 가지</strong> 있습니다.<br><small class="en-line" lang="en" translate="yes"><em>Korean has <strong>two</strong> ways to read numbers.</em></small><br>한자에서 온 <strong>한자어(漢字語)</strong> 숫자와, 순우리말 <strong>고유어</strong> 숫자입니다.<br><small class="en-line" lang="en" translate="yes"><em><strong>Sino-Korean</strong> (from Chinese characters) and <strong>Native Korean</strong>.</em></small><br>둘은 쓰임이 다릅니다.<br><small class="en-line" lang="en" translate="yes"><em>They are used in different situations.</em></small>
         </div>
+        <div class="numt-all"><button class="nt-btn" onclick="numAll(this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button><button class="nt-btn" onclick="numAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button></div>
         <div class="tbl-scroll"><table class="numt s1" style="font-size:0.82rem;">
             <tr><td class="lbl">숫자<span class="gloss" lang="en" translate="yes">Number</span></td><td class="dig">1</td><td class="dig">2</td><td class="dig">3</td><td class="dig">4</td><td class="dig">5</td><td class="dig">6</td><td class="dig">7</td><td class="dig">8</td><td class="dig">9</td><td class="dig">10</td></tr>
-            <tr><td class="lbl">한자어<span class="gloss" lang="en" translate="yes">Sino</span></td><td class="rd">일</td><td class="rd">이</td><td class="rd">삼</td><td class="rd">사</td><td class="rd">오</td><td class="rd">육</td><td class="rd">칠</td><td class="rd">팔</td><td class="rd">구</td><td class="rd">십</td></tr>
-            <tr><td class="lbl">고유어<span class="gloss" lang="en" translate="yes">Native</span></td><td class="rd">하나</td><td class="rd">둘</td><td class="rd">셋</td><td class="rd">넷</td><td class="rd">다섯</td><td class="rd">여섯</td><td class="rd">일곱</td><td class="rd">여덟</td><td class="rd">아홉</td><td class="rd">열</td></tr>
+            <tr><td class="lbl">한자어<span class="gloss" lang="en" translate="yes">Sino</span></td><td class="rd" data-say="일">일</td><td class="rd" data-say="이">이</td><td class="rd" data-say="삼">삼</td><td class="rd" data-say="사">사</td><td class="rd" data-say="오">오</td><td class="rd" data-say="육">육</td><td class="rd" data-say="칠">칠</td><td class="rd" data-say="팔">팔</td><td class="rd" data-say="구">구</td><td class="rd" data-say="십">십</td></tr>
+            <tr><td class="lbl">고유어<span class="gloss" lang="en" translate="yes">Native</span></td><td class="rd" data-say="하나">하나</td><td class="rd" data-say="둘">둘</td><td class="rd" data-say="셋">셋</td><td class="rd" data-say="넷">넷</td><td class="rd" data-say="다섯">다섯</td><td class="rd" data-say="여섯">여섯</td><td class="rd" data-say="일곱">일곱</td><td class="rd" data-say="여덟">여덟</td><td class="rd" data-say="아홉">아홉</td><td class="rd" data-say="열">열</td></tr>
         </table></div>
         <div class="tbl-scroll"><table class="gstep-table" style="margin-top:14px;">
             <thead><tr><th style="width:50%; background:#dbeafe; color:#1e40af;">한자어를 쓸 때<br><small class="en-line" lang="en" translate="yes">Use Sino-Korean for…</small></th><th style="background:#d1fae5; color:#166534;">고유어를 쓸 때<br><small class="en-line" lang="en" translate="yes">Use Native Korean for…</small></th></tr></thead>
@@ -515,16 +525,18 @@ small.en-line{display:inline-block;margin-bottom:9px;}
 <h2>1. 1~100까지 읽기<span class="gloss" lang="en" translate="yes">Reading Numbers 1~100</span></h2>
 <p class="subtitle" lang="en" translate="yes"><span lang="ko" translate="no">한자어와 고유어를 나란히 익히세요</span><br><small style="font-weight:400;color:#5a6d87;">Learn Sino-Korean and Native Korean side by side</small></p>
 
-<div class="tbl-scroll"><table class="numt s1 wide">
+<div class="numt-all"><button class="nt-btn" onclick="numAll(this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button><button class="nt-btn" onclick="numAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button></div>
+        <div class="tbl-scroll"><table class="numt s1 wide">
     <tr><td class="lbl">숫자</td><td class="dig">1</td><td class="dig">2</td><td class="dig">3</td><td class="dig">4</td><td class="dig">5</td><td class="dig">6</td><td class="dig">7</td><td class="dig">8</td><td class="dig">9</td><td class="dig">10</td><td class="dig">11</td><td class="dig">12</td></tr>
-    <tr><td class="lbl">한자어</td><td class="rd">일</td><td class="rd">이</td><td class="rd">삼</td><td class="rd">사</td><td class="rd">오</td><td class="rd">육</td><td class="rd">칠</td><td class="rd">팔</td><td class="rd">구</td><td class="rd">십</td><td class="rd">십일</td><td class="rd">십이</td></tr>
-    <tr><td class="lbl">고유어</td><td class="rd">하나</td><td class="rd">둘</td><td class="rd">셋</td><td class="rd">넷</td><td class="rd">다섯</td><td class="rd">여섯</td><td class="rd">일곱</td><td class="rd">여덟</td><td class="rd">아홉</td><td class="rd">열</td><td class="rd">열하나</td><td class="rd">열둘</td></tr>
+    <tr><td class="lbl">한자어</td><td class="rd" data-say="일">일</td><td class="rd" data-say="이">이</td><td class="rd" data-say="삼">삼</td><td class="rd" data-say="사">사</td><td class="rd" data-say="오">오</td><td class="rd" data-say="육">육</td><td class="rd" data-say="칠">칠</td><td class="rd" data-say="팔">팔</td><td class="rd" data-say="구">구</td><td class="rd" data-say="십">십</td><td class="rd" data-say="십일">십일</td><td class="rd" data-say="십이">십이</td></tr>
+    <tr><td class="lbl">고유어</td><td class="rd" data-say="하나">하나</td><td class="rd" data-say="둘">둘</td><td class="rd" data-say="셋">셋</td><td class="rd" data-say="넷">넷</td><td class="rd" data-say="다섯">다섯</td><td class="rd" data-say="여섯">여섯</td><td class="rd" data-say="일곱">일곱</td><td class="rd" data-say="여덟">여덟</td><td class="rd" data-say="아홉">아홉</td><td class="rd" data-say="열">열</td><td class="rd" data-say="열하나">열하나</td><td class="rd" data-say="열둘">열둘</td></tr>
 </table></div>
 
-<div class="tbl-scroll"><table class="numt s1 wide">
+<div class="numt-all"><button class="nt-btn" onclick="numAll(this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button><button class="nt-btn" onclick="numAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button></div>
+        <div class="tbl-scroll"><table class="numt s1 wide">
     <tr><td class="lbl">숫자</td><td class="dig">19</td><td class="dig">20</td><td class="dig">30</td><td class="dig">40</td><td class="dig">50</td><td class="dig">60</td><td class="dig">70</td><td class="dig">80</td><td class="dig">90</td><td class="dig">91</td><td class="dig">98</td><td class="dig">100</td></tr>
-    <tr><td class="lbl">한자어</td><td class="rd">십구</td><td class="rd">이십</td><td class="rd">삼십</td><td class="rd">사십</td><td class="rd">오십</td><td class="rd">육십</td><td class="rd">칠십</td><td class="rd">팔십</td><td class="rd">구십</td><td class="rd">구십일</td><td class="rd">구십팔</td><td class="rd">백</td></tr>
-    <tr><td class="lbl">고유어</td><td class="rd">열아홉</td><td class="rd">스물</td><td class="rd">서른</td><td class="rd">마흔</td><td class="rd">쉰</td><td class="rd">예순</td><td class="rd">일흔</td><td class="rd">여든</td><td class="rd">아흔</td><td class="rd">아흔하나</td><td class="rd">아흔여덟</td><td class="na">—</td></tr>
+    <tr><td class="lbl">한자어</td><td class="rd" data-say="십구">십구</td><td class="rd" data-say="이십">이십</td><td class="rd" data-say="삼십">삼십</td><td class="rd" data-say="사십">사십</td><td class="rd" data-say="오십">오십</td><td class="rd" data-say="육십">육십</td><td class="rd" data-say="칠십">칠십</td><td class="rd" data-say="팔십">팔십</td><td class="rd" data-say="구십">구십</td><td class="rd" data-say="구십일">구십일</td><td class="rd" data-say="구십팔">구십팔</td><td class="rd" data-say="백">백</td></tr>
+    <tr><td class="lbl">고유어</td><td class="rd" data-say="열아홉">열아홉</td><td class="rd" data-say="스물">스물</td><td class="rd" data-say="서른">서른</td><td class="rd" data-say="마흔">마흔</td><td class="rd" data-say="쉰">쉰</td><td class="rd" data-say="예순">예순</td><td class="rd" data-say="일흔">일흔</td><td class="rd" data-say="여든">여든</td><td class="rd" data-say="아흔">아흔</td><td class="rd" data-say="아흔하나">아흔하나</td><td class="rd" data-say="아흔여덟">아흔여덟</td><td class="na">—</td></tr>
 </table></div>
 
 <h3 style="margin:18px 0 4px; padding:8px 14px; font-size:1.05rem; font-weight:800; color:#9d174d; background:#fdf2f8; border-left:4px solid #ec4899; border-radius:4px;">기본 수 플래시 카드<br><small style="font-weight: 600;" lang="en" translate="yes">Basic Numbers Flashcards: <span lang="ko" translate="no">숫자를 보고 읽어 보세요</span> (Look at the number and read it aloud)</small></h3>
@@ -754,7 +766,7 @@ numfcRender('numfcN','N',NUMFC);
 /* ak-audio v1 */
 /* 미리 구운 MP3 를 먼저 쓴다. 없거나 못 읽으면 브라우저 음성으로 넘어간다.
    f = SunHi(여성) · m = Hyunsu(남성) — 둘 다 신경망 음성이다. */
-var AK_SND = {"일": "0392", "하나": "0562", "이": "0367", "둘": "0214", "삼": "0259", "셋": "0263", "사": "0248", "넷": "0162", "오": "0340", "다섯": "0172", "육": "0364", "여섯": "0331", "칠": "0552", "일곱": "0393", "팔": "0559", "여덟": "0330", "구": "0018", "아홉": "0303", "십": "0287", "열": "0333", "십일": "1355", "열하나": "1464", "십이": "1354", "열둘": "1461", "십삼": "1352", "열셋": "1462", "십오": "1353", "열다섯": "1460", "이십": "1536", "스물": "1314", "이십삼": "1537", "스물셋": "1315", "삼십": "1273", "서른": "1280", "삼십육": "1274", "서른여섯": "1281", "사십": "1266", "마흔": "0983", "사십이": "1267", "마흔둘": "0984", "오십": "1487", "오십칠": "1488", "쉰일곱": "1307", "육십": "1528", "예순": "1481", "육십팔": "1529", "예순여덟": "1482", "칠십": "1773", "일흔": "1567", "칠십오": "1774", "일흔다섯": "1568", "팔십": "1807", "여든": "1438", "팔십팔": "1808", "여든여덟": "1439", "구십": "0746", "아흔": "1383", "구십일": "0748", "아흔하나": "1385", "구십구": "0747", "아흔아홉": "1384", "한자어": "1863", "고유어": "0720", "백오십육": "1188", "만 이천삼백사십오": "0985", "일억": "1557", "사분의 삼": "1265", "오후 세 시": "1489", "영점 일이삼": "1467"};
+var AK_SND = {"일": "0392", "하나": "0562", "이": "0367", "둘": "0214", "삼": "0259", "셋": "0263", "사": "0248", "넷": "0162", "오": "0340", "다섯": "0172", "육": "0364", "여섯": "0331", "칠": "0552", "일곱": "0393", "팔": "0559", "여덟": "0330", "구": "0018", "아홉": "0303", "십": "0287", "열": "0333", "십일": "1355", "열하나": "1464", "십이": "1354", "열둘": "1461", "십삼": "1352", "열셋": "1462", "십오": "1353", "열다섯": "1460", "이십": "1536", "스물": "1314", "이십삼": "1537", "스물셋": "1315", "삼십": "1273", "서른": "1280", "삼십육": "1274", "서른여섯": "1281", "사십": "1266", "마흔": "0983", "사십이": "1267", "마흔둘": "0984", "오십": "1487", "오십칠": "1488", "쉰일곱": "1307", "육십": "1528", "예순": "1481", "육십팔": "1529", "예순여덟": "1482", "칠십": "1773", "일흔": "1567", "칠십오": "1774", "일흔다섯": "1568", "팔십": "1807", "여든": "1438", "팔십팔": "1808", "여든여덟": "1439", "구십": "0746", "아흔": "1383", "구십일": "0748", "아흔하나": "1385", "구십구": "0747", "아흔아홉": "1384", "한자어": "1863", "고유어": "0720", "백오십육": "1188", "만 이천삼백사십오": "0985", "일억": "1557", "사분의 삼": "1265", "오후 세 시": "1489", "영점 일이삼": "1467", "십구": "2165", "구십팔": "2166", "백": "2167", "열아홉": "2168", "쉰": "2169", "아흔여덟": "2170"};
 var AK_AU = null;
 function akPlayFile(text, sex){
   var n = AK_SND[text];
@@ -1053,5 +1065,78 @@ function qAll(btn,show){
 }
 </script>
 <div class="ak-notice" id="akNotice">이 브라우저에는 한국어 남성 음성이 없어 <b>목소리를 낮춰</b> 읽습니다. 진짜 남성 음성은 Microsoft Edge 에서 나옵니다.<span class="gloss" lang="en" translate="yes">This browser has no Korean male voice, so the female voice is pitched down. Open the page in Microsoft Edge for a real male voice.</span></div>
+<script>
+/* num-all v1 — 숫자 읽기 표 전체 듣기.
+   이 쪽수에는 차례 재생 얼개가 없어 새로 만든다.
+   · 음원이 있으면 mp3(onended), 없으면 브라우저 음성(onend)으로 잇는다
+   · cancel() 바로 뒤에 speak() 하면 고른 음성이 버려진다 — 60ms 규칙 */
+var NUM_SEQ = 0;
+function numStop(){
+  NUM_SEQ++;
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  if (window.AK_AU){ try { AK_AU.pause(); } catch(e){} }
+  var i, ns = document.querySelectorAll('.numt td.nt-now');
+  for (i = 0; i < ns.length; i++) ns[i].classList.remove('nt-now');
+  var bs = document.querySelectorAll('.nt-btn.playing');
+  for (i = 0; i < bs.length; i++){
+    bs[i].classList.remove('playing');
+    var lb = bs[i].getAttribute('data-label');
+    if (lb) bs[i].innerHTML = lb;
+  }
+}
+function numOne(text, sex, done){
+  var n = window.AK_SND ? AK_SND[text] : null;
+  if (n){
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    if (window.AK_AU){ try { AK_AU.pause(); } catch(e){} }
+    AK_AU = new Audio(encodeURI('_소리/' + (sex === 'm' ? 'm' : 'f') + '/' + n + '.mp3'));
+    AK_AU.onended = done;
+    AK_AU.onerror = function(){ numTTS(text, sex, done); };
+    var p = AK_AU.play();
+    if (p && p.catch) p.catch(function(){ numTTS(text, sex, done); });
+    return;
+  }
+  numTTS(text, sex, done);
+}
+function numTTS(text, sex, done){
+  if (!('speechSynthesis' in window)){ done(); return; }
+  var v = (typeof akPick === 'function') ? akPick(sex) : null, low = false;
+  if (sex === 'm' && !v){ v = akPick('f'); low = true; if (typeof akNotice === 'function') akNotice(); }
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(text);
+  u.lang = (v && v.lang) || 'ko-KR';
+  u.rate = 0.92;
+  u.pitch = low ? 0.6 : 1.0;
+  if (v) u.voice = v;
+  u.onend = done;
+  setTimeout(function(){ window.speechSynthesis.speak(u); }, 60);
+}
+function numAll(btn, sex){
+  var was = btn.classList.contains('playing');
+  numStop();
+  if (was) return;                        /* 같은 단추를 다시 누르면 멈춘다 */
+  var bar = btn.closest('.numt-all');
+  var wrap = bar && bar.nextElementSibling;
+  var tbl = wrap && wrap.querySelector('table.numt');
+  if (!tbl) return;
+  var cells = tbl.querySelectorAll('td[data-say]');
+  if (!cells.length) return;
+  if (!btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.innerHTML);
+  btn.classList.add('playing');
+  btn.innerHTML = '\u25a0 \uba48\ucda4<span class="gloss" lang="en" translate="yes">Stop</span>';
+  try { localStorage.setItem('akVoiceSex', sex); } catch(e){}
+  if (typeof AK_SEX !== 'undefined') AK_SEX = sex;
+  var my = ++NUM_SEQ, i = 0;
+  function next(){
+    if (my !== NUM_SEQ) return;
+    for (var k = 0; k < cells.length; k++) cells[k].classList.remove('nt-now');
+    if (i >= cells.length){ numStop(); return; }
+    var td = cells[i++];
+    td.classList.add('nt-now');
+    numOne(td.getAttribute('data-say'), sex, function(){ if (my === NUM_SEQ) next(); });
+  }
+  next();
+}
+</script>
 </body>
 </html>
