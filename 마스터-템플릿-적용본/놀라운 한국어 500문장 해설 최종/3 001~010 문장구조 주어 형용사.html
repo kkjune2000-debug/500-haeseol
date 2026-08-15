@@ -980,9 +980,19 @@ p.en{margin-bottom:16px;}
 <div class="bonus-section">
     <div class="bonus-heading">
         <span class="bonus-badge">더 배우기</span>
-        <span class="bonus-title-text">자주 쓰는 형용사와 반대말 10쌍</span>
+        <span class="bonus-title-text">자주 쓰는 형용사와 반대말</span>
     </div>
     <p class="subtitle" lang="en" translate="yes">Bonus: Common Adjectives and Their Opposites</p>
+<style>
+/* ant-all v1 — 반대말 표 전체 듣기. 읽는 칸에 테두리를 준다. */
+.antonym-table td.sl-now{box-shadow:inset 0 0 0 2px #2563eb;border-radius:6px;}
+.bonus-section .sl-all{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 2px;}
+</style>
+<div class="sl-all">
+<button class="sl-all-btn" onclick="antAll(this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button>
+<button class="sl-all-btn" onclick="antAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button>
+</div>
+
     <div class="tbl-scroll"><table class="antonym-table">
         <thead>
             <tr>
@@ -2171,6 +2181,33 @@ function slPlay(text, sex, done){
   AK_AU.src = encodeURI('_소리/' + (sex === 'm' ? 'm' : 'f') + '/' + n + '.mp3');
   var p = AK_AU.play();
   if (p && p.catch) p.catch(function(){ slTTS(text, sex, done); });
+}
+function antAll(btn, sex){
+  var was = btn.classList.contains('playing');
+  slStop();
+  if (was) return;                       /* 같은 단추를 다시 누르면 멈춘다 */
+  var bs = document.querySelectorAll('.antonym-table .ant-spk'), items = [], i, oc, m;
+  for (i = 0; i < bs.length; i++){
+    oc = bs[i].getAttribute('onclick') || '';
+    m = oc.match(/speakKorean\('([^']*)'/);
+    if (m) items.push([bs[i].closest('td') || bs[i], m[1]]);
+  }
+  if (!items.length) return;
+  if (!btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.innerHTML);
+  btn.classList.add('playing');
+  btn.innerHTML = '\u25a0 \uba48\ucda4<span class=\"gloss\" lang=\"en\" translate=\"yes\">Stop</span>';
+  try { localStorage.setItem('akVoiceSex', sex); } catch(e){}
+  if (typeof AK_SEX !== 'undefined') AK_SEX = sex;
+  var my = ++AK_SEQ_ID, k = 0;
+  function next(){
+    if (my !== AK_SEQ_ID) return;
+    for (var j = 0; j < items.length; j++) items[j][0].classList.remove('sl-now');
+    if (k >= items.length){ slStop(); return; }
+    var it = items[k++];
+    it[0].classList.add('sl-now');
+    slPlay(it[1], sex, function(){ if (my === AK_SEQ_ID) next(); });
+  }
+  next();
 }
 function slAll(btn, sex){
   var was = btn.classList.contains('playing');
