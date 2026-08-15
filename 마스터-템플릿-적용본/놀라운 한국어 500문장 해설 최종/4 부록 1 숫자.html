@@ -391,7 +391,7 @@ small.en-line{display:inline-block;margin-bottom:9px;}
                 font-size:0.85rem;font-weight:700;}
         .nt-btn:hover{background:#dbeafe;}
         .nt-btn.playing{background:#fdecec;border-color:#f0c4c4;color:#9b4747;}
-        .numt td.nt-now{box-shadow:inset 0 0 0 2px #2563eb;}
+        .numt td.nt-now,table.symt td.nt-now,table.cntr td.nt-now{box-shadow:inset 0 0 0 2px #2563eb;}
 </style>
 </head>
 <body>
@@ -584,13 +584,15 @@ numfcRender('numfcN','N',NUMFC);
 <h2>2. 큰 수 읽기<span class="gloss" lang="en" translate="yes">Reading Big Numbers</span></h2>
 <p class="subtitle" lang="en" translate="yes"><span lang="ko" translate="no">백 · 천부터 만 · 억 · 조까지</span><br><small style="font-weight:400;color:#5a6d87;">From hundreds and thousands up to trillions (<span lang="ko" translate="no">만 · 억 · 조</span>)</small></p>
 
-<div class="tbl-scroll"><table class="numt s2">
+<div class="numt-all"><button class="nt-btn" onclick="numAll(this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button><button class="nt-btn" onclick="numAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button></div>
+        <div class="tbl-scroll"><table class="numt s2">
     <tr><td class="lbl">숫자</td><td class="dig">101</td><td class="dig">120</td><td class="dig">156</td><td class="dig">201</td><td class="dig">234</td><td class="dig">289</td></tr>
-    <tr><td class="lbl">읽기</td><td class="rd">백일</td><td class="rd">백이십</td><td class="rd">백오십육</td><td class="rd">이백일</td><td class="rd">이백삼십사</td><td class="rd">이백팔십구</td></tr>
+    <tr><td class="lbl">읽기</td><td class="rd" data-say="백일">백일</td><td class="rd" data-say="백이십">백이십</td><td class="rd" data-say="백오십육">백오십육</td><td class="rd" data-say="이백일">이백일</td><td class="rd" data-say="이백삼십사">이백삼십사</td><td class="rd" data-say="이백팔십구">이백팔십구</td></tr>
 </table></div>
-<div class="tbl-scroll"><table class="numt s2">
+<div class="numt-all"><button class="nt-btn" onclick="numAll(this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button><button class="nt-btn" onclick="numAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button></div>
+        <div class="tbl-scroll"><table class="numt s2">
     <tr><td class="lbl">숫자</td><td class="dig">345</td><td class="dig">567</td><td class="dig">973</td><td class="dig">1,000</td><td class="dig">1,010</td><td class="dig">1,234</td></tr>
-    <tr><td class="lbl">읽기</td><td class="rd">삼백사십오</td><td class="rd">오백육십칠</td><td class="rd">구백칠십삼</td><td class="rd">천</td><td class="rd">천십</td><td class="rd">천이백삼십사</td></tr>
+    <tr><td class="lbl">읽기</td><td class="rd" data-say="삼백사십오">삼백사십오</td><td class="rd" data-say="오백육십칠">오백육십칠</td><td class="rd" data-say="구백칠십삼">구백칠십삼</td><td class="rd" data-say="천">천</td><td class="rd" data-say="천십">천십</td><td class="rd" data-say="천이백삼십사">천이백삼십사</td></tr>
 </table></div>
 
 <div class="chunk-box">
@@ -609,48 +611,51 @@ numfcRender('numfcN','N',NUMFC);
     </div>
 </div>
 
-<div class="tbl-scroll"><table class="numt s3">
+<div class="numt-all"><button class="nt-btn" onclick="numAll(this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button><button class="nt-btn" onclick="numAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button></div>
+        <div class="tbl-scroll"><table class="numt s3">
     <thead><tr><th style="width:38%">숫자<span class="gloss" lang="en" translate="yes">Number</span></th><th>읽기<span class="gloss" lang="en" translate="yes">Reading</span></th></tr></thead>
     <tbody>
-        <tr><td class="dig">9,876</td><td class="rd">구천팔백칠십육</td></tr>
-        <tr><td class="dig">1<span class="msep">/<span class="munit">만</span></span>0,000</td><td class="rd">만</td></tr>
-        <tr><td class="dig">1<span class="msep">/<span class="munit">만</span></span>2,345</td><td class="rd">만 이천삼백사십오</td></tr>
-        <tr><td class="dig">9<span class="msep">/<span class="munit">만</span></span>5,726</td><td class="rd">구만 오천칠백이십육</td></tr>
-        <tr><td class="dig">10<span class="msep">/<span class="munit">만</span></span>0,000</td><td class="rd">십만</td></tr>
-        <tr><td class="dig">10<span class="msep">/<span class="munit">만</span></span>1,010</td><td class="rd">십만 천십</td></tr>
-        <tr><td class="dig">20<span class="msep">/<span class="munit">만</span></span>0,675</td><td class="rd">이십만 육백칠십오</td></tr>
-        <tr><td class="dig">78<span class="msep">/<span class="munit">만</span></span>3,908</td><td class="rd">칠십팔만 삼천구백팔</td></tr>
+        <tr><td class="dig">9,876</td><td class="rd" data-say="구천팔백칠십육">구천팔백칠십육</td></tr>
+        <tr><td class="dig">1<span class="msep">/<span class="munit">만</span></span>0,000</td><td class="rd" data-say="만">만</td></tr>
+        <tr><td class="dig">1<span class="msep">/<span class="munit">만</span></span>2,345</td><td class="rd" data-say="만 이천삼백사십오">만 이천삼백사십오</td></tr>
+        <tr><td class="dig">9<span class="msep">/<span class="munit">만</span></span>5,726</td><td class="rd" data-say="구만 오천칠백이십육">구만 오천칠백이십육</td></tr>
+        <tr><td class="dig">10<span class="msep">/<span class="munit">만</span></span>0,000</td><td class="rd" data-say="십만">십만</td></tr>
+        <tr><td class="dig">10<span class="msep">/<span class="munit">만</span></span>1,010</td><td class="rd" data-say="십만 천십">십만 천십</td></tr>
+        <tr><td class="dig">20<span class="msep">/<span class="munit">만</span></span>0,675</td><td class="rd" data-say="이십만 육백칠십오">이십만 육백칠십오</td></tr>
+        <tr><td class="dig">78<span class="msep">/<span class="munit">만</span></span>3,908</td><td class="rd" data-say="칠십팔만 삼천구백팔">칠십팔만 삼천구백팔</td></tr>
     </tbody>
 </table></div>
 
-<div class="tbl-scroll"><table class="numt s4">
+<div class="numt-all"><button class="nt-btn" onclick="numAll(this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button><button class="nt-btn" onclick="numAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button></div>
+        <div class="tbl-scroll"><table class="numt s4">
     <thead><tr><th style="width:38%">숫자<span class="gloss" lang="en" translate="yes">Number</span></th><th>읽기<span class="gloss" lang="en" translate="yes">Reading</span></th></tr></thead>
     <tbody>
-        <tr><td class="dig">1,00<span class="msep">/<span class="munit">만</span></span>0,000</td><td class="rd">백만</td></tr>
-        <tr><td class="dig">10,00<span class="msep">/<span class="munit">만</span></span>0,000</td><td class="rd">천만</td></tr>
-        <tr><td class="dig">1<span class="msep">/<span class="munit">억</span></span>00,00<span class="msep">/<span class="munit">만</span></span>0,000</td><td class="rd">일억</td></tr>
-        <tr><td class="dig">1,0<span class="msep">/<span class="munit">억</span></span>00,00<span class="msep">/<span class="munit">만</span></span>0,000</td><td class="rd">십억</td></tr>
-        <tr><td class="dig">10,0<span class="msep">/<span class="munit">억</span></span>00,00<span class="msep">/<span class="munit">만</span></span>0,000</td><td class="rd">백억</td></tr>
-        <tr><td class="dig">100,0<span class="msep">/<span class="munit">억</span></span>00,00<span class="msep">/<span class="munit">만</span></span>0,000</td><td class="rd">천억</td></tr>
-        <tr><td class="dig">1<span class="msep">/<span class="munit">조</span></span>000,0<span class="msep">/<span class="munit">억</span></span>00,00<span class="msep">/<span class="munit">만</span></span>0,000</td><td class="rd">일조</td></tr>
+        <tr><td class="dig">1,00<span class="msep">/<span class="munit">만</span></span>0,000</td><td class="rd" data-say="백만">백만</td></tr>
+        <tr><td class="dig">10,00<span class="msep">/<span class="munit">만</span></span>0,000</td><td class="rd" data-say="천만">천만</td></tr>
+        <tr><td class="dig">1<span class="msep">/<span class="munit">억</span></span>00,00<span class="msep">/<span class="munit">만</span></span>0,000</td><td class="rd" data-say="일억">일억</td></tr>
+        <tr><td class="dig">1,0<span class="msep">/<span class="munit">억</span></span>00,00<span class="msep">/<span class="munit">만</span></span>0,000</td><td class="rd" data-say="십억">십억</td></tr>
+        <tr><td class="dig">10,0<span class="msep">/<span class="munit">억</span></span>00,00<span class="msep">/<span class="munit">만</span></span>0,000</td><td class="rd" data-say="백억">백억</td></tr>
+        <tr><td class="dig">100,0<span class="msep">/<span class="munit">억</span></span>00,00<span class="msep">/<span class="munit">만</span></span>0,000</td><td class="rd" data-say="천억">천억</td></tr>
+        <tr><td class="dig">1<span class="msep">/<span class="munit">조</span></span>000,0<span class="msep">/<span class="munit">억</span></span>00,00<span class="msep">/<span class="munit">만</span></span>0,000</td><td class="rd" data-say="일조">일조</td></tr>
     </tbody>
 </table></div>
 
 <div class="ilrule"><div class="ilrule-ttl">★ 일을 붙일 때 ↔ 안 붙일 때<br><small class="en-line" lang="en" translate="yes">When to add <span lang="ko" translate="no">일</span> (one) before a unit</small></div><p class="ilrule-p"><strong>만</strong> 단위(만·십만·백만·천만)는 <strong>일</strong>을 붙이지 않습니다 — 그냥 <strong>만</strong> (일만 ✗).<br><small class="en-line" lang="en" translate="yes"><em>The <span lang="ko" translate="no">만</span> units (<span lang="ko" translate="no">만·십만·백만·천만</span>) drop <span lang="ko" translate="no">일</span> — just <span lang="ko" translate="no">만</span> (not <span lang="ko" translate="no">일만</span>).</em></small><br>하지만 <strong>억·조</strong>는 <strong>일</strong>을 붙여 <strong>일억</strong>·<strong>일조</strong>로 읽습니다.<br><small class="en-line" lang="en" translate="yes"><em>But <span lang="ko" translate="no">억</span> and <span lang="ko" translate="no">조</span> keep it: <span lang="ko" translate="no">일억</span>, <span lang="ko" translate="no">일조</span>.</em></small></p><div class="tbl-scroll"><table class="ilrule-tbl"><thead><tr><th>수<span class="gloss" lang="en" translate="yes">Number</span></th><th>맞음<span class="gloss" lang="en" translate="yes">Correct ✓</span></th><th>틀림<span class="gloss" lang="en" translate="yes">Wrong ✗</span></th></tr></thead><tbody><tr><td>10,000</td><td class="ok">만</td><td class="x"><s>일만</s></td></tr><tr><td>100,000</td><td class="ok">십만</td><td class="x"><s>일십만</s></td></tr><tr><td>1,000,000</td><td class="ok">백만</td><td class="x"><s>일백만</s></td></tr><tr><td>10,000,000</td><td class="ok">천만</td><td class="x"><s>일천만</s></td></tr><tr><td>100,000,000</td><td class="ok"><b>일</b>억</td><td class="x"><s>억</s></td></tr><tr><td>1,000,000,000,000</td><td class="ok"><b>일</b>조</td><td class="x"><s>조</s></td></tr></tbody></table></div></div>
 
-<div class="tbl-scroll"><table class="numt s5">
+<div class="numt-all"><button class="nt-btn" onclick="numAll(this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button><button class="nt-btn" onclick="numAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button></div>
+        <div class="tbl-scroll"><table class="numt s5">
     <thead><tr><th style="width:38%">숫자<span class="gloss" lang="en" translate="yes">Number</span></th><th>읽기<span class="gloss" lang="en" translate="yes">Reading</span></th></tr></thead>
     <tbody>
-        <tr><td class="dig">12<span class="msep">/<span class="munit">만</span></span>3,456</td><td class="rd">십이만 삼천사백오십육</td></tr>
-        <tr><td class="dig">9,87<span class="msep">/<span class="munit">만</span></span>6,543</td><td class="rd">구백팔십칠만 육천오백사십삼</td></tr>
-        <tr><td class="dig">12,34<span class="msep">/<span class="munit">만</span></span>5,678</td><td class="rd">천이백삼십사만 오천육백칠십팔</td></tr>
-        <tr><td class="dig">4,3<span class="msep">/<span class="munit">억</span></span>86,82<span class="msep">/<span class="munit">만</span></span>4,017</td><td class="rd">사십삼억 팔천육백팔십이만 사천십칠</td></tr>
-        <tr><td class="dig">1<span class="msep">/<span class="munit">억</span></span>43,78<span class="msep">/<span class="munit">만</span></span>6,012</td><td class="rd">일억 사천삼백칠십팔만 육천십이</td></tr>
-        <tr><td class="dig">91<span class="msep">/<span class="munit">조</span></span>234,5<span class="msep">/<span class="munit">억</span></span>67,89<span class="msep">/<span class="munit">만</span></span>0,123</td><td class="rd">구십일조 이천삼백사십오억 육천칠백팔십구만 백이십삼</td></tr>
-        <tr><td class="dig">365,9<span class="msep">/<span class="munit">억</span></span>01,87<span class="msep">/<span class="munit">만</span></span>2,786</td><td class="rd">삼천육백오십구억 백팔십칠만 이천칠백팔십육</td></tr>
-        <tr><td class="dig">86,3<span class="msep">/<span class="munit">억</span></span>90,62<span class="msep">/<span class="munit">만</span></span>1,067</td><td class="rd">팔백육십삼억 구천육십이만 천육십칠</td></tr>
-        <tr><td class="dig">12,03<span class="msep">/<span class="munit">만</span></span>4,903</td><td class="rd">천이백삼만 사천구백삼</td></tr>
-        <tr><td class="dig">234,5<span class="msep">/<span class="munit">억</span></span>67,89<span class="msep">/<span class="munit">만</span></span>1,012</td><td class="rd">이천삼백사십오억 육천칠백팔십구만 천십이</td></tr>
+        <tr><td class="dig">12<span class="msep">/<span class="munit">만</span></span>3,456</td><td class="rd" data-say="십이만 삼천사백오십육">십이만 삼천사백오십육</td></tr>
+        <tr><td class="dig">9,87<span class="msep">/<span class="munit">만</span></span>6,543</td><td class="rd" data-say="구백팔십칠만 육천오백사십삼">구백팔십칠만 육천오백사십삼</td></tr>
+        <tr><td class="dig">12,34<span class="msep">/<span class="munit">만</span></span>5,678</td><td class="rd" data-say="천이백삼십사만 오천육백칠십팔">천이백삼십사만 오천육백칠십팔</td></tr>
+        <tr><td class="dig">4,3<span class="msep">/<span class="munit">억</span></span>86,82<span class="msep">/<span class="munit">만</span></span>4,017</td><td class="rd" data-say="사십삼억 팔천육백팔십이만 사천십칠">사십삼억 팔천육백팔십이만 사천십칠</td></tr>
+        <tr><td class="dig">1<span class="msep">/<span class="munit">억</span></span>43,78<span class="msep">/<span class="munit">만</span></span>6,012</td><td class="rd" data-say="일억 사천삼백칠십팔만 육천십이">일억 사천삼백칠십팔만 육천십이</td></tr>
+        <tr><td class="dig">91<span class="msep">/<span class="munit">조</span></span>234,5<span class="msep">/<span class="munit">억</span></span>67,89<span class="msep">/<span class="munit">만</span></span>0,123</td><td class="rd" data-say="구십일조 이천삼백사십오억 육천칠백팔십구만 백이십삼">구십일조 이천삼백사십오억 육천칠백팔십구만 백이십삼</td></tr>
+        <tr><td class="dig">365,9<span class="msep">/<span class="munit">억</span></span>01,87<span class="msep">/<span class="munit">만</span></span>2,786</td><td class="rd" data-say="삼천육백오십구억 백팔십칠만 이천칠백팔십육">삼천육백오십구억 백팔십칠만 이천칠백팔십육</td></tr>
+        <tr><td class="dig">86,3<span class="msep">/<span class="munit">억</span></span>90,62<span class="msep">/<span class="munit">만</span></span>1,067</td><td class="rd" data-say="팔백육십삼억 구천육십이만 천육십칠">팔백육십삼억 구천육십이만 천육십칠</td></tr>
+        <tr><td class="dig">12,03<span class="msep">/<span class="munit">만</span></span>4,903</td><td class="rd" data-say="천이백삼만 사천구백삼">천이백삼만 사천구백삼</td></tr>
+        <tr><td class="dig">234,5<span class="msep">/<span class="munit">억</span></span>67,89<span class="msep">/<span class="munit">만</span></span>1,012</td><td class="rd" data-say="이천삼백사십오억 육천칠백팔십구만 천십이">이천삼백사십오억 육천칠백팔십구만 천십이</td></tr>
     </tbody>
 </table></div>
 
@@ -659,31 +664,34 @@ numfcRender('numfcN','N',NUMFC);
 <h2>3. 특별한 읽기<span class="gloss" lang="en" translate="yes">Special Readings</span></h2>
 <p class="subtitle" lang="en" translate="yes"><span lang="ko" translate="no">연산 · 소수 · 분수 · 퍼센트 · 온도 · 거리 · 시간 · 날짜</span><br><small style="font-weight:400;color:#5a6d87;">Operations · Decimals · Fractions · Percent · Temperature · Distance · Time · Date</small></p>
 
-<h3 style="margin:0 0 10px; padding:8px 14px; font-size:1.05rem; font-weight:800; color:#075985; background:#f0f9ff; border-left:4px solid #0ea5e9; border-radius:4px;">연산·기호 읽는 법<br><small style="font-weight:600;" lang="en" translate="yes">How to read symbols</small></h3><p style="font-size:0.92rem; line-height:1.8; margin:0 0 8px;">특별한 수를 읽기 전에, 아래 기호와 말을 먼저 익히세요.<br><small class="en-line" lang="en" translate="yes"><em>Learn these symbols and words first, before reading the special numbers below.</em></small></p><div class="tbl-scroll"><table class="symt"><thead><tr><th>기호<span class="gloss" lang="en" translate="yes">Symbol</span></th><th>이름<span class="gloss" lang="en" translate="yes">Name</span></th><th>뜻<span class="gloss" lang="en" translate="yes">Meaning</span></th><th>연산<span class="gloss" lang="en" translate="yes">Expression</span></th><th>읽기<span class="gloss" lang="en" translate="yes">Reading</span></th></tr></thead><tbody><tr><td>+</td><td>더하기</td><td><span lang="en" translate="yes">plus</span></td><td>1 + 2</td><td>일 더하기 이</td></tr><tr><td>−</td><td>빼기</td><td><span lang="en" translate="yes">minus</span></td><td>6 − 4</td><td>육 빼기 사</td></tr><tr><td>×</td><td>곱하기</td><td><span lang="en" translate="yes">times</span></td><td>6 × 7</td><td>육 곱하기 칠</td></tr><tr><td>÷</td><td>나누기</td><td><span lang="en" translate="yes">divided by</span></td><td>12 ÷ 4</td><td>십이 나누기 사</td></tr><tr><td>=</td><td>는 / 은</td><td><span lang="en" translate="yes">is, equals</span></td><td>1 + 2 = 3</td><td>일 더하기 이는 삼</td></tr><tr><td>.</td><td>점</td><td><span lang="en" translate="yes">(decimal) point</span></td><td>0.123</td><td>영점 일이삼</td></tr><tr><td>a/b</td><td>분의</td><td><span lang="en" translate="yes">fraction</span></td><td>3/4</td><td>사분의 삼</td></tr><tr><td>%</td><td>퍼센트</td><td><span lang="en" translate="yes">percent</span></td><td>100%</td><td>백 퍼센트</td></tr><tr><td>℃</td><td>영상 / 영하 … 도</td><td><span lang="en" translate="yes">above / below zero</span></td><td>+10℃ / −15℃</td><td>영상 십도 / 영하 십오도</td></tr></tbody></table></div><p style="font-size:0.8rem;color:#59687c;margin:4px 0 14px;">※ 분수는 <b>분모(아래)</b>부터 읽습니다 — 3/4 → 사분의 삼. <br><small class="en-line" lang="en" translate="yes"><em>Fractions are read denominator-first.</em></small></p>
+<h3 style="margin:0 0 10px; padding:8px 14px; font-size:1.05rem; font-weight:800; color:#075985; background:#f0f9ff; border-left:4px solid #0ea5e9; border-radius:4px;">연산·기호 읽는 법<br><small style="font-weight:600;" lang="en" translate="yes">How to read symbols</small></h3><p style="font-size:0.92rem; line-height:1.8; margin:0 0 8px;">특별한 수를 읽기 전에, 아래 기호와 말을 먼저 익히세요.<br><small class="en-line" lang="en" translate="yes"><em>Learn these symbols and words first, before reading the special numbers below.</em></small></p><div class="numt-all"><button class="nt-btn" onclick="numAll(this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button><button class="nt-btn" onclick="numAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button></div>
+        <div class="tbl-scroll"><table class="symt"><thead><tr><th>기호<span class="gloss" lang="en" translate="yes">Symbol</span></th><th>이름<span class="gloss" lang="en" translate="yes">Name</span></th><th>뜻<span class="gloss" lang="en" translate="yes">Meaning</span></th><th>연산<span class="gloss" lang="en" translate="yes">Expression</span></th><th>읽기<span class="gloss" lang="en" translate="yes">Reading</span></th></tr></thead><tbody><tr><td>+</td><td>더하기</td><td><span lang="en" translate="yes">plus</span></td><td>1 + 2</td><td data-say="일 더하기 이">일 더하기 이</td></tr><tr><td>−</td><td>빼기</td><td><span lang="en" translate="yes">minus</span></td><td>6 − 4</td><td data-say="육 빼기 사">육 빼기 사</td></tr><tr><td>×</td><td>곱하기</td><td><span lang="en" translate="yes">times</span></td><td>6 × 7</td><td data-say="육 곱하기 칠">육 곱하기 칠</td></tr><tr><td>÷</td><td>나누기</td><td><span lang="en" translate="yes">divided by</span></td><td>12 ÷ 4</td><td data-say="십이 나누기 사">십이 나누기 사</td></tr><tr><td>=</td><td>는 / 은</td><td><span lang="en" translate="yes">is, equals</span></td><td>1 + 2 = 3</td><td data-say="일 더하기 이는 삼">일 더하기 이는 삼</td></tr><tr><td>.</td><td>점</td><td><span lang="en" translate="yes">(decimal) point</span></td><td>0.123</td><td data-say="영점 일이삼">영점 일이삼</td></tr><tr><td>a/b</td><td>분의</td><td><span lang="en" translate="yes">fraction</span></td><td>3/4</td><td data-say="사분의 삼">사분의 삼</td></tr><tr><td>%</td><td>퍼센트</td><td><span lang="en" translate="yes">percent</span></td><td>100%</td><td data-say="백 퍼센트">백 퍼센트</td></tr><tr><td>℃</td><td>영상 / 영하 … 도</td><td><span lang="en" translate="yes">above / below zero</span></td><td>+10℃ / −15℃</td><td data-say="영상 십도 / 영하 십오도">영상 십도 / 영하 십오도</td></tr></tbody></table></div><p style="font-size:0.8rem;color:#59687c;margin:4px 0 14px;">※ 분수는 <b>분모(아래)</b>부터 읽습니다 — 3/4 → 사분의 삼. <br><small class="en-line" lang="en" translate="yes"><em>Fractions are read denominator-first.</em></small></p>
 
-<div class="tbl-scroll"><table class="numt s6">
+<div class="numt-all"><button class="nt-btn" onclick="numAll(this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button><button class="nt-btn" onclick="numAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button></div>
+        <div class="tbl-scroll"><table class="numt s6">
     <thead><tr><th style="width:38%">표현<span class="gloss" lang="en" translate="yes">Expression</span></th><th>읽기<span class="gloss" lang="en" translate="yes">Reading</span></th></tr></thead>
     <tbody>
-        <tr><td class="dig">1 + 2 = 3</td><td class="rd">일 더하기 이는 삼</td></tr>
-        <tr><td class="dig">6 − 4 = 2</td><td class="rd">육 빼기 사는 이</td></tr>
-        <tr><td class="dig">6 × 7 = 42</td><td class="rd">육 곱하기 칠은 사십이</td></tr>
-        <tr><td class="dig">12 ÷ 4 = 3</td><td class="rd">십이 나누기 사는 삼</td></tr>
-        <tr><td class="dig">0.123</td><td class="rd">영점 일이삼</td></tr>
-        <tr><td class="dig">3/4</td><td class="rd">사분의 삼</td></tr>
-        <tr><td class="dig">100%</td><td class="rd">백 퍼센트</td></tr>
-        <tr><td class="dig">+ 10℃</td><td class="rd">영상 십도</td></tr>
-        <tr><td class="dig">− 15℃</td><td class="rd">영하 십오도</td></tr>
-        <tr><td class="dig">100,210㎢</td><td class="rd">십만 이백십 제곱킬로미터</td></tr>
+        <tr><td class="dig">1 + 2 = 3</td><td class="rd" data-say="일 더하기 이는 삼">일 더하기 이는 삼</td></tr>
+        <tr><td class="dig">6 − 4 = 2</td><td class="rd" data-say="육 빼기 사는 이">육 빼기 사는 이</td></tr>
+        <tr><td class="dig">6 × 7 = 42</td><td class="rd" data-say="육 곱하기 칠은 사십이">육 곱하기 칠은 사십이</td></tr>
+        <tr><td class="dig">12 ÷ 4 = 3</td><td class="rd" data-say="십이 나누기 사는 삼">십이 나누기 사는 삼</td></tr>
+        <tr><td class="dig">0.123</td><td class="rd" data-say="영점 일이삼">영점 일이삼</td></tr>
+        <tr><td class="dig">3/4</td><td class="rd" data-say="사분의 삼">사분의 삼</td></tr>
+        <tr><td class="dig">100%</td><td class="rd" data-say="백 퍼센트">백 퍼센트</td></tr>
+        <tr><td class="dig">+ 10℃</td><td class="rd" data-say="영상 십도">영상 십도</td></tr>
+        <tr><td class="dig">− 15℃</td><td class="rd" data-say="영하 십오도">영하 십오도</td></tr>
+        <tr><td class="dig">100,210㎢</td><td class="rd" data-say="십만 이백십 제곱킬로미터">십만 이백십 제곱킬로미터</td></tr>
     </tbody>
 </table></div>
 
-<div class="tbl-scroll"><table class="numt s7">
+<div class="numt-all"><button class="nt-btn" onclick="numAll(this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button><button class="nt-btn" onclick="numAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button></div>
+        <div class="tbl-scroll"><table class="numt s7">
     <thead><tr><th style="width:38%">시간 · 날짜</th><th>읽기<span class="gloss" lang="en" translate="yes">Reading</span></th></tr></thead>
     <tbody>
-        <tr><td class="dig">12:30</td><td class="rd">열두 시 삼십 분</td></tr>
-        <tr><td class="dig"><span lang="en" translate="yes">10:25 AM</span></td><td class="rd">오전 열 시 이십오 분</td></tr>
-        <tr><td class="dig"><span lang="en" translate="yes">3:00 PM</span></td><td class="rd">오후 세 시</td></tr>
-        <tr><td class="dig"><span lang="en" translate="yes">Sunday, April 5, 2026</span><br><span lang="en" translate="yes">11:35 AM</span></td><td class="rd">이천이십육년 사월 오일 일요일<br>오전 열한 시 삼십오 분</td></tr>
+        <tr><td class="dig">12:30</td><td class="rd" data-say="열두 시 삼십 분">열두 시 삼십 분</td></tr>
+        <tr><td class="dig"><span lang="en" translate="yes">10:25 AM</span></td><td class="rd" data-say="오전 열 시 이십오 분">오전 열 시 이십오 분</td></tr>
+        <tr><td class="dig"><span lang="en" translate="yes">3:00 PM</span></td><td class="rd" data-say="오후 세 시">오후 세 시</td></tr>
+        <tr><td class="dig"><span lang="en" translate="yes">Sunday, April 5, 2026</span><br><span lang="en" translate="yes">11:35 AM</span></td><td class="rd" data-say="이천이십육년 사월 오일 일요일 오전 열한 시 삼십오 분">이천이십육년 사월 오일 일요일<br>오전 열한 시 삼십오 분</td></tr>
     </tbody>
 </table></div><blockquote style="margin-top:10px;">
     <strong>시 앞에서는 형태가 바뀝니다:</strong> 하나→<strong>한</strong>, 둘→<strong>두</strong>, 셋→<strong>세</strong>, 넷→<strong>네</strong>, 열둘→<strong>열두</strong>.<br><small class="en-line" lang="en" translate="yes"><em>Before <span lang="ko" translate="no">시</span> (hour), the native numbers change shape: <span lang="ko" translate="no">하나</span>→<span lang="ko" translate="no">한</span>, <span lang="ko" translate="no">둘</span>→<span lang="ko" translate="no">두</span>, <span lang="ko" translate="no">셋</span>→<span lang="ko" translate="no">세</span>, <span lang="ko" translate="no">넷</span>→<span lang="ko" translate="no">네</span>, <span lang="ko" translate="no">열둘</span>→<span lang="ko" translate="no">열두</span>.</em></small><br>그래서 <strong>열두 시</strong>, <strong>세 시</strong>로 읽습니다.<br><small class="en-line" lang="en" translate="yes"><em>Hence <span lang="ko" translate="no">열두 시</span> and <span lang="ko" translate="no">세 시</span>.</em></small>
@@ -724,15 +732,16 @@ numfcRender('numfcN','N',NUMFC);
   .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 }
 </style>
-<div class="tbl-scroll"><table class="cntr">
+<div class="numt-all"><button class="nt-btn" onclick="numAll(this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button><button class="nt-btn" onclick="numAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button></div>
+        <div class="tbl-scroll"><table class="cntr">
 <thead><tr><th class="numcol">수<br><small class="en-line" lang="en" translate="yes">Number</small></th><th>시<br><small class="en-line" lang="en" translate="yes">o'clock</small></th><th>개<br><small class="en-line" lang="en" translate="yes">things</small></th><th>잔<br><small class="en-line" lang="en" translate="yes">cups</small></th><th>명<br><small class="en-line" lang="en" translate="yes">people</small></th></tr></thead>
 <tbody>
-<tr class="chg"><td class="numcol">1<br><small>하나→<b>한</b></small></td><td><b>한</b> 시</td><td><b>한</b> 개</td><td><b>한</b> 잔</td><td><b>한</b> 명</td></tr>
-<tr class="chg"><td class="numcol">2<br><small>둘→<b>두</b></small></td><td><b>두</b> 시</td><td><b>두</b> 개</td><td><b>두</b> 잔</td><td><b>두</b> 명</td></tr>
-<tr class="chg"><td class="numcol">3<br><small>셋→<b>세</b></small></td><td><b>세</b> 시</td><td><b>세</b> 개</td><td><b>세</b> 잔</td><td><b>세</b> 명</td></tr>
-<tr class="chg"><td class="numcol">4<br><small>넷→<b>네</b></small></td><td><b>네</b> 시</td><td><b>네</b> 개</td><td><b>네</b> 잔</td><td><b>네</b> 명</td></tr>
-<tr class="same"><td class="numcol">5<br><small>다섯</small></td><td><b>다섯</b> 시</td><td><b>다섯</b> 개</td><td><b>다섯</b> 잔</td><td><b>다섯</b> 명</td></tr>
-<tr class="same"><td class="numcol">6<br><small>여섯</small></td><td><b>여섯</b> 시</td><td><b>여섯</b> 개</td><td><b>여섯</b> 잔</td><td><b>여섯</b> 명</td></tr>
+<tr class="chg"><td class="numcol">1<br><small>하나→<b>한</b></small></td><td data-say="한 시"><b>한</b> 시</td><td data-say="한 개"><b>한</b> 개</td><td data-say="한 잔"><b>한</b> 잔</td><td data-say="한 명"><b>한</b> 명</td></tr>
+<tr class="chg"><td class="numcol">2<br><small>둘→<b>두</b></small></td><td data-say="두 시"><b>두</b> 시</td><td data-say="두 개"><b>두</b> 개</td><td data-say="두 잔"><b>두</b> 잔</td><td data-say="두 명"><b>두</b> 명</td></tr>
+<tr class="chg"><td class="numcol">3<br><small>셋→<b>세</b></small></td><td data-say="세 시"><b>세</b> 시</td><td data-say="세 개"><b>세</b> 개</td><td data-say="세 잔"><b>세</b> 잔</td><td data-say="세 명"><b>세</b> 명</td></tr>
+<tr class="chg"><td class="numcol">4<br><small>넷→<b>네</b></small></td><td data-say="네 시"><b>네</b> 시</td><td data-say="네 개"><b>네</b> 개</td><td data-say="네 잔"><b>네</b> 잔</td><td data-say="네 명"><b>네</b> 명</td></tr>
+<tr class="same"><td class="numcol">5<br><small>다섯</small></td><td data-say="다섯 시"><b>다섯</b> 시</td><td data-say="다섯 개"><b>다섯</b> 개</td><td data-say="다섯 잔"><b>다섯</b> 잔</td><td data-say="다섯 명"><b>다섯</b> 명</td></tr>
+<tr class="same"><td class="numcol">6<br><small>여섯</small></td><td data-say="여섯 시"><b>여섯</b> 시</td><td data-say="여섯 개"><b>여섯</b> 개</td><td data-say="여섯 잔"><b>여섯</b> 잔</td><td data-say="여섯 명"><b>여섯</b> 명</td></tr>
 </tbody>
 </table></div>
 <p style="font-size:0.82rem; color:#59687c; margin:4px 0 12px;">★ <strong>20</strong>도 바뀝니다: 스물 → <strong>스무</strong> (스무 개, 스무 살). <small lang="en" translate="yes"><em>20 also changes: <span lang="ko" translate="no">스물</span> → <span lang="ko" translate="no">스무</span>.</em></small></p>
@@ -766,7 +775,7 @@ numfcRender('numfcN','N',NUMFC);
 /* ak-audio v1 */
 /* 미리 구운 MP3 를 먼저 쓴다. 없거나 못 읽으면 브라우저 음성으로 넘어간다.
    f = SunHi(여성) · m = Hyunsu(남성) — 둘 다 신경망 음성이다. */
-var AK_SND = {"일": "0392", "하나": "0562", "이": "0367", "둘": "0214", "삼": "0259", "셋": "0263", "사": "0248", "넷": "0162", "오": "0340", "다섯": "0172", "육": "0364", "여섯": "0331", "칠": "0552", "일곱": "0393", "팔": "0559", "여덟": "0330", "구": "0018", "아홉": "0303", "십": "0287", "열": "0333", "십일": "1355", "열하나": "1464", "십이": "1354", "열둘": "1461", "십삼": "1352", "열셋": "1462", "십오": "1353", "열다섯": "1460", "이십": "1536", "스물": "1314", "이십삼": "1537", "스물셋": "1315", "삼십": "1273", "서른": "1280", "삼십육": "1274", "서른여섯": "1281", "사십": "1266", "마흔": "0983", "사십이": "1267", "마흔둘": "0984", "오십": "1487", "오십칠": "1488", "쉰일곱": "1307", "육십": "1528", "예순": "1481", "육십팔": "1529", "예순여덟": "1482", "칠십": "1773", "일흔": "1567", "칠십오": "1774", "일흔다섯": "1568", "팔십": "1807", "여든": "1438", "팔십팔": "1808", "여든여덟": "1439", "구십": "0746", "아흔": "1383", "구십일": "0748", "아흔하나": "1385", "구십구": "0747", "아흔아홉": "1384", "한자어": "1863", "고유어": "0720", "백오십육": "1188", "만 이천삼백사십오": "0985", "일억": "1557", "사분의 삼": "1265", "오후 세 시": "1489", "영점 일이삼": "1467", "십구": "2165", "구십팔": "2166", "백": "2167", "열아홉": "2168", "쉰": "2169", "아흔여덟": "2170"};
+var AK_SND = {"일": "0392", "하나": "0562", "이": "0367", "둘": "0214", "삼": "0259", "셋": "0263", "사": "0248", "넷": "0162", "오": "0340", "다섯": "0172", "육": "0364", "여섯": "0331", "칠": "0552", "일곱": "0393", "팔": "0559", "여덟": "0330", "구": "0018", "아홉": "0303", "십": "0287", "열": "0333", "십일": "1355", "열하나": "1464", "십이": "1354", "열둘": "1461", "십삼": "1352", "열셋": "1462", "십오": "1353", "열다섯": "1460", "이십": "1536", "스물": "1314", "이십삼": "1537", "스물셋": "1315", "삼십": "1273", "서른": "1280", "삼십육": "1274", "서른여섯": "1281", "사십": "1266", "마흔": "0983", "사십이": "1267", "마흔둘": "0984", "오십": "1487", "오십칠": "1488", "쉰일곱": "1307", "육십": "1528", "예순": "1481", "육십팔": "1529", "예순여덟": "1482", "칠십": "1773", "일흔": "1567", "칠십오": "1774", "일흔다섯": "1568", "팔십": "1807", "여든": "1438", "팔십팔": "1808", "여든여덟": "1439", "구십": "0746", "아흔": "1383", "구십일": "0748", "아흔하나": "1385", "구십구": "0747", "아흔아홉": "1384", "한자어": "1863", "고유어": "0720", "백오십육": "1188", "만 이천삼백사십오": "0985", "일억": "1557", "사분의 삼": "1265", "오후 세 시": "1489", "영점 일이삼": "1467", "십구": "2165", "구십팔": "2166", "백": "2167", "열아홉": "2168", "쉰": "2169", "아흔여덟": "2170", "백일": "2171", "백이십": "2172", "이백일": "2173", "이백삼십사": "2174", "이백팔십구": "2175", "삼백사십오": "2176", "오백육십칠": "2177", "구백칠십삼": "2178", "천": "2179", "천십": "2180", "천이백삼십사": "2181", "구천팔백칠십육": "2182", "만": "2183", "구만 오천칠백이십육": "2184", "십만": "2185", "십만 천십": "2186", "이십만 육백칠십오": "2187", "칠십팔만 삼천구백팔": "2188", "백만": "2189", "천만": "2190", "십억": "2191", "백억": "2192", "천억": "2193", "일조": "2194", "십이만 삼천사백오십육": "2195", "구백팔십칠만 육천오백사십삼": "2196", "천이백삼십사만 오천육백칠십팔": "2197", "사십삼억 팔천육백팔십이만 사천십칠": "2198", "일억 사천삼백칠십팔만 육천십이": "2199", "구십일조 이천삼백사십오억 육천칠백팔십구만 백이십삼": "2200", "삼천육백오십구억 백팔십칠만 이천칠백팔십육": "2201", "팔백육십삼억 구천육십이만 천육십칠": "2202", "천이백삼만 사천구백삼": "2203", "이천삼백사십오억 육천칠백팔십구만 천십이": "2204", "일 더하기 이": "2205", "육 빼기 사": "2206", "육 곱하기 칠": "2207", "십이 나누기 사": "2208", "일 더하기 이는 삼": "2209", "백 퍼센트": "2210", "영상 십도 / 영하 십오도": "2211", "육 빼기 사는 이": "2212", "육 곱하기 칠은 사십이": "2213", "십이 나누기 사는 삼": "2214", "영상 십도": "2215", "영하 십오도": "2216", "십만 이백십 제곱킬로미터": "2217", "열두 시 삼십 분": "2218", "오전 열 시 이십오 분": "2219", "이천이십육년 사월 오일 일요일오전 열한 시 삼십오 분": "2220", "한 시": "1857", "한 개": "2221", "한 잔": "2222", "한 명": "2223", "두 시": "2224", "두 개": "2225", "두 잔": "2226", "두 명": "2227", "세 시": "1289", "세 개": "2228", "세 잔": "2229", "세 명": "2230", "네 시": "2231", "네 개": "2232", "네 잔": "2233", "네 명": "2234", "다섯 시": "2235", "다섯 개": "2236", "다섯 잔": "2237", "다섯 명": "2238", "여섯 시": "2239", "여섯 개": "2240", "여섯 잔": "2241", "여섯 명": "2242", "이천이십육년 사월 오일 일요일 오전 열한 시 삼십오 분": "2243"};
 var AK_AU = null;
 function akPlayFile(text, sex){
   var n = AK_SND[text];
@@ -1117,7 +1126,8 @@ function numAll(btn, sex){
   if (was) return;                        /* 같은 단추를 다시 누르면 멈춘다 */
   var bar = btn.closest('.numt-all');
   var wrap = bar && bar.nextElementSibling;
-  var tbl = wrap && wrap.querySelector('table.numt');
+  var tbl = wrap && wrap.querySelector('table.numt, table.symt, table.cntr');
+  if (!tbl && wrap && /^TABLE$/.test(wrap.tagName)) tbl = wrap;
   if (!tbl) return;
   var cells = tbl.querySelectorAll('td[data-say]');
   if (!cells.length) return;
