@@ -384,6 +384,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
    빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
 p.ko{margin-bottom:2px;}
 p.en{margin-bottom:16px;}
+small.en-line{display:inline-block;margin-bottom:9px;}
+/* ★한국어와 그 영어는 붙이고, 짝과 짝 사이만 벌린다.
+   앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
+   것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
 </head>
 <body>
@@ -430,8 +434,8 @@ p.en{margin-bottom:16px;}
 <div class="tbl-scroll"><table class="cjt">
     <thead>
         <tr>
-            <th style="width:18%">의미<br><small lang="en" translate="yes">Meaning</small></th>
-            <th style="width:16%">힌트<br><small lang="en" translate="yes">Hint</small></th>
+            <th style="width:18%">의미<br><small class="en-line" lang="en" translate="yes">Meaning</small></th>
+            <th style="width:16%">힌트<br><small class="en-line" lang="en" translate="yes">Hint</small></th>
             <th>가다</th>
             <th>먹다</th>
             <th>하다</th>
@@ -517,8 +521,8 @@ p.en{margin-bottom:16px;}
     <div class="tbl-scroll"><table class="cjt neg-test">
         <thead>
             <tr>
-                <th style="width:18%">의미<br><small lang="en" translate="yes">Meaning</small></th>
-                <th style="width:16%">힌트<br><small lang="en" translate="yes">Hint</small></th>
+                <th style="width:18%">의미<br><small class="en-line" lang="en" translate="yes">Meaning</small></th>
+                <th style="width:16%">힌트<br><small class="en-line" lang="en" translate="yes">Hint</small></th>
                 <th>가다</th>
                 <th>먹다</th>
                 <th>하다</th>

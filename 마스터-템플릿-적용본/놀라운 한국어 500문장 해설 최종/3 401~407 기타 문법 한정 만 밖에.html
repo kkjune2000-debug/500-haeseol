@@ -385,6 +385,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
    빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
 p.ko{margin-bottom:2px;}
 p.en{margin-bottom:16px;}
+small.en-line{display:inline-block;margin-bottom:9px;}
+/* ★한국어와 그 영어는 붙이고, 짝과 짝 사이만 벌린다.
+   앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
+   것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
 </head>
 <body>
@@ -607,17 +611,17 @@ p.en{margin-bottom:16px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>There is nothing</strong></td><td class="exp-role">서술어<br><small><span lang="en" translate="yes">Predicate</span></small></td><td class="exp-form"><strong>없습니다</strong></td><td></td></tr>
         </tbody>
         </table></div>
-        <div class="explain-note" style="background:linear-gradient(135deg,#fef3c7 0%,#fffbeb 100%);border-left:4px solid #b45309;"><strong>⚠️ '~만' ↔ '~밖에': 의미와 어조의 차이</strong><br><small lang="en" translate="yes">'~<span lang="ko" translate="no">만</span>' vs '~<span lang="ko" translate="no">밖에</span>': meaning and tone</small><br><br>
+        <div class="explain-note" style="background:linear-gradient(135deg,#fef3c7 0%,#fffbeb 100%);border-left:4px solid #b45309;"><strong>⚠️ '~만' ↔ '~밖에': 의미와 어조의 차이</strong><br><small class="en-line" lang="en" translate="yes">'~<span lang="ko" translate="no">만</span>' vs '~<span lang="ko" translate="no">밖에</span>': meaning and tone</small><br><br>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px;">
             <div style="background:#fff;border:2px solid #fde68a;border-radius:10px;padding:12px;">
                 <div style="font-weight:900;color:#92400e;text-align:center;margin-bottom:6px;">~만 <small>(중립)</small></div>
-                <div style="text-align:center;font-weight:800;font-size:1.05rem;">우유<strong style="color:#c62020;">만</strong> <strong>있습니다</strong><br><small lang="en" translate="yes">There is <strong>only</strong> milk.</small></div>
-                <div style="font-size:0.85rem;color:#78350f;margin-top:6px;line-height:1.5;">사실 그대로의 한정.<br><small lang="en" translate="yes">A plain, factual limit.</small><br><strong>긍정</strong> 서술어와 결합 ✓<br><small lang="en" translate="yes">Combines with a <strong>positive</strong> predicate ✓</small></div>
+                <div style="text-align:center;font-weight:800;font-size:1.05rem;">우유<strong style="color:#c62020;">만</strong> <strong>있습니다</strong><br><small class="en-line" lang="en" translate="yes">There is <strong>only</strong> milk.</small></div>
+                <div style="font-size:0.85rem;color:#78350f;margin-top:6px;line-height:1.5;">사실 그대로의 한정.<br><small class="en-line" lang="en" translate="yes">A plain, factual limit.</small><br><strong>긍정</strong> 서술어와 결합 ✓<br><small class="en-line" lang="en" translate="yes">Combines with a <strong>positive</strong> predicate ✓</small></div>
             </div>
             <div style="background:#fff;border:2px solid #fde68a;border-radius:10px;padding:12px;">
                 <div style="font-weight:900;color:#92400e;text-align:center;margin-bottom:6px;">~밖에 <small>(강조)</small></div>
-                <div style="text-align:center;font-weight:800;font-size:1.05rem;">우유<strong style="color:#c62020;">밖에 없습니다</strong><br><small lang="en" translate="yes">There is <strong>nothing except</strong> milk.</small></div>
-                <div style="font-size:0.85rem;color:#78350f;margin-top:6px;line-height:1.5;">아쉬움·부족 함축.<br><small lang="en" translate="yes">Implies regret or shortage.</small><br><strong>부정</strong> 서술어(없다/안/못) 필수 ⚠️<br><small lang="en" translate="yes">A <strong>negative</strong> predicate (<span lang="ko" translate="no">없다/안/못</span>) is required ⚠️</small></div>
+                <div style="text-align:center;font-weight:800;font-size:1.05rem;">우유<strong style="color:#c62020;">밖에 없습니다</strong><br><small class="en-line" lang="en" translate="yes">There is <strong>nothing except</strong> milk.</small></div>
+                <div style="font-size:0.85rem;color:#78350f;margin-top:6px;line-height:1.5;">아쉬움·부족 함축.<br><small class="en-line" lang="en" translate="yes">Implies regret or shortage.</small><br><strong>부정</strong> 서술어(없다/안/못) 필수 ⚠️<br><small class="en-line" lang="en" translate="yes">A <strong>negative</strong> predicate (<span lang="ko" translate="no">없다/안/못</span>) is required ⚠️</small></div>
             </div>
         </div></div>
     </div>

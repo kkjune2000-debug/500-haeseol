@@ -381,6 +381,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
    빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
 p.ko{margin-bottom:2px;}
 p.en{margin-bottom:16px;}
+small.en-line{display:inline-block;margin-bottom:9px;}
+/* ★한국어와 그 영어는 붙이고, 짝과 짝 사이만 벌린다.
+   앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
+   것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
 </head>
 <body>
@@ -408,8 +412,8 @@ p.en{margin-bottom:16px;}
         <div class="gstep-pattern">동사 + <span class="accent">자마자</span> + [주절]<small><span lang="en" translate="yes">Verb +</span> <span class="accent">자마자</span> <span lang="en" translate="yes">+ [Main clause]</span></small></div>
         <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-top:12px; font-size:0.92rem; line-height:1.8;">
             한 동작이 끝나자마자 <strong>곧바로</strong> 다음 동작이 일어납니다 (영어 <strong><span lang="en" translate="yes">as soon as</span></strong>).<br>
-            <small lang="en" translate="yes"><em>Use <strong>~<span lang="ko" translate="no">자마자</span></strong> when one action happens <strong>immediately</strong> after another — <strong>as soon as</strong>.</em></small><br><br>
-            <strong>~자마자 앞에는 반드시 동사 현재형(어간)이 옵니다.</strong><br><small lang="en" translate="yes"><em>The verb before <strong>~<span lang="ko" translate="no">자마자</span></strong> must always be in <strong>present-tense (stem) form</strong>.</em></small><br>시제는 마지막 절에만 표시합니다.<br><small lang="en" translate="yes"><em>Tense is marked only on the final clause.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Use <strong>~<span lang="ko" translate="no">자마자</span></strong> when one action happens <strong>immediately</strong> after another — <strong>as soon as</strong>.</em></small><br><br>
+            <strong>~자마자 앞에는 반드시 동사 현재형(어간)이 옵니다.</strong><br><small class="en-line" lang="en" translate="yes"><em>The verb before <strong>~<span lang="ko" translate="no">자마자</span></strong> must always be in <strong>present-tense (stem) form</strong>.</em></small><br>시제는 마지막 절에만 표시합니다.<br><small class="en-line" lang="en" translate="yes"><em>Tense is marked only on the final clause.</em></small>
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:6px; overflow:hidden; font-size:0.9rem;">
                 <thead>
                     <tr style="background:#fecaca; color:#991b1b;">
@@ -418,7 +422,7 @@ p.en{margin-bottom:16px;}
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:8px 10px; text-align:center;"><strong>일어나자마자</strong> 물을 마셨습니다.<br><small lang="en" translate="yes"><em>I drank water as soon as I woke up.</em></small></td><td style="padding:8px 10px; text-align:center; color:#c62020;"><strong>일어났자마자</strong> 물을 마셨습니다.</td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center;"><strong>일어나자마자</strong> 물을 마셨습니다.<br><small class="en-line" lang="en" translate="yes"><em>I drank water as soon as I woke up.</em></small></td><td style="padding:8px 10px; text-align:center; color:#c62020;"><strong>일어났자마자</strong> 물을 마셨습니다.</td></tr>
                 </tbody>
             </table></div>
         </div>
@@ -432,22 +436,22 @@ p.en{margin-bottom:16px;}
         <div class="explain-note">
             <strong>어간 + 자마자</strong><br>
             받침 유무와 상관없이 어간에 <strong>자마자</strong>를 그대로 붙입니다.<br>
-            <small lang="en" translate="yes"><em>Attach <strong><span lang="ko" translate="no">자마자</span></strong> directly to the Verb — no <span lang="ko" translate="no">받침</span> conditional change.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Attach <strong><span lang="ko" translate="no">자마자</span></strong> directly to the Verb — no <span lang="ko" translate="no">받침</span> conditional change.</em></small>
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:linear-gradient(135deg,#047857,#10b981); color:#fff;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">동사<br><small lang="en" translate="yes">Verb</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">어간 + 자마자<br><small lang="en" translate="yes">Stem + <span lang="ko" translate="no">자마자</span></small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">결과<br><small lang="en" translate="yes">Full form</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">동사<br><small class="en-line" lang="en" translate="yes">Verb</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">어간 + 자마자<br><small class="en-line" lang="en" translate="yes">Stem + <span lang="ko" translate="no">자마자</span></small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">결과<br><small class="en-line" lang="en" translate="yes">Full form</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>일어나다</strong><br><small lang="en" translate="yes">wake up</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">일어나 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>일어나자마자</strong></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>켜다</strong><br><small lang="en" translate="yes">turn on</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">켜 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>켜자마자</strong></td></tr>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>도착하다</strong><br><small lang="en" translate="yes">arrive</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">도착하 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>도착하자마자</strong></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>만나다</strong><br><small lang="en" translate="yes">meet</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">만나 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>만나자마자</strong></td></tr>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>먹다</strong><br><small lang="en" translate="yes">eat</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">먹 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>먹자마자</strong></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center;"><strong>듣다</strong><br><small lang="en" translate="yes">listen</small></td><td style="padding:8px 10px; text-align:center;">듣 + 자마자</td><td style="padding:8px 10px; text-align:center; color:#047152;"><strong>듣자마자</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>일어나다</strong><br><small class="en-line" lang="en" translate="yes">wake up</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">일어나 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>일어나자마자</strong></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>켜다</strong><br><small class="en-line" lang="en" translate="yes">turn on</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">켜 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>켜자마자</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>도착하다</strong><br><small class="en-line" lang="en" translate="yes">arrive</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">도착하 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>도착하자마자</strong></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>만나다</strong><br><small class="en-line" lang="en" translate="yes">meet</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">만나 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>만나자마자</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>먹다</strong><br><small class="en-line" lang="en" translate="yes">eat</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">먹 + 자마자</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>먹자마자</strong></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center;"><strong>듣다</strong><br><small class="en-line" lang="en" translate="yes">listen</small></td><td style="padding:8px 10px; text-align:center;">듣 + 자마자</td><td style="padding:8px 10px; text-align:center; color:#047152;"><strong>듣자마자</strong></td></tr>
                 </tbody>
             </table></div>
         </div>
@@ -458,24 +462,24 @@ p.en{margin-bottom:16px;}
     <div class="gstep-num">3</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">어순<br><small style="font-weight:600;"><span lang="en" translate="yes">Word Order</span></small></h3>
-        <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;"><strong>부사어 / 부사절</strong>은 보통 <strong>주어 다음</strong>에 옵니다.<br><small lang="en" translate="yes"><em>An <strong>adverbial / adverbial clause</strong> usually comes <strong>after the subject</strong>.</em></small><br>하지만 <strong>주어 앞</strong>에 올 수도 있습니다.<br><small lang="en" translate="yes"><em>But it can also come <strong>before the subject</strong>.</em></small>
+        <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;"><strong>부사어 / 부사절</strong>은 보통 <strong>주어 다음</strong>에 옵니다.<br><small class="en-line" lang="en" translate="yes"><em>An <strong>adverbial / adverbial clause</strong> usually comes <strong>after the subject</strong>.</em></small><br>하지만 <strong>주어 앞</strong>에 올 수도 있습니다.<br><small class="en-line" lang="en" translate="yes"><em>But it can also come <strong>before the subject</strong>.</em></small>
         </div>
         <div class="explain-note">
             <strong>두 가지 어순 <span lang="en" translate="yes">(Two word-order patterns)</span></strong>
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:linear-gradient(135deg,#047857,#10b981); color:#fff;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857; width:14%;">유형<br><small lang="en" translate="yes">Pattern</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857; width:38%;">어순<br><small lang="en" translate="yes">Word order</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">예문<br><small lang="en" translate="yes">Example</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857; width:14%;">유형<br><small class="en-line" lang="en" translate="yes">Pattern</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857; width:38%;">어순<br><small class="en-line" lang="en" translate="yes">Word order</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">예문<br><small class="en-line" lang="en" translate="yes">Example</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>1)</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;">주어 + <strong>부사어/부사절</strong> + (목적어) + 서술어<br><small lang="en" translate="yes"><em>Subject + Adverbial/Clause + (Object) + Predicate</em></small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;">그는 <strong>일어나자마자</strong> 물을 마셨습니다.<br><small lang="en" translate="yes"><em>He drank water as soon as he woke up.</em></small></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:10px; text-align:center; color:#047152;"><strong>2)</strong></td><td style="padding:10px; text-align:center;"><strong>부사어/부사절</strong> + 주어 + (목적어) + 서술어<br><small lang="en" translate="yes"><em>Adverbial/Clause + Subject + (Object) + Predicate</em></small></td><td style="padding:10px; text-align:center;"><strong>제가 컴퓨터를 켜자마자</strong> 전기가 나갔습니다.<br><small lang="en" translate="yes"><em>The power went out as soon as I turned on the computer.</em></small></td></tr>
+                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>1)</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;">주어 + <strong>부사어/부사절</strong> + (목적어) + 서술어<br><small class="en-line" lang="en" translate="yes"><em>Subject + Adverbial/Clause + (Object) + Predicate</em></small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;">그는 <strong>일어나자마자</strong> 물을 마셨습니다.<br><small class="en-line" lang="en" translate="yes"><em>He drank water as soon as he woke up.</em></small></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:10px; text-align:center; color:#047152;"><strong>2)</strong></td><td style="padding:10px; text-align:center;"><strong>부사어/부사절</strong> + 주어 + (목적어) + 서술어<br><small class="en-line" lang="en" translate="yes"><em>Adverbial/Clause + Subject + (Object) + Predicate</em></small></td><td style="padding:10px; text-align:center;"><strong>제가 컴퓨터를 켜자마자</strong> 전기가 나갔습니다.<br><small class="en-line" lang="en" translate="yes"><em>The power went out as soon as I turned on the computer.</em></small></td></tr>
                 </tbody>
             </table></div>
-            <div style="margin-top:10px; padding:10px 12px; background:#ecfdf5; border-left:3px solid #047857; border-radius:6px; font-size:0.9rem; line-height:1.7;"><strong>💡 핵심:</strong> 두 어순 모두 자연스럽고 옳습니다.<br><small lang="en" translate="yes"><em><strong>Key:</strong> Both orders are natural and correct.</em></small><br><strong>강조하고 싶은 정보</strong>에 따라 위치가 달라집니다.<br><small lang="en" translate="yes"><em>The position depends on <strong>what you want to emphasize</strong>.</em></small><br>부사절을 문장 맨 앞에 두면 그 부분이 더 강조됩니다.<br><small lang="en" translate="yes"><em>Putting the adverbial clause at the very front emphasizes it more.</em></small>
+            <div style="margin-top:10px; padding:10px 12px; background:#ecfdf5; border-left:3px solid #047857; border-radius:6px; font-size:0.9rem; line-height:1.7;"><strong>💡 핵심:</strong> 두 어순 모두 자연스럽고 옳습니다.<br><small class="en-line" lang="en" translate="yes"><em><strong>Key:</strong> Both orders are natural and correct.</em></small><br><strong>강조하고 싶은 정보</strong>에 따라 위치가 달라집니다.<br><small class="en-line" lang="en" translate="yes"><em>The position depends on <strong>what you want to emphasize</strong>.</em></small><br>부사절을 문장 맨 앞에 두면 그 부분이 더 강조됩니다.<br><small class="en-line" lang="en" translate="yes"><em>Putting the adverbial clause at the very front emphasizes it more.</em></small>
             </div>
         </div>
     </div>
@@ -574,7 +578,7 @@ p.en{margin-bottom:16px;}
         <div style="margin-top:14px;background:linear-gradient(135deg,#eef2ff 0%,#e0e7ff 100%);border:1px solid #c7d2fe;border-left:4px solid #4f46e5;border-radius:10px;padding:14px 18px;box-shadow:0 1px 3px rgba(79,70,229,0.05);">
             <div style="font-weight:800;color:#3730a3;margin-bottom:10px;font-size:0.95rem;">📖 절 안의 주어 마커<span class="gloss" lang="en" translate="yes">Subject markers in subordinate clauses</span></div>
             <div style="font-size:0.92rem;color:#1e293b;line-height:1.7;">
-                <div style="margin-bottom:10px;"><strong style="color:#4338ca;">규칙 <span lang="en" translate="yes">· Rule:</span></strong> 한 문장 안에 <strong>부사절</strong>·<strong>서술절</strong>·<strong>관형절</strong>이 있을 때, 그 절 안의 <strong>주어는 반드시 <span style="color:#c62020;">이/가</span></strong>를 사용한다.<br><small lang="en" translate="yes"><em>When a sentence contains an adverbial / predicate / modifier clause, the subject INSIDE that clause must use <strong><span lang="ko" translate="no">이/가</span></strong>.</em></small><br>절 안의 주어는 절대 <strong style="color:#c62020;">은/는</strong>을 쓰지 않는다.<br><small lang="en" translate="yes"><em>Never use <strong><span lang="ko" translate="no">은/는</span></strong> for a clause-internal subject.</em></small></div>
+                <div style="margin-bottom:10px;"><strong style="color:#4338ca;">규칙 <span lang="en" translate="yes">· Rule:</span></strong> 한 문장 안에 <strong>부사절</strong>·<strong>서술절</strong>·<strong>관형절</strong>이 있을 때, 그 절 안의 <strong>주어는 반드시 <span style="color:#c62020;">이/가</span></strong>를 사용한다.<br><small class="en-line" lang="en" translate="yes"><em>When a sentence contains an adverbial / predicate / modifier clause, the subject INSIDE that clause must use <strong><span lang="ko" translate="no">이/가</span></strong>.</em></small><br>절 안의 주어는 절대 <strong style="color:#c62020;">은/는</strong>을 쓰지 않는다.<br><small class="en-line" lang="en" translate="yes"><em>Never use <strong><span lang="ko" translate="no">은/는</span></strong> for a clause-internal subject.</em></small></div>
                 <div style="margin:12px 0 6px 0;font-weight:700;color:#4338ca;">① 절<span lang="en" translate="yes">(clause)</span>의 종류</div>
                 <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px 12px;margin-bottom:10px;">
                     <div style="padding:8px 12px;background:#fff;border:1px solid #c7d2fe;border-radius:8px;"><strong style="color:#3730a3;">부사절</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— Adverbial clause:</span> 부사어 안에 주어+서술어</span></div>
@@ -586,16 +590,16 @@ p.en{margin-bottom:16px;}
                 <div style="padding:10px 14px;background:#fff;border:1px solid #c7d2fe;border-radius:8px;margin-bottom:8px;">
                     <strong style="color:#3730a3;">제가</strong> 컴퓨터를 켜자마자 <strong style="color:#3730a3;">전기가</strong> 나갔습니다.<br>
                     <span style="color:#636976;font-size:0.88rem;">└ <strong>부사절</strong> 주어: <strong style="color:#107435;">제가</strong> (이/가 ✓)</span><br>
-                    <small lang="en" translate="yes"><em>Subject of the adverbial clause: <strong><span lang="ko" translate="no">제가</span></strong> (uses <span lang="ko" translate="no">이/가</span> ✓)</em></small>
+                    <small class="en-line" lang="en" translate="yes"><em>Subject of the adverbial clause: <strong><span lang="ko" translate="no">제가</span></strong> (uses <span lang="ko" translate="no">이/가</span> ✓)</em></small>
                 </div>
                 <div style="margin:12px 0 6px 0;font-weight:700;color:#4338ca;">③ 잘못된 예 ↔ 올바른 예</div>
                 <div style="padding:8px 12px;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;margin-bottom:6px;">
                     <span style="color:#c62020;font-weight:700;">✗ 잘못</span>: <strong>저는</strong> 컴퓨터를 켜자마자 전기가 나갔습니다. <span style="color:#636976;font-size:0.85rem;">— 부사절 안 주어에 "는" 사용 (X)</span><br>
-                    <small lang="en" translate="yes"><em>✗ Wrong: used <strong><span lang="ko" translate="no">는</span></strong> for the adverbial-clause subject.</em></small>
+                    <small class="en-line" lang="en" translate="yes"><em>✗ Wrong: used <strong><span lang="ko" translate="no">는</span></strong> for the adverbial-clause subject.</em></small>
                 </div>
                 <div style="padding:8px 12px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;">
                     <span style="color:#107435;font-weight:700;">✓ 올바름</span>: <strong>제가</strong> 컴퓨터를 켜자마자 전기가 나갔습니다. <span style="color:#636976;font-size:0.85rem;">— 부사절 안 주어에 "가" 사용 (O)</span><br>
-                    <small lang="en" translate="yes"><em>✓ Correct: used <strong><span lang="ko" translate="no">가</span></strong> for the adverbial-clause subject.</em></small>
+                    <small class="en-line" lang="en" translate="yes"><em>✓ Correct: used <strong><span lang="ko" translate="no">가</span></strong> for the adverbial-clause subject.</em></small>
                 </div>
                 <div style="margin-top:10px;font-size:0.88rem;color:#636976;line-height:1.6;">💡 <strong>은/는</strong>은 종속절 안에서는 사용 불가. 종속절 안의 주어는 <strong>이/가</strong>를 사용.<br><em lang="en" translate="yes">Tip: <strong><span lang="ko" translate="no">은/는</span></strong> cannot appear inside a subordinate clause — clause-internal subjects always take <strong><span lang="ko" translate="no">이/가</span></strong>.</em></div>
             </div>

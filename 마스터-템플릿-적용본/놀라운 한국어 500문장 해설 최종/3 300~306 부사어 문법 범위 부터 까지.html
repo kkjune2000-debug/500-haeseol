@@ -393,6 +393,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
    빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
 p.ko{margin-bottom:2px;}
 p.en{margin-bottom:16px;}
+small.en-line{display:inline-block;margin-bottom:9px;}
+/* ★한국어와 그 영어는 붙이고, 짝과 짝 사이만 벌린다.
+   앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
+   것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
 </head>
 <body>
@@ -421,7 +425,7 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">~부터 ~까지: 두 가지 방법<br><small style="font-weight: 600;"><span lang="en" translate="yes"><span lang="ko" translate="no">~부터 ~까지</span>: two ways to mark "from … to …"</span></small></h3>
         <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             한국어에서 <strong>~부터 ~까지</strong>는 두 가지 방법으로 사용됩니다 — <strong>시간</strong>(부터/까지), <strong>장소</strong>(에서/까지).<br>
-            <small lang="en" translate="yes"><em>Korean has two ways to mark <strong>from … to …</strong> — one for time, one for place.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Korean has two ways to mark <strong>from … to …</strong> — one for time, one for place.</em></small>
         </div>
         <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:24%"><span lang="en" translate="yes">Domain</span></th><th><span lang="en" translate="yes">Pattern</span></th><th><span lang="en" translate="yes">Meaning</span></th></tr></thead>
@@ -431,7 +435,7 @@ p.en{margin-bottom:16px;}
             </tbody>
         </table></div>
         <blockquote>
-            9<strong>시</strong><strong>부터</strong> 1<strong>시</strong><strong>까지</strong> <span lang="en" translate="yes">(from 9 to 1) &nbsp;|&nbsp;</span> <strong>서울</strong><strong>에서</strong> <strong>부산</strong><strong>까지</strong><br><small lang="en" translate="yes">(from Seoul to Busan)</small>
+            9<strong>시</strong><strong>부터</strong> 1<strong>시</strong><strong>까지</strong> <span lang="en" translate="yes">(from 9 to 1) &nbsp;|&nbsp;</span> <strong>서울</strong><strong>에서</strong> <strong>부산</strong><strong>까지</strong><br><small class="en-line" lang="en" translate="yes">(from Seoul to Busan)</small>
         </blockquote>
     </div>
 </div>
@@ -442,7 +446,7 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">부터 단독 사용<br><small style="font-weight:600;"><span lang="ko" translate="no">부터</span> <span lang="en" translate="yes">alone</span></small></h3>
         <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             <strong>~부터</strong> = <strong>~부터 시작해서</strong> (끝점 없이 출발만 명시).<br>
-            <small lang="en" translate="yes"><em><strong><span lang="ko" translate="no">부터</span> alone</strong> = <strong>starting from / since</strong> (no end point).</em></small>
+            <small class="en-line" lang="en" translate="yes"><em><strong><span lang="ko" translate="no">부터</span> alone</strong> = <strong>starting from / since</strong> (no end point).</em></small>
         </div>
         <div class="gstep-pattern"><strong><span lang="ko" translate="no">오늘</span></strong><strong><span lang="ko" translate="no">부터</span></strong> <strong><span lang="ko" translate="no">여름방학입니다</span></strong>.<br><em lang="en" translate="yes">Summer vacation starts today.</em><small><span lang="en" translate="yes">[time noun] +</span> <span class="accent">부터</span><span lang="en" translate="yes">: starting from</span></small></div>
         <blockquote>
@@ -457,7 +461,7 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">까지 단독 사용<br><small style="font-weight:600;"><span lang="ko" translate="no">까지</span> <span lang="en" translate="yes">alone</span></small></h3>
         <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             <strong>~까지</strong> = <strong><span lang="en" translate="yes">until / up to</span></strong> (끝점만 명시).<br>
-            <small lang="en" translate="yes"><em><strong><span lang="ko" translate="no">까지</span> alone</strong> = <strong>until / up to</strong> — only the end point.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em><strong><span lang="ko" translate="no">까지</span> alone</strong> = <strong>until / up to</strong> — only the end point.</em></small>
         </div>
         <blockquote>
             <strong>금요일</strong><strong>까지</strong> <strong>끝내야 합니다</strong><span lang="en" translate="yes">. (must finish</span> <strong><span lang="en" translate="yes">by</span></strong> <span lang="en" translate="yes">Friday)</span><br>

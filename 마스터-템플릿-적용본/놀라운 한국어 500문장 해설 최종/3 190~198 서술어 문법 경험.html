@@ -400,6 +400,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
    빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
 p.ko{margin-bottom:2px;}
 p.en{margin-bottom:16px;}
+small.en-line{display:inline-block;margin-bottom:9px;}
+/* ★한국어와 그 영어는 붙이고, 짝과 짝 사이만 벌린다.
+   앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
+   것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
 </head>
 <body>
@@ -428,8 +432,8 @@ p.en{margin-bottom:16px;}
         <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:30%"><span lang="en" translate="yes">Pattern</span></th><th><span lang="en" translate="yes">Meaning</span></th><th><span lang="en" translate="yes">Example</span></th></tr></thead>
             <tbody>
-                <tr><td><strong>~ㄴ/은 적이 있다/없다</strong></td><td><span lang="en" translate="yes">have / have never done (experience exists)</span></td><td><strong>간 적이 있습니다</strong><br><small lang="en" translate="yes">(I have been there)</small></td></tr>
-                <tr><td><strong>~아/어 보다</strong></td><td><span lang="en" translate="yes">try doing / have tried</span></td><td><strong>가 보았습니다</strong><br><small lang="en" translate="yes">(I have tried going)</small></td></tr>
+                <tr><td><strong>~ㄴ/은 적이 있다/없다</strong></td><td><span lang="en" translate="yes">have / have never done (experience exists)</span></td><td><strong>간 적이 있습니다</strong><br><small class="en-line" lang="en" translate="yes">(I have been there)</small></td></tr>
+                <tr><td><strong>~아/어 보다</strong></td><td><span lang="en" translate="yes">try doing / have tried</span></td><td><strong>가 보았습니다</strong><br><small class="en-line" lang="en" translate="yes">(I have tried going)</small></td></tr>
             </tbody>
         </table></div>
     </div>
@@ -478,7 +482,7 @@ p.en{margin-bottom:16px;}
             </tbody>
         </table></div>
         </div>
-        <p style="font-size:0.88rem;color:#636976;margin:0;padding:0 4px;">💡 부정형은 <strong>있습니다</strong> 대신 <strong>없습니다</strong>를 씁니다.<br><small lang="en" translate="yes"><em>For the negative, replace <strong><span lang="ko" translate="no">있습니다</span></strong> with <strong><span lang="ko" translate="no">없습니다</span></strong> — <span lang="ko" translate="no">간 적이 없습니다</span> (have never been).</em></small></p>
+        <p style="font-size:0.88rem;color:#636976;margin:0;padding:0 4px;">💡 부정형은 <strong>있습니다</strong> 대신 <strong>없습니다</strong>를 씁니다.<br><small class="en-line" lang="en" translate="yes"><em>For the negative, replace <strong><span lang="ko" translate="no">있습니다</span></strong> with <strong><span lang="ko" translate="no">없습니다</span></strong> — <span lang="ko" translate="no">간 적이 없습니다</span> (have never been).</em></small></p>
     </div>
 </div>
 
@@ -486,7 +490,7 @@ p.en{margin-bottom:16px;}
     <div class="gstep-num">3</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">~아/어 보다 만드는 법<br><small style="font-weight:600;"><span lang="en" translate="yes">Formation</span></small></h3>
-        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">동사의 마지막 모음에 따라 아/어가 결정됩니다.<br><small lang="en" translate="yes"><em>Vowel rule (verb's last vowel decides <span lang="ko" translate="no">아/어</span>).</em></small><br>보조동사 보다 = <strong>시도하다</strong>.<br><small lang="en" translate="yes"><em>The auxiliary verb <span lang="ko" translate="no">보다</span> (lit. <strong>see</strong>) = <strong>try</strong>.</em></small>
+        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">동사의 마지막 모음에 따라 아/어가 결정됩니다.<br><small class="en-line" lang="en" translate="yes"><em>Vowel rule (verb's last vowel decides <span lang="ko" translate="no">아/어</span>).</em></small><br>보조동사 보다 = <strong>시도하다</strong>.<br><small class="en-line" lang="en" translate="yes"><em>The auxiliary verb <span lang="ko" translate="no">보다</span> (lit. <strong>see</strong>) = <strong>try</strong>.</em></small>
         </div>
         <div class="gstep-pattern"><strong style="color:#7d4403;"><span lang="ko" translate="no">ㅏ·ㅗ</span></strong> → <strong><span lang="ko" translate="no">아 보다</span></strong> &nbsp;|&nbsp; <strong style="color:#1557e6;"><span lang="ko" translate="no">그 외 모음</span></strong> → <strong><span lang="ko" translate="no">어 보다</span></strong><br><em lang="en" translate="yes" style="color:#606876;font-weight:600;">Bright vowel (<span lang="ko" translate="no">ㅏ·ㅗ</span>) → <span lang="ko" translate="no">아 보다</span>  |  other vowels → <span lang="ko" translate="no">어 보다</span></em><small><strong><span lang="en" translate="yes">Verb</span></strong> + <span class="accent">아/어 보다</span></small></div>
         <div style="overflow:hidden;border-radius:14px;box-shadow:0 4px 16px rgba(76,29,149,0.14);border:1px solid #e9d5ff;margin-bottom:12px;">
@@ -527,7 +531,7 @@ p.en{margin-bottom:16px;}
             </tbody>
         </table></div>
         </div>
-        <p style="font-size:0.88rem;color:#636976;margin:0;padding:0 4px;">💡 보조동사 <strong>보다</strong>를 바꿔 다양하게 활용합니다: <strong>보았습니다</strong>(과거) · <strong>보세요</strong>(권유) · <strong>보지 못했습니다</strong>(부정).<br><small lang="en" translate="yes"><em>Change the auxiliary <strong><span lang="ko" translate="no">보다</span></strong>: <strong><span lang="ko" translate="no">보았습니다</span></strong> (past) · <strong><span lang="ko" translate="no">보세요</span></strong> (please try) · <strong><span lang="ko" translate="no">보지 못했습니다</span></strong> (haven't been able to try).</em></small></p>
+        <p style="font-size:0.88rem;color:#636976;margin:0;padding:0 4px;">💡 보조동사 <strong>보다</strong>를 바꿔 다양하게 활용합니다: <strong>보았습니다</strong>(과거) · <strong>보세요</strong>(권유) · <strong>보지 못했습니다</strong>(부정).<br><small class="en-line" lang="en" translate="yes"><em>Change the auxiliary <strong><span lang="ko" translate="no">보다</span></strong>: <strong><span lang="ko" translate="no">보았습니다</span></strong> (past) · <strong><span lang="ko" translate="no">보세요</span></strong> (please try) · <strong><span lang="ko" translate="no">보지 못했습니다</span></strong> (haven't been able to try).</em></small></p>
     </div>
 </div>
 
@@ -537,7 +541,7 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">두 패턴 비교<br><small style="font-weight:600;"><span lang="en" translate="yes">Compare the two patterns</span></small></h3>
         <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             둘 다 경험이지만 뉘앙스가 다릅니다.<br>
-            <small lang="en" translate="yes"><em>Both express experience, but the nuance differs.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Both express experience, but the nuance differs.</em></small>
         </div>
         <div style="margin-top:14px;background:linear-gradient(135deg,#eef2ff 0%,#e0e7ff 100%);border:1px solid #c7d2fe;border-left:4px solid #4f46e5;border-radius:10px;padding:14px 18px;box-shadow:0 1px 3px rgba(79,70,229,0.05);">
             <div style="font-weight:800;color:#3730a3;margin-bottom:10px;font-size:0.95rem;">📝 언제 사용하나<span class="gloss" lang="en" translate="yes">When to use each pattern</span></div>
@@ -558,7 +562,7 @@ p.en{margin-bottom:16px;}
         <div class="explain-note">
             <strong>⚠️ <strong>'~ㄴ/은 적이 있다'</strong>는 가까운 과거에 사용하지 않습니다</strong><br>
             <small><strong>'~ㄴ/은 적이 있다'</strong>는 가까운 과거(어제·지난 주 등)에는 사용하지 않습니다.<br><em lang="en" translate="yes">~<span lang="ko" translate="no">ㄴ/은 적이 있다</span> is not used for the recent past (yesterday, last week, and so on).</em></small><br>
-            <small lang="en" translate="yes"><em><strong>'~<span lang="ko" translate="no">ㄴ/은 적이 있다</span>'</strong>: not used for recent past (yesterday, last week, etc.).</em></small><br><br>
+            <small class="en-line" lang="en" translate="yes"><em><strong>'~<span lang="ko" translate="no">ㄴ/은 적이 있다</span>'</strong>: not used for recent past (yesterday, last week, etc.).</em></small><br><br>
             ❌ 지난 주에 <strong>간 적이 있습니다</strong><br>
             ✅ 지난 주에 <strong>가 보았습니다</strong><br>
             ✅ (예전에) <strong>한국에 간 적이 있습니다</strong>
@@ -818,23 +822,23 @@ p.en{margin-bottom:16px;}
         </table></div>
         <div class="explain-note" style="background:linear-gradient(135deg,#faf5ff 0%,#f5f3ff 100%);border-left:4px solid #7c3aed;color:#4c1d95;">
             <strong>'가다': 네 가지 경험 표현 정리</strong><br>
-            <small lang="en" translate="yes">Four ways to express experience with '<span lang="ko" translate="no">가다</span>'</small>
+            <small class="en-line" lang="en" translate="yes">Four ways to express experience with '<span lang="ko" translate="no">가다</span>'</small>
             <div class="tbl-scroll"><table style="width:100%;border-collapse:collapse;margin-top:10px;font-size:0.92rem;">
                 <thead>
                     <tr style="background:#ddd6fe;color:#4c1d95;">
-                        <th style="padding:9px;border:1px solid #c4b5fd;text-align:center;">패턴<br><small lang="en" translate="yes">Pattern</small></th>
-                        <th style="padding:9px;border:1px solid #c4b5fd;text-align:center;">긍정<br><small lang="en" translate="yes">Affirmative</small></th>
-                        <th style="padding:9px;border:1px solid #c4b5fd;text-align:center;">부정<br><small lang="en" translate="yes">Negative</small></th>
+                        <th style="padding:9px;border:1px solid #c4b5fd;text-align:center;">패턴<br><small class="en-line" lang="en" translate="yes">Pattern</small></th>
+                        <th style="padding:9px;border:1px solid #c4b5fd;text-align:center;">긍정<br><small class="en-line" lang="en" translate="yes">Affirmative</small></th>
+                        <th style="padding:9px;border:1px solid #c4b5fd;text-align:center;">부정<br><small class="en-line" lang="en" translate="yes">Negative</small></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr style="background:#fff;">
-                        <td style="padding:9px;border:1px solid #c4b5fd;text-align:center;"><strong>~ㄴ/은 적이 있다 / 없다</strong><br><small lang="en" translate="yes">(remote past experience)</small></td>
+                        <td style="padding:9px;border:1px solid #c4b5fd;text-align:center;"><strong>~ㄴ/은 적이 있다 / 없다</strong><br><small class="en-line" lang="en" translate="yes">(remote past experience)</small></td>
                         <td style="padding:9px;border:1px solid #c4b5fd;text-align:center;background:#f0fdf4;"><strong>간 적이 있습니다</strong></td>
                         <td style="padding:9px;border:1px solid #c4b5fd;text-align:center;background:#fef2f2;"><strong>간 적이 없습니다</strong></td>
                     </tr>
                     <tr style="background:#fff;">
-                        <td style="padding:9px;border:1px solid #c4b5fd;text-align:center;"><strong>~아/어 보다 / 보지 못하다</strong><br><small lang="en" translate="yes">(recent: try doing / haven't tried)</small></td>
+                        <td style="padding:9px;border:1px solid #c4b5fd;text-align:center;"><strong>~아/어 보다 / 보지 못하다</strong><br><small class="en-line" lang="en" translate="yes">(recent: try doing / haven't tried)</small></td>
                         <td style="padding:9px;border:1px solid #c4b5fd;text-align:center;background:#f0fdf4;"><strong>가 보았습니다</strong></td>
                         <td style="padding:9px;border:1px solid #c4b5fd;text-align:center;background:#fef2f2;"><strong>가 보지 못했습니다</strong></td>
                     </tr>

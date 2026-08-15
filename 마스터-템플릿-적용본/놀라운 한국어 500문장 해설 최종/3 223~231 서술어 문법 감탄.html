@@ -407,6 +407,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
    빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
 p.ko{margin-bottom:2px;}
 p.en{margin-bottom:16px;}
+small.en-line{display:inline-block;margin-bottom:9px;}
+/* ★한국어와 그 영어는 붙이고, 짝과 짝 사이만 벌린다.
+   앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
+   것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
 </head>
 <body>
@@ -433,16 +437,16 @@ p.en{margin-bottom:16px;}
     <div class="gstep-num">1</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">형성 표<br><small style="font-weight:600;"><span lang="en" translate="yes">Formation table</span></small></h3>
-        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">형용사·동사·과거형에 모두 동일하게 작동합니다.<br><small lang="en" translate="yes"><em>Works on adjectives, verbs, and past forms identically.</em></small><br>단, ㄹ 받침 동사·형용사는 '네요' 앞에서 ㄹ이 탈락합니다(살다 → 사네요, 만들다 → 만드네요).<br><small lang="en" translate="yes"><em>One note: verbs and adjectives ending in <span lang="ko" translate="no">ㄹ</span> drop the <span lang="ko" translate="no">ㄹ</span> before <span lang="ko" translate="no">네요</span> (<span lang="ko" translate="no">살다</span> → <span lang="ko" translate="no">사네요</span>, <span lang="ko" translate="no">만들다</span> → <span lang="ko" translate="no">만드네요</span>).</em></small>
+        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">형용사·동사·과거형에 모두 동일하게 작동합니다.<br><small class="en-line" lang="en" translate="yes"><em>Works on adjectives, verbs, and past forms identically.</em></small><br>단, ㄹ 받침 동사·형용사는 '네요' 앞에서 ㄹ이 탈락합니다(살다 → 사네요, 만들다 → 만드네요).<br><small class="en-line" lang="en" translate="yes"><em>One note: verbs and adjectives ending in <span lang="ko" translate="no">ㄹ</span> drop the <span lang="ko" translate="no">ㄹ</span> before <span lang="ko" translate="no">네요</span> (<span lang="ko" translate="no">살다</span> → <span lang="ko" translate="no">사네요</span>, <span lang="ko" translate="no">만들다</span> → <span lang="ko" translate="no">만드네요</span>).</em></small>
         </div>
         <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:24%"><span lang="en" translate="yes">Type</span><br>품사</th><th style="width:32%"><span lang="en" translate="yes">Stem +</span> 네요</th><th><span lang="en" translate="yes">Example</span><br>예</th></tr></thead>
             <tbody>
-                <tr><td><strong><span lang="en" translate="yes">Adjective</span></strong> (<strong>형용사</strong>)</td><td><strong>예쁘</strong> + <span class="accent">네요</span></td><td><strong>꽃이 예쁘네요</strong><br><small lang="en" translate="yes">(The flowers are pretty!)</small></td></tr>
-                <tr><td><strong><span lang="en" translate="yes">Adjective</span></strong></td><td><strong>좋</strong> + <span class="accent">네요</span></td><td><strong>경치가 좋네요</strong><br><small lang="en" translate="yes">(The view is nice!)</small></td></tr>
-                <tr><td><strong><span lang="en" translate="yes">Adjective</span></strong></td><td><strong>춥</strong> + <span class="accent">네요</span></td><td><strong>날씨가 춥네요</strong><br><small lang="en" translate="yes">(It's cold!): <span lang="ko" translate="no">ㅂ 그대로 유지</span></small></td></tr>
-                <tr><td><strong><span lang="en" translate="yes">Verb</span></strong> (<strong>동사</strong>)</td><td><strong>오</strong> + <span class="accent">네요</span></td><td><strong>비가 오네요</strong><br><small lang="en" translate="yes">(It's raining!)</small></td></tr>
-                <tr><td><strong><span lang="en" translate="yes">Past</span></strong> (<strong>과거</strong>)</td><td><strong>생기</strong> + <strong>었</strong> → <strong>생겼</strong> + <span class="accent">네요</span></td><td><strong>식당이 생겼네요</strong><br><small lang="en" translate="yes">(A restaurant opened!)</small></td></tr>
+                <tr><td><strong><span lang="en" translate="yes">Adjective</span></strong> (<strong>형용사</strong>)</td><td><strong>예쁘</strong> + <span class="accent">네요</span></td><td><strong>꽃이 예쁘네요</strong><br><small class="en-line" lang="en" translate="yes">(The flowers are pretty!)</small></td></tr>
+                <tr><td><strong><span lang="en" translate="yes">Adjective</span></strong></td><td><strong>좋</strong> + <span class="accent">네요</span></td><td><strong>경치가 좋네요</strong><br><small class="en-line" lang="en" translate="yes">(The view is nice!)</small></td></tr>
+                <tr><td><strong><span lang="en" translate="yes">Adjective</span></strong></td><td><strong>춥</strong> + <span class="accent">네요</span></td><td><strong>날씨가 춥네요</strong><br><small class="en-line" lang="en" translate="yes">(It's cold!): <span lang="ko" translate="no">ㅂ 그대로 유지</span></small></td></tr>
+                <tr><td><strong><span lang="en" translate="yes">Verb</span></strong> (<strong>동사</strong>)</td><td><strong>오</strong> + <span class="accent">네요</span></td><td><strong>비가 오네요</strong><br><small class="en-line" lang="en" translate="yes">(It's raining!)</small></td></tr>
+                <tr><td><strong><span lang="en" translate="yes">Past</span></strong> (<strong>과거</strong>)</td><td><strong>생기</strong> + <strong>었</strong> → <strong>생겼</strong> + <span class="accent">네요</span></td><td><strong>식당이 생겼네요</strong><br><small class="en-line" lang="en" translate="yes">(A restaurant opened!)</small></td></tr>
             </tbody>
         </table></div>
     </div>
@@ -736,7 +740,7 @@ p.en{margin-bottom:16px;}
             <tbody>
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>It</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>눈이</strong></td><td><strong>눈</strong> + <strong>이</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>so</strong></td><td class="exp-role">부사<br><small><span lang="en" translate="yes">Adverb</span></small></td><td class="exp-form"><strong>정말</strong></td><td></td></tr>
-            <tr><td class="exp-en" lang="en" translate="yes"><strong>much</strong></td><td class="exp-role">부사<br><small><span lang="en" translate="yes">Adverb</span></small></td><td class="exp-form"><strong>많이</strong></td><td><strong>많다</strong> → <strong>많</strong> + <strong>이</strong> → <strong>많이</strong><br><small lang="en" translate="yes">(adverb)</small></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>much</strong></td><td class="exp-role">부사<br><small><span lang="en" translate="yes">Adverb</span></small></td><td class="exp-form"><strong>많이</strong></td><td><strong>많다</strong> → <strong>많</strong> + <strong>이</strong> → <strong>많이</strong><br><small class="en-line" lang="en" translate="yes">(adverb)</small></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>is snowing</strong></td><td class="exp-role">서술어(감탄)<br><small><span lang="en" translate="yes">Predicate (Exclamation)</span></small></td><td class="exp-form"><strong>오네요</strong></td><td><strong>오다</strong> → <strong>오</strong> + <strong>네요</strong> → <strong>오네요</strong></td></tr>
         </tbody>
         </table></div>

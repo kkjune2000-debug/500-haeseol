@@ -389,6 +389,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
    빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
 p.ko{margin-bottom:2px;}
 p.en{margin-bottom:16px;}
+small.en-line{display:inline-block;margin-bottom:9px;}
+/* ★한국어와 그 영어는 붙이고, 짝과 짝 사이만 벌린다.
+   앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
+   것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
 </head>
 <body>
@@ -486,17 +490,17 @@ p.en{margin-bottom:16px;}
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:linear-gradient(135deg,#047857,#10b981); color:#fff;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">동사<br><small lang="en" translate="yes">Verb</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">동사<br><small class="en-line" lang="en" translate="yes">Verb</small></th>
                         <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">어간 + 지 않으려고<br><small>어간 + 지 않으려고<br><em lang="en" translate="yes">Stem + <span lang="ko" translate="no">지 않으려고</span></em></small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">결과<br><small lang="en" translate="yes">Full form</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">결과<br><small class="en-line" lang="en" translate="yes">Full form</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>자다</strong><br><small lang="en" translate="yes">sleep</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">자 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>자지 않으려고</strong></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>늦다</strong><br><small lang="en" translate="yes">be late</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">늦 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>늦지 않으려고</strong></td></tr>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>걸리다</strong><br><small lang="en" translate="yes">catch (illness)</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">걸리 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>걸리지 않으려고</strong></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>잊다</strong><br><small lang="en" translate="yes">forget</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">잊 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>잊지 않으려고</strong></td></tr>
-                    <tr><td style="padding:8px 10px; text-align:center;"><strong>먹다</strong><br><small lang="en" translate="yes">eat</small></td><td style="padding:8px 10px; text-align:center;">먹 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; color:#047152;"><strong>먹지 않으려고</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>자다</strong><br><small class="en-line" lang="en" translate="yes">sleep</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">자 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>자지 않으려고</strong></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>늦다</strong><br><small class="en-line" lang="en" translate="yes">be late</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">늦 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>늦지 않으려고</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>걸리다</strong><br><small class="en-line" lang="en" translate="yes">catch (illness)</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">걸리 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>걸리지 않으려고</strong></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>잊다</strong><br><small class="en-line" lang="en" translate="yes">forget</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">잊 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>잊지 않으려고</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center;"><strong>먹다</strong><br><small class="en-line" lang="en" translate="yes">eat</small></td><td style="padding:8px 10px; text-align:center;">먹 + 지 않으려고</td><td style="padding:8px 10px; text-align:center; color:#047152;"><strong>먹지 않으려고</strong></td></tr>
                 </tbody>
             </table></div>
         </div>
@@ -509,9 +513,9 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">왜 질문에 대한 두 가지 대답<br><small style="font-weight: 600;"><span lang="en" translate="yes">Answering </span><span lang="ko" translate="no">왜</span><span lang="en" translate="yes">: two ways</span></small></h3>
         <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             <strong>왜</strong>로 질문했을 때 대답은 1) <strong>목적</strong>(~(으)려고 / 위해서), 2) <strong>원인</strong>(~아/어서 / 때문에) 두 가지로 할 수 있습니다.<br>
-            <small lang="en" translate="yes"><em>A <span lang="ko" translate="no">왜</span> question can be answered with either <strong>purpose</strong> (~(<span lang="ko" translate="no">으</span>)<span lang="ko" translate="no">려고 / 위해서</span>) or <strong>cause</strong> (~<span lang="ko" translate="no">아/어서 / 때문에</span>). Same question, two valid answer types.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>A <span lang="ko" translate="no">왜</span> question can be answered with either <strong>purpose</strong> (~(<span lang="ko" translate="no">으</span>)<span lang="ko" translate="no">려고 / 위해서</span>) or <strong>cause</strong> (~<span lang="ko" translate="no">아/어서 / 때문에</span>). Same question, two valid answer types.</em></small>
         </div>
-        <blockquote><strong>Q. 당신은 왜 한국어를 공부합니까?</strong><br><small lang="en" translate="yes"><em>Why do you study Korean?</em></small><br><br>1) <strong>목적</strong>: <strong>저는 한국에 유학을 가려고 한국어를 공부합니다</strong>.<br><small lang="en" translate="yes"><em>I study Korean to go study abroad in Korea.</em></small><br><br>2) <strong>원인</strong>: <strong>저는 한국어가 좋아서 한국어를 공부합니다</strong>.<br><small lang="en" translate="yes"><em>I study Korean because I like Korean.</em></small></blockquote>
+        <blockquote><strong>Q. 당신은 왜 한국어를 공부합니까?</strong><br><small class="en-line" lang="en" translate="yes"><em>Why do you study Korean?</em></small><br><br>1) <strong>목적</strong>: <strong>저는 한국에 유학을 가려고 한국어를 공부합니다</strong>.<br><small class="en-line" lang="en" translate="yes"><em>I study Korean to go study abroad in Korea.</em></small><br><br>2) <strong>원인</strong>: <strong>저는 한국어가 좋아서 한국어를 공부합니다</strong>.<br><small class="en-line" lang="en" translate="yes"><em>I study Korean because I like Korean.</em></small></blockquote>
     </div>
 </div>
 
@@ -865,7 +869,7 @@ p.en{margin-bottom:16px;}
             </thead>
             <tbody>
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>She</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>그녀는</strong></td><td><strong>그녀</strong> + <strong>는</strong></td></tr>
-            <tr><td class="exp-en" lang="en" translate="yes"><strong>not to catch a cold</strong></td><td class="exp-role">부사어(목적)<br><small><span lang="en" translate="yes">Adverbial (Purpose)</span></small></td><td class="exp-form"><strong>감기에 걸리지 않으려고</strong></td><td><strong>걸리다</strong> + <strong>~지 않다</strong><br><small lang="en" translate="yes">(negative)</small> + <strong>으려고</strong> → <strong>걸리지 않으려고</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>not to catch a cold</strong></td><td class="exp-role">부사어(목적)<br><small><span lang="en" translate="yes">Adverbial (Purpose)</span></small></td><td class="exp-form"><strong>감기에 걸리지 않으려고</strong></td><td><strong>걸리다</strong> + <strong>~지 않다</strong><br><small class="en-line" lang="en" translate="yes">(negative)</small> + <strong>으려고</strong> → <strong>걸리지 않으려고</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>always</strong></td><td class="exp-role">부사<br><small><span lang="en" translate="yes">Adverb</span></small></td><td class="exp-form"><strong>항상</strong></td><td></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>wears a mask</strong></td><td class="exp-role">목적어 + 서술어(동사)<br><small><span lang="en" translate="yes">Object + Predicate (Verb)</span></small></td><td class="exp-form"><strong>마스크를 씁니다</strong></td><td></td></tr>
         </tbody>

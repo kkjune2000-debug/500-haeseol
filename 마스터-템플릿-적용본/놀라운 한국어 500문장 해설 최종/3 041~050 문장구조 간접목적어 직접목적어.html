@@ -408,6 +408,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
    빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
 p.ko{margin-bottom:2px;}
 p.en{margin-bottom:16px;}
+small.en-line{display:inline-block;margin-bottom:9px;}
+/* ★한국어와 그 영어는 붙이고, 짝과 짝 사이만 벌린다.
+   앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
+   것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
 </head>
 <body>
@@ -435,10 +439,10 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#1e3a8a; background:#eff6ff; border-left:4px solid #2563eb; border-radius:4px;">간접목적어란?<br><small style="font-weight:600;"><span lang="en" translate="yes">What is an indirect object?</span></small></h3>
         <div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             예문: <strong>저는 선물을 주었습니다.</strong><br>
-            <small lang="en" translate="yes"><em>I gave a gift.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>I gave a gift.</em></small>
         </div>
         <div class="gstep-pattern"><span class="accent">저는</span> (주어) + <span class="accent">선물을</span> (목적어) + <span class="accent">주었습니다</span> (서술어)<small><strong><span lang="en" translate="yes">Subject</span></strong> + <strong><span lang="en" translate="yes">Object</span></strong> + <strong><span lang="en" translate="yes">Predicate</span></strong></small></div>
-        <div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin-top:12px; font-size:0.92rem; line-height:1.8;">그런데 이 문장에는 <strong>선물을 받는 사람</strong>이 빠져 있습니다.<br><small lang="en" translate="yes"><em>But <strong>WHO received the gift?</strong> The receiver is missing!</em></small><br><strong>받는 사람</strong>을 <strong>간접목적어</strong>라고 합니다.<br><small lang="en" translate="yes"><em>We call this receiver the <strong>indirect object</strong>.</em></small>
+        <div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin-top:12px; font-size:0.92rem; line-height:1.8;">그런데 이 문장에는 <strong>선물을 받는 사람</strong>이 빠져 있습니다.<br><small class="en-line" lang="en" translate="yes"><em>But <strong>WHO received the gift?</strong> The receiver is missing!</em></small><br><strong>받는 사람</strong>을 <strong>간접목적어</strong>라고 합니다.<br><small class="en-line" lang="en" translate="yes"><em>We call this receiver the <strong>indirect object</strong>.</em></small>
         </div>
     </div>
 </div>
@@ -449,19 +453,19 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#1e3a8a; background:#eff6ff; border-left:4px solid #2563eb; border-radius:4px;">간접목적어 만들기: 받는 대상 + '에게'<br><small style="font-weight:600;"><span lang="en" translate="yes">Making the indirect object: recipient +</span> <span lang="ko" translate="no">'에게'</span></small></h3>
         <div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             <strong>간접목적어</strong>는 받는 대상에 <strong>'에게'</strong>를 붙여 만듭니다.<br>
-            <small lang="en" translate="yes"><em>Add the receiver — the <strong>indirect object</strong> — with <strong>'<span lang="ko" translate="no">에게</span>'</strong>.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Add the receiver — the <strong>indirect object</strong> — with <strong>'<span lang="ko" translate="no">에게</span>'</strong>.</em></small>
         </div>
         <div class="gstep-pattern">주어 + 간접목적어(<strong>에게</strong>) + 직접목적어(<strong>을</strong>/<strong>를</strong>) + 서술어(동사)<small><strong><span lang="en" translate="yes">Subject</span></strong> + <strong><span lang="en" translate="yes">Indirect object</span></strong>(<span class="accent">에게</span>) + <strong><span lang="en" translate="yes">Direct object</span></strong>(<span class="accent">을 / 를</span>) + <strong><span lang="en" translate="yes">Predicate</span></strong> (<strong><span lang="en" translate="yes">Verb</span></strong>)</small></div>
         <blockquote>
             <strong>예</strong>: <strong>그는</strong> <strong>친구에게</strong> <strong>선물을 주었습니다</strong>.<br>
-            <small lang="en" translate="yes">Example</small>: <em lang="en" translate="yes">He gave his friend a gift.</em>
+            <small class="en-line" lang="en" translate="yes">Example</small>: <em lang="en" translate="yes">He gave his friend a gift.</em>
         </blockquote>
-        <div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin-top:12px; font-size:0.92rem; line-height:1.8;"><strong>간접목적어와 직접목적어는 위치가 바뀌어도 괜찮습니다.</strong><br><small lang="en" translate="yes"><em>The <strong>indirect object</strong> and <strong>direct object</strong> can switch places.</em></small><br>조사 <strong>'에게'</strong>와 <strong>'을/를'</strong>이 각자의 역할을 표시해 주기 때문에, 순서가 바뀌어도 뜻이 그대로 통합니다.<br><small lang="en" translate="yes"><em>Because the particles <strong>'<span lang="ko" translate="no">에게</span>'</strong> and <strong>'<span lang="ko" translate="no">을/를</span>'</strong> mark each role, the meaning stays the same even when the order changes.</em></small>
+        <div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin-top:12px; font-size:0.92rem; line-height:1.8;"><strong>간접목적어와 직접목적어는 위치가 바뀌어도 괜찮습니다.</strong><br><small class="en-line" lang="en" translate="yes"><em>The <strong>indirect object</strong> and <strong>direct object</strong> can switch places.</em></small><br>조사 <strong>'에게'</strong>와 <strong>'을/를'</strong>이 각자의 역할을 표시해 주기 때문에, 순서가 바뀌어도 뜻이 그대로 통합니다.<br><small class="en-line" lang="en" translate="yes"><em>Because the particles <strong>'<span lang="ko" translate="no">에게</span>'</strong> and <strong>'<span lang="ko" translate="no">을/를</span>'</strong> mark each role, the meaning stays the same even when the order changes.</em></small>
             <div style="margin-top:8px; padding:8px 10px; background:#fff; border-radius:6px; font-size:0.9rem;">
                 ① 그는 <strong style="color:#1557e6;">친구에게</strong> <strong style="color:#107435;">선물을</strong> 주었습니다.<br>
                 ② 그는 <strong style="color:#107435;">선물을</strong> <strong style="color:#1557e6;">친구에게</strong> 주었습니다.<br>
                 ①②의 뜻이 같습니다.<br>
-<small lang="en" translate="yes"><em>Both mean: He gave his friend a gift.</em></small>
+<small class="en-line" lang="en" translate="yes"><em>Both mean: He gave his friend a gift.</em></small>
             </div>
         </div>
     </div>
@@ -473,20 +477,20 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#1e3a8a; background:#eff6ff; border-left:4px solid #2563eb; border-radius:4px;">'에게' ↔ '에': 받는 대상에 따라<br><small style="font-weight:600;"><span lang="ko" translate="no">'에게'</span> ↔ <span lang="ko" translate="no">'에'</span>: <span lang="en" translate="yes">by recipient</span></small></h3>
         <div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             받는 대상이 <strong>움직이는 생물</strong>(사람·동물)이면 <strong>'에게'</strong>, <strong>움직이지 않는 것</strong>(식물·사물·건물·장소)이면 <strong>'에'</strong>를 씁니다.<br>
-            <small lang="en" translate="yes"><em>It depends on whether the receiver is <strong>animate</strong> (a living thing that can move) or not.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>It depends on whether the receiver is <strong>animate</strong> (a living thing that can move) or not.</em></small>
         </div>
         <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:38%">받는 대상<span class="gloss" lang="en" translate="yes">Receiver</span></th><th>조사<span class="gloss" lang="en" translate="yes">Particle</span></th><th>예<span class="gloss" lang="en" translate="yes">Example</span></th></tr></thead>
             <tbody>
-                <tr><td><strong>사람</strong><br><small lang="en" translate="yes">Person</small></td><td><strong>에게</strong></td><td><strong>친구</strong><strong>에게</strong>, <strong>그녀</strong><strong>에게</strong><br><small lang="en" translate="yes">(to a friend, to her)</small></td></tr>
-                <tr><td><strong>동물</strong><br><small lang="en" translate="yes">Animal</small></td><td><strong>에게</strong></td><td><strong>개</strong><strong>에게</strong>, <strong>고양이</strong><strong>에게</strong><br><small lang="en" translate="yes">(to a dog, to a cat)</small></td></tr>
-                <tr><td><strong>식물</strong><br><small lang="en" translate="yes">Plant</small></td><td><strong>에</strong></td><td><strong>나무</strong><strong>에</strong>, <strong>꽃</strong><strong>에</strong><br><small lang="en" translate="yes">(to a tree, to a flower)</small></td></tr>
-                <tr><td><strong>건물</strong> · <strong>회사</strong><br><small lang="en" translate="yes">Building / Company</small></td><td><strong>에</strong></td><td><strong>회사</strong><strong>에</strong>, <strong>학교</strong><strong>에</strong><br><small lang="en" translate="yes">(to a company, to a school)</small></td></tr>
-                <tr><td><strong>장소</strong><br><small lang="en" translate="yes">Place</small></td><td><strong>에</strong></td><td><strong>집</strong><strong>에</strong><br><small lang="en" translate="yes">(to home)</small></td></tr>
+                <tr><td><strong>사람</strong><br><small class="en-line" lang="en" translate="yes">Person</small></td><td><strong>에게</strong></td><td><strong>친구</strong><strong>에게</strong>, <strong>그녀</strong><strong>에게</strong><br><small class="en-line" lang="en" translate="yes">(to a friend, to her)</small></td></tr>
+                <tr><td><strong>동물</strong><br><small class="en-line" lang="en" translate="yes">Animal</small></td><td><strong>에게</strong></td><td><strong>개</strong><strong>에게</strong>, <strong>고양이</strong><strong>에게</strong><br><small class="en-line" lang="en" translate="yes">(to a dog, to a cat)</small></td></tr>
+                <tr><td><strong>식물</strong><br><small class="en-line" lang="en" translate="yes">Plant</small></td><td><strong>에</strong></td><td><strong>나무</strong><strong>에</strong>, <strong>꽃</strong><strong>에</strong><br><small class="en-line" lang="en" translate="yes">(to a tree, to a flower)</small></td></tr>
+                <tr><td><strong>건물</strong> · <strong>회사</strong><br><small class="en-line" lang="en" translate="yes">Building / Company</small></td><td><strong>에</strong></td><td><strong>회사</strong><strong>에</strong>, <strong>학교</strong><strong>에</strong><br><small class="en-line" lang="en" translate="yes">(to a company, to a school)</small></td></tr>
+                <tr><td><strong>장소</strong><br><small class="en-line" lang="en" translate="yes">Place</small></td><td><strong>에</strong></td><td><strong>집</strong><strong>에</strong><br><small class="en-line" lang="en" translate="yes">(to home)</small></td></tr>
             </tbody>
         </table></div>
         <blockquote>
-            <strong>예</strong><br><small lang="en" translate="yes">(Examples)</small>:<br>
+            <strong>예</strong><br><small class="en-line" lang="en" translate="yes">(Examples)</small>:<br>
             ✅ <strong>그는</strong> <strong>개에게</strong> <strong>고기를 주었습니다</strong>. <small lang="en" translate="yes">He gave meat to the dog. (animal → <strong><span lang="ko" translate="no">에게</span></strong>)</small><br>
             ✅ <strong>그는</strong> <strong>나무에</strong> <strong>물을 주었습니다</strong>. <small lang="en" translate="yes">He gave water to the tree. (plant → <strong><span lang="ko" translate="no">에</span></strong>)</small><br>
             ✅ <strong>그는</strong> <strong>집에</strong> <strong>전화를 했습니다</strong>. <small lang="en" translate="yes">He called home. (place → <strong><span lang="ko" translate="no">에</span></strong>)</small>
@@ -697,7 +701,7 @@ p.en{margin-bottom:16px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>water</strong></td><td class="exp-role">직접목적어<br><small><span lang="en" translate="yes">Direct Object</span></small></td><td class="exp-form"><strong>물을</strong></td><td><strong>물</strong> + <strong>을</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>gave</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>주었습니다</strong></td><td><strong>주다</strong> → <strong>주</strong> + <strong>었습니다</strong> → <strong>주었습니다</strong></td></tr>
         </tbody></table></div>
-        <div class="explain-note"><strong>⚠️ 중요!</strong><br><small lang="en" translate="yes"><em><strong>⚠️ Important!</strong></em></small><br>꽃은 사람이나 동물이 아닙니다.<br><small lang="en" translate="yes"><em>Flowers are NOT a person or animal.</em></small><br>'~에게'가 아니라 '~에'를 사용합니다!<br><small lang="en" translate="yes"><em>So we use <span lang="ko" translate="no">'~에'</span>, not <span lang="ko" translate="no">'~에게'</span>!</em></small><br><br>✅ 꽃<strong>에</strong><br><small lang="en" translate="yes">(to the flowers)</small> <span lang="en" translate="yes">— thing →</span><span lang="ko" translate="no">'~에'</span><br>❌ 꽃<strong>에게</strong> <span lang="en" translate="yes">— wrong!</span><span lang="ko" translate="no">'~에게'</span><span lang="en" translate="yes"> is for person/animal only</span></div>
+        <div class="explain-note"><strong>⚠️ 중요!</strong><br><small class="en-line" lang="en" translate="yes"><em><strong>⚠️ Important!</strong></em></small><br>꽃은 사람이나 동물이 아닙니다.<br><small class="en-line" lang="en" translate="yes"><em>Flowers are NOT a person or animal.</em></small><br>'~에게'가 아니라 '~에'를 사용합니다!<br><small class="en-line" lang="en" translate="yes"><em>So we use <span lang="ko" translate="no">'~에'</span>, not <span lang="ko" translate="no">'~에게'</span>!</em></small><br><br>✅ 꽃<strong>에</strong><br><small class="en-line" lang="en" translate="yes">(to the flowers)</small> <span lang="en" translate="yes">— thing →</span><span lang="ko" translate="no">'~에'</span><br>❌ 꽃<strong>에게</strong> <span lang="en" translate="yes">— wrong!</span><span lang="ko" translate="no">'~에게'</span><span lang="en" translate="yes"> is for person/animal only</span></div>
     
     </div>
 </div>

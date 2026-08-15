@@ -384,6 +384,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
    빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
 p.ko{margin-bottom:2px;}
 p.en{margin-bottom:16px;}
+small.en-line{display:inline-block;margin-bottom:9px;}
+/* ★한국어와 그 영어는 붙이고, 짝과 짝 사이만 벌린다.
+   앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
+   것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
 </head>
 <body>
@@ -411,12 +415,12 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">~다가란?<br><small style="font-weight:600;"><span lang="en" translate="yes">What is </span><span lang="ko" translate="no">~다가</span>?</small></h3>
         <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             <strong>~다가</strong>는 한 동작 도중에 (종종 예상치 못한) 다른 일이 발생할 때 사용합니다.<br>
-            <small lang="en" translate="yes"><em>Use <strong>~<span lang="ko" translate="no">다가</span></strong> when something happens (often unexpectedly) <strong>during/in the middle of</strong> another action.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Use <strong>~<span lang="ko" translate="no">다가</span></strong> when something happens (often unexpectedly) <strong>during/in the middle of</strong> another action.</em></small>
         </div>
         <div class="gstep-pattern"><strong><span lang="ko" translate="no">텔레비전을 보다</span></strong> + <strong><span lang="ko" translate="no">잠이 들다</span></strong> → <strong><span lang="ko" translate="no">텔레비전을 보</span></strong><strong><span lang="ko" translate="no">다가</span></strong> <strong><span lang="ko" translate="no">잠이 들었습니다</span></strong>.<br><em lang="en" translate="yes">watch TV + fall asleep → Fell asleep while watching TV.</em><small><span lang="en" translate="yes">[Verb stem +</span> <span class="accent">다가</span><span lang="en" translate="yes">] + [Main clause: often unexpected event]</span></small></div>
         <blockquote>
-            <strong>텔레비전을 보</strong><strong>다가</strong> <strong>잠이 들었습니다</strong>.<br><small lang="en" translate="yes">Fell asleep <strong>while watching</strong> TV — interruption!</small><br>
-            <strong>길을 걷</strong><strong>다가</strong> <strong>친구를 만났습니다</strong>.<br><small lang="en" translate="yes">Met a friend <strong>while walking</strong> on the street — unexpected encounter.</small>
+            <strong>텔레비전을 보</strong><strong>다가</strong> <strong>잠이 들었습니다</strong>.<br><small class="en-line" lang="en" translate="yes">Fell asleep <strong>while watching</strong> TV — interruption!</small><br>
+            <strong>길을 걷</strong><strong>다가</strong> <strong>친구를 만났습니다</strong>.<br><small class="en-line" lang="en" translate="yes">Met a friend <strong>while walking</strong> on the street — unexpected encounter.</small>
         </blockquote>
     </div>
 </div>
@@ -444,13 +448,13 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">~(으)면서 ↔ ~다가 비교</h3>
         <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             둘 다 <strong><span lang="en" translate="yes">while</span></strong>이지만 뉘앙스가 다릅니다.<br>
-            <small lang="en" translate="yes"><em>Both mean <strong>while</strong>, but the nuance differs.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Both mean <strong>while</strong>, but the nuance differs.</em></small>
         </div>
         <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:20%"><span lang="en" translate="yes">Connector</span></th><th><span lang="en" translate="yes">Nuance</span></th><th><span lang="en" translate="yes">Example</span></th></tr></thead>
             <tbody>
-                <tr><td><strong>~(으)면서</strong></td><td><span lang="en" translate="yes">Two planned/intentional actions at the same time</span></td><td><strong>음악을 들으면서 공부합니다</strong>.<br><small lang="en" translate="yes">intentional simultaneous</small></td></tr>
-                <tr><td><strong>~다가</strong></td><td><span lang="en" translate="yes">Action 1 stops/is interrupted; Action 2 happens (often unexpected)</span></td><td><strong>텔레비전을 보다가 잠이 들었습니다</strong>.<br><small lang="en" translate="yes">interruption!</small></td></tr>
+                <tr><td><strong>~(으)면서</strong></td><td><span lang="en" translate="yes">Two planned/intentional actions at the same time</span></td><td><strong>음악을 들으면서 공부합니다</strong>.<br><small class="en-line" lang="en" translate="yes">intentional simultaneous</small></td></tr>
+                <tr><td><strong>~다가</strong></td><td><span lang="en" translate="yes">Action 1 stops/is interrupted; Action 2 happens (often unexpected)</span></td><td><strong>텔레비전을 보다가 잠이 들었습니다</strong>.<br><small class="en-line" lang="en" translate="yes">interruption!</small></td></tr>
             </tbody>
         </table></div>
         <div class="note-box"><strong><span lang="en" translate="yes">⚠️ Tense:</span></strong> ~다가 <span lang="en" translate="yes">clause stays in stem form. Past tense lives only on the FINAL verb.</span></div>
@@ -461,21 +465,21 @@ p.en{margin-bottom:16px;}
     <div class="gstep-num">4</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">현재형(어간)만 쓰는 부사어 연결어미<span class="gloss" lang="en" translate="yes">Adverbial connectors with present form</span></h3>
-        <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">종속절은 과거 사건이어도 어간 형태 그대로 사용합니다.<br><small lang="en" translate="yes"><em>The subordinate clause stays in stem form even for past events.</em></small><br>시제는 마지막 절에만 표시합니다.<br><small lang="en" translate="yes"><em>Tense lives only on the final clause.</em></small>
+        <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">종속절은 과거 사건이어도 어간 형태 그대로 사용합니다.<br><small class="en-line" lang="en" translate="yes"><em>The subordinate clause stays in stem form even for past events.</em></small><br>시제는 마지막 절에만 표시합니다.<br><small class="en-line" lang="en" translate="yes"><em>Tense lives only on the final clause.</em></small>
         </div>
         <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:25%"><span lang="en" translate="yes">Connector</span><br>연결어미</th><th style="width:35%"><span lang="en" translate="yes">Meaning</span><br>의미</th><th><span lang="en" translate="yes">Example</span><br>예문</th></tr></thead>
             <tbody>
-                <tr><td><strong>~고</strong></td><td><span lang="en" translate="yes">and (sequential)</span><br><small>그리고: 시간 순서<br><em lang="en" translate="yes">and: time order</em></small></td><td><strong>밥을 먹고 학교에 갔습니다</strong>.<br><small lang="en" translate="yes">Ate and (then) went to school.</small></td></tr>
-                <tr><td><strong>~아/어서</strong></td><td><span lang="en" translate="yes">and then / because</span><br><small>시간 순서 + 원인 결과<br><em lang="en" translate="yes">Time order + cause and result</em></small></td><td><strong>커피숍에 가서 친구를 만났습니다</strong>.<br><small lang="en" translate="yes">Went to a café and met a friend.</small></td></tr>
-                <tr><td><strong>~(으)면서</strong></td><td><span lang="en" translate="yes">while (simultaneous)</span><br><small>~하면서 동시에: 의도적<br><em lang="en" translate="yes">while doing at the same time: on purpose</em></small></td><td><strong>음악을 들으면서 공부합니다</strong>.<br><small lang="en" translate="yes">Study while listening to music.</small></td></tr>
-                <tr><td><strong>~자마자</strong></td><td><span lang="en" translate="yes">as soon as</span><br><small>즉시: 시간 간격 0<br><em lang="en" translate="yes">at once: no gap in time</em></small></td><td><strong>일어나자마자 물을 마셨습니다</strong>.<br><small lang="en" translate="yes">Drank water as soon as waking up.</small></td></tr>
-                <tr><td><strong>~다가</strong></td><td><span lang="en" translate="yes">while (interrupted)</span><br><small>도중에: 예상치 못한 전환<br><em lang="en" translate="yes">in the middle: an unexpected switch</em></small></td><td><strong>텔레비전을 보다가 잠이 들었습니다</strong>.<br><small lang="en" translate="yes">Fell asleep while watching TV.</small></td></tr>
-                <tr><td><strong>~(으)러</strong></td><td><span lang="en" translate="yes">in order to (go/come)</span><br><small>목적: 이동 동사<br><em lang="en" translate="yes">purpose: verbs of movement</em></small></td><td><strong>책을 사러 서점에 갔습니다</strong>.<br><small lang="en" translate="yes">Went to the bookstore to buy a book.</small></td></tr>
-                <tr><td><strong>~(으)려고</strong></td><td><span lang="en" translate="yes">intending to</span><br><small>의도: 계획</small></td><td><strong>한국어를 배우려고 한국에 왔습니다</strong>.<br><small lang="en" translate="yes">Came to Korea intending to learn Korean.</small></td></tr>
+                <tr><td><strong>~고</strong></td><td><span lang="en" translate="yes">and (sequential)</span><br><small>그리고: 시간 순서<br><em lang="en" translate="yes">and: time order</em></small></td><td><strong>밥을 먹고 학교에 갔습니다</strong>.<br><small class="en-line" lang="en" translate="yes">Ate and (then) went to school.</small></td></tr>
+                <tr><td><strong>~아/어서</strong></td><td><span lang="en" translate="yes">and then / because</span><br><small>시간 순서 + 원인 결과<br><em lang="en" translate="yes">Time order + cause and result</em></small></td><td><strong>커피숍에 가서 친구를 만났습니다</strong>.<br><small class="en-line" lang="en" translate="yes">Went to a café and met a friend.</small></td></tr>
+                <tr><td><strong>~(으)면서</strong></td><td><span lang="en" translate="yes">while (simultaneous)</span><br><small>~하면서 동시에: 의도적<br><em lang="en" translate="yes">while doing at the same time: on purpose</em></small></td><td><strong>음악을 들으면서 공부합니다</strong>.<br><small class="en-line" lang="en" translate="yes">Study while listening to music.</small></td></tr>
+                <tr><td><strong>~자마자</strong></td><td><span lang="en" translate="yes">as soon as</span><br><small>즉시: 시간 간격 0<br><em lang="en" translate="yes">at once: no gap in time</em></small></td><td><strong>일어나자마자 물을 마셨습니다</strong>.<br><small class="en-line" lang="en" translate="yes">Drank water as soon as waking up.</small></td></tr>
+                <tr><td><strong>~다가</strong></td><td><span lang="en" translate="yes">while (interrupted)</span><br><small>도중에: 예상치 못한 전환<br><em lang="en" translate="yes">in the middle: an unexpected switch</em></small></td><td><strong>텔레비전을 보다가 잠이 들었습니다</strong>.<br><small class="en-line" lang="en" translate="yes">Fell asleep while watching TV.</small></td></tr>
+                <tr><td><strong>~(으)러</strong></td><td><span lang="en" translate="yes">in order to (go/come)</span><br><small>목적: 이동 동사<br><em lang="en" translate="yes">purpose: verbs of movement</em></small></td><td><strong>책을 사러 서점에 갔습니다</strong>.<br><small class="en-line" lang="en" translate="yes">Went to the bookstore to buy a book.</small></td></tr>
+                <tr><td><strong>~(으)려고</strong></td><td><span lang="en" translate="yes">intending to</span><br><small>의도: 계획</small></td><td><strong>한국어를 배우려고 한국에 왔습니다</strong>.<br><small class="en-line" lang="en" translate="yes">Came to Korea intending to learn Korean.</small></td></tr>
             </tbody>
         </table></div>
-        <div class="note-box"><strong>⚠️ 비교 <span lang="en" translate="yes">(Compare):</span></strong> <strong>~ㄴ/은 후에</strong> · <strong>~았/었을 때</strong> · <strong>~았/었는데</strong> 같은 연결어미는 종속절에 과거 표시 가능.<br><small lang="en" translate="yes"><em>By contrast, connectors such as ~<span lang="ko" translate="no">ㄴ/은 후에</span>, ~<span lang="ko" translate="no">았/었을 때</span> and ~<span lang="ko" translate="no">았/었는데</span> do allow past tense in the subordinate clause.</em></small><br>위 7 종류만 항상 현재형(어간).<br><small lang="en" translate="yes"><em>Only the 7 above always stay in stem form.</em></small><br><strong>~기 전에</strong> · <strong>~기 위해서</strong>는 <strong>~기</strong>가 명사형 어미이므로 별도 분류.<br><small lang="en" translate="yes"><em>~<span lang="ko" translate="no">기 전에</span> and ~<span lang="ko" translate="no">기 위해서</span> are classed separately — the ~<span lang="ko" translate="no">기</span> is a nominalizing ending, not a verbal connector.</em></small></div>
+        <div class="note-box"><strong>⚠️ 비교 <span lang="en" translate="yes">(Compare):</span></strong> <strong>~ㄴ/은 후에</strong> · <strong>~았/었을 때</strong> · <strong>~았/었는데</strong> 같은 연결어미는 종속절에 과거 표시 가능.<br><small class="en-line" lang="en" translate="yes"><em>By contrast, connectors such as ~<span lang="ko" translate="no">ㄴ/은 후에</span>, ~<span lang="ko" translate="no">았/었을 때</span> and ~<span lang="ko" translate="no">았/었는데</span> do allow past tense in the subordinate clause.</em></small><br>위 7 종류만 항상 현재형(어간).<br><small class="en-line" lang="en" translate="yes"><em>Only the 7 above always stay in stem form.</em></small><br><strong>~기 전에</strong> · <strong>~기 위해서</strong>는 <strong>~기</strong>가 명사형 어미이므로 별도 분류.<br><small class="en-line" lang="en" translate="yes"><em>~<span lang="ko" translate="no">기 전에</span> and ~<span lang="ko" translate="no">기 위해서</span> are classed separately — the ~<span lang="ko" translate="no">기</span> is a nominalizing ending, not a verbal connector.</em></small></div>
     </div>
 </div>
 

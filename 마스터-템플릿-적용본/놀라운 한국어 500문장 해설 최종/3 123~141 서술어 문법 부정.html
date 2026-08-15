@@ -426,6 +426,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
    빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
 p.ko{margin-bottom:2px;}
 p.en{margin-bottom:16px;}
+small.en-line{display:inline-block;margin-bottom:9px;}
+/* ★한국어와 그 영어는 붙이고, 짝과 짝 사이만 벌린다.
+   앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
+   것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
 </head>
 <body>
@@ -451,48 +455,48 @@ p.en{margin-bottom:16px;}
     <div class="gstep-num">1</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">두 가지 부정 방법<br><small style="font-weight:600;"><span lang="en" translate="yes">Two ways to negate</span></small></h3>
-        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">한국어에는 동사·형용사를 부정하는 두 가지 방법이 있습니다 — <strong>짧은 부정</strong>과 <strong>긴 부정</strong>.<br><small lang="en" translate="yes"><em>Korean has two ways to negate verbs/adjectives: a <strong>short form</strong> and a <strong>long form</strong>.</em></small><br>의미는 같습니다.<br><small lang="en" translate="yes"><em>Both mean the same thing.</em></small>
+        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">한국어에는 동사·형용사를 부정하는 두 가지 방법이 있습니다 — <strong>짧은 부정</strong>과 <strong>긴 부정</strong>.<br><small class="en-line" lang="en" translate="yes"><em>Korean has two ways to negate verbs/adjectives: a <strong>short form</strong> and a <strong>long form</strong>.</em></small><br>의미는 같습니다.<br><small class="en-line" lang="en" translate="yes"><em>Both mean the same thing.</em></small>
         </div>
         <div class="tbl-scroll"><table class="gstep-table">
-            <thead><tr><th style="width:24%">뜻<br><small lang="en" translate="yes">Meaning</small></th><th>짧은 부정<br><small lang="en" translate="yes">Short form</small></th><th>긴 부정<br><small lang="en" translate="yes">Long form</small></th></tr></thead>
+            <thead><tr><th style="width:24%">뜻<br><small class="en-line" lang="en" translate="yes">Meaning</small></th><th>짧은 부정<br><small class="en-line" lang="en" translate="yes">Short form</small></th><th>긴 부정<br><small class="en-line" lang="en" translate="yes">Long form</small></th></tr></thead>
             <tbody>
-                <tr><td><strong>하지 않음</strong> <small>선택</small><br><small lang="en" translate="yes">don't (by choice)</small></td><td><span class="accent">안</span> + 동사·형용사<br><small lang="en" translate="yes"><span lang="ko" translate="no">안</span> + verb/adj</small></td><td>동사 + <span class="accent">~지 않다</span><br><small lang="en" translate="yes">Verb + <span lang="ko" translate="no">~지 않다</span></small></td></tr>
-                <tr><td><strong>하지 못함</strong> <small>능력</small><br><small lang="en" translate="yes">can't (by inability)</small></td><td><span class="accent">못</span> + 동사<br><small lang="en" translate="yes"><span lang="ko" translate="no">못</span> + verb</small></td><td>동사 + <span class="accent">~지 못하다</span><br><small lang="en" translate="yes">Verb + <span lang="ko" translate="no">~지 못하다</span></small></td></tr>
+                <tr><td><strong>하지 않음</strong> <small>선택</small><br><small class="en-line" lang="en" translate="yes">don't (by choice)</small></td><td><span class="accent">안</span> + 동사·형용사<br><small class="en-line" lang="en" translate="yes"><span lang="ko" translate="no">안</span> + verb/adj</small></td><td>동사 + <span class="accent">~지 않다</span><br><small class="en-line" lang="en" translate="yes">Verb + <span lang="ko" translate="no">~지 않다</span></small></td></tr>
+                <tr><td><strong>하지 못함</strong> <small>능력</small><br><small class="en-line" lang="en" translate="yes">can't (by inability)</small></td><td><span class="accent">못</span> + 동사<br><small class="en-line" lang="en" translate="yes"><span lang="ko" translate="no">못</span> + verb</small></td><td>동사 + <span class="accent">~지 못하다</span><br><small class="en-line" lang="en" translate="yes">Verb + <span lang="ko" translate="no">~지 못하다</span></small></td></tr>
             </tbody>
         </table></div>
         <blockquote>
-            <strong>안 먹습니다</strong> = <strong>먹지 않습니다</strong><br><small lang="en" translate="yes">(don't eat)</small><br>
-            <strong>못 먹습니다</strong> = <strong>먹지 못합니다</strong><br><small lang="en" translate="yes">(can't eat)</small>
+            <strong>안 먹습니다</strong> = <strong>먹지 않습니다</strong><br><small class="en-line" lang="en" translate="yes">(don't eat)</small><br>
+            <strong>못 먹습니다</strong> = <strong>먹지 못합니다</strong><br><small class="en-line" lang="en" translate="yes">(can't eat)</small>
         </blockquote>
         <div class="explain-note neg-wide">
             <strong>'안<span lang="en" translate="yes">' vs '</span>못'</strong><br>
             <div class="tbl-scroll"><table style="width:100%;border-collapse:collapse;margin-top:10px;font-size:0.92rem;"><colgroup><col style="width:20%"><col style="width:26%"><col style="width:54%"></colgroup>
                 <thead>
                     <tr style="background:linear-gradient(135deg,#7c3aed,#a855f7);">
-                        <th style="padding:8px;border:1px solid #c4b5fd;text-align:center;color:#5b21b6;background:linear-gradient(135deg,#ede9fe,#ddd6fe);">부정사<br><small lang="en" translate="yes">Negator</small></th>
-                        <th style="padding:8px;border:1px solid #c4b5fd;text-align:center;color:#5b21b6;background:linear-gradient(135deg,#ede9fe,#ddd6fe);">동사 앞<br><small lang="en" translate="yes">Before a verb</small></th>
-                        <th style="padding:8px;border:1px solid #c4b5fd;text-align:center;color:#5b21b6;background:linear-gradient(135deg,#ede9fe,#ddd6fe);">형용사 앞<br><small lang="en" translate="yes">Before an adjective</small></th>
+                        <th style="padding:8px;border:1px solid #c4b5fd;text-align:center;color:#5b21b6;background:linear-gradient(135deg,#ede9fe,#ddd6fe);">부정사<br><small class="en-line" lang="en" translate="yes">Negator</small></th>
+                        <th style="padding:8px;border:1px solid #c4b5fd;text-align:center;color:#5b21b6;background:linear-gradient(135deg,#ede9fe,#ddd6fe);">동사 앞<br><small class="en-line" lang="en" translate="yes">Before a verb</small></th>
+                        <th style="padding:8px;border:1px solid #c4b5fd;text-align:center;color:#5b21b6;background:linear-gradient(135deg,#ede9fe,#ddd6fe);">형용사 앞<br><small class="en-line" lang="en" translate="yes">Before an adjective</small></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;font-weight:900;color:#6d28d9;font-size:1.05rem;">안</td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">✅ <strong>안 먹다</strong><br><small lang="en" translate="yes">don't eat</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">✅ <strong>안 예쁘다</strong><br><small lang="en" translate="yes">not pretty</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">✅ <strong>안 먹다</strong><br><small class="en-line" lang="en" translate="yes">don't eat</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">✅ <strong>안 예쁘다</strong><br><small class="en-line" lang="en" translate="yes">not pretty</small></td>
                     </tr>
                     <tr>
                         <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;font-weight:900;color:#6d28d9;font-size:1.05rem;">못</td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">✅ <strong>못 먹다</strong><br><small lang="en" translate="yes">can't eat</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">✅ <strong>못 먹다</strong><br><small class="en-line" lang="en" translate="yes">can't eat</small></td>
                         <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fef2f2;color:#991b1b;">❌ <strong>못 예쁘다</strong></td>
                     </tr>
                     <tr>
                         <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;font-weight:900;color:#6d28d9;font-size:1.02rem;">~지 않다<br><small style="font-weight:600;color:#6d28d9;" lang="en" translate="yes">long form</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;">✅ <strong>먹지 않다</strong><br><small lang="en" translate="yes">don't eat</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;">✅ <strong>예쁘지 않다</strong><br><small lang="en" translate="yes">not pretty</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;">✅ <strong>먹지 않다</strong><br><small class="en-line" lang="en" translate="yes">don't eat</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;">✅ <strong>예쁘지 않다</strong><br><small class="en-line" lang="en" translate="yes">not pretty</small></td>
                     </tr>
                     <tr>
                         <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;font-weight:900;color:#6d28d9;font-size:1.02rem;">~지 못하다<br><small style="font-weight:600;color:#6d28d9;" lang="en" translate="yes">long form</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;">✅ <strong>먹지 못하다</strong><br><small lang="en" translate="yes">can't eat</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;">✅ <strong>먹지 못하다</strong><br><small class="en-line" lang="en" translate="yes">can't eat</small></td>
                         <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#faf7ff;">✅ <strong>예쁘지 못하다</strong><br><small style="color:#6d28d9;" lang="en" translate="yes"><em>(fails to be pretty: when something doesn't meet the expected standard)</em></small></td>
                     </tr>
                 </tbody>
@@ -510,25 +514,25 @@ p.en{margin-bottom:16px;}
         <div class="tbl-scroll"><table class="gstep-table">
             <thead>
                 <tr>
-                    <th style="width:24%">~하다 어휘<br><small lang="en" translate="yes">~<span lang="ko" translate="no">하다</span> word</small></th>
-                    <th style="width:38%">짧은 부정 (앞에 안·못)<br><small lang="en" translate="yes">Short: <span lang="ko" translate="no">안/못</span> + ~<span lang="ko" translate="no">하다</span></small></th>
-                    <th>긴 부정 (~지 않다·~지 못하다)<br><small lang="en" translate="yes">Long: Verb + ~<span lang="ko" translate="no">지 않다 / ~지 못하다</span></small></th>
+                    <th style="width:24%">~하다 어휘<br><small class="en-line" lang="en" translate="yes">~<span lang="ko" translate="no">하다</span> word</small></th>
+                    <th style="width:38%">짧은 부정 (앞에 안·못)<br><small class="en-line" lang="en" translate="yes">Short: <span lang="ko" translate="no">안/못</span> + ~<span lang="ko" translate="no">하다</span></small></th>
+                    <th>긴 부정 (~지 않다·~지 못하다)<br><small class="en-line" lang="en" translate="yes">Long: Verb + ~<span lang="ko" translate="no">지 않다 / ~지 못하다</span></small></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>사랑하다</strong><br><small lang="en" translate="yes">(<span lang="ko" translate="no">동사</span> · to love)</small></td>
+                    <td><strong>사랑하다</strong><br><small class="en-line" lang="en" translate="yes">(<span lang="ko" translate="no">동사</span> · to love)</small></td>
                     <td style="background:#fef2f2;color:#991b1b;text-align:center;">❌ 안 사랑하다<br>❌ 못 사랑하다</td>
                     <td style="text-align:center;">✅ <strong>사랑하지 않다</strong><br>✅ <strong>사랑하지 못하다</strong></td>
                 </tr>
                 <tr>
-                    <td><strong>조용하다</strong><br><small lang="en" translate="yes">(<span lang="ko" translate="no">형용사</span> · to be quiet)</small></td>
+                    <td><strong>조용하다</strong><br><small class="en-line" lang="en" translate="yes">(<span lang="ko" translate="no">형용사</span> · to be quiet)</small></td>
                     <td style="background:#fef2f2;color:#991b1b;text-align:center;">❌ 안 조용하다<br>❌ 못 조용하다</td>
                     <td style="text-align:center;">✅ <strong>조용하지 않다</strong><br>✅ <strong>조용하지 못하다</strong></td>
                 </tr>
             </tbody>
         </table></div>
-        <div class="explain-note"><strong>⚠️ 규칙:</strong> <strong>~하다</strong>로 끝나는 말 <strong>앞에</strong>는 <strong>'안'</strong>·<strong>'못'</strong>을 바로 붙이지 않습니다(❌ 안 공부하다, ❌ 안 사랑하다).<br><small lang="en" translate="yes"><em>Rule: never put <strong>'<span lang="ko" translate="no">안</span>'</strong>/<strong>'<span lang="ko" translate="no">못</span>'</strong> straight in front of a <strong>~<span lang="ko" translate="no">하다</span></strong> word (❌ <span lang="ko" translate="no">안 공부하다</span>).</em></small><br>대신 두 가지 방법이 있습니다.<br><small lang="en" translate="yes"><em>There are two ways instead.</em></small><br>① <strong>명사 + 하다</strong> 동사는 '안'·'못'을 <strong>명사와 '하다' 사이</strong>에 넣습니다 — 공부 <strong>안</strong> 합니다, 사랑 <strong>안</strong> 합니다, 공부 <strong>못</strong> 합니다.<br><small lang="en" translate="yes"><em>① For <strong>noun + <span lang="ko" translate="no">하다</span></strong> verbs, put <span lang="ko" translate="no">안/못</span> <strong>between the noun and <span lang="ko" translate="no">하다</span></strong> — <span lang="ko" translate="no">공부 안 합니다</span>, <span lang="ko" translate="no">사랑 안 합니다</span>, <span lang="ko" translate="no">공부 못 합니다</span>.</em></small><br>② <strong>긴 부정</strong>(<strong>~지 않다</strong> / <strong>~지 못하다</strong>)을 씁니다 — 공부하지 않습니다.<br><small lang="en" translate="yes"><em>② Or use the <strong>LONG form</strong> (~<span lang="ko" translate="no">지 않다 / ~지 못하다</span>) — <span lang="ko" translate="no">공부하지 않습니다</span>.</em></small><br>건강하다처럼 명사와 떼어 쓸 수 없는 형용사는 <strong>긴 부정만</strong> 씁니다(건강하지 않습니다).<br><small lang="en" translate="yes"><em>Adjectives such as <span lang="ko" translate="no">건강하다</span>, whose stem cannot be split off as a noun, take <strong>only the long form</strong> (<span lang="ko" translate="no">건강하지 않습니다</span>).</em></small>
+        <div class="explain-note"><strong>⚠️ 규칙:</strong> <strong>~하다</strong>로 끝나는 말 <strong>앞에</strong>는 <strong>'안'</strong>·<strong>'못'</strong>을 바로 붙이지 않습니다(❌ 안 공부하다, ❌ 안 사랑하다).<br><small class="en-line" lang="en" translate="yes"><em>Rule: never put <strong>'<span lang="ko" translate="no">안</span>'</strong>/<strong>'<span lang="ko" translate="no">못</span>'</strong> straight in front of a <strong>~<span lang="ko" translate="no">하다</span></strong> word (❌ <span lang="ko" translate="no">안 공부하다</span>).</em></small><br>대신 두 가지 방법이 있습니다.<br><small class="en-line" lang="en" translate="yes"><em>There are two ways instead.</em></small><br>① <strong>명사 + 하다</strong> 동사는 '안'·'못'을 <strong>명사와 '하다' 사이</strong>에 넣습니다 — 공부 <strong>안</strong> 합니다, 사랑 <strong>안</strong> 합니다, 공부 <strong>못</strong> 합니다.<br><small class="en-line" lang="en" translate="yes"><em>① For <strong>noun + <span lang="ko" translate="no">하다</span></strong> verbs, put <span lang="ko" translate="no">안/못</span> <strong>between the noun and <span lang="ko" translate="no">하다</span></strong> — <span lang="ko" translate="no">공부 안 합니다</span>, <span lang="ko" translate="no">사랑 안 합니다</span>, <span lang="ko" translate="no">공부 못 합니다</span>.</em></small><br>② <strong>긴 부정</strong>(<strong>~지 않다</strong> / <strong>~지 못하다</strong>)을 씁니다 — 공부하지 않습니다.<br><small class="en-line" lang="en" translate="yes"><em>② Or use the <strong>LONG form</strong> (~<span lang="ko" translate="no">지 않다 / ~지 못하다</span>) — <span lang="ko" translate="no">공부하지 않습니다</span>.</em></small><br>건강하다처럼 명사와 떼어 쓸 수 없는 형용사는 <strong>긴 부정만</strong> 씁니다(건강하지 않습니다).<br><small class="en-line" lang="en" translate="yes"><em>Adjectives such as <span lang="ko" translate="no">건강하다</span>, whose stem cannot be split off as a noun, take <strong>only the long form</strong> (<span lang="ko" translate="no">건강하지 않습니다</span>).</em></small>
         </div>
     </div>
 </div>
@@ -538,8 +542,8 @@ p.en{margin-bottom:16px;}
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">이다 ↔ 아니다</h3>
         <blockquote>
-            <strong>그는 제 친구</strong><strong>입니다</strong>. <br><small lang="en" translate="yes">(He is my friend.)</small><br>
-            <strong>그는 제 친구</strong><strong>가 아닙니다</strong>. <br><small lang="en" translate="yes">(He is not my friend.)</small>
+            <strong>그는 제 친구</strong><strong>입니다</strong>. <br><small class="en-line" lang="en" translate="yes">(He is my friend.)</small><br>
+            <strong>그는 제 친구</strong><strong>가 아닙니다</strong>. <br><small class="en-line" lang="en" translate="yes">(He is not my friend.)</small>
         </blockquote>
         <div class="explain-note">
             <span lang="en" translate="yes">Before</span> <strong>'아니다'</strong><span lang="en" translate="yes">, the noun takes the particle</span> <strong>이/가</strong> (명사+<strong>입니다</strong> → 명사+<strong>이/가 아닙니다</strong>).<br>
@@ -554,7 +558,7 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">명령·청유의 부정<br><small style="font-weight:600;"><span lang="en" translate="yes">Negating commands and suggestions</span></small></h3>
         <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             명령과 청유의 부정은 <strong>안</strong>이나 <strong>못</strong> 대신 <strong>~지 말다</strong>를 사용합니다.<br>
-            <small lang="en" translate="yes"><em>Negating commands and suggestions uses the verb <strong><span lang="ko" translate="no">말다</span></strong><br><small>(to stop / not do)</small> — NOT <span lang="ko" translate="no">안</span> or <span lang="ko" translate="no">못</span>.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Negating commands and suggestions uses the verb <strong><span lang="ko" translate="no">말다</span></strong><br><small>(to stop / not do)</small> — NOT <span lang="ko" translate="no">안</span> or <span lang="ko" translate="no">못</span>.</em></small>
         </div>
         <style>
 @media(min-width:601px){.neg-tbl{margin-left:-28px !important;width:calc(100% + 56px) !important;}}
@@ -564,34 +568,34 @@ p.en{margin-bottom:16px;}
         <div class="tbl-scroll"><table class="gstep-table neg-tbl">
             <thead>
                 <tr>
-                    <th style="width:18%">유형<br><small lang="en" translate="yes">Type</small></th>
-                    <th style="width:24%">긍정 어미<br><small lang="en" translate="yes">Positive ending</small></th>
-                    <th style="width:32%">부정 형성 과정: ~지 말 + 어미<br><small lang="en" translate="yes">How the negative is formed: <span lang="ko" translate="no">~지 말</span> + ending</small></th>
-                    <th>결과<br><small lang="en" translate="yes">Result</small></th>
+                    <th style="width:18%">유형<br><small class="en-line" lang="en" translate="yes">Type</small></th>
+                    <th style="width:24%">긍정 어미<br><small class="en-line" lang="en" translate="yes">Positive ending</small></th>
+                    <th style="width:32%">부정 형성 과정: ~지 말 + 어미<br><small class="en-line" lang="en" translate="yes">How the negative is formed: <span lang="ko" translate="no">~지 말</span> + ending</small></th>
+                    <th>결과<br><small class="en-line" lang="en" translate="yes">Result</small></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>명령</strong><br><small lang="en" translate="yes">Command</small></td>
+                    <td><strong>명령</strong><br><small class="en-line" lang="en" translate="yes">Command</small></td>
                     <td><strong>~세요</strong></td>
                     <td>~지 <strong>말</strong> + <strong>세</strong>요<br><small style="color:#991b1b;">(ㄹ + ㅅ → ㄹ 탈락)</small></td>
                     <td><strong>~지 마세요</strong></td>
                 </tr>
                 <tr>
-                    <td><strong>청유1</strong><br><small lang="en" translate="yes">Suggestion 1 (Let's)</small></td>
+                    <td><strong>청유1</strong><br><small class="en-line" lang="en" translate="yes">Suggestion 1 (Let's)</small></td>
                     <td><strong>~ㅂ시다 / ~읍시다</strong></td>
                     <td>~지 <strong>말</strong> + <strong>ㅂ</strong>시다<br><small style="color:#991b1b;">(ㄹ + ㅂ → ㄹ 탈락)</small></td>
                     <td><strong>~지 맙시다</strong></td>
                 </tr>
                 <tr>
-                    <td><strong>청유2</strong><br><small lang="en" translate="yes">Suggestion 2 (Shall we?)</small></td>
+                    <td><strong>청유2</strong><br><small class="en-line" lang="en" translate="yes">Suggestion 2 (Shall we?)</small></td>
                     <td><strong>~ㄹ까요? / ~을까요?</strong></td>
                     <td>~지 <strong>말</strong> + <strong>ㄹ</strong>까요?<br><small style="color:#166534;">(ㄹ + ㄹ → 유지)</small></td>
                     <td><strong>~지 말까요?</strong></td>
                 </tr>
             </tbody>
         </table></div>
-        <p style="font-size:0.82rem;color:#59687c;margin:6px 0 0 4px;line-height:1.6;">※ <strong>ㄹ</strong> 탈락은 <strong>ㄹ</strong>로 끝나는 모든 동사·형용사에 적용됩니다 — 예: <strong>알다</strong> → 알 + ㅂ니다 → <strong>압니다</strong> · <strong>살다</strong> → 살 + ㅂ니다 → <strong>삽니다</strong>.<br><small lang="en" translate="yes">The <strong><span lang="ko" translate="no">ㄹ</span></strong> drop applies to all <span lang="ko" translate="no">ㄹ</span>-stem verbs and adjectives — <span lang="ko" translate="no">알다</span> → <span lang="ko" translate="no">압니다</span>, <span lang="ko" translate="no">살다</span> → <span lang="ko" translate="no">삽니다</span>.</small><br>(ㄹ 탈락 후 ㅂ니다 결합)<br><small lang="en" translate="yes">(the <span lang="ko" translate="no">ㄹ</span> drops, then <span lang="ko" translate="no">ㅂ니다</span> attaches)</small></p>
+        <p style="font-size:0.82rem;color:#59687c;margin:6px 0 0 4px;line-height:1.6;">※ <strong>ㄹ</strong> 탈락은 <strong>ㄹ</strong>로 끝나는 모든 동사·형용사에 적용됩니다 — 예: <strong>알다</strong> → 알 + ㅂ니다 → <strong>압니다</strong> · <strong>살다</strong> → 살 + ㅂ니다 → <strong>삽니다</strong>.<br><small class="en-line" lang="en" translate="yes">The <strong><span lang="ko" translate="no">ㄹ</span></strong> drop applies to all <span lang="ko" translate="no">ㄹ</span>-stem verbs and adjectives — <span lang="ko" translate="no">알다</span> → <span lang="ko" translate="no">압니다</span>, <span lang="ko" translate="no">살다</span> → <span lang="ko" translate="no">삽니다</span>.</small><br>(ㄹ 탈락 후 ㅂ니다 결합)<br><small class="en-line" lang="en" translate="yes">(the <span lang="ko" translate="no">ㄹ</span> drops, then <span lang="ko" translate="no">ㅂ니다</span> attaches)</small></p>
         <style>
 @media(min-width:601px){
 .neg-ex{margin-left:-28px !important;width:calc(100% + 56px) !important;}
@@ -600,40 +604,40 @@ p.en{margin-bottom:16px;}
 </style>
         <div class="explain-note neg-ex">
             <strong>예문: 명령·청유 부정</strong><br>
-            <small lang="en" translate="yes"><em>Examples: negative command &amp; suggestion</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Examples: negative command &amp; suggestion</em></small>
             <div class="tbl-scroll"><table style="width:100%;border-collapse:collapse;margin-top:10px;font-size:0.92rem;">
                 <thead>
                     <tr style="background:linear-gradient(135deg,#7c3aed,#a855f7);">
-                        <th style="padding:8px;border:1px solid #c4b5fd;text-align:center;color:#5b21b6;background:linear-gradient(135deg,#ede9fe,#ddd6fe);">동사<br><small lang="en" translate="yes">Verb</small></th>
-                        <th style="padding:8px;border:1px solid #c4b5fd;text-align:center;color:#5b21b6;background:linear-gradient(135deg,#ede9fe,#ddd6fe);"><span style="display:block;font-size:0.72rem;font-weight:800;color:#6d28d9;margin-bottom:3px;">명령<span class="gloss" lang="en" translate="yes">Command</span></span>~지 마세요<br><small lang="en" translate="yes">Don't (please)</small></th>
-                        <th style="padding:8px;border:1px solid #c4b5fd;text-align:center;color:#5b21b6;background:linear-gradient(135deg,#ede9fe,#ddd6fe);"><span style="display:block;font-size:0.72rem;font-weight:800;color:#6d28d9;margin-bottom:3px;">청유1<span class="gloss" lang="en" translate="yes">Suggestion 1</span></span>~지 맙시다<br><small lang="en" translate="yes">Let's not</small></th>
-                        <th style="padding:8px;border:1px solid #c4b5fd;text-align:center;color:#5b21b6;background:linear-gradient(135deg,#ede9fe,#ddd6fe);"><span style="display:block;font-size:0.72rem;font-weight:800;color:#6d28d9;margin-bottom:3px;">청유2<span class="gloss" lang="en" translate="yes">Suggestion 2</span></span>~지 말까요?<br><small lang="en" translate="yes">Shall we not?</small></th>
+                        <th style="padding:8px;border:1px solid #c4b5fd;text-align:center;color:#5b21b6;background:linear-gradient(135deg,#ede9fe,#ddd6fe);">동사<br><small class="en-line" lang="en" translate="yes">Verb</small></th>
+                        <th style="padding:8px;border:1px solid #c4b5fd;text-align:center;color:#5b21b6;background:linear-gradient(135deg,#ede9fe,#ddd6fe);"><span style="display:block;font-size:0.72rem;font-weight:800;color:#6d28d9;margin-bottom:3px;">명령<span class="gloss" lang="en" translate="yes">Command</span></span>~지 마세요<br><small class="en-line" lang="en" translate="yes">Don't (please)</small></th>
+                        <th style="padding:8px;border:1px solid #c4b5fd;text-align:center;color:#5b21b6;background:linear-gradient(135deg,#ede9fe,#ddd6fe);"><span style="display:block;font-size:0.72rem;font-weight:800;color:#6d28d9;margin-bottom:3px;">청유1<span class="gloss" lang="en" translate="yes">Suggestion 1</span></span>~지 맙시다<br><small class="en-line" lang="en" translate="yes">Let's not</small></th>
+                        <th style="padding:8px;border:1px solid #c4b5fd;text-align:center;color:#5b21b6;background:linear-gradient(135deg,#ede9fe,#ddd6fe);"><span style="display:block;font-size:0.72rem;font-weight:800;color:#6d28d9;margin-bottom:3px;">청유2<span class="gloss" lang="en" translate="yes">Suggestion 2</span></span>~지 말까요?<br><small class="en-line" lang="en" translate="yes">Shall we not?</small></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;font-weight:800;color:#6d28d9;"><strong>가다</strong><br><small lang="en" translate="yes">go</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">가지 <strong>마세요</strong><br><small lang="en" translate="yes">please don't go</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">가지 <strong>맙시다</strong><br><small lang="en" translate="yes">let's not go</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">가지 <strong>말까요?</strong><br><small lang="en" translate="yes">shall we not go?</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;font-weight:800;color:#6d28d9;"><strong>가다</strong><br><small class="en-line" lang="en" translate="yes">go</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">가지 <strong>마세요</strong><br><small class="en-line" lang="en" translate="yes">please don't go</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">가지 <strong>맙시다</strong><br><small class="en-line" lang="en" translate="yes">let's not go</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">가지 <strong>말까요?</strong><br><small class="en-line" lang="en" translate="yes">shall we not go?</small></td>
                     </tr>
                     <tr>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;font-weight:800;color:#6d28d9;"><strong>먹다</strong><br><small lang="en" translate="yes">eat</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">먹지 <strong>마세요</strong><br><small lang="en" translate="yes">please don't eat</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">먹지 <strong>맙시다</strong><br><small lang="en" translate="yes">let's not eat</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">먹지 <strong>말까요?</strong><br><small lang="en" translate="yes">shall we not eat?</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;font-weight:800;color:#6d28d9;"><strong>먹다</strong><br><small class="en-line" lang="en" translate="yes">eat</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">먹지 <strong>마세요</strong><br><small class="en-line" lang="en" translate="yes">please don't eat</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">먹지 <strong>맙시다</strong><br><small class="en-line" lang="en" translate="yes">let's not eat</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">먹지 <strong>말까요?</strong><br><small class="en-line" lang="en" translate="yes">shall we not eat?</small></td>
                     </tr>
                     <tr>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;font-weight:800;color:#6d28d9;"><strong>자다</strong><br><small lang="en" translate="yes">sleep</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">자지 <strong>마세요</strong><br><small lang="en" translate="yes">please don't sleep</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">자지 <strong>맙시다</strong><br><small lang="en" translate="yes">let's not sleep</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">자지 <strong>말까요?</strong><br><small lang="en" translate="yes">shall we not sleep?</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;font-weight:800;color:#6d28d9;"><strong>자다</strong><br><small class="en-line" lang="en" translate="yes">sleep</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">자지 <strong>마세요</strong><br><small class="en-line" lang="en" translate="yes">please don't sleep</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">자지 <strong>맙시다</strong><br><small class="en-line" lang="en" translate="yes">let's not sleep</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">자지 <strong>말까요?</strong><br><small class="en-line" lang="en" translate="yes">shall we not sleep?</small></td>
                     </tr>
                     <tr>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;font-weight:800;color:#6d28d9;"><strong>보다</strong><br><small lang="en" translate="yes">watch</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">보지 <strong>마세요</strong><br><small lang="en" translate="yes">please don't watch</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">보지 <strong>맙시다</strong><br><small lang="en" translate="yes">let's not watch</small></td>
-                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">보지 <strong>말까요?</strong><br><small lang="en" translate="yes">shall we not watch?</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;font-weight:800;color:#6d28d9;"><strong>보다</strong><br><small class="en-line" lang="en" translate="yes">watch</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">보지 <strong>마세요</strong><br><small class="en-line" lang="en" translate="yes">please don't watch</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">보지 <strong>맙시다</strong><br><small class="en-line" lang="en" translate="yes">let's not watch</small></td>
+                        <td style="padding:8px;border:1px solid #a855f7;text-align:center;background:#fff;">보지 <strong>말까요?</strong><br><small class="en-line" lang="en" translate="yes">shall we not watch?</small></td>
                     </tr>
                 </tbody>
             </table></div>
@@ -646,8 +650,8 @@ p.en{margin-bottom:16px;}
     <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; font-size:0.7rem; margin:0;">
         <thead>
             <tr>
-                <th rowspan="3" style="background:#ede9fe; color:#5b21b6; padding:10px 4px; border:1px solid #c4b5fd; text-align:center; white-space:nowrap; vertical-align:middle; text-align:center; font-weight:800;">구분<br><small lang="en" translate="yes">Category</small></th>
-                <th rowspan="3" style="background:#ede9fe; color:#5b21b6; padding:10px 4px; border:1px solid #c4b5fd; text-align:center; white-space:nowrap; vertical-align:middle; text-align:center; font-weight:800;">형태<br><small lang="en" translate="yes">Form</small></th>
+                <th rowspan="3" style="background:#ede9fe; color:#5b21b6; padding:10px 4px; border:1px solid #c4b5fd; text-align:center; white-space:nowrap; vertical-align:middle; text-align:center; font-weight:800;">구분<br><small class="en-line" lang="en" translate="yes">Category</small></th>
+                <th rowspan="3" style="background:#ede9fe; color:#5b21b6; padding:10px 4px; border:1px solid #c4b5fd; text-align:center; white-space:nowrap; vertical-align:middle; text-align:center; font-weight:800;">형태<br><small class="en-line" lang="en" translate="yes">Form</small></th>
                 <th colspan="4" style="background:#fef9c3; color:#854d0e; padding:10px 4px; border:1px solid #c4b5fd; text-align:center; white-space:nowrap; text-align:center; font-weight:800;">서술문·의문문</th>
                 <th colspan="2" style="background:#fce7f3; color:#9d174d; padding:10px 4px; border:1px solid #c4b5fd; text-align:center; white-space:nowrap; text-align:center; font-weight:800;">명령문·청유문</th>
             </tr>
@@ -746,9 +750,9 @@ p.en{margin-bottom:16px;}
     <p style="font-size:0.82rem; color:#475569; margin: 10px 14px 0 14px; line-height:1.7;">
         <strong style="color:#c62020;">취소선</strong> <span lang="en" translate="yes">(strikethrough) =</span> 사용하지 않는 형태 <span lang="en" translate="yes">(form not used).</span><br>
         ① <strong>~하다 합성동사</strong> (공부하다, 사랑하다 …)는 짧은 형태(<strong>안</strong> / <strong>못</strong> + 동사)를 쓰지 않고, 긴 형태(<strong>~지 않다</strong> / <strong>~지 못하다</strong>)만 사용합니다.<br>
-        <small lang="en" translate="yes"><em>~<span lang="ko" translate="no">하다</span> compound verbs (<span lang="ko" translate="no">공부하다</span>, <span lang="ko" translate="no">사랑하다</span> …) don't use the short form (<span lang="ko" translate="no">안 / 못</span> + verb) — only the long form (~<span lang="ko" translate="no">지 않다 / ~지 못하다</span>).</em></small><br>② <strong>형용사</strong>는 짧은 <strong>못</strong> 부정(<strong>못</strong> + 형용사)과 명령·청유 부정(<strong>~지 마세요</strong> / <strong>~지 맙시다</strong>)을 사용할 수 없습니다.<br><small lang="en" translate="yes"><em>② Adjectives cannot use the short <span lang="ko" translate="no">못</span> form (<span lang="ko" translate="no">못</span> + adjective) or command/suggestion negation (~<span lang="ko" translate="no">지 마세요 / ~지 맙시다</span>).</em></small><br>긴 형태 <strong>~지 못하다</strong>(기대에 못 미침)는 사용할 수 있습니다.<br><small lang="en" translate="yes"><em>The long form ~<span lang="ko" translate="no">지 못하다</span> (falling short of expectations) is possible.</em></small><br>
+        <small class="en-line" lang="en" translate="yes"><em>~<span lang="ko" translate="no">하다</span> compound verbs (<span lang="ko" translate="no">공부하다</span>, <span lang="ko" translate="no">사랑하다</span> …) don't use the short form (<span lang="ko" translate="no">안 / 못</span> + verb) — only the long form (~<span lang="ko" translate="no">지 않다 / ~지 못하다</span>).</em></small><br>② <strong>형용사</strong>는 짧은 <strong>못</strong> 부정(<strong>못</strong> + 형용사)과 명령·청유 부정(<strong>~지 마세요</strong> / <strong>~지 맙시다</strong>)을 사용할 수 없습니다.<br><small class="en-line" lang="en" translate="yes"><em>② Adjectives cannot use the short <span lang="ko" translate="no">못</span> form (<span lang="ko" translate="no">못</span> + adjective) or command/suggestion negation (~<span lang="ko" translate="no">지 마세요 / ~지 맙시다</span>).</em></small><br>긴 형태 <strong>~지 못하다</strong>(기대에 못 미침)는 사용할 수 있습니다.<br><small class="en-line" lang="en" translate="yes"><em>The long form ~<span lang="ko" translate="no">지 못하다</span> (falling short of expectations) is possible.</em></small><br>
         ③ <strong>이다</strong>의 부정은 <strong>~이/가 아니다</strong>로 별도 형태를 가집니다.<br>
-        <small lang="en" translate="yes"><em>The negative of <span lang="ko" translate="no">이다</span> has its own form: ~<span lang="ko" translate="no">이/가 아니다</span>.</em></small>
+        <small class="en-line" lang="en" translate="yes"><em>The negative of <span lang="ko" translate="no">이다</span> has its own form: ~<span lang="ko" translate="no">이/가 아니다</span>.</em></small>
     </p>
 </div>
 
@@ -802,8 +806,8 @@ p.en{margin-bottom:16px;}
     <div class="tbl-scroll"><table class="neg-test" style="width:100%; border-collapse:collapse; font-size:0.68rem; margin:0;">
         <thead>
             <tr>
-                <th rowspan="3" style="background:#ede9fe; color:#5b21b6; padding:10px 4px; border:1px solid #c4b5fd; text-align:center; white-space:nowrap; vertical-align:middle; font-weight:800;">구분<br><small lang="en" translate="yes">Category</small></th>
-                <th rowspan="3" style="background:#ede9fe; color:#5b21b6; padding:10px 4px; border:1px solid #c4b5fd; text-align:center; white-space:nowrap; vertical-align:middle; font-weight:800;">형태<br><small lang="en" translate="yes">Form</small></th>
+                <th rowspan="3" style="background:#ede9fe; color:#5b21b6; padding:10px 4px; border:1px solid #c4b5fd; text-align:center; white-space:nowrap; vertical-align:middle; font-weight:800;">구분<br><small class="en-line" lang="en" translate="yes">Category</small></th>
+                <th rowspan="3" style="background:#ede9fe; color:#5b21b6; padding:10px 4px; border:1px solid #c4b5fd; text-align:center; white-space:nowrap; vertical-align:middle; font-weight:800;">형태<br><small class="en-line" lang="en" translate="yes">Form</small></th>
                 <th colspan="4" style="background:#fef9c3; color:#854d0e; padding:10px 4px; border:1px solid #c4b5fd; text-align:center; white-space:nowrap; font-weight:800;">서술문·의문문</th>
                 <th colspan="2" style="background:#fce7f3; color:#9d174d; padding:10px 4px; border:1px solid #c4b5fd; text-align:center; white-space:nowrap; font-weight:800;">명령문·청유문</th>
             </tr>
@@ -1119,39 +1123,39 @@ function negGrade(){
         </tbody>
         </table></div>
         <div class="explain-note"><strong>악기 연주 동사 정리 <span lang="en" translate="yes">· Verbs for playing musical instruments</span></strong><br>
-            <span style="font-size:0.9rem;">한국어는 악기 종류에 따라 다른 동사를 씁니다.<br><small lang="en" translate="yes"><em>Korean uses different verbs depending on the type of instrument.</em></small><br><strong>치다 / 불다 / 켜다 / 연주하다</strong>로 구분합니다.<br><small lang="en" translate="yes"><em>All are "play" in English, but Korean distinguishes <strong><span lang="ko" translate="no">치다 / 불다 / 켜다 / 연주하다</span></strong>.</em></small></span>
+            <span style="font-size:0.9rem;">한국어는 악기 종류에 따라 다른 동사를 씁니다.<br><small class="en-line" lang="en" translate="yes"><em>Korean uses different verbs depending on the type of instrument.</em></small><br><strong>치다 / 불다 / 켜다 / 연주하다</strong>로 구분합니다.<br><small class="en-line" lang="en" translate="yes"><em>All are "play" in English, but Korean distinguishes <strong><span lang="ko" translate="no">치다 / 불다 / 켜다 / 연주하다</span></strong>.</em></small></span>
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:#fde68a; color:#78350f;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #fbbf24; width:18%;">동사<br><small lang="en" translate="yes">Verb</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #fbbf24; width:30%;">악기 종류<br><small lang="en" translate="yes">Instrument type</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #fbbf24;">대표 악기<br><small lang="en" translate="yes">Common instruments</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #fbbf24; width:18%;">동사<br><small class="en-line" lang="en" translate="yes">Verb</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #fbbf24; width:30%;">악기 종류<br><small class="en-line" lang="en" translate="yes">Instrument type</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #fbbf24;">대표 악기<br><small class="en-line" lang="en" translate="yes">Common instruments</small></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="padding:10px; text-align:center; border-bottom:1px solid #fef3c7; color:#92400e;"><strong style="font-size:1.05rem;">치다</strong><br><small lang="en" translate="yes"><em>strike / hit</em></small></td>
-                        <td style="padding:10px; text-align:center; border-bottom:1px solid #fef3c7;">건반·타악기<br><small lang="en" translate="yes"><em>keyboard · percussion</em></small></td>
+                        <td style="padding:10px; text-align:center; border-bottom:1px solid #fef3c7; color:#92400e;"><strong style="font-size:1.05rem;">치다</strong><br><small class="en-line" lang="en" translate="yes"><em>strike / hit</em></small></td>
+                        <td style="padding:10px; text-align:center; border-bottom:1px solid #fef3c7;">건반·타악기<br><small class="en-line" lang="en" translate="yes"><em>keyboard · percussion</em></small></td>
                         <td style="padding:10px; text-align:center; border-bottom:1px solid #fef3c7;"><strong>피아노</strong><span lang="en" translate="yes">(piano) ·</span> <strong>기타</strong><span lang="en" translate="yes">(guitar) ·</span> <strong>드럼</strong><span lang="en" translate="yes">(drums) ·</span> <strong>북</strong><span lang="en" translate="yes">(traditional drum)</span></td>
                     </tr>
                     <tr style="background:#fffbeb;">
-                        <td style="padding:10px; text-align:center; border-bottom:1px solid #fef3c7; color:#92400e;"><strong style="font-size:1.05rem;">불다</strong><br><small lang="en" translate="yes"><em>blow</em></small></td>
-                        <td style="padding:10px; text-align:center; border-bottom:1px solid #fef3c7;">관악기<br><small lang="en" translate="yes"><em>wind instruments</em></small></td>
+                        <td style="padding:10px; text-align:center; border-bottom:1px solid #fef3c7; color:#92400e;"><strong style="font-size:1.05rem;">불다</strong><br><small class="en-line" lang="en" translate="yes"><em>blow</em></small></td>
+                        <td style="padding:10px; text-align:center; border-bottom:1px solid #fef3c7;">관악기<br><small class="en-line" lang="en" translate="yes"><em>wind instruments</em></small></td>
                         <td style="padding:10px; text-align:center; border-bottom:1px solid #fef3c7;"><strong>플루트</strong><span lang="en" translate="yes">(flute) ·</span> <strong>트럼펫</strong><span lang="en" translate="yes">(trumpet) ·</span> <strong>색소폰</strong><span lang="en" translate="yes">(saxophone) ·</span> <strong>하모니카</strong><span lang="en" translate="yes">(harmonica)</span></td>
                     </tr>
                     <tr>
-                        <td style="padding:10px; text-align:center; border-bottom:1px solid #fef3c7; color:#92400e;"><strong style="font-size:1.05rem;">켜다</strong><br><small lang="en" translate="yes"><em>bow / draw</em></small></td>
-                        <td style="padding:10px; text-align:center; border-bottom:1px solid #fef3c7;">활로 켜는 현악기<br><small lang="en" translate="yes"><em>bowed string</em></small></td>
+                        <td style="padding:10px; text-align:center; border-bottom:1px solid #fef3c7; color:#92400e;"><strong style="font-size:1.05rem;">켜다</strong><br><small class="en-line" lang="en" translate="yes"><em>bow / draw</em></small></td>
+                        <td style="padding:10px; text-align:center; border-bottom:1px solid #fef3c7;">활로 켜는 현악기<br><small class="en-line" lang="en" translate="yes"><em>bowed string</em></small></td>
                         <td style="padding:10px; text-align:center; border-bottom:1px solid #fef3c7;"><strong>바이올린</strong><span lang="en" translate="yes">(violin) ·</span> <strong>첼로</strong><span lang="en" translate="yes">(cello) ·</span> <strong>비올라</strong><span lang="en" translate="yes">(viola)</span></td>
                     </tr>
                     <tr style="background:#fffbeb;">
-                        <td style="padding:10px; text-align:center; color:#92400e;"><strong style="font-size:1.05rem;">연주하다</strong><br><small lang="en" translate="yes"><em>perform / play</em></small></td>
-                        <td style="padding:10px; text-align:center;">모든 악기 (격식·일반)<br><small lang="en" translate="yes"><em>any instrument (formal · generic)</em></small></td>
-                        <td style="padding:10px; text-align:center;">모든 악기에 사용 가능 — <strong>피아노를 연주하다</strong>, <strong>바이올린을 연주하다</strong> 등<br><small lang="en" translate="yes"><em>Works with any instrument</em></small></td>
+                        <td style="padding:10px; text-align:center; color:#92400e;"><strong style="font-size:1.05rem;">연주하다</strong><br><small class="en-line" lang="en" translate="yes"><em>perform / play</em></small></td>
+                        <td style="padding:10px; text-align:center;">모든 악기 (격식·일반)<br><small class="en-line" lang="en" translate="yes"><em>any instrument (formal · generic)</em></small></td>
+                        <td style="padding:10px; text-align:center;">모든 악기에 사용 가능 — <strong>피아노를 연주하다</strong>, <strong>바이올린을 연주하다</strong> 등<br><small class="en-line" lang="en" translate="yes"><em>Works with any instrument</em></small></td>
                     </tr>
                 </tbody>
             </table></div>
-            <div style="margin-top:10px; padding:8px 10px; background:#fef3c7; border-left:3px solid #f59e0b; border-radius:4px; font-size:0.88rem;"><strong>핵심:</strong> 동사는 <strong>연주 방식</strong>으로 결정됩니다 — 손으로 <strong>치는</strong>지, 입으로 <strong>부는</strong>지, 활로 <strong>켜는</strong>지.<br><small lang="en" translate="yes"><em><strong>Key:</strong> The verb is decided by <strong>how you play it</strong> — strike with the hands, blow with the mouth, or bow with a bow.</small><br>헷갈리면 격식·일반 표현인 <strong>연주하다</strong>가 항상 안전합니다.<br><small lang="en" translate="yes">When unsure, <strong><span lang="ko" translate="no">연주하다</span></strong><br><small>(the general/formal verb)</small> is always safe.</em></small>
+            <div style="margin-top:10px; padding:8px 10px; background:#fef3c7; border-left:3px solid #f59e0b; border-radius:4px; font-size:0.88rem;"><strong>핵심:</strong> 동사는 <strong>연주 방식</strong>으로 결정됩니다 — 손으로 <strong>치는</strong>지, 입으로 <strong>부는</strong>지, 활로 <strong>켜는</strong>지.<br><small class="en-line" lang="en" translate="yes"><em><strong>Key:</strong> The verb is decided by <strong>how you play it</strong> — strike with the hands, blow with the mouth, or bow with a bow.</small><br>헷갈리면 격식·일반 표현인 <strong>연주하다</strong>가 항상 안전합니다.<br><small class="en-line" lang="en" translate="yes">When unsure, <strong><span lang="ko" translate="no">연주하다</span></strong><br><small>(the general/formal verb)</small> is always safe.</em></small>
             </div>
         </div>
     </div>
@@ -1352,7 +1356,7 @@ function negGrade(){
         </table></div>
         <div style="margin-top:14px;background:linear-gradient(135deg,#eef2ff 0%,#e0e7ff 100%);border:1px solid #c7d2fe;border-left:4px solid #4f46e5;border-radius:10px;padding:14px 18px;box-shadow:0 1px 3px rgba(79,70,229,0.05);">
             <div style="font-weight:800;color:#3730a3;margin-bottom:10px;font-size:0.95rem;">📝 능력 부정의 두 형태<span class="gloss" lang="en" translate="yes">Two ways to say "can't"</span></div>
-            <p style="margin:0;color:#374151;font-size:0.92rem;line-height:1.6;">능력을 부정할 때는 <strong style="color:#4f46e5;">'~지 못하다'</strong>와 <strong style="color:#4f46e5;">'~ㄹ/을 수 없다'</strong> 두 형태를 쓸 수 있고, 둘은 같은 의미입니다.<br><small lang="en" translate="yes">To express inability you can use either <strong style="color:#4f46e5;">'~<span lang="ko" translate="no">지 못하다</span>'</strong> or <strong style="color:#4f46e5;">'~<span lang="ko" translate="no">ㄹ/을 수 없다</span>'</strong> — both mean the same.</small><br><br><strong>사랑하지 못합니다 = 사랑할 수 없습니다</strong> <small lang="en" translate="yes">(I can't love)</small></p>
+            <p style="margin:0;color:#374151;font-size:0.92rem;line-height:1.6;">능력을 부정할 때는 <strong style="color:#4f46e5;">'~지 못하다'</strong>와 <strong style="color:#4f46e5;">'~ㄹ/을 수 없다'</strong> 두 형태를 쓸 수 있고, 둘은 같은 의미입니다.<br><small class="en-line" lang="en" translate="yes">To express inability you can use either <strong style="color:#4f46e5;">'~<span lang="ko" translate="no">지 못하다</span>'</strong> or <strong style="color:#4f46e5;">'~<span lang="ko" translate="no">ㄹ/을 수 없다</span>'</strong> — both mean the same.</small><br><br><strong>사랑하지 못합니다 = 사랑할 수 없습니다</strong> <small lang="en" translate="yes">(I can't love)</small></p>
         </div>
     </div>
 </div>

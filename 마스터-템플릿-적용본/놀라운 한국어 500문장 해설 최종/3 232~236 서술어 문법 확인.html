@@ -390,6 +390,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
    빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
 p.ko{margin-bottom:2px;}
 p.en{margin-bottom:16px;}
+small.en-line{display:inline-block;margin-bottom:9px;}
+/* ★한국어와 그 영어는 붙이고, 짝과 짝 사이만 벌린다.
+   앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
+   것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
 </head>
 <body>
@@ -416,7 +420,7 @@ p.en{margin-bottom:16px;}
     <div class="gstep-num">1</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">'~지요/죠'란?<br><small style="font-weight:600;"><span lang="en" translate="yes">What is </span><span lang="ko" translate="no">'~지요/죠'</span>?</small></h3>
-        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">동사·형용사 어간(또는 명사 + 이다 어간)에 직접 붙여 <strong>확인이나 동의</strong>를 표현합니다.<br><small lang="en" translate="yes"><em>Attached directly to a verb/adjective stem (or noun + <span lang="ko" translate="no">이다</span> stem), it expresses confirmation or seeks soft agreement.</em></small><br>영어의 <span lang="en" translate="yes">tag question(</span><strong><span lang="en" translate="yes">right? / isn't it?</span></strong>)과 같은 역할을 합니다.<br><small lang="en" translate="yes"><em>It plays the same role as an English tag question — <strong>right? / isn't it? / aren't you?</strong></em></small>
+        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">동사·형용사 어간(또는 명사 + 이다 어간)에 직접 붙여 <strong>확인이나 동의</strong>를 표현합니다.<br><small class="en-line" lang="en" translate="yes"><em>Attached directly to a verb/adjective stem (or noun + <span lang="ko" translate="no">이다</span> stem), it expresses confirmation or seeks soft agreement.</em></small><br>영어의 <span lang="en" translate="yes">tag question(</span><strong><span lang="en" translate="yes">right? / isn't it?</span></strong>)과 같은 역할을 합니다.<br><small class="en-line" lang="en" translate="yes"><em>It plays the same role as an English tag question — <strong>right? / isn't it? / aren't you?</strong></em></small>
         </div>
         <div class="gstep-pattern">동사 · 형용사 + <span class="accent">지요? / 죠?</span><small><span lang="en" translate="yes">Verb · Adjective +</span> <span class="accent">지요? / 죠?</span></small><small lang="en" translate="yes"><strong><span lang="ko" translate="no">지요</span>?</strong><br><small>(formal)</small> / <strong><span lang="ko" translate="no">죠</span>?</strong> (colloquial contraction): both carry the same meaning and politeness.<br><strong><span lang="ko" translate="no">지요</span>?</strong> (<span lang="ko" translate="no">정식</span>) / <strong><span lang="ko" translate="no">죠</span>?</strong> (<span lang="ko" translate="no">회화 줄임형</span>): <span lang="ko" translate="no">두 형태 모두 동일한 의미·정중함</span></small></div>
     </div>
@@ -428,19 +432,19 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">시제·어간 종류별 표<br><small style="font-weight:600;"><span lang="en" translate="yes">Tense and stem-type table</span></small></h3>
         <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             시제와 어간 종류에 따라 형태를 선택합니다.<br>
-            <small lang="en" translate="yes"><em>Choose the form that matches the tense and the stem.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Choose the form that matches the tense and the stem.</em></small>
         </div>
         <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:22%"><span lang="en" translate="yes">Type</span><br>종류</th><th style="width:32%"><span lang="en" translate="yes">Pattern</span><br>패턴</th><th><span lang="en" translate="yes">Example</span></th></tr></thead>
             <tbody>
-                <tr><td><strong><span lang="en" translate="yes">Present</span></strong><br><small>(현재)</small></td><td>~ + <span class="accent">죠?</span></td><td><strong>좋다</strong> → <strong>좋죠?</strong><br><small lang="en" translate="yes">(nice, right?)</small></td></tr>
-                <tr><td><strong><span lang="en" translate="yes">Past</span></strong><br><small>(과거)</small></td><td>~ + <span class="accent">았/었</span> + <span class="accent">죠?</span></td><td><strong>피곤하다</strong> → <strong>피곤했죠?</strong><br><small lang="en" translate="yes">(were tired, right?)</small></td></tr>
-                <tr><td><strong><span lang="en" translate="yes">Noun</span></strong><br><small>(명사)</small></td><td><span lang="en" translate="yes">noun +</span> <span class="accent">(이)죠?</span></td><td><strong>11시</strong> → <strong>11시죠?</strong><br><small lang="en" translate="yes">(it's 11, right?)</small><br><strong>학생</strong> → <strong>학생이죠?</strong><br><small lang="en" translate="yes">(you're a student, right?)</small></td></tr>
+                <tr><td><strong><span lang="en" translate="yes">Present</span></strong><br><small>(현재)</small></td><td>~ + <span class="accent">죠?</span></td><td><strong>좋다</strong> → <strong>좋죠?</strong><br><small class="en-line" lang="en" translate="yes">(nice, right?)</small></td></tr>
+                <tr><td><strong><span lang="en" translate="yes">Past</span></strong><br><small>(과거)</small></td><td>~ + <span class="accent">았/었</span> + <span class="accent">죠?</span></td><td><strong>피곤하다</strong> → <strong>피곤했죠?</strong><br><small class="en-line" lang="en" translate="yes">(were tired, right?)</small></td></tr>
+                <tr><td><strong><span lang="en" translate="yes">Noun</span></strong><br><small>(명사)</small></td><td><span lang="en" translate="yes">noun +</span> <span class="accent">(이)죠?</span></td><td><strong>11시</strong> → <strong>11시죠?</strong><br><small class="en-line" lang="en" translate="yes">(it's 11, right?)</small><br><strong>학생</strong> → <strong>학생이죠?</strong><br><small class="en-line" lang="en" translate="yes">(you're a student, right?)</small></td></tr>
             </tbody>
         </table></div>
         <div class="explain-note">
             <strong>⚠️ 명사 + (이)죠 규칙</strong><br>
-            <small lang="en" translate="yes"><em>Noun + (<span lang="ko" translate="no">이</span>)<span lang="ko" translate="no">죠</span> rule</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Noun + (<span lang="ko" translate="no">이</span>)<span lang="ko" translate="no">죠</span> rule</em></small>
             <div class="tbl-scroll"><table style="width:100%;border-collapse:collapse;margin-top:10px;font-size:0.92rem;">
                 <thead>
                     <tr>
@@ -451,12 +455,12 @@ p.en{margin-bottom:16px;}
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="padding:8px;border:1px solid #ddd6fe;text-align:center;background:#fff;font-weight:700;color:#6d28d9;"><strong>없음</strong><br><small lang="en" translate="yes"><em>none</em></small></td>
+                        <td style="padding:8px;border:1px solid #ddd6fe;text-align:center;background:#fff;font-weight:700;color:#6d28d9;"><strong>없음</strong><br><small class="en-line" lang="en" translate="yes"><em>none</em></small></td>
                         <td style="padding:8px;border:1px solid #ddd6fe;text-align:center;background:#fff;"><span lang="en" translate="yes">noun +</span> <strong>죠?</strong></td>
                         <td style="padding:8px;border:1px solid #ddd6fe;text-align:center;background:#fff;"><strong>11시</strong> → <strong>11시죠?</strong></td>
                     </tr>
                     <tr>
-                        <td style="padding:8px;border:1px solid #ddd6fe;text-align:center;background:#fff;font-weight:700;color:#6d28d9;"><strong>있음</strong><br><small lang="en" translate="yes"><em>yes</em></small></td>
+                        <td style="padding:8px;border:1px solid #ddd6fe;text-align:center;background:#fff;font-weight:700;color:#6d28d9;"><strong>있음</strong><br><small class="en-line" lang="en" translate="yes"><em>yes</em></small></td>
                         <td style="padding:8px;border:1px solid #ddd6fe;text-align:center;background:#fff;"><span lang="en" translate="yes">noun +</span> <strong>이죠?</strong></td>
                         <td style="padding:8px;border:1px solid #ddd6fe;text-align:center;background:#fff;">학<strong>생</strong> → <strong>학생이죠?</strong></td>
                     </tr>
@@ -470,7 +474,7 @@ p.en{margin-bottom:16px;}
     <div class="gstep-num">3</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">~지요 ↔ ~죠</h3>
-        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">같은 표현의 두 형태입니다.<br><small lang="en" translate="yes"><em>Two forms of the same expression.</em></small><br><strong>~지요</strong>는 정식 완전형, <strong>~죠</strong>는 일상 회화에서 더 자주 쓰이는 줄임형입니다.<br><small lang="en" translate="yes"><em><strong>~<span lang="ko" translate="no">지요</span></strong> is the formal full form; <strong>~<span lang="ko" translate="no">죠</span></strong> is the everyday spoken short form.</em></small><br>두 형태 모두 의미·정중함이 같으므로 상황에 따라 자유롭게 선택할 수 있습니다.<br><small lang="en" translate="yes"><em>Both convey the same meaning and politeness — choose freely by register.</em></small>
+        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">같은 표현의 두 형태입니다.<br><small class="en-line" lang="en" translate="yes"><em>Two forms of the same expression.</em></small><br><strong>~지요</strong>는 정식 완전형, <strong>~죠</strong>는 일상 회화에서 더 자주 쓰이는 줄임형입니다.<br><small class="en-line" lang="en" translate="yes"><em><strong>~<span lang="ko" translate="no">지요</span></strong> is the formal full form; <strong>~<span lang="ko" translate="no">죠</span></strong> is the everyday spoken short form.</em></small><br>두 형태 모두 의미·정중함이 같으므로 상황에 따라 자유롭게 선택할 수 있습니다.<br><small class="en-line" lang="en" translate="yes"><em>Both convey the same meaning and politeness — choose freely by register.</em></small>
         </div>
         <blockquote>
             <strong>오늘 날씨가 좋</strong><strong>지요</strong>? = <strong>오늘 날씨가 좋</strong><strong>죠</strong>? (<strong>둘 다</strong> <strong><span lang="en" translate="yes">The weather is nice today, isn't it?</span></strong>)

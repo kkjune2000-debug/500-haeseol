@@ -373,6 +373,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
    빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
 p.ko{margin-bottom:2px;}
 p.en{margin-bottom:16px;}
+small.en-line{display:inline-block;margin-bottom:9px;}
+/* ★한국어와 그 영어는 붙이고, 짝과 짝 사이만 벌린다.
+   앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
+   것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
 </head>
 <body>
@@ -402,7 +406,7 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">덕분에: 감사 표현<br><small style="font-weight: 600;"><span lang="en" translate="yes"><span lang="ko" translate="no">덕분에</span>: expressing gratitude</span></small></h3>
         <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             <strong>덕분에</strong>는 누군가/무언가 덕분에 <strong>좋은 결과</strong>가 생겼을 때 사용합니다 — 감사의 의미.<br>
-            <small lang="en" translate="yes"><em>Use <strong><span lang="ko" translate="no">덕분에</span></strong> when something <strong>positive</strong> happened thanks to a person or thing — expresses gratitude.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Use <strong><span lang="ko" translate="no">덕분에</span></strong> when something <strong>positive</strong> happened thanks to a person or thing — expresses gratitude.</em></small>
         </div>
         <div class="gstep-pattern">[명사] + <span class="accent">덕분에</span> + [좋은 결과]<small><span lang="en" translate="yes">[Noun] +</span> <span class="accent">덕분에</span> <span lang="en" translate="yes">+ [positive result]</span></small></div>
         <blockquote>
@@ -417,7 +421,7 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">때문에 ↔ 덕분에 ↔ 탓에 비교</h3>
         <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             모두 원인을 나타내지만 화자의 태도가 다릅니다.<br>
-            <small lang="en" translate="yes"><em>All mean <strong>because of</strong>, but the speaker's emotion differs.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>All mean <strong>because of</strong>, but the speaker's emotion differs.</em></small>
         </div>
         <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:20%"><span lang="en" translate="yes">Connector</span></th><th><span lang="en" translate="yes">Result</span></th><th><span lang="en" translate="yes">Speaker's tone</span></th></tr></thead>
@@ -436,7 +440,7 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">동사 형태: ~ㄴ/은 덕분에<br><small style="font-weight:600;"><span lang="en" translate="yes">Verb form: <span lang="ko" translate="no">~ㄴ/은 덕분에</span></span></small></h3>
         <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             동사 어간에 <strong>받침</strong> 규칙으로 붙입니다 (~ㄴ/은 후에와 같은 규칙).<br>
-            <small lang="en" translate="yes"><em>Attaches to verbs after a <strong><span lang="ko" translate="no">받침</span></strong> rule similar to ~<span lang="ko" translate="no">ㄴ/은 후에</span>.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Attaches to verbs after a <strong><span lang="ko" translate="no">받침</span></strong> rule similar to ~<span lang="ko" translate="no">ㄴ/은 후에</span>.</em></small>
         </div>
         <div class="gstep-pattern"><strong style="color:#c62020;">받침 없음</strong>: 동사 + <span class="accent">ㄴ 덕분에</span> &nbsp;|&nbsp; <strong style="color:#107435;">받침 있음</strong>: 동사 + <span class="accent">은 덕분에</span><small><strong style="color:#c62020;"><span lang="en" translate="yes">No final consonant</span></strong><span lang="en" translate="yes">: Verb +</span> <span class="accent">ㄴ 덕분에</span> &nbsp;|&nbsp; <strong style="color:#107435;"><span lang="en" translate="yes">With</span> 받침</strong><span lang="en" translate="yes">: Verb +</span> <span class="accent">은 덕분에</span></small></div>
         <div class="tbl-scroll"><table class="gstep-table">
@@ -448,7 +452,7 @@ p.en{margin-bottom:16px;}
             </tbody>
         </table></div>
         <blockquote>
-            <strong>친구가 도와</strong><strong>준 덕분에</strong> <strong>일을 빨리 끝냈습니다</strong>.<br><small lang="en" translate="yes">(Thanks to my friend's help, I finished early.)</small>
+            <strong>친구가 도와</strong><strong>준 덕분에</strong> <strong>일을 빨리 끝냈습니다</strong>.<br><small class="en-line" lang="en" translate="yes">(Thanks to my friend's help, I finished early.)</small>
         </blockquote>
     </div>
 </div>

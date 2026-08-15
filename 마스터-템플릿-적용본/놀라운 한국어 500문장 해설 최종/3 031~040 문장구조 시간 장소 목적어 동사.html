@@ -414,6 +414,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
    빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
 p.ko{margin-bottom:2px;}
 p.en{margin-bottom:16px;}
+small.en-line{display:inline-block;margin-bottom:9px;}
+/* ★한국어와 그 영어는 붙이고, 짝과 짝 사이만 벌린다.
+   앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
+   것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
 </head>
 <body>
@@ -442,10 +446,10 @@ p.en{margin-bottom:16px;}
     <div class="gstep-body">
         <div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             한국어에서 가장 많이 사용되는 문장 구조는 다음과 같습니다.<br>
-            <small lang="en" translate="yes"><em>The most common Korean sentence structure is:</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>The most common Korean sentence structure is:</em></small>
         </div>
         <div class="gstep-pattern">주어 + 목적어 + 서술어<small><strong><span lang="en" translate="yes">Subject</span></strong> + <strong><span lang="en" translate="yes">Object</span></strong> + <strong><span lang="en" translate="yes">Predicate</span></strong></small></div>
-        <div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin:14px 0 12px; font-size:0.92rem; line-height:1.8;"><strong>부사어란?</strong><br><small lang="en" translate="yes"><em><strong>What is an adverbial (<span lang="ko" translate="no">부사어</span>)?</strong></em></small><br>시간, 장소, 목적, 이유, 조건 등 <strong>동작이 일어나는 배경 정보</strong>를 더하는 말입니다.<br><small lang="en" translate="yes"><em>A word that adds <strong>background information</strong> about an action — time, place, purpose, reason, condition, and so on.</em></small><br>한국어에서 부사어는 보통 <strong>주어 다음</strong>에 옵니다.<br><small lang="en" translate="yes"><em>In Korean, an adverbial usually comes <strong>right after the subject</strong>.</em></small>
+        <div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin:14px 0 12px; font-size:0.92rem; line-height:1.8;"><strong>부사어란?</strong><br><small class="en-line" lang="en" translate="yes"><em><strong>What is an adverbial (<span lang="ko" translate="no">부사어</span>)?</strong></em></small><br>시간, 장소, 목적, 이유, 조건 등 <strong>동작이 일어나는 배경 정보</strong>를 더하는 말입니다.<br><small class="en-line" lang="en" translate="yes"><em>A word that adds <strong>background information</strong> about an action — time, place, purpose, reason, condition, and so on.</em></small><br>한국어에서 부사어는 보통 <strong>주어 다음</strong>에 옵니다.<br><small class="en-line" lang="en" translate="yes"><em>In Korean, an adverbial usually comes <strong>right after the subject</strong>.</em></small>
         </div>
         <div class="gstep-pattern"><span lang="ko" translate="no">주어</span> + <strong><span lang="ko" translate="no">부사어</span></strong> + (<span lang="ko" translate="no">목적어</span>) + <span lang="ko" translate="no">서술어</span>: <span lang="ko" translate="no">일반적 위치는</span> <strong><span lang="ko" translate="no">주어 다음</span></strong><span lang="ko" translate="no">입니다</span>. <span lang="ko" translate="no">목적어를</span> ( )<span lang="ko" translate="no">로 묶은 것은 모든 문장에 목적어가 오는 것은 아니기 때문입니다</span>.<br><em lang="en" translate="yes">The usual spot is right after the subject. The Object is in ( ) because not every sentence has one.</em><small><strong><span lang="en" translate="yes">Subject</span></strong> + <span class="accent"><span lang="en" translate="yes">Adverbial</span></span> <span lang="en" translate="yes">+ (Object) +</span> <strong><span lang="en" translate="yes">Predicate</span></strong></small></div>
         <div class="gstep-pattern"><strong><span lang="ko" translate="no">부사어</span></strong> + <span lang="ko" translate="no">주어</span> + (<span lang="ko" translate="no">목적어</span>) + <span lang="ko" translate="no">서술어</span>: <span lang="ko" translate="no">부사어를</span> <strong><span lang="ko" translate="no">강조</span></strong><span lang="ko" translate="no">하고 싶을 때는 주어 앞에 올 수도 있습니다</span>.<br><em lang="en" translate="yes">To emphasize the adverbial, it can also come before the subject.</em><small><span class="accent"><span lang="en" translate="yes">Adverbial</span></span> + <strong><span lang="en" translate="yes">Subject</span></strong> <span lang="en" translate="yes">+ (Object) +</span> <strong><span lang="en" translate="yes">Predicate</span></strong></small></div>
@@ -455,27 +459,27 @@ p.en{margin-bottom:16px;}
 <div class="gstep">
     <div class="gstep-num">2</div>
     <div class="gstep-body">
-        <div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin-bottom:14px; font-size:0.92rem; line-height:1.8;">부사어는 문장에 <strong>하나씩 더해 가며</strong> '언제·어디서·왜'를 점점 더 자세하게 만들어 줍니다.<br><small lang="en" translate="yes"><em>Adverbials are added <strong>one at a time</strong>, making "when / where / why" progressively clearer.</em></small><br>아래에서 한 단계씩 쌓아 가며 살펴봅시다.<br><small lang="en" translate="yes"><em>Let's build a sentence up step by step below.</em></small>
+        <div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin-bottom:14px; font-size:0.92rem; line-height:1.8;">부사어는 문장에 <strong>하나씩 더해 가며</strong> '언제·어디서·왜'를 점점 더 자세하게 만들어 줍니다.<br><small class="en-line" lang="en" translate="yes"><em>Adverbials are added <strong>one at a time</strong>, making "when / where / why" progressively clearer.</em></small><br>아래에서 한 단계씩 쌓아 가며 살펴봅시다.<br><small class="en-line" lang="en" translate="yes"><em>Let's build a sentence up step by step below.</em></small>
         </div>
         <div class="explain-note">
             <strong>부사어가 어떻게 추가되는가: 단계별 예문</strong><br>
-            <small lang="en" translate="yes"><em>How adverbials build up — step by step</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>How adverbials build up — step by step</em></small>
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:linear-gradient(135deg,#2563eb,#3b82f6); color:#fff;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #3b82f6; width:12%;">단계<br><small lang="en" translate="yes">Step</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #3b82f6;">한국어 문장<br><small lang="en" translate="yes">Korean sentence</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #3b82f6; width:24%;">추가된 부사어<br><small lang="en" translate="yes">Added adverbial</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #3b82f6; width:12%;">단계<br><small class="en-line" lang="en" translate="yes">Step</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #3b82f6;">한국어 문장<br><small class="en-line" lang="en" translate="yes">Korean sentence</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #3b82f6; width:24%;">추가된 부사어<br><small class="en-line" lang="en" translate="yes">Added adverbial</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;"><strong>1</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;"><strong>그녀는 갔습니다.</strong><br><small lang="en" translate="yes">(She went.)</small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe; color:#5a6d87;">—<br><small lang="en" translate="yes">(<span lang="ko" translate="no">없음</span> / none)</small></td></tr>
-                    <tr style="background:#eff6ff;"><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;"><strong>2</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;">그녀는 <strong style="color:#047152;">커피숍에</strong> 갔습니다.<br><small lang="en" translate="yes">(She went to the coffee shop.)</small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;">+ <strong style="color:#047152;">장소</strong><br><small lang="en" translate="yes">(Place)</small></td></tr>
-                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;"><strong>3</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;">그녀는 <strong style="color:#8f4207;">어제</strong> <strong style="color:#047152;">커피숍에</strong> 갔습니다.<br><small lang="en" translate="yes">(She went to the coffee shop yesterday.)</small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;">+ <strong style="color:#8f4207;">시간</strong><br><small lang="en" translate="yes">(Time)</small></td></tr>
-                    <tr style="background:#eff6ff;"><td style="padding:10px; text-align:center;"><strong>4</strong></td><td style="padding:10px; text-align:center;">그녀는 <strong style="color:#8f4207;">어제</strong> <strong style="color:#6d28d9;">친구를 만나러</strong> <strong style="color:#047152;">커피숍에</strong> 갔습니다.<br><small lang="en" translate="yes">(She went to the coffee shop yesterday to meet a friend.)</small></td><td style="padding:10px; text-align:center;">+ <strong style="color:#6d28d9;">목적</strong><br><small lang="en" translate="yes">(Purpose)</small></td></tr>
+                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;"><strong>1</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;"><strong>그녀는 갔습니다.</strong><br><small class="en-line" lang="en" translate="yes">(She went.)</small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe; color:#5a6d87;">—<br><small class="en-line" lang="en" translate="yes">(<span lang="ko" translate="no">없음</span> / none)</small></td></tr>
+                    <tr style="background:#eff6ff;"><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;"><strong>2</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;">그녀는 <strong style="color:#047152;">커피숍에</strong> 갔습니다.<br><small class="en-line" lang="en" translate="yes">(She went to the coffee shop.)</small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;">+ <strong style="color:#047152;">장소</strong><br><small class="en-line" lang="en" translate="yes">(Place)</small></td></tr>
+                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;"><strong>3</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;">그녀는 <strong style="color:#8f4207;">어제</strong> <strong style="color:#047152;">커피숍에</strong> 갔습니다.<br><small class="en-line" lang="en" translate="yes">(She went to the coffee shop yesterday.)</small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;">+ <strong style="color:#8f4207;">시간</strong><br><small class="en-line" lang="en" translate="yes">(Time)</small></td></tr>
+                    <tr style="background:#eff6ff;"><td style="padding:10px; text-align:center;"><strong>4</strong></td><td style="padding:10px; text-align:center;">그녀는 <strong style="color:#8f4207;">어제</strong> <strong style="color:#6d28d9;">친구를 만나러</strong> <strong style="color:#047152;">커피숍에</strong> 갔습니다.<br><small class="en-line" lang="en" translate="yes">(She went to the coffee shop yesterday to meet a friend.)</small></td><td style="padding:10px; text-align:center;">+ <strong style="color:#6d28d9;">목적</strong><br><small class="en-line" lang="en" translate="yes">(Purpose)</small></td></tr>
                 </tbody>
             </table></div>
-            <div style="margin-top:10px; padding:8px 10px; background:#fef3c7; border-left:3px solid #f59e0b; border-radius:4px; font-size:0.88rem;"><strong>핵심:</strong> <strong style="color:#8f4207;">시간</strong>·<strong style="color:#047152;">장소</strong>·<strong style="color:#6d28d9;">목적</strong>·<strong>이유</strong>·<strong>조건</strong> 등 의미를 더하는 말이 모두 <strong>부사어</strong>.<br><small lang="en" translate="yes"><em><strong>Key:</strong> <strong style="color:#8f4207;">Time</strong>, <strong style="color:#047152;">Place</strong>, <strong style="color:#6d28d9;">Purpose</strong>, Reason, Condition — all of these adding words are <strong>adverbials</strong>.</em></small><br>모두 <strong>주어 다음</strong>에 위치하는 것이 기본.<br><small lang="en" translate="yes"><em>They normally sit <strong>right after the subject</strong>.</em></small>
+            <div style="margin-top:10px; padding:8px 10px; background:#fef3c7; border-left:3px solid #f59e0b; border-radius:4px; font-size:0.88rem;"><strong>핵심:</strong> <strong style="color:#8f4207;">시간</strong>·<strong style="color:#047152;">장소</strong>·<strong style="color:#6d28d9;">목적</strong>·<strong>이유</strong>·<strong>조건</strong> 등 의미를 더하는 말이 모두 <strong>부사어</strong>.<br><small class="en-line" lang="en" translate="yes"><em><strong>Key:</strong> <strong style="color:#8f4207;">Time</strong>, <strong style="color:#047152;">Place</strong>, <strong style="color:#6d28d9;">Purpose</strong>, Reason, Condition — all of these adding words are <strong>adverbials</strong>.</em></small><br>모두 <strong>주어 다음</strong>에 위치하는 것이 기본.<br><small class="en-line" lang="en" translate="yes"><em>They normally sit <strong>right after the subject</strong>.</em></small>
             </div>
         </div>
     </div>
@@ -486,7 +490,7 @@ p.en{margin-bottom:16px;}
     <div class="gstep-body">
         <div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             초급에서 가장 많이 사용되는 부사어는 <strong>시간</strong>과 <strong>장소</strong>입니다.<br>
-            <small lang="en" translate="yes"><em>In beginner Korean, the most common adverbials are <strong>time</strong> and <strong>place</strong>.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>In beginner Korean, the most common adverbials are <strong>time</strong> and <strong>place</strong>.</em></small>
         </div>
         <div class="gstep-pattern">주어 + <span style="color:#6d28d9;font-weight:800;">부사어(시간 + 장소)</span> + 목적어 + 서술어<small><strong><span lang="en" translate="yes">Subject</span></strong> + <span class="accent"><span lang="en" translate="yes">Adverbial(Time + Place)</span></span> + <strong><span lang="en" translate="yes">Object</span></strong> + <strong><span lang="en" translate="yes">Predicate</span></strong></small></div>
     </div>
@@ -498,7 +502,7 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#1e3a8a; background:#eff6ff; border-left:4px solid #2563eb; border-radius:4px;">시간: 명사 + 에<br><small style="font-weight: 600;"><span lang="en" translate="yes">Time: Noun + </span><span lang="ko" translate="no">에</span></small></h3>
         <div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             시간을 나타내는 명사에 <strong>에</strong>를 붙입니다.<br>
-            <small lang="en" translate="yes"><em>Attach <strong><span lang="ko" translate="no">에</span></strong> to a time noun.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Attach <strong><span lang="ko" translate="no">에</span></strong> to a time noun.</em></small>
         </div>
         <div class="gstep-examples">
             <span class="gstep-examples-label">예<span class="gloss" lang="en" translate="yes">Examples</span></span>
@@ -509,9 +513,9 @@ p.en{margin-bottom:16px;}
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:10px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:linear-gradient(135deg,#2563eb,#3b82f6); color:#fff;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #3b82f6; width:30%;">한국어<br><small lang="en" translate="yes">Korean</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #3b82f6; width:30%;">영어<br><small lang="en" translate="yes">English</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #3b82f6;">사용 예<br><small lang="en" translate="yes">Example</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #3b82f6; width:30%;">한국어<br><small class="en-line" lang="en" translate="yes">Korean</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #3b82f6; width:30%;">영어<br><small class="en-line" lang="en" translate="yes">English</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #3b82f6;">사용 예<br><small class="en-line" lang="en" translate="yes">Example</small></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -522,7 +526,7 @@ p.en{margin-bottom:16px;}
                     <tr><td style="padding:10px; text-align:center;"><strong>지금</strong></td><td style="padding:10px; text-align:center;"><small lang="en" translate="yes"><em>now</em></small></td><td style="padding:10px; text-align:center; color:#1e40af;"><strong>지금</strong> 갑니다 <span style="color:#107435;">✅</span></td></tr>
                 </tbody>
             </table></div>
-            <div style="margin-top:10px; padding:8px 10px; background:#fef3c7; border-left:3px solid #f59e0b; border-radius:4px; font-size:0.88rem;"><strong>핵심:</strong> 위 단어들은 <strong>에</strong> 없이 단독으로 사용합니다.<br><small lang="en" translate="yes"><em><strong>Key:</strong> These words stand alone — no <strong><span lang="ko" translate="no">에</span></strong>.</em></small><br>다른 시간 단어(아침, 점심, 저녁, 1시 등)는 반드시 <strong>에</strong>를 붙입니다.<br><small lang="en" translate="yes"><em>All other time words (<span lang="ko" translate="no">아침</span>, <span lang="ko" translate="no">점심</span>, <span lang="ko" translate="no">저녁</span>, 1<span lang="ko" translate="no">시</span> ...) require <strong><span lang="ko" translate="no">에</span></strong>.</em></small>
+            <div style="margin-top:10px; padding:8px 10px; background:#fef3c7; border-left:3px solid #f59e0b; border-radius:4px; font-size:0.88rem;"><strong>핵심:</strong> 위 단어들은 <strong>에</strong> 없이 단독으로 사용합니다.<br><small class="en-line" lang="en" translate="yes"><em><strong>Key:</strong> These words stand alone — no <strong><span lang="ko" translate="no">에</span></strong>.</em></small><br>다른 시간 단어(아침, 점심, 저녁, 1시 등)는 반드시 <strong>에</strong>를 붙입니다.<br><small class="en-line" lang="en" translate="yes"><em>All other time words (<span lang="ko" translate="no">아침</span>, <span lang="ko" translate="no">점심</span>, <span lang="ko" translate="no">저녁</span>, 1<span lang="ko" translate="no">시</span> ...) require <strong><span lang="ko" translate="no">에</span></strong>.</em></small>
             </div>
         </div>
     </div>
@@ -534,7 +538,7 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#1e3a8a; background:#eff6ff; border-left:4px solid #2563eb; border-radius:4px;">장소: 명사 + 에서<br><small style="font-weight: 600;"><span lang="en" translate="yes">Place: Noun + </span><span lang="ko" translate="no">에서</span></small></h3>
         <div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             장소를 나타내는 명사에 <strong>에서</strong>를 붙입니다.<br>
-            <small lang="en" translate="yes"><em>Attach <strong><span lang="ko" translate="no">에서</span></strong> to a place noun.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Attach <strong><span lang="ko" translate="no">에서</span></strong> to a place noun.</em></small>
         </div>
         <div class="gstep-examples">
             <span class="gstep-examples-label">예<span class="gloss" lang="en" translate="yes">Examples</span></span>
@@ -545,19 +549,19 @@ p.en{margin-bottom:16px;}
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:10px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:linear-gradient(135deg,#2563eb,#3b82f6); color:#fff;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #3b82f6; width:24%;">이동 동사<br><small lang="en" translate="yes">Movement verb</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #3b82f6; width:36%;">사용 예<br><small lang="en" translate="yes">Example</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #3b82f6;">잘못된 사용<br><small lang="en" translate="yes">Incorrect</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #3b82f6; width:24%;">이동 동사<br><small class="en-line" lang="en" translate="yes">Movement verb</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #3b82f6; width:36%;">사용 예<br><small class="en-line" lang="en" translate="yes">Example</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #3b82f6;">잘못된 사용<br><small class="en-line" lang="en" translate="yes">Incorrect</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;"><strong>가다</strong><br><small lang="en" translate="yes"><em>go</em></small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe; color:#1e40af;">집<strong style="color:#107435;">에</strong> 가다 <span style="color:#107435;">✅</span><br>백화점<strong style="color:#107435;">에</strong> 가다 <span style="color:#107435;">✅</span></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;"><s style="color:#c62020;">집<strong>에서</strong> 가다</s> <span style="color:#c62020;">❌</span></td></tr>
-                    <tr style="background:#eff6ff;"><td style="padding:10px; text-align:center;"><strong>다니다</strong><br><small lang="en" translate="yes"><em>attend / commute</em></small></td><td style="padding:10px; text-align:center; color:#1e40af;">학교<strong style="color:#107435;">에</strong> 다니다 <span style="color:#107435;">✅</span></td><td style="padding:10px; text-align:center;"><s style="color:#c62020;">학교<strong>에서</strong> 다니다</s> <span style="color:#c62020;">❌</span></td></tr>
+                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;"><strong>가다</strong><br><small class="en-line" lang="en" translate="yes"><em>go</em></small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe; color:#1e40af;">집<strong style="color:#107435;">에</strong> 가다 <span style="color:#107435;">✅</span><br>백화점<strong style="color:#107435;">에</strong> 가다 <span style="color:#107435;">✅</span></td><td style="padding:10px; text-align:center; border-bottom:1px solid #dbeafe;"><s style="color:#c62020;">집<strong>에서</strong> 가다</s> <span style="color:#c62020;">❌</span></td></tr>
+                    <tr style="background:#eff6ff;"><td style="padding:10px; text-align:center;"><strong>다니다</strong><br><small class="en-line" lang="en" translate="yes"><em>attend / commute</em></small></td><td style="padding:10px; text-align:center; color:#1e40af;">학교<strong style="color:#107435;">에</strong> 다니다 <span style="color:#107435;">✅</span></td><td style="padding:10px; text-align:center;"><s style="color:#c62020;">학교<strong>에서</strong> 다니다</s> <span style="color:#c62020;">❌</span></td></tr>
                 </tbody>
             </table></div>
             <div style="margin-top:10px; padding:8px 10px; background:#fef3c7; border-left:3px solid #f59e0b; border-radius:4px; font-size:0.88rem;">
                 <strong>핵심:</strong> <strong style="color:#107435;">에</strong> = 도착점·방향 (이동의 목적지) · <strong style="color:#c62020;">에서</strong> = 행동이 일어나는 장소.<br>
-                <small lang="en" translate="yes"><em><strong>Key:</strong> <strong style="color:#107435;"><span lang="ko" translate="no">에</span></strong> = destination / direction (where the movement is heading). <strong style="color:#c62020;"><span lang="ko" translate="no">에서</span></strong> = where an action takes place.</em></small>
+                <small class="en-line" lang="en" translate="yes"><em><strong>Key:</strong> <strong style="color:#107435;"><span lang="ko" translate="no">에</span></strong> = destination / direction (where the movement is heading). <strong style="color:#c62020;"><span lang="ko" translate="no">에서</span></strong> = where an action takes place.</em></small>
             </div>
         </div>
     </div>
@@ -727,7 +731,7 @@ p.en{margin-bottom:16px;}
         </tbody></table></div>
         <div style="margin-top:14px;background:linear-gradient(135deg,#f0fdfa 0%,#ecfeff 100%);border:1px solid #a7f3d0;border-left:4px solid #14b8a6;border-radius:10px;padding:14px 18px;box-shadow:0 1px 3px rgba(20,184,166,0.05);">
             <div style="font-weight:800;color:#0f766e;margin-bottom:10px;font-size:0.95rem;">📅 시간 명사 <span lang="en" translate="yes">with no</span> 에<span class="gloss" lang="en" translate="yes">Time nouns that take no particle</span></div>
-            <p style="margin:0 0 10px;color:#374151;font-size:0.92rem;line-height:1.55;">대부분의 시간 표현에는 시간 조사 <strong style="color:#0d9488;">'에'</strong>를 붙입니다 (예: <strong style="color:#0d9488;">월요일에</strong>, <strong style="color:#0d9488;">아침에</strong>, <strong style="color:#0d9488;">7시에</strong>).<br><small lang="en" translate="yes">Most time expressions attach the time marker <strong style="color:#0d9488;">'<span lang="ko" translate="no">에</span>'</strong> (e.g. <strong style="color:#0d9488;"><span lang="ko" translate="no">월요일에</span></strong>, <strong style="color:#0d9488;"><span lang="ko" translate="no">아침에</span></strong>, <strong style="color:#0d9488;">7<span lang="ko" translate="no">시에</span></strong>).</small><br>하지만 다음 시간 명사들은 조사 없이 그대로 씁니다:<br><small lang="en" translate="yes">But these common time nouns are used directly, with no particle:</small></p>
+            <p style="margin:0 0 10px;color:#374151;font-size:0.92rem;line-height:1.55;">대부분의 시간 표현에는 시간 조사 <strong style="color:#0d9488;">'에'</strong>를 붙입니다 (예: <strong style="color:#0d9488;">월요일에</strong>, <strong style="color:#0d9488;">아침에</strong>, <strong style="color:#0d9488;">7시에</strong>).<br><small class="en-line" lang="en" translate="yes">Most time expressions attach the time marker <strong style="color:#0d9488;">'<span lang="ko" translate="no">에</span>'</strong> (e.g. <strong style="color:#0d9488;"><span lang="ko" translate="no">월요일에</span></strong>, <strong style="color:#0d9488;"><span lang="ko" translate="no">아침에</span></strong>, <strong style="color:#0d9488;">7<span lang="ko" translate="no">시에</span></strong>).</small><br>하지만 다음 시간 명사들은 조사 없이 그대로 씁니다:<br><small class="en-line" lang="en" translate="yes">But these common time nouns are used directly, with no particle:</small></p>
             <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px 12px;">
                 <div style="background:#fff;border:1px solid #a7f3d0;border-radius:8px;padding:6px 10px;"><strong style="color:#0f766e;">어제</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— yesterday</span></span></div>
                 <div style="background:#fff;border:1px solid #a7f3d0;border-radius:8px;padding:6px 10px;"><strong style="color:#0f766e;">오늘</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— today</span></span></div>

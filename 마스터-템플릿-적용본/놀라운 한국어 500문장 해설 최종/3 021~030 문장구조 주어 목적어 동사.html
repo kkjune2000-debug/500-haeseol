@@ -435,6 +435,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
    빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
 p.ko{margin-bottom:2px;}
 p.en{margin-bottom:16px;}
+small.en-line{display:inline-block;margin-bottom:9px;}
+/* ★한국어와 그 영어는 붙이고, 짝과 짝 사이만 벌린다.
+   앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
+   것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
 </head>
 <body>
@@ -460,34 +464,34 @@ p.en{margin-bottom:16px;}
     <div class="gstep-num">1</div>
     <div class="gstep-body">
             <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#1e3a8a; background:#eff6ff; border-left:4px solid #2563eb; border-radius:4px;">구조 3: 주어 + 목적어 + 동사<br><small style="font-weight:600;"><span lang="en" translate="yes">Structure 3: Subject + Object + Verb</span></small></h3>
-            <div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;"><strong>주어 + 목적어 + 서술어</strong>는 한국어 문장 구조의 가장 일반적인 형태입니다.<br><small lang="en" translate="yes"><em><strong>Subject + Object + Predicate</strong> is the most common Korean sentence structure.</em></small><br>그런데 목적어 다음의 서술어 자리에는 <strong>형용사가 올 수 없습니다</strong>(형용사는 목적어를 가질 수 없으니까요).<br><small lang="en" translate="yes"><em>But the predicate after the object <strong>cannot be an adjective</strong> (adjectives can't take an object).</em></small><br>그래서 이 구조는 <strong>주어 + 목적어 + 동사</strong>로 바꿔 말할 수 있습니다.<br><small lang="en" translate="yes"><em>So this structure can be restated as <strong>Subject + Object + Verb</strong>.</em></small><br>주의할 점은 <strong>모든 동사 앞에 목적어가 오는 것은 아니라는</strong> 것입니다.<br><small lang="en" translate="yes"><em>Note, however, that <strong>not every verb takes an object</strong>.</em></small><br>대부분의 동사(타동사)는 목적어를 갖지만, 목적어를 가질 수 없는 동사(자동사)도 있다는 점을 기억하세요.<br><small lang="en" translate="yes"><em>Most verbs (transitive) do, but some (intransitive) cannot.</em></small><br>
+            <div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;"><strong>주어 + 목적어 + 서술어</strong>는 한국어 문장 구조의 가장 일반적인 형태입니다.<br><small class="en-line" lang="en" translate="yes"><em><strong>Subject + Object + Predicate</strong> is the most common Korean sentence structure.</em></small><br>그런데 목적어 다음의 서술어 자리에는 <strong>형용사가 올 수 없습니다</strong>(형용사는 목적어를 가질 수 없으니까요).<br><small class="en-line" lang="en" translate="yes"><em>But the predicate after the object <strong>cannot be an adjective</strong> (adjectives can't take an object).</em></small><br>그래서 이 구조는 <strong>주어 + 목적어 + 동사</strong>로 바꿔 말할 수 있습니다.<br><small class="en-line" lang="en" translate="yes"><em>So this structure can be restated as <strong>Subject + Object + Verb</strong>.</em></small><br>주의할 점은 <strong>모든 동사 앞에 목적어가 오는 것은 아니라는</strong> 것입니다.<br><small class="en-line" lang="en" translate="yes"><em>Note, however, that <strong>not every verb takes an object</strong>.</em></small><br>대부분의 동사(타동사)는 목적어를 갖지만, 목적어를 가질 수 없는 동사(자동사)도 있다는 점을 기억하세요.<br><small class="en-line" lang="en" translate="yes"><em>Most verbs (transitive) do, but some (intransitive) cannot.</em></small><br>
                 예) 목적어 <strong>O</strong> — 밥<strong>을</strong> 먹다, 책<strong>을</strong> 읽다, 영화<strong>를</strong> 보다 · 목적어 <strong>X</strong> — 가다, 오다, 자다, 웃다 (자동사는 목적어 없이: "저는 잡니다").<br>
-                <small lang="en" translate="yes"><em>e.g., with object — <span lang="ko" translate="no">밥을 먹다</span> (eat rice), <span lang="ko" translate="no">책을 읽다</span> (read a book), <span lang="ko" translate="no">영화를 보다</span> (watch a movie); no object — <span lang="ko" translate="no">가다</span> (go), <span lang="ko" translate="no">오다</span> (come), <span lang="ko" translate="no">자다</span> (sleep), <span lang="ko" translate="no">웃다</span> (laugh): "<span lang="ko" translate="no">저는 잡니다</span> = I sleep."</em></small>
+                <small class="en-line" lang="en" translate="yes"><em>e.g., with object — <span lang="ko" translate="no">밥을 먹다</span> (eat rice), <span lang="ko" translate="no">책을 읽다</span> (read a book), <span lang="ko" translate="no">영화를 보다</span> (watch a movie); no object — <span lang="ko" translate="no">가다</span> (go), <span lang="ko" translate="no">오다</span> (come), <span lang="ko" translate="no">자다</span> (sleep), <span lang="ko" translate="no">웃다</span> (laugh): "<span lang="ko" translate="no">저는 잡니다</span> = I sleep."</em></small>
             </div>
 
             <div class="tbl-scroll"><table>
             <thead>
             <tr>
-            <th style="width:120px; text-align:center;">구조<br><small lang="en" translate="yes">(Structure)</small></th>
-            <th>패턴<br><small lang="en" translate="yes">(Pattern)</small></th>
-            <th>예<br><small lang="en" translate="yes">(Example)</small></th>
+            <th style="width:120px; text-align:center;">구조<br><small class="en-line" lang="en" translate="yes">(Structure)</small></th>
+            <th>패턴<br><small class="en-line" lang="en" translate="yes">(Pattern)</small></th>
+            <th>예<br><small class="en-line" lang="en" translate="yes">(Example)</small></th>
             </tr>
             </thead>
             <tbody>
             <tr>
-            <td style="text-align:center;"><strong>구조 1</strong><br><small lang="en" translate="yes">Structure 1</small></td>
-            <td>주어 + 서술어 (<strong>형용사</strong>)<br><small lang="en" translate="yes">Subject + Predicate (Adjective)</small></td>
-            <td>날씨<strong>가</strong> 좋<strong>습니다</strong>.<br><small lang="en" translate="yes">(The weather is nice.)</small></td>
+            <td style="text-align:center;"><strong>구조 1</strong><br><small class="en-line" lang="en" translate="yes">Structure 1</small></td>
+            <td>주어 + 서술어 (<strong>형용사</strong>)<br><small class="en-line" lang="en" translate="yes">Subject + Predicate (Adjective)</small></td>
+            <td>날씨<strong>가</strong> 좋<strong>습니다</strong>.<br><small class="en-line" lang="en" translate="yes">(The weather is nice.)</small></td>
             </tr>
             <tr>
-            <td style="text-align:center;"><strong>구조 2</strong><br><small lang="en" translate="yes">Structure 2</small></td>
-            <td>주어 + 서술어 (<strong>동사</strong>)<br><small lang="en" translate="yes">Subject + Predicate (Verb)</small></td>
-            <td>그<strong>는</strong> 잤<strong>습니다</strong>.<br><small lang="en" translate="yes">(He slept.)</small></td>
+            <td style="text-align:center;"><strong>구조 2</strong><br><small class="en-line" lang="en" translate="yes">Structure 2</small></td>
+            <td>주어 + 서술어 (<strong>동사</strong>)<br><small class="en-line" lang="en" translate="yes">Subject + Predicate (Verb)</small></td>
+            <td>그<strong>는</strong> 잤<strong>습니다</strong>.<br><small class="en-line" lang="en" translate="yes">(He slept.)</small></td>
             </tr>
             <tr>
-            <td style="text-align:center;"><strong>구조 3 ⭐</strong><br><small lang="en" translate="yes">Structure 3</small></td>
-            <td>주어 + <strong>목적어</strong> + 서술어 (<strong>동사</strong>)<br><small lang="en" translate="yes">Subject + <strong>Object</strong> + Predicate (Verb)</small></td>
-            <td>저<strong>는</strong> 아침<strong>을</strong> 먹<strong>습니다</strong>.<br><small lang="en" translate="yes">(I eat breakfast.)</small></td>
+            <td style="text-align:center;"><strong>구조 3 ⭐</strong><br><small class="en-line" lang="en" translate="yes">Structure 3</small></td>
+            <td>주어 + <strong>목적어</strong> + 서술어 (<strong>동사</strong>)<br><small class="en-line" lang="en" translate="yes">Subject + <strong>Object</strong> + Predicate (Verb)</small></td>
+            <td>저<strong>는</strong> 아침<strong>을</strong> 먹<strong>습니다</strong>.<br><small class="en-line" lang="en" translate="yes">(I eat breakfast.)</small></td>
             </tr>
             </tbody>
             </table></div>
@@ -507,7 +511,7 @@ p.en{margin-bottom:16px;}
     <div class="gstep-num">2</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#1e3a8a; background:#eff6ff; border-left:4px solid #2563eb; border-radius:4px;">특별 규칙: 명사 + 하다 = 명사 + 을/를 하다<br><small style="font-weight:600;"><span lang="en" translate="yes">Special rule: Noun + </span><span lang="ko" translate="no">하다</span><span lang="en" translate="yes"> = Noun + </span><span lang="ko" translate="no">을/를 하다</span></small></h3>
-<div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">한국어에는 <strong>명사 + 하다</strong> 동사들이 많이 있습니다 — 예: 운동하다, 청소하다, 공부하다.<br><small lang="en" translate="yes"><em>Many Korean verbs are made of <strong>noun + <span lang="ko" translate="no">하다</span> (do)</strong> — for example, <span lang="ko" translate="no">운동하다</span> (exercise), <span lang="ko" translate="no">청소하다</span> (clean), <span lang="ko" translate="no">공부하다</span> (study).</em></small><br><strong>명사 + 하다</strong> 동사는 <strong>명사 + 을/를 하다</strong>로 바꿔 쓸 수 있습니다.<br><small lang="en" translate="yes"><em>These <strong>noun + <span lang="ko" translate="no">하다</span></strong> verbs can be rewritten as <strong>noun + <span lang="ko" translate="no">을/를 하다</span></strong>.</em></small>
+<div style="padding:10px 14px; background:#eff6ff; border-left:3px solid #3b82f6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">한국어에는 <strong>명사 + 하다</strong> 동사들이 많이 있습니다 — 예: 운동하다, 청소하다, 공부하다.<br><small class="en-line" lang="en" translate="yes"><em>Many Korean verbs are made of <strong>noun + <span lang="ko" translate="no">하다</span> (do)</strong> — for example, <span lang="ko" translate="no">운동하다</span> (exercise), <span lang="ko" translate="no">청소하다</span> (clean), <span lang="ko" translate="no">공부하다</span> (study).</em></small><br><strong>명사 + 하다</strong> 동사는 <strong>명사 + 을/를 하다</strong>로 바꿔 쓸 수 있습니다.<br><small class="en-line" lang="en" translate="yes"><em>These <strong>noun + <span lang="ko" translate="no">하다</span></strong> verbs can be rewritten as <strong>noun + <span lang="ko" translate="no">을/를 하다</span></strong>.</em></small>
 </div>
 
 <blockquote>

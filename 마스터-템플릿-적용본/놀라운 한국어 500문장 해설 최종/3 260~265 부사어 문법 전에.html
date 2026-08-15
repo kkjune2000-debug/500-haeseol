@@ -389,6 +389,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
    빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
 p.ko{margin-bottom:2px;}
 p.en{margin-bottom:16px;}
+small.en-line{display:inline-block;margin-bottom:9px;}
+/* ★한국어와 그 영어는 붙이고, 짝과 짝 사이만 벌린다.
+   앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
+   것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
 </head>
 <body>
@@ -426,18 +430,18 @@ p.en{margin-bottom:16px;}
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:linear-gradient(135deg,#047857,#10b981); color:#fff;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">동사<br><small lang="en" translate="yes">Verb</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">어간 + 기 전에<br><small lang="en" translate="yes">Stem + <span lang="ko" translate="no">기 전에</span></small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">결과<br><small lang="en" translate="yes">Full form</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">동사<br><small class="en-line" lang="en" translate="yes">Verb</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">어간 + 기 전에<br><small class="en-line" lang="en" translate="yes">Stem + <span lang="ko" translate="no">기 전에</span></small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">결과<br><small class="en-line" lang="en" translate="yes">Full form</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>오다</strong><br><small lang="en" translate="yes">come</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">오 + 기 전에</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>오기 전에</strong></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>가다</strong><br><small lang="en" translate="yes">go</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">가 + 기 전에</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>가기 전에</strong></td></tr>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>자다</strong><br><small lang="en" translate="yes">sleep</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">자 + 기 전에</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>자기 전에</strong></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>먹다</strong><br><small lang="en" translate="yes">eat</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">먹 + 기 전에</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>먹기 전에</strong></td></tr>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>여행하다</strong><br><small lang="en" translate="yes">travel</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">여행하 + 기 전에</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>여행하기 전에</strong></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center;"><strong>식사하다</strong><br><small lang="en" translate="yes">have a meal</small></td><td style="padding:8px 10px; text-align:center;">식사하 + 기 전에</td><td style="padding:8px 10px; text-align:center; color:#047152;"><strong>식사하기 전에</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>오다</strong><br><small class="en-line" lang="en" translate="yes">come</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">오 + 기 전에</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>오기 전에</strong></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>가다</strong><br><small class="en-line" lang="en" translate="yes">go</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">가 + 기 전에</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>가기 전에</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>자다</strong><br><small class="en-line" lang="en" translate="yes">sleep</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">자 + 기 전에</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>자기 전에</strong></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>먹다</strong><br><small class="en-line" lang="en" translate="yes">eat</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">먹 + 기 전에</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>먹기 전에</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>여행하다</strong><br><small class="en-line" lang="en" translate="yes">travel</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">여행하 + 기 전에</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>여행하기 전에</strong></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center;"><strong>식사하다</strong><br><small class="en-line" lang="en" translate="yes">have a meal</small></td><td style="padding:8px 10px; text-align:center;">식사하 + 기 전에</td><td style="padding:8px 10px; text-align:center; color:#047152;"><strong>식사하기 전에</strong></td></tr>
                 </tbody>
             </table></div>
         </div>
@@ -453,16 +457,16 @@ p.en{margin-bottom:16px;}
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:linear-gradient(135deg,#047857,#10b981); color:#fff;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">분류<br><small lang="en" translate="yes">Category</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">명사 + 전에<br><small lang="en" translate="yes">Noun + <span lang="ko" translate="no">전에</span></small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">의미<br><small lang="en" translate="yes">Meaning</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">분류<br><small class="en-line" lang="en" translate="yes">Category</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">명사 + 전에<br><small class="en-line" lang="en" translate="yes">Noun + <span lang="ko" translate="no">전에</span></small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">의미<br><small class="en-line" lang="en" translate="yes">Meaning</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;">학교 · 직장<br><small lang="en" translate="yes"><em>School / Work</em></small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>수업 전에 / 회의 전에</strong></td><td style="padding:10px; border-bottom:1px solid #d1fae5;">수업·회의 시작하기 전<br><small lang="en" translate="yes"><em>before class / before the meeting</em></small></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;">인생 행사<br><small lang="en" translate="yes"><em>Life events</em></small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>졸업 전에 / 결혼 전에</strong></td><td style="padding:10px; border-bottom:1px solid #d1fae5;">졸업·결혼하기 전<br><small lang="en" translate="yes"><em>before graduation / before marriage</em></small></td></tr>
-                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;">일상<br><small lang="en" translate="yes"><em>Daily life</em></small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>식사 전에 / 시험 전에</strong></td><td style="padding:10px; border-bottom:1px solid #d1fae5;">식사·시험 보기 전<br><small lang="en" translate="yes"><em>before a meal / before the exam</em></small></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:10px; text-align:center; color:#047152;">시간<br><small lang="en" translate="yes"><em>Time</em></small></td><td style="padding:10px; text-align:center;"><strong>30분 전에 / 오래전에</strong></td><td style="padding:10px;">30분 전 / 오래전<br><small lang="en" translate="yes"><em>30 minutes ago / a long time ago</em></small></td></tr>
+                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;">학교 · 직장<br><small class="en-line" lang="en" translate="yes"><em>School / Work</em></small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>수업 전에 / 회의 전에</strong></td><td style="padding:10px; border-bottom:1px solid #d1fae5;">수업·회의 시작하기 전<br><small class="en-line" lang="en" translate="yes"><em>before class / before the meeting</em></small></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;">인생 행사<br><small class="en-line" lang="en" translate="yes"><em>Life events</em></small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>졸업 전에 / 결혼 전에</strong></td><td style="padding:10px; border-bottom:1px solid #d1fae5;">졸업·결혼하기 전<br><small class="en-line" lang="en" translate="yes"><em>before graduation / before marriage</em></small></td></tr>
+                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;">일상<br><small class="en-line" lang="en" translate="yes"><em>Daily life</em></small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>식사 전에 / 시험 전에</strong></td><td style="padding:10px; border-bottom:1px solid #d1fae5;">식사·시험 보기 전<br><small class="en-line" lang="en" translate="yes"><em>before a meal / before the exam</em></small></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:10px; text-align:center; color:#047152;">시간<br><small class="en-line" lang="en" translate="yes"><em>Time</em></small></td><td style="padding:10px; text-align:center;"><strong>30분 전에 / 오래전에</strong></td><td style="padding:10px;">30분 전 / 오래전<br><small class="en-line" lang="en" translate="yes"><em>30 minutes ago / a long time ago</em></small></td></tr>
                 </tbody>
             </table></div>
         </div>
@@ -475,14 +479,14 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">어순<br><small style="font-weight:600;"><span lang="en" translate="yes">Word Order</span></small></h3>
         <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             시간 부사어(<strong>전에, 기 전에</strong>)는 주어 바로 다음에 옵니다.<br>
-            <small lang="en" translate="yes"><em>Time adverbials (<strong><span lang="ko" translate="no">전에</span>, <span lang="ko" translate="no">기 전에</span></strong>) come right after the subject.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Time adverbials (<strong><span lang="ko" translate="no">전에</span>, <span lang="ko" translate="no">기 전에</span></strong>) come right after the subject.</em></small>
         </div>
         <div class="gstep-pattern">주어 + <span style="color:#6d28d9;font-weight:800;">부사어(시간)</span> + 목적어 + 서술어 (동사)<small><strong><span lang="en" translate="yes">Subject</span></strong> + <span class="accent"><span lang="en" translate="yes">Adverbial (Time)</span></span> + <strong><span lang="en" translate="yes">Object</span></strong> + <strong><span lang="en" translate="yes">Predicate</span></strong> (<strong><span lang="en" translate="yes">Verb</span></strong>)</small></div>
         <div style="margin-top:12px; padding:8px 12px; background:#fff; border-left:3px solid #047857; border-radius:6px; font-size:0.9rem; line-height:1.75;">
             <strong>예 1:</strong> 저는 <strong>수업 전에</strong> 커피를 마십니다.<br>
-            <small lang="en" translate="yes"><em>I drink coffee before class.</em></small><br><br>
+            <small class="en-line" lang="en" translate="yes"><em>I drink coffee before class.</em></small><br><br>
             <strong>예 2:</strong> 저는 <strong>자기 전에</strong> 책을 읽습니다.<br>
-            <small lang="en" translate="yes"><em>I read a book before sleeping.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>I read a book before sleeping.</em></small>
         </div>
     </div>
 </div>
@@ -619,7 +623,7 @@ p.en{margin-bottom:16px;}
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>Sumi</strong></td><td class="exp-role">주어<br><small><span lang="en" translate="yes">Subject</span></small></td><td class="exp-form"><strong>수미는</strong></td><td><strong>수미</strong> + <strong>는</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>before graduation</strong></td><td class="exp-role">부사어(시간)<br><small><span lang="en" translate="yes">Adverbial (Time)</span></small></td><td class="exp-form"><strong>졸업 전에</strong></td><td><strong>졸업</strong> + <strong>전에</strong></td></tr>
             <tr><td class="exp-en" lang="en" translate="yes"><strong>TOPIK Level 6</strong></td><td class="exp-role">목적어<br><small><span lang="en" translate="yes">Object</span></small></td><td class="exp-form"><strong>토픽 6급을</strong></td><td><strong>토픽 6급</strong> + <strong>을</strong></td></tr>
-            <tr><td class="exp-en" lang="en" translate="yes"><strong>plans to get</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>따려고 합니다</strong></td><td><strong>따다</strong> → <strong>따</strong> + <strong>려고 하다</strong><br><small lang="en" translate="yes">(plan to)</small> - <strong>따려고 하다</strong> → <strong>따려고 합니다</strong></td></tr>
+            <tr><td class="exp-en" lang="en" translate="yes"><strong>plans to get</strong></td><td class="exp-role">서술어(동사)<br><small><span lang="en" translate="yes">Predicate (Verb)</span></small></td><td class="exp-form"><strong>따려고 합니다</strong></td><td><strong>따다</strong> → <strong>따</strong> + <strong>려고 하다</strong><br><small class="en-line" lang="en" translate="yes">(plan to)</small> - <strong>따려고 하다</strong> → <strong>따려고 합니다</strong></td></tr>
         </tbody>
         </table></div>
     </div>

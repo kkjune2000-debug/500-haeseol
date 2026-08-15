@@ -389,6 +389,10 @@ button .gloss{font-size:0.74em;font-weight:600;opacity:1;margin-top:1px;}
    빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
 p.ko{margin-bottom:2px;}
 p.en{margin-bottom:16px;}
+small.en-line{display:inline-block;margin-bottom:9px;}
+/* ★한국어와 그 영어는 붙이고, 짝과 짝 사이만 벌린다.
+   앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
+   것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
 </head>
 <body>
@@ -416,14 +420,14 @@ p.en{margin-bottom:16px;}
         <div class="gstep-pattern">[절 1] + <span class="accent">고</span> + [절 2]<small><span lang="en" translate="yes">[Clause 1] +</span> <span class="accent">고</span> <span lang="en" translate="yes">+ [Clause 2]</span></small></div>
         <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-top:12px; font-size:0.92rem; line-height:1.8;">
             두 동작을 <strong>그리고 / 그러고 나서</strong>의 의미로 순서대로 연결합니다.<br>
-            <small lang="en" translate="yes"><em>Links two actions in sequence — <strong>and / and then</strong>.</em></small><br><br>
+            <small class="en-line" lang="en" translate="yes"><em>Links two actions in sequence — <strong>and / and then</strong>.</em></small><br><br>
             첫 절은 어간에 <strong>~고</strong>만 붙이고, 시제는 <strong>마지막 절</strong>에만 표시합니다.<br>
-            <small lang="en" translate="yes"><em>Attach <strong>~<span lang="ko" translate="no">고</span></strong> directly to the stem of the first clause; mark tense only on the <strong>final clause</strong>.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Attach <strong>~<span lang="ko" translate="no">고</span></strong> directly to the stem of the first clause; mark tense only on the <strong>final clause</strong>.</em></small>
             <div style="margin-top:12px; padding:10px 14px; background:#fff; border-left:3px solid #fbbf24; border-radius:6px; font-size:0.9rem; line-height:1.75;"><strong>💡 두 문장 합치기 <span lang="en" translate="yes">(Combining two sentences)</span></strong><br><br>
-                저는 아침을 <strong>먹었습니다</strong>.<br><small lang="en" translate="yes"><em>I ate breakfast.</em></small><br>그리고 (저는) 학교에 <strong>갔습니다</strong>.<br><small lang="en" translate="yes"><em>And then (I) went to school.</em></small><br>
+                저는 아침을 <strong>먹었습니다</strong>.<br><small class="en-line" lang="en" translate="yes"><em>I ate breakfast.</em></small><br>그리고 (저는) 학교에 <strong>갔습니다</strong>.<br><small class="en-line" lang="en" translate="yes"><em>And then (I) went to school.</em></small><br>
                 <span style="font-size:1.1rem; color:#92400e;"><strong>↓</strong></span><br>
                 저는 아침을 <strong>먹고</strong> 학교에 <strong>갔습니다</strong>.<br>
-                <small lang="en" translate="yes"><em>I ate breakfast and then went to school.</em></small>
+                <small class="en-line" lang="en" translate="yes"><em>I ate breakfast and then went to school.</em></small>
             </div>
         </div>
     </div>
@@ -436,22 +440,22 @@ p.en{margin-bottom:16px;}
         <div class="explain-note">
             <strong>어간 + 고 <span lang="en" translate="yes">(Verb +</span> 고)</strong><br>
             받침 유무와 상관없이 어간에 <strong>고</strong>를 그대로 붙입니다.<br>
-            <small lang="en" translate="yes"><em>Attach <strong><span lang="ko" translate="no">고</span></strong> directly to the Verb — no <span lang="ko" translate="no">받침</span> conditional change.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Attach <strong><span lang="ko" translate="no">고</span></strong> directly to the Verb — no <span lang="ko" translate="no">받침</span> conditional change.</em></small>
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:linear-gradient(135deg,#047857,#10b981); color:#fff;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">동사<br><small lang="en" translate="yes">Verb</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">어간 + 고<br><small lang="en" translate="yes">Stem + <span lang="ko" translate="no">고</span></small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">결과<br><small lang="en" translate="yes">Full form</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">동사<br><small class="en-line" lang="en" translate="yes">Verb</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">어간 + 고<br><small class="en-line" lang="en" translate="yes">Stem + <span lang="ko" translate="no">고</span></small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">결과<br><small class="en-line" lang="en" translate="yes">Full form</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>먹다</strong><br><small lang="en" translate="yes">eat</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">먹 + 고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>먹고</strong></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>마시다</strong><br><small lang="en" translate="yes">drink</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">마시 + 고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>마시고</strong></td></tr>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>보다</strong><br><small lang="en" translate="yes">watch / read</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">보 + 고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>보고</strong></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>하다</strong><br><small lang="en" translate="yes">do</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">하 + 고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>하고</strong></td></tr>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>읽다</strong><br><small lang="en" translate="yes">read</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">읽 + 고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>읽고</strong></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center;"><strong>가다</strong><br><small lang="en" translate="yes">go</small></td><td style="padding:8px 10px; text-align:center;">가 + 고</td><td style="padding:8px 10px; text-align:center; color:#047152;"><strong>가고</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>먹다</strong><br><small class="en-line" lang="en" translate="yes">eat</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">먹 + 고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>먹고</strong></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>마시다</strong><br><small class="en-line" lang="en" translate="yes">drink</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">마시 + 고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>마시고</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>보다</strong><br><small class="en-line" lang="en" translate="yes">watch / read</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">보 + 고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>보고</strong></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>하다</strong><br><small class="en-line" lang="en" translate="yes">do</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">하 + 고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>하고</strong></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;"><strong>읽다</strong><br><small class="en-line" lang="en" translate="yes">read</small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5;">읽 + 고</td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>읽고</strong></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:8px 10px; text-align:center;"><strong>가다</strong><br><small class="en-line" lang="en" translate="yes">go</small></td><td style="padding:8px 10px; text-align:center;">가 + 고</td><td style="padding:8px 10px; text-align:center; color:#047152;"><strong>가고</strong></td></tr>
                 </tbody>
             </table></div>
         </div>
@@ -464,22 +468,22 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">순서 ↔ 독립<br><small style="font-weight:600;">시제 위치</small></h3>
         <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             시제를 마지막 절에만 표시하면 <strong>순서대로 이어지는 동작</strong>이 됩니다.<br>
-            <small lang="en" translate="yes"><em>Putting tense only on the final clause = <strong>sequential chain</strong>.</em></small><br><br>
+            <small class="en-line" lang="en" translate="yes"><em>Putting tense only on the final clause = <strong>sequential chain</strong>.</em></small><br><br>
             매 절마다 시제를 표시하면 <strong>각각 독립된 동작</strong>의 의미가 됩니다.<br>
-            <small lang="en" translate="yes"><em>Putting tense on every clause shifts the meaning to <strong>independent, separate events</strong>.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Putting tense on every clause shifts the meaning to <strong>independent, separate events</strong>.</em></small>
         </div>
         <div class="explain-note">
             <strong>예문 비교 <span lang="en" translate="yes">(Example comparison)</span></strong>
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:linear-gradient(135deg,#047857,#10b981); color:#fff;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857; width:35%;">유형<br><small lang="en" translate="yes">Type</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">예문<br><small lang="en" translate="yes">Example</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857; width:35%;">유형<br><small class="en-line" lang="en" translate="yes">Type</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">예문<br><small class="en-line" lang="en" translate="yes">Example</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>순서 <span lang="en" translate="yes">(Sequential)</span></strong><br><small lang="en" translate="yes"><em>tense only on the last clause</em></small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;">청소<strong>하고</strong>, 빨래<strong>하고</strong>, 친구를 <strong>만났습니다</strong>.<br><small lang="en" translate="yes"><em>I cleaned, then did the laundry, then met a friend.</em></small></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:10px; text-align:center; color:#047152;"><strong>독립 <span lang="en" translate="yes">(Independent)</span></strong><br><small lang="en" translate="yes"><em>tense on every clause</em></small></td><td style="padding:10px; text-align:center;">청소<strong>했고</strong>, 빨래<strong>했고</strong>, 친구를 <strong>만났습니다</strong>.<br><small lang="en" translate="yes"><em>I cleaned. I did the laundry. I met a friend.</em></small></td></tr>
+                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>순서 <span lang="en" translate="yes">(Sequential)</span></strong><br><small class="en-line" lang="en" translate="yes"><em>tense only on the last clause</em></small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;">청소<strong>하고</strong>, 빨래<strong>하고</strong>, 친구를 <strong>만났습니다</strong>.<br><small class="en-line" lang="en" translate="yes"><em>I cleaned, then did the laundry, then met a friend.</em></small></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:10px; text-align:center; color:#047152;"><strong>독립 <span lang="en" translate="yes">(Independent)</span></strong><br><small class="en-line" lang="en" translate="yes"><em>tense on every clause</em></small></td><td style="padding:10px; text-align:center;">청소<strong>했고</strong>, 빨래<strong>했고</strong>, 친구를 <strong>만났습니다</strong>.<br><small class="en-line" lang="en" translate="yes"><em>I cleaned. I did the laundry. I met a friend.</em></small></td></tr>
                 </tbody>
             </table></div>
         </div>
@@ -491,22 +495,22 @@ p.en{margin-bottom:16px;}
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">~고 ↔ ~아/어서</h3>
         <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
-            <strong>~고</strong>는 단순히 동작을 차례로 연결합니다.<br><small lang="en" translate="yes"><em><strong>~<span lang="ko" translate="no">고</span></strong> simply lists actions in sequence.</em></small><br>두 동작이 서로 독립적입니다.<br><small lang="en" translate="yes"><em>The two actions are independent.</em></small><br><br>
-            <strong>~아/어서</strong>는 앞 동작이 뒤 동작으로 이어지거나 원인이 됩니다.<br><small lang="en" translate="yes"><em><strong>~<span lang="ko" translate="no">아/어서</span></strong> connects the first action as cause or lead-in to the second.</em></small><br>두 동작이 밀접하게 연결됩니다.<br><small lang="en" translate="yes"><em>The two actions are tightly linked.</em></small>
+            <strong>~고</strong>는 단순히 동작을 차례로 연결합니다.<br><small class="en-line" lang="en" translate="yes"><em><strong>~<span lang="ko" translate="no">고</span></strong> simply lists actions in sequence.</em></small><br>두 동작이 서로 독립적입니다.<br><small class="en-line" lang="en" translate="yes"><em>The two actions are independent.</em></small><br><br>
+            <strong>~아/어서</strong>는 앞 동작이 뒤 동작으로 이어지거나 원인이 됩니다.<br><small class="en-line" lang="en" translate="yes"><em><strong>~<span lang="ko" translate="no">아/어서</span></strong> connects the first action as cause or lead-in to the second.</em></small><br>두 동작이 밀접하게 연결됩니다.<br><small class="en-line" lang="en" translate="yes"><em>The two actions are tightly linked.</em></small>
         </div>
         <div class="explain-note">
             <strong>의미 비교 <span lang="en" translate="yes">(Meaning comparison)</span></strong>
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:12px; background:#fff; border-radius:8px; overflow:hidden; font-size:0.92rem; box-shadow:0 1px 3px rgba(120,53,15,0.08);">
                 <thead>
                     <tr style="background:linear-gradient(135deg,#047857,#10b981); color:#fff;">
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857; width:18%;">연결어미<br><small lang="en" translate="yes">Connector</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">의미<br><small lang="en" translate="yes">Meaning</small></th>
-                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">예문<br><small lang="en" translate="yes">Example</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857; width:18%;">연결어미<br><small class="en-line" lang="en" translate="yes">Connector</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">의미<br><small class="en-line" lang="en" translate="yes">Meaning</small></th>
+                        <th style="padding:8px 10px; text-align:center; font-weight:800; border-bottom:2px solid #047857;">예문<br><small class="en-line" lang="en" translate="yes">Example</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>~고</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;">순서·나열<br><small lang="en" translate="yes"><em>and / and then</em></small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;">친구를 <strong>만나고</strong> 영화를 봤습니다.<br><small lang="en" translate="yes"><em>I met a friend AND THEN saw a movie. (independent)</em></small></td></tr>
-                    <tr style="background:#ecfdf5;"><td style="padding:10px; text-align:center; color:#047152;"><strong>~아/어서</strong></td><td style="padding:10px; text-align:center;">연결·원인<br><small lang="en" translate="yes"><em>and so / having done</em></small></td><td style="padding:10px; text-align:center;">친구를 <strong>만나서</strong> 영화를 봤습니다.<br><small lang="en" translate="yes"><em>I met a friend AND together saw a movie. (linked)</em></small></td></tr>
+                    <tr><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5; color:#047152;"><strong>~고</strong></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;">순서·나열<br><small class="en-line" lang="en" translate="yes"><em>and / and then</em></small></td><td style="padding:10px; text-align:center; border-bottom:1px solid #d1fae5;">친구를 <strong>만나고</strong> 영화를 봤습니다.<br><small class="en-line" lang="en" translate="yes"><em>I met a friend AND THEN saw a movie. (independent)</em></small></td></tr>
+                    <tr style="background:#ecfdf5;"><td style="padding:10px; text-align:center; color:#047152;"><strong>~아/어서</strong></td><td style="padding:10px; text-align:center;">연결·원인<br><small class="en-line" lang="en" translate="yes"><em>and so / having done</em></small></td><td style="padding:10px; text-align:center;">친구를 <strong>만나서</strong> 영화를 봤습니다.<br><small class="en-line" lang="en" translate="yes"><em>I met a friend AND together saw a movie. (linked)</em></small></td></tr>
                 </tbody>
             </table></div>
         </div>
@@ -519,14 +523,14 @@ p.en{margin-bottom:16px;}
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#064e3b; background:#ecfdf5; border-left:4px solid #047857; border-radius:4px;">어순<br><small style="font-weight:600;"><span lang="en" translate="yes">Word Order</span></small></h3>
         <div style="padding:10px 14px; background:#ecfdf5; border-left:3px solid #10b981; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
             <strong>~고</strong>로 연결된 두 절은 각각 [주어 + (목적어) + 서술어] 형태를 가지며, 마지막 절에 시제가 표시됩니다.<br>
-            <small lang="en" translate="yes"><em>Each clause linked by <strong>~<span lang="ko" translate="no">고</span></strong> has [Subject + (Object) + Predicate]; tense is marked on the final clause.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Each clause linked by <strong>~<span lang="ko" translate="no">고</span></strong> has [Subject + (Object) + Predicate]; tense is marked on the final clause.</em></small>
         </div>
         <div class="gstep-pattern">주어 + (목적어) + <span class="accent">서술어1</span> + (목적어) + 서술어2<small><strong><span lang="en" translate="yes">Subject</span></strong> + (<strong><span lang="en" translate="yes">Object</span></strong>) + <span class="accent"><span lang="en" translate="yes">Predicate 1</span></span> + (<strong><span lang="en" translate="yes">Object</span></strong>) + <strong><span lang="en" translate="yes">Predicate 2</span></strong></small></div>
         <div style="margin-top:12px; padding:8px 12px; background:#fff; border-left:3px solid #fbbf24; border-radius:6px; font-size:0.9rem; line-height:1.75;">
             <strong>예 1:</strong> 저는 아침을 <strong>먹고</strong> 커피를 마십니다.<br>
-            <small lang="en" translate="yes"><em>I eat breakfast and then drink coffee.</em></small><br><br>
+            <small class="en-line" lang="en" translate="yes"><em>I eat breakfast and then drink coffee.</em></small><br><br>
             <strong>예 2:</strong> 저는 신문을 <strong>보고</strong> 회사에 갑니다.<br>
-            <small lang="en" translate="yes"><em>I read the newspaper and then go to work.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>I read the newspaper and then go to work.</em></small>
         </div>
     </div>
 </div>
@@ -624,18 +628,18 @@ p.en{margin-bottom:16px;}
         </table></div>
         <div class="explain-note">
             <strong>💡 왜 "읽다"가 아니라 "보다"를 쓸까?</strong><br>
-            <small lang="en" translate="yes"><em>Why use "<span lang="ko" translate="no">보다</span>" instead of "<span lang="ko" translate="no">읽다</span>" for "read"?</em></small><br><br>
-            한국어에서 신문·잡지·만화·TV처럼 시각적으로 훑어보는 매체에는 보통 <strong>보다</strong>를 씁니다.<br><small lang="en" translate="yes"><em>Korean typically uses <strong><span lang="ko" translate="no">보다</span></strong> (see / consume visually) for newspapers, magazines, comics, and TV — media you scan visually.</em></small><br><strong>읽다</strong>는 책·논문·편지처럼 글을 집중해서 읽을 때 사용합니다.<br><small lang="en" translate="yes"><em><strong><span lang="ko" translate="no">읽다</span></strong> (read carefully) is reserved for books, papers, and letters that require focused reading.</em></small>
+            <small class="en-line" lang="en" translate="yes"><em>Why use "<span lang="ko" translate="no">보다</span>" instead of "<span lang="ko" translate="no">읽다</span>" for "read"?</em></small><br><br>
+            한국어에서 신문·잡지·만화·TV처럼 시각적으로 훑어보는 매체에는 보통 <strong>보다</strong>를 씁니다.<br><small class="en-line" lang="en" translate="yes"><em>Korean typically uses <strong><span lang="ko" translate="no">보다</span></strong> (see / consume visually) for newspapers, magazines, comics, and TV — media you scan visually.</em></small><br><strong>읽다</strong>는 책·논문·편지처럼 글을 집중해서 읽을 때 사용합니다.<br><small class="en-line" lang="en" translate="yes"><em><strong><span lang="ko" translate="no">읽다</span></strong> (read carefully) is reserved for books, papers, and letters that require focused reading.</em></small>
             <div class="tbl-scroll"><table style="width:100%; border-collapse:collapse; margin-top:10px; background:#fff; border-radius:6px; overflow:hidden; font-size:0.9rem;">
                 <thead>
                     <tr style="background:#fde68a; color:#78350f;">
-                        <th style="padding:7px 10px; text-align:center; font-weight:800; border-bottom:2px solid #fbbf24;">동사<br><small lang="en" translate="yes">Verb</small></th>
-                        <th style="padding:7px 10px; text-align:center; font-weight:800; border-bottom:2px solid #fbbf24;">자주 쓰는 대상<br><small lang="en" translate="yes">Common objects</small></th>
+                        <th style="padding:7px 10px; text-align:center; font-weight:800; border-bottom:2px solid #fbbf24;">동사<br><small class="en-line" lang="en" translate="yes">Verb</small></th>
+                        <th style="padding:7px 10px; text-align:center; font-weight:800; border-bottom:2px solid #fbbf24;">자주 쓰는 대상<br><small class="en-line" lang="en" translate="yes">Common objects</small></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #fef3c7; color:#92400e;"><strong>보다</strong><br><small lang="en" translate="yes"><em>see / consume visually</em></small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #fef3c7;"><strong>신문, 잡지, 만화, TV, 영화</strong><br><small lang="en" translate="yes"><em>newspaper, magazine, comics, TV, movie</em></small></td></tr>
-                    <tr style="background:#fffbeb;"><td style="padding:8px 10px; text-align:center; color:#92400e;"><strong>읽다</strong><br><small lang="en" translate="yes"><em>read carefully</em></small></td><td style="padding:8px 10px; text-align:center;"><strong>책, 논문, 편지, 시</strong><br><small lang="en" translate="yes"><em>book, paper, letter, poem</em></small></td></tr>
+                    <tr><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #fef3c7; color:#92400e;"><strong>보다</strong><br><small class="en-line" lang="en" translate="yes"><em>see / consume visually</em></small></td><td style="padding:8px 10px; text-align:center; border-bottom:1px solid #fef3c7;"><strong>신문, 잡지, 만화, TV, 영화</strong><br><small class="en-line" lang="en" translate="yes"><em>newspaper, magazine, comics, TV, movie</em></small></td></tr>
+                    <tr style="background:#fffbeb;"><td style="padding:8px 10px; text-align:center; color:#92400e;"><strong>읽다</strong><br><small class="en-line" lang="en" translate="yes"><em>read carefully</em></small></td><td style="padding:8px 10px; text-align:center;"><strong>책, 논문, 편지, 시</strong><br><small class="en-line" lang="en" translate="yes"><em>book, paper, letter, poem</em></small></td></tr>
                 </tbody>
             </table></div>
         </div>
