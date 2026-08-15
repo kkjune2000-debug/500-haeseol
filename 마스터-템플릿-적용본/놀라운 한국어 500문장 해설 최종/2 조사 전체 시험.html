@@ -413,9 +413,29 @@ function alltGrade(){
 <div class="mc-q" data-answers="에" data-say="저는 아침 일곱 시에 일어납니다."><div class="mc-sentence">12) 저는 아침 일곱 시<span class="mc-blank">___</span> 일어납니다.<span class="gloss" lang="en" translate="yes">I wake up at 7 a.m.</span></div><div class="mc-opts"><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcJT(this,'에')">에</button><div class="mc-fb"></div></div><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcJT(this,'에서')">에서</button><div class="mc-fb"></div></div></div></div>
 </div>
 <div id="mcScoreJT" class="mc-score"></div>
+<style>
+/* mcg-all v1 — 객관식을 다 맞힌 뒤에만 나오는 전체 듣기.
+   ★먼저 들으면 답을 베끼게 되므로 hidden 으로 두고 채점에서 연다. */
+.mcg-all{margin-top:14px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:10px;padding:12px 14px;}
+.mcg-all[hidden]{display:none;}
+.mcg-msg{font-weight:800;color:#065f46;font-size:0.93rem;line-height:1.55;}
+.mcg-msg small{display:block;font-weight:600;color:#047857;font-size:0.8rem;margin-top:2px;}
+.mcg-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.mcg-btn{background:#eff6ff;color:#1e3a8a;border:1px solid #bfdbfe;padding:7px 14px;border-radius:8px;cursor:pointer;font-size:0.9rem;font-weight:700;}
+.mcg-btn:hover{background:#dbeafe;}
+.mcg-btn.playing{background:#fdecec;border-color:#f0c4c4;color:#9b4747;}
+.mc-q.sl-now{outline:2px solid #10b981;outline-offset:3px;border-radius:8px;}
+</style>
+<div id="mcgAllJT" class="mcg-all" hidden>
+<div class="mcg-msg">🎉 모두 맞혔습니다 — 이제 문장을 소리로 확인해 보세요.<small lang="en" translate="yes">All correct — now listen to the sentences.</small></div>
+<div class="mcg-btns">
+<button class="mcg-btn" onclick="mcgAll('JT',this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button>
+<button class="mcg-btn" onclick="mcgAll('JT',this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button>
+</div>
+</div>
 <script>
 var mcJTT=12,mcJTD=0,mcJTC=0;
-function mcJT(btn,val){var q=btn.closest('.mc-q');if(q.classList.contains('correct-done'))return;var ans=q.dataset.answers.split(',');var fb=btn.parentElement.querySelector('.mc-fb');if(ans.indexOf(val)!==-1){q.classList.add('correct-done');btn.classList.add('correct');fb.textContent='O';fb.style.color='#166534';q.querySelectorAll('.mc-btn').forEach(function(b){b.disabled=true;});mcJTC++;mcJTD++;if(mcJTD===mcJTT){var s=document.getElementById('mcScoreJT');s.style.display='block';s.textContent='완료 '+mcJTC+' / '+mcJTT+' 🎉';}}else{btn.classList.add('wrong');btn.disabled=true;fb.textContent='X';fb.style.color='#dc2626';}}
+function mcJT(btn,val){var q=btn.closest('.mc-q');if(q.classList.contains('correct-done'))return;var ans=q.dataset.answers.split(',');var fb=btn.parentElement.querySelector('.mc-fb');if(ans.indexOf(val)!==-1){q.classList.add('correct-done');btn.classList.add('correct');fb.textContent='O';fb.style.color='#166534';q.querySelectorAll('.mc-btn').forEach(function(b){b.disabled=true;});mcJTC++;mcJTD++;if(mcJTD===mcJTT){var s=document.getElementById('mcScoreJT');s.style.display='block';s.textContent='완료 '+mcJTC+' / '+mcJTT+' 🎉';var ab=document.getElementById('mcgAllJT');if(ab)ab.hidden=false;}}else{btn.classList.add('wrong');btn.disabled=true;fb.textContent='X';fb.style.color='#dc2626';}}
 </script>
 
 <h3>객관식: 에게 <span lang="en" translate="yes">vs</span> 에<span class="gloss" lang="en" translate="yes">Multiple Choice: <span lang="ko" translate="no">에게</span> vs <span lang="ko" translate="no">에</span></span></h3>
@@ -437,9 +457,16 @@ function mcJT(btn,val){var q=btn.closest('.mc-q');if(q.classList.contains('corre
 <div class="mc-q" data-answers="에" data-say="저는 벽에 그림을 겁니다."><div class="mc-sentence">10) 저는 벽<span class="mc-blank">___</span> 그림을 겁니다.<span class="gloss" lang="en" translate="yes">I hang a picture on the wall.</span></div><div class="mc-opts"><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcJR(this,'에게')">에게</button><div class="mc-fb"></div></div><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcJR(this,'에')">에</button><div class="mc-fb"></div></div></div></div>
 </div>
 <div id="mcScoreJR" class="mc-score"></div>
+<div id="mcgAllJR" class="mcg-all" hidden>
+<div class="mcg-msg">🎉 모두 맞혔습니다 — 이제 문장을 소리로 확인해 보세요.<small lang="en" translate="yes">All correct — now listen to the sentences.</small></div>
+<div class="mcg-btns">
+<button class="mcg-btn" onclick="mcgAll('JR',this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button>
+<button class="mcg-btn" onclick="mcgAll('JR',this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button>
+</div>
+</div>
 <script>
 var mcJRT=10,mcJRD=0,mcJRC=0;
-function mcJR(btn,val){var q=btn.closest('.mc-q');if(q.classList.contains('correct-done'))return;var ans=q.dataset.answers.split(',');var fb=btn.parentElement.querySelector('.mc-fb');if(ans.indexOf(val)!==-1){q.classList.add('correct-done');btn.classList.add('correct');fb.textContent='O';fb.style.color='#166534';q.querySelectorAll('.mc-btn').forEach(function(b){b.disabled=true;});mcJRC++;mcJRD++;if(mcJRD===mcJRT){var s=document.getElementById('mcScoreJR');s.style.display='block';s.textContent='완료 '+mcJRC+' / '+mcJRT+' 🎉';}}else{btn.classList.add('wrong');btn.disabled=true;fb.textContent='X';fb.style.color='#dc2626';}}
+function mcJR(btn,val){var q=btn.closest('.mc-q');if(q.classList.contains('correct-done'))return;var ans=q.dataset.answers.split(',');var fb=btn.parentElement.querySelector('.mc-fb');if(ans.indexOf(val)!==-1){q.classList.add('correct-done');btn.classList.add('correct');fb.textContent='O';fb.style.color='#166534';q.querySelectorAll('.mc-btn').forEach(function(b){b.disabled=true;});mcJRC++;mcJRD++;if(mcJRD===mcJRT){var s=document.getElementById('mcScoreJR');s.style.display='block';s.textContent='완료 '+mcJRC+' / '+mcJRT+' 🎉';var ab=document.getElementById('mcgAllJR');if(ab)ab.hidden=false;}}else{btn.classList.add('wrong');btn.disabled=true;fb.textContent='X';fb.style.color='#dc2626';}}
 </script>
 
 <div class="footer">
@@ -660,7 +687,10 @@ function alltSeq(btn, sex){
 
 /* 절 전체 듣기 — 카드의 data-forms 를 차례로 잇는다 (2026-08-15 사용자 지시) */
 function alltAllReset(){
-  var bs = document.querySelectorAll('.allt-listen.playing'), i, lb;
+  /* ★객관식 전체 듣기 단추도 함께 푼다 — 안 그러면 소리는 멎는데
+     단추만 「멈춤」으로 남는다. */
+  if (typeof mcgNowClear === 'function') mcgNowClear();
+  var bs = document.querySelectorAll('.allt-listen.playing, .mcg-btn.playing'), i, lb;
   for (i = 0; i < bs.length; i++){
     bs[i].classList.remove('playing');
     lb = bs[i].getAttribute('data-label');
@@ -718,5 +748,38 @@ document.addEventListener('click', function(ev){
   var oc = b.getAttribute('onclick') || '';
   if (/allt(Grade|Reveal|Reset)\(/.test(oc)) setTimeout(alltCardBtnsAll, 0);
 });
+</script>
+<script>
+/* mcg-all v1 — 이 쪽수의 얼개(akSpeakSeq · AK_SEQ_ID)를 그대로 쓴다. */
+function mcgNowClear(){
+  var ns = document.querySelectorAll('.mc-q.sl-now'), i;
+  for (i = 0; i < ns.length; i++) ns[i].classList.remove('sl-now');
+}
+function mcgAll(which, btn, sex){
+  var was = btn.classList.contains('playing');
+  AK_SEQ_ID++;                                  /* 앞 재생 끊기 */
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  if (window.AK_AU){ try { AK_AU.pause(); } catch(e){} }
+  alltAllReset();
+  if (was) return;                              /* 다시 누르면 멈춘다 */
+  var qs = document.querySelectorAll('#mcQuiz' + which + ' .mc-q'), items = [], i, t;
+  for (i = 0; i < qs.length; i++){ t = qs[i].getAttribute('data-say'); if (t) items.push([qs[i], t]); }
+  if (!items.length) return;
+  if (!btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.innerHTML);
+  btn.classList.add('playing');
+  btn.innerHTML = '\u25a0 \uba48\ucda4<span class=\"gloss\" lang=\"en\" translate=\"yes\">Stop</span>';
+  try { localStorage.setItem('akVoiceSex', sex); } catch(e){}
+  if (typeof AK_SEX !== 'undefined') AK_SEX = sex;
+  var k = 0;
+  function step(){
+    mcgNowClear();
+    if (k >= items.length){ alltAllReset(); return; }
+    var it = items[k++];
+    it[0].classList.add('sl-now');
+    it[0].scrollIntoView({behavior:'smooth', block:'center'});
+    akSpeakSeq([it[1]], sex, step);
+  }
+  step();
+}
 </script>
 </body></html>
