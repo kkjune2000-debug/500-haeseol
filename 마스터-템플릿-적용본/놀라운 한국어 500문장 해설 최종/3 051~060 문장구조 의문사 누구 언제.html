@@ -1184,7 +1184,6 @@ small.en-line{display:inline-block;margin-bottom:9px;}
 }
 </style>
 
-<div class="sl-all"><button class="sl-all-btn" onclick="numtAll(this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button><button class="sl-all-btn" onclick="numtAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button></div>
 <div class="tbl-scroll"><table class="num-table">
     <thead>
         <tr><th colspan="4" class="num-title"><span lang="en" translate="yes">Reading Korean Numbers</span><span class="num-title-ko">한국어 숫자 읽기</span></th></tr>
@@ -1208,6 +1207,7 @@ small.en-line{display:inline-block;margin-bottom:9px;}
         <tr><td class="num-en"><span lang="en" translate="yes">ten</span></td><td class="num-digit"><span class="num-digit-badge">10</span></td><td class="num-ko">십 <button translate="yes" class="speak-btn" onclick="speakKorean('십')" title="Listen">🔊</button></td><td class="num-ko">열 <button translate="yes" class="speak-btn" onclick="speakKorean('열')" title="Listen">🔊</button></td></tr>
     </tbody>
 </table></div>
+        <div class="sl-all"><button class="sl-all-btn" onclick="numtAll(this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button><button class="sl-all-btn" onclick="numtAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button></div>
 
 <div class="nm-game">
     <div class="nm-game-title">숫자 짝 맞추기 (1~10 ↔ 일~십)<span class="gloss" lang="en" translate="yes">Number Matching Quiz</span></div>
@@ -2364,7 +2364,7 @@ function numtAll(btn, sex){
   slStop();
   if (was) return;                       /* 같은 단추를 다시 누르면 멈춘다 */
   var bar = btn.closest('.sl-all');
-  var wrap = bar && bar.nextElementSibling;
+  var wrap = bar && bar.previousElementSibling;   /* 바는 표 아래에 있다 */
   var tbl = wrap && wrap.querySelector('table.num-table');
   if (!tbl) return;
   var nodes = tbl.querySelectorAll('td.num-ko [onclick]'), items = [], k, oc, mm;
