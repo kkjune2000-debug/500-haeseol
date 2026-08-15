@@ -477,8 +477,11 @@ p.en{margin-bottom:16px;}
 <p class="en" lang="en" translate="yes">⚠️ <strong>Caution:</strong> When the predicate is <strong>'<span lang="ko" translate="no">가다</span> (to go), <span lang="ko" translate="no">다니다</span> (to attend), <span lang="ko" translate="no">있다</span> (to be/exist), <span lang="ko" translate="no">없다</span> (to not be/exist)'</strong> etc., use <strong>'place + <span class="particle"><span lang="ko" translate="no">에</span></span>'</strong>.</p>
 </div>
 
+<hr>
+
+<h3>알맞은 조사 고르기<span class="gloss" lang="en" translate="yes">Choose the right particle</span></h3>
+
 <div class="quiz-box">
-<h4>객관식: 에 <span lang="en" translate="yes">vs</span> 에서<span class="gloss" lang="en" translate="yes">Multiple Choice: <span lang="ko" translate="no">에</span> vs <span lang="ko" translate="no">에서</span></span></h4>
 <p class="ko">문장을 읽고 알맞은 조사를 고르세요.</p>
 <p class="en" lang="en" translate="yes">Read the sentence and choose the correct particle.</p>
 <p class="ko">'에' 또는 '에서'?</p>
@@ -555,9 +558,53 @@ p.en{margin-bottom:16px;}
 <div class="mc-q" data-answers="에" data-say="저는 회사에 다닙니다."><div class="mc-sentence">15) 저는 회사<span class="mc-blank">___</span> 다닙니다.<span class="gloss" lang="en" translate="yes">I go to work.</span></div><div class="mc-opts"><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에')">에</button><div class="mc-fb"></div></div><div class="mc-opt-wrap"><button class="mc-btn" onclick="mcG(this,'에서')">에서</button><div class="mc-fb"></div></div></div></div>
 </div>
 <div id="mcScoreG" class="mc-score"></div>
+<style>
+/* mcg-all v1 — 객관식을 다 맞힌 뒤에만 나오는 전체 듣기.
+   ★먼저 들으면 답을 베끼게 되므로 hidden 으로 두고 채점에서 연다. */
+.mcg-all{margin-top:14px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:10px;padding:12px 14px;}
+.mcg-all[hidden]{display:none;}
+.mcg-msg{font-weight:800;color:#065f46;font-size:0.93rem;line-height:1.55;}
+.mcg-msg small{display:block;font-weight:600;color:#047857;font-size:0.8rem;margin-top:2px;}
+.mcg-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.mc-q.sl-now{outline:2px solid #10b981;outline-offset:3px;border-radius:8px;}
+</style>
+<div id="mcgAllBox" class="mcg-all" hidden>
+<div class="mcg-msg">🎉 모두 맞혔습니다 — 이제 문장을 소리로 확인해 보세요.<small lang="en" translate="yes">All correct — now listen to the sentences.</small></div>
+<div class="mcg-btns">
+<button class="sl-all-btn" onclick="mcgAll(this,'f')">🔊 전체 듣기 여성<span class="gloss" lang="en" translate="yes">Play all (female)</span></button>
+<button class="sl-all-btn" onclick="mcgAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button>
+</div>
+</div>
 <script>
 var mcGT=15,mcGD=0,mcGC=0;
-function mcG(btn,val){var q=btn.closest('.mc-q');if(q.classList.contains('correct-done'))return;var ans=q.dataset.answers.split(',');var fb=btn.parentElement.querySelector('.mc-fb');if(ans.indexOf(val)!==-1){q.classList.add('correct-done');btn.classList.add('correct');fb.textContent='O';fb.style.color='#166534';q.querySelectorAll('.mc-btn').forEach(function(b){b.disabled=true;});mcGC++;mcGD++;if(mcGD===mcGT){var s=document.getElementById('mcScoreG');s.style.display='block';s.textContent='완료 '+mcGC+' / '+mcGT+' 🎉';}}else{btn.classList.add('wrong');btn.disabled=true;fb.textContent='X';fb.style.color='#dc2626';}}
+function mcG(btn,val){var q=btn.closest('.mc-q');if(q.classList.contains('correct-done'))return;var ans=q.dataset.answers.split(',');var fb=btn.parentElement.querySelector('.mc-fb');if(ans.indexOf(val)!==-1){q.classList.add('correct-done');btn.classList.add('correct');fb.textContent='O';fb.style.color='#166534';q.querySelectorAll('.mc-btn').forEach(function(b){b.disabled=true;});mcGC++;mcGD++;if(mcGD===mcGT){var s=document.getElementById('mcScoreG');s.style.display='block';s.textContent='완료 '+mcGC+' / '+mcGT+' 🎉';var ab=document.getElementById('mcgAllBox');if(ab)ab.hidden=false;}}else{btn.classList.add('wrong');btn.disabled=true;fb.textContent='X';fb.style.color='#dc2626';}}
+function mcgAll(btn, sex){
+  var was = btn.classList.contains('playing');
+  slStop2();
+  if (was) return;                      /* 같은 단추를 다시 누르면 멈춘다 */
+  var qs = document.querySelectorAll('#mcQuizG .mc-q'), items = [], k, t;
+  for (k = 0; k < qs.length; k++){
+    t = qs[k].getAttribute('data-say');
+    if (t) items.push([qs[k], t]);
+  }
+  if (!items.length) return;
+  if (!btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.innerHTML);
+  btn.classList.add('playing');
+  btn.innerHTML = '\u25a0 \uba48\ucda4<span class="gloss" lang="en" translate="yes">Stop</span>';
+  try { localStorage.setItem('akVoiceSex', sex); } catch(e){}
+  if (typeof AK_SEX !== 'undefined') AK_SEX = sex;
+  var my = ++AK_SEQ_ID2, i = 0;
+  function next(){
+    if (my !== AK_SEQ_ID2) return;
+    for (var k2 = 0; k2 < items.length; k2++) items[k2][0].classList.remove('sl-now');
+    if (i >= items.length){ slStop2(); return; }
+    var it = items[i++];
+    it[0].classList.add('sl-now');
+    it[0].scrollIntoView({behavior:'smooth', block:'center'});
+    slPlay2(it[1], sex, function(){ if (my === AK_SEQ_ID2) next(); });
+  }
+  next();
+}
 </script>
 </div>
 
