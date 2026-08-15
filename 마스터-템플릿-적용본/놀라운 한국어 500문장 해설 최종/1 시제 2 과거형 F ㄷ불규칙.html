@@ -30,7 +30,29 @@ input[data-ans].correct,input[data-ans].prex{cursor:pointer;}
    빈칸은 짝 「안」이 아니라 짝 「사이」에 와야 한 덩이로 읽힌다. */
 p.ko{margin-bottom:2px;}
 p.en{margin-bottom:16px;}
-</style></head><body>
+</style><style>
+/* gbox v1 — 책 전체의 설명 상자. 모양은 넷, 이름표는 다섯.
+   ★색을 상자에서 빼고 「배울 것」에만 남긴다.
+     상자마다 색이 다르면 눈이 상자를 좇느라 정작 배울 것을 못 본다.
+   ★호박색은 「주의」에게만 준다. 아껴 써야 눈에 걸린다. */
+.gb{border:1px solid #e6e8ef;border-left:3px solid #a9abd4;background:#f8f8fc;
+    border-radius:8px;padding:11px 14px;margin:0 0 11px 0;
+    font-size:0.93rem;line-height:1.75;color:#1f2937;}
+.gb strong,.gb b{color:#35347a;}
+.gb-key{border-left-color:#8286c4;background:#f5f5fb;}
+.gb-ex{border-left-color:#c3c7d2;background:#fafafb;}
+.gb-ex strong,.gb-ex b{color:#3d4654;}
+.gb-warn{border-left-color:#d9ab63;background:#fdfaf3;border-color:#f0e6d2;}
+.gb-warn strong,.gb-warn b{color:#7d5210;}
+.gb-lab{display:block;font-size:0.71rem;font-weight:800;letter-spacing:0.09em;
+        color:#55589c;margin-bottom:5px;}
+.gb-lab i{font-style:normal;font-weight:700;opacity:0.78;margin-left:5px;}
+.gb-key>.gb-lab{color:#4a4e93;}
+.gb-ex>.gb-lab{color:#5b6472;}
+.gb-warn>.gb-lab{color:#8a5a12;}
+.gb>:last-child{margin-bottom:0;}
+</style>
+</head><body>
 <script>
 /* jm-voice v1 */
 /* 「직접 만들기」 답 칸의 소리 — 칸을 눌러 재생하며, 고른 목소리(여/남)를 따른다 */
@@ -326,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function(){
 <button class="sl-all-btn" onclick="tblAll(this,'m')">🔊 전체 듣기 남성<span class="gloss" lang="en" translate="yes">Play all (male)</span></button>
 </div>
 
-<div style="margin:14px 0 4px 0;padding:10px 14px;background:#fff8e6;border-left:4px solid #e8c97a;border-radius:6px;">
+<div class="gb gb-warn"><span class="gb-lab">주의<i lang="en" translate="yes">Caution</i></span>
   <p class="ko" style="margin:0 0 4px 0;font-weight:800;color:#886825;">⚠️ 주의: 모든 'ㄷ' 받침 동사가 불규칙은 아닙니다.</p>
 <p class="en" style="margin:0;font-style:italic;color:#807123;" lang="en" translate="yes">Not all <span lang="ko" translate="no">ㄷ</span>-ending verbs are irregular.</p>
 <p class="ko" style="margin:0 0 2px 0;">아래 동사들은 <strong>규칙형</strong>입니다.</p>

@@ -211,8 +211,8 @@
         .explain-content code { background:transparent; padding:0; font-family:inherit; color:#000; font-size:inherit; font-weight:700; }
         code { background:transparent; padding:0; font-family:inherit; color:#000; font-size:inherit; font-weight:700; }
         .explain-tip { margin-top: 10px !important; padding-top: 8px; border-top: 1px dashed #c4b5fd; color: #6d28d9; }
-        .explain-note { margin-top: 10px; padding: 10px 14px; background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 6px; font-size: 0.92rem; line-height: 1.65; color: #78350f; }
-        .explain-note strong { color: #92400e; }
+        .explain-note { margin-top:10px; padding:10px 14px; background:#f7f8fa; border:1px solid #e6e8ef; border-left:3px solid #b9bec9; border-radius:8px; font-size:0.92rem; line-height:1.7; color:#26303d; }
+        .explain-note strong{ color:#2b3140; font-weight:800; }
         @media print { .vocab-toggle + .vocab-box { display:block !important; } .vocab-toggle { display:none; } .explain-content { display:block !important; } .explain-toggle { display:none; } }
         .exp-table { width: 100%; border-collapse: collapse; margin: 6px 0 12px 0; font-size: 0.93rem; table-layout: fixed; }
         .exp-table thead th { background: #f5f3ff; color: #6d28d9; font-weight: 800; padding: 8px 10px; text-align: center; border-bottom: 2px solid #c4b5fd; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -235,9 +235,9 @@
         .gstep-body p.en strong { color: #4c1d95; font-weight: 800; }
         .gstep-body p.ko { color: #475569; font-size: 0.94rem; line-height: 1.65; margin-bottom: 12px; font-weight: 500; }
         .gstep-body p.ko strong { color: #5b21b6; font-weight: 700; }
-        .gstep-pattern { background: #fffdf0; color: #4c1d95; border: 1px solid #ddd6fe; border-left: 4px solid #6d28d9; padding: 14px 18px; border-radius: 10px; margin: 14px 0 10px 0; font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.08rem; font-weight: 800; line-height: 1.55; box-shadow: 0 2px 6px rgba(76,29,149,0.06); }
-        .gstep-pattern small { display: block; color: #7c3aed; font-weight: 500; font-size: 0.8rem; margin-top: 7px; letter-spacing: 0.02em; opacity:1; }
-        .gstep-pattern .accent { color: #6d28d9; font-weight: 800; font-family: inherit; }
+        .gstep-pattern { background:#f5f5fb; color:#1f2937; border:1px solid #e6e7f0; border-left:3px solid #8286c4; padding:12px 15px; border-radius:8px; margin:12px 0 11px 0; font-family:'Lato','Noto Sans KR',sans-serif; font-size:1rem; font-weight:800; line-height:1.6; }
+        .gstep-pattern small { display:block; color:#4b5563; font-weight:500; font-size:0.79rem; margin-top:6px; letter-spacing:0; opacity:1; }
+        .gstep-pattern .accent{ color:#35347a; font-weight:800; font-family:inherit; }
         .gstep blockquote { background: #fff; border: 1px solid #e9d5ff; border-left: 3px solid #8b5cf6; border-radius: 8px; padding: 12px 16px; margin: 12px 0 10px 0; line-height: 1.85; font-size: 0.93rem; color: #1e293b; font-style: normal; }
         .gstep blockquote strong { color: #6d28d9; font-weight: 800; }
         .gstep-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 14px 0 10px 0; font-size: 0.93rem; background: #fff; border: 1px solid #ddd6fe; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(124,58,237,0.14); }
@@ -247,8 +247,8 @@
         .gstep-table tbody tr:nth-child(even) td { background: #faf5ff; }
         .gstep-table tbody td .accent { color: #6d28d9; font-weight: 700; font-family: inherit; }
         .gstep-table tbody td strong { color: #5b21b6; font-weight: 800; }
-        .gstep .explain-note { background: linear-gradient(135deg, #fef9c3 0%, #fefce8 70%); border-left: 4px solid #f59e0b; padding: 12px 18px; border-radius: 10px; margin-top: 14px; font-size: 0.92rem; line-height: 1.7; color: #713f12; box-shadow: 0 1px 3px rgba(245,158,11,0.06); }
-        .gstep .explain-note strong { color: #92400e; font-weight: 800; }
+        .gstep .explain-note{ margin-top:14px; padding:12px 16px; background:#f7f8fa; border:1px solid #e6e8ef; border-left:3px solid #b9bec9; border-radius:8px; font-size:0.92rem; line-height:1.7; color:#26303d; }
+        .gstep .explain-note strong{ color:#2b3140; font-weight:800; }
         @media (max-width: 600px) {
             .gstep { grid-template-columns: 1fr; gap: 14px; padding: 20px 22px 18px; }
             .gstep::before { width: 3px; }
@@ -405,6 +405,28 @@ small.en-line{display:inline-block;margin-bottom:9px;}
    앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
    것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
+<style>
+/* gbox v1 — 책 전체의 설명 상자. 모양은 넷, 이름표는 다섯.
+   ★색을 상자에서 빼고 「배울 것」에만 남긴다.
+     상자마다 색이 다르면 눈이 상자를 좇느라 정작 배울 것을 못 본다.
+   ★호박색은 「주의」에게만 준다. 아껴 써야 눈에 걸린다. */
+.gb{border:1px solid #e6e8ef;border-left:3px solid #a9abd4;background:#f8f8fc;
+    border-radius:8px;padding:11px 14px;margin:0 0 11px 0;
+    font-size:0.93rem;line-height:1.75;color:#1f2937;}
+.gb strong,.gb b{color:#35347a;}
+.gb-key{border-left-color:#8286c4;background:#f5f5fb;}
+.gb-ex{border-left-color:#c3c7d2;background:#fafafb;}
+.gb-ex strong,.gb-ex b{color:#3d4654;}
+.gb-warn{border-left-color:#d9ab63;background:#fdfaf3;border-color:#f0e6d2;}
+.gb-warn strong,.gb-warn b{color:#7d5210;}
+.gb-lab{display:block;font-size:0.71rem;font-weight:800;letter-spacing:0.09em;
+        color:#55589c;margin-bottom:5px;}
+.gb-lab i{font-style:normal;font-weight:700;opacity:0.78;margin-left:5px;}
+.gb-key>.gb-lab{color:#4a4e93;}
+.gb-ex>.gb-lab{color:#5b6472;}
+.gb-warn>.gb-lab{color:#8a5a12;}
+.gb>:last-child{margin-bottom:0;}
+</style>
 </head>
 <body>
 <div class="container">
@@ -429,10 +451,10 @@ small.en-line{display:inline-block;margin-bottom:9px;}
     <div class="gstep-num">1</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">두 단계의 정중한 부탁<br><small style="font-weight:600;"><span lang="en" translate="yes">Two levels of polite request</span></small></h3>
-        <div style="padding:10px 14px; background:linear-gradient(135deg, #ede9fe 0%, #faf5ff 100%); border:1px solid #ddd6fe; border-left:4px solid #6d28d9; border-radius:8px; box-shadow:0 1px 3px rgba(76,29,149,0.05); margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
+        <div class="gb"><span class="gb-lab">설명<i lang="en" translate="yes">Explanation</i></span>
             한국어에는 두 단계의 정중한 부탁이 있습니다.<br><small class="en-line" lang="en" translate="yes"><em>Korean has two levels of polite request.</em></small><br>둘 다 동사 어간에 붙입니다.<br><small class="en-line" lang="en" translate="yes"><em>Both attach to the Verb.</em></small>
         </div>
-        <div class="gstep-pattern">정중: 동사 + <strong>아/어 주세요</strong> &nbsp;|&nbsp; 더 정중: 동사 + <strong>아/어 주시겠습니까?</strong><small><span lang="en" translate="yes">Polite: Verb</span> + <strong><span lang="ko" translate="no">아/어 주세요</span></strong> &nbsp;|&nbsp; <span lang="en" translate="yes">Very polite: Verb</span> + <strong><span lang="ko" translate="no">아/어 주시겠습니까</span>?</strong></small><small><strong><span lang="en" translate="yes">Verb</span></strong> + <span class="accent">아/어 주다</span></small></div>
+        <div class="gstep-pattern"><span class="gb-lab">공식<i lang="en" translate="yes">Formula</i></span>정중: 동사 + <strong>아/어 주세요</strong> &nbsp;|&nbsp; 더 정중: 동사 + <strong>아/어 주시겠습니까?</strong><small><span lang="en" translate="yes">Polite: Verb</span> + <strong><span lang="ko" translate="no">아/어 주세요</span></strong> &nbsp;|&nbsp; <span lang="en" translate="yes">Very polite: Verb</span> + <strong><span lang="ko" translate="no">아/어 주시겠습니까</span>?</strong></small><small><strong><span lang="en" translate="yes">Verb</span></strong> + <span class="accent">아/어 주다</span></small></div>
         <div class="tbl-scroll"><table style="width:100%; border-collapse:separate; border-spacing:0; background:#fff; border:1px solid #ddd6fe; border-radius:12px; overflow:hidden; font-size:0.9rem; box-shadow:0 4px 16px rgba(76,29,149,0.12); margin-top:8px;">
             <thead>
                 <tr style="background:linear-gradient(135deg,#ede9fe 0%,#ddd6fe 100%); color:#5b21b6;">
@@ -464,7 +486,7 @@ small.en-line{display:inline-block;margin-bottom:9px;}
     <div class="gstep-num">2</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">~아/어 주세요 만드는 법<br><small style="font-weight:600;"><span lang="en" translate="yes">Formation</span></small></h3>
-        <div style="padding:10px 14px; background:linear-gradient(135deg, #ede9fe 0%, #faf5ff 100%); border:1px solid #ddd6fe; border-left:4px solid #6d28d9; border-radius:8px; box-shadow:0 1px 3px rgba(76,29,149,0.05); margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
+        <div class="gb"><span class="gb-lab">설명<i lang="en" translate="yes">Explanation</i></span>
             동사의 마지막 모음에 따라 아/어가 결정됩니다.<br>
             <small class="en-line" lang="en" translate="yes"><em>Vowel rule: verb's last vowel decides <span lang="ko" translate="no">아/어</span>.</em></small>
         </div>
@@ -535,9 +557,9 @@ small.en-line{display:inline-block;margin-bottom:9px;}
     <div class="gstep-num">4</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">ㅂ 불규칙 동사<br><small style="font-weight:600;" lang="en" translate="yes">ㅂ<span lang="en" translate="yes">-irregular verbs</span></small></h3>
-        <div style="padding:10px 14px; background:linear-gradient(135deg, #ede9fe 0%, #faf5ff 100%); border:1px solid #ddd6fe; border-left:4px solid #6d28d9; border-radius:8px; box-shadow:0 1px 3px rgba(76,29,149,0.05); margin-bottom:12px; font-size:0.92rem; line-height:1.8;"><strong>딱딱한 발음</strong>인 받침 <strong>ㅂ</strong>이 <strong>부드러운 발음</strong>인 모음 어미(~아/어)를 만나면, 부드러운 모음 <strong>우</strong>(특수: <strong>오</strong>)로 바뀝니다.<br><small class="en-line" lang="en" translate="yes"><em>The <strong>hard consonant</strong> <span lang="ko" translate="no">ㅂ</span> at the stem end <strong>softens into a vowel</strong> when it meets a <strong>vowel ending</strong> (~<span lang="ko" translate="no">아/어</span>) — usually <strong><span lang="ko" translate="no">우</span></strong>, but <strong><span lang="ko" translate="no">오</span></strong> for <span lang="ko" translate="no">돕다/곱다</span>.</em></small><br>돕다 → 도와.<br><small class="en-line" lang="en" translate="yes"><em><span lang="ko" translate="no">돕다</span> → <span lang="ko" translate="no">도와</span>.</em></small>
+        <div class="gb"><span class="gb-lab">설명<i lang="en" translate="yes">Explanation</i></span><strong>딱딱한 발음</strong>인 받침 <strong>ㅂ</strong>이 <strong>부드러운 발음</strong>인 모음 어미(~아/어)를 만나면, 부드러운 모음 <strong>우</strong>(특수: <strong>오</strong>)로 바뀝니다.<br><small class="en-line" lang="en" translate="yes"><em>The <strong>hard consonant</strong> <span lang="ko" translate="no">ㅂ</span> at the stem end <strong>softens into a vowel</strong> when it meets a <strong>vowel ending</strong> (~<span lang="ko" translate="no">아/어</span>) — usually <strong><span lang="ko" translate="no">우</span></strong>, but <strong><span lang="ko" translate="no">오</span></strong> for <span lang="ko" translate="no">돕다/곱다</span>.</em></small><br>돕다 → 도와.<br><small class="en-line" lang="en" translate="yes"><em><span lang="ko" translate="no">돕다</span> → <span lang="ko" translate="no">도와</span>.</em></small>
         </div>
-        <div class="gstep-pattern">도<strong style="color:#1e40af;">ㅂ</strong> + 아 → 도<strong style="color:#c62020;">오</strong> + 아 → 도<strong style="color:#c62020;">오</strong>아 → 도<strong style="color:#c62020;">와</strong><small lang="en" translate="yes"><span lang="ko" translate="no">기본은</span> <strong><span lang="ko" translate="no">우</span></strong>(<span lang="ko" translate="no">줍다</span> → <span lang="ko" translate="no">주워</span>)<span lang="ko" translate="no">이고</span>, <strong><span lang="ko" translate="no">돕다·곱다</span></strong><span lang="ko" translate="no">만 예외적으로</span> <strong><span lang="ko" translate="no">오</span></strong>(<span lang="ko" translate="no">돕다</span> → <span lang="ko" translate="no">도와</span>)<span lang="ko" translate="no">가 됩니다</span>. <strong><span lang="ko" translate="no">그 다음 모음 축약</span></strong>.<br><em>Usually <span lang="ko" translate="no">우</span> (<span lang="ko" translate="no">줍다</span> → <span lang="ko" translate="no">주워</span>); only <span lang="ko" translate="no">돕다/곱다</span> take <span lang="ko" translate="no">오</span> (<span lang="ko" translate="no">돕다</span> → <span lang="ko" translate="no">도와</span>); then the vowels contract.</em></small></div>
+        <div class="gstep-pattern"><span class="gb-lab">공식<i lang="en" translate="yes">Formula</i></span>도<strong style="color:#1e40af;">ㅂ</strong> + 아 → 도<strong style="color:#c62020;">오</strong> + 아 → 도<strong style="color:#c62020;">오</strong>아 → 도<strong style="color:#c62020;">와</strong><small lang="en" translate="yes"><span lang="ko" translate="no">기본은</span> <strong><span lang="ko" translate="no">우</span></strong>(<span lang="ko" translate="no">줍다</span> → <span lang="ko" translate="no">주워</span>)<span lang="ko" translate="no">이고</span>, <strong><span lang="ko" translate="no">돕다·곱다</span></strong><span lang="ko" translate="no">만 예외적으로</span> <strong><span lang="ko" translate="no">오</span></strong>(<span lang="ko" translate="no">돕다</span> → <span lang="ko" translate="no">도와</span>)<span lang="ko" translate="no">가 됩니다</span>. <strong><span lang="ko" translate="no">그 다음 모음 축약</span></strong>.<br><em>Usually <span lang="ko" translate="no">우</span> (<span lang="ko" translate="no">줍다</span> → <span lang="ko" translate="no">주워</span>); only <span lang="ko" translate="no">돕다/곱다</span> take <span lang="ko" translate="no">오</span> (<span lang="ko" translate="no">돕다</span> → <span lang="ko" translate="no">도와</span>); then the vowels contract.</em></small></div>
         <blockquote>
             <strong>돕다</strong> → <strong>돕 + 아 주세요</strong> → <strong>도오 + 아 주세요</strong> → <strong>도와 주세요</strong><span lang="en" translate="yes">. (Please help.)</span><br>
             <strong>줍다</strong> → <strong>줍 + 어 주세요</strong> → <strong>주우 + 어 주세요</strong> → <strong>주워 주세요</strong><span lang="en" translate="yes">. (Please pick it up.)</span>
@@ -549,9 +571,9 @@ small.en-line{display:inline-block;margin-bottom:9px;}
     <div class="gstep-num">5</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">어순<br><small style="font-weight:600;"><span lang="en" translate="yes">Word order</span></small></h3>
-        <div style="padding:10px 14px; background:linear-gradient(135deg, #ede9fe 0%, #faf5ff 100%); border:1px solid #ddd6fe; border-left:4px solid #6d28d9; border-radius:8px; box-shadow:0 1px 3px rgba(76,29,149,0.05); margin-bottom:12px; font-size:0.92rem; line-height:1.8;">한국어에서 부탁을 할 때는 보통 <strong>주어를 생략</strong>하는 경우가 많습니다.<br><small class="en-line" lang="en" translate="yes"><em>Korean requests typically <strong>omit the subject</strong> (you = listener).</em></small><br>부사(다시, 잠깐만 등)는 동사 앞에 옵니다.<br><small class="en-line" lang="en" translate="yes"><em>Adverbs like <span lang="ko" translate="no">다시</span> (again), <span lang="ko" translate="no">잠깐만</span> (a moment) come BEFORE the verb.</em></small>
+        <div class="gb"><span class="gb-lab">설명<i lang="en" translate="yes">Explanation</i></span>한국어에서 부탁을 할 때는 보통 <strong>주어를 생략</strong>하는 경우가 많습니다.<br><small class="en-line" lang="en" translate="yes"><em>Korean requests typically <strong>omit the subject</strong> (you = listener).</em></small><br>부사(다시, 잠깐만 등)는 동사 앞에 옵니다.<br><small class="en-line" lang="en" translate="yes"><em>Adverbs like <span lang="ko" translate="no">다시</span> (again), <span lang="ko" translate="no">잠깐만</span> (a moment) come BEFORE the verb.</em></small>
         </div>
-        <div class="gstep-pattern">[부사] + [동사 + <strong>아</strong>/<strong>어 주세요</strong>]<small><span lang="en" translate="yes">[Adverb] + [Verb +</span> <strong>아</strong>/<strong>어 주세요</strong>]</small></div>
+        <div class="gstep-pattern"><span class="gb-lab">공식<i lang="en" translate="yes">Formula</i></span>[부사] + [동사 + <strong>아</strong>/<strong>어 주세요</strong>]<small><span lang="en" translate="yes">[Adverb] + [Verb +</span> <strong>아</strong>/<strong>어 주세요</strong>]</small></div>
         <blockquote>
             <strong>다시</strong> <strong>설명해 주세요</strong><span lang="en" translate="yes">. (Please explain</span> <strong><span lang="en" translate="yes">again</span></strong>.)<br>
             <strong>잠깐만</strong> <strong>기다려 주세요</strong><span lang="en" translate="yes">. (Please wait</span> <strong><span lang="en" translate="yes">a moment</span></strong>.)
@@ -925,7 +947,7 @@ small.en-line{display:inline-block;margin-bottom:9px;}
             <p style="margin:0 0 12px 0;font-size:0.9rem;color:#1f2937;line-height:1.6;"><strong>A</strong>에는 목적격 조사 <strong>를</strong>/<strong>을</strong>이 붙습니다 (포기하는 대상).<br><small class="en-line" lang="en" translate="yes"><em>A takes the object marker <strong><span lang="ko" translate="no">를</span></strong>/<strong><span lang="ko" translate="no">을</span></strong> (what you give up).</em></small><br><strong>B</strong>에는 변화 표지 <strong>(으)로</strong>가 붙습니다 (바뀐 결과).<br><small class="en-line" lang="en" translate="yes"><em>B takes the transformation marker <strong>(<span lang="ko" translate="no">으</span>)<span lang="ko" translate="no">로</span></strong> (what it becomes).</em></small></p>
             <div style="display:grid;grid-template-columns:1fr;gap:6px;">
                 <div style="padding:7px 11px;background:#fff;border:1px solid #c7d2fe;border-radius:6px;font-size:0.9rem;"><strong style="color:#3730a3;">달러를 원화로 바꾸다</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— exchange dollars to won</span></span></div>
-                <div style="padding:7px 11px;background:#fff;border:1px solid #c7d2fe;border-radius:6px;font-size:0.9rem;"><strong style="color:#3730a3;">한국어를 영어로 바꾸다</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— change Korean to English</span></span></div>
+                <div class="gb"><span class="gb-lab">설명<i lang="en" translate="yes">Explanation</i></span><strong style="color:#3730a3;">한국어를 영어로 바꾸다</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— change Korean to English</span></span></div>
                 <div style="padding:7px 11px;background:#fff;border:1px solid #c7d2fe;border-radius:6px;font-size:0.9rem;"><strong style="color:#3730a3;">색깔을 빨간색으로 바꾸다</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— change the color to red</span></span></div>
             </div>
         </div>

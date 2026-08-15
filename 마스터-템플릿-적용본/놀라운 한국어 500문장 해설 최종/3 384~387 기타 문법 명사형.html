@@ -210,8 +210,8 @@
         .explain-content code { background:transparent; padding:0; font-family:inherit; color:#000; font-size:inherit; font-weight:700; }
         code { background:transparent; padding:0; font-family:inherit; color:#000; font-size:inherit; font-weight:700; }
         .explain-tip { margin-top: 10px !important; padding-top: 8px; border-top: 1px dashed #c4b5fd; color: #6d28d9; }
-        .explain-note { margin-top: 10px; padding: 10px 14px; background: #fef9c3; border-left: 4px solid #f59e0b; border-radius: 6px; font-size: 0.92rem; line-height: 1.65; color: #713f12; }
-        .explain-note strong { color: #92400e; }
+        .explain-note { margin-top:10px; padding:10px 14px; background:#f7f8fa; border:1px solid #e6e8ef; border-left:3px solid #b9bec9; border-radius:8px; font-size:0.92rem; line-height:1.7; color:#26303d; }
+        .explain-note strong{ color:#2b3140; font-weight:800; }
         @media print { .vocab-toggle + .vocab-box { display:block !important; } .vocab-toggle { display:none; } .explain-content { display:block !important; } .explain-toggle { display:none; } }
         .exp-table { width: 100%; border-collapse: collapse; margin: 6px 0 12px 0; font-size: 0.93rem; table-layout: fixed; }
         .exp-table thead th { background: #fef3c7; color: #8f4207; font-weight: 800; padding: 8px 10px; text-align: center; border-bottom: 2px solid #fde68a; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -233,9 +233,9 @@
         .gstep-body p.en strong { color: #7c2d12; font-weight: 800; }
         .gstep-body p.ko { color: #475569; font-size: 0.94rem; line-height: 1.65; margin-bottom: 12px; font-weight: 500; }
         .gstep-body p.ko strong { color: #92400e; font-weight: 700; }
-        .gstep-pattern { background: linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%); color: #7c2d12; border: 1px solid #fde68a; border-left: 4px solid #b45309; padding: 14px 18px; border-radius: 10px; margin: 14px 0 10px 0; font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.08rem; font-weight: 800; line-height: 1.55; box-shadow: 0 2px 6px rgba(124,45,18,0.05); }
-        .gstep-pattern small { display: block; color: #7d4403; font-weight: 500; font-size: 0.8rem; margin-top: 7px; letter-spacing: 0.02em; opacity:1; }
-        .gstep-pattern .accent { color: #8f4207; font-weight: 800; font-family: inherit; }
+        .gstep-pattern { background:#f5f5fb; color:#1f2937; border:1px solid #e6e7f0; border-left:3px solid #8286c4; padding:12px 15px; border-radius:8px; margin:12px 0 11px 0; font-family:'Lato','Noto Sans KR',sans-serif; font-size:1rem; font-weight:800; line-height:1.6; }
+        .gstep-pattern small { display:block; color:#4b5563; font-weight:500; font-size:0.79rem; margin-top:6px; letter-spacing:0; opacity:1; }
+        .gstep-pattern .accent{ color:#35347a; font-weight:800; font-family:inherit; }
         .gstep blockquote { background: #fff; border: 1px solid #fde68a; border-left: 3px solid #f59e0b; border-radius: 8px; padding: 12px 16px; margin: 12px 0 10px 0; line-height: 1.85; font-size: 0.93rem; color: #1e293b; font-style: normal; }
         .gstep blockquote strong { color: #8f4207; font-weight: 800; }
         .gstep-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 14px 0 10px 0; font-size: 0.93rem; background: #fff; border: 1px solid #fde68a; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(180,83,9,0.14); }
@@ -245,8 +245,8 @@
         .gstep-table tbody tr:nth-child(even) td { background: #fffbeb; }
         .gstep-table tbody td .accent { color: #8f4207; font-weight: 800; font-family: inherit; }
         .gstep-table tbody td strong { color: #92400e; font-weight: 800; }
-        .gstep .explain-note { background: linear-gradient(135deg, #fef9c3 0%, #fefce8 70%); border-left: 4px solid #f59e0b; padding: 12px 18px; border-radius: 10px; margin-top: 14px; font-size: 0.92rem; line-height: 1.7; color: #713f12; box-shadow: 0 1px 3px rgba(245,158,11,0.06); }
-        .gstep .explain-note strong { color: #92400e; font-weight: 800; }
+        .gstep .explain-note{ margin-top:14px; padding:12px 16px; background:#f7f8fa; border:1px solid #e6e8ef; border-left:3px solid #b9bec9; border-radius:8px; font-size:0.92rem; line-height:1.7; color:#26303d; }
+        .gstep .explain-note strong{ color:#2b3140; font-weight:800; }
         @media (max-width: 600px) {
             .gstep { grid-template-columns: 1fr; gap: 14px; padding: 20px 22px 18px; }
             .gstep::before { width: 3px; }
@@ -379,6 +379,28 @@ small.en-line{display:inline-block;margin-bottom:9px;}
    앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
    것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
+<style>
+/* gbox v1 — 책 전체의 설명 상자. 모양은 넷, 이름표는 다섯.
+   ★색을 상자에서 빼고 「배울 것」에만 남긴다.
+     상자마다 색이 다르면 눈이 상자를 좇느라 정작 배울 것을 못 본다.
+   ★호박색은 「주의」에게만 준다. 아껴 써야 눈에 걸린다. */
+.gb{border:1px solid #e6e8ef;border-left:3px solid #a9abd4;background:#f8f8fc;
+    border-radius:8px;padding:11px 14px;margin:0 0 11px 0;
+    font-size:0.93rem;line-height:1.75;color:#1f2937;}
+.gb strong,.gb b{color:#35347a;}
+.gb-key{border-left-color:#8286c4;background:#f5f5fb;}
+.gb-ex{border-left-color:#c3c7d2;background:#fafafb;}
+.gb-ex strong,.gb-ex b{color:#3d4654;}
+.gb-warn{border-left-color:#d9ab63;background:#fdfaf3;border-color:#f0e6d2;}
+.gb-warn strong,.gb-warn b{color:#7d5210;}
+.gb-lab{display:block;font-size:0.71rem;font-weight:800;letter-spacing:0.09em;
+        color:#55589c;margin-bottom:5px;}
+.gb-lab i{font-style:normal;font-weight:700;opacity:0.78;margin-left:5px;}
+.gb-key>.gb-lab{color:#4a4e93;}
+.gb-ex>.gb-lab{color:#5b6472;}
+.gb-warn>.gb-lab{color:#8a5a12;}
+.gb>:last-child{margin-bottom:0;}
+</style>
 </head>
 <body>
 <div class="container">
@@ -403,7 +425,7 @@ small.en-line{display:inline-block;margin-bottom:9px;}
     <div class="gstep-num">1</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#78350f; background:#fffbeb; border-left:4px solid #b45309; border-radius:4px;">명사형이 필요한 이유<br><small style="font-weight:600;"><span lang="en" translate="yes">Why nominalize?</span></small></h3>
-        <div style="padding:10px 14px; background:#fffbeb; border-left:3px solid #f59e0b; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">동사·형용사가 <strong>주어</strong>·<strong>목적어</strong>가 되려면 <strong>명사</strong>가 되어야 합니다.<br><small class="en-line" lang="en" translate="yes"><em>For a verb or adjective to become a <strong>subject</strong> or <strong>object</strong>, it must become a <strong>noun</strong>.</em></small><br>동사·형용사를 명사로 만든 것을 <strong>명사형</strong>이라고 합니다.<br><small class="en-line" lang="en" translate="yes"><em>A verb or adjective turned into a noun is called a <strong>noun form (<span lang="ko" translate="no">명사형</span>)</strong>.</em></small>
+        <div class="gb gb-key"><span class="gb-lab">핵심<i lang="en" translate="yes">Key point</i></span>동사·형용사가 <strong>주어</strong>·<strong>목적어</strong>가 되려면 <strong>명사</strong>가 되어야 합니다.<br><small class="en-line" lang="en" translate="yes"><em>For a verb or adjective to become a <strong>subject</strong> or <strong>object</strong>, it must become a <strong>noun</strong>.</em></small><br>동사·형용사를 명사로 만든 것을 <strong>명사형</strong>이라고 합니다.<br><small class="en-line" lang="en" translate="yes"><em>A verb or adjective turned into a noun is called a <strong>noun form (<span lang="ko" translate="no">명사형</span>)</strong>.</em></small>
         </div>
     </div>
 </div>
@@ -412,7 +434,7 @@ small.en-line{display:inline-block;margin-bottom:9px;}
     <div class="gstep-num">2</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#78350f; background:#fffbeb; border-left:4px solid #b45309; border-radius:4px;">세 가지 명사형<br><small style="font-weight:600;"><span lang="en" translate="yes">Three noun forms</span></small></h3>
-        <div style="padding:10px 14px; background:#fffbeb; border-left:3px solid #f59e0b; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
+        <div class="gb gb-key"><span class="gb-lab">핵심<i lang="en" translate="yes">Key point</i></span>
             동사·형용사를 명사형으로 만드는 방법은 세 가지가 있습니다.<br>
             <small class="en-line" lang="en" translate="yes"><em>There are three ways to turn a verb or adjective into a noun.</em></small>
         </div>
@@ -597,7 +619,7 @@ small.en-line{display:inline-block;margin-bottom:9px;}
             <tr><td class="exp-en" lang="en" translate="yes"><strong>we have</strong></td><td class="exp-role">서술어<br><small><span lang="en" translate="yes">Predicate</span></small></td><td class="exp-form"><strong>있습니다</strong></td><td><strong>시험이 있다</strong> = 시험이 존재한다 → 시험 일정이 있다</td></tr>
         </tbody>
         </table></div>
-        <div class="explain-note"><strong>⚠️ '~기'는 과목, 운동 종목, 계획에 씁니다.</strong><br><small class="en-line" lang="en" translate="yes">~<span lang="ko" translate="no">기</span> is used for school subjects, sports, and plans.</small><br><br> <strong>과목</strong> <small lang="en" translate="yes">(school subjects)</small><br> 말하다 → 말하<strong>기</strong> <small lang="en" translate="yes">(speaking)</small> &nbsp;|&nbsp; 듣다 → 듣<strong>기</strong> <small lang="en" translate="yes">(listening)</small><br> 읽다 → 읽<strong>기</strong> <small lang="en" translate="yes">(reading)</small> &nbsp;|&nbsp; 쓰다 → 쓰<strong>기</strong> <small lang="en" translate="yes">(writing)</small><br><br> 이 네 가지는 TOPIK과 한국어 시험에서 평가하는 언어 기능입니다.<br> <small class="en-line" lang="en" translate="yes">These four are the language skills assessed in TOPIK and Korean tests.</small><br><br> <strong>스포츠 종목</strong> <small lang="en" translate="yes">(sports)</small><br> 걷<strong>기</strong> <small lang="en" translate="yes">(walking)</small> &nbsp;|&nbsp; 달리<strong>기</strong> <small lang="en" translate="yes">(running)</small><br> 높이 뛰<strong>기</strong> <small lang="en" translate="yes">(high jump)</small> &nbsp;|&nbsp; 던지<strong>기</strong> <small lang="en" translate="yes">(throwing)</small><br><br> <strong>계획</strong> <small lang="en" translate="yes">(plans)</small><br> 살 빼<strong>기</strong> <small lang="en" translate="yes">(losing weight)</small> &nbsp;|&nbsp; 여행하<strong>기</strong> <small lang="en" translate="yes">(traveling)</small> &nbsp;|&nbsp; 이사하<strong>기</strong> <small lang="en" translate="yes">(moving)</small></div>
+        <div class="gb gb-warn"><span class="gb-lab">주의<i lang="en" translate="yes">Caution</i></span><strong>⚠️ '~기'는 과목, 운동 종목, 계획에 씁니다.</strong><br><small class="en-line" lang="en" translate="yes">~<span lang="ko" translate="no">기</span> is used for school subjects, sports, and plans.</small><br><br> <strong>과목</strong> <small lang="en" translate="yes">(school subjects)</small><br> 말하다 → 말하<strong>기</strong> <small lang="en" translate="yes">(speaking)</small> &nbsp;|&nbsp; 듣다 → 듣<strong>기</strong> <small lang="en" translate="yes">(listening)</small><br> 읽다 → 읽<strong>기</strong> <small lang="en" translate="yes">(reading)</small> &nbsp;|&nbsp; 쓰다 → 쓰<strong>기</strong> <small lang="en" translate="yes">(writing)</small><br><br> 이 네 가지는 TOPIK과 한국어 시험에서 평가하는 언어 기능입니다.<br> <small class="en-line" lang="en" translate="yes">These four are the language skills assessed in TOPIK and Korean tests.</small><br><br> <strong>스포츠 종목</strong> <small lang="en" translate="yes">(sports)</small><br> 걷<strong>기</strong> <small lang="en" translate="yes">(walking)</small> &nbsp;|&nbsp; 달리<strong>기</strong> <small lang="en" translate="yes">(running)</small><br> 높이 뛰<strong>기</strong> <small lang="en" translate="yes">(high jump)</small> &nbsp;|&nbsp; 던지<strong>기</strong> <small lang="en" translate="yes">(throwing)</small><br><br> <strong>계획</strong> <small lang="en" translate="yes">(plans)</small><br> 살 빼<strong>기</strong> <small lang="en" translate="yes">(losing weight)</small> &nbsp;|&nbsp; 여행하<strong>기</strong> <small lang="en" translate="yes">(traveling)</small> &nbsp;|&nbsp; 이사하<strong>기</strong> <small lang="en" translate="yes">(moving)</small></div>
     </div>
 </div>
 
@@ -637,7 +659,7 @@ small.en-line{display:inline-block;margin-bottom:9px;}
                 <tr><td class="exp-en" lang="en" translate="yes"><strong>is waiting</strong></td><td class="exp-role">서술어<br><small><span lang="en" translate="yes">Predicate</span></small></td><td class="exp-form"><strong>기다림입니다</strong></td><td><strong>기다리다</strong> → <strong>기다리</strong> + <strong>ㅁ</strong> → <strong>기다림</strong></td></tr>
             </tbody>
         </table></div>
-        <div class="explain-note"><strong>⚠️ '~ㅁ/음'은 요약·성취·추상 명사를 만들 때 씁니다.</strong><br><small class="en-line" lang="en" translate="yes">~<span lang="ko" translate="no">ㅁ/음</span> makes summary, achievement, and abstract nouns.</small><br><br> <strong>받침</strong> X → 어간 + <strong>ㅁ</strong> : 기다리다 → 기다<strong>림</strong> <small lang="en" translate="yes">(waiting)</small><br> <strong>받침</strong> O → 어간 + <strong>음</strong> : 죽다 → 죽<strong>음</strong> <small lang="en" translate="yes">(death)</small><br><br> 기다리다 → 기다<strong>림</strong> <small lang="en" translate="yes">(waiting)</small> &nbsp;|&nbsp; 슬프다 → 슬<strong>픔</strong> <small lang="en" translate="yes">(sadness)</small><br> 아프다 → 아<strong>픔</strong> <small lang="en" translate="yes">(pain)</small> &nbsp;|&nbsp; 즐겁다 → 즐거<strong>움</strong> <small lang="en" translate="yes">(joy)</small></div>
+        <div class="gb gb-warn"><span class="gb-lab">주의<i lang="en" translate="yes">Caution</i></span><strong>⚠️ '~ㅁ/음'은 요약·성취·추상 명사를 만들 때 씁니다.</strong><br><small class="en-line" lang="en" translate="yes">~<span lang="ko" translate="no">ㅁ/음</span> makes summary, achievement, and abstract nouns.</small><br><br> <strong>받침</strong> X → 어간 + <strong>ㅁ</strong> : 기다리다 → 기다<strong>림</strong> <small lang="en" translate="yes">(waiting)</small><br> <strong>받침</strong> O → 어간 + <strong>음</strong> : 죽다 → 죽<strong>음</strong> <small lang="en" translate="yes">(death)</small><br><br> 기다리다 → 기다<strong>림</strong> <small lang="en" translate="yes">(waiting)</small> &nbsp;|&nbsp; 슬프다 → 슬<strong>픔</strong> <small lang="en" translate="yes">(sadness)</small><br> 아프다 → 아<strong>픔</strong> <small lang="en" translate="yes">(pain)</small> &nbsp;|&nbsp; 즐겁다 → 즐거<strong>움</strong> <small lang="en" translate="yes">(joy)</small></div>
     </div>
 </div>
 

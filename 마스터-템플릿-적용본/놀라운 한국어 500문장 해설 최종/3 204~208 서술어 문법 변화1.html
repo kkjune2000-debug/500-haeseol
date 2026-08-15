@@ -217,8 +217,8 @@
         .explain-content code { background:transparent; padding:0; font-family:inherit; color:#000; font-size:inherit; font-weight:700; }
         code { background:transparent; padding:0; font-family:inherit; color:#000; font-size:inherit; font-weight:700; }
         .explain-tip { margin-top: 10px !important; padding-top: 8px; border-top: 1px dashed #c4b5fd; color: #6d28d9; }
-        .explain-note { margin-top: 10px; padding: 10px 14px; background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 6px; font-size: 0.92rem; line-height: 1.65; color: #78350f; }
-        .explain-note strong { color: #92400e; }
+        .explain-note { margin-top:10px; padding:10px 14px; background:#f7f8fa; border:1px solid #e6e8ef; border-left:3px solid #b9bec9; border-radius:8px; font-size:0.92rem; line-height:1.7; color:#26303d; }
+        .explain-note strong{ color:#2b3140; font-weight:800; }
         @media print { .vocab-toggle + .vocab-box { display:block !important; } .vocab-toggle { display:none; } .explain-content { display:block !important; } .explain-toggle { display:none; } }
         /* exp-table (4-column) */
         .exp-table { width: 100%; border-collapse: collapse; margin: 6px 0 12px 0; font-size: 0.93rem; table-layout: fixed; }
@@ -242,9 +242,9 @@
         .gstep-body p.en strong { color: #4c1d95; font-weight: 800; }
         .gstep-body p.ko { color: #475569; font-size: 0.94rem; line-height: 1.65; margin-bottom: 12px; font-weight: 500; }
         .gstep-body p.ko strong { color: #5b21b6; font-weight: 700; }
-        .gstep-pattern { background: linear-gradient(135deg, #ede9fe 0%, #faf5ff 100%); color: #4c1d95; border: 1px solid #ddd6fe; border-left: 4px solid #6d28d9; padding: 14px 18px; border-radius: 10px; margin: 14px 0 10px 0; font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.08rem; font-weight: 800; line-height: 1.55; box-shadow: 0 2px 6px rgba(76,29,149,0.05); }
-        .gstep-pattern small { display: block; color: #7c3aed; font-weight: 500; font-size: 0.8rem; margin-top: 7px; letter-spacing: 0.02em; opacity:1; }
-        .gstep-pattern .accent { color: #6d28d9; font-weight: 800; font-family: inherit; }
+        .gstep-pattern { background:#f5f5fb; color:#1f2937; border:1px solid #e6e7f0; border-left:3px solid #8286c4; padding:12px 15px; border-radius:8px; margin:12px 0 11px 0; font-family:'Lato','Noto Sans KR',sans-serif; font-size:1rem; font-weight:800; line-height:1.6; }
+        .gstep-pattern small { display:block; color:#4b5563; font-weight:500; font-size:0.79rem; margin-top:6px; letter-spacing:0; opacity:1; }
+        .gstep-pattern .accent{ color:#35347a; font-weight:800; font-family:inherit; }
         .gstep blockquote { background: #fff; border: 1px solid #e9d5ff; border-left: 3px solid #8b5cf6; border-radius: 8px; padding: 12px 16px; margin: 12px 0 10px 0; line-height: 1.85; font-size: 0.93rem; color: #1e293b; font-style: normal; }
         .gstep blockquote strong { color: #6d28d9; font-weight: 800; }
         .gstep-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 14px 0 10px 0; font-size: 0.93rem; background: #fff; border: 1px solid #ddd6fe; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(124,58,237,0.14); }
@@ -254,8 +254,8 @@
         .gstep-table tbody tr:nth-child(even) td { background: #faf5ff; }
         .gstep-table tbody td .accent { color: #6d28d9; font-weight: 700; font-family: inherit; }
         .gstep-table tbody td strong { color: #5b21b6; font-weight: 800; }
-        .gstep .explain-note { background: linear-gradient(135deg, #fef9c3 0%, #fefce8 70%); border-left: 4px solid #f59e0b; padding: 12px 18px; border-radius: 10px; margin-top: 14px; font-size: 0.92rem; line-height: 1.7; color: #713f12; box-shadow: 0 1px 3px rgba(245,158,11,0.06); }
-        .gstep .explain-note strong { color: #92400e; font-weight: 800; }
+        .gstep .explain-note{ margin-top:14px; padding:12px 16px; background:#f7f8fa; border:1px solid #e6e8ef; border-left:3px solid #b9bec9; border-radius:8px; font-size:0.92rem; line-height:1.7; color:#26303d; }
+        .gstep .explain-note strong{ color:#2b3140; font-weight:800; }
         @media (max-width: 600px) {
             .gstep { grid-template-columns: 1fr; gap: 14px; padding: 20px 22px 18px; }
             .gstep::before { width: 3px; }
@@ -396,6 +396,28 @@ small.en-line{display:inline-block;margin-bottom:9px;}
    앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
    것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
+<style>
+/* gbox v1 — 책 전체의 설명 상자. 모양은 넷, 이름표는 다섯.
+   ★색을 상자에서 빼고 「배울 것」에만 남긴다.
+     상자마다 색이 다르면 눈이 상자를 좇느라 정작 배울 것을 못 본다.
+   ★호박색은 「주의」에게만 준다. 아껴 써야 눈에 걸린다. */
+.gb{border:1px solid #e6e8ef;border-left:3px solid #a9abd4;background:#f8f8fc;
+    border-radius:8px;padding:11px 14px;margin:0 0 11px 0;
+    font-size:0.93rem;line-height:1.75;color:#1f2937;}
+.gb strong,.gb b{color:#35347a;}
+.gb-key{border-left-color:#8286c4;background:#f5f5fb;}
+.gb-ex{border-left-color:#c3c7d2;background:#fafafb;}
+.gb-ex strong,.gb-ex b{color:#3d4654;}
+.gb-warn{border-left-color:#d9ab63;background:#fdfaf3;border-color:#f0e6d2;}
+.gb-warn strong,.gb-warn b{color:#7d5210;}
+.gb-lab{display:block;font-size:0.71rem;font-weight:800;letter-spacing:0.09em;
+        color:#55589c;margin-bottom:5px;}
+.gb-lab i{font-style:normal;font-weight:700;opacity:0.78;margin-left:5px;}
+.gb-key>.gb-lab{color:#4a4e93;}
+.gb-ex>.gb-lab{color:#5b6472;}
+.gb-warn>.gb-lab{color:#8a5a12;}
+.gb>:last-child{margin-bottom:0;}
+</style>
 </head>
 <body>
 <div class="container">
@@ -421,12 +443,12 @@ small.en-line{display:inline-block;margin-bottom:9px;}
     <div class="gstep-num">1</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">'~아/어지다'란?<br><small style="font-weight:600;"><span lang="en" translate="yes">What is </span><span lang="ko" translate="no">'~아/어지다'</span>?</small></h3>
-        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
+        <div class="gb"><span class="gb-lab">설명<i lang="en" translate="yes">Explanation</i></span>
             형용사에 붙어 <strong>어떤 상태로 변하다</strong>를 의미합니다 — <strong><span lang="en" translate="yes">to become / get [adjective]</span></strong>.<br>
             <small class="en-line" lang="en" translate="yes"><em>Attached to an <strong>adjective</strong> stem, it expresses a change of state — <strong>to become / get [adjective]</strong>.</em></small>
         </div>
-        <div class="gstep-pattern"><strong>형용사</strong> + <strong>아</strong>/<strong>어지다</strong> = [<strong>형용사</strong>] <strong>상태로 변하다</strong> &nbsp;|&nbsp; <strong>과거</strong>: + <strong>았</strong>/<strong>었습니다</strong> → <strong>~아</strong>/<strong>어졌습니다</strong><small><strong><span lang="en" translate="yes">Adjective</span></strong> + <strong><span lang="ko" translate="no">아</span></strong>/<strong><span lang="ko" translate="no">어지다</span></strong> = [<strong><span lang="en" translate="yes">Adjective</span></strong>] <strong><span lang="ko" translate="no">상태로 변하다</span></strong> &nbsp;|&nbsp; <span lang="en" translate="yes">Past:</span> + <strong><span lang="ko" translate="no">았</span></strong>/<strong><span lang="ko" translate="no">었습니다</span></strong> → <strong>~<span lang="ko" translate="no">아</span></strong>/<strong><span lang="ko" translate="no">어졌습니다</span></strong><br></small><small><span lang="en" translate="yes">(became / got)</span><small><span lang="en" translate="yes">Adjective +</span> <span class="accent">아/어지다</span> <span lang="en" translate="yes">= become</span> <span class="accent"><span lang="en" translate="yes">[adjective]</span></span></small></small></div>
-        <div class="explain-note"><strong>⚠️ 주의:</strong> ~아/어지다는 <strong>형용사에만</strong> 사용합니다.<br><small class="en-line" lang="en" translate="yes"><em>Caution: ~<span lang="ko" translate="no">아/어지다</span> attaches to <strong>adjectives only</strong>.</em></small><br>동사에는 사용하지 않습니다.<br><small class="en-line" lang="en" translate="yes"><em>It is never used with verbs.</em></small><br>
+        <div class="gstep-pattern"><span class="gb-lab">공식<i lang="en" translate="yes">Formula</i></span><strong>형용사</strong> + <strong>아</strong>/<strong>어지다</strong> = [<strong>형용사</strong>] <strong>상태로 변하다</strong> &nbsp;|&nbsp; <strong>과거</strong>: + <strong>았</strong>/<strong>었습니다</strong> → <strong>~아</strong>/<strong>어졌습니다</strong><small><strong><span lang="en" translate="yes">Adjective</span></strong> + <strong><span lang="ko" translate="no">아</span></strong>/<strong><span lang="ko" translate="no">어지다</span></strong> = [<strong><span lang="en" translate="yes">Adjective</span></strong>] <strong><span lang="ko" translate="no">상태로 변하다</span></strong> &nbsp;|&nbsp; <span lang="en" translate="yes">Past:</span> + <strong><span lang="ko" translate="no">았</span></strong>/<strong><span lang="ko" translate="no">었습니다</span></strong> → <strong>~<span lang="ko" translate="no">아</span></strong>/<strong><span lang="ko" translate="no">어졌습니다</span></strong><br></small><small><span lang="en" translate="yes">(became / got)</span><small><span lang="en" translate="yes">Adjective +</span> <span class="accent">아/어지다</span> <span lang="en" translate="yes">= become</span> <span class="accent"><span lang="en" translate="yes">[adjective]</span></span></small></small></div>
+        <div class="gb gb-warn"><span class="gb-lab">주의<i lang="en" translate="yes">Caution</i></span><strong>⚠️ 주의:</strong> ~아/어지다는 <strong>형용사에만</strong> 사용합니다.<br><small class="en-line" lang="en" translate="yes"><em>Caution: ~<span lang="ko" translate="no">아/어지다</span> attaches to <strong>adjectives only</strong>.</em></small><br>동사에는 사용하지 않습니다.<br><small class="en-line" lang="en" translate="yes"><em>It is never used with verbs.</em></small><br>
             <small><span lang="ko" translate="no">날씨가 더워졌습니다</span> ✅ (<span lang="ko" translate="no">덥다</span> = <span lang="ko" translate="no">형용사</span>) &nbsp;|&nbsp; <span lang="ko" translate="no">성적이 좋아졌습니다</span> ✅ (<span lang="ko" translate="no">좋다</span> = <span lang="ko" translate="no">형용사</span>)</small>
         </div>
     </div>
@@ -436,7 +458,7 @@ small.en-line{display:inline-block;margin-bottom:9px;}
     <div class="gstep-num">2</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">'~아/어지다' 만드는 방법<br><small style="font-weight:600;"><span lang="en" translate="yes">Formation</span></small></h3>
-        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
+        <div class="gb"><span class="gb-lab">설명<i lang="en" translate="yes">Explanation</i></span>
             형용사의 마지막 모음에 따라 아/어가 결정됩니다.<br>
             <small class="en-line" lang="en" translate="yes"><em>The ending depends on the last vowel of the adjective stem.</em></small>
         </div>
@@ -485,7 +507,7 @@ small.en-line{display:inline-block;margin-bottom:9px;}
     <div class="gstep-num">3</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">ㅂ 불규칙 형용사<br><small style="font-weight:600;" lang="en" translate="yes">ㅂ<span lang="en" translate="yes">-irregular adjectives</span></small></h3>
-        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
+        <div class="gb"><span class="gb-lab">설명<i lang="en" translate="yes">Explanation</i></span>
             덥다·춥다 같은 형용사는 <strong>ㅂ</strong>이 <strong>우</strong>로 바뀐 뒤 <strong>어</strong>와 결합하여 <strong>워</strong>가 됩니다.<br>
             <small class="en-line" lang="en" translate="yes"><em>Adjectives like <strong><span lang="ko" translate="no">덥다</span></strong> / <strong><span lang="ko" translate="no">춥다</span></strong> change <strong><span lang="ko" translate="no">ㅂ</span></strong> to <strong><span lang="ko" translate="no">우</span></strong> before the vowel ending, and <strong><span lang="ko" translate="no">우</span> + <span lang="ko" translate="no">어</span></strong> contracts to <strong><span lang="ko" translate="no">워</span></strong>.</em></small>
         </div>
@@ -505,7 +527,7 @@ small.en-line{display:inline-block;margin-bottom:9px;}
     <div class="gstep-num">4</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">과거형<br><small style="font-weight:600;"><span lang="en" translate="yes">Past tense</span></small></h3>
-        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;"><strong>~아/어졌습니다</strong>.<br><small class="en-line" lang="en" translate="yes"><em><strong>~<span lang="ko" translate="no">아/어졌습니다</span></strong>.</em></small><br>보조 동사 <strong>지다</strong>에 과거 어미가 붙습니다.<br><small class="en-line" lang="en" translate="yes"><em>The auxiliary <strong><span lang="ko" translate="no">지다</span></strong> takes the past ending.</em></small>
+        <div class="gb"><span class="gb-lab">설명<i lang="en" translate="yes">Explanation</i></span><strong>~아/어졌습니다</strong>.<br><small class="en-line" lang="en" translate="yes"><em><strong>~<span lang="ko" translate="no">아/어졌습니다</span></strong>.</em></small><br>보조 동사 <strong>지다</strong>에 과거 어미가 붙습니다.<br><small class="en-line" lang="en" translate="yes"><em>The auxiliary <strong><span lang="ko" translate="no">지다</span></strong> takes the past ending.</em></small>
         </div>
         <div class="tbl-scroll"><table class="gstep-table">
             <thead><tr><th style="width:22%"><span lang="en" translate="yes">Adjective</span><br>형용사</th><th style="width:34%"><span lang="en" translate="yes">Present (~</span>아/어지다)</th><th>과거형 (~아/어졌습니다)</th></tr></thead>

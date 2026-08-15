@@ -217,8 +217,8 @@
         .explain-content code { background:transparent; padding:0; font-family:inherit; color:#000; font-size:inherit; font-weight:700; }
         code { background:transparent; padding:0; font-family:inherit; color:#000; font-size:inherit; font-weight:700; }
         .explain-tip { margin-top: 10px !important; padding-top: 8px; border-top: 1px dashed #c4b5fd; color: #6d28d9; }
-        .explain-note { margin-top: 10px; padding: 10px 14px; background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 6px; font-size: 0.92rem; line-height: 1.65; color: #78350f; }
-        .explain-note strong { color: #92400e; }
+        .explain-note { margin-top:10px; padding:10px 14px; background:#f7f8fa; border:1px solid #e6e8ef; border-left:3px solid #b9bec9; border-radius:8px; font-size:0.92rem; line-height:1.7; color:#26303d; }
+        .explain-note strong{ color:#2b3140; font-weight:800; }
         @media print { .vocab-toggle + .vocab-box { display:block !important; } .vocab-toggle { display:none; } .explain-content { display:block !important; } .explain-toggle { display:none; } }
         /* exp-table (3-column) */
         .exp-table { width: 100%; border-collapse: collapse; margin: 6px 0 12px 0; font-size: 0.93rem; table-layout: fixed; }
@@ -242,9 +242,9 @@
         .gstep-body p.en strong { color: #4c1d95; font-weight: 800; }
         .gstep-body p.ko { color: #475569; font-size: 0.94rem; line-height: 1.65; margin-bottom: 12px; font-weight: 500; }
         .gstep-body p.ko strong { color: #5b21b6; font-weight: 700; }
-        .gstep-pattern { background: linear-gradient(135deg, #ede9fe 0%, #faf5ff 100%); color: #4c1d95; border: 1px solid #ddd6fe; border-left: 4px solid #6d28d9; padding: 14px 18px; border-radius: 10px; margin: 14px 0 10px 0; font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.08rem; font-weight: 800; line-height: 1.55; box-shadow: 0 2px 6px rgba(76,29,149,0.05); }
-        .gstep-pattern small { display: block; color: #7c3aed; font-weight: 500; font-size: 0.8rem; margin-top: 7px; letter-spacing: 0.02em; opacity:1; }
-        .gstep-pattern .accent { color: #6d28d9; font-weight: 800; font-family: inherit; }
+        .gstep-pattern { background:#f5f5fb; color:#1f2937; border:1px solid #e6e7f0; border-left:3px solid #8286c4; padding:12px 15px; border-radius:8px; margin:12px 0 11px 0; font-family:'Lato','Noto Sans KR',sans-serif; font-size:1rem; font-weight:800; line-height:1.6; }
+        .gstep-pattern small { display:block; color:#4b5563; font-weight:500; font-size:0.79rem; margin-top:6px; letter-spacing:0; opacity:1; }
+        .gstep-pattern .accent{ color:#35347a; font-weight:800; font-family:inherit; }
         .gstep blockquote { background: #fff; border: 1px solid #e9d5ff; border-left: 3px solid #8b5cf6; border-radius: 8px; padding: 12px 16px; margin: 12px 0 10px 0; line-height: 1.85; font-size: 0.93rem; color: #1e293b; font-style: normal; }
         .gstep blockquote strong { color: #6d28d9; font-weight: 800; }
         .gstep-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 14px 0 10px 0; font-size: 0.93rem; background: #fff; border: 1px solid #ddd6fe; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 16px rgba(124,58,237,0.14); }
@@ -254,8 +254,8 @@
         .gstep-table tbody tr:nth-child(even) td { background: #faf5ff; }
         .gstep-table tbody td .accent { color: #6d28d9; font-weight: 700; font-family: inherit; }
         .gstep-table tbody td strong { color: #5b21b6; font-weight: 800; }
-        .gstep .explain-note { background: linear-gradient(135deg, #fef9c3 0%, #fefce8 70%); border-left: 4px solid #f59e0b; padding: 12px 18px; border-radius: 10px; margin-top: 14px; font-size: 0.92rem; line-height: 1.7; color: #713f12; box-shadow: 0 1px 3px rgba(245,158,11,0.06); }
-        .gstep .explain-note strong { color: #92400e; font-weight: 800; }
+        .gstep .explain-note{ margin-top:14px; padding:12px 16px; background:#f7f8fa; border:1px solid #e6e8ef; border-left:3px solid #b9bec9; border-radius:8px; font-size:0.92rem; line-height:1.7; color:#26303d; }
+        .gstep .explain-note strong{ color:#2b3140; font-weight:800; }
         @media (max-width: 600px) {
             .gstep { grid-template-columns: 1fr; gap: 14px; padding: 20px 22px 18px; }
             .gstep::before { width: 3px; }
@@ -408,6 +408,28 @@ small.en-line{display:inline-block;margin-bottom:9px;}
    앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
    것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
 </style>
+<style>
+/* gbox v1 — 책 전체의 설명 상자. 모양은 넷, 이름표는 다섯.
+   ★색을 상자에서 빼고 「배울 것」에만 남긴다.
+     상자마다 색이 다르면 눈이 상자를 좇느라 정작 배울 것을 못 본다.
+   ★호박색은 「주의」에게만 준다. 아껴 써야 눈에 걸린다. */
+.gb{border:1px solid #e6e8ef;border-left:3px solid #a9abd4;background:#f8f8fc;
+    border-radius:8px;padding:11px 14px;margin:0 0 11px 0;
+    font-size:0.93rem;line-height:1.75;color:#1f2937;}
+.gb strong,.gb b{color:#35347a;}
+.gb-key{border-left-color:#8286c4;background:#f5f5fb;}
+.gb-ex{border-left-color:#c3c7d2;background:#fafafb;}
+.gb-ex strong,.gb-ex b{color:#3d4654;}
+.gb-warn{border-left-color:#d9ab63;background:#fdfaf3;border-color:#f0e6d2;}
+.gb-warn strong,.gb-warn b{color:#7d5210;}
+.gb-lab{display:block;font-size:0.71rem;font-weight:800;letter-spacing:0.09em;
+        color:#55589c;margin-bottom:5px;}
+.gb-lab i{font-style:normal;font-weight:700;opacity:0.78;margin-left:5px;}
+.gb-key>.gb-lab{color:#4a4e93;}
+.gb-ex>.gb-lab{color:#5b6472;}
+.gb-warn>.gb-lab{color:#8a5a12;}
+.gb>:last-child{margin-bottom:0;}
+</style>
 </head>
 <body>
 <div class="container">
@@ -431,9 +453,9 @@ small.en-line{display:inline-block;margin-bottom:9px;}
 <div class="gstep">
     <div class="gstep-num">1</div>
     <div class="gstep-body">
-        <div class="gstep-pattern">동사 + <strong>고 싶습니다</strong><small><strong><span lang="en" translate="yes">Verb</span></strong> + <span class="accent">고 싶습니다</span></small></div>
-        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-top:12px; font-size:0.92rem; line-height:1.8;"><strong><span lang="en" translate="yes">I want to [verb]</span></strong>를 한국어로 표현하려면 동사 어간에 <strong>~고 싶다</strong>를 붙입니다.<br><small class="en-line" lang="en" translate="yes"><em>To say <strong>I want to [verb]</strong> in Korean, attach <strong>~<span lang="ko" translate="no">고 싶다</span></strong> to the Verb.</em></small><br>격식체는 <strong>~고 싶습니다</strong>.<br><small class="en-line" lang="en" translate="yes"><em>Formal: <strong>~<span lang="ko" translate="no">고 싶습니다</span></strong>.</em></small>
-            <div style="margin-top:12px; padding:8px 12px; background:#fff; border-left:3px solid #fbbf24; border-radius:6px; font-size:0.9rem;">
+        <div class="gstep-pattern"><span class="gb-lab">공식<i lang="en" translate="yes">Formula</i></span>동사 + <strong>고 싶습니다</strong><small><strong><span lang="en" translate="yes">Verb</span></strong> + <span class="accent">고 싶습니다</span></small></div>
+        <div class="gb"><span class="gb-lab">설명<i lang="en" translate="yes">Explanation</i></span><strong><span lang="en" translate="yes">I want to [verb]</span></strong>를 한국어로 표현하려면 동사 어간에 <strong>~고 싶다</strong>를 붙입니다.<br><small class="en-line" lang="en" translate="yes"><em>To say <strong>I want to [verb]</strong> in Korean, attach <strong>~<span lang="ko" translate="no">고 싶다</span></strong> to the Verb.</em></small><br>격식체는 <strong>~고 싶습니다</strong>.<br><small class="en-line" lang="en" translate="yes"><em>Formal: <strong>~<span lang="ko" translate="no">고 싶습니다</span></strong>.</em></small>
+            <div class="gb gb-ex"><span class="gb-lab">보기<i lang="en" translate="yes">Example</i></span>
                 <strong>예:</strong>
                 <div class="tbl-scroll"><table style="margin:6px 0 0; border-collapse:collapse; font-size:0.9rem; line-height:1.5;">
                     <tr><td style="padding:3px 4px; text-align:right; white-space:nowrap;">가다</td><td style="padding:3px 6px; color:#9a3412;">→</td><td style="padding:3px 4px; white-space:nowrap;"><strong>가고 싶습니다</strong></td><td style="padding:3px 0 3px 8px; color:#59687c; white-space:nowrap;"><small lang="en" translate="yes">(want to go)</small></td></tr>
@@ -475,10 +497,10 @@ small.en-line{display:inline-block;margin-bottom:9px;}
     <div class="gstep-num">3</div>
     <div class="gstep-body">
         <h3 style="margin:0 0 14px 0; padding:8px 14px; font-size:1.15rem; font-weight:800; color:#4c1d95; background:#faf5ff; border-left:4px solid #6d28d9; border-radius:4px;">주어의 인칭에 따른 ~고 싶다 형태<br><small style="font-weight:600;"><span lang="en" translate="yes">Form by subject's person</span></small></h3>
-        <div style="padding:10px 14px; background:#faf5ff; border-left:3px solid #8b5cf6; border-radius:6px; margin-bottom:12px; font-size:0.92rem; line-height:1.8;">
+        <div class="gb"><span class="gb-lab">설명<i lang="en" translate="yes">Explanation</i></span>
             <strong>1인칭(나·우리)</strong>은 자신의 바람을 <strong>~고 싶다</strong>로, <strong>2인칭(당신)</strong>은 의문형 <strong>~고 싶습니까?</strong>로, <strong>3인칭(그·그녀)</strong>은 <strong>~고 싶어 하다</strong>로 표현합니다.<br>
             <small class="en-line" lang="en" translate="yes"><em><strong>1st person (I/we)</strong> uses <strong>~<span lang="ko" translate="no">고 싶다</span></strong> for one's own wishes. <strong>2nd person (you)</strong> takes the question form <strong>~<span lang="ko" translate="no">고 싶습니까</span>?</strong>. <strong>3rd person (he/she/they)</strong> uses <strong>~<span lang="ko" translate="no">고 싶어 하다</span></strong> to describe someone else's wishes.</em></small>
-            <div style="margin-top:12px; padding:8px 12px; background:#fff; border-left:3px solid #fbbf24; border-radius:6px; font-size:0.9rem; line-height:1.7;">
+            <div class="gb gb-ex"><span class="gb-lab">보기<i lang="en" translate="yes">Example</i></span>
                 ✓ 저는 <strong>가고 싶습니다</strong>. <small lang="en" translate="yes"><em>I want to go: 1st person</em></small><br>
                 ✓ 당신은 <strong>가고 싶습니까?</strong> <small lang="en" translate="yes"><em>Do you want to go? — 2nd person (question)</em></small><br>
                 ✓ 그는 <strong>가고 싶어 합니다</strong>. <small lang="en" translate="yes"><em>He wants to go: 3rd person uses ~<span lang="ko" translate="no">고 싶어 하다</span></em></small><br>
@@ -778,7 +800,7 @@ small.en-line{display:inline-block;margin-bottom:9px;}
                 <div style="padding:8px 12px;background:#fff;border:1px solid #fecdd3;border-radius:8px;font-size:0.9rem;"><strong style="color:#9f1239;">떡볶이</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— tteokbokki (spicy rice cakes)</span></span></div>
                 <div style="padding:8px 12px;background:#fff;border:1px solid #fecdd3;border-radius:8px;font-size:0.9rem;"><strong style="color:#9f1239;">김밥</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— kimbap (seaweed rice rolls)</span></span></div>
                 <div style="padding:8px 12px;background:#fff;border:1px solid #fecdd3;border-radius:8px;font-size:0.9rem;"><strong style="color:#9f1239;">된장찌개</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— doenjang jjigae (soybean stew)</span></span></div>
-                <div style="padding:8px 12px;background:#fff;border:1px solid #fecdd3;border-radius:8px;font-size:0.9rem;"><strong style="color:#9f1239;">삼겹살</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— samgyeopsal (grilled pork belly)</span></span></div>
+                <div class="gb"><span class="gb-lab">설명<i lang="en" translate="yes">Explanation</i></span><strong style="color:#9f1239;">삼겹살</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— samgyeopsal (grilled pork belly)</span></span></div>
                 <div style="padding:8px 12px;background:#fff;border:1px solid #fecdd3;border-radius:8px;font-size:0.9rem;"><strong style="color:#9f1239;">냉면</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— naengmyeon (cold noodles)</span></span></div>
                 <div style="padding:8px 12px;background:#fff;border:1px solid #fecdd3;border-radius:8px;font-size:0.9rem;"><strong style="color:#9f1239;">갈비</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— galbi (marinated short ribs)</span></span></div>
                 <div style="padding:8px 12px;background:#fff;border:1px solid #fecdd3;border-radius:8px;font-size:0.9rem;"><strong style="color:#9f1239;">잡채</strong> <span style="color:#636976;font-size:0.85rem;"><span lang="en" translate="yes">— japchae (glass noodles)</span></span></div>
