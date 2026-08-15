@@ -401,10 +401,7 @@ document.addEventListener('DOMContentLoaded', function(){
 (function(){
   var V='V',C='C',L='L',H='H',BI='BI';
   var data=[
-    ["살다","live","살 것입니다",L],["팔다","sell","팔 것입니다",L],["알다","know","알 것입니다",L],["만들다","make","만들 것입니다",L],["놀다","play","놀 것입니다",L],
-    ["울다","cry","울 것입니다",L],["열다","open","열 것입니다",L],["걸다","hang","걸 것입니다",L],["길다","be long","길 것입니다",L],["멀다","be far","멀 것입니다",L],
-    ["들다","lift","들 것입니다",L],["달다","be sweet","달 것입니다",L]
-  ];
+    ["살다","live","살 것입니다",L],["팔다","sell","팔 것입니다",L],["알다","know","알 것입니다",L],["만들다","make","만들 것입니다",L]];
   window.TWORDS=data.map(function(w){return [w[0],w[1],w[2],w[2].replace(/다$/,'까?')];});
   function pr80Exp(w){
     var base=w[0], en=w[1], stem=base.slice(0,-1), ans=w[2], cat=w[3], label, rule, deriv, ren;

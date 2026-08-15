@@ -385,12 +385,10 @@ document.addEventListener('DOMContentLoaded', function(){
 (function(){
   var V='V',C='C',L='L',H='H',BI='BI';
   var data=[
-    ["먹다","eat","먹을 것입니다",C],["읽다","read","읽을 것입니다",C],["찾다","find","찾을 것입니다",C],["받다","receive","받을 것입니다",C],["닫다","close","닫을 것입니다",C],
-    ["믿다","believe","믿을 것입니다",C],["입다","wear","입을 것입니다",C],["앉다","sit","앉을 것입니다",C],["웃다","laugh","웃을 것입니다",C],["씻다","wash","씻을 것입니다",C],
+    ["먹다","eat","먹을 것입니다",C],["찾다","find","찾을 것입니다",C],["닫다","close","닫을 것입니다",C],
+    ["믿다","believe","믿을 것입니다",C],["입다","wear","입을 것입니다",C],["앉다","sit","앉을 것입니다",C],
     ["좋다","be good","좋을 것입니다",C],["같다","be same","같을 것입니다",C],["작다","be small","작을 것입니다",C],["많다","be many","많을 것입니다",C],["적다","be few","적을 것입니다",C],
-    ["늦다","be late","늦을 것입니다",C],["있다","exist, have","있을 것입니다",C],["없다","not exist","없을 것입니다",C],["좁다","be narrow","좁을 것입니다",C],["넓다","be wide","넓을 것입니다",C],
-    ["높다","be high","높을 것입니다",C],["낮다","be low","낮을 것입니다",C],["깊다","be deep","깊을 것입니다",C]
-  ];
+    ["늦다","be late","늦을 것입니다",C],["있다","exist, have","있을 것입니다",C],["없다","not exist","없을 것입니다",C],["좁다","be narrow","좁을 것입니다",C]];
   window.TWORDS=data.map(function(w){return [w[0],w[1],w[2],w[2].replace(/다$/,'까?')];});
   function pr80Exp(w){
     var base=w[0], en=w[1], stem=base.slice(0,-1), ans=w[2], cat=w[3], label, rule, deriv, ren;

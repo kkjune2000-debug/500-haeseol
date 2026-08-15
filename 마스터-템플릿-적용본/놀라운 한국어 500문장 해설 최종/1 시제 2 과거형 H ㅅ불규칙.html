@@ -323,9 +323,7 @@ document.addEventListener('DOMContentLoaded', function(){
 <script>
 (function(){
   const data = [
-    ["짓다","build","지었습니다","지었습니까?","짓습니다","짓습니까?"],
-    ["낫다","recover","나았습니다","나았습니까?","낫습니다","낫습니까?"]
-  ];
+    ["짓다","build","지었습니다","지었습니까?","짓습니다","짓습니까?"]];
   const grid = document.getElementById('fcGridPSI');
   data.forEach(function(w, i){
     const n = String(i+1).padStart(2,'0');
@@ -610,7 +608,7 @@ function pr80RevealAll(btn){var box=btn.closest('.pr80');box.querySelectorAll('.
     var el=document.getElementById(bodyId);if(el)el.innerHTML=html;
   }
   var SI='SI';
-  pr80Build([["짓다","build","지었습니다",SI],["낫다","get better","나았습니다",SI]],'prIR_SI');
+  pr80Build([["짓다","build","지었습니다",SI]],'prIR_SI');
 })();
 </script>
 <div class="footer">

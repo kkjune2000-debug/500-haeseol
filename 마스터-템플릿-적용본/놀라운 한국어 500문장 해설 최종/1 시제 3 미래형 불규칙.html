@@ -354,10 +354,9 @@ document.addEventListener('DOMContentLoaded', function(){
 (function(){
   var V='V',C='C',L='L',H='H',BI='BI';
   var data=[
-    ["걷다","walk","걸을 것입니다","DI"],["듣다","listen","들을 것입니다","DI"],["묻다","ask","물을 것입니다","DI"],["싣다","load","실을 것입니다","DI"],["깨닫다","realize","깨달을 것입니다","DI"],
-    ["덥다","be hot","더울 것입니다","BI"],["춥다","be cold","추울 것입니다","BI"],["무겁다","be heavy","무거울 것입니다","BI"],["돕다","help","도울 것입니다","BI"],["가볍다","be light","가벼울 것입니다","BI"],["어렵다","be difficult","어려울 것입니다","BI"],["가깝다","be near","가까울 것입니다","BI"],
-    ["짓다","build","지을 것입니다","SI"],["낫다","get better","나을 것입니다","SI"],["붓다","pour","부을 것입니다","SI"],["잇다","connect","이을 것입니다","SI"],["젓다","stir","저을 것입니다","SI"]
-  ];
+    ["걷다","walk","걸을 것입니다","DI"],["듣다","listen","들을 것입니다","DI"],["묻다","ask","물을 것입니다","DI"],
+    ["덥다","be hot","더울 것입니다","BI"],["춥다","be cold","추울 것입니다","BI"],["무겁다","be heavy","무거울 것입니다","BI"],["돕다","help","도울 것입니다","BI"],["가볍다","be light","가벼울 것입니다","BI"],
+    ["짓다","build","지을 것입니다","SI"]];
   window.TWORDS=data.map(function(w){return [w[0],w[1],w[2],w[2].replace(/다$/,'까?')];});
   function pr80Exp(w){
     var base=w[0], en=w[1], ans=w[2], cat=w[3], label, rule, ren;

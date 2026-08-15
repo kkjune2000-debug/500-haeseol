@@ -341,9 +341,7 @@ document.addEventListener('DOMContentLoaded', function(){
     ["자르다","cut","잘랐습니다","잘랐습니까?","자릅니다","자릅니까?"],
     ["빠르다","be fast","빨랐습니다","빨랐습니까?","빠릅니다","빠릅니까?"],
     ["모르다","not know","몰랐습니다","몰랐습니까?","모릅니다","모릅니까?"],
-    ["부르다","call","불렀습니다","불렀습니까?","부릅니다","부릅니까?"],
-    ["흐르다","flow","흘렀습니다","흘렀습니까?","흐릅니다","흐릅니까?"]
-  ];
+    ["부르다","call","불렀습니다","불렀습니까?","부릅니다","부릅니까?"]];
   const grid = document.getElementById('fcGridPRI');
   data.forEach(function(w, i){
     const n = String(i+1).padStart(2,'0');
@@ -511,7 +509,7 @@ function pr80RevealAll(btn){var box=btn.closest('.pr80');box.querySelectorAll('.
     var el=document.getElementById(bodyId);if(el)el.innerHTML=html;
   }
   var RI='RI';
-  pr80Build([["모르다","not know","몰랐습니다",RI],["부르다","call","불렀습니다",RI],["빠르다","be fast","빨랐습니다",RI],["다르다","be different","달랐습니다",RI],["자르다","cut","잘랐습니다",RI],["흐르다","flow","흘렀습니다",RI]],'prIR_RI');
+  pr80Build([["모르다","not know","몰랐습니다",RI],["부르다","call","불렀습니다",RI],["빠르다","be fast","빨랐습니다",RI],["다르다","be different","달랐습니다",RI],["자르다","cut","잘랐습니다",RI]],'prIR_RI');
 })();
 </script>
 <div class="footer">

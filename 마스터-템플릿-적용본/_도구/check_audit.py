@@ -266,6 +266,27 @@ def layer_content(bad, info):
             if w not in cards:
                 bad["연습표 낱말이 카드에 없음"].append((f, w))
 
+    # ── 시제 파일의 낱말은 500문장 시제 부분의 80낱말 안이어야 한다
+    #    ★기준은 「1 시제 1 현재형 전체 시험」·「과거형 전체 시험」·「종합 시험」의
+    #    자료다 — 셋이 완전히 같은 80낱말이다 (2026-08-15 사용자가 정한 기준).
+    #    2026-08-15 에 그 밖의 38낱말을 연습표·카드에서 뺐다.
+    REF = set()
+    for f in ("1 시제 1 현재형 전체 시험.html", "1 시제 2 과거형 전체 시험.html",
+              "1 시제 종합 시험.html"):
+        s = SRC.get(f)
+        if not s:
+            continue
+        REF |= {w for w in re.findall(r'\["([^"]+)","[^"]*","[^"]*"', s) if w.endswith("다")}
+    if len(REF) == 80:                     # 기준을 못 읽으면 아예 재지 않는다
+        for f, s in SRC.items():
+            if not f.startswith("1 시제") or f.endswith("전체 시험.html") \
+                    or f == "1 시제 종합 시험.html":
+                continue
+            for w in {w for w in re.findall(r'\["([^"]+)","[^"]*","[^"]*"', s)
+                      if w.endswith("다")}:
+                if w not in REF:
+                    bad["시제 80낱말 밖"].append((f, w))
+
 
 # ── 층 4. 어휘 ────────────────────────────────────────────────
 def span_of(s, start):
@@ -334,7 +355,7 @@ def main():
             "파싱 실패", "슬롯 밖 영어", "en 슬롯 속 안 잠긴 한국어",
             "제목 속 한국어가 안 잠김",
             "영어 제목 없는 번호", "쓰기 정답이 문장과 다름", "한 파일 안 문장 겹침",
-            "연습표 낱말이 카드에 없음",
+            "연습표 낱말이 카드에 없음", "시제 80낱말 밖",
             "표제어 비었음", "뜻풀이 없음", "뜻풀이에 슬롯 없음", "파일에 안 나오는 표제어"]
     n_bad = 0
     for k in keys:
