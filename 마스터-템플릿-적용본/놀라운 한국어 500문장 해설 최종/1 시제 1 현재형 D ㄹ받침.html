@@ -873,7 +873,13 @@ function pr80RevealAll(btn){var box=btn.closest('.pr80');box.querySelectorAll('.
   .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 }
-</style>
+
+        /* ak-notice — 남성 음성이 없는 브라우저에서만 잠깐 뜨는 알림.
+           ★이 규칙이 없으면 꾸밈이 하나도 없는 칸이라 본문처럼 늘 보인다. */
+        .ak-notice { position:fixed; left:50%; bottom:22px; transform:translateX(-50%) translateY(14px); z-index:10000; max-width:min(92vw,460px); background:#f1f3f6; color:#1e293b; border-radius:10px; padding:11px 16px; font-size:0.86rem; line-height:1.45; box-shadow:0 6px 20px rgba(15,23,42,0.3); opacity:0; pointer-events:none; transition:opacity 0.2s, transform 0.2s; }
+        .ak-notice.on { opacity:1; transform:translateX(-50%) translateY(0); }
+        .ak-notice .gloss { color:#475569; opacity:1; }
+        </style>
 
 <div class="fc-section">
 <h3 style="margin-top:32px;">카드 보고 말하기<span class="gloss" lang="en" translate="yes">Look &amp; Speak</span></h3>
