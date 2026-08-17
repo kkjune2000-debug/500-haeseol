@@ -612,7 +612,7 @@ var STYLE_M = [
                 back += '<span class="sc-line"><span class="sc-tag" style="color:'+TLAB[t][1]+';">'+TLAB[t][0]+'</span>'+r[ix]+'</span>';
             });
             html += '<div class="flashcard" onclick="this.classList.toggle(\'flipped\')"><div class="flashcard-inner">'
-                + '<div class="flashcard-front"><div class="flashcard-text">'+r[0]+'<div class="flashcard-en">'+(EN[r[0]]||'')+'</div></div><div class="flashcard-hint">↻ 클릭</div></div>'
+                + '<div class="flashcard-front"><div class="flashcard-text">'+r[0]+'<div class="flashcard-en">'+(EN[r[0]]||'')+'</div></div><div class="flashcard-hint">▼ 눌러서 확인</div></div>'
                 + '<div class="flashcard-back"><div class="flashcard-text">'+back+'</div></div>'
                 + '</div></div>';
         });
@@ -811,6 +811,21 @@ function celebrateRestart(){
   .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .cr-result, .vstack, .rs-cell { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 }
+
+/* 카드를 뒤집지 않고 아래로 편다 (2026-08-18) */
+.flashcard{height:auto;perspective:none;display:flex;flex-direction:column;}
+.flashcard-inner,.flashcard.flipped .flashcard-inner{position:static;width:auto;height:auto;
+  flex:1;display:flex;flex-direction:column;transform:none;transform-style:flat;transition:none;}
+.flashcard-front,.flashcard-back{position:relative;inset:auto;transform:none;
+  backface-visibility:visible;-webkit-backface-visibility:visible;min-height:96px;}
+.flashcard-front{flex:1;padding-bottom:30px;}
+.flashcard-back{display:none;padding-bottom:16px;}
+/* 🔊 는 절대 위치면 가운데 글자 위로 올라온다 — 흐름 안에서 글자 아래에 둔다 */
+.flashcard-listen{position:static;left:auto;right:auto;bottom:auto;margin-top:8px;align-self:center;}
+.flashcard.flipped .flashcard-back{display:flex;}
+.flashcard.flipped .flashcard-front{border-bottom-left-radius:0;border-bottom-right-radius:0;}
+.flashcard.flipped .flashcard-back{border-top-left-radius:0;border-top-right-radius:0;}
+.flashcard.flipped .flashcard-hint{display:none;}
 </style>
 <script>
 (function(){

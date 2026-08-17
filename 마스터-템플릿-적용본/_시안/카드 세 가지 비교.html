@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko" translate="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>카드 세 가지 비교 — 견본</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;800;900&amp;family=Lato:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+body{font-family:'Noto Sans KR',sans-serif;background:#f1f5f9;color:#1e293b;line-height:1.8;padding:20px;word-break:keep-all;}
+.container{max-width:800px;margin:0 auto;background:#fff;padding:26px 30px 40px;border-radius:14px;box-shadow:0 2px 10px rgba(15,23,42,.06);}
+h1{font-size:1.5rem;color:#2563eb;border-bottom:4px solid #2563eb;padding-bottom:10px;margin:0 0 6px;}
+h2{font-size:1.12rem;margin:34px 0 4px;color:#1e293b;border-left:5px solid #2563eb;padding-left:10px;}
+h2 small{display:block;font-size:.8rem;font-weight:600;color:#5a6d87;letter-spacing:0;}
+.note{background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #94a3b8;border-radius:8px;padding:10px 14px;margin:10px 0 16px;font-size:.9rem;color:#334155;}
+.note b{color:#0f172a;}
+.good{border-left-color:#10b981;background:#f0fdf4;}
+.bad{border-left-color:#dc2626;background:#fef2f2;}
+button{font-family:inherit;}
+
+/* ── ① 지금: 뒤집기 (본문 CSS 그대로) ── */
+.flashcard-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:16px 0 8px;}
+.flashcard{perspective:1200px;height:140px;cursor:pointer;}
+.flashcard-inner{position:relative;width:100%;height:100%;transition:transform .65s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d;}
+.flashcard.flipped .flashcard-inner{transform:rotateY(180deg);}
+.flashcard-front,.flashcard-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;padding:16px 14px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+.flashcard-front{background:#fff;border:2px solid #bfdbfe;color:#1e293b;}
+.flashcard-back{background:#e0f2fe;border:2px solid #bae6fd;color:#0c4a6e;transform:rotateY(180deg);}
+.flashcard-num{font-family:'Lato','Noto Sans KR',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.2em;color:#5a6d87;margin-bottom:6px;}
+.flashcard-text{font-size:1.06rem;font-weight:700;line-height:1.4;}
+.flashcard-hint{position:absolute;bottom:10px;right:14px;font-size:.68rem;color:#5a6d87;font-weight:600;}
+.fc-spk{position:absolute;bottom:8px;left:10px;background:rgba(255,255,255,.75);border:0;border-radius:7px;cursor:pointer;padding:2px 7px;font-size:.9rem;}
+
+/* ── ② 펼치기 ── */
+.ocard{border:2px solid #bfdbfe;border-radius:12px;margin:10px 0;cursor:pointer;overflow:hidden;background:#fff;}
+.oc-front{padding:14px 16px 12px;position:relative;}
+.oc-num{font-family:'Lato','Noto Sans KR',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.2em;color:#5a6d87;margin-bottom:4px;}
+.oc-text{font-size:1.06rem;font-weight:700;line-height:1.5;}
+.oc-hint{font-size:.68rem;color:#5a6d87;font-weight:600;margin-top:6px;}
+.ocard.open .oc-hint{display:none;}
+.oc-back{display:none;padding:12px 16px 14px;background:#e0f2fe;border-top:2px dashed #bae6fd;color:#0c4a6e;}
+.ocard.open .oc-back{display:block;}
+.oc-spk{background:rgba(255,255,255,.8);border:0;border-radius:7px;cursor:pointer;padding:1px 7px;margin-left:8px;font-size:.9rem;}
+
+/* ── ③ 가리개 (부록 q-cell 그대로) ── */
+.vtbl{width:100%;border-collapse:collapse;margin:8px 0;font-size:.95rem;}
+.vtbl td{padding:10px 12px;border-bottom:1px solid #dfe1ec;vertical-align:top;}
+.v-num{width:44px;font-family:'Lato',sans-serif;font-weight:800;color:#5a6d87;font-size:.8rem;}
+.v-en{width:46%;font-weight:700;}
+.q-cell .q-text{display:none;}
+.q-cell:not(.revealed){text-align:center;}
+.q-cell.revealed .q-text{display:inline;cursor:pointer;font-weight:700;color:#0c4a6e;}
+.q-cell.revealed .q-ans{display:none;}
+.q-cell:not(.revealed) .v-spk{display:none;}
+.q-ans{background:#fff;border:1px solid #cbd5e1;color:#107435;padding:1px 11px;border-radius:8px;cursor:pointer;font-weight:800;}
+.q-ans:hover{background:#f0fdf4;border-color:#86efac;}
+.v-spk{background:#eff6ff;border:0;border-radius:7px;cursor:pointer;padding:1px 7px;margin-left:8px;font-size:.9rem;}
+.ans-bar{margin:10px 0 4px;display:flex;gap:10px;flex-wrap:wrap;}
+.ans-btn{background:#fff;border:1px solid #cbd5e1;color:#475569;padding:5px 12px;border-radius:8px;cursor:pointer;font-weight:700;font-size:.82rem;font-family:inherit;}
+.ans-btn:hover{background:#f1f5f9;}
+@media (max-width:600px){
+  .container{padding:18px 14px 30px;}
+  .flashcard-grid{grid-template-columns:1fr;}
+  .vtbl td{padding:8px 6px;}
+  .v-en{width:auto;}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>카드 세 가지 비교 — 견본</h1>
+<p class="note">같은 카드 <b>여덟 장</b>을 세 꼴로 놓았습니다. 배우는 목표는 셋 다 같습니다 —
+<b>영어를 보고 한국어로 말한 뒤 확인하기</b>. 긴 문장(486·485·500)을 일부러 넣었습니다.
+<b>지금 넘치고 있는 것들</b>입니다. 이 쪽은 견본이라 본문 106파일과 따로 있습니다.</p>
+
+<h2>① 지금 — 뒤집기<small>height:140px 고정 · 카드를 누르면 돌아갑니다</small></h2>
+<p class="note bad"><b>문제</b> — 앞뒤 면이 <code>position:absolute</code> 라 카드에 높이를 잴 내용이 없습니다.
+그래서 <code>height</code> 를 <code>min-height</code> 로 못 바꿉니다(카드가 찌그러집니다).
+486번 카드를 보십시오 — <b>글자가 면 밖으로 나갑니다.</b> 번역문이 길어지면 더 많이 넘칩니다.</p>
+<div class="flashcard-grid"><div class="flashcard" onclick="this.classList.toggle('flipped')">
+  <div class="flashcard-inner">
+    <div class="flashcard-front">
+      <div class="flashcard-num">486 · EN</div>
+      <div class="flashcard-text">Sumi with long hair bought clothes at the department store next to the station yesterday, when it rained a lot, to wear at her friend's wedding.</div>
+      <div class="flashcard-hint">↻ 클릭</div>
+    </div>
+    <div class="flashcard-back">
+      <div class="flashcard-num">486 · KO</div>
+      <div class="flashcard-text">머리가 긴 수미는 비가 많이 온 어제 역 옆에 있는 백화점에서 친구의 결혼식에서 입을 옷을 샀습니다.</div>
+      <button type="button" class="fc-spk" onclick="event.stopPropagation();speakKorean('머리가 긴 수미는 비가 많이 온 어제 역 옆에 있는 백화점에서 친구의 결혼식에서 입을 옷을 샀습니다.')" title="Listen">🔊</button>
+    </div>
+  </div>
+</div><div class="flashcard" onclick="this.classList.toggle('flipped')">
+  <div class="flashcard-inner">
+    <div class="flashcard-front">
+      <div class="flashcard-num">485 · EN</div>
+      <div class="flashcard-text">Sumi bought clothes at the department store yesterday to wear at her friend's wedding.</div>
+      <div class="flashcard-hint">↻ 클릭</div>
+    </div>
+    <div class="flashcard-back">
+      <div class="flashcard-num">485 · KO</div>
+      <div class="flashcard-text">수미는 어제 백화점에서 친구의 결혼식에서 입을 옷을 샀습니다.</div>
+      <button type="button" class="fc-spk" onclick="event.stopPropagation();speakKorean('수미는 어제 백화점에서 친구의 결혼식에서 입을 옷을 샀습니다.')" title="Listen">🔊</button>
+    </div>
+  </div>
+</div><div class="flashcard" onclick="this.classList.toggle('flipped')">
+  <div class="flashcard-inner">
+    <div class="flashcard-front">
+      <div class="flashcard-num">500 · EN</div>
+      <div class="flashcard-text">Boss, congratulations on your son's wedding and your daughter's graduation.</div>
+      <div class="flashcard-hint">↻ 클릭</div>
+    </div>
+    <div class="flashcard-back">
+      <div class="flashcard-num">500 · KO</div>
+      <div class="flashcard-text">사장님, 아드님의 결혼과 따님의 졸업을 축하합니다.</div>
+      <button type="button" class="fc-spk" onclick="event.stopPropagation();speakKorean('사장님, 아드님의 결혼과 따님의 졸업을 축하합니다.')" title="Listen">🔊</button>
+    </div>
+  </div>
+</div><div class="flashcard" onclick="this.classList.toggle('flipped')">
+  <div class="flashcard-inner">
+    <div class="flashcard-front">
+      <div class="flashcard-num">482 · EN</div>
+      <div class="flashcard-text">Sumi with long hair bought clothes at the department store yesterday.</div>
+      <div class="flashcard-hint">↻ 클릭</div>
+    </div>
+    <div class="flashcard-back">
+      <div class="flashcard-num">482 · KO</div>
+      <div class="flashcard-text">머리가 긴 수미는 어제 백화점에서 옷을 샀습니다.</div>
+      <button type="button" class="fc-spk" onclick="event.stopPropagation();speakKorean('머리가 긴 수미는 어제 백화점에서 옷을 샀습니다.')" title="Listen">🔊</button>
+    </div>
+  </div>
+</div><div class="flashcard" onclick="this.classList.toggle('flipped')">
+  <div class="flashcard-inner">
+    <div class="flashcard-front">
+      <div class="flashcard-num">481 · EN</div>
+      <div class="flashcard-text">Sumi bought clothes at the department store yesterday.</div>
+      <div class="flashcard-hint">↻ 클릭</div>
+    </div>
+    <div class="flashcard-back">
+      <div class="flashcard-num">481 · KO</div>
+      <div class="flashcard-text">수미는 어제 백화점에서 옷을 샀습니다.</div>
+      <button type="button" class="fc-spk" onclick="event.stopPropagation();speakKorean('수미는 어제 백화점에서 옷을 샀습니다.')" title="Listen">🔊</button>
+    </div>
+  </div>
+</div><div class="flashcard" onclick="this.classList.toggle('flipped')">
+  <div class="flashcard-inner">
+    <div class="flashcard-front">
+      <div class="flashcard-num">494 · EN</div>
+      <div class="flashcard-text">My great-grandmother passed away this morning.</div>
+      <div class="flashcard-hint">↻ 클릭</div>
+    </div>
+    <div class="flashcard-back">
+      <div class="flashcard-num">494 · KO</div>
+      <div class="flashcard-text">오늘 아침에 증조할머니께서 돌아가셨습니다.</div>
+      <button type="button" class="fc-spk" onclick="event.stopPropagation();speakKorean('오늘 아침에 증조할머니께서 돌아가셨습니다.')" title="Listen">🔊</button>
+    </div>
+  </div>
+</div><div class="flashcard" onclick="this.classList.toggle('flipped')">
+  <div class="flashcard-inner">
+    <div class="flashcard-front">
+      <div class="flashcard-num">487 · EN</div>
+      <div class="flashcard-text">The most important moment in life is now.</div>
+      <div class="flashcard-hint">↻ 클릭</div>
+    </div>
+    <div class="flashcard-back">
+      <div class="flashcard-num">487 · KO</div>
+      <div class="flashcard-text">인생에서 가장 중요한 순간은 지금입니다.</div>
+      <button type="button" class="fc-spk" onclick="event.stopPropagation();speakKorean('인생에서 가장 중요한 순간은 지금입니다.')" title="Listen">🔊</button>
+    </div>
+  </div>
+</div><div class="flashcard" onclick="this.classList.toggle('flipped')">
+  <div class="flashcard-inner">
+    <div class="flashcard-front">
+      <div class="flashcard-num">479 · EN</div>
+      <div class="flashcard-text">This is the book I will read.</div>
+      <div class="flashcard-hint">↻ 클릭</div>
+    </div>
+    <div class="flashcard-back">
+      <div class="flashcard-num">479 · KO</div>
+      <div class="flashcard-text">이것은 제가 읽을 책입니다.</div>
+      <button type="button" class="fc-spk" onclick="event.stopPropagation();speakKorean('이것은 제가 읽을 책입니다.')" title="Listen">🔊</button>
+    </div>
+  </div>
+</div></div>
+
+<h2>② 아래로 펼치기<small>높이가 내용대로 늘어납니다 · 확인할 때 영어와 한국어를 나란히</small></h2>
+<p class="note good"><b>좋은 점</b> — 높이 문제가 뿌리째 없어집니다. 어떤 언어로 옮겨도 안전합니다.
+그리고 답을 볼 때 <b>문제(영어)가 그대로 남아</b> 견주기 쉽습니다.
+<b>잃는 것</b> — 뒤집는 맛.</p>
+<div><div class="ocard" onclick="this.classList.toggle('open')">
+  <div class="oc-front">
+    <div class="oc-num">486 · EN</div>
+    <div class="oc-text">Sumi with long hair bought clothes at the department store next to the station yesterday, when it rained a lot, to wear at her friend's wedding.</div>
+    <div class="oc-hint">▼ 눌러서 확인</div>
+  </div>
+  <div class="oc-back">
+    <div class="oc-num">486 · KO</div>
+    <div class="oc-text">머리가 긴 수미는 비가 많이 온 어제 역 옆에 있는 백화점에서 친구의 결혼식에서 입을 옷을 샀습니다.<button type="button" class="oc-spk" onclick="event.stopPropagation();speakKorean('머리가 긴 수미는 비가 많이 온 어제 역 옆에 있는 백화점에서 친구의 결혼식에서 입을 옷을 샀습니다.')" title="Listen">🔊</button></div>
+  </div>
+</div><div class="ocard" onclick="this.classList.toggle('open')">
+  <div class="oc-front">
+    <div class="oc-num">485 · EN</div>
+    <div class="oc-text">Sumi bought clothes at the department store yesterday to wear at her friend's wedding.</div>
+    <div class="oc-hint">▼ 눌러서 확인</div>
+  </div>
+  <div class="oc-back">
+    <div class="oc-num">485 · KO</div>
+    <div class="oc-text">수미는 어제 백화점에서 친구의 결혼식에서 입을 옷을 샀습니다.<button type="button" class="oc-spk" onclick="event.stopPropagation();speakKorean('수미는 어제 백화점에서 친구의 결혼식에서 입을 옷을 샀습니다.')" title="Listen">🔊</button></div>
+  </div>
+</div><div class="ocard" onclick="this.classList.toggle('open')">
+  <div class="oc-front">
+    <div class="oc-num">500 · EN</div>
+    <div class="oc-text">Boss, congratulations on your son's wedding and your daughter's graduation.</div>
+    <div class="oc-hint">▼ 눌러서 확인</div>
+  </div>
+  <div class="oc-back">
+    <div class="oc-num">500 · KO</div>
+    <div class="oc-text">사장님, 아드님의 결혼과 따님의 졸업을 축하합니다.<button type="button" class="oc-spk" onclick="event.stopPropagation();speakKorean('사장님, 아드님의 결혼과 따님의 졸업을 축하합니다.')" title="Listen">🔊</button></div>
+  </div>
+</div><div class="ocard" onclick="this.classList.toggle('open')">
+  <div class="oc-front">
+    <div class="oc-num">482 · EN</div>
+    <div class="oc-text">Sumi with long hair bought clothes at the department store yesterday.</div>
+    <div class="oc-hint">▼ 눌러서 확인</div>
+  </div>
+  <div class="oc-back">
+    <div class="oc-num">482 · KO</div>
+    <div class="oc-text">머리가 긴 수미는 어제 백화점에서 옷을 샀습니다.<button type="button" class="oc-spk" onclick="event.stopPropagation();speakKorean('머리가 긴 수미는 어제 백화점에서 옷을 샀습니다.')" title="Listen">🔊</button></div>
+  </div>
+</div><div class="ocard" onclick="this.classList.toggle('open')">
+  <div class="oc-front">
+    <div class="oc-num">481 · EN</div>
+    <div class="oc-text">Sumi bought clothes at the department store yesterday.</div>
+    <div class="oc-hint">▼ 눌러서 확인</div>
+  </div>
+  <div class="oc-back">
+    <div class="oc-num">481 · KO</div>
+    <div class="oc-text">수미는 어제 백화점에서 옷을 샀습니다.<button type="button" class="oc-spk" onclick="event.stopPropagation();speakKorean('수미는 어제 백화점에서 옷을 샀습니다.')" title="Listen">🔊</button></div>
+  </div>
+</div><div class="ocard" onclick="this.classList.toggle('open')">
+  <div class="oc-front">
+    <div class="oc-num">494 · EN</div>
+    <div class="oc-text">My great-grandmother passed away this morning.</div>
+    <div class="oc-hint">▼ 눌러서 확인</div>
+  </div>
+  <div class="oc-back">
+    <div class="oc-num">494 · KO</div>
+    <div class="oc-text">오늘 아침에 증조할머니께서 돌아가셨습니다.<button type="button" class="oc-spk" onclick="event.stopPropagation();speakKorean('오늘 아침에 증조할머니께서 돌아가셨습니다.')" title="Listen">🔊</button></div>
+  </div>
+</div><div class="ocard" onclick="this.classList.toggle('open')">
+  <div class="oc-front">
+    <div class="oc-num">487 · EN</div>
+    <div class="oc-text">The most important moment in life is now.</div>
+    <div class="oc-hint">▼ 눌러서 확인</div>
+  </div>
+  <div class="oc-back">
+    <div class="oc-num">487 · KO</div>
+    <div class="oc-text">인생에서 가장 중요한 순간은 지금입니다.<button type="button" class="oc-spk" onclick="event.stopPropagation();speakKorean('인생에서 가장 중요한 순간은 지금입니다.')" title="Listen">🔊</button></div>
+  </div>
+</div><div class="ocard" onclick="this.classList.toggle('open')">
+  <div class="oc-front">
+    <div class="oc-num">479 · EN</div>
+    <div class="oc-text">This is the book I will read.</div>
+    <div class="oc-hint">▼ 눌러서 확인</div>
+  </div>
+  <div class="oc-back">
+    <div class="oc-num">479 · KO</div>
+    <div class="oc-text">이것은 제가 읽을 책입니다.<button type="button" class="oc-spk" onclick="event.stopPropagation();speakKorean('이것은 제가 읽을 책입니다.')" title="Listen">🔊</button></div>
+  </div>
+</div></div>
+
+<h2>③ 가리개<small>부록에 이미 있는 셈본(q-cell) 그대로 · 「모두 보기 / 다시 가리기」가 딸려 옵니다</small></h2>
+<p class="note good"><b>좋은 점</b> — 새로 만들 셈본이 없습니다. 높이 문제도 없습니다.
+<b>절 전체를 한 번에 다시 가릴 수 있어</b> 되풀이 연습에 좋습니다(지금은 카드를 한 장씩 되뒤집어야 합니다).
+<b>잃는 것</b> — 「한 장에 집중」. 목록이라 눈이 아래로 새기 쉽습니다.</p>
+<div class="ans-bar">
+  <button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기</button>
+  <button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기</button>
+</div>
+<table class="vtbl"><tbody><tr>
+  <td class="v-num">486</td>
+  <td class="v-en">Sumi with long hair bought clothes at the department store next to the station yesterday, when it rained a lot, to wear at her friend's wedding.</td>
+  <td class="q-cell"><span class="q-text" onclick="qHide(this)">머리가 긴 수미는 비가 많이 온 어제 역 옆에 있는 백화점에서 친구의 결혼식에서 입을 옷을 샀습니다.</span><button type="button" class="v-spk" onclick="event.stopPropagation();speakKorean('머리가 긴 수미는 비가 많이 온 어제 역 옆에 있는 백화점에서 친구의 결혼식에서 입을 옷을 샀습니다.')" title="Listen">🔊</button><button type="button" class="q-ans" onclick="qReveal(this)">?</button></td>
+</tr><tr>
+  <td class="v-num">485</td>
+  <td class="v-en">Sumi bought clothes at the department store yesterday to wear at her friend's wedding.</td>
+  <td class="q-cell"><span class="q-text" onclick="qHide(this)">수미는 어제 백화점에서 친구의 결혼식에서 입을 옷을 샀습니다.</span><button type="button" class="v-spk" onclick="event.stopPropagation();speakKorean('수미는 어제 백화점에서 친구의 결혼식에서 입을 옷을 샀습니다.')" title="Listen">🔊</button><button type="button" class="q-ans" onclick="qReveal(this)">?</button></td>
+</tr><tr>
+  <td class="v-num">500</td>
+  <td class="v-en">Boss, congratulations on your son's wedding and your daughter's graduation.</td>
+  <td class="q-cell"><span class="q-text" onclick="qHide(this)">사장님, 아드님의 결혼과 따님의 졸업을 축하합니다.</span><button type="button" class="v-spk" onclick="event.stopPropagation();speakKorean('사장님, 아드님의 결혼과 따님의 졸업을 축하합니다.')" title="Listen">🔊</button><button type="button" class="q-ans" onclick="qReveal(this)">?</button></td>
+</tr><tr>
+  <td class="v-num">482</td>
+  <td class="v-en">Sumi with long hair bought clothes at the department store yesterday.</td>
+  <td class="q-cell"><span class="q-text" onclick="qHide(this)">머리가 긴 수미는 어제 백화점에서 옷을 샀습니다.</span><button type="button" class="v-spk" onclick="event.stopPropagation();speakKorean('머리가 긴 수미는 어제 백화점에서 옷을 샀습니다.')" title="Listen">🔊</button><button type="button" class="q-ans" onclick="qReveal(this)">?</button></td>
+</tr><tr>
+  <td class="v-num">481</td>
+  <td class="v-en">Sumi bought clothes at the department store yesterday.</td>
+  <td class="q-cell"><span class="q-text" onclick="qHide(this)">수미는 어제 백화점에서 옷을 샀습니다.</span><button type="button" class="v-spk" onclick="event.stopPropagation();speakKorean('수미는 어제 백화점에서 옷을 샀습니다.')" title="Listen">🔊</button><button type="button" class="q-ans" onclick="qReveal(this)">?</button></td>
+</tr><tr>
+  <td class="v-num">494</td>
+  <td class="v-en">My great-grandmother passed away this morning.</td>
+  <td class="q-cell"><span class="q-text" onclick="qHide(this)">오늘 아침에 증조할머니께서 돌아가셨습니다.</span><button type="button" class="v-spk" onclick="event.stopPropagation();speakKorean('오늘 아침에 증조할머니께서 돌아가셨습니다.')" title="Listen">🔊</button><button type="button" class="q-ans" onclick="qReveal(this)">?</button></td>
+</tr><tr>
+  <td class="v-num">487</td>
+  <td class="v-en">The most important moment in life is now.</td>
+  <td class="q-cell"><span class="q-text" onclick="qHide(this)">인생에서 가장 중요한 순간은 지금입니다.</span><button type="button" class="v-spk" onclick="event.stopPropagation();speakKorean('인생에서 가장 중요한 순간은 지금입니다.')" title="Listen">🔊</button><button type="button" class="q-ans" onclick="qReveal(this)">?</button></td>
+</tr><tr>
+  <td class="v-num">479</td>
+  <td class="v-en">This is the book I will read.</td>
+  <td class="q-cell"><span class="q-text" onclick="qHide(this)">이것은 제가 읽을 책입니다.</span><button type="button" class="v-spk" onclick="event.stopPropagation();speakKorean('이것은 제가 읽을 책입니다.')" title="Listen">🔊</button><button type="button" class="q-ans" onclick="qReveal(this)">?</button></td>
+</tr></tbody></table>
+
+<p class="note">🔊 는 세 꼴 모두 <b>답을 본 뒤에</b> 눌러 귀로 맞춰 보는 자리입니다.
+「소리를 먼저」로 할지는 아직 정하지 않았습니다.</p>
+
+</div>
+<script>
+/* 부록의 셈본 그대로 */
+function qHide(t){ var c=t.closest('.q-cell'); if(c) c.classList.remove('revealed'); }
+function qReveal(b){ var c=b.closest('.q-cell'); if(c) c.classList.add('revealed'); }
+function qAll(btn,show){
+  var tbl=btn.closest('.ans-bar').nextElementSibling;
+  while(tbl && tbl.tagName!=='TABLE') tbl=tbl.nextElementSibling;
+  if(!tbl) return;
+  tbl.querySelectorAll('.q-cell').forEach(function(c){
+    if(show) c.classList.add('revealed'); else c.classList.remove('revealed');
+  });
+}
+/* 소리 — 구워 둔 음원, 없으면 브라우저 음성 */
+var AK_SND = {"머리가 긴 수미는 비가 많이 온 어제 역 옆에 있는 백화점에서 친구의 결혼식에서 입을 옷을 샀습니다.": "0222", "수미는 어제 백화점에서 친구의 결혼식에서 입을 옷을 샀습니다.": "0273", "사장님, 아드님의 결혼과 따님의 졸업을 축하합니다.": "0251", "머리가 긴 수미는 어제 백화점에서 옷을 샀습니다.": "0223", "수미는 어제 백화점에서 옷을 샀습니다.": "0272", "오늘 아침에 증조할머니께서 돌아가셨습니다.": "0342", "인생에서 가장 중요한 순간은 지금입니다.": "0390", "이것은 제가 읽을 책입니다.": "0383"};
+var AK_AU = null;
+function speakKorean(t){
+  var n = AK_SND[t];
+  if (n) {
+    try {
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
+      if (AK_AU) { AK_AU.pause(); AK_AU.currentTime = 0; }
+      AK_AU = new Audio(encodeURI('../놀라운 한국어 500문장 해설 최종/_소리/f/' + n + '.mp3'));
+      AK_AU.onerror = function(){ tts(t); };
+      var p = AK_AU.play(); if (p && p.catch) p.catch(function(){ tts(t); });
+      return;
+    } catch(e) {}
+  }
+  tts(t);
+}
+function tts(t){
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(t); u.lang = 'ko-KR'; u.rate = 0.95;
+  setTimeout(function(){ window.speechSynthesis.speak(u); }, 60);   /* cancel 직후 speak 면 목소리가 바뀐다 */
+}
+</script>
+</body>
+</html>
