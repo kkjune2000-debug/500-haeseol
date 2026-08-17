@@ -72,13 +72,21 @@ PROBE = r"""
 """
 # ★망이 안 된 것은 결함이 아니다 — 다시 돌리면 사라진다.
 #  글꼴을 밖에서 받아 오므로 망이 잠깐 끊기면 console error 가 올라온다.
-#  파일을 못 찾은 것(ERR_FILE_NOT_FOUND)은 그대로 잡는다.
 NET = (r"ERR_CONNECTION_(RESET|ABORTED|CLOSED|FAILED|REFUSED|TIMED_OUT)"
        r"|ERR_NETWORK_IO_SUSPENDED|ERR_NETWORK_CHANGED"
        r"|ERR_INTERNET_DISCONNECTED|ERR_NAME_NOT_RESOLVED"
        r"|ERR_TIMED_OUT|ERR_ADDRESS_UNREACHABLE|ERR_EMPTY_RESPONSE")
+# ★「무엇을 못 받았다」는 console 말은 세지 않는다. 세 가지 까닭이 있다.
+#  ① 그 말에는 주소가 안 실린다. 무엇이 안 왔는지 알 수 없으니 고칠 수도 없다.
+#  ② 밖에서 받아 오는 것은 글꼴뿐이고, 글꼴이 안 와도 책은 대체 글꼴로 멀쩡히 나온다.
+#  ③ 안에 있는 파일을 못 찾은 것은 이 그물이 아니라 다른 그물이 잡는다 —
+#     그림은 badImg 가 재서 잡고, 소리는 check_all 이 번호표로 잡는다.
+#  2026-08-17 에 이것 때문에 손대지도 않은 103쪽이 걸렸다. 검사기 한 판은
+#  페이지 하나를 백 쪽 내내 돌려 쓰므로, 맨 처음 한 번 실패한 글꼴이
+#  캐시에 앉아 나머지 전부로 번진다 — 다시 보기로도 안 지워지는 까닭이다.
+FETCH = r"Failed to load resource"
 IGNORE = re.compile(r"_소리/|\.mp3|net::ERR_FILE_NOT_FOUND|favicon|"
-                    + NET, re.I)
+                    + FETCH + "|" + NET, re.I)
 
 
 def is_bad(r):
@@ -99,7 +107,7 @@ def render(page, fn):
      글꼴을 막으면 흔들림은 없어지지만 글자 너비가 달라져
      「가로 넘침」의 잣대가 바뀐다. 그래서 글꼴은 그대로 받는다.
     """
-    errs = []
+    errs, remote = [], []
 
     def on_console(m):
         if m.type == "error" and not IGNORE.search(m.text):
@@ -108,8 +116,23 @@ def render(page, fn):
     def on_pageerror(e):
         errs.append("pageerror: " + str(e)[:110])
 
+    # ★밖에서 받아 오는 것이 실패하면 결함으로 세지는 않되 주소는 적어 둔다.
+    #  console 말에는 주소가 없으니, 나중에 「무엇이 안 왔나」를 물을 데가 여기뿐이다.
+    def on_bad(u):
+        if not u.startswith("file:"):
+            remote.append(u[:90])
+
+    def on_response(r):
+        if r.status >= 400:
+            on_bad(r.url)
+
+    def on_failed(r):
+        on_bad(r.url)
+
     page.on("console", on_console)
     page.on("pageerror", on_pageerror)
+    page.on("response", on_response)
+    page.on("requestfailed", on_failed)
     try:
         r = None
         for tries in (1, 2):
@@ -128,10 +151,13 @@ def render(page, fn):
                     r = {"fatal": str(e)[:120]}
         r["file"] = fn
         r["errs"] = errs[:4]
+        r["remote"] = remote[:2]
         return r
     finally:
         page.remove_listener("console", on_console)
         page.remove_listener("pageerror", on_pageerror)
+        page.remove_listener("response", on_response)
+        page.remove_listener("requestfailed", on_failed)
 
 
 def main():
@@ -181,7 +207,15 @@ def main():
               ("안 보이는 글자", pick(lambda r: r.get("invisible")), "invisible"),
               ("빈 쪽", pick(lambda r: r.get("textLen", 9999) < 300), "textLen")]
     print(f"\n■ 화면 {a.width}px · 렌더한 쪽 {len(rows)}")
-    print(f"   (일부러 넓은 쪽 {len(BY_DESIGN)}개는 셈에서 뺍니다)\n■ 결과")
+    print(f"   (일부러 넓은 쪽 {len(BY_DESIGN)}개는 셈에서 뺍니다)")
+    # ★밖에서 받아 오는 것이 실패한 것은 알려만 주고 세지 않는다.
+    #  세면 망 사정이 나쁜 날마다 책이 망가진 것처럼 보인다.
+    far = [r for r in rows if r.get("remote")]
+    if far:
+        print(f"   ※ 밖에서 받아 오는 것이 {len(far)}쪽에서 실패했습니다 "
+              f"— 책의 결함이 아니라 망 사정입니다.")
+        print(f"      보기: {far[0]['remote'][0]}")
+    print("■ 결과")
     tot = 0
     for name, rs, _ in groups:
         tot += len(rs)
