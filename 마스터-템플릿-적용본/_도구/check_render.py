@@ -70,7 +70,15 @@ PROBE = r"""
   return out;
 }
 """
-IGNORE = re.compile(r"_소리/|\.mp3|net::ERR_FILE_NOT_FOUND|favicon", re.I)
+# ★망이 안 된 것은 결함이 아니다 — 다시 돌리면 사라진다.
+#  글꼴을 밖에서 받아 오므로 망이 잠깐 끊기면 console error 가 올라온다.
+#  파일을 못 찾은 것(ERR_FILE_NOT_FOUND)은 그대로 잡는다.
+NET = (r"ERR_CONNECTION_(RESET|ABORTED|CLOSED|FAILED|REFUSED|TIMED_OUT)"
+       r"|ERR_NETWORK_IO_SUSPENDED|ERR_NETWORK_CHANGED"
+       r"|ERR_INTERNET_DISCONNECTED|ERR_NAME_NOT_RESOLVED"
+       r"|ERR_TIMED_OUT|ERR_ADDRESS_UNREACHABLE|ERR_EMPTY_RESPONSE")
+IGNORE = re.compile(r"_소리/|\.mp3|net::ERR_FILE_NOT_FOUND|favicon|"
+                    + NET, re.I)
 
 
 def main():
