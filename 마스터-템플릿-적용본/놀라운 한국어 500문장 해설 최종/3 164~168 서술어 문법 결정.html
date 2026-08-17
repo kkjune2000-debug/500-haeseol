@@ -353,7 +353,7 @@
         @keyframes celebrateBounce { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-14px) rotate(3deg); } }
         @keyframes confettiFall { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(110vh) rotate(720deg); opacity: 0; } }
         /* v9.93 Korean word-break — keep CJK syllables together */
-        .gstep-table td, .gstep-table th { word-break: keep-all; overflow-wrap: break-word; }
+        .gstep-table td, .gstep-table th { word-break: keep-all; overflow-wrap: normal; }
         .exp-table td, .exp-table th { word-break: keep-all; overflow-wrap: break-word; }
 
 .gloss{text-transform:none;display:block;font-weight:600;font-size:0.86em;opacity:1;letter-spacing:0;margin-top:1px;}
@@ -398,6 +398,9 @@ small.en-line{display:inline-block;margin-bottom:9px;}
 /* ★한국어와 그 영어는 붙이고, 짝과 짝 사이만 벌린다.
    앞은 짝 사이가 짝 안쪽보다 오히려 좁아 어느 영어가 어느 한국어의
    것인지 눈으로 못 갈랐다 (재어 보니 -4.0px · -3.0px). */
+
+/* 낱말이 낱글자로 갈리지 않게 (2026-08-18) */
+body{word-break:keep-all;}
 </style>
 <style>
 /* gbox v1 — 책 전체의 설명 상자. 모양은 넷, 이름표는 다섯.
