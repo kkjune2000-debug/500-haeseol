@@ -251,11 +251,27 @@ SINK = re.compile(
     r"(innerHTML|outerHTML|textContent|innerText|insertAdjacentHTML|alert)"
     r"\s*(=|\+=|,|\()[^;]{0,400}$", re.S)
 
+# ★ 사람이 아니라 **기계가 읽는** 인수 — 번역하면 기능이 죽는다.
+#   querySelector('table.num-table') 을 번역하면 숫자 표를 못 찾는다.
+#   이 검사는 SINK 보다 **먼저** 와야 한다 — insertAdjacentHTML 의 첫 인수
+#   ('beforeend')는 자리 이름이라 번역 대상이 아닌데 SINK 에 걸리기 때문이다.
+#   첫 인수만 잡는다(`( ` 바로 뒤). 둘째 인수의 HTML 은 그대로 번역 대상이다.
+MACHINE = re.compile(
+    r"(?:querySelector|querySelectorAll|getElementById|getElementsByClassName|"
+    r"getElementsByTagName|getElementsByName|closest|matches|createElement|"
+    r"createElementNS|setAttribute|getAttribute|hasAttribute|removeAttribute|"
+    r"addEventListener|removeEventListener|dispatchEvent|"
+    r"getItem|setItem|removeItem|setProperty|getPropertyValue|"
+    r"insertAdjacentHTML|insertAdjacentElement|"
+    r"classList\.(?:add|remove|toggle|contains|replace))\s*\(\s*$")
+
 
 def role(js, off, lit, snd):
     if any(a <= off <= b for a, b in snd):
         return "잠글:음원열쇠"
     before = js[max(0, off - 120):off]
+    if MACHINE.search(before):
+        return "잠글:기계가 읽음"
     if re.search(r"\bko\s*:\s*$", before[-14:]):
         return "잠글:ko"
     if re.search(r"\ben\s*:\s*$", before[-14:]):
