@@ -81,10 +81,65 @@ IGNORE = re.compile(r"_소리/|\.mp3|net::ERR_FILE_NOT_FOUND|favicon|"
                     + NET, re.I)
 
 
+def is_bad(r):
+    """이 쪽이 어느 갈래로든 걸렸는가 — 아래 groups 의 잣대와 같아야 한다."""
+    return bool(r.get("fatal") or r.get("errs") or r.get("overflow", 0) > 2
+                or r.get("wide") or r.get("badImg") or r.get("invisible")
+                or r.get("textLen", 9999) < 300)
+
+
+def render(page, fn):
+    """한 쪽을 열어 재고 결과를 돌려준다.
+
+    ★듣는 이(listener)를 반드시 걷는다. 예전에는 pageerror 를 걸기만 하고
+     안 걷어서, 쪽을 넘길수록 같은 오류가 여러 번 쌓였다.
+    ★쪽마다 fonts.googleapis.com 에서 글꼴을 받는다. 망이 늦으면
+     「열지 못함」으로 세어져 같은 파일인데 0건과 2건을 오갔다.
+     그래서 한 번 다시 열어 본다 — 두 번 다 실패해야 참으로 못 연 것이다.
+     글꼴을 막으면 흔들림은 없어지지만 글자 너비가 달라져
+     「가로 넘침」의 잣대가 바뀐다. 그래서 글꼴은 그대로 받는다.
+    """
+    errs = []
+
+    def on_console(m):
+        if m.type == "error" and not IGNORE.search(m.text):
+            errs.append("console: " + m.text[:110])
+
+    def on_pageerror(e):
+        errs.append("pageerror: " + str(e)[:110])
+
+    page.on("console", on_console)
+    page.on("pageerror", on_pageerror)
+    try:
+        r = None
+        for tries in (1, 2):
+            try:
+                page.goto("file:///" + os.path.join(BOOK, fn).replace("\\", "/"),
+                          wait_until="load", timeout=60000)
+                # 글꼴이 다 앉아야 너비가 안 흔들린다 (늦으면 3초에서 끊는다)
+                page.evaluate("() => Promise.race(["
+                              "document.fonts.ready,"
+                              "new Promise(r => setTimeout(r, 3000))])")
+                page.wait_for_timeout(320)
+                r = page.evaluate(PROBE)
+                break
+            except Exception as e:
+                if tries == 2:
+                    r = {"fatal": str(e)[:120]}
+        r["file"] = fn
+        r["errs"] = errs[:4]
+        return r
+    finally:
+        page.remove_listener("console", on_console)
+        page.remove_listener("pageerror", on_pageerror)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--width", type=int, default=1280)
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--no-recheck", action="store_true",
+                    help="걸린 쪽을 다시 보지 않는다 (흔들림까지 그대로 센다)")
     a = ap.parse_args()
     files = sorted(f for f in os.listdir(BOOK) if f.lower().endswith(".html"))
     if a.limit:
@@ -94,42 +149,25 @@ def main():
         br = pw.chromium.launch()
         page = br.new_page(viewport={"width": a.width, "height": 900})
         for i, fn in enumerate(files, 1):
-            errs = []
-            page.on("pageerror", lambda e: errs.append("pageerror: " + str(e)[:110]))
-
-            def on_console(m):
-                if m.type == "error" and not IGNORE.search(m.text):
-                    errs.append("console: " + m.text[:110])
-            page.on("console", on_console)
-            # ★쪽마다 fonts.googleapis.com 에서 글꼴을 받는다. 망이 늦으면
-            #   「열지 못함」으로 세어져 같은 파일인데 0건과 2건을 오갔다.
-            #   그래서 한 번 다시 열어 본다 — 두 번 다 실패해야 참으로 못 연 것이다.
-            #   글꼴을 막으면 흔들림은 없어지지만 글자 너비가 달라져
-            #   「가로 넘침」의 잣대가 바뀐다. 그래서 글꼴은 그대로 받는다.
-            r = None
-            for tries in (1, 2):
-                try:
-                    page.goto("file:///" + os.path.join(BOOK, fn).replace("\\", "/"),
-                              wait_until="load", timeout=60000)
-                    # 글꼴이 다 앉아야 너비가 안 흔들린다 (늦으면 3초에서 끊는다)
-                    page.evaluate("() => Promise.race(["
-                                  "document.fonts.ready,"
-                                  "new Promise(r => setTimeout(r, 3000))])")
-                    page.wait_for_timeout(320)
-                    r = page.evaluate(PROBE)
-                    break
-                except Exception as e:
-                    if tries == 2:
-                        rows.append({"file": fn, "fatal": str(e)[:120]})
-            if r is None:
-                page.remove_listener("console", on_console)
-                continue
-            page.remove_listener("console", on_console)
-            r["file"] = fn
-            r["errs"] = errs[:4]
-            rows.append(r)
+            rows.append(render(page, fn))
             if i % 25 == 0:
                 print(f"   … {i}/{len(files)}")
+        # ★한 번 걸렸다고 결함이 아니다. OneDrive 가 파일을 잠깐 놓치거나
+        #   글꼴 서버가 404 를 뱉으면, 손대지도 않은 쪽 백 개가 한꺼번에 걸린다.
+        #   2026-08-17 에 그렇게 103쪽이 걸렸고 다시 돌리니 0쪽이었다.
+        #   그래서 걸린 쪽만 한 번 더 본다 — 두 번 다 걸려야 참으로 걸린 것이다.
+        #   전부를 두 번 보지 않는 까닭은 값이다. 걸린 쪽은 대개 몇 개뿐이다.
+        again = [i for i, r in enumerate(rows)
+                 if is_bad(r) and r["file"] not in BY_DESIGN]
+        if again and not a.no_recheck:
+            print(f"   … 걸린 {len(again)}쪽을 한 번 더 봅니다")
+            gone = 0
+            for i in again:
+                r2 = render(page, rows[i]["file"])
+                gone += is_bad(rows[i]) and not is_bad(r2)
+                rows[i] = r2
+            if gone:
+                print(f"   … 그중 {gone}쪽은 두 번째에 멀쩡했습니다 — 흔들림으로 봅니다")
         br.close()
 
     def pick(f):
