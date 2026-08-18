@@ -837,7 +837,7 @@ function celebrateRestart(){
   });
   var wrap=document.querySelector('.stylem-wrap');
   if(wrap){ var bar=document.createElement('div'); bar.className='ans-bar';
-    bar.innerHTML='<button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기<span class="gloss" lang="en" translate="yes">Show all</span></button><button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기<span class="gloss" lang="en" translate="yes">Hide again</span></button><span class="ans-hint">첫 줄 <b>가다</b>는 보기입니다. 나머지는 ?를 눌러 정답 확인(다시 누르면 가려짐) · First row (가다) is a worked example</span>';
+    bar.innerHTML='<button class="ans-btn" onclick="qAll(this,true)">💡 모두 보기<span class="gloss" lang="en" translate="yes">Show all</span></button><button class="ans-btn" onclick="qAll(this,false)">🔄 다시 가리기<span class="gloss" lang="en" translate="yes">Hide again</span></button><span class="ans-hint">첫 줄 <b>가다</b>는 보기입니다. 나머지는 ?를 눌러 정답 확인(다시 누르면 가려짐)<br><span class="en-line" lang="en" translate="yes">First row (<span lang="ko" translate="no">가다</span>) is a worked example</span></span>';
     wrap.parentNode.insertBefore(bar, wrap);
   }
 })();
