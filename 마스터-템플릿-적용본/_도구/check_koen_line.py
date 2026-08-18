@@ -55,8 +55,9 @@ PROBE = r"""
     const key = host.__k || (host.__k = 'b' + (++seq));
     if (!frags.has(key)) frags.set(key, []);
     const list = frags.get(key);
+    const inEn = !!pe.closest('[lang="en"]');   // 영어 슬롯 안인가
     const put = (r, s) => {
-      if (s.trim()) list.push({ top: r.top, bot: r.bottom, left: r.left, text: s });
+      if (s.trim()) list.push({ top: r.top, bot: r.bottom, left: r.left, text: s, en: inEn });
     };
     const rg = document.createRange();
     rg.selectNodeContents(n);
@@ -97,13 +98,23 @@ PROBE = r"""
     }
     if (cur) lines.push(cur);
   }
-  return lines.map(L => L.items.sort((a, b) => a.left - b.left)
-                              .map(f => f.text).join(' ').replace(/\s+/g, ' ').trim());
+  // ★줄의 **첫 조각**이 영어 슬롯 안이면 그 줄은 「영어 줄」이다.
+  //   그 안의 한국어는 가르치는 낱말이라 정상이다
+  //   (<p class="en">밥 먹었어요? is an example.</p>).
+  return lines.map(L => {
+    const it = L.items.sort((a, b) => a.left - b.left);
+    return { en: !!(it[0] && it[0].en),
+             text: it.map(f => f.text).join(' ').replace(/\s+/g, ' ').trim() };
+  });
 }
 """
 
-KOSENT = re.compile(r"[가-힣](?:니다|세요|십시오|어요|아요|해요|군요|네요|잖아요)\s*[.!?]")
-ENRUN = re.compile(r"(?:[A-Za-z][A-Za-z'’-]*(?:\s+|$)){3,}")
+# ★한국어 문장의 끝은 마침표만이 아니다 — 「…의미합니다 — to become …」처럼
+#   줄표·쌍점·괄호로 영어를 잇는 곳을 2026-08-18에 놓쳤다(변화1·변화2 두 곳).
+KOSENT = re.compile(r"[가-힣](?:니다|세요|십시오|어요|아요|해요|군요|네요|잖아요)\s*(?:[.!?]|[—–:：]|\((?=[A-Za-z]))")
+# ★영어 낱말 셋을 요구하면 놓친다 — 「to become / get」은 빗금에서 둘로 끊긴다.
+#   둘로 낮춰도 낱말 짝(「가다 to go」)은 한국어 **문장**이 아니라 안 걸린다.
+ENRUN = re.compile(r"(?:[A-Za-z][A-Za-z'’-]*(?:[\s/·]+|$)){2,}")
 
 
 def main():
@@ -123,7 +134,10 @@ def main():
             pg.goto("file:///" + os.path.join(book, f).replace("\\", "/"))
             pg.wait_for_timeout(120)
             hits = []
-            for line in pg.evaluate(PROBE):
+            for row in pg.evaluate(PROBE):
+                if row["en"]:          # ★영어 줄 — 그 안의 한국어는 정상
+                    continue
+                line = row["text"]
                 m = KOSENT.search(line)
                 if not m:
                     continue
