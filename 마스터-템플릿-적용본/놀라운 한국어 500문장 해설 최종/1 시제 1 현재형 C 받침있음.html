@@ -874,7 +874,23 @@ function pr80RevealAll(btn){var box=btn.closest('.pr80');box.querySelectorAll('.
         .ak-notice { position:fixed; left:50%; bottom:22px; transform:translateX(-50%) translateY(14px); z-index:10000; max-width:min(92vw,460px); background:#f1f3f6; color:#1e293b; border-radius:10px; padding:11px 16px; font-size:0.86rem; line-height:1.45; box-shadow:0 6px 20px rgba(15,23,42,0.3); opacity:0; pointer-events:none; transition:opacity 0.2s, transform 0.2s; }
         .ak-notice.on { opacity:1; transform:translateX(-50%) translateY(0); }
         .ak-notice .gloss { color:#475569; opacity:1; }
-        </style>
+        
+/* 카드를 뒤집지 않고 아래로 편다 (2026-08-18) — fc 카드 */
+.fc-card{height:auto !important;min-height:0 !important;perspective:none;}
+/* ★height 를 !important 로 누른다 — 종합 시험은 384px !important,
+   조사 전체 시험은 #fcGridParticleAll .fc-card{248px} 로 이겼다.
+   높이 고정은 뒤집기 때문에 있던 것이라 펴는 지금은 없어야 한다. */
+.fc-inner,.fc-card.flipped .fc-inner{position:static;width:auto;height:auto;transform:none;
+  transform-style:flat;transition:none;display:flex;flex-direction:column;}
+.fc-front,.fc-back{position:relative;width:auto;height:auto;transform:none;
+  backface-visibility:visible;-webkit-backface-visibility:visible;min-height:140px;}
+.fc-front{padding-bottom:32px;}
+.fc-back{display:none;padding-bottom:20px;}
+.fc-card.flipped .fc-back{display:flex;}
+.fc-card.flipped .fc-front{border-bottom-left-radius:0;border-bottom-right-radius:0;}
+.fc-card.flipped .fc-back{border-top-left-radius:0;border-top-right-radius:0;}
+.fc-card.flipped .fc-flip-hint{display:none;}
+</style>
 
 <div class="fc-section">
 <h3 style="margin-top:32px;">카드 보고 말하기<span class="gloss" lang="en" translate="yes">Look &amp; Speak</span></h3>
@@ -898,7 +914,7 @@ function pr80RevealAll(btn){var box=btn.closest('.pr80');box.querySelectorAll('.
           '<span class="fc-num">'+n+'</span>' +
           '<div class="fc-korean">'+w[0]+'</div>' +
           '<div class="fc-english">to '+w[1]+'</div>' +
-          '<span class="fc-flip-hint">↻ 클릭</span>' +
+          '<span class="fc-flip-hint">▼ 눌러서 확인</span>' +
         '</div>' +
         '<div class="fc-back">' +
           '<span class="fc-num">'+n+'</span>' +
