@@ -39,7 +39,9 @@ men man|women woman|withdrew withdraw|woke wake|broke break""".replace("\n", "")
 SUF = (("ies", "y"), ("ied", "y"), ("iest", "y"), ("ier", "y"), ("ing", ""),
        ("ed", ""), ("est", ""), ("er", ""), ("es", ""), ("s", ""))
 SKIPG = re.compile(r"counter|honorific|marker|particle|modifier form|\bform\b", re.I)
-ITEM = re.compile(r'<h3><span lang="en" translate="yes">(\d+)\)\s*([^<]*)</span></h3>')
+# ★제목 전체를 읽는다 — 462·464·466·470 은 인용부가 붙어 첫 span 으로 끝나지 않는다.
+#   첫 span 만 읽으면 그 넷이 감사에서 통째로 빠진다(2026-08-18에 그랬다).
+ITEM = re.compile(r'<h3><span lang="en" translate="yes">(\d+)\)([\s\S]*?)</h3>')
 VOCAB = re.compile(r'<span class="v-item"><b>([^<]*)</b>'
                    r'<span class="gloss"[^>]*>([\s\S]*?)</span></span>')
 
@@ -62,7 +64,8 @@ def main():
             m = ITEM.match(p)
             if not m:
                 continue
-            num, en = m.group(1), H.unescape(m.group(2))
+            num = m.group(1)
+            en = H.unescape(re.sub(r"<[^>]+>", " ", m.group(2)))
             bag = set()
             for w in re.sub(r"[^a-z' ]", " ", en.lower()).split():
                 bag |= forms(w)
