@@ -66,7 +66,13 @@ def main():
         n = sum(s.count(k) for k in MAP)
         if not n:
             continue
-        if not r or r[1] < A.lo:
+        # ★번호가 없는 파일(시제·조사·부록)은 「구간」으로 가를 수 없습니다.
+        #   --from 1 이면 책 전체를 뜻하므로 그때만 함께 넣습니다.
+        if r is None:
+            if A.lo > 1:
+                skipped.append((name, n))
+                continue
+        elif r[1] < A.lo:
             skipped.append((name, n))
             continue
         todo.append((p, name, s, n))
