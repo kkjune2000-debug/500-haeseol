@@ -52,17 +52,37 @@ def repl(m):
             f'<span lang="en" translate="yes">{en}</span></span>')
 
 
+# ── 대시 없이 붙어 있는 칸 (2026-08-20 둘째 판)
+# ★재어 보고 골랐습니다 — 같은 꼴 25곳 가운데 **12곳만** 진짜 한 줄이었습니다.
+#   `.rs-sub`(12) 와 `.note-en`(1) 은 CSS 가 이미 `display:block` 이라 아랫줄입니다.
+# ★390px 에서는 저절로 접혀 갈려 보입니다 — **900·1280px 에서 재야** 드러납니다.
+NODASH = re.compile(
+    r'(<strong[^>]*>)([가-힣][^<]{0,24})(</strong>)\s*'
+    r'<span style="((?:(?!display:block)[^"])*)">\s*'
+    r'<span lang="en" translate="yes">\s*([A-Za-z][^<]{1,60})</span>\s*</span>')
+
+
+def repl2(m):
+    s_open, ko, s_close, style, en = m.groups()
+    return (f'{s_open}{ko}{s_close}<span style="{style.rstrip(";")};'
+            f'display:block;margin-top:2px;">'
+            f'<span lang="en" translate="yes">{en.strip()}</span></span>')
+
+
 hits, tot = [], 0
 for p in sorted(glob.glob(os.path.join(BOOK, "*.html"))):
     s0 = io.open(p, encoding="utf-8", newline="").read()
-    n = len(CELL.findall(s0))
+    n_dash, n_plain = len(CELL.findall(s0)), len(NODASH.findall(s0))
+    n = n_dash + n_plain
     if not n:
         continue
-    s = CELL.sub(repl, s0)
+    s = NODASH.sub(repl2, CELL.sub(repl, s0))
     name = os.path.basename(p)
     # ── 검산: 화면 글자에서 대시와 사이 공백만 빠진다
     v, v0 = vis(s), vis(s0)
-    assert v0.count("—") - v.count("—") == n, f"{name}: 뺀 대시 수가 {n}이 아닙니다"
+    # ★대시는 ㉮ 꼴에만 있습니다 — 대시 없는 칸까지 함께 세면 헛경보가 납니다.
+    assert v0.count("—") - v.count("—") == n_dash, \
+        f"{name}: 뺀 대시 수가 {n_dash}이 아닙니다"
     # ★㉯ 는 한국어를 영어 앞으로 **옮기므로** 글자 차례가 바뀝니다.
     #   차례로 견주면 헛경보가 납니다 — **낱말 꾸러미**로 견줍니다.
     bag = lambda t: sorted(re.findall(r"[가-힣]+|[A-Za-z]+", t))
