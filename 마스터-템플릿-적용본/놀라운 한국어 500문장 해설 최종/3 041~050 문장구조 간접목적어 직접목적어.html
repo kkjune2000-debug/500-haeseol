@@ -512,14 +512,14 @@ body{word-break:keep-all;}
             받는 대상이 <strong>움직이는 생물</strong>(사람·동물)이면 <strong>'에게'</strong>, <strong>움직이지 않는 것</strong>(식물·사물·건물·장소)이면 <strong>'에'</strong>를 씁니다.<br>
             <small class="en-line" lang="en" translate="yes"><em>It depends on whether the receiver is <strong>animate</strong> (a living thing that can move) or not.</em></small>
         </div>
-        <div class="tbl-scroll"><table class="gstep-table">
+        <div class="tbl-scroll"><table class="gstep-table ege-table">
             <thead><tr><th style="width:38%">받는 대상<span class="gloss" lang="en" translate="yes">Receiver</span></th><th>조사<span class="gloss" lang="en" translate="yes">Particle</span></th><th>예<span class="gloss" lang="en" translate="yes">Example</span></th></tr></thead>
             <tbody>
-                <tr><td><strong>사람</strong><br><small class="en-line" lang="en" translate="yes">Person</small></td><td><strong>에게</strong></td><td><strong>친구</strong><strong>에게</strong>, <strong>그녀</strong><strong>에게</strong><br><small class="en-line" lang="en" translate="yes">(to a friend, to her)</small></td></tr>
-                <tr><td><strong>동물</strong><br><small class="en-line" lang="en" translate="yes">Animal</small></td><td><strong>에게</strong></td><td><strong>개</strong><strong>에게</strong>, <strong>고양이</strong><strong>에게</strong><br><small class="en-line" lang="en" translate="yes">(to a dog, to a cat)</small></td></tr>
-                <tr><td><strong>식물</strong><br><small class="en-line" lang="en" translate="yes">Plant</small></td><td><strong>에</strong></td><td><strong>나무</strong><strong>에</strong>, <strong>꽃</strong><strong>에</strong><br><small class="en-line" lang="en" translate="yes">(to a tree, to a flower)</small></td></tr>
-                <tr><td><strong>건물</strong> · <strong>회사</strong><br><small class="en-line" lang="en" translate="yes">Building / Company</small></td><td><strong>에</strong></td><td><strong>회사</strong><strong>에</strong>, <strong>학교</strong><strong>에</strong><br><small class="en-line" lang="en" translate="yes">(to a company, to a school)</small></td></tr>
-                <tr><td><strong>장소</strong><br><small class="en-line" lang="en" translate="yes">Place</small></td><td><strong>에</strong></td><td><strong>집</strong><strong>에</strong><br><small class="en-line" lang="en" translate="yes">(to home)</small></td></tr>
+                <tr class="grp-ege"><td><strong>사람</strong><br><small class="en-line" lang="en" translate="yes">Person</small></td><td><strong>에게</strong></td><td><strong>친구</strong><strong>에게</strong>, <strong>그녀</strong><strong>에게</strong><br><small class="en-line" lang="en" translate="yes">(to a friend, to her)</small></td></tr>
+                <tr class="grp-ege"><td><strong>동물</strong><br><small class="en-line" lang="en" translate="yes">Animal</small></td><td><strong>에게</strong></td><td><strong>개</strong><strong>에게</strong>, <strong>고양이</strong><strong>에게</strong><br><small class="en-line" lang="en" translate="yes">(to a dog, to a cat)</small></td></tr>
+                <tr class="grp-e grp-first"><td><strong>식물</strong><br><small class="en-line" lang="en" translate="yes">Plant</small></td><td><strong>에</strong></td><td><strong>나무</strong><strong>에</strong>, <strong>꽃</strong><strong>에</strong><br><small class="en-line" lang="en" translate="yes">(to a tree, to a flower)</small></td></tr>
+                <tr class="grp-e"><td><strong>건물</strong> · <strong>회사</strong><br><small class="en-line" lang="en" translate="yes">Building / Company</small></td><td><strong>에</strong></td><td><strong>회사</strong><strong>에</strong>, <strong>학교</strong><strong>에</strong><br><small class="en-line" lang="en" translate="yes">(to a company, to a school)</small></td></tr>
+                <tr class="grp-e"><td><strong>장소</strong><br><small class="en-line" lang="en" translate="yes">Place</small></td><td><strong>에</strong></td><td><strong>집</strong><strong>에</strong><br><small class="en-line" lang="en" translate="yes">(to home)</small></td></tr>
             </tbody>
         </table></div>
         <blockquote>
@@ -1202,6 +1202,12 @@ body{word-break:keep-all;}
 .wo-make .wo-lab small{display:block;font-weight:600;color:#7c66b8;margin-left:0;margin-top:2px;}
 .wo-mk{display:block;color:#8b8f9e;padding:2px 0;}
 .wo-mk strong{font-weight:700;color:#3a3f57;}
+
+/* 에게 ↔ 에 를 바탕색으로 가른다 (2026-08-19) */
+.ege-table tbody tr.grp-ege td{background:#eff6ff;}
+.ege-table tbody tr.grp-e   td{background:#fffbeb;}
+.ege-table tbody tr.grp-e   td strong{color:#92400e;}
+.ege-table tbody tr.grp-e.grp-first td{border-top:2px solid #fde68a;}
 </style>
 <div id="wtAllBox" class="wt-all" hidden>
 <div class="wt-all-msg">🎉 이제 문장을 소리로 확인해 보세요.<small lang="en" translate="yes">Now listen to the sentences.</small></div>
