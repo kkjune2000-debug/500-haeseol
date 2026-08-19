@@ -69,7 +69,7 @@
         .pattern-plus { display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 900; color: #0a5de4; }
         @media (max-width: 600px) { .pattern { grid-template-columns: 1fr; } .pattern-plus { padding: 2px 0; } }
         .sentence-list { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 0 0 24px; }
-        .sentence-item { display: grid; grid-template-columns: 44px 1fr auto; gap: 16px; align-items: center; padding: 12px 18px; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; }
+        .sentence-item { display: grid; grid-template-columns: 44px 1fr auto; gap: 16px; align-items: center; padding: 12px 18px 12px 14px; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; border-left: 4px solid #3b82f6;}
         /* 여성·남성 단추를 한 칸에 묶어 세로로 쌓는다 — 3칸 격자에 자식이 넷이면
            남 단추가 다음 줄로 밀려난다 */
         .sentence-item .sentence-spk { display: flex; flex-direction: column; gap: 5px; align-items: center; }
@@ -216,7 +216,7 @@
         .antonym-table tbody tr:nth-child(9)  td { background: #ecfeff; }  /* 덥다/춥다 — cyan */
         .antonym-table tbody tr:nth-child(10) td { background: #faf5ff; }  /* 무겁다/가볍다 — purple */
         .writing-practice { display: flex; flex-direction: column; gap: 14px; margin: 16px 0 24px; }
-        .writing-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }
+        .writing-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 18px 16px 14px; display: flex; flex-direction: column; gap: 10px; border-left: 4px solid #3b82f6;}
         .writing-item:focus-within { border-color: #3b82f6; box-shadow: 0 2px 12px rgba(59,130,246,0.10); }
         .writing-header { display: flex; align-items: baseline; gap: 12px; }
         .writing-num { font-family: 'Lato', 'Noto Sans KR', sans-serif; font-size: 1.05rem; font-weight: 900; color: #0a5de4; min-width: 28px; letter-spacing: -0.02em; }
