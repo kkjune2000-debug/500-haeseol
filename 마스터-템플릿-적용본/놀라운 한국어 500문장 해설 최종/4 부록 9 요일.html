@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title translate="yes">Amazing Korean 1 — Days of the Week</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans KR', sans-serif; background: #f1f5f9; color: #1e293b; line-height: 1.8; padding: 20px; word-break: keep-all; }
+        .container { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 48px 40px; }
+        @media (max-width: 600px) { .container { padding: 20px; } body { padding: 0; background: none; } .container { box-shadow: none; } }
+        .title-block { margin: 0 0 32px; padding: 8px 0 16px; border-bottom: 3px solid #0f766e; }
+        .title-block h1 { font-size: 1.9rem; font-weight: 900; color: #0f766e; }
+        .title-block .title-main { font-size: 1rem; font-weight: 700; color: #5b6274; }
+        h2 { font-size: 1.35rem; font-weight: 800; color: #0f766e; margin: 34px 0 4px; padding-top: 20px; border-top: 2px solid #e2e8f0; }
+        h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+        p.subtitle { color: #5b6274; font-size: 0.92rem; margin-bottom: 12px; }
+        p.ko { margin-top: 10px; }
+        p.en { color: #5b6274; font-size: 0.92rem; margin-bottom: 10px; }
+
+        .flashcard-grid { display: grid; grid-template-columns: 1fr; gap: 9px; margin: 12px 0 6px; }
+        .flashcard { cursor: pointer; display: flex; flex-direction: column; }
+        .flashcard-inner { display: flex; flex-direction: column; }
+        .flashcard-front, .flashcard-back { position: relative; border-radius: 12px; display: flex;
+            flex-direction: column; align-items: center; justify-content: center; padding: 11px 14px; }
+        .flashcard-front { background: #f0fdfa; border: 2px solid #99f6e4; color: #115e59; padding-bottom: 26px; }
+        .flashcard-back { display: none; background: linear-gradient(135deg,#ccfbf1 0%,#99f6e4 100%); color: #134e4a; }
+        .flashcard.flipped .flashcard-back { display: flex; }
+        .flashcard.flipped .flashcard-front { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+        .flashcard.flipped .flashcard-back { border-top-left-radius: 0; border-top-right-radius: 0; }
+        .flashcard.flipped .flashcard-hint { display: none; }
+        .flashcard-text { font-size: 1rem; font-weight: 700; line-height: 1.4; }
+        .flashcard-hint { position: absolute; bottom: 7px; right: 12px; font-size: 0.68rem;
+            color: #5a6d87; font-weight: 600; letter-spacing: 0.1em; }
+        .yo-tag { display: inline-block; margin-left: 8px; padding: 1px 8px; border-radius: 999px;
+            background: rgba(255,255,255,0.7); font-size: 0.68rem; font-weight: 800; color: #0f766e; }
+        .yo-tag .gloss { display: block; font-weight: 600; font-size: 0.9em; }
+
+        .yo-ex { padding: 9px 0; border-top: 1px dashed #e8eaf2; }
+        .yo-ex:first-of-type { border-top: none; }
+        .yo-no { display: inline-block; min-width: 34px; font-family: 'Lato','Noto Sans KR',sans-serif;
+            font-weight: 900; color: #0f766e; font-size: 0.86rem; }
+        .yo-ko { display: block; font-weight: 700; font-size: 1.03rem; color: #1f2430; line-height: 1.6; }
+        .yo-ko b { color: #0f766e; }
+        .yo-en { display: block; color: #5b6274; font-size: 0.9rem; margin-top: 2px; }
+        .gb { border: 1px solid #e6e8ef; border-left: 4px solid #14b8a6; background: #f8fafc;
+            border-radius: 10px; padding: 12px 16px; margin: 12px 0; }
+        .gb-lab { display: block; font-weight: 800; color: #0f766e; font-size: 0.88rem; margin-bottom: 4px; }
+        .gb-lab i { display: block; font-style: normal; font-weight: 600; color: #5b6274; font-size: 0.85em; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<header class="title-block">
+    <h1>요일</h1>
+    <p class="title-main" lang="en" translate="yes">Days of the Week</p>
+</header>
+
+<h2>요일 일곱<span class="gloss" lang="en" translate="yes"> · Seven days</span></h2>
+<p class="ko">영어를 보고 한국어로 말해 보세요.</p>
+<p class="en" lang="en" translate="yes">Look at the English and say it in Korean.</p>
+<p class="ko">카드를 눌러 답을 확인하세요.</p>
+<p class="en" lang="en" translate="yes">Tap the card to check your answer.</p>
+<div class="flashcard-grid"><div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-text"><span lang="en" translate="yes">Monday</span></div><div class="flashcard-hint">▼ 눌러서 확인</div></div><div class="flashcard-back"><div class="flashcard-text">월요일</div></div></div></div><div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-text"><span lang="en" translate="yes">Tuesday</span></div><div class="flashcard-hint">▼ 눌러서 확인</div></div><div class="flashcard-back"><div class="flashcard-text">화요일</div></div></div></div><div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-text"><span lang="en" translate="yes">Wednesday</span></div><div class="flashcard-hint">▼ 눌러서 확인</div></div><div class="flashcard-back"><div class="flashcard-text">수요일</div></div></div></div><div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-text"><span lang="en" translate="yes">Thursday</span></div><div class="flashcard-hint">▼ 눌러서 확인</div></div><div class="flashcard-back"><div class="flashcard-text">목요일</div></div></div></div><div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-text"><span lang="en" translate="yes">Friday</span></div><div class="flashcard-hint">▼ 눌러서 확인</div></div><div class="flashcard-back"><div class="flashcard-text">금요일</div></div></div></div><div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-text"><span lang="en" translate="yes">Saturday</span></div><div class="flashcard-hint">▼ 눌러서 확인</div></div><div class="flashcard-back"><div class="flashcard-text">토요일</div></div></div></div><div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flashcard-inner"><div class="flashcard-front"><div class="flashcard-text"><span lang="en" translate="yes">Sunday</span></div><div class="flashcard-hint">▼ 눌러서 확인</div></div><div class="flashcard-back"><div class="flashcard-text">일요일</div></div></div></div></div>
+
+<h2>~요일에<span class="gloss" lang="en" translate="yes"> · on ~day</span></h2>
+<div class="gb"><span class="gb-lab">설명<i lang="en" translate="yes">Explanation</i></span>
+요일 뒤에는 <b>에</b>를 붙입니다.<br>
+<small lang="en" translate="yes">Add <span lang="ko" translate="no">에</span> after a day of the week.</small></div>
+<div class="yo-ex"><span class="yo-no">58</span><span class="yo-ko">저는 <b>월요일에</b> 어학원에 갑니다.</span><span class="yo-en" lang="en" translate="yes">I go to the language institute on Monday.</span></div><div class="yo-ex"><span class="yo-no">79</span><span class="yo-ko">저는 <b>월요일과 수요일에</b> 한국어 학원에 갑니다.</span><span class="yo-en" lang="en" translate="yes">I go to the Korean language school on Monday and Wednesday.</span></div><div class="yo-ex"><span class="yo-no">159</span><span class="yo-ko">저는 <b>이번 주 일요일에</b> 영화를 보려고 합니다.</span><span class="yo-en" lang="en" translate="yes">I'm going to watch a movie this Sunday.</span></div><div class="yo-ex"><span class="yo-no">301</span><span class="yo-ko"><b>이번 주 월요일부터 다음 주 일요일까지</b> 휴가입니다.</span><span class="yo-en" lang="en" translate="yes">We have a vacation from this Monday to next Sunday.</span></div>
+
+<h2>오늘 · 내일<span class="gloss" lang="en" translate="yes"> · Today and tomorrow</span></h2>
+<div class="gb"><span class="gb-lab">설명<i lang="en" translate="yes">Explanation</i></span>
+「오늘은 · 내일은」 뒤에서는 <b>에</b>를 붙이지 않습니다.<br>
+<small lang="en" translate="yes">After <span lang="ko" translate="no">오늘은 · 내일은</span> do not add <span lang="ko" translate="no">에</span>.</small></div>
+<div class="yo-ex"><span class="yo-no">92</span><span class="yo-ko">오늘은 <b>토요일입니다</b>.</span><span class="yo-en" lang="en" translate="yes">Today is Saturday.</span></div><div class="yo-ex"><span class="yo-no">93</span><span class="yo-ko">내일은 <b>일요일입니다</b>.</span><span class="yo-en" lang="en" translate="yes">Tomorrow is Sunday.</span></div>
+
+</div>
+</body>
+</html>
