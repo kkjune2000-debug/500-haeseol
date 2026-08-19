@@ -912,7 +912,7 @@ body{word-break:keep-all;}
             <div class="flashcard-front">
                 <div class="flashcard-num"><span lang="en" translate="yes">97 · EN</span></div>
                 <div class="flashcard-text"><span lang="en" translate="yes">I am going to school.</span></div>
-                <div class="flashcard-hint">▼ 눌러서 확인</div>
+                <div class="flashcard-hint">▼ <span lang="en" translate="yes">Tap to check</span></div>
             </div>
             <div class="flashcard-back">
                 <div class="flashcard-num"><span lang="en" translate="yes">97 · KR</span></div>
@@ -926,7 +926,7 @@ body{word-break:keep-all;}
             <div class="flashcard-front">
                 <div class="flashcard-num"><span lang="en" translate="yes">98 · EN</span></div>
                 <div class="flashcard-text"><span lang="en" translate="yes">I am waiting for my friend at the coffee shop.</span></div>
-                <div class="flashcard-hint">▼ 눌러서 확인</div>
+                <div class="flashcard-hint">▼ <span lang="en" translate="yes">Tap to check</span></div>
             </div>
             <div class="flashcard-back">
                 <div class="flashcard-num"><span lang="en" translate="yes">98 · KR</span></div>
@@ -940,7 +940,7 @@ body{word-break:keep-all;}
             <div class="flashcard-front">
                 <div class="flashcard-num"><span lang="en" translate="yes">99 · EN</span></div>
                 <div class="flashcard-text"><span lang="en" translate="yes">I am listening to music.</span></div>
-                <div class="flashcard-hint">▼ 눌러서 확인</div>
+                <div class="flashcard-hint">▼ <span lang="en" translate="yes">Tap to check</span></div>
             </div>
             <div class="flashcard-back">
                 <div class="flashcard-num"><span lang="en" translate="yes">99 · KR</span></div>
@@ -954,7 +954,7 @@ body{word-break:keep-all;}
             <div class="flashcard-front">
                 <div class="flashcard-num"><span lang="en" translate="yes">100 · EN</span></div>
                 <div class="flashcard-text"><span lang="en" translate="yes">Snow is falling from the sky.</span></div>
-                <div class="flashcard-hint">▼ 눌러서 확인</div>
+                <div class="flashcard-hint">▼ <span lang="en" translate="yes">Tap to check</span></div>
             </div>
             <div class="flashcard-back">
                 <div class="flashcard-num"><span lang="en" translate="yes">100 · KR</span></div>
@@ -968,7 +968,7 @@ body{word-break:keep-all;}
             <div class="flashcard-front">
                 <div class="flashcard-num"><span lang="en" translate="yes">101 · EN</span></div>
                 <div class="flashcard-text"><span lang="en" translate="yes">I am learning Korean these days.</span></div>
-                <div class="flashcard-hint">▼ 눌러서 확인</div>
+                <div class="flashcard-hint">▼ <span lang="en" translate="yes">Tap to check</span></div>
             </div>
             <div class="flashcard-back">
                 <div class="flashcard-num"><span lang="en" translate="yes">101 · KR</span></div>
@@ -982,7 +982,7 @@ body{word-break:keep-all;}
             <div class="flashcard-front">
                 <div class="flashcard-num"><span lang="en" translate="yes">102 · EN</span></div>
                 <div class="flashcard-text"><span lang="en" translate="yes">She lives in Seoul.</span></div>
-                <div class="flashcard-hint">▼ 눌러서 확인</div>
+                <div class="flashcard-hint">▼ <span lang="en" translate="yes">Tap to check</span></div>
             </div>
             <div class="flashcard-back">
                 <div class="flashcard-num"><span lang="en" translate="yes">102 · KR</span></div>
@@ -996,7 +996,7 @@ body{word-break:keep-all;}
             <div class="flashcard-front">
                 <div class="flashcard-num"><span lang="en" translate="yes">103 · EN</span></div>
                 <div class="flashcard-text"><span lang="en" translate="yes">The boss is in a meeting now.</span></div>
-                <div class="flashcard-hint">▼ 눌러서 확인</div>
+                <div class="flashcard-hint">▼ <span lang="en" translate="yes">Tap to check</span></div>
             </div>
             <div class="flashcard-back">
                 <div class="flashcard-num"><span lang="en" translate="yes">103 · KR</span></div>
@@ -1010,7 +1010,7 @@ body{word-break:keep-all;}
             <div class="flashcard-front">
                 <div class="flashcard-num"><span lang="en" translate="yes">104 · EN</span></div>
                 <div class="flashcard-text"><span lang="en" translate="yes">The manager is on a business trip now.</span></div>
-                <div class="flashcard-hint">▼ 눌러서 확인</div>
+                <div class="flashcard-hint">▼ <span lang="en" translate="yes">Tap to check</span></div>
             </div>
             <div class="flashcard-back">
                 <div class="flashcard-num"><span lang="en" translate="yes">104 · KR</span></div>
@@ -1115,6 +1115,9 @@ body{word-break:keep-all;}
 .wo-ko em{font-style:normal;color:#6d28d9;}
 .wo-now .wo-ko{color:#1f2430;}
 .wo-steps li:only-child .wo-ko{color:#4c1d95;}
+
+/* 힌트 영어는 대문자로 바꾸지 않는다 (2026-08-19) */
+.flashcard-hint [lang="en"],.fc-flip-hint [lang="en"]{text-transform:none;letter-spacing:0.02em;}
 </style>
 <div id="wtAllBox" class="wt-all" hidden>
 <div class="wt-all-msg">🎉 이제 문장을 소리로 확인해 보세요.<small lang="en" translate="yes">Now listen to the sentences.</small></div>

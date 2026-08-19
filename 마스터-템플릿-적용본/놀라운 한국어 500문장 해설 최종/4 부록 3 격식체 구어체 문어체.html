@@ -612,7 +612,7 @@ var STYLE_M = [
                 back += '<span class="sc-line"><span class="sc-tag" style="color:'+TLAB[t][1]+';">'+TLAB[t][0]+'</span>'+r[ix]+'</span>';
             });
             html += '<div class="flashcard" onclick="this.classList.toggle(\'flipped\')"><div class="flashcard-inner">'
-                + '<div class="flashcard-front"><div class="flashcard-text">'+r[0]+'<div class="flashcard-en">'+(EN[r[0]]||'')+'</div></div><div class="flashcard-hint">▼ 눌러서 확인</div></div>'
+                + '<div class="flashcard-front"><div class="flashcard-text">'+r[0]+'<div class="flashcard-en">'+(EN[r[0]]||'')+'</div></div><div class="flashcard-hint">▼ <span lang="en" translate="yes">Tap to check</span></div></div>'
                 + '<div class="flashcard-back"><div class="flashcard-text">'+back+'</div></div>'
                 + '</div></div>';
         });
@@ -826,6 +826,9 @@ function celebrateRestart(){
 .flashcard.flipped .flashcard-front{border-bottom-left-radius:0;border-bottom-right-radius:0;}
 .flashcard.flipped .flashcard-back{border-top-left-radius:0;border-top-right-radius:0;}
 .flashcard.flipped .flashcard-hint{display:none;}
+
+/* 힌트 영어는 대문자로 바꾸지 않는다 (2026-08-19) */
+.flashcard-hint [lang="en"],.fc-flip-hint [lang="en"]{text-transform:none;letter-spacing:0.02em;}
 </style>
 <script>
 (function(){

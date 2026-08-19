@@ -750,6 +750,9 @@ input[readonly] + .jm-spk{display:inline-block;}
 .fc-card.flipped .fc-front{border-bottom-left-radius:0;border-bottom-right-radius:0;}
 .fc-card.flipped .fc-back{border-top-left-radius:0;border-top-right-radius:0;}
 .fc-card.flipped .fc-flip-hint{display:none;}
+
+/* 힌트 영어는 대문자로 바꾸지 않는다 (2026-08-19) */
+.flashcard-hint [lang="en"],.fc-flip-hint [lang="en"]{text-transform:none;letter-spacing:0.02em;}
 </style>
 
 <div class="fc-section">
@@ -773,7 +776,7 @@ input[readonly] + .jm-spk{display:inline-block;}
           '<span class="fc-num">'+n+'</span>' +
           '<div class="fc-korean">'+w[0]+'</div>' +
           '<div class="fc-english">'+w[1]+'</div>' +
-          '<span class="fc-flip-hint">▼ 눌러서 확인</span>' +
+          '<span class="fc-flip-hint">▼ <span lang="en" translate="yes">Tap to check</span></span>' +
         '</div>' +
         '<div class="fc-back">' +
           '<span class="fc-num">'+n+'</span>' +

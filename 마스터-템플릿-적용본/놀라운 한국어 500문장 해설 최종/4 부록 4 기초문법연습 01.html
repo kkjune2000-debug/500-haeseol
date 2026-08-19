@@ -509,7 +509,7 @@ body{word-break:keep-all;}
         var n = i + 1;
         var ko = c[1].replace(/'/g, "\\'");
         html += '<div class="flashcard" onclick="this.classList.toggle(\'flipped\')"><div class="flashcard-inner">'
-            + '<div class="flashcard-front"><div class="flashcard-num">'+n+' · EN</div><div class="flashcard-text">'+c[0]+'</div><div class="flashcard-hint">▼ 눌러서 확인</div></div>'
+            + '<div class="flashcard-front"><div class="flashcard-num">'+n+' · EN</div><div class="flashcard-text">'+c[0]+'</div><div class="flashcard-hint">▼ <span lang="en" translate="yes">Tap to check</span></div></div>'
             + '<div class="flashcard-back"><div class="flashcard-num">'+n+' · KR</div><div class="flashcard-text">'+c[1]+'</div>'
             + '<button translate="yes" class="flashcard-listen" onclick="event.stopPropagation(); speakKorean(\''+ko+'\')" title="Listen">🔊</button></div>'
             + '</div></div>';
@@ -1029,6 +1029,9 @@ function celebrateRestart(){
 .flashcard.flipped .flashcard-front{border-bottom-left-radius:0;border-bottom-right-radius:0;}
 .flashcard.flipped .flashcard-back{border-top-left-radius:0;border-top-right-radius:0;}
 .flashcard.flipped .flashcard-hint{display:none;}
+
+/* 힌트 영어는 대문자로 바꾸지 않는다 (2026-08-19) */
+.flashcard-hint [lang="en"],.fc-flip-hint [lang="en"]{text-transform:none;letter-spacing:0.02em;}
 </style>
 <script>
 (function(){
