@@ -24,16 +24,18 @@ F = "3 031~040 문장구조 시간 장소 목적어 동사.html"
 MARK = "/* 어순 표 → 문장 사다리 시안 (2026-08-19) */"
 CSS = MARK + """
 .wo-box{border:1px solid #dfe1ec;border-radius:12px;overflow:hidden;background:#fff;}
-.wo-title{background:#f2f3f9;color:#3a3f57;font-weight:700;text-align:center;
-  padding:10px;font-size:0.95rem;line-height:1.5;}
+.wo-title{background:#f2f3f9;color:#3a3f57;font-weight:700;text-align:left;
+  padding:10px 16px;font-size:0.95rem;line-height:1.5;}
 .wo-title span{display:block;font-weight:600;font-size:0.86em;color:#5b6274;}
 .wo-steps{list-style:none;margin:0;padding:6px 16px 12px;}
 .wo-steps li{padding:10px 0;border-top:1px dashed #e8eaf2;}
 .wo-steps li:first-child{border-top:0;}
-.wo-add{display:inline-block;font-size:0.78rem;line-height:1.35;font-weight:800;
-  color:#6d28d9;background:#f5f3ff;border:1px solid #ddd6fe;border-radius:9px;
-  padding:3px 10px;margin-bottom:6px;text-align:center;}
-.wo-add small{display:block;font-weight:600;font-size:0.9em;color:#7c66b8;}
+.wo-add{display:inline-block;font-size:0.78rem;line-height:1.4;font-weight:700;
+  color:#9296a5;background:#f5f3ff;border:1px solid #ddd6fe;border-radius:9px;
+  padding:3px 10px;margin-bottom:6px;text-align:left;}
+.wo-add em{font-style:normal;font-weight:800;color:#6d28d9;}
+.wo-add small{display:block;font-weight:600;font-size:0.9em;color:#adb0bd;}
+.wo-add small em{font-style:normal;font-weight:700;color:#7c66b8;}
 .wo-ko{display:block;font-weight:700;font-size:1.05rem;color:#1f2430;line-height:1.6;}
 .wo-en{display:block;color:#5b6274;font-size:0.9rem;margin-top:3px;line-height:1.5;}
 .wo-steps li.wo-now{background:#fdfbf6;margin:0 -16px;padding-left:16px;padding-right:16px;}
@@ -140,9 +142,10 @@ for m in reversed(tables):
         add = cur if i == 0 else [r for r in cur if r not in prev]
         if not add:
             out.write(f"   X {num}번 {i+1}단계 늘어난 자리 없음: {ko}" + chr(10)); stat["어긋남"] += 1
-        pre = "" if i == 0 else "+ "
-        labk = pre + " + ".join(r["ko"] for r in add)
-        labe = pre + " + ".join(r["en"] for r in add)
+        # 어순 전체를 적되 이번에 늘어난 자리는 진하게 — 무엇이 늘었는지도 함께 보인다
+        mk = lambda r, k: (f"<em>{r[k]}</em>" if r in add and i else r[k])
+        labk = " + ".join(mk(r, "ko") for r in cur)
+        labe = " + ".join(mk(r, "en") for r in cur)
         prev = cur
         now = ' class="wo-now"' if i == len(steps) - 1 else ""
         lis.append(
@@ -179,7 +182,7 @@ if MARK not in s:
 
 # ── ④ 검산
 if s != o:
-    for tg in ("div", "span", "ol", "li", "table", "style", "small"):
+    for tg in ("div", "span", "ol", "li", "table", "style", "small", "em"):
         if (len(re.findall(rf"<{tg}\b", s)) - len(re.findall(rf"</{tg}\s*>", s))) != \
            (len(re.findall(rf"<{tg}\b", o)) - len(re.findall(rf"</{tg}\s*>", o))) and tg not in ("table", "ol", "li"):
             out.write(f"   ★ 균형 {tg}\n"); stat["★"] += 1
