@@ -11,7 +11,10 @@ import sys, io, os, re, glob
 from playwright.sync_api import sync_playwright
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
-BOOK = r"D:\OneDrive\놀라운 한국어 500 해설집\마스터-템플릿-적용본\놀라운 한국어 500문장 해설 최종"
+# ★드라이브 글자를 박아 두지 마십시오 — 다른 컴퓨터에서는 C:\Users\…\OneDrive… 입니다.
+#   자기 위치에서 거슬러 올라가 찾습니다(_paths.py 와 같은 방식).
+BOOK = os.path.normpath(os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), "..", "놀라운 한국어 500문장 해설 최종"))
 
 PROBE = r"""
 () => {
