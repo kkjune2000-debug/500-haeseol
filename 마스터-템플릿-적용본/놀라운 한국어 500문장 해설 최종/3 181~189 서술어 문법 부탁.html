@@ -910,7 +910,7 @@ body{word-break:keep-all;}
 <div class="wo-title">한국어 어순: 목적어 + 부사어(결과) + 서술어(부탁)<br><span lang="en" translate="yes">Korean order: Object + Adverbial(Result) + Predicate(Request)</span></div>
 <ol class="wo-steps">
 <li><span class="wo-add">목적어 + 서술어(부탁)<small lang="en" translate="yes">Object + Predicate (Request)</small></span><span class="wo-ko">달러를 바꿔 주시겠습니까?</span><span class="wo-en" lang="en" translate="yes">Could you exchange dollars?</span></li>
-<li class="wo-now"><span class="wo-add">목적어 + <em>부사어(결과)</em> + 서술어(부탁)<small lang="en" translate="yes">Object + <em>Adverbial (Result)</em> + Predicate (Request)</small></span><span class="wo-ko">달러를 한국 돈으로 바꿔 주시겠습니까?</span><span class="wo-en" lang="en" translate="yes">Could you exchange dollars for Korean won?</span></li>
+<li class="wo-now"><span class="wo-add">목적어 + <em>부사어(결과)</em> + 서술어(부탁)<small lang="en" translate="yes">Object + <em>Adverbial (Result)</em> + Predicate (Request)</small></span><span class="wo-ko">달러를 <em>한국 돈으로</em> 바꿔 주시겠습니까?</span><span class="wo-en" lang="en" translate="yes">Could you exchange dollars for Korean won?</span></li>
 </ol>
 <div class="wo-make"><span class="wo-lab">만들기<small lang="en" translate="yes">Word building</small></span><span class="wo-mk"><strong>달러</strong> + <strong>를</strong></span><span class="wo-mk"><strong>한국 돈</strong> + <strong>으로</strong></span><span class="wo-mk"><strong>바꾸다</strong> → <strong>바꾸</strong> + <strong>어</strong> → <strong>바꿔</strong> + <strong>주시겠습니까?</strong></span></div>
 </div>
@@ -1057,6 +1057,11 @@ body{word-break:keep-all;}
 .wo-make .wo-lab small{display:block;font-weight:600;color:#7c66b8;margin-left:0;margin-top:2px;}
 .wo-mk{display:block;color:#8b8f9e;padding:2px 0;}
 .wo-mk strong{font-weight:700;color:#3a3f57;}
+
+/* 늘어난 자리만 색으로 짚는다 (2026-08-19) */
+.wo-ko em{font-style:normal;color:#6d28d9;}
+.wo-now .wo-ko{color:#1f2430;}
+.wo-steps li:only-child .wo-ko{color:#4c1d95;}
 </style>
 <div id="wtAllBox" class="wt-all" hidden>
 <div class="wt-all-msg">🎉 이제 문장을 소리로 확인해 보세요.<small lang="en" translate="yes">Now listen to the sentences.</small></div>

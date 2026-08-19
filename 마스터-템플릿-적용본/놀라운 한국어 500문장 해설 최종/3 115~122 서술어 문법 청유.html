@@ -625,7 +625,7 @@ body{word-break:keep-all;}
 <div class="wo-title">한국어 어순: 부사어(시간) + 목적어 + 서술어(청유)<br><span lang="en" translate="yes">Korean order: Adverbial(Time) + Object + Predicate(Suggestion)</span></div>
 <ol class="wo-steps">
 <li><span class="wo-add">목적어 + 서술어(청유)<small lang="en" translate="yes">Object + Predicate (Suggestion)</small></span><span class="wo-ko">영화를 볼까요?</span><span class="wo-en" lang="en" translate="yes">Shall we watch a movie?</span></li>
-<li class="wo-now"><span class="wo-add"><em>부사어(시간)</em> + 목적어 + 서술어(청유)<small lang="en" translate="yes"><em>Adverbial (Time)</em> + Object + Predicate (Suggestion)</small></span><span class="wo-ko">이번 주말에 영화를 볼까요?</span><span class="wo-en" lang="en" translate="yes">Shall we watch a movie this weekend?</span></li>
+<li class="wo-now"><span class="wo-add"><em>부사어(시간)</em> + 목적어 + 서술어(청유)<small lang="en" translate="yes"><em>Adverbial (Time)</em> + Object + Predicate (Suggestion)</small></span><span class="wo-ko"><em>이번 주말에</em> 영화를 볼까요?</span><span class="wo-en" lang="en" translate="yes">Shall we watch a movie this weekend?</span></li>
 </ol>
 <div class="wo-make"><span class="wo-lab">만들기<small lang="en" translate="yes">Word building</small></span><span class="wo-mk"><strong>이번 주말</strong> + <strong>에</strong></span><span class="wo-mk"><strong>영화</strong> + <strong>를</strong></span><span class="wo-mk"><strong>보</strong> + <strong>ㄹ까요?</strong></span></div>
 </div>
@@ -678,7 +678,7 @@ body{word-break:keep-all;}
 <div class="wo-title">한국어 어순: 부사어(시간) + 목적어 + 서술어(청유)<br><span lang="en" translate="yes">Korean order: Adverbial(Time) + Object + Predicate(Suggestion)</span></div>
 <ol class="wo-steps">
 <li><span class="wo-add">목적어 + 서술어(청유)<small lang="en" translate="yes">Object + Predicate (Suggestion)</small></span><span class="wo-ko">영화를 봅시다.</span><span class="wo-en" lang="en" translate="yes">Let's watch a movie.</span></li>
-<li class="wo-now"><span class="wo-add"><em>부사어(시간)</em> + 목적어 + 서술어(청유)<small lang="en" translate="yes"><em>Adverbial (Time)</em> + Object + Predicate (Suggestion)</small></span><span class="wo-ko">이번 주말에 영화를 봅시다.</span><span class="wo-en" lang="en" translate="yes">Let's watch a movie this weekend.</span></li>
+<li class="wo-now"><span class="wo-add"><em>부사어(시간)</em> + 목적어 + 서술어(청유)<small lang="en" translate="yes"><em>Adverbial (Time)</em> + Object + Predicate (Suggestion)</small></span><span class="wo-ko"><em>이번 주말에</em> 영화를 봅시다.</span><span class="wo-en" lang="en" translate="yes">Let's watch a movie this weekend.</span></li>
 </ol>
 <div class="wo-make"><span class="wo-lab">만들기<small lang="en" translate="yes">Word building</small></span><span class="wo-mk"><strong>이번 주말</strong> + <strong>에</strong></span><span class="wo-mk"><strong>영화</strong> + <strong>를</strong></span><span class="wo-mk"><strong>보</strong> + <strong>ㅂ시다</strong></span></div>
 </div>
@@ -1174,6 +1174,11 @@ body{word-break:keep-all;}
 .wo-make .wo-lab small{display:block;font-weight:600;color:#7c66b8;margin-left:0;margin-top:2px;}
 .wo-mk{display:block;color:#8b8f9e;padding:2px 0;}
 .wo-mk strong{font-weight:700;color:#3a3f57;}
+
+/* 늘어난 자리만 색으로 짚는다 (2026-08-19) */
+.wo-ko em{font-style:normal;color:#6d28d9;}
+.wo-now .wo-ko{color:#1f2430;}
+.wo-steps li:only-child .wo-ko{color:#4c1d95;}
 </style>
 <div id="wtAllBox" class="wt-all" hidden>
 <div class="wt-all-msg">🎉 이제 문장을 소리로 확인해 보세요.<small lang="en" translate="yes">Now listen to the sentences.</small></div>

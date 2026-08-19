@@ -663,7 +663,7 @@ body{word-break:keep-all;}
 <div class="wo-title">한국어 어순: 부사어(필수 조건) + 주어 + 서술어(의무)<br><span lang="en" translate="yes">Korean order: Adverbial (Necessary Condition) + Subject + Predicate (Obligation)</span></div>
 <ol class="wo-steps">
 <li><span class="wo-add">주어 + 서술어(의무)<small lang="en" translate="yes">Subject + Predicate (Obligation)</small></span><span class="wo-ko">성적이 좋아야 합니다.</span><span class="wo-en" lang="en" translate="yes">Your grades must be good.</span></li>
-<li class="wo-now"><span class="wo-add"><em>부사어(필수 조건)</em> + 주어 + 서술어(의무)<small lang="en" translate="yes"><em>Adverbial (Necessary Condition)</em> + Subject + Predicate (Obligation)</small></span><span class="wo-ko">장학금을 타려면 성적이 좋아야 합니다.</span><span class="wo-en" lang="en" translate="yes">To get a scholarship, your grades must be good.</span></li>
+<li class="wo-now"><span class="wo-add"><em>부사어(필수 조건)</em> + 주어 + 서술어(의무)<small lang="en" translate="yes"><em>Adverbial (Necessary Condition)</em> + Subject + Predicate (Obligation)</small></span><span class="wo-ko"><em>장학금을 타려면</em> 성적이 좋아야 합니다.</span><span class="wo-en" lang="en" translate="yes">To get a scholarship, your grades must be good.</span></li>
 </ol>
 <div class="wo-make"><span class="wo-lab">만들기<small lang="en" translate="yes">Word building</small></span><span class="wo-mk"><strong>타다</strong> → <strong>타</strong>+<strong>려면</strong> → <strong>타려면</strong></span><span class="wo-mk"><strong>성적</strong> + <strong>이</strong></span><span class="wo-mk"><strong>좋다</strong> → <strong>좋</strong>+<strong>아야 하다</strong> → <strong>좋아야 하다</strong> → <strong>좋아야 합니다</strong></span></div>
 </div>
@@ -904,6 +904,11 @@ body{word-break:keep-all;}
 .wo-make .wo-lab small{display:block;font-weight:600;color:#7c66b8;margin-left:0;margin-top:2px;}
 .wo-mk{display:block;color:#8b8f9e;padding:2px 0;}
 .wo-mk strong{font-weight:700;color:#3a3f57;}
+
+/* 늘어난 자리만 색으로 짚는다 (2026-08-19) */
+.wo-ko em{font-style:normal;color:#6d28d9;}
+.wo-now .wo-ko{color:#1f2430;}
+.wo-steps li:only-child .wo-ko{color:#4c1d95;}
 </style>
 <div id="wtAllBox" class="wt-all" hidden>
 <div class="wt-all-msg">🎉 이제 문장을 소리로 확인해 보세요.<small lang="en" translate="yes">Now listen to the sentences.</small></div>

@@ -689,7 +689,7 @@ body{word-break:keep-all;}
 <div class="wo-title">한국어 어순: 부사어(원인) + 목적어 + 서술어(청유)<br><span lang="en" translate="yes">Korean order: Adverbial (Cause) + Object + Predicate (Suggestion)</span></div>
 <ol class="wo-steps">
 <li><span class="wo-add">목적어 + 서술어(청유)<small lang="en" translate="yes">Object + Predicate (Suggestion)</small></span><span class="wo-ko">창문을 닫읍시다.</span><span class="wo-en" lang="en" translate="yes">Let's close the window.</span></li>
-<li class="wo-now"><span class="wo-add"><em>부사어(원인)</em> + 목적어 + 서술어(청유)<small lang="en" translate="yes"><em>Adverbial (Cause)</em> + Object + Predicate (Suggestion)</small></span><span class="wo-ko">추우니까 창문을 닫읍시다.</span><span class="wo-en" lang="en" translate="yes">Since it's cold, let's close the window.</span></li>
+<li class="wo-now"><span class="wo-add"><em>부사어(원인)</em> + 목적어 + 서술어(청유)<small lang="en" translate="yes"><em>Adverbial (Cause)</em> + Object + Predicate (Suggestion)</small></span><span class="wo-ko"><em>추우니까</em> 창문을 닫읍시다.</span><span class="wo-en" lang="en" translate="yes">Since it's cold, let's close the window.</span></li>
 </ol>
 <div class="wo-make"><span class="wo-lab">만들기<small lang="en" translate="yes">Word building</small></span><span class="wo-mk"><strong>춥다 → 춥 + 으니까 → 추우니까</strong></span><span class="wo-mk"><strong>창문을</strong></span><span class="wo-mk"><strong>닫다 → 닫 + 읍시다 → 닫읍시다</strong></span></div>
 </div>
@@ -732,7 +732,7 @@ body{word-break:keep-all;}
 <div class="wo-title">한국어 어순: 부사어(원인) + 목적어 + 서술어(청유)<br><span lang="en" translate="yes">Korean order: Adverbial (Cause) + Object + Predicate (Suggestion)</span></div>
 <ol class="wo-steps">
 <li><span class="wo-add">목적어 + 서술어(청유)<small lang="en" translate="yes">Object + Predicate (Suggestion)</small></span><span class="wo-ko">에어컨을 켭시다.</span><span class="wo-en" lang="en" translate="yes">Let's turn on the air conditioner.</span></li>
-<li class="wo-now"><span class="wo-add"><em>부사어(원인)</em> + 목적어 + 서술어(청유)<small lang="en" translate="yes"><em>Adverbial (Cause)</em> + Object + Predicate (Suggestion)</small></span><span class="wo-ko">더우니까 에어컨을 켭시다.</span><span class="wo-en" lang="en" translate="yes">Since it's hot, let's turn on the air conditioner.</span></li>
+<li class="wo-now"><span class="wo-add"><em>부사어(원인)</em> + 목적어 + 서술어(청유)<small lang="en" translate="yes"><em>Adverbial (Cause)</em> + Object + Predicate (Suggestion)</small></span><span class="wo-ko"><em>더우니까</em> 에어컨을 켭시다.</span><span class="wo-en" lang="en" translate="yes">Since it's hot, let's turn on the air conditioner.</span></li>
 </ol>
 <div class="wo-make"><span class="wo-lab">만들기<small lang="en" translate="yes">Word building</small></span><span class="wo-mk"><strong>덥다 → 덥 + 으니까 → 더우니까</strong></span><span class="wo-mk"><strong>에어컨을</strong></span><span class="wo-mk"><strong>켜다 → 켜 + ㅂ시다 → 켭시다</strong></span></div>
 </div>
@@ -812,7 +812,7 @@ body{word-break:keep-all;}
 <div class="wo-title">한국어 어순: 부사어(발견) + 주어 + 서술어<br><span lang="en" translate="yes">Korean order: Adverbial (Discovery) + Subject + Predicate</span></div>
 <ol class="wo-steps">
 <li><span class="wo-add">주어 + 서술어<small lang="en" translate="yes">Subject + Predicate</small></span><span class="wo-ko">여권이 없었습니다.</span><span class="wo-en" lang="en" translate="yes">The passport was not there.</span></li>
-<li class="wo-now"><span class="wo-add"><em>부사어(발견)</em> + 주어 + 서술어<small lang="en" translate="yes"><em>Adverbial (Discovery)</em> + Subject + Predicate</small></span><span class="wo-ko">가방을 여니까 여권이 없었습니다.</span><span class="wo-en" lang="en" translate="yes">When I opened the bag, the passport was not there.</span></li>
+<li class="wo-now"><span class="wo-add"><em>부사어(발견)</em> + 주어 + 서술어<small lang="en" translate="yes"><em>Adverbial (Discovery)</em> + Subject + Predicate</small></span><span class="wo-ko"><em>가방을 여니까</em> 여권이 없었습니다.</span><span class="wo-en" lang="en" translate="yes">When I opened the bag, the passport was not there.</span></li>
 </ol>
 <div class="wo-make"><span class="wo-lab">만들기<small lang="en" translate="yes">Word building</small></span><span class="wo-mk"><strong>가방</strong> + <strong>을</strong> / <strong>열다</strong> → <strong>열</strong> + <strong>니까</strong> → <strong>여니까</strong></span><span class="wo-mk"><strong>여권</strong> + <strong>이</strong></span><span class="wo-mk"><strong>없었습니다</strong></span></div>
 </div>
@@ -1014,6 +1014,11 @@ body{word-break:keep-all;}
 .wo-make .wo-lab small{display:block;font-weight:600;color:#7c66b8;margin-left:0;margin-top:2px;}
 .wo-mk{display:block;color:#8b8f9e;padding:2px 0;}
 .wo-mk strong{font-weight:700;color:#3a3f57;}
+
+/* 늘어난 자리만 색으로 짚는다 (2026-08-19) */
+.wo-ko em{font-style:normal;color:#6d28d9;}
+.wo-now .wo-ko{color:#1f2430;}
+.wo-steps li:only-child .wo-ko{color:#4c1d95;}
 </style>
 <div id="wtAllBox" class="wt-all" hidden>
 <div class="wt-all-msg">🎉 이제 문장을 소리로 확인해 보세요.<small lang="en" translate="yes">Now listen to the sentences.</small></div>

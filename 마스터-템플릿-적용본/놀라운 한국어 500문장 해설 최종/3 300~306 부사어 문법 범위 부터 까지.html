@@ -599,8 +599,8 @@ body{word-break:keep-all;}
 <div class="wo-title">한국어 어순: 주어 + 부사어(시작점) + 부사어(끝점) + 목적어 + 부사 + 서술어(동사)<br><span lang="en" translate="yes">Korean order: Subject + Adverbial (Start) + Adverbial (End) + Object + Adverb + Predicate (Verb)</span></div>
 <ol class="wo-steps">
 <li><span class="wo-add">주어 + 목적어 + 서술어(동사)<small lang="en" translate="yes">Subject + Object + Predicate (Verb)</small></span><span class="wo-ko">수미는 한국어를 공부했습니다.</span><span class="wo-en" lang="en" translate="yes">Sumi studied Korean.</span></li>
-<li><span class="wo-add">주어 + 목적어 + <em>부사</em> + 서술어(동사)<small lang="en" translate="yes">Subject + Object + <em>Adverb</em> + Predicate (Verb)</small></span><span class="wo-ko">수미는 한국어를 열심히 공부했습니다.</span><span class="wo-en" lang="en" translate="yes">Sumi studied Korean hard.</span></li>
-<li class="wo-now"><span class="wo-add">+ <em>부사어(시작점)</em> + <em>부사어(끝점)</em><small lang="en" translate="yes">+ <em>Adverbial (Starting point)</em> + <em>Adverbial (End point)</em></small></span><span class="wo-ko">수미는 아침부터 밤까지 한국어를 열심히 공부했습니다.</span><span class="wo-en" lang="en" translate="yes">Sumi studied Korean hard from morning to night.</span></li>
+<li><span class="wo-add">주어 + 목적어 + <em>부사</em> + 서술어(동사)<small lang="en" translate="yes">Subject + Object + <em>Adverb</em> + Predicate (Verb)</small></span><span class="wo-ko">수미는 한국어를 <em>열심히</em> 공부했습니다.</span><span class="wo-en" lang="en" translate="yes">Sumi studied Korean hard.</span></li>
+<li class="wo-now"><span class="wo-add">+ <em>부사어(시작점)</em> + <em>부사어(끝점)</em><small lang="en" translate="yes">+ <em>Adverbial (Starting point)</em> + <em>Adverbial (End point)</em></small></span><span class="wo-ko">수미는 <em>아침부터 밤까지</em> 한국어를 열심히 공부했습니다.</span><span class="wo-en" lang="en" translate="yes">Sumi studied Korean hard from morning to night.</span></li>
 </ol>
 <div class="wo-make"><span class="wo-lab">만들기<small lang="en" translate="yes">Word building</small></span><span class="wo-mk"><strong>공부하다</strong><br>→ <strong>한국어를 공부하다</strong><br>→ <strong>한국어를 열심히 공부하다</strong><br>→ <strong>한국어를 열심히 공부했습니다</strong></span><span class="wo-mk"><strong>아침부터</strong></span><span class="wo-mk"><strong>밤까지</strong></span><span class="wo-mk"><strong>한국어를</strong></span><span class="wo-mk"><strong>열심히</strong></span><span class="wo-mk"><strong>공부했습니다</strong></span></div>
 </div>
@@ -729,7 +729,7 @@ body{word-break:keep-all;}
 <div class="wo-title">한국어 어순: 부사어(범위) + 주어 + 서술어<br><span lang="en" translate="yes">Korean order: Adverbial (Range) + Subject + Predicate</span></div>
 <ol class="wo-steps">
 <li><span class="wo-add">주어 + 서술어<small lang="en" translate="yes">Subject + Predicate</small></span><span class="wo-ko">택시비가 얼마입니까?</span><span class="wo-en" lang="en" translate="yes">How much is the taxi fare?</span></li>
-<li class="wo-now"><span class="wo-add"><em>부사어(범위)</em> + 주어 + 서술어<small lang="en" translate="yes"><em>Adverbial (Range)</em> + Subject + Predicate</small></span><span class="wo-ko">인천공항에서 서울 시청까지 택시비가 얼마입니까?</span><span class="wo-en" lang="en" translate="yes">How much is the taxi fare from Incheon Airport to Seoul City Hall?</span></li>
+<li class="wo-now"><span class="wo-add"><em>부사어(범위)</em> + 주어 + 서술어<small lang="en" translate="yes"><em>Adverbial (Range)</em> + Subject + Predicate</small></span><span class="wo-ko"><em>인천공항에서 서울 시청까지</em> 택시비가 얼마입니까?</span><span class="wo-en" lang="en" translate="yes">How much is the taxi fare from Incheon Airport to Seoul City Hall?</span></li>
 </ol>
 <div class="wo-make"><span class="wo-lab">만들기<small lang="en" translate="yes">Word building</small></span><span class="wo-mk"><strong>인천공항에서 서울 시청까지</strong></span><span class="wo-mk"><strong>택시비</strong> + <strong>가</strong></span><span class="wo-mk"><strong>얼마입니까?</strong></span></div>
 </div>
@@ -863,6 +863,11 @@ body{word-break:keep-all;}
 .wo-make .wo-lab small{display:block;font-weight:600;color:#7c66b8;margin-left:0;margin-top:2px;}
 .wo-mk{display:block;color:#8b8f9e;padding:2px 0;}
 .wo-mk strong{font-weight:700;color:#3a3f57;}
+
+/* 늘어난 자리만 색으로 짚는다 (2026-08-19) */
+.wo-ko em{font-style:normal;color:#6d28d9;}
+.wo-now .wo-ko{color:#1f2430;}
+.wo-steps li:only-child .wo-ko{color:#4c1d95;}
 </style>
 <div id="wtAllBox" class="wt-all" hidden>
 <div class="wt-all-msg">🎉 이제 문장을 소리로 확인해 보세요.<small lang="en" translate="yes">Now listen to the sentences.</small></div>
