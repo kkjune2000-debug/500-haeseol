@@ -114,7 +114,10 @@ for num, kind, targets, newhead, gloss in JOBS:
     assert len(new_items) == len(items) - dropped
     if kind == "MERGE":
         assert dropped == len(targets) - 1, f"{num}: 묶을 것을 다 못 찾았습니다"
-    body = "\n        " + " ".join(ITEM % it for it in new_items) + "\n    "
+    # ★이 책은 CRLF 입니다. 새로 만드는 조각에 LF 를 넣으면 그 파일만 줄끝이 섞입니다
+    #   (2026-08-20에 18파일을 그렇게 만들었다가 되돌렸습니다). 줄끝은 파일에서 가져옵니다.
+    nl = "\r\n" if "\r\n" in s else "\n"
+    body = nl + "        " + " ".join(ITEM % it for it in new_items) + nl + "    "
     files[p] = s[:a] + body + s[b:]
     log.append((num, kind,
                 " · ".join(f"{h} = {g}" for _, h, g in items if h in targets),
