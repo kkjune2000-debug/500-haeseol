@@ -1175,4 +1175,38 @@ document.addEventListener('click', function(e){
   }
 }, true);
 </script>
+<!-- 저자용 모두 펼치기 (2026-08-20) — 학생 화면에는 안 보인다 -->
+<style>
+#akAll{display:none;position:fixed;right:14px;bottom:14px;z-index:9999;padding:9px 14px;
+ border-radius:999px;border:1px solid #c7d2fe;background:#eef2ff;color:#3730a3;
+ font-weight:800;font-size:0.85rem;font-family:inherit;cursor:pointer;
+ box-shadow:0 2px 8px rgba(55,48,163,0.18);}
+#akAll.on{display:block;}
+#akAll .ak-c{display:none;}
+#akAll.open .ak-o{display:none;}
+#akAll.open .ak-c{display:inline;}
+@media print{#akAll{display:none !important;}}
+</style>
+<button id="akAll" translate="yes" title="Alt+A"><span class="ak-o">▼ 모두 펼치기</span><span class="ak-c">▲ 모두 접기</span></button>
+<script>
+(function(){
+  var b=document.getElementById('akAll'), open=false;
+  function each(sel,fn){ Array.prototype.forEach.call(document.querySelectorAll(sel),fn); }
+  function all(on){
+    each('.answer-content',function(e){ e.style.display = on ? 'block' : ''; });
+    each('.explain-content',function(e){ e.classList.toggle('shown',on); });
+    each('.vocab-toggle + .vocab-box',function(e){ e.classList.toggle('shown',on); });
+    each('.flashcard',function(e){ e.classList.toggle('flipped',on); });
+    open = on; b.classList.toggle('open',on);
+  }
+  b.addEventListener('click',function(){ all(!open); });
+  document.addEventListener('keydown',function(ev){
+    if(ev.altKey && !ev.ctrlKey && (ev.key==='a'||ev.key==='A')){
+      ev.preventDefault(); b.classList.add('on'); all(!open);
+    }
+  });
+  if(location.hash==='#all'){ b.classList.add('on'); all(true); }
+})();
+</script>
+<!-- /저자용 모두 펼치기 -->
 </body></html>
