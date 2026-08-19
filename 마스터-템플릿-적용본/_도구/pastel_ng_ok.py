@@ -59,7 +59,10 @@ def main():
     for p in sorted(glob.glob(os.path.join(BOOK, "*.html"))):
         name = os.path.basename(p)
         r = rng(name)
-        s = io.open(p, encoding="utf-8").read()
+        # ★newline="" 로 읽습니다 — 이 책의 파일은 CRLF 입니다. 그냥 읽으면 파이썬이
+        #   \r\n 을 \n 으로 바꿔 주고, 그대로 쓰면 그 파일만 LF 가 되어 작업본이
+        #   뒤섞입니다(2026-08-20에 37파일을 그렇게 만들었다가 되돌렸습니다).
+        s = io.open(p, encoding="utf-8", newline="").read()
         n = sum(s.count(k) for k in MAP)
         if not n:
             continue
