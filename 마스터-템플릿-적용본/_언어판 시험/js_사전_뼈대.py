@@ -19,7 +19,7 @@ JS = {
     "여성 음성 · ": "",
     # 101파일 · 남성 음성 · Hyunsu (구워 둔 음원)
     "남성 음성 · Hyunsu (구워 둔 음원)": "",
-    # 92파일 · Stop
+    # 100파일 · Stop
     "\\u25a0 \\uba48\\ucda4<span class=\"gloss\" lang=\"en\" translate=\"yes\">Stop</span>": "",
     # 72파일 · 정답!
     "</strong> 정답!": "",
@@ -36,11 +36,13 @@ JS = {
     # 72파일 · → 짝이 되는 영어 문장을 고르세요.
     "</strong> → 짝이 되는 영어 문장을 고르세요.": "",
     # 72파일 · 🎉 완료! 모든 문장을 맞췄습니다. All matched!
-    "🎉 완료! 모든 문장을 맞췄습니다. <span style=\"color:#15803d;\">All matched!</span>": "",
+    "🎉 완료! 모든 문장을 맞췄습니다. <span style=\"color:#0f5e2c;\">All matched!</span>": "",
     # 72파일 · — 짝이 아닙니다. 다시 고르세요. Not a match.
-    "</strong> — 짝이 아닙니다. 다시 고르세요. <span style=\"color:#94a3b8;\">Not a match.</span>": "",
+    "</strong> — 짝이 아닙니다. 다시 고르세요. <span style=\"color:#5a6d87;\">Not a match.</span>": "",
     # 69파일 · 정답!Correct!
     "\\u{1F389} 정답!<small>Correct!</small>": "",
+    # 68파일 · Stop
+    "\\u25a0 \\uba48\\ucda4<span class=\\\"gloss\\\" lang=\\\"en\\\" translate=\\\"yes\\\">Stop</span>": "",
     # 67파일 · 안 썼습니다
     "<div class=\"wt-diff\"><div class=\"wt-dline\"><b>안 썼습니다</b>": "",
     # 67파일 · Not answered
@@ -61,16 +63,14 @@ JS = {
     "은/는은 이야기의 주제를 잡을 때, 이/가는 새로 알릴 때 씁니다.</div>": "",
     # 67파일 · Only the particle differs — both mark the subject, so this c
     "Only the particle differs — both mark the subject, so this counts as correct.</span></div>": "",
-    # 28파일 · ↻ 클릭
-    "<span class=\"fc-flip-hint\">↻ 클릭</span>": "",
+    # 28파일 · ▼ Tap to check
+    "<span class=\"fc-flip-hint\">▼ <span lang=\"en\" translate=\"yes\">Tap to check</span></span>": "",
     # 22파일 · 정답! Correct
     "정답! <small>Correct</small>": "",
     # 20파일 · to
     "<div class=\"fc-english\">to ": "",
     # 17파일 · = to
     " = to ": "",
-    # 10파일 · be pretty
-    "be pretty": "",
     # 10파일 · 평서형Statement
     "<span class=\"fc-back-label\">평서형<span class=\"gloss\" lang=\"en\" translate=\"yes\">Statement</span></span>": "",
     # 10파일 · 의문형Question
@@ -84,7 +84,7 @@ JS = {
     # 10파일 · 과거
     "<div class=\"fcm-grp\"><span class=\"fcm-t\">과거</span>": "",
 
-    # ── 파일 고유 896가지 — 대부분 그 파일의 영어 문장·뜻풀이
+    # ── 파일 고유 872가지 — 대부분 그 파일의 영어 문장·뜻풀이
     "run, jump": "",   # 1 시제 1 현재형 A 받침없음.html
     "be small": "",   # 1 시제 1 현재형 A 받침없음.html
     "be few": "",   # 1 시제 1 현재형 A 받침없음.html
@@ -106,6 +106,7 @@ JS = {
     "be hungry": "",   # 1 시제 1 현재형 A 받침없음.html
     "be busy": "",   # 1 시제 1 현재형 A 받침없음.html
     "be bad": "",   # 1 시제 1 현재형 A 받침없음.html
+    "be pretty": "",   # 1 시제 1 현재형 A 받침없음.html
     "be different": "",   # 1 시제 1 현재형 A 받침없음.html
     "be fast": "",   # 1 시제 1 현재형 A 받침없음.html
     "not know": "",   # 1 시제 1 현재형 A 받침없음.html
@@ -130,13 +131,7 @@ JS = {
     "\\' + 습니다 → <b>": "",   # 1 시제 1 현재형 A 받침없음.html
     "Has a final consonant (받침) → stem + <b>‑습니다</b>.": "",   # 1 시제 1 현재형 A 받침없음.html
     "<td style=\"text-align:center;width:18%;white-space:nowrap;\"><button class=\"ans-btn\" onclick=\"pr80One(this)\">✓ 정답<span class=\"gloss\" lang=\"en\" translate=\"yes\">Answer</span></button><button class=\"pre-btn\" onclick=\"pr80Toggle(this)\">💡 설명<span class=\"gloss\" lang=\"en\" translate=\"yes\">Explanation</span></button></td>": "",   # 1 시제 1 현재형 A 받침없음.html
-    "be long": "",   # 1 시제 1 현재형 D ㄹ받침.html
-    "be far": "",   # 1 시제 1 현재형 D ㄹ받침.html
-    "be sweet": "",   # 1 시제 1 현재형 D ㄹ받침.html
-    "be wide": "",   # 1 시제 2 과거형 A 규칙.html
-    "be high": "",   # 1 시제 2 과거형 A 규칙.html
-    "be low": "",   # 1 시제 2 과거형 A 규칙.html
-    "be deep": "",   # 1 시제 2 과거형 A 규칙.html
+    "■ 멈춤<span class=\"gloss\" lang=\"en\" translate=\"yes\">Stop</span>": "",   # 1 시제 1 현재형 전체 시험.html
     "<b>하다</b> 동사입니다 → \\'‑하다\\'를 <b>\\'‑했습니다\\'</b>로 바꿉니다.": "",   # 1 시제 2 과거형 A 규칙.html
     "A <b>하다</b>-verb → ‑하다 becomes <b>‑했습니다</b>.": "",   # 1 시제 2 과거형 A 규칙.html
     "ㅡ 불규칙": "",   # 1 시제 2 과거형 A 규칙.html  ★한국어 표지 그대로
@@ -167,34 +162,24 @@ JS = {
     "</td><td style=\"text-align:center;width:18%;white-space:nowrap;\"><button class=\"ans-btn\" onclick=\"pr80One(this)\">✓ 정답<span class=\"gloss\" lang=\"en\" translate=\"yes\">Answer</span></button><button class=\"pre-btn\" onclick=\"pr80Toggle(this)\">💡 설명<span class=\"gloss\" lang=\"en\" translate=\"yes\">Explanation</span></button></td></tr><tr class=\"pre-row\" style=\"display:none;\"><td colspan=\"5\"><div class=\"pre\">": "",   # 1 시제 2 과거형 B 줄임.html
     "<span class=\"pr-cat\">하다<span class=\"gloss\" lang=\"en\" translate=\"yes\"><span lang=\"ko\" translate=\"no\">하다</span>-verb</span></span>\\'하다\\'로 끝나는 단어는 언제나 <b>\\'했습니다\\'</b>로 바뀝니다.<span class=\"pr-d\">": "",   # 1 시제 2 과거형 C 하다.html
     "</b></span><br><small class=\"pr-en\">~하다 verbs always become 했습니다. &nbsp;<span class=\"pr-en-w\">": "",   # 1 시제 2 과거형 C 하다.html
-    "be sad": "",   # 1 시제 2 과거형 D ㅡ불규칙.html
     "Stem-final <b>ㅡ</b> drops, then 았/었.": "",   # 1 시제 2 과거형 D ㅡ불규칙.html  ★한국어 표지 그대로
-    "turn off": "",   # 1 시제 2 과거형 D ㅡ불규칙.html
     "르 불규칙": "",   # 1 시제 2 과거형 E 르불규칙.html
     "<b>르</b>의 <b>ㅡ</b>가 빠지고 <b>ㄹ</b>이 둘로 나뉩니다. 하나는 앞 글자의 <b>받침</b>, 하나는 <b>랐/렀</b>의 첫소리가 됩니다.": "",   # 1 시제 2 과거형 E 르불규칙.html  ★한국어 표지 그대로
     "The <b>ㅡ</b> drops and <b>ㄹ</b> doubles — one becomes the final consonant of the syllable before, the other starts <b>랐/렀</b>.": "",   # 1 시제 2 과거형 E 르불규칙.html  ★한국어 표지 그대로
     "believe (regular)": "",   # 1 시제 2 과거형 F ㄷ불규칙.html
-    "receive (regular)": "",   # 1 시제 2 과거형 F ㄷ불규칙.html
     "close (regular)": "",   # 1 시제 2 과거형 F ㄷ불규칙.html
     "ㄷ 불규칙": "",   # 1 시제 2 과거형 F ㄷ불규칙.html  ★한국어 표지 그대로
     "받침 <b>ㄷ</b>이 <b>ㄹ</b>로 바뀐 뒤 모음에 따라 았/었습니다가 붙습니다(ㅏ·ㅗ→았).": "",   # 1 시제 2 과거형 F ㄷ불규칙.html  ★한국어 표지 그대로
     "<b>ㄷ</b> changes to ㄹ, then 았/었.": "",   # 1 시제 2 과거형 F ㄷ불규칙.html  ★한국어 표지 그대로
-    "be difficult": "",   # 1 시제 2 과거형 G ㅂ불규칙.html
-    "be easy": "",   # 1 시제 2 과거형 G ㅂ불규칙.html
-    "be enjoyable": "",   # 1 시제 2 과거형 G ㅂ불규칙.html
     "help (exception)": "",   # 1 시제 2 과거형 G ㅂ불규칙.html
     "narrow (regular)": "",   # 1 시제 2 과거형 G ㅂ불규칙.html
     "wear (regular)": "",   # 1 시제 2 과거형 G ㅂ불규칙.html
     "받침 <b>ㅂ</b>이 <b>우</b>(돕다·곱다는 오)로 바뀝니다. 우 뒤에는 \\'었\\'(→웠), 오 뒤에는 \\'았\\'(→왔)이 붙습니다.": "",   # 1 시제 2 과거형 G ㅂ불규칙.html  ★한국어 표지 그대로
     "<b>ㅂ</b> → 우 (돕/곱 → 오); 우 takes 었 (→웠), 오 takes 았 (→왔).": "",   # 1 시제 2 과거형 G ㅂ불규칙.html  ★한국어 표지 그대로
-    "lie down": "",   # 1 시제 2 과거형 G ㅂ불규칙.html
-    "pick up": "",   # 1 시제 2 과거형 G ㅂ불규칙.html
-    "be near": "",   # 1 시제 2 과거형 G ㅂ불규칙.html
     "ㅅ 불규칙": "",   # 1 시제 2 과거형 H ㅅ불규칙.html  ★한국어 표지 그대로
     "받침 <b>ㅅ</b>이 모음 앞에서 <b>탈락</b>하고 았/었이 붙습니다.": "",   # 1 시제 2 과거형 H ㅅ불규칙.html  ★한국어 표지 그대로
     "<b>ㅅ</b> drops before a vowel, then 았/었.": "",   # 1 시제 2 과거형 H ㅅ불규칙.html  ★한국어 표지 그대로
-    "get better": "",   # 1 시제 2 과거형 H ㅅ불규칙.html
-    "\\')\" title=\"Listen\">🔊</button></div>": "",   # 1 시제 2 과거형 전체 시험.html
+    "<span class=\"wqg-all\"><button translate=\"yes\" class=\"wqg-allbtn\" onclick=\"alltSeq(this,\\'f\\')\">🔊 여성<span class=\"gloss\" lang=\"en\" translate=\"yes\">Female</span></button><button translate=\"yes\" class=\"wqg-allbtn\" onclick=\"alltSeq(this,\\'m\\')\">🔊 남성<span class=\"gloss\" lang=\"en\" translate=\"yes\">Male</span></button></span></div>": "",   # 1 시제 2 과거형 전체 시험.html
     "<b>하다</b> 동사입니다 → \\'‑하다\\'를 <b>\\'‑할 것입니다\\'</b>로 바꿉니다.": "",   # 1 시제 3 미래형 A 받침없음.html
     "A <b>하다</b>-verb → ‑하다 becomes <b>‑할 것입니다</b>.": "",   # 1 시제 3 미래형 A 받침없음.html
     "어간이 받침 <b>ㄹ</b>로 끝납니다 → <b>그대로</b> \\'것입니다\\'를 붙입니다.": "",   # 1 시제 3 미래형 A 받침없음.html  ★한국어 표지 그대로
@@ -218,7 +203,6 @@ JS = {
     "<button translate=\"yes\" class=\"fc-tts-all\" onclick=\"event.stopPropagation();fcSeq(this,&#39;f&#39;)\">🔊 여성<span class=\"gloss\" lang=\"en\" translate=\"yes\">Female</span></button>": "",   # 1 시제 종합 시험.html
     "<button translate=\"yes\" class=\"fc-tts-all\" onclick=\"event.stopPropagation();fcSeq(this,&#39;m&#39;)\">🔊 남성<span class=\"gloss\" lang=\"en\" translate=\"yes\">Male</span></button>": "",   # 1 시제 종합 시험.html
     "<div class=\"fcm-grp\"><span class=\"fcm-t\">미래</span>": "",   # 1 시제 종합 시험.html
-    "<span class=\"wqg-all\"><button translate=\"yes\" class=\"wqg-allbtn\" onclick=\"alltSeq(this,\\'f\\')\">🔊 여성<span class=\"gloss\" lang=\"en\" translate=\"yes\">Female</span></button><button translate=\"yes\" class=\"wqg-allbtn\" onclick=\"alltSeq(this,\\'m\\')\">🔊 남성<span class=\"gloss\" lang=\"en\" translate=\"yes\">Male</span></button></span></div>": "",   # 1 시제 종합 시험.html
     "받침 O": "",   # 2 조사 A 은는 이가.html
     "받침 X": "",   # 2 조사 A 은는 이가.html
     "받침이 <b>있습니다</b> → '<b>은</b>' · '<b>이</b>'를 붙입니다.": "",   # 2 조사 A 은는 이가.html
@@ -274,10 +258,10 @@ JS = {
     "와/과 · And": "",   # 2 조사 전체 시험.html
     "나/이나 · Or": "",   # 2 조사 전체 시험.html
     "선택: <strong>": "",   # 3 001~010 문장구조 주어 형용사.html
-    "</strong> → 반대말을 고르세요. <span style=\"color:#94a3b8;\">Pick its antonym.</span>": "",   # 3 001~010 문장구조 주어 형용사.html
+    "</strong> → 반대말을 고르세요. <span style=\"color:#5a6d87;\">Pick its antonym.</span>": "",   # 3 001~010 문장구조 주어 형용사.html
     "선택을 취소했습니다. 다시 고르세요.": "",   # 3 001~010 문장구조 주어 형용사.html
-    "🎉 완료! 모든 반대말을 맞췄습니다. <span style=\"color:#15803d;\">All matched!</span>": "",   # 3 001~010 문장구조 주어 형용사.html
-    "</strong>의 반대말이 아닙니다. 다시 고르세요. <span style=\"color:#94a3b8;\">Not its antonym.</span>": "",   # 3 001~010 문장구조 주어 형용사.html
+    "🎉 완료! 모든 반대말을 맞췄습니다. <span style=\"color:#0f5e2c;\">All matched!</span>": "",   # 3 001~010 문장구조 주어 형용사.html
+    "</strong>의 반대말이 아닙니다. 다시 고르세요. <span style=\"color:#5a6d87;\">Not its antonym.</span>": "",   # 3 001~010 문장구조 주어 형용사.html
     "반대말이 되는 두 형용사를 차례로 클릭하세요.": "",   # 3 001~010 문장구조 주어 형용사.html
     "I am happy.": "",   # 3 001~010 문장구조 주어 형용사.html
     "She is kind.": "",   # 3 001~010 문장구조 주어 형용사.html
@@ -327,7 +311,7 @@ JS = {
     "</strong> → 짝이 되는 한국어를 고르세요.": "",   # 3 031~040 문장구조 시간 장소 목적어 동사.ht
     "한국어 선택을 취소했습니다.": "",   # 3 031~040 문장구조 시간 장소 목적어 동사.ht
     "</strong> → 짝이 되는 영어를 고르세요.": "",   # 3 031~040 문장구조 시간 장소 목적어 동사.ht
-    "🎉 완료! 모든 시간 명사를 맞췄습니다. <span style=\"color:#15803d;\">All matched!</span>": "",   # 3 031~040 문장구조 시간 장소 목적어 동사.ht
+    "🎉 완료! 모든 시간 명사를 맞췄습니다. <span style=\"color:#0f5e2c;\">All matched!</span>": "",   # 3 031~040 문장구조 시간 장소 목적어 동사.ht
     "I gave.": "",   # 3 041~050 문장구조 간접목적어 직접목적어.htm
     "I gave a gift.": "",   # 3 041~050 문장구조 간접목적어 직접목적어.htm
     "I gave her a gift.": "",   # 3 041~050 문장구조 간접목적어 직접목적어.htm
@@ -354,12 +338,12 @@ JS = {
     "한자어 선택을 취소했습니다.": "",   # 3 051~060 문장구조 의문사 누구 언제.html
     "한자어 선택: <strong>": "",   # 3 051~060 문장구조 의문사 누구 언제.html
     "</strong> → 짝이 되는 숫자를 고르세요.": "",   # 3 051~060 문장구조 의문사 누구 언제.html
-    "🎉 완료! 모든 숫자를 맞췄습니다. <span style=\"color:#15803d;\">All matched!</span>": "",   # 3 051~060 문장구조 의문사 누구 언제.html
+    "🎉 완료! 모든 숫자를 맞췄습니다. <span style=\"color:#0f5e2c;\">All matched!</span>": "",   # 3 051~060 문장구조 의문사 누구 언제.html
     "Pick the Korean word that matches the digit. · 숫자에 맞는 한국어를 선택하세요.": "",   # 3 051~060 문장구조 의문사 누구 언제.html
     "</strong> → 짝이 되는 고유어를 고르세요.": "",   # 3 051~060 문장구조 의문사 누구 언제.html
     "고유어 선택을 취소했습니다.": "",   # 3 051~060 문장구조 의문사 누구 언제.html
     "고유어 선택: <strong>": "",   # 3 051~060 문장구조 의문사 누구 언제.html
-    "🎉 완료! 모든 고유어 숫자를 맞췄습니다. <span style=\"color:#15803d;\">All matched!</span>": "",   # 3 051~060 문장구조 의문사 누구 언제.html
+    "🎉 완료! 모든 고유어 숫자를 맞췄습니다. <span style=\"color:#0f5e2c;\">All matched!</span>": "",   # 3 051~060 문장구조 의문사 누구 언제.html
     "Pick the Native Korean word that matches the digit. · 숫자에 맞는 고유어를 선택하세요.": "",   # 3 051~060 문장구조 의문사 누구 언제.html
     "Where did you go yesterday?": "",   # 3 061~070 문장구조 의문사 어디 무엇.html
     "I went to Seoul yesterday.": "",   # 3 061~070 문장구조 의문사 어디 무엇.html
@@ -380,9 +364,9 @@ JS = {
     "I like a kind man.": "",   # 3 071~078 문장구조 의문사 어떤.html
     "inset 0 0 0 1px #e2e8f0": "",   # 3 071~078 문장구조 의문사 어떤.html
     "색 선택을 취소했습니다.": "",   # 3 071~078 문장구조 의문사 어떤.html
-    "색 선택됨 → 한국어 이름을 고르세요. <span style=\"color:#94a3b8;\">Pick its Korean name.</span>": "",   # 3 071~078 문장구조 의문사 어떤.html
+    "색 선택됨 → 한국어 이름을 고르세요. <span style=\"color:#5a6d87;\">Pick its Korean name.</span>": "",   # 3 071~078 문장구조 의문사 어떤.html
     "</strong> → 짝이 되는 색을 고르세요.": "",   # 3 071~078 문장구조 의문사 어떤.html
-    "🎉 완료! 모든 색을 맞췄습니다. <span style=\"color:#15803d;\">All matched!</span>": "",   # 3 071~078 문장구조 의문사 어떤.html
+    "🎉 완료! 모든 색을 맞췄습니다. <span style=\"color:#0f5e2c;\">All matched!</span>": "",   # 3 071~078 문장구조 의문사 어떤.html
     "Pick the Korean color name that matches the swatch. · 색에 맞는 한국어 이름을 선택하세요.": "",   # 3 071~078 문장구조 의문사 어떤.html
     "I go to the Korean language school on Monday and Wednesday.": "",   # 3 079~086 문장구조 접속 과와 이나나.html
     "I bought fruits, vegetables, and fish at the market yesterday.": "",   # 3 079~086 문장구조 접속 과와 이나나.html
@@ -394,7 +378,7 @@ JS = {
     "Kimchi is spicy but delicious.": "",   # 3 079~086 문장구조 접속 과와 이나나.html
     "</strong> → 짝이 되는 한국어 형용사를 고르세요.": "",   # 3 079~086 문장구조 접속 과와 이나나.html
     "</strong> → 짝이 되는 영어 표현을 고르세요.": "",   # 3 079~086 문장구조 접속 과와 이나나.html
-    "🎉 완료! 모든 맛 표현을 맞췄습니다. <span style=\"color:#15803d;\">All matched!</span>": "",   # 3 079~086 문장구조 접속 과와 이나나.html
+    "🎉 완료! 모든 맛 표현을 맞췄습니다. <span style=\"color:#0f5e2c;\">All matched!</span>": "",   # 3 079~086 문장구조 접속 과와 이나나.html
     "왼쪽 영어 표현 하나와 오른쪽 한국어 표현 하나를 선택하세요.": "",   # 3 079~086 문장구조 접속 과와 이나나.html
     "I am Kim Kyoungjin.": "",   # 3 087~096 서술어 문법 이다.html
     "I am a university student.": "",   # 3 087~096 서술어 문법 이다.html
@@ -413,17 +397,17 @@ JS = {
     "Business Administration": "",   # 3 087~096 서술어 문법 이다.html
     "</strong> → 짝이 되는 한국어 전공을 고르세요.": "",   # 3 087~096 서술어 문법 이다.html
     "</strong> → 짝이 되는 영어 전공을 고르세요.": "",   # 3 087~096 서술어 문법 이다.html
-    "🎉 완료! 모든 전공을 맞췄습니다. <span style=\"color:#15803d;\">All matched!</span>": "",   # 3 087~096 서술어 문법 이다.html
+    "🎉 완료! 모든 전공을 맞췄습니다. <span style=\"color:#0f5e2c;\">All matched!</span>": "",   # 3 087~096 서술어 문법 이다.html
     "왼쪽 영어 전공 하나와 오른쪽 한국어 전공 하나를 선택하세요.": "",   # 3 087~096 서술어 문법 이다.html
     "watching movies": "",   # 3 087~096 서술어 문법 이다.html
     "listening to music": "",   # 3 087~096 서술어 문법 이다.html
     "</strong> → 짝이 되는 한국어 취미를 고르세요.": "",   # 3 087~096 서술어 문법 이다.html
     "</strong> → 짝이 되는 영어 취미를 고르세요.": "",   # 3 087~096 서술어 문법 이다.html
-    "🎉 완료! 모든 취미를 맞췄습니다. <span style=\"color:#15803d;\">All matched!</span>": "",   # 3 087~096 서술어 문법 이다.html
+    "🎉 완료! 모든 취미를 맞췄습니다. <span style=\"color:#0f5e2c;\">All matched!</span>": "",   # 3 087~096 서술어 문법 이다.html
     "왼쪽 영어 취미 하나와 오른쪽 한국어 취미 하나를 선택하세요.": "",   # 3 087~096 서술어 문법 이다.html
     "</strong> → 짝이 되는 한국어 요일을 고르세요.": "",   # 3 087~096 서술어 문법 이다.html
     "</strong> → 짝이 되는 영어 요일을 고르세요.": "",   # 3 087~096 서술어 문법 이다.html
-    "🎉 완료! 모든 요일을 맞췄습니다. <span style=\"color:#15803d;\">All matched!</span>": "",   # 3 087~096 서술어 문법 이다.html
+    "🎉 완료! 모든 요일을 맞췄습니다. <span style=\"color:#0f5e2c;\">All matched!</span>": "",   # 3 087~096 서술어 문법 이다.html
     "왼쪽 영어 요일 하나와 오른쪽 한국어 요일 하나를 선택하세요.": "",   # 3 087~096 서술어 문법 이다.html
     "I am going to school.": "",   # 3 097~104 서술어 문법 현재진행.html
     "I am waiting for my friend at the coffee shop.": "",   # 3 097~104 서술어 문법 현재진행.html
@@ -769,7 +753,7 @@ JS = {
     "종별사 선택을 취소했습니다. 다시 고르세요.": "",   # 3 419~435 기타 문법 종별사.html
     "종별사 선택: <strong>": "",   # 3 419~435 기타 문법 종별사.html
     "</strong> → 짝이 되는 명사를 고르세요.": "",   # 3 419~435 기타 문법 종별사.html
-    "🎉 완료! 모든 명사-종별사 짝을 맞췄습니다. <span style=\"color:#15803d;\">All matched!</span>": "",   # 3 419~435 기타 문법 종별사.html
+    "🎉 완료! 모든 명사-종별사 짝을 맞췄습니다. <span style=\"color:#0f5e2c;\">All matched!</span>": "",   # 3 419~435 기타 문법 종별사.html
     "왼쪽 명사 하나와 오른쪽 종별사 하나를 선택하세요.": "",   # 3 419~435 기타 문법 종별사.html
     "I know her.": "",   # 3 436~440 기타 문법 ㄹ불규칙.html
     "What are you making now?": "",   # 3 436~440 기타 문법 ㄹ불규칙.html
@@ -836,20 +820,14 @@ JS = {
     "My grandmother is sick these days.": "",   # 3 489~500 기타 문법 존댓말.html
     "I took my grandmother to the hospital.": "",   # 3 489~500 기타 문법 존댓말.html
     "Boss, congratulations on your son\\'s wedding and your daughter\\'s graduation.": "",   # 3 489~500 기타 문법 존댓말.html
-    "</div><div class=\"hint\">읽고 확인 ↻<br><span style=\"font-size:0.85em;opacity:0.8;\">Read &amp; check</span></div></div><div class=\"numfc-b\"><small>": "",   # 4 부록 1 숫자.html
+    "</div><div class=\"hint\">읽고 확인 ↻<br><span style=\"font-size:0.85em;\">Read &amp; check</span></div></div><div class=\"numfc-b\"><small>": "",   # 4 부록 1 숫자.html
     "8 (고유어)": "",   # 4 부록 1 숫자.html
     "20 (고유어)": "",   # 4 부록 1 숫자.html
     "70 (한자어)": "",   # 4 부록 1 숫자.html
     "3:00 PM": "",   # 4 부록 1 숫자.html
-    "table.symt tbody tr": "",   # 4 부록 1 숫자.html
-    "td:nth-child(": "",   # 4 부록 1 숫자.html
-    "table.numt td.rd, table.symt td.rd": "",   # 4 부록 1 숫자.html
-    "td.rd": "",   # 4 부록 1 숫자.html
-    "table.numt, table.symt": "",   # 4 부록 1 숫자.html
     "<button class=\"ans-btn\" onclick=\"qAll(this,true)\">💡 모두 보기<span class=\"gloss\" lang=\"en\" translate=\"yes\">Show all</span></button><button class=\"ans-btn\" onclick=\"qAll(this,false)\">🔄 다시 가리기<span class=\"gloss\" lang=\"en\" translate=\"yes\">Hide again</span></button><span class=\"ans-hint\">노란 테두리 칸은 보기입니다. 나머지 ?를 눌러 확인<span class=\"gloss\" lang=\"en\" translate=\"yes\">Highlighted cells are examples</span></span>": "",   # 4 부록 1 숫자.html
-    "tbody td": "",   # 4 부록 2 부정법.html
     "<button class=\"ans-btn\" onclick=\"qAll(this,true)\">💡 모두 보기<span class=\"gloss\" lang=\"en\" translate=\"yes\">Show all</span></button><button class=\"ans-btn\" onclick=\"qAll(this,false)\">🔄 다시 가리기<span class=\"gloss\" lang=\"en\" translate=\"yes\">Hide again</span></button><span class=\"ans-hint\">각 칸의 ?를 눌러 정답 확인, 정답을 다시 누르면 가려집니다<span class=\"gloss\" lang=\"en\" translate=\"yes\">Tap ? to reveal, tap again to hide</span></span>": "",   # 4 부록 2 부정법.html
-    "<br><small style=\"color:#f59e0b;font-weight:800;\">보기</small>": "",   # 4 부록 3 격식체 구어체 문어체.html
+    "<br><small style=\"color:#966106;font-weight:800;\">보기</small>": "",   # 4 부록 3 격식체 구어체 문어체.html
     "to go": "",   # 4 부록 3 격식체 구어체 문어체.html
     "to meet": "",   # 4 부록 3 격식체 구어체 문어체.html
     "to eat": "",   # 4 부록 3 격식체 구어체 문어체.html
@@ -871,9 +849,8 @@ JS = {
     "to be good": "",   # 4 부록 3 격식체 구어체 문어체.html
     "to listen": "",   # 4 부록 3 격식체 구어체 문어체.html
     "to believe": "",   # 4 부록 3 격식체 구어체 문어체.html
-    "</div></div><div class=\"flashcard-hint\">↻ 클릭</div></div>": "",   # 4 부록 3 격식체 구어체 문어체.html
-    "tr:nth-child(n+2) td.c-pres, tr:nth-child(n+2) td.c-past, tr:nth-child(n+2) td.c-fut": "",   # 4 부록 3 격식체 구어체 문어체.html
-    "<button class=\"ans-btn\" onclick=\"qAll(this,true)\">💡 모두 보기<span class=\"gloss\" lang=\"en\" translate=\"yes\">Show all</span></button><button class=\"ans-btn\" onclick=\"qAll(this,false)\">🔄 다시 가리기<span class=\"gloss\" lang=\"en\" translate=\"yes\">Hide again</span></button><span class=\"ans-hint\">첫 줄 <b>가다</b>는 보기입니다. 나머지는 ?를 눌러 정답 확인(다시 누르면 가려짐) · First row (가다) is a worked example</span>": "",   # 4 부록 3 격식체 구어체 문어체.html
+    "</div></div><div class=\"flashcard-hint\">▼ <span lang=\"en\" translate=\"yes\">Tap to check</span></div></div>": "",   # 4 부록 3 격식체 구어체 문어체.html
+    "<button class=\"ans-btn\" onclick=\"qAll(this,true)\">💡 모두 보기<span class=\"gloss\" lang=\"en\" translate=\"yes\">Show all</span></button><button class=\"ans-btn\" onclick=\"qAll(this,false)\">🔄 다시 가리기<span class=\"gloss\" lang=\"en\" translate=\"yes\">Hide again</span></button><span class=\"ans-hint\">첫 줄 <b>가다</b>는 보기입니다. 나머지는 ?를 눌러 정답 확인(다시 누르면 가려짐)<br><span class=\"en-line\" lang=\"en\" translate=\"yes\">First row (<span lang=\"ko\" translate=\"no\">가다</span>) is a worked example</span></span>": "",   # 4 부록 3 격식체 구어체 문어체.html
     "go (present)": "",   # 4 부록 4 기초문법연습 01.html
     "went (past)": "",   # 4 부록 4 기초문법연습 01.html
     "will go (future)": "",   # 4 부록 4 기초문법연습 01.html
@@ -887,8 +864,9 @@ JS = {
     "please don't go (command)": "",   # 4 부록 4 기초문법연습 01.html
     "want to go (hope)": "",   # 4 부록 4 기초문법연습 01.html
     " · EN</div><div class=\"flashcard-text\">": "",   # 4 부록 4 기초문법연습 01.html
-    "</div><div class=\"flashcard-hint\">↻ 클릭</div></div>": "",   # 4 부록 4 기초문법연습 01.html
+    "</div><div class=\"flashcard-hint\">▼ <span lang=\"en\" translate=\"yes\">Tap to check</span></div></div>": "",   # 4 부록 4 기초문법연습 01.html
     " · KR</div><div class=\"flashcard-text\">": "",   # 4 부록 4 기초문법연습 01.html
+    "\\')\" title=\"Listen\">🔊</button></div>": "",   # 4 부록 4 기초문법연습 01.html
     "Let's": "",   # 4 부록 4 기초문법연습 01.html
     "Shall we?": "",   # 4 부록 4 기초문법연습 01.html
     "don't (short)": "",   # 4 부록 4 기초문법연습 01.html
@@ -902,8 +880,6 @@ JS = {
     "Let\\'s go (suggestion)": "",   # 4 부록 4 기초문법연습 01.html
     "don\\'t go (negation)": "",   # 4 부록 4 기초문법연습 01.html
     "can\\'t go (impossible)": "",   # 4 부록 4 기초문법연습 01.html
-    "td.v, td.a, td.e": "",   # 4 부록 4 기초문법연습 01.html
-    "td.e": "",   # 4 부록 4 기초문법연습 01.html
     "do not want to go": "",   # 4 부록 5 기초문법연습 02.html
     "I wish I could go": "",   # 4 부록 5 기초문법연습 02.html
     "plan to go": "",   # 4 부록 5 기초문법연습 02.html
