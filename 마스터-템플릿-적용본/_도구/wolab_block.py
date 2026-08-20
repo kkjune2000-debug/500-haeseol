@@ -12,7 +12,8 @@ r"""「만들기 Word building」의 영어를 아래 줄로 (사용자 지적 2
 import re, sys, glob, argparse
 from collections import Counter
 
-sys.path.insert(0, r"D:\OneDrive\놀라운 한국어 500 해설집\마스터-템플릿-적용본\_도구")
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # ★경로를 박지 않는다 (2026-08-20 폴더 바뀜)
 import _paths
 
 out = _paths.enter()

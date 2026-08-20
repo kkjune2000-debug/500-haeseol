@@ -17,7 +17,8 @@ r"""어휘 상자에서 **조사**를 뺀다 (사용자 원칙 2026-08-19 — 33
 """
 import re, sys, glob, html, argparse
 from collections import Counter
-sys.path.insert(0, r"D:\OneDrive\놀라운 한국어 500 해설집\마스터-템플릿-적용본\_도구")
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # ★경로를 박지 않는다 (2026-08-20 폴더 바뀜)
 import _paths
 
 out = _paths.enter()
